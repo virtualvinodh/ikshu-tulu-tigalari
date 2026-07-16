@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ba-tutg" format="2">
+  <advance width="1420"/>
+  <unicode hex="113A8"/>
+  <anchor x="660.0" y="620" name="top"/>
+  <anchor x="660.0" y="-80" name="bottom"/>
+  <anchor x="1310" y="620" name="topright"/>
+  <anchor x="1264.0" y="8.0" name="bottomright"/>
+  <outline>
+    <contour>
+      <point x="648" y="503" type="curve" smooth="yes"/>
+      <point x="738" y="503"/>
+      <point x="776" y="419"/>
+      <point x="776" y="339" type="curve" smooth="yes"/>
+      <point x="776" y="183"/>
+      <point x="651" y="74"/>
+      <point x="498" y="29" type="curve"/>
+      <point x="496" y="9"/>
+      <point x="513" y="-23"/>
+      <point x="530" y="-30" type="curve"/>
+      <point x="609" y="0"/>
+      <point x="696" y="0"/>
+      <point x="909" y="0" type="curve" smooth="yes"/>
+      <point x="1197" y="0" type="line"/>
+      <point x="1197" y="64" type="line"/>
+      <point x="806" y="64" type="line" smooth="yes"/>
+      <point x="767" y="64"/>
+      <point x="724" y="61"/>
+      <point x="682" y="54" type="curve"/>
+      <point x="782" y="117"/>
+      <point x="850" y="223"/>
+      <point x="850" y="340" type="curve" smooth="yes"/>
+      <point x="850" y="452"/>
+      <point x="780" y="570"/>
+      <point x="650" y="570" type="curve" smooth="yes"/>
+      <point x="559" y="570"/>
+      <point x="476" y="516"/>
+      <point x="443" y="344" type="curve"/>
+      <point x="443" y="298" type="line"/>
+      <point x="447" y="291"/>
+      <point x="509" y="291"/>
+      <point x="513" y="298" type="curve"/>
+      <point x="514" y="318" type="line" smooth="yes"/>
+      <point x="520" y="442"/>
+      <point x="569" y="503"/>
+    </contour>
+    <contour>
+      <point x="1238" y="558" type="curve"/>
+      <point x="1238" y="120" type="line"/>
+      <point x="1310" y="120" type="line"/>
+      <point x="1310" y="558" type="line"/>
+      <point x="1297" y="568"/>
+      <point x="1251" y="568"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1133"/>
+    <component base="_horizontalline64" xScale="1.1952" xOffset="-136"/>
+    <component base="_bigloopcurve" xScale="-1" yScale="-1" xOffset="999" yOffset="555"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.67,0.95,0.38,1</string>
+    </dict>
+  </lib>
+</glyph>

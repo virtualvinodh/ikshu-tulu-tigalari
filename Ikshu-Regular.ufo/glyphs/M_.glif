@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="M" format="2">
+  <advance width="837"/>
+  <unicode hex="004D"/>
+  <note>
+M
+</note>
+  <outline>
+    <contour>
+      <point x="687" y="547" type="curve"/>
+      <point x="687" y="0" type="line"/>
+      <point x="758" y="0" type="line"/>
+      <point x="758" y="716" type="line"/>
+      <point x="660" y="716" type="line"/>
+      <point x="420" y="117" type="line"/>
+      <point x="177" y="716" type="line"/>
+      <point x="79" y="716" type="line"/>
+      <point x="79" y="0" type="line"/>
+      <point x="150" y="0" type="line"/>
+      <point x="150" y="546" type="line"/>
+      <point x="150" y="572"/>
+      <point x="150" y="609"/>
+      <point x="150" y="635" type="curve"/>
+      <point x="138" y="635" type="line"/>
+      <point x="149" y="608"/>
+      <point x="160" y="572"/>
+      <point x="171" y="545" type="curve"/>
+      <point x="394" y="0" type="line"/>
+      <point x="445" y="0" type="line"/>
+      <point x="668" y="548" type="line"/>
+      <point x="678" y="574"/>
+      <point x="689" y="609"/>
+      <point x="699" y="635" type="curve"/>
+      <point x="687" y="635" type="line"/>
+      <point x="687" y="609"/>
+      <point x="687" y="573"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:08:27 +0000</string>
+    </dict>
+  </lib>
+</glyph>

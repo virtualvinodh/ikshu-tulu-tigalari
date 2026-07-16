@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_iMatra_dotreph-tutg" format="2">
+  <advance width="1504"/>
+  <anchor x="1026" y="-8" name="short"/>
+  <anchor x="654.5" y="969" name="top"/>
+  <anchor x="654.5" y="-65" name="bottom"/>
+  <anchor x="1294.0" y="969" name="topright"/>
+  <outline>
+    <component base="ka-tutg" xOffset="5"/>
+    <component base="repha-tutg.alt1" xOffset="880" yOffset="-31"/>
+    <component base="iiMatra-tutg" xOffset="1220"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

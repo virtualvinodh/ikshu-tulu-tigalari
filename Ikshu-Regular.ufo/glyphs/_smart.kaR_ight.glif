@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_smart.kaRight" format="2">
+  <advance width="1176"/>
+  <anchor x="1021" y="-8" name="short"/>
+  <outline>
+    <contour>
+      <point x="982" y="132" type="curve" smooth="yes"/>
+      <point x="982" y="0" type="line"/>
+      <point x="996" y="-10"/>
+      <point x="1040" y="-10"/>
+      <point x="1054" y="0" type="curve"/>
+      <point x="1054" y="130" type="line" smooth="yes"/>
+      <point x="1054" y="420"/>
+      <point x="932" y="571"/>
+      <point x="726" y="571" type="curve" smooth="yes"/>
+      <point x="650" y="571"/>
+      <point x="575" y="551"/>
+      <point x="487" y="508" type="curve"/>
+      <point x="571" y="484" type="line"/>
+      <point x="616" y="502"/>
+      <point x="666" y="511"/>
+      <point x="714" y="511" type="curve" smooth="yes"/>
+      <point x="881" y="511"/>
+      <point x="982" y="382"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

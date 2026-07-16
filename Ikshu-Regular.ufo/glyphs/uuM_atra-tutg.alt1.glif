@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uuMatra-tutg.alt1" format="2">
+  <advance width="50"/>
+  <outline>
+    <contour>
+      <point x="-181" y="-468" type="curve" smooth="yes"/>
+      <point x="-49" y="-468"/>
+      <point x="20" y="-364"/>
+      <point x="20" y="-265" type="curve" smooth="yes"/>
+      <point x="20" y="-193"/>
+      <point x="-14" y="-130"/>
+      <point x="-115" y="-130" type="curve" smooth="yes"/>
+      <point x="-204" y="-130"/>
+      <point x="-245" y="-182"/>
+      <point x="-245" y="-244" type="curve" smooth="yes"/>
+      <point x="-245" y="-319"/>
+      <point x="-183" y="-366"/>
+      <point x="-118" y="-366" type="curve" smooth="yes"/>
+      <point x="-88" y="-366"/>
+      <point x="-60" y="-358"/>
+      <point x="-37" y="-336" type="curve"/>
+      <point x="-54" y="-327" type="line"/>
+      <point x="-72" y="-382"/>
+      <point x="-122" y="-409"/>
+      <point x="-174" y="-409" type="curve" smooth="yes"/>
+      <point x="-249" y="-409"/>
+      <point x="-326" y="-359"/>
+      <point x="-326" y="-262" type="curve" smooth="yes"/>
+      <point x="-326" y="-194"/>
+      <point x="-291" y="-98"/>
+      <point x="-191" y="25" type="curve"/>
+      <point x="-203" y="32"/>
+      <point x="-248" y="32"/>
+      <point x="-258" y="25" type="curve"/>
+      <point x="-358" y="-90"/>
+      <point x="-390" y="-185"/>
+      <point x="-390" y="-259" type="curve" smooth="yes"/>
+      <point x="-390" y="-398"/>
+      <point x="-283" y="-468"/>
+    </contour>
+    <contour>
+      <point x="-43" y="-302" type="curve"/>
+      <point x="-61" y="-314"/>
+      <point x="-80" y="-319"/>
+      <point x="-99" y="-319" type="curve" smooth="yes"/>
+      <point x="-157" y="-319"/>
+      <point x="-183" y="-280"/>
+      <point x="-183" y="-245" type="curve" smooth="yes"/>
+      <point x="-183" y="-209"/>
+      <point x="-159" y="-177"/>
+      <point x="-114" y="-177" type="curve" smooth="yes"/>
+      <point x="-62" y="-177"/>
+      <point x="-37" y="-220"/>
+      <point x="-37" y="-260" type="curve" smooth="yes"/>
+      <point x="-37" y="-276"/>
+      <point x="-39" y="-290"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:03 +0000</string>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
+</glyph>

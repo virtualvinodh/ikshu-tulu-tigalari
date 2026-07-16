@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_tta-tutg" format="2">
+  <advance width="1436"/>
+  <anchor x="668.0" y="636.4" name="top"/>
+  <anchor x="668.0" y="-65" name="bottom"/>
+  <anchor x="1326" y="636.4" name="topright"/>
+  <outline>
+    <contour>
+      <point x="502" y="522" type="curve"/>
+      <point x="572" y="486" type="line"/>
+      <point x="713" y="530"/>
+      <point x="885" y="541"/>
+      <point x="1033" y="520" type="curve"/>
+      <point x="1051" y="528" type="line"/>
+      <point x="1071" y="565" type="line"/>
+      <point x="975" y="602"/>
+      <point x="634" y="593"/>
+    </contour>
+    <component base="_karightarm"/>
+    <component base="_kabowl"/>
+    <component base="tta-tutg" xOffset="893" yOffset="-1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:34:13 +0000</string>
+    </dict>
+  </lib>
+</glyph>

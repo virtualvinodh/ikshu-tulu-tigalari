@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_rrVocalicMatra-tutg" format="2">
+  <advance width="1020"/>
+  <anchor x="865" y="-68" name="connect"/>
+  <anchor x="542.0" y="615.5" name="top"/>
+  <anchor x="542.0" y="-637" name="bottom"/>
+  <anchor x="1073" y="615.5" name="topright"/>
+  <outline>
+    <component base="pa_rVocalicMatra-tutg"/>
+    <component base="_rrVocalicArm" xOffset="703" yOffset="20"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

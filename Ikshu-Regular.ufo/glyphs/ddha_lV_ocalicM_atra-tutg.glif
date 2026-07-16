@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ddha_lVocalicMatra-tutg" format="2">
+  <advance width="1183"/>
+  <guideline x="605" y="-69" angle="90"/>
+  <anchor x="544.0" y="621" name="top"/>
+  <anchor x="544.0" y="-533" name="bottom"/>
+  <anchor x="1073" y="621" name="topright"/>
+  <outline>
+    <component base="ddha-tutg" xOffset="5"/>
+    <component base="lVocalicMatra-tutg" xOffset="187"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-11 15:55:12 +0000</string>
+    </dict>
+  </lib>
+</glyph>

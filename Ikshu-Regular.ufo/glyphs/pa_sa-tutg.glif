@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa-tutg" format="2">
+  <advance width="1167"/>
+  <anchor x="533.5" y="615.5" name="top"/>
+  <anchor x="533.5" y="-549" name="bottom"/>
+  <anchor x="1057" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="985" y="558" type="curve"/>
+      <point x="985" y="58" type="line"/>
+      <point x="1057" y="58" type="line"/>
+      <point x="1057" y="558" type="line"/>
+      <point x="1044" y="568"/>
+      <point x="998" y="568"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="880"/>
+    <component base="_horizontalline64" xScale="1.5902" xOffset="-819"/>
+    <component base="_pabeak"/>
+    <component base="sa-tutg" xOffset="101" yOffset="-483"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:48:13 +0000</string>
+    </dict>
+  </lib>
+</glyph>

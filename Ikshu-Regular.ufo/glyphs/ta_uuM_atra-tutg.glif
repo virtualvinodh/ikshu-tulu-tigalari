@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_uuMatra-tutg" format="2">
+  <advance width="1073"/>
+  <guideline x="962" y="143" angle="90"/>
+  <anchor x="585.2" y="619" name="top"/>
+  <anchor x="585.2" y="-274" name="bottom"/>
+  <anchor x="1160.5" y="619" name="topright"/>
+  <outline>
+    <contour>
+      <point x="871" y="156" type="line"/>
+      <point x="935" y="162"/>
+      <point x="962" y="222"/>
+      <point x="962" y="295" type="curve" smooth="yes"/>
+      <point x="962" y="453"/>
+      <point x="828" y="569"/>
+      <point x="638" y="569" type="curve" smooth="yes"/>
+      <point x="570" y="569"/>
+      <point x="505" y="555"/>
+      <point x="430" y="524" type="curve"/>
+      <point x="507" y="489" type="line"/>
+      <point x="549" y="500"/>
+      <point x="586" y="505"/>
+      <point x="627" y="505" type="curve" smooth="yes"/>
+      <point x="787" y="505"/>
+      <point x="887" y="424"/>
+      <point x="887" y="296" type="curve" smooth="yes"/>
+      <point x="887" y="235"/>
+      <point x="865" y="182"/>
+      <point x="798" y="182" type="curve" smooth="yes"/>
+      <point x="759" y="182" type="line"/>
+    </contour>
+    <component base="_taleftarm"/>
+    <component base="_tamiddle"/>
+    <component base="_uumatraBelow" xOffset="499" yOffset="96"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 15:27:22 +0000</string>
+    </dict>
+  </lib>
+</glyph>

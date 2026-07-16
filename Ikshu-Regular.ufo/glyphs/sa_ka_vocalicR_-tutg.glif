@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_ka_vocalicR-tutg" format="2">
+  <advance width="1071"/>
+  <anchor x="587.5" y="612.5" name="top"/>
+  <anchor x="587.5" y="-904" name="bottom"/>
+  <anchor x="1160" y="612.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="915" y="-791" type="curve" smooth="yes"/>
+      <point x="876" y="-791"/>
+      <point x="851" y="-772"/>
+      <point x="851" y="-742" type="curve" smooth="yes"/>
+      <point x="851" y="-662"/>
+      <point x="1012" y="-620"/>
+      <point x="1086" y="-603" type="curve"/>
+      <point x="1070" y="-699"/>
+      <point x="1002" y="-791"/>
+    </contour>
+    <contour>
+      <point x="907" y="-854" type="curve" smooth="yes"/>
+      <point x="1078" y="-854"/>
+      <point x="1160" y="-689"/>
+      <point x="1160" y="-494" type="curve" smooth="yes"/>
+      <point x="1160" y="-269"/>
+      <point x="1053" y="-157"/>
+      <point x="921" y="-107" type="curve"/>
+      <point x="921" y="-178" type="line"/>
+      <point x="1013" y="-224"/>
+      <point x="1088" y="-313"/>
+      <point x="1088" y="-485" type="curve" smooth="yes"/>
+      <point x="1088" y="-543" type="line"/>
+      <point x="966" y="-560"/>
+      <point x="784" y="-620"/>
+      <point x="784" y="-745" type="curve" smooth="yes"/>
+      <point x="784" y="-815"/>
+      <point x="837" y="-854"/>
+    </contour>
+    <contour>
+      <point x="897" y="325" type="line"/>
+      <point x="897" y="-39" type="line"/>
+      <point x="961" y="-39" type="line"/>
+      <point x="961" y="325" type="line"/>
+    </contour>
+    <component base="sa-tutg" xOffset="5"/>
+    <component base="_kabelow" xOffset="50" yOffset="-550"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:57:14 +0000</string>
+    </dict>
+  </lib>
+</glyph>

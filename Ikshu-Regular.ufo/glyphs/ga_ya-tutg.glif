@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_ya-tutg" format="2">
+  <advance width="1075"/>
+  <anchor x="487.5" y="627.5" name="top"/>
+  <anchor x="487.5" y="-276" name="bottom"/>
+  <anchor x="965" y="627.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="553" y="502" type="curve"/>
+      <point x="549" y="571" type="line"/>
+      <point x="420" y="571"/>
+      <point x="351" y="469"/>
+      <point x="351" y="278" type="curve" smooth="yes"/>
+      <point x="351" y="124"/>
+      <point x="310" y="50"/>
+      <point x="224" y="50" type="curve" smooth="yes"/>
+      <point x="135" y="50"/>
+      <point x="85" y="130"/>
+      <point x="85" y="271" type="curve" smooth="yes"/>
+      <point x="85" y="361"/>
+      <point x="106" y="470"/>
+      <point x="142" y="555" type="curve"/>
+      <point x="120" y="565"/>
+      <point x="88" y="565"/>
+      <point x="66" y="555" type="curve"/>
+      <point x="30" y="455"/>
+      <point x="10" y="347"/>
+      <point x="10" y="258" type="curve" smooth="yes"/>
+      <point x="10" y="83"/>
+      <point x="86" y="-15"/>
+      <point x="222" y="-15" type="curve" smooth="yes"/>
+      <point x="354" y="-15"/>
+      <point x="426" y="77"/>
+      <point x="423" y="246" type="curve" smooth="yes"/>
+      <point x="420" y="417"/>
+      <point x="467" y="503"/>
+    </contour>
+    <component base="_ya_1" xOffset="-624" yOffset="1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 16:08:24 +0000</string>
+    </dict>
+  </lib>
+</glyph>

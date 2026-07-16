@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gha-tutg.below.alt1" format="2">
+  <advance width="28"/>
+  <anchor x="0.5" y="-752.9" name="bottom"/>
+  <outline>
+    <component base="gha-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-500" yOffset="-677" identifier="973491BB"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>973491BB</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

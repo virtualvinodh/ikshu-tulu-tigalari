@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_gha-tutg" format="2">
+  <advance width="1531"/>
+  <outline>
+    <component base="gha-tutg" xOffset="321"/>
+  </outline>
+</glyph>

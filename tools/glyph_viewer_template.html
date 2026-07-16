@@ -1,0 +1,648 @@
+<title>Tulu-Tigalari Glyph Viewer</title>
+<style>
+  :root {
+    --canvas-dark: #1a1820;
+    --panel-dark: #242230;
+    --panel-dark-2: #2c2938;
+    --border-dark: #3a3648;
+    --text-light: #e8e3d8;
+    --text-light-dim: #a49bb0;
+    --parchment: #f2e8d3;
+    --parchment-line: #d9c9a3;
+    --ink: #2b2013;
+    --accent: #4f8f7d;
+    --accent-strong: #63ab97;
+  }
+  :root[data-theme="light"] {
+    --canvas-dark: #f4f2ee;
+    --panel-dark: #ffffff;
+    --panel-dark-2: #eeebe4;
+    --border-dark: #dcd6ca;
+    --text-light: #201d28;
+    --text-light-dim: #6b6577;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --canvas-dark: #f4f2ee;
+      --panel-dark: #ffffff;
+      --panel-dark-2: #eeebe4;
+      --border-dark: #dcd6ca;
+      --text-light: #201d28;
+      --text-light-dim: #6b6577;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--canvas-dark);
+    color: var(--text-light);
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 0 0 2px 0;
+    text-wrap: balance;
+  }
+  .subtitle {
+    font-size: 0.78rem;
+    color: var(--text-light-dim);
+    margin: 0 0 18px 0;
+  }
+
+  #sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: var(--panel-dark);
+    border-right: 1px solid var(--border-dark);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  #search {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 7px;
+    border: 1px solid var(--border-dark);
+    background: var(--panel-dark-2);
+    color: var(--text-light);
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.85rem;
+  }
+  #search:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .cat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light-dim);
+    margin: 4px 0 2px 0;
+  }
+  #categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cat-chip {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 9px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-light-dim);
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-align: left;
+  }
+  .cat-chip:hover { background: var(--panel-dark-2); color: var(--text-light); }
+  .cat-chip.active {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    border-color: var(--accent);
+    color: var(--text-light);
+  }
+  .cat-chip .count { font-variant-numeric: tabular-nums; opacity: 0.75; }
+
+  #count-line {
+    font-size: 0.75rem;
+    color: var(--text-light-dim);
+    padding-top: 4px;
+    border-top: 1px solid var(--border-dark);
+  }
+
+  #main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 22px 26px;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 10px;
+  }
+
+  .glyph-card {
+    background: var(--parchment);
+    border: 1px solid var(--parchment-line);
+    border-radius: 8px;
+    padding: 6px 6px 5px 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+  .glyph-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+  .glyph-card:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 1px;
+  }
+  .glyph-card svg { width: 100%; height: 68px; display: block; }
+  .glyph-card.is-empty { border-style: dashed; }
+  .glyph-card .empty-tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.45;
+    margin-top: -46px;
+    margin-bottom: 12px;
+  }
+  .glyph-card .gname {
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.6rem;
+    color: var(--ink);
+    opacity: 0.72;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #empty-msg {
+    color: var(--text-light-dim);
+    font-size: 0.9rem;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  /* detail overlay */
+  #detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 9, 14, 0.72);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 24px;
+  }
+  #detail-overlay.open { display: flex; }
+  #detail-panel {
+    background: var(--panel-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 14px;
+    max-width: 860px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 0;
+  }
+  @media (max-width: 700px) {
+    #detail-panel { grid-template-columns: 1fr; }
+  }
+  #detail-canvas-wrap {
+    background: var(--parchment);
+    border-radius: 14px 0 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 340px;
+  }
+  @media (max-width: 700px) {
+    #detail-canvas-wrap { border-radius: 14px 14px 0 0; }
+  }
+  #detail-canvas-wrap svg { width: 100%; max-height: 420px; }
+  #detail-info {
+    padding: 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  #detail-info h2 {
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 1rem;
+    margin: 0;
+    word-break: break-all;
+    text-wrap: balance;
+  }
+  #detail-info .field-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light-dim);
+    margin-bottom: 3px;
+  }
+  #detail-info .field-value {
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+  }
+  #detail-back {
+    font-size: 0.78rem;
+    color: var(--accent-strong);
+    cursor: pointer;
+    margin-bottom: -4px;
+  }
+  #detail-back:hover { text-decoration: underline; }
+  #component-list, #usedin-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .component-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 74px;
+    background: var(--parchment);
+    border: 1px solid var(--parchment-line);
+    border-radius: 7px;
+    padding: 5px 5px 4px 5px;
+    cursor: pointer;
+  }
+  .component-chip svg { width: 100%; height: 44px; display: block; }
+  .component-chip .ccname {
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.58rem;
+    color: var(--ink);
+    opacity: 0.75;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .component-chip:hover { outline: 2px solid var(--accent-strong); outline-offset: 1px; }
+  .component-chip.unknown { opacity: 0.5; cursor: default; }
+  .component-chip.unknown:hover { outline: none; }
+  #anchor-list { display: flex; flex-direction: column; gap: 6px; }
+  .anchor-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.78rem;
+    background: var(--panel-dark-2);
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+  .anchor-row .aname { color: var(--accent-strong); }
+  #close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--text-light-dim);
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  #close-btn:hover { color: var(--text-light); }
+  #detail-panel { position: relative; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+</style>
+
+<div id="sidebar">
+  <div>
+    <h1>Tulu-Tigalari Glyphs</h1>
+    <p class="subtitle">Ikshu-Regular &middot; <span id="total-count"></span> glyphs</p>
+  </div>
+  <input id="search" type="text" placeholder="Search glyph name&hellip;" autocomplete="off">
+  <div>
+    <div class="cat-label">Category</div>
+    <div id="categories"></div>
+  </div>
+  <div id="count-line"></div>
+</div>
+
+<div id="main">
+  <div id="grid"></div>
+  <div id="empty-msg" style="display:none;">No glyphs match.</div>
+</div>
+
+<div id="detail-overlay">
+  <div id="detail-panel">
+    <button id="close-btn" aria-label="Close">&times;</button>
+    <div id="detail-canvas-wrap"></div>
+    <div id="detail-info">
+      <div id="detail-back" style="display:none;"></div>
+      <h2 id="detail-name"></h2>
+      <div>
+        <div class="field-label">Category</div>
+        <div class="field-value" id="detail-category"></div>
+      </div>
+      <div>
+        <div class="field-label">Advance width</div>
+        <div class="field-value" id="detail-width"></div>
+      </div>
+      <div>
+        <div class="field-label">Bounds (xMin yMin xMax yMax)</div>
+        <div class="field-value" id="detail-bounds"></div>
+      </div>
+      <div id="components-field" style="display:none;">
+        <div class="field-label">Components (click to open)</div>
+        <div id="component-list"></div>
+      </div>
+      <div id="usedin-field" style="display:none;">
+        <div class="field-label">Used in <span id="usedin-count"></span> glyph(s) (click to open)</div>
+        <div id="usedin-list"></div>
+      </div>
+      <div>
+        <div class="field-label">Anchors</div>
+        <div id="anchor-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="glyph-data">__GLYPH_DATA_JSON__</script>
+<script>
+(function() {
+  const DATA = JSON.parse(document.getElementById('glyph-data').textContent);
+  const names = Object.keys(DATA).sort();
+  document.getElementById('total-count').textContent = names.filter(n => DATA[n].isPrimary !== false).length;
+
+  // reverse index: baseGlyph -> [names of glyphs that use it as a component]
+  // (a glyph may reference the same component more than once - e.g. a doubled
+  // consonant reusing the same sub-part twice - so dedupe per parent)
+  const usedInMap = {};
+  names.forEach(n => {
+    const seen = new Set();
+    (DATA[n].components || []).forEach(c => {
+      if (seen.has(c.baseGlyph)) return;
+      seen.add(c.baseGlyph);
+      (usedInMap[c.baseGlyph] = usedInMap[c.baseGlyph] || []).push(n);
+    });
+  });
+
+  const CAT_LABELS = {
+    "consonant": "Consonants",
+    "consonant_below_base": "Below-base (miniature)",
+    "conjunct_ligature": "Conjunct ligatures",
+    "vowel_sign_ligature": "Vowel-sign ligatures",
+    "vowel_sign": "Vowel signs",
+    "vowel_independent": "Independent vowels",
+    "special_mark": "Special marks",
+    "looped_virama_ligature": "Looped Virama (Chillu)",
+    "tulu_numeral_alt": "Tulu numeral alternates",
+    "vowel_sign_component": "Vowel-sign components",
+    "unencoded_reference_vowel": "Unencoded reference (E/O)",
+    "component/utility": "Component / utility",
+    "test/sample_glyph": "Test / sample",
+    "unclassified_multi": "Unclassified",
+    "uncategorized": "Uncategorized",
+    "sub-component": "Sub-components (parts)",
+    "empty": "Empty / unbuilt",
+    "latin/other": "Latin / other",
+  };
+
+  const catCounts = {};
+  names.forEach(n => {
+    const c = DATA[n].category || "uncategorized";
+    catCounts[c] = (catCounts[c] || 0) + 1;
+  });
+
+  let activeCategory = null;
+  let query = "";
+
+  const catContainer = document.getElementById('categories');
+  function renderCategoryChips() {
+    catContainer.innerHTML = "";
+    const allChip = document.createElement('div');
+    allChip.className = 'cat-chip' + (activeCategory === null ? ' active' : '');
+    const primaryCount = names.filter(n => DATA[n].isPrimary !== false).length;
+    allChip.innerHTML = `<span>All</span><span class="count">${primaryCount}</span>`;
+    allChip.onclick = () => { activeCategory = null; renderCategoryChips(); renderGrid(); };
+    catContainer.appendChild(allChip);
+
+    Object.keys(catCounts).sort((a,b) => catCounts[b]-catCounts[a]).forEach(cat => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (activeCategory === cat ? ' active' : '');
+      chip.innerHTML = `<span>${CAT_LABELS[cat] || cat}</span><span class="count">${catCounts[cat]}</span>`;
+      chip.onclick = () => { activeCategory = (activeCategory === cat ? null : cat); renderCategoryChips(); renderGrid(); };
+      catContainer.appendChild(chip);
+    });
+  }
+
+  // Shared frame (font units) used for every grid thumbnail, so relative scale between
+  // glyphs is preserved - e.g. a below-base miniature genuinely sits lower/smaller in
+  // the frame than a full consonant, instead of each glyph being auto-zoomed to fill
+  // its own thumbnail independently (which would erase that comparison entirely).
+  // Chosen from measured bounds across all 792 glyphs (~p90-p95 of top/bottom/right),
+  // so the common case fits comfortably and only rare wide/tall outliers clip at the edges.
+  const SHARED_FRAME = { xMin: -100, xMax: 2100, yMin: -1000, yMax: 850 };
+
+  // Transformed bbox (axis-aligned) of a component, in its parent glyph's coordinate
+  // space - looks up the referenced base glyph's own bounds and applies this
+  // component's affine transform to all 4 corners.
+  function componentBBox(comp) {
+    const base = DATA[comp.baseGlyph];
+    if (!base || !base.bounds) return null;
+    const [x0, y0, x1, y1] = base.bounds;
+    const corners = [[x0,y0],[x1,y0],[x0,y1],[x1,y1]].map(([x,y]) => [
+      comp.xx*x + comp.yx*y + comp.dx,
+      comp.xy*x + comp.yy*y + comp.dy,
+    ]);
+    const xs = corners.map(c => c[0]), ys = corners.map(c => c[1]);
+    return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+  }
+
+  function glyphSVG(name, opts) {
+    opts = opts || {};
+    const g = DATA[name];
+    const b = g.bounds;
+    let frame;
+    if (opts.autoFit) {
+      // detail view: fit to this glyph's own bounds for legibility
+      const bb = b || [0, -50, g.width || 500, 700];
+      const padX = (bb[2]-bb[0]) * 0.12 + 20;
+      const padY = (bb[3]-bb[1]) * 0.12 + 20;
+      frame = { xMin: bb[0]-padX, xMax: bb[2]+padX, yMin: bb[1]-padY, yMax: bb[3]+padY };
+    } else {
+      frame = SHARED_FRAME;
+    }
+    const vbX = frame.xMin, vbW = frame.xMax - frame.xMin, vbH = frame.yMax - frame.yMin;
+    // font space is Y-up (ascenders positive, descenders negative); SVG is Y-down.
+    // Flip via a transform on the group, not by pre-negating coordinates, so path
+    // data and anchors use the exact same (untouched) font-space numbers.
+    const vbY = -frame.yMax;
+    let anchorsSVG = "";
+    if (opts.showAnchors) {
+      g.anchors.forEach(a => {
+        const isMark = a.name.startsWith('_');
+        const color = isMark ? "#b9563f" : "#4f8f7d";
+        anchorsSVG += `<circle cx="${a.x}" cy="${a.y}" r="${vbW*0.012}" fill="${color}" stroke="#fff" stroke-width="${vbW*0.003}"/>`;
+        const ty = a.y + vbH * 0.045;
+        anchorsSVG += `<text x="${a.x}" y="${ty}" font-size="${vbW*0.045}" fill="${color}" font-family="monospace" text-anchor="middle" ` +
+                      `transform="translate(${a.x} ${ty}) scale(1,-1) translate(${-a.x} ${-ty})">${a.name}</text>`;
+      });
+    }
+    let componentsSVG = "";
+    if (opts.showComponents && g.components && g.components.length) {
+      g.components.forEach((comp, i) => {
+        const cb = componentBBox(comp);
+        if (!cb) return;
+        const [cx0, cy0, cx1, cy1] = cb;
+        const cw = cx1 - cx0, ch = cy1 - cy0;
+        const hue = (i * 67) % 360;
+        const stroke = `hsl(${hue} 55% 45%)`;
+        const fill = `hsl(${hue} 55% 45% / 0.12)`;
+        const known = DATA[comp.baseGlyph] ? "" : ' data-unknown="1"';
+        componentsSVG += `<rect class="component-box" data-component="${comp.baseGlyph}"${known} ` +
+          `x="${cx0}" y="${cy0}" width="${cw}" height="${ch}" fill="${fill}" stroke="${stroke}" ` +
+          `stroke-width="${vbW*0.0025}" stroke-dasharray="${vbW*0.008} ${vbW*0.006}"/>`;
+        const lx = cx0 + cw/2, ly = cy1 + vbH * 0.03;
+        componentsSVG += `<text x="${lx}" y="${ly}" font-size="${vbW*0.032}" fill="${stroke}" font-family="monospace" ` +
+          `text-anchor="middle" transform="translate(${lx} ${ly}) scale(1,-1) translate(${-lx} ${-ly})">${comp.baseGlyph}</text>`;
+      });
+    }
+    const baseline = `<line x1="${vbX}" y1="0" x2="${vbX+vbW}" y2="0" stroke="#00000022" stroke-width="${vbW*0.003}"/>`;
+    return `<svg viewBox="${vbX} ${vbY} ${vbW} ${vbH}" xmlns="http://www.w3.org/2000/svg">` +
+           `<g transform="scale(1,-1)">${baseline}<path d="${g.d}" fill="#2b2013"/>${componentsSVG}${anchorsSVG}</g></svg>`;
+  }
+
+  const grid = document.getElementById('grid');
+  const emptyMsg = document.getElementById('empty-msg');
+
+  function renderGrid() {
+    const q = query.trim().toLowerCase();
+    const filtered = names.filter(n => {
+      if (activeCategory) {
+        if (DATA[n].category !== activeCategory) return false;
+      } else if (DATA[n].isPrimary === false) {
+        return false; // default "All" view hides sub-component parts; reach them via drill-down or their own category chip
+      }
+      if (q && !n.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    document.getElementById('count-line').textContent = `Showing ${filtered.length} of ${names.length}`;
+    grid.innerHTML = "";
+    emptyMsg.style.display = filtered.length ? "none" : "block";
+    const frag = document.createDocumentFragment();
+    filtered.forEach(name => {
+      const card = document.createElement('div');
+      card.className = 'glyph-card' + (DATA[name].isEmpty ? ' is-empty' : '');
+      card.tabIndex = 0;
+      const emptyTag = DATA[name].isEmpty ? '<div class="empty-tag">empty</div>' : '';
+      card.innerHTML = glyphSVG(name) + emptyTag + `<div class="gname">${name}</div>`;
+      card.onclick = () => openDetail(name);
+      card.onkeydown = (e) => { if (e.key === 'Enter') openDetail(name); };
+      frag.appendChild(card);
+    });
+    grid.appendChild(frag);
+  }
+
+  const overlay = document.getElementById('detail-overlay');
+  let detailHistory = [];
+  let currentDetail = null;
+
+  function openDetail(name, opts) {
+    opts = opts || {};
+    if (opts.drilldown && currentDetail) {
+      detailHistory.push(currentDetail);
+    } else if (!opts.keepHistory) {
+      detailHistory = [];
+    }
+    currentDetail = name;
+    const g = DATA[name];
+    const canvasWrap = document.getElementById('detail-canvas-wrap');
+    canvasWrap.innerHTML = glyphSVG(name, { showAnchors: true, autoFit: true, showComponents: true });
+    canvasWrap.querySelectorAll('.component-box').forEach(el => {
+      const compName = el.getAttribute('data-component');
+      if (DATA[compName]) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', (e) => { e.stopPropagation(); openDetail(compName, { drilldown: true }); });
+      }
+    });
+
+    const backEl = document.getElementById('detail-back');
+    if (detailHistory.length) {
+      backEl.style.display = 'block';
+      backEl.textContent = `← back to ${detailHistory[detailHistory.length - 1]}`;
+      backEl.onclick = () => {
+        const prev = detailHistory.pop();
+        openDetail(prev, { keepHistory: true });
+      };
+    } else {
+      backEl.style.display = 'none';
+    }
+
+    document.getElementById('detail-name').textContent = name;
+    document.getElementById('detail-category').textContent = CAT_LABELS[g.category] || g.category;
+    document.getElementById('detail-width').textContent = g.width;
+    document.getElementById('detail-bounds').textContent = g.bounds ? g.bounds.join(', ') : '(empty glyph)';
+
+    const compField = document.getElementById('components-field');
+    const compList = document.getElementById('component-list');
+    compList.innerHTML = "";
+    if (g.components && g.components.length) {
+      compField.style.display = 'block';
+      g.components.forEach(c => {
+        const chip = document.createElement('div');
+        const exists = !!DATA[c.baseGlyph];
+        chip.className = 'component-chip' + (exists ? '' : ' unknown');
+        const icon = exists ? glyphSVG(c.baseGlyph, { autoFit: true }) : '<svg viewBox="0 0 10 10"></svg>';
+        chip.innerHTML = icon + `<div class="ccname">${c.baseGlyph}</div>`;
+        if (exists) chip.onclick = () => openDetail(c.baseGlyph, { drilldown: true });
+        compList.appendChild(chip);
+      });
+    } else {
+      compField.style.display = 'none';
+    }
+
+    const usedIn = usedInMap[name] || [];
+    const usedInField = document.getElementById('usedin-field');
+    const usedInList = document.getElementById('usedin-list');
+    usedInList.innerHTML = "";
+    if (usedIn.length) {
+      usedInField.style.display = 'block';
+      document.getElementById('usedin-count').textContent = usedIn.length;
+      usedIn.forEach(parentName => {
+        const chip = document.createElement('div');
+        chip.className = 'component-chip';
+        chip.innerHTML = glyphSVG(parentName, { autoFit: true }) + `<div class="ccname">${parentName}</div>`;
+        chip.onclick = () => openDetail(parentName, { drilldown: true });
+        usedInList.appendChild(chip);
+      });
+    } else {
+      usedInField.style.display = 'none';
+    }
+
+    const anchorList = document.getElementById('anchor-list');
+    anchorList.innerHTML = "";
+    if (g.anchors.length === 0) {
+      anchorList.innerHTML = '<div class="field-value" style="opacity:0.6">none</div>';
+    } else {
+      g.anchors.forEach(a => {
+        const row = document.createElement('div');
+        row.className = 'anchor-row';
+        row.innerHTML = `<span class="aname">${a.name}</span><span>${Math.round(a.x)}, ${Math.round(a.y)}</span>`;
+        anchorList.appendChild(row);
+      });
+    }
+    overlay.classList.add('open');
+  }
+  document.getElementById('close-btn').onclick = () => overlay.classList.remove('open');
+  overlay.onclick = (e) => { if (e.target === overlay) overlay.classList.remove('open'); };
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+
+  document.getElementById('search').addEventListener('input', (e) => {
+    query = e.target.value;
+    renderGrid();
+  });
+
+  renderCategoryChips();
+  renderGrid();
+})();
+</script>

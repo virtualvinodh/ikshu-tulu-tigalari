@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lVocalicMatra_tall-tutg.alt2" format="2">
+  <advance width="656"/>
+  <outline>
+    <contour>
+      <point x="138" y="-361" type="curve" smooth="yes"/>
+      <point x="218" y="-361"/>
+      <point x="284" y="-305"/>
+      <point x="284" y="-225" type="curve" smooth="yes"/>
+      <point x="284" y="-146"/>
+      <point x="285" y="61"/>
+      <point x="285" y="116" type="curve"/>
+      <point x="214" y="116" type="line"/>
+      <point x="213" y="83"/>
+      <point x="213" y="-9"/>
+      <point x="213" y="-91" type="curve"/>
+      <point x="213" y="-99"/>
+      <point x="219" y="-106"/>
+      <point x="219" y="-114" type="curve"/>
+      <point x="219" y="-153"/>
+      <point x="219" y="-187"/>
+      <point x="219" y="-210" type="curve" smooth="yes"/>
+      <point x="219" y="-261"/>
+      <point x="190" y="-300"/>
+      <point x="140" y="-300" type="curve" smooth="yes"/>
+      <point x="94" y="-300"/>
+      <point x="66" y="-269"/>
+      <point x="66" y="-231" type="curve" smooth="yes"/>
+      <point x="66" y="-144"/>
+      <point x="152" y="-125"/>
+      <point x="211" y="-125" type="curve" smooth="yes"/>
+      <point x="261" y="-125"/>
+      <point x="312" y="-166"/>
+      <point x="341" y="-225" type="curve" smooth="yes"/>
+      <point x="378" y="-300"/>
+      <point x="426" y="-360"/>
+      <point x="500" y="-360" type="curve" smooth="yes"/>
+      <point x="559" y="-360"/>
+      <point x="621" y="-321"/>
+      <point x="634" y="-219" type="curve"/>
+      <point x="567" y="-219" type="line"/>
+      <point x="557" y="-284"/>
+      <point x="524" y="-296"/>
+      <point x="497" y="-296" type="curve" smooth="yes"/>
+      <point x="459" y="-296"/>
+      <point x="436" y="-267"/>
+      <point x="402" y="-205" type="curve" smooth="yes"/>
+      <point x="363" y="-134"/>
+      <point x="308" y="-67"/>
+      <point x="191" y="-67" type="curve" smooth="yes"/>
+      <point x="104" y="-67"/>
+      <point x="0" y="-124"/>
+      <point x="0" y="-229" type="curve" smooth="yes"/>
+      <point x="0" y="-299"/>
+      <point x="60" y="-361"/>
+    </contour>
+    <contour>
+      <point x="596" y="-250" type="curve" smooth="yes"/>
+      <point x="689" y="-250"/>
+      <point x="739" y="-171"/>
+      <point x="739" y="-107" type="curve"/>
+      <point x="729" y="-100"/>
+      <point x="692" y="-100"/>
+      <point x="681" y="-106" type="curve"/>
+      <point x="681" y="-166"/>
+      <point x="640" y="-199"/>
+      <point x="597" y="-199" type="curve" smooth="yes"/>
+      <point x="551" y="-199"/>
+      <point x="512" y="-169"/>
+      <point x="512" y="-106" type="curve"/>
+      <point x="501" y="-100"/>
+      <point x="465" y="-100"/>
+      <point x="454" y="-107" type="curve"/>
+      <point x="454" y="-171"/>
+      <point x="503" y="-250"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:03 +0000</string>
+      <key>public.markColor</key>
+      <string>0.97,0.9,0,1</string>
+    </dict>
+  </lib>
+</glyph>

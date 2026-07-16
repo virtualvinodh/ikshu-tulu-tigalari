@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_ssa-tutg.conjunct" format="2">
+  <advance width="1046"/>
+  <outline>
+    <contour>
+      <point x="734" y="43" type="curve"/>
+      <point x="801" y="43" type="line"/>
+      <point x="801" y="129"/>
+      <point x="801" y="225"/>
+      <point x="801" y="275" type="curve"/>
+      <point x="734" y="275" type="line"/>
+      <point x="734" y="221"/>
+      <point x="734" y="126"/>
+    </contour>
+    <component base="_pabeak"/>
+    <component base="_ssa1" xOffset="-10"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:05 +0000</string>
+    </dict>
+  </lib>
+</glyph>

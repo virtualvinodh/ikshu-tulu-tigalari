@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ba_ra-tutg" format="2">
+  <advance width="1425"/>
+  <anchor x="665.0" y="620" name="top"/>
+  <anchor x="665.0" y="-300" name="bottom"/>
+  <anchor x="1315" y="620" name="topright"/>
+  <outline>
+    <component base="ba-tutg" xOffset="5"/>
+    <component base="raMatra-tutg" xOffset="1387" yOffset="21" identifier="F615A028"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:51:07 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>F615A028</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

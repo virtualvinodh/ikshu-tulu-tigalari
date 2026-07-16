@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa_va-tutg" format="2">
+  <advance width="1448"/>
+  <anchor x="676.5" y="615.5" name="top"/>
+  <anchor x="676.5" y="-637" name="bottom"/>
+  <anchor x="1338" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="992" y="-587" type="line"/>
+      <point x="1062" y="-587" type="line"/>
+      <point x="1062" y="-188" type="line"/>
+      <point x="992" y="-188" type="line"/>
+    </contour>
+    <contour>
+      <point x="1266" y="555" type="curve"/>
+      <point x="1266" y="-472" type="line"/>
+      <point x="1338" y="-472" type="line"/>
+      <point x="1338" y="555" type="line"/>
+      <point x="1325" y="565"/>
+      <point x="1279" y="565"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1161" yOffset="-587" identifier="77DFCBF9"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="289" yOffset="-587" identifier="F5E42805"/>
+    <component base="pa_sa-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:48:37 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>77DFCBF9</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>F5E42805</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

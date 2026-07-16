@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kha_lVocalicMatra-tutg" format="2">
+  <advance width="1351"/>
+  <anchor x="681.0" y="615.5" name="top"/>
+  <anchor x="681.0" y="-533" name="bottom"/>
+  <anchor x="1347" y="615.5" name="topright"/>
+  <outline>
+    <component base="lVocalicMatra-tutg" xOffset="566" identifier="C5DDC2A8"/>
+    <component base="kha-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:59 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>C5DDC2A8</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rrVocalicMatra-tutg" format="2">
+  <advance width="698"/>
+  <unicode hex="113BE"/>
+  <guideline x="76" y="-28" angle="0"/>
+  <anchor x="350" y="-103" name="connect"/>
+  <outline>
+    <contour>
+      <point x="133" y="-397" type="curve" smooth="yes"/>
+      <point x="294" y="-397"/>
+      <point x="393" y="-230"/>
+      <point x="393" y="-57" type="curve" smooth="yes"/>
+      <point x="393" y="181" type="line"/>
+      <point x="321" y="181" type="line"/>
+      <point x="321" y="-57" type="line" smooth="yes"/>
+      <point x="321" y="-206"/>
+      <point x="253" y="-333"/>
+      <point x="133" y="-333" type="curve" smooth="yes"/>
+      <point x="101" y="-333"/>
+      <point x="77" y="-314"/>
+      <point x="77" y="-281" type="curve" smooth="yes"/>
+      <point x="77" y="-254"/>
+      <point x="113" y="-214"/>
+      <point x="174" y="-187" type="curve" smooth="yes"/>
+      <point x="214" y="-168"/>
+      <point x="267" y="-157"/>
+      <point x="326" y="-144" type="curve"/>
+      <point x="342" y="-82" type="line"/>
+      <point x="264" y="-90"/>
+      <point x="198" y="-109"/>
+      <point x="146" y="-131" type="curve" smooth="yes"/>
+      <point x="54" y="-171"/>
+      <point x="10" y="-227"/>
+      <point x="10" y="-286" type="curve" smooth="yes"/>
+      <point x="10" y="-360"/>
+      <point x="64" y="-397"/>
+    </contour>
+    <component base="_rrVocalicArm" xOffset="190" yOffset="-10"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.markColor</key>
+      <string>0.97,0.9,0,1</string>
+    </dict>
+  </lib>
+</glyph>

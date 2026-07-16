@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uu-tutg.alt1" format="2">
+  <advance width="1297"/>
+  <outline>
+    <component base="u-tutg" xOffset="5"/>
+    <component base="_rightarm" xOffset="510"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:31:25 +0000</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>i-tutg</string>
+      <key>public.markColor</key>
+      <string>0.97,0.9,0,1</string>
+    </dict>
+  </lib>
+</glyph>

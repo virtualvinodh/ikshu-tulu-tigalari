@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pha_rVocalicMatra-tutg" format="2">
+  <advance width="1070"/>
+  <anchor x="915" y="-68" name="connect"/>
+  <anchor x="485.0" y="620" name="top"/>
+  <anchor x="485.0" y="-412" name="bottom"/>
+  <anchor x="959.0" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="698" y="-362" type="curve" smooth="yes"/>
+      <point x="859" y="-362"/>
+      <point x="958" y="-195"/>
+      <point x="958" y="-22" type="curve" smooth="yes"/>
+      <point x="958" y="275" type="line"/>
+      <point x="886" y="275" type="line"/>
+      <point x="886" y="-22" type="line" smooth="yes"/>
+      <point x="886" y="-171"/>
+      <point x="818" y="-298"/>
+      <point x="698" y="-298" type="curve" smooth="yes"/>
+      <point x="666" y="-298"/>
+      <point x="642" y="-279"/>
+      <point x="642" y="-246" type="curve" smooth="yes"/>
+      <point x="642" y="-219"/>
+      <point x="678" y="-179"/>
+      <point x="739" y="-152" type="curve" smooth="yes"/>
+      <point x="779" y="-133"/>
+      <point x="832" y="-122"/>
+      <point x="891" y="-109" type="curve"/>
+      <point x="907" y="-47" type="line"/>
+      <point x="829" y="-55"/>
+      <point x="763" y="-74"/>
+      <point x="711" y="-96" type="curve" smooth="yes"/>
+      <point x="619" y="-136"/>
+      <point x="575" y="-192"/>
+      <point x="575" y="-251" type="curve" smooth="yes"/>
+      <point x="575" y="-325"/>
+      <point x="629" y="-362"/>
+    </contour>
+    <component base="pha-tutg" xOffset="1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

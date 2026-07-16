@@ -1,0 +1,247 @@
+[
+  {
+    "parentGlyph": "ca_ma-tutg",
+    "parentBounds": [
+      15,
+      -271,
+      1035.396706140639,
+      575.5051633730756
+    ],
+    "belowComponent": "mamatra-tutg.below.alt1",
+    "transform": {
+      "dx": 1004,
+      "dy": 113,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -482,
+      -384,
+      31.39670614063894,
+      96
+    ],
+    "siblingComponents": [
+      "ca-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "da_dha_ma-tutg",
+    "parentBounds": [
+      15.404494141578326,
+      -256,
+      1371.396706140639,
+      599
+    ],
+    "belowComponent": "mamatra-tutg.below.alt1",
+    "transform": {
+      "dx": 1340,
+      "dy": 128,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -482,
+      -384,
+      31.39670614063894,
+      96
+    ],
+    "siblingComponents": [
+      "da_dha-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "nna_ttha-tutg",
+    "parentBounds": [
+      15,
+      -226.945,
+      1208,
+      571
+    ],
+    "belowComponent": "ttha-tutg.below",
+    "transform": {
+      "dx": 794,
+      "dy": 463,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -243.37,
+      -689.945,
+      243.36199999999997,
+      -184.22700000000003
+    ],
+    "siblingComponents": [
+      "nna-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "pa_ra-tutg.below",
+    "parentBounds": [
+      -466,
+      -887.9160999999999,
+      432,
+      -119.5
+    ],
+    "belowComponent": "pa-tutg.below",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -471,
+      -715,
+      427,
+      -119.5
+    ],
+    "siblingComponents": [
+      "raMatra-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "pa_sa_ma-tutg",
+    "parentBounds": [
+      10,
+      -714,
+      1158.396706140639,
+      565.5
+    ],
+    "belowComponent": "mamatra-tutg.below.alt1",
+    "transform": {
+      "dx": 1127,
+      "dy": -330,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -482,
+      -384,
+      31.39670614063894,
+      96
+    ],
+    "siblingComponents": [
+      "pa_sa-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "sa_ma-tutg",
+    "parentBounds": [
+      15,
+      -271,
+      1062.396706140639,
+      562.5
+    ],
+    "belowComponent": "mamatra-tutg.below.alt1",
+    "transform": {
+      "dx": 1031,
+      "dy": 113,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -482,
+      -384,
+      31.39670614063894,
+      96
+    ],
+    "siblingComponents": [
+      "sa-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "sha_ttha-tutg",
+    "parentBounds": [
+      15,
+      -461.945,
+      973.362,
+      570
+    ],
+    "belowComponent": "ttha-tutg.below",
+    "transform": {
+      "dx": 730,
+      "dy": 228,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -243.37,
+      -689.945,
+      243.36199999999997,
+      -184.22700000000003
+    ],
+    "siblingComponents": [
+      "sha-tutg"
+    ]
+  },
+  {
+    "parentGlyph": "ssa_ttha-tutg",
+    "parentBounds": [
+      15,
+      -448.945,
+      1021.362,
+      570
+    ],
+    "belowComponent": "ttha-tutg.below",
+    "transform": {
+      "dx": 778,
+      "dy": 241,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -243.37,
+      -689.945,
+      243.36199999999997,
+      -184.22700000000003
+    ],
+    "siblingComponents": [
+      "_pabeak",
+      "_ssa1"
+    ]
+  },
+  {
+    "parentGlyph": "ssa_va-tutg.below",
+    "parentBounds": [
+      -410.37,
+      -812.491,
+      685,
+      -185.09000000000003
+    ],
+    "belowComponent": "ssa-tutg.below",
+    "transform": {
+      "dx": 28,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "belowComponentOwnBounds": [
+      -438.37,
+      -812.491,
+      429.808,
+      -185.09000000000003
+    ],
+    "siblingComponents": [
+      "_roundedcorner",
+      "_horizontalline64"
+    ]
+  }
+]

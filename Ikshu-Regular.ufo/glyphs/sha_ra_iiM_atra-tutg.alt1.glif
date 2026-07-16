@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_ra_iiMatra-tutg.alt1" format="2">
+  <advance width="1294"/>
+  <anchor x="597.3" y="969" name="top"/>
+  <anchor x="597.3" y="-295" name="bottom"/>
+  <anchor x="1184.0" y="969" name="topright"/>
+  <outline>
+    <contour>
+      <point x="942" y="312" type="curve"/>
+      <point x="958" y="181" type="line"/>
+      <point x="958" y="156"/>
+      <point x="953" y="133"/>
+      <point x="953" y="108" type="curve" smooth="yes"/>
+      <point x="953" y="-89"/>
+      <point x="731" y="-175"/>
+      <point x="488" y="-175" type="curve" smooth="yes"/>
+      <point x="279" y="-175"/>
+      <point x="114" y="-111"/>
+      <point x="18" y="16" type="curve"/>
+      <point x="8" y="-5"/>
+      <point x="8" y="-55"/>
+      <point x="18" y="-76" type="curve"/>
+      <point x="115" y="-184"/>
+      <point x="276" y="-245"/>
+      <point x="493" y="-245" type="curve" smooth="yes"/>
+      <point x="776" y="-245"/>
+      <point x="1012" y="-142"/>
+      <point x="1012" y="88" type="curve" smooth="yes"/>
+      <point x="1012" y="179"/>
+      <point x="975" y="238"/>
+    </contour>
+    <component base="sha-tutg" xOffset="8"/>
+    <component base="iiMatra-tutg" xOffset="1110"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:52:27 +0000</string>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_ka_ssa_ma-tutg" format="2">
+  <advance width="1705"/>
+  <anchor x="796.5" y="621" name="top"/>
+  <anchor x="796.5" y="-791" name="bottom"/>
+  <anchor x="1583" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="447" y="132" type="curve" smooth="yes"/>
+      <point x="380" y="132"/>
+      <point x="328" y="188"/>
+      <point x="328" y="260" type="curve" smooth="yes"/>
+      <point x="328" y="337"/>
+      <point x="386" y="413"/>
+      <point x="448" y="466" type="curve"/>
+      <point x="509" y="413"/>
+      <point x="568" y="337"/>
+      <point x="568" y="261" type="curve" smooth="yes"/>
+      <point x="568" y="186"/>
+      <point x="512" y="132"/>
+    </contour>
+    <contour>
+      <point x="828" y="-29" type="curve"/>
+      <point x="899" y="-29" type="line"/>
+      <point x="899" y="212" type="line" smooth="yes"/>
+      <point x="899" y="453"/>
+      <point x="743" y="571"/>
+      <point x="588" y="571" type="curve" smooth="yes"/>
+      <point x="535" y="571"/>
+      <point x="489" y="558"/>
+      <point x="448" y="538" type="curve"/>
+      <point x="386" y="497" type="line"/>
+      <point x="316" y="429"/>
+      <point x="254" y="340"/>
+      <point x="254" y="251" type="curve" smooth="yes"/>
+      <point x="254" y="156"/>
+      <point x="324" y="66"/>
+      <point x="447" y="66" type="curve" smooth="yes"/>
+      <point x="571" y="66"/>
+      <point x="643" y="158"/>
+      <point x="643" y="252" type="curve" smooth="yes"/>
+      <point x="643" y="340"/>
+      <point x="579" y="429"/>
+      <point x="509" y="497" type="curve"/>
+      <point x="532" y="505"/>
+      <point x="557" y="509"/>
+      <point x="581" y="509" type="curve" smooth="yes"/>
+      <point x="703" y="509"/>
+      <point x="828" y="404"/>
+      <point x="828" y="214" type="curve" smooth="yes"/>
+      <point x="828" y="202"/>
+      <point x="828" y="-19"/>
+    </contour>
+    <contour>
+      <point x="991" y="-338" type="line"/>
+      <point x="991" y="-402" type="line"/>
+      <point x="1158" y="-402" type="line"/>
+      <point x="1158" y="-338" type="line"/>
+    </contour>
+    <contour>
+      <point x="1344" y="-383" type="curve"/>
+      <point x="1234" y="-374" type="line"/>
+      <point x="1177" y="-475"/>
+      <point x="1094" y="-566"/>
+      <point x="987" y="-638" type="curve" smooth="yes"/>
+      <point x="957" y="-658"/>
+      <point x="925" y="-672"/>
+      <point x="892" y="-682" type="curve"/>
+      <point x="890" y="-685"/>
+      <point x="889" y="-690"/>
+      <point x="889" y="-697" type="curve" smooth="yes"/>
+      <point x="889" y="-714"/>
+      <point x="895" y="-736"/>
+      <point x="904" y="-741" type="curve"/>
+      <point x="975" y="-714"/>
+      <point x="1018" y="-711"/>
+      <point x="1153" y="-711" type="curve" smooth="yes"/>
+      <point x="1396" y="-711" type="line" smooth="yes"/>
+      <point x="1481" y="-711"/>
+      <point x="1538" y="-705"/>
+      <point x="1538" y="-633" type="curve" smooth="yes"/>
+      <point x="1538" y="-563"/>
+      <point x="1469" y="-455"/>
+    </contour>
+    <contour>
+      <point x="1465" y="-617" type="curve" smooth="yes"/>
+      <point x="1465" y="-652"/>
+      <point x="1418" y="-651"/>
+      <point x="1383" y="-651" type="curve" smooth="yes"/>
+      <point x="1075" y="-651" type="line"/>
+      <point x="1181" y="-580"/>
+      <point x="1223" y="-510"/>
+      <point x="1286" y="-407" type="curve"/>
+      <point x="1378" y="-453"/>
+      <point x="1465" y="-566"/>
+    </contour>
+    <contour>
+      <point x="1237" y="-364" type="curve"/>
+      <point x="1306" y="-364" type="line"/>
+      <point x="1360" y="-278"/>
+      <point x="1369" y="-182"/>
+      <point x="1370" y="-132" type="curve"/>
+      <point x="1303" y="-132" type="line"/>
+      <point x="1302" y="-186"/>
+      <point x="1292" y="-281"/>
+    </contour>
+    <contour>
+      <point x="860" y="-88" type="curve"/>
+      <point x="860" y="-18" type="line"/>
+      <point x="803" y="1"/>
+      <point x="736" y="11"/>
+      <point x="658" y="11" type="curve" smooth="yes"/>
+      <point x="412" y="11"/>
+      <point x="289" y="-87"/>
+      <point x="289" y="-235" type="curve" smooth="yes"/>
+      <point x="289" y="-346"/>
+      <point x="359" y="-401"/>
+      <point x="448" y="-401" type="curve" smooth="yes"/>
+      <point x="519" y="-401"/>
+      <point x="583" y="-364"/>
+      <point x="606" y="-268" type="curve"/>
+      <point x="577" y="-268" type="line"/>
+      <point x="600" y="-365"/>
+      <point x="668" y="-401"/>
+      <point x="739" y="-401" type="curve" smooth="yes"/>
+      <point x="836" y="-401"/>
+      <point x="899" y="-334"/>
+      <point x="899" y="-215" type="curve" smooth="yes"/>
+      <point x="899" y="143" type="line"/>
+      <point x="827" y="143" type="line"/>
+      <point x="827" y="-40"/>
+      <point x="827" y="78"/>
+      <point x="827" y="-215" type="curve" smooth="yes"/>
+      <point x="827" y="-300"/>
+      <point x="792" y="-335"/>
+      <point x="735" y="-335" type="curve" smooth="yes"/>
+      <point x="683" y="-335"/>
+      <point x="638" y="-305"/>
+      <point x="630" y="-252" type="curve" smooth="yes"/>
+      <point x="628" y="-241"/>
+      <point x="625" y="-193"/>
+      <point x="624" y="-188" type="curve"/>
+      <point x="608" y="-180"/>
+      <point x="575" y="-180"/>
+      <point x="559" y="-188" type="curve"/>
+      <point x="558" y="-193"/>
+      <point x="555" y="-241"/>
+      <point x="553" y="-252" type="curve" smooth="yes"/>
+      <point x="545" y="-305"/>
+      <point x="503" y="-335"/>
+      <point x="449" y="-335" type="curve" smooth="yes"/>
+      <point x="395" y="-335"/>
+      <point x="359" y="-304"/>
+      <point x="359" y="-237" type="curve" smooth="yes"/>
+      <point x="359" y="-120"/>
+      <point x="467" y="-56"/>
+      <point x="664" y="-56" type="curve" smooth="yes"/>
+      <point x="744" y="-56"/>
+      <point x="809" y="-67"/>
+    </contour>
+    <component base="_ssa1" xOffset="557" yOffset="-402"/>
+    <component base="_kabelowrightarm" xOffset="231" yOffset="82"/>
+    <component base="_taleftarm"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 16:04:03 +0000</string>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>ta-malayalam</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+    </dict>
+  </lib>
+</glyph>

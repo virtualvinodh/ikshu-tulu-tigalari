@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_la-tutg" format="2">
+  <advance width="1249"/>
+  <outline>
+    <component base="la_la-tutg" xOffset="154" yOffset="-8"/>
+  </outline>
+</glyph>

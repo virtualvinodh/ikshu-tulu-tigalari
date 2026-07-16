@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="jha_jha-tutg" format="2">
+  <advance width="989"/>
+  <anchor x="447.0" y="693.5" name="top"/>
+  <anchor x="447.0" y="-722" name="bottom"/>
+  <anchor x="879" y="693.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="879" y="467" type="line"/>
+      <point x="807" y="467" type="line"/>
+      <point x="807" y="-300" type="line"/>
+      <point x="879" y="-300" type="line"/>
+    </contour>
+    <component base="jha-tutg" xOffset="5"/>
+    <component base="jha-tutg" xOffset="5" yOffset="-657"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 16:11:15 +0000</string>
+    </dict>
+  </lib>
+</glyph>

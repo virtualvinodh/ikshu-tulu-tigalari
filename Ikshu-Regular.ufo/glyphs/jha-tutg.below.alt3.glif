@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="jha-tutg.below.alt3" format="2">
+  <advance width="50"/>
+  <anchor x="50.8" y="-753.0" name="bottom"/>
+  <outline>
+    <component base="jha-tutg.alt3" xScale="0.8658" yScale="0.8658" xOffset="-486" yOffset="-690" identifier="B559BF26"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>B559BF26</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

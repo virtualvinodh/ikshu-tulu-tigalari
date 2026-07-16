@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="la_rVocalicMatra-tutg" format="2">
+  <advance width="762"/>
+  <anchor x="608" y="-66" name="connect"/>
+  <anchor x="331.0" y="621" name="top"/>
+  <anchor x="331.0" y="-410" name="bottom"/>
+  <anchor x="652" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="334" y="-16" type="curve" smooth="yes"/>
+      <point x="536" y="-16"/>
+      <point x="652" y="130"/>
+      <point x="652" y="330" type="curve" smooth="yes"/>
+      <point x="652" y="536"/>
+      <point x="652" y="548"/>
+      <point x="652" y="558" type="curve"/>
+      <point x="637" y="568"/>
+      <point x="595" y="568"/>
+      <point x="580" y="558" type="curve"/>
+      <point x="580" y="547"/>
+      <point x="580" y="535"/>
+      <point x="580" y="298" type="curve" smooth="yes"/>
+      <point x="580" y="168"/>
+      <point x="493" y="49"/>
+      <point x="334" y="49" type="curve" smooth="yes"/>
+      <point x="204" y="49"/>
+      <point x="71" y="158"/>
+      <point x="75" y="349" type="curve"/>
+      <point x="63" y="329" type="line"/>
+      <point x="95" y="293"/>
+      <point x="144" y="270"/>
+      <point x="194" y="270" type="curve" smooth="yes"/>
+      <point x="298" y="270"/>
+      <point x="350" y="353"/>
+      <point x="350" y="429" type="curve" smooth="yes"/>
+      <point x="350" y="524"/>
+      <point x="284" y="571"/>
+      <point x="211" y="571" type="curve" smooth="yes"/>
+      <point x="75" y="571"/>
+      <point x="10" y="450"/>
+      <point x="10" y="317" type="curve" smooth="yes"/>
+      <point x="10" y="105"/>
+      <point x="173" y="-16"/>
+    </contour>
+    <contour>
+      <point x="184" y="325" type="curve" smooth="yes"/>
+      <point x="147" y="325"/>
+      <point x="107" y="346"/>
+      <point x="83" y="378" type="curve"/>
+      <point x="96" y="469"/>
+      <point x="158" y="509"/>
+      <point x="204" y="509" type="curve" smooth="yes"/>
+      <point x="250" y="509"/>
+      <point x="287" y="480"/>
+      <point x="287" y="426" type="curve" smooth="yes"/>
+      <point x="287" y="377"/>
+      <point x="248" y="325"/>
+    </contour>
+    <contour>
+      <point x="391" y="-360" type="curve" smooth="yes"/>
+      <point x="552" y="-360"/>
+      <point x="652" y="-193"/>
+      <point x="652" y="-20" type="curve" smooth="yes"/>
+      <point x="652" y="528" type="line"/>
+      <point x="580" y="528" type="line"/>
+      <point x="580" y="-20" type="line" smooth="yes"/>
+      <point x="580" y="-169"/>
+      <point x="511" y="-296"/>
+      <point x="391" y="-296" type="curve" smooth="yes"/>
+      <point x="359" y="-296"/>
+      <point x="335" y="-277"/>
+      <point x="335" y="-244" type="curve" smooth="yes"/>
+      <point x="335" y="-217"/>
+      <point x="371" y="-177"/>
+      <point x="432" y="-150" type="curve" smooth="yes"/>
+      <point x="472" y="-131"/>
+      <point x="525" y="-120"/>
+      <point x="584" y="-107" type="curve"/>
+      <point x="600" y="-45" type="line"/>
+      <point x="522" y="-53"/>
+      <point x="456" y="-72"/>
+      <point x="404" y="-94" type="curve" smooth="yes"/>
+      <point x="312" y="-134"/>
+      <point x="268" y="-190"/>
+      <point x="268" y="-249" type="curve" smooth="yes"/>
+      <point x="268" y="-323"/>
+      <point x="322" y="-360"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

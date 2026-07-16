@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zerowidthnonjoiner" format="2">
+  <unicode hex="200C"/>
+  <guideline x="529" y="712" angle="0"/>
+  <outline>
+    <contour>
+      <point x="105" y="246" type="line"/>
+      <point x="344" y="423" type="line"/>
+      <point x="272" y="423" type="line"/>
+      <point x="511" y="246" type="line"/>
+      <point x="554" y="309" type="line"/>
+      <point x="332" y="459" type="line"/>
+      <point x="332" y="425" type="line"/>
+      <point x="554" y="574" type="line"/>
+      <point x="511" y="637" type="line"/>
+      <point x="272" y="460" type="line"/>
+      <point x="344" y="460" type="line"/>
+      <point x="105" y="637" type="line"/>
+      <point x="62" y="574" type="line"/>
+      <point x="284" y="425" type="line"/>
+      <point x="284" y="459" type="line"/>
+      <point x="60" y="308" type="line"/>
+    </contour>
+    <contour>
+      <point x="271" y="-339" type="line"/>
+      <point x="346" y="-339" type="line"/>
+      <point x="346" y="702" type="line"/>
+      <point x="271" y="702" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.75,0.75,0.75,1</string>
+    </dict>
+  </lib>
+</glyph>

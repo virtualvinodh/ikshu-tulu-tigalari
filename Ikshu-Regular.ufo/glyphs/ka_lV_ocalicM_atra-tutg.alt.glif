@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_lVocalicMatra-tutg.alt" format="2">
+  <advance width="1629"/>
+  <anchor x="1026" y="-8" name="short"/>
+  <anchor x="767.0" y="621" name="top"/>
+  <anchor x="767.0" y="-282" name="bottom"/>
+  <anchor x="1519" y="621" name="topright"/>
+  <outline>
+    <component base="ka-tutg" xOffset="5" identifier="F14AD518"/>
+    <component base="lVocalicMatra-tutg.alt" xOffset="1088" identifier="EFB2DF0C"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>EFB2DF0C</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>F14AD518</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="va_va-tutg" format="2">
+  <advance width="1242"/>
+  <anchor x="573.5" y="620" name="top"/>
+  <anchor x="573.5" y="-137" name="bottom"/>
+  <anchor x="1132" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="789" y="-87" type="line"/>
+      <point x="855" y="-87" type="line"/>
+      <point x="855" y="408" type="line"/>
+      <point x="789" y="328" type="line"/>
+    </contour>
+    <contour>
+      <point x="1060" y="555" type="curve"/>
+      <point x="1060" y="28" type="line"/>
+      <point x="1132" y="28" type="line"/>
+      <point x="1132" y="555" type="line"/>
+      <point x="1119" y="565"/>
+      <point x="1073" y="565"/>
+    </contour>
+    <component base="va-tutg.alt1" xOffset="5"/>
+    <component base="_roundedcorner" xOffset="955" yOffset="-87" identifier="A84F6BC0"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="83" yOffset="-87" identifier="D8F86B6B"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:50:58 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>A84F6BC0</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>D8F86B6B</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

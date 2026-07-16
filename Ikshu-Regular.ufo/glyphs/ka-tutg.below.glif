@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka-tutg.below" format="2">
+  <anchor x="421.123" y="-683.904" name="short"/>
+  <anchor x="-0.9" y="-739.9" name="bottom"/>
+  <outline>
+    <component base="ka-tutg" xScale="0.863" yScale="0.863" xOffset="-460" yOffset="-677" identifier="B1D567A9"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>B1D567A9</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

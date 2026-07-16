@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_ttha-tutg" format="2">
+  <advance width="1131"/>
+  <anchor x="66" y="-472" name="_rightbottom"/>
+  <anchor x="518.2" y="620" name="top"/>
+  <anchor x="518.2" y="-498.9" name="bottom"/>
+  <anchor x="1021.4" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="739" y="43" type="curve"/>
+      <point x="806" y="43" type="line"/>
+      <point x="806" y="129"/>
+      <point x="806" y="225"/>
+      <point x="806" y="275" type="curve"/>
+      <point x="739" y="275" type="line"/>
+      <point x="739" y="221"/>
+      <point x="739" y="126"/>
+    </contour>
+    <component base="ttha-tutg.below" xOffset="778" yOffset="241" identifier="E6A85635"/>
+    <component base="_pabeak" xOffset="5"/>
+    <component base="_ssa1" xOffset="-5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:53:15 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>E6A85635</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

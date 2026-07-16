@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_ta_sa-tutg" format="2">
+  <advance width="1334"/>
+  <anchor x="619.5" y="623.5" name="top"/>
+  <anchor x="619.5" y="-549" name="bottom"/>
+  <anchor x="1224" y="623.5" name="topright"/>
+  <outline>
+    <component base="sa-tutg" xOffset="268" yOffset="-483"/>
+    <component base="na_ta-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:47:00 +0000</string>
+    </dict>
+  </lib>
+</glyph>

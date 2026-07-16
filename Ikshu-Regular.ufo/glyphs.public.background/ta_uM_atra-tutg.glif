@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_uMatra-tutg" format="2">
+  <advance width="1014"/>
+  <outline>
+    <component base="_kabowl"/>
+    <component base="_karightarm"/>
+  </outline>
+</glyph>

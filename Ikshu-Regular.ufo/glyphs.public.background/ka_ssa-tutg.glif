@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ssa-tutg" format="2">
+  <advance width="1751"/>
+  <outline>
+    <component base="ssa-tutg" xOffset="614"/>
+  </outline>
+</glyph>

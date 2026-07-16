@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ma_ya-tutg" format="2">
+  <advance width="960"/>
+  <outline>
+    <component base="_yavattu-1" xOffset="-286"/>
+  </outline>
+</glyph>

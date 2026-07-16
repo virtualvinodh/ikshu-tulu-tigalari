@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_sa_ta_uMatra-tutg" format="2">
+  <advance width="1168"/>
+  <anchor x="1071" y="-844.83095" name="height"/>
+  <anchor x="1633.20677" y="-1159" name="width"/>
+  <anchor x="824.2" y="612.5" name="top"/>
+  <anchor x="824.2" y="-1242" name="bottom"/>
+  <anchor x="1633.5" y="612.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="921" y="401" type="line"/>
+      <point x="921" y="32" type="line"/>
+      <point x="961" y="32" type="line"/>
+      <point x="961" y="401" type="line"/>
+    </contour>
+    <component base="sa-tutg" xOffset="5"/>
+    <component base="sa_ta_uMatra-tutg" yOffset="-484"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

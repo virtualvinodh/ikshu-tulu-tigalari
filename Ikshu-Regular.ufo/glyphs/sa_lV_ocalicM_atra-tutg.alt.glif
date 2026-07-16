@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_lVocalicMatra-tutg.alt" format="2">
+  <advance width="1606"/>
+  <anchor x="753.0" y="612.5" name="top"/>
+  <anchor x="753.0" y="-411" name="bottom"/>
+  <anchor x="1496" y="612.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="895" y="-361" type="curve" smooth="yes"/>
+      <point x="975" y="-361"/>
+      <point x="1041" y="-305"/>
+      <point x="1041" y="-225" type="curve" smooth="yes"/>
+      <point x="1041" y="-146"/>
+      <point x="1042" y="191"/>
+      <point x="1042" y="246" type="curve"/>
+      <point x="987" y="246" type="line"/>
+      <point x="986" y="194"/>
+      <point x="986" y="-137"/>
+      <point x="986" y="-210" type="curve" smooth="yes"/>
+      <point x="986" y="-261"/>
+      <point x="947" y="-300"/>
+      <point x="897" y="-300" type="curve" smooth="yes"/>
+      <point x="851" y="-300"/>
+      <point x="823" y="-269"/>
+      <point x="823" y="-231" type="curve" smooth="yes"/>
+      <point x="823" y="-144"/>
+      <point x="909" y="-125"/>
+      <point x="968" y="-125" type="curve" smooth="yes"/>
+      <point x="1018" y="-125"/>
+      <point x="1069" y="-166"/>
+      <point x="1098" y="-225" type="curve" smooth="yes"/>
+      <point x="1135" y="-300"/>
+      <point x="1183" y="-360"/>
+      <point x="1257" y="-360" type="curve" smooth="yes"/>
+      <point x="1316" y="-360"/>
+      <point x="1378" y="-321"/>
+      <point x="1391" y="-219" type="curve"/>
+      <point x="1324" y="-219" type="line"/>
+      <point x="1314" y="-284"/>
+      <point x="1281" y="-296"/>
+      <point x="1254" y="-296" type="curve" smooth="yes"/>
+      <point x="1216" y="-296"/>
+      <point x="1193" y="-267"/>
+      <point x="1159" y="-205" type="curve" smooth="yes"/>
+      <point x="1120" y="-134"/>
+      <point x="1065" y="-71"/>
+      <point x="948" y="-71" type="curve" smooth="yes"/>
+      <point x="861" y="-71"/>
+      <point x="757" y="-124"/>
+      <point x="757" y="-229" type="curve" smooth="yes"/>
+      <point x="757" y="-299"/>
+      <point x="817" y="-361"/>
+    </contour>
+    <contour>
+      <point x="1353" y="-250" type="curve" smooth="yes"/>
+      <point x="1446" y="-250"/>
+      <point x="1496" y="-171"/>
+      <point x="1496" y="-107" type="curve"/>
+      <point x="1486" y="-100"/>
+      <point x="1449" y="-100"/>
+      <point x="1438" y="-106" type="curve"/>
+      <point x="1438" y="-166"/>
+      <point x="1397" y="-199"/>
+      <point x="1354" y="-199" type="curve" smooth="yes"/>
+      <point x="1308" y="-199"/>
+      <point x="1269" y="-169"/>
+      <point x="1269" y="-106" type="curve"/>
+      <point x="1258" y="-100"/>
+      <point x="1222" y="-100"/>
+      <point x="1211" y="-107" type="curve"/>
+      <point x="1211" y="-171"/>
+      <point x="1260" y="-250"/>
+    </contour>
+    <component base="sa-tutg" identifier="95FD362D"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:01 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>95FD362D</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

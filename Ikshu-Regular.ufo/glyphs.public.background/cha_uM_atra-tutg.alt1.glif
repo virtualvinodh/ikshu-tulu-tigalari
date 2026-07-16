@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cha_uMatra-tutg.alt1" format="2">
+  <advance width="1428"/>
+  <outline>
+    <component base="cha-tutg" xOffset="10"/>
+  </outline>
+</glyph>

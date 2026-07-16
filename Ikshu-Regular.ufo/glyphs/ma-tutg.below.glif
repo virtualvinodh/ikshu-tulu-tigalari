@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ma-tutg.below" format="2">
+  <anchor x="22.8" y="-752.9" name="bottom"/>
+  <outline>
+    <component base="ma-tutg" xScale="0.863" yScale="0.863" xOffset="-249" yOffset="-677" identifier="B6DB34CD"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>B6DB34CD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

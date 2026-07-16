@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_tta_va-tutg" format="2">
+  <advance width="1430"/>
+  <anchor x="667.5" y="620" name="top"/>
+  <anchor x="667.5" y="-564" name="bottom"/>
+  <anchor x="1320" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1248" y="537" type="curve"/>
+      <point x="1248" y="-399" type="line"/>
+      <point x="1320" y="-399" type="line"/>
+      <point x="1320" y="537" type="line"/>
+      <point x="1307" y="547"/>
+      <point x="1261" y="547"/>
+    </contour>
+    <component base="_ssa-tutg.conjunct" xOffset="5"/>
+    <component base="tta-tutg" xOffset="636" yOffset="-504"/>
+    <component base="_roundedcorner" xOffset="1143" yOffset="-514" identifier="F6CB1AA0"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="271" yOffset="-514" identifier="D4E2082F"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:53:15 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>D4E2082F</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>F6CB1AA0</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="va-tutg.alt1" format="2">
+  <advance width="961"/>
+  <anchor x="430.5" y="620" name="top"/>
+  <anchor x="430.5" y="-59.5" name="bottom"/>
+  <anchor x="851" y="620" name="topright"/>
+  <anchor x="819.5" y="16.2" name="bottomright"/>
+  <outline>
+    <contour>
+      <point x="779" y="555" type="curve"/>
+      <point x="779" y="128" type="line"/>
+      <point x="851" y="128" type="line"/>
+      <point x="851" y="555" type="line"/>
+      <point x="838" y="565"/>
+      <point x="792" y="565"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="674"/>
+    <component base="_horizontalline64" xScale="1.1952" xOffset="-591"/>
+    <component base="_vainit" xOffset="3"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 15:47:35 +0000</string>
+      <key>public.markColor</key>
+      <string>0.5,0.09,0.79,1</string>
+    </dict>
+  </lib>
+</glyph>

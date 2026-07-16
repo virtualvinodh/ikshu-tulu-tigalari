@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="mamatra-tutg.below.alt1" format="2">
+  <advance width="148"/>
+  <guideline x="-575" y="-435" angle="0"/>
+  <outline>
+    <contour>
+      <point x="-88" y="-9" type="curve"/>
+      <point x="-85" y="61" type="line"/>
+      <point x="-98" y="60" type="line"/>
+      <point x="-137" y="-55"/>
+      <point x="-250" y="-195"/>
+      <point x="-384" y="-281" type="curve" smooth="yes"/>
+      <point x="-418" y="-303"/>
+      <point x="-444" y="-314"/>
+      <point x="-479" y="-325" type="curve"/>
+      <point x="-481" y="-328"/>
+      <point x="-482" y="-333"/>
+      <point x="-482" y="-340" type="curve" smooth="yes"/>
+      <point x="-482" y="-357"/>
+      <point x="-476" y="-379"/>
+      <point x="-467" y="-384" type="curve"/>
+      <point x="-396" y="-357"/>
+      <point x="-353" y="-354"/>
+      <point x="-218" y="-354" type="curve" smooth="yes"/>
+      <point x="-105" y="-354" type="line" smooth="yes"/>
+      <point x="-37" y="-354"/>
+      <point x="2" y="-343"/>
+      <point x="19" y="-316" type="curve" smooth="yes"/>
+      <point x="61" y="-249"/>
+      <point x="-11" y="-98"/>
+    </contour>
+    <contour>
+      <point x="-40" y="-276" type="curve" smooth="yes"/>
+      <point x="-50" y="-290"/>
+      <point x="-72" y="-294"/>
+      <point x="-118" y="-294" type="curve" smooth="yes"/>
+      <point x="-296" y="-294" type="line"/>
+      <point x="-182" y="-217"/>
+      <point x="-98" y="-93"/>
+      <point x="-71" y="-27" type="curve"/>
+      <point x="-71" y="96" type="line"/>
+      <point x="-98" y="96" type="line"/>
+      <point x="-98" y="60" type="line"/>
+      <point x="-123" y="-72" type="line"/>
+      <point x="-81" y="-122"/>
+      <point x="-11" y="-236"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+    </dict>
+  </lib>
+</glyph>

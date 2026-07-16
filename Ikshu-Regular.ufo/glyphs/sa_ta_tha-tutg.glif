@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_ta_tha-tutg" format="2">
+  <advance width="1494"/>
+  <anchor x="809.5" y="612.5" name="top"/>
+  <anchor x="809.5" y="-639" name="bottom"/>
+  <anchor x="1604.0" y="612.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1100" y="-589" type="curve" smooth="yes"/>
+      <point x="1303" y="-589" type="line"/>
+      <point x="1303" y="-527" type="line"/>
+      <point x="1143" y="-527" type="line" smooth="yes"/>
+      <point x="1117" y="-527"/>
+      <point x="1102" y="-513"/>
+      <point x="1102" y="-487" type="curve" smooth="yes"/>
+      <point x="1102" y="-432" type="line"/>
+      <point x="1030" y="-432" type="line"/>
+      <point x="1030" y="-519" type="line" smooth="yes"/>
+      <point x="1030" y="-564"/>
+      <point x="1055" y="-589"/>
+    </contour>
+    <contour>
+      <point x="1506" y="-527" type="curve" smooth="yes"/>
+      <point x="1279" y="-527" type="line"/>
+      <point x="1279" y="-589" type="line"/>
+      <point x="1538" y="-589" type="line" smooth="yes"/>
+      <point x="1578" y="-589"/>
+      <point x="1603" y="-562"/>
+      <point x="1603" y="-524" type="curve" smooth="yes"/>
+      <point x="1604" y="-311" type="line" smooth="yes"/>
+      <point x="1605" y="-194"/>
+      <point x="1550" y="-87"/>
+      <point x="1412" y="-87" type="curve" smooth="yes"/>
+      <point x="1286" y="-87"/>
+      <point x="1226" y="-174"/>
+      <point x="1226" y="-259" type="curve" smooth="yes"/>
+      <point x="1226" y="-347"/>
+      <point x="1287" y="-437"/>
+      <point x="1403" y="-437" type="curve" smooth="yes"/>
+      <point x="1472" y="-437"/>
+      <point x="1523" y="-410"/>
+      <point x="1563" y="-350" type="curve"/>
+      <point x="1542" y="-340" type="line"/>
+      <point x="1541" y="-491" type="line" smooth="yes"/>
+      <point x="1541" y="-513"/>
+      <point x="1529" y="-527"/>
+    </contour>
+    <contour>
+      <point x="1416" y="-379" type="curve" smooth="yes"/>
+      <point x="1334" y="-379"/>
+      <point x="1292" y="-318"/>
+      <point x="1292" y="-259" type="curve" smooth="yes"/>
+      <point x="1292" y="-201"/>
+      <point x="1332" y="-146"/>
+      <point x="1412" y="-146" type="curve" smooth="yes"/>
+      <point x="1511" y="-146"/>
+      <point x="1544" y="-238"/>
+      <point x="1539" y="-303" type="curve" smooth="yes"/>
+      <point x="1538" y="-317"/>
+      <point x="1539" y="-333"/>
+      <point x="1539" y="-349" type="curve"/>
+      <point x="1553" y="-282" type="line"/>
+      <point x="1526" y="-343"/>
+      <point x="1476" y="-379"/>
+    </contour>
+    <component base="sa-tutg" xOffset="5"/>
+    <component base="_tavattu" xOffset="53" yOffset="-2"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 14:00:40 +0000</string>
+    </dict>
+  </lib>
+</glyph>

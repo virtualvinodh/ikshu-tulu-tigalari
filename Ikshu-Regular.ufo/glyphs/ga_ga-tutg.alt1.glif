@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_ga-tutg.alt1" format="2">
+  <advance width="875"/>
+  <anchor x="387.5" y="623" name="top"/>
+  <anchor x="387.5" y="-627" name="bottom"/>
+  <anchor x="765" y="623" name="topright"/>
+  <outline>
+    <component base="ga-tutg" yOffset="-562" identifier="ED30757C"/>
+    <component base="ga-tutg" yOffset="1" identifier="3828F431"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:39:24 +0000</string>
+      <key>public.markColor</key>
+      <string>0.97,0.9,0,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>3828F431</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>ED30757C</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bha_va-tutg" format="2">
+  <advance width="1538"/>
+  <anchor x="721.5" y="620" name="top"/>
+  <anchor x="721.5" y="-80" name="bottom"/>
+  <anchor x="1428" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1356" y="555" type="curve"/>
+      <point x="1356" y="105" type="line"/>
+      <point x="1428" y="105" type="line"/>
+      <point x="1428" y="555" type="line"/>
+      <point x="1415" y="565"/>
+      <point x="1369" y="565"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1251" yOffset="-10"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="379" yOffset="-10"/>
+    <component base="bha-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:51:29 +0000</string>
+    </dict>
+  </lib>
+</glyph>

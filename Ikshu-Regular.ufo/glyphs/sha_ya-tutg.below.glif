@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_ya-tutg.below" format="2">
+  <advance width="50"/>
+  <anchor x="231.7" y="-128.0" name="top"/>
+  <anchor x="231.7" y="-934.7" name="bottom"/>
+  <anchor x="867.4" y="-128.0" name="topright"/>
+  <outline>
+    <component base="sha_ya-tutg" xScale="0.8655" yScale="0.8655" xOffset="-417" yOffset="-677" identifier="C18A10E8"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>C18A10E8</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_uuMatra-tutg" format="2">
+  <advance width="1615"/>
+  <guideline x="1280" y="29" angle="90"/>
+  <anchor x="748.8" y="621" name="top"/>
+  <anchor x="748.8" y="-274" name="bottom"/>
+  <anchor x="1487.5" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1198" y="156" type="line"/>
+      <point x="1264" y="164"/>
+      <point x="1289" y="223"/>
+      <point x="1289" y="294" type="curve" smooth="yes"/>
+      <point x="1289" y="463"/>
+      <point x="1136" y="571"/>
+      <point x="977" y="571" type="curve" smooth="yes"/>
+      <point x="907" y="571"/>
+      <point x="836" y="550"/>
+      <point x="772" y="516" type="curve"/>
+      <point x="823" y="475" type="line"/>
+      <point x="872" y="495"/>
+      <point x="919" y="504"/>
+      <point x="965" y="504" type="curve" smooth="yes"/>
+      <point x="1101" y="504"/>
+      <point x="1214" y="431"/>
+      <point x="1214" y="296" type="curve" smooth="yes"/>
+      <point x="1214" y="235"/>
+      <point x="1192" y="182"/>
+      <point x="1125" y="182" type="curve" smooth="yes"/>
+      <point x="1086" y="182" type="line"/>
+    </contour>
+    <component base="_sha-tutg.conjunct"/>
+    <component base="_uumatraBelow" xOffset="826" yOffset="96"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-11 14:45:13 +0000</string>
+    </dict>
+  </lib>
+</glyph>

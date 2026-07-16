@@ -1,0 +1,6 @@
+# Local Claude Code tool settings (machine-specific, not project config)
+.claude/
+
+# Timestamped safety backups made before batch UFO edits - git itself is the
+# backup mechanism now that this is a repo; see README.md for the build pipeline.
+Ikshu-Regular.ufo.backup-*/

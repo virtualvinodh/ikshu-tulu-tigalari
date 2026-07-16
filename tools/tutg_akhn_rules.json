@@ -1,0 +1,3648 @@
+[
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ga_da_dha_ra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ga_da_dha_va-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ssa_ma_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ssa_nna_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ta_ra_ya-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "na_ta_ra_ya_-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ta_ka_ssa_ma-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "sa_sa_ta_uMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "tha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "sa_sa_tha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "da_da_ra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "da_da_ya-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "da_dha_ma-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "da_dha_ra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "da_dha_va-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "da_dha_ya-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "bha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ga_bha_ya-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg"
+    ],
+    "output": "ga_da_dha-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ga_dha_va-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ga_na_va-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ga_na_ya-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ha_na_ya-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ja-tutg",
+      "conjoiner-tutg",
+      "nya-tutg"
+    ],
+    "output": "ja_ja_nya-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ja_ja_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ka_ka_ra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_na_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "ka_sa_sa-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ka_ssa_ma-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "nna-tutg"
+    ],
+    "output": "ka_ssa_nna-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ka_ssa_ra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ka_ssa_va-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ssa_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ka_ta_ra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "ka_ta_tha-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ka_ta_va-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ta_ya-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "tha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_tha_ya-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "la-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "la_la_ya-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "na_da_ra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "da-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "na_da_va-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "dha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "na_dha_va-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg"
+    ],
+    "output": "na_ka_ssa-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "na_ka_ta-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "na_na_ya-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "na_ta_ra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "na_ta_sa-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "na_ta_va-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "na_ta_ya-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "nga_ka_ka-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "nga_ka_ta-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "nna_nna_ya-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "pa_sa_ma-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "pa_sa_ta-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "pa_sa_tha-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "pa_sa_va-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "pa_sa_ya-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "pa_ta_va-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ra_ma_ma-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "sa_ma_ya-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "sa_sa_ka-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "sa_sa_pa-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "sa_sa_ta-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "sa_sa_tha-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "sa_sa_va-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "sa_ta_raMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "sa_ta_ta-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "sa_ta_tha-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "sa_ta_va-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "sa_ta_ya-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "va-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "sha_va_ya-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ssa_ka_ra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ssa_pa_ra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ssa_tta_va-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ssa_tta_ya-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ttha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ssa_ttha_ya-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg"
+    ],
+    "output": "ta_ka_ssa-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ta_ma_ra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ta_ma_ya-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ta_ra_va-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "ta_sa_ta-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ta_ta_ra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ta_ta_va-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "tha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ta_tha_ya-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "tta_tta_ya-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ga-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ga_ga_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ka_kChillu-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ka_ka_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ka_nChillu-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ka_tChillu-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ka_ta_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ka_ta_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ka_ttChillu-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "la_ka_uMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "na_ka_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "na_ka_uMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "na_nChillu-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "na_tChillu-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "na_ttChillu-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "conjoiner-tutg",
+      "ja-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "nya_ja_uMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "sa_ka_vocalicR-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "sa_pa_rvocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "sa_sa_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "sa_ta_uMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "sa_ta_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "ra-tutg",
+      "iiMatra-tutg"
+    ],
+    "output": "sha_ra_iiMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ssa_ka_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ssa_ka_vocalicR-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "nna-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ssa_nna_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ssa_tta_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ka-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ta_kChillu-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "na-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ta_nChillu-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ta_taChillu-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ta_ta_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "conjoiner-tutg",
+      "tta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "tta_ttChillu-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "conjoiner-tutg",
+      "ba-tutg"
+    ],
+    "output": "ba_ba-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "conjoiner-tutg",
+      "da-tutg"
+    ],
+    "output": "ba_da-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ba_ra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "bha_ma-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "bha_na-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "bha_ra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "bha_va-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "bha_ya-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "conjoiner-tutg",
+      "ca-tutg"
+    ],
+    "output": "ca_ca-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "conjoiner-tutg",
+      "cha-tutg"
+    ],
+    "output": "ca_cha-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ca_ma-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "conjoiner-tutg",
+      "nya-tutg"
+    ],
+    "output": "cha_nya-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "ba-tutg"
+    ],
+    "output": "da_ba-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "bha-tutg"
+    ],
+    "output": "da_bha-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "da-tutg"
+    ],
+    "output": "da_da-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "dha-tutg"
+    ],
+    "output": "da_dha-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "ga-tutg"
+    ],
+    "output": "da_ga-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "gha-tutg"
+    ],
+    "output": "da_gha-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "la-tutg"
+    ],
+    "output": "da_la-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "da_ma-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "da_ra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "da_va-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "da_ya-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "conjoiner-tutg",
+      "ga-tutg"
+    ],
+    "output": "dda_ga-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ba-tutg"
+    ],
+    "output": "ga_ba-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "bha-tutg"
+    ],
+    "output": "ga_bha-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "da-tutg"
+    ],
+    "output": "ga_da-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "dha-tutg"
+    ],
+    "output": "ga_dha-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ga-tutg"
+    ],
+    "output": "ga_ga-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "gha-tutg"
+    ],
+    "output": "ga_gha-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ja-tutg"
+    ],
+    "output": "ga_ja-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ga_ma-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "ga_na-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ga_ya-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ha_ma-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "ha_na-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ha_ra-tutg.below"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ha_ya-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "cha-tutg"
+    ],
+    "output": "ja_cha-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ja-tutg"
+    ],
+    "output": "ja_ja-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ja_ma-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "nya-tutg"
+    ],
+    "output": "ja_nya-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ja_ra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ja_va-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ja_ya-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "conjoiner-tutg",
+      "jha-tutg"
+    ],
+    "output": "jha_jha-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "ka_ka-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ka_ma-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "ka_na-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ka_ra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "ka_sa-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg"
+    ],
+    "output": "ka_ssa-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "ka_ta-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "ka_tha-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "ka_tta-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ka_va-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ka_ya-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "kha_ka-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "conjoiner-tutg",
+      "kha-tutg"
+    ],
+    "output": "kha_kha-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "kha_ya-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "la_ka-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "la-tutg"
+    ],
+    "output": "la_la-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "la_ra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "la_va-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "la_ya-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "conjoiner-tutg",
+      "lla-tutg"
+    ],
+    "output": "lla_lla-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "lla_pa-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "lla_ya-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ma_ma-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "ma_pa-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ma_va-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ma_ya-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ba-tutg"
+    ],
+    "output": "na_ba-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "bha-tutg"
+    ],
+    "output": "na_bha-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "da-tutg"
+    ],
+    "output": "na_da-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "dha-tutg"
+    ],
+    "output": "na_dha-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ga-tutg"
+    ],
+    "output": "na_ga-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "gha-tutg"
+    ],
+    "output": "na_gha-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "na_ka-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "na_ma-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "na_na-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "na_ta-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "na_tha-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "na_tta-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "na_va-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "na_ya-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ba-tutg"
+    ],
+    "output": "nga_ba-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "nga_ka-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "kha-tutg"
+    ],
+    "output": "nga_kha-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "nga_ma-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "nga_na-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "nga-tutg"
+    ],
+    "output": "nga_nga-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "nga_ta-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "dda-tutg"
+    ],
+    "output": "nna_dda-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ddha-tutg"
+    ],
+    "output": "nna_ddha-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ha-tutg"
+    ],
+    "output": "nna_ha-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "nna_ma-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "nna-tutg"
+    ],
+    "output": "nna_nna-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "nna_tta-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ttha-tutg"
+    ],
+    "output": "nna_ttha-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "nna_ya-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "conjoiner-tutg",
+      "ca-tutg"
+    ],
+    "output": "nya_ca-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "conjoiner-tutg",
+      "cha-tutg"
+    ],
+    "output": "nya_cha-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "conjoiner-tutg",
+      "ja-tutg"
+    ],
+    "output": "nya_ja-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "cha-tutg"
+    ],
+    "output": "pa_cha-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "pa_pa-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "pa_ra-tutg.below"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "pa_sa-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "pa_ta-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "pa_ya-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ra_ma-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ra_ra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "sha-tutg"
+    ],
+    "output": "ra_sha-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ra_va-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ra_ya-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ca-tutg"
+    ],
+    "output": "sa_ca-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "sa_ka-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "sa_ma-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "sa_pa-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "sa_sa-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "sa_tha-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "sa_tta-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "sa_va-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "sa_ya-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "ca-tutg"
+    ],
+    "output": "sha_ca-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "cha-tutg"
+    ],
+    "output": "sha_cha-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "sha_ma-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "sha_na-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "sha-tutg"
+    ],
+    "output": "sha_sha-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "ttha-tutg"
+    ],
+    "output": "sha_ttha-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "sha_va-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "sha_ya-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "ssa_ka-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "la-tutg"
+    ],
+    "output": "ssa_la-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ssa_ma-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "nna-tutg"
+    ],
+    "output": "ssa_nna-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "pa-tutg"
+    ],
+    "output": "ssa_pa-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ssa-tutg"
+    ],
+    "output": "ssa_ssa-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "ssa_tta-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ttha-tutg"
+    ],
+    "output": "ssa_ttha-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ssa_va-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ssa_ya-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "bha-tutg"
+    ],
+    "output": "ta_bha-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ka-tutg"
+    ],
+    "output": "ta_ka-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ta_ma-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "na-tutg"
+    ],
+    "output": "ta_na-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "ta_ra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "sa-tutg"
+    ],
+    "output": "ta_sa-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ta-tutg"
+    ],
+    "output": "ta_ta-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "tha-tutg"
+    ],
+    "output": "ta_tha-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ta_va-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ta_ya-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "conjoiner-tutg",
+      "tta-tutg"
+    ],
+    "output": "tta_tta-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "va_va-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "va_ya-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "conjoiner-tutg",
+      "va-tutg"
+    ],
+    "output": "ya_va-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "conjoiner-tutg",
+      "ya-tutg"
+    ],
+    "output": "ya_ya-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ba_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ba_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ba_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ba_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ba-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ba_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "bha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "bha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "bha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "bha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "bha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ca_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ca_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ca_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ca_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ca_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "cha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "cha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "cha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "cha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "cha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "cha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "da_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "da_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "da_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "da_uMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "da_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "dda_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "dda_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "dda_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "dda_uMatra-tutg"
+  },
+  {
+    "input": [
+      "dda-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "dda_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ddha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ddha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ddha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ddha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ddha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "dha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "dha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "dha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "dha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "dha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "dha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "dha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "dha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ga_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ga_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ga_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ga_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ga_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "gha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "gha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "gha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "gha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "gha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "gha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "gha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "gha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "gha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "gha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ja_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ja_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ja_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ja_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ja-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ja_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "jha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "jha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "jha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "jha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "jha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ka_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ka_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ka_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ka_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ka_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "kha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "kha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "kha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "kha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "kha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "kha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "la_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "la_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "la_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "la_uMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "la_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "lla_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "lla_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "lla_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "lla_uMatra-tutg"
+  },
+  {
+    "input": [
+      "lla-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "lla_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "llla-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "llla_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "llla-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "llla_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "llla-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "llla_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "llla-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "llla_uMatra-tutg"
+  },
+  {
+    "input": [
+      "llla-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "llla_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ma_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ma_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ma_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ma_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ma_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "na_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "na_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "na_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "na_uMatra-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "na_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "nga_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "nga_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "nga_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "nga_uMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "nga_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "nna_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "nna_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "nna_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "nna_uMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "nna_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "nya_UuMatra-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "nya_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "nya_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "nya_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nya-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "nya_uMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "pa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "pa_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "pa_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "pa_uMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "pa_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "pha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "pha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "pha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "pha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "pha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "rVocalicMatra-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "rVocalicMatra_uMatra-tutg"
+  },
+  {
+    "input": [
+      "rVocalicMatra-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "rVocalicMatra_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ra_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ra_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ra_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ra_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ra_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "rra-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "rra_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "rra-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "rra_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "rra-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "rra_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "rra-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "rra_uMatra-tutg"
+  },
+  {
+    "input": [
+      "rra-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "rra_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "sa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "sa_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "sa_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "sa_uMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "sa_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "sha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "sha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "sha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "sha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "sha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "sha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ssa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ssa_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ssa_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ssa_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ssa_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ta_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ta_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ta_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ta_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ta_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "tha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "tha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "tha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "tha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "tha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "tta_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "tta_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "tta_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "tta_uMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "tta_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ttha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ttha_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ttha_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ttha_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ttha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "va_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "va_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "va_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "va_uMatra-tutg"
+  },
+  {
+    "input": [
+      "va-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "va_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "lVocalicMatra-tutg"
+    ],
+    "output": "ya_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "rVocalicMatra-tutg"
+    ],
+    "output": "ya_rVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "rrVocalicMatra-tutg"
+    ],
+    "output": "ya_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "uMatra-tutg"
+    ],
+    "output": "ya_uMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "uuMatra-tutg"
+    ],
+    "output": "ya_uuMatra-tutg"
+  }
+]

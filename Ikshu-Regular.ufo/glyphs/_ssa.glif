@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_ssa" format="2">
+  <advance width="1146"/>
+  <outline>
+    <contour>
+      <point x="744" y="-157" type="curve"/>
+      <point x="811" y="-157" type="line"/>
+      <point x="811" y="-71"/>
+      <point x="811" y="225"/>
+      <point x="811" y="275" type="curve"/>
+      <point x="744" y="275" type="line"/>
+      <point x="744" y="221"/>
+      <point x="744" y="-74"/>
+    </contour>
+    <component base="_ssa1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:06 +0000</string>
+    </dict>
+  </lib>
+</glyph>

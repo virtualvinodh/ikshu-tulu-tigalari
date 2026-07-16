@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_va-tutg.below" format="2">
+  <advance width="50"/>
+  <anchor x="137.3" y="-135.1" name="top"/>
+  <anchor x="137.3" y="-862.5" name="bottom"/>
+  <anchor x="685" y="-135.1" name="topright"/>
+  <outline>
+    <contour>
+      <point x="629" y="-249" type="curve"/>
+      <point x="629" y="-593" type="line"/>
+      <point x="685" y="-593" type="line"/>
+      <point x="685" y="-249" type="line"/>
+      <point x="675" y="-241"/>
+      <point x="639" y="-241"/>
+    </contour>
+    <component base="ssa-tutg.below" xOffset="28" identifier="F32EF45E"/>
+    <component base="_roundedcorner" xScale="0.7827" yScale="0.7827" xOffset="546" yOffset="-683" identifier="F27D2C3E"/>
+    <component base="_horizontalline64" xScale="0.6662" yScale="0.7827" xOffset="-136" yOffset="-683" identifier="B782A650"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>B782A650</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>F27D2C3E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>F32EF45E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

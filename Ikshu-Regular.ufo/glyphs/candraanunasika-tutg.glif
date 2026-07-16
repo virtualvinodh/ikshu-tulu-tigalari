@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="candraanunasika-tutg" format="2">
+  <advance width="596"/>
+  <unicode hex="113CA"/>
+  <outline>
+    <contour>
+      <point x="45" y="416" type="curve"/>
+      <point x="31" y="191"/>
+      <point x="155" y="96"/>
+      <point x="299" y="96" type="curve" smooth="yes"/>
+      <point x="442" y="96"/>
+      <point x="565" y="191"/>
+      <point x="551" y="416" type="curve"/>
+      <point x="536" y="426"/>
+      <point x="490" y="426"/>
+      <point x="477" y="416" type="curve"/>
+      <point x="496" y="244"/>
+      <point x="402" y="164"/>
+      <point x="299" y="164" type="curve" smooth="yes"/>
+      <point x="195" y="164"/>
+      <point x="100" y="244"/>
+      <point x="119" y="416" type="curve"/>
+      <point x="106" y="426"/>
+      <point x="60" y="426"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.75,0.75,0.75,1</string>
+    </dict>
+  </lib>
+</glyph>

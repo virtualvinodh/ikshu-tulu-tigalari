@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nna_uuMatra-tutg.alt1" format="2">
+  <advance width="1550"/>
+  <anchor x="722.8" y="623" name="top"/>
+  <anchor x="722.8" y="-316" name="bottom"/>
+  <anchor x="1435.5" y="623" name="topright"/>
+  <outline>
+    <contour>
+      <point x="208" y="-15" type="curve" smooth="yes"/>
+      <point x="281" y="-15"/>
+      <point x="347" y="32"/>
+      <point x="347" y="127" type="curve" smooth="yes"/>
+      <point x="347" y="203"/>
+      <point x="295" y="286"/>
+      <point x="191" y="286" type="curve" smooth="yes"/>
+      <point x="151" y="286"/>
+      <point x="111" y="271"/>
+      <point x="80" y="246" type="curve"/>
+      <point x="83" y="388"/>
+      <point x="152" y="506"/>
+      <point x="271" y="506" type="curve" smooth="yes"/>
+      <point x="363" y="506"/>
+      <point x="414" y="432"/>
+      <point x="414" y="329" type="curve" smooth="yes"/>
+      <point x="414" y="204" type="line"/>
+      <point x="418" y="197"/>
+      <point x="482" y="197"/>
+      <point x="486" y="204" type="curve"/>
+      <point x="486" y="331" type="line" smooth="yes"/>
+      <point x="486" y="435"/>
+      <point x="559" y="505"/>
+      <point x="638" y="505" type="curve" smooth="yes"/>
+      <point x="730" y="504"/>
+      <point x="784" y="430"/>
+      <point x="784" y="329" type="curve"/>
+      <point x="831" y="431" type="line"/>
+      <point x="788" y="540"/>
+      <point x="694" y="569"/>
+      <point x="643" y="570" type="curve" smooth="yes"/>
+      <point x="571" y="570"/>
+      <point x="499" y="538"/>
+      <point x="451" y="448" type="curve"/>
+      <point x="413" y="534"/>
+      <point x="342" y="573"/>
+      <point x="269" y="573" type="curve" smooth="yes"/>
+      <point x="104" y="573"/>
+      <point x="10" y="421"/>
+      <point x="10" y="236" type="curve" smooth="yes"/>
+      <point x="10" y="105"/>
+      <point x="73" y="-15"/>
+    </contour>
+    <contour>
+      <point x="201" y="47" type="curve" smooth="yes"/>
+      <point x="155" y="47"/>
+      <point x="93" y="87"/>
+      <point x="80" y="178" type="curve"/>
+      <point x="104" y="210"/>
+      <point x="144" y="231"/>
+      <point x="181" y="231" type="curve" smooth="yes"/>
+      <point x="245" y="231"/>
+      <point x="284" y="179"/>
+      <point x="284" y="130" type="curve" smooth="yes"/>
+      <point x="284" y="76"/>
+      <point x="247" y="47"/>
+    </contour>
+    <contour>
+      <point x="999" y="505" type="curve"/>
+      <point x="1002" y="571" type="line"/>
+      <point x="880" y="571"/>
+      <point x="810" y="480"/>
+      <point x="784" y="344" type="curve"/>
+      <point x="785" y="204" type="line"/>
+      <point x="809" y="195"/>
+      <point x="833" y="195"/>
+      <point x="857" y="206" type="curve"/>
+      <point x="856" y="235"/>
+      <point x="855" y="269"/>
+      <point x="855" y="329" type="curve" smooth="yes"/>
+      <point x="855" y="426"/>
+      <point x="910" y="505"/>
+    </contour>
+    <contour>
+      <point x="995" y="571" type="curve"/>
+      <point x="999" y="505" type="line"/>
+      <point x="1097" y="504"/>
+      <point x="1147" y="402"/>
+      <point x="1147" y="300" type="curve" smooth="yes"/>
+      <point x="1147" y="228"/>
+      <point x="1122" y="140"/>
+      <point x="1039" y="140" type="curve" smooth="yes"/>
+      <point x="990" y="140" type="line"/>
+      <point x="1122" y="101" type="line"/>
+      <point x="1139" y="110"/>
+      <point x="1153" y="123"/>
+      <point x="1164" y="139" type="curve" smooth="yes"/>
+      <point x="1200" y="190"/>
+      <point x="1217" y="252"/>
+      <point x="1217" y="314" type="curve" smooth="yes"/>
+      <point x="1217" y="444"/>
+      <point x="1141" y="570"/>
+    </contour>
+    <component base="_uumatraBelow" xOffset="774" yOffset="54"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-11 14:27:17 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ii-tutg" format="2">
+  <advance width="1632"/>
+  <unicode hex="11383"/>
+  <guideline x="1838" y="221" angle="179.828"/>
+  <guideline x="-529" y="285" angle="0"/>
+  <guideline x="1279" y="425" angle="0"/>
+  <outline>
+    <component base="i-tutg" xOffset="5"/>
+    <component base="_rightarm" xOffset="860"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:31:05 +0000</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>i-tutg</string>
+      <key>public.markColor</key>
+      <string>0.04,0.57,0.04,1</string>
+    </dict>
+  </lib>
+</glyph>

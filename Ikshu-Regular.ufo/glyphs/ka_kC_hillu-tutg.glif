@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_kChillu-tutg" format="2">
+  <advance width="2055"/>
+  <anchor x="977.5" y="778" name="top"/>
+  <anchor x="977.5" y="-65" name="bottom"/>
+  <anchor x="1945" y="778" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1184" y="486" type="curve"/>
+      <point x="1244" y="486" type="line"/>
+      <point x="1244" y="530" type="line"/>
+      <point x="1051" y="620"/>
+      <point x="682" y="618"/>
+      <point x="501" y="522" type="curve"/>
+      <point x="572" y="485" type="line"/>
+      <point x="765" y="547"/>
+      <point x="1012" y="546"/>
+    </contour>
+    <component base="_kabowl" xOffset="683"/>
+    <component base="_karightarm"/>
+    <component base="_kabowl"/>
+    <component base="_loopedviramaCombining" xOffset="683"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

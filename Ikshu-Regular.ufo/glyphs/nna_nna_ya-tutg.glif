@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nna_nna_ya-tutg" format="2">
+  <advance width="1525"/>
+  <anchor x="715.0" y="626.5" name="top"/>
+  <anchor x="715.0" y="-935" name="bottom"/>
+  <anchor x="1415" y="626.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1341" y="569" type="curve"/>
+      <point x="1342" y="-111" type="line"/>
+      <point x="1414" y="-111" type="line"/>
+      <point x="1415" y="569" type="line"/>
+      <point x="1401" y="579"/>
+      <point x="1355" y="579"/>
+    </contour>
+    <component base="nna-tutg" xOffset="5"/>
+    <component base="nna_ya-tutg" xOffset="5" yOffset="-658"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

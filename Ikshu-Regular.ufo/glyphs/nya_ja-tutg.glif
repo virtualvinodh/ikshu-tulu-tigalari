@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nya_ja-tutg" format="2">
+  <advance width="2255"/>
+  <anchor x="1077.5" y="621" name="top"/>
+  <anchor x="1077.5" y="-65" name="bottom"/>
+  <anchor x="2145" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="739" y="458" type="curve"/>
+      <point x="801" y="497" type="line"/>
+      <point x="738" y="547"/>
+      <point x="678" y="571"/>
+      <point x="618" y="571" type="curve" smooth="yes"/>
+      <point x="523" y="571"/>
+      <point x="450" y="512"/>
+      <point x="432" y="419" type="curve"/>
+      <point x="472" y="320" type="line"/>
+      <point x="473" y="436"/>
+      <point x="527" y="507"/>
+      <point x="612" y="507" type="curve" smooth="yes"/>
+      <point x="656" y="507"/>
+      <point x="709" y="488"/>
+    </contour>
+    <component base="_initA"/>
+    <component base="_center" xOffset="54"/>
+    <component base="_JaJoining" xOffset="-607"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

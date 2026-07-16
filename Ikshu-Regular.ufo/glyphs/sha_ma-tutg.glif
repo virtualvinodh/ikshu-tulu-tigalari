@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_ma-tutg" format="2">
+  <advance width="1562"/>
+  <anchor x="733.5" y="620" name="top"/>
+  <anchor x="733.5" y="-167" name="bottom"/>
+  <anchor x="1452" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="981" y="505" type="curve"/>
+      <point x="981" y="570" type="line"/>
+      <point x="909" y="570"/>
+      <point x="855" y="556"/>
+      <point x="792" y="528" type="curve"/>
+      <point x="852" y="485" type="line"/>
+      <point x="892" y="497"/>
+      <point x="929" y="505"/>
+    </contour>
+    <component base="_sha-tutg.conjunct" xOffset="5"/>
+    <component base="_maJoining.1" xOffset="450"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:51:44 +0000</string>
+    </dict>
+  </lib>
+</glyph>

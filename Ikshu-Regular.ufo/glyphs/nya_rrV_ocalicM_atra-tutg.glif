@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nya_rrVocalicMatra-tutg" format="2">
+  <advance width="1278"/>
+  <anchor x="1124" y="-26" name="connect"/>
+  <anchor x="670.5" y="621" name="top"/>
+  <anchor x="670.5" y="-596" name="bottom"/>
+  <anchor x="1330" y="621" name="topright"/>
+  <outline>
+    <component base="nya_rVocalicMatra-tutg" xOffset="-4"/>
+    <component base="_rrVocalicArm" xOffset="960" yOffset="61" identifier="11332C4C"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>11332C4C</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

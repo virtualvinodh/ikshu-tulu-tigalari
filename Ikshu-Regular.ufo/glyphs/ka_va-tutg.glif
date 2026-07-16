@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_va-tutg" format="2">
+  <advance width="1420"/>
+  <anchor x="1026" y="-8" name="short"/>
+  <anchor x="662.5" y="621" name="top"/>
+  <anchor x="662.5" y="-65" name="bottom"/>
+  <anchor x="1310" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1238" y="557" type="curve"/>
+      <point x="1238" y="107" type="line"/>
+      <point x="1310" y="107" type="line"/>
+      <point x="1310" y="557" type="line"/>
+      <point x="1297" y="567"/>
+      <point x="1251" y="567"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1133" yOffset="-8"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="261" yOffset="-8"/>
+    <component base="ka-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

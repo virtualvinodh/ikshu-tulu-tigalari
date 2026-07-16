@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_ma-tutg" format="2">
+  <advance width="1131"/>
+  <anchor x="518.0" y="620" name="top"/>
+  <anchor x="518.0" y="-384" name="bottom"/>
+  <anchor x="1021" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="779" y="24" type="curve"/>
+      <point x="669" y="33" type="line"/>
+      <point x="612" y="-68"/>
+      <point x="529" y="-159"/>
+      <point x="422" y="-231" type="curve" smooth="yes"/>
+      <point x="392" y="-251"/>
+      <point x="360" y="-265"/>
+      <point x="327" y="-275" type="curve"/>
+      <point x="325" y="-278"/>
+      <point x="324" y="-283"/>
+      <point x="324" y="-290" type="curve" smooth="yes"/>
+      <point x="324" y="-307"/>
+      <point x="330" y="-329"/>
+      <point x="339" y="-334" type="curve"/>
+      <point x="410" y="-307"/>
+      <point x="453" y="-304"/>
+      <point x="588" y="-304" type="curve" smooth="yes"/>
+      <point x="831" y="-304" type="line" smooth="yes"/>
+      <point x="911" y="-304"/>
+      <point x="937" y="-299"/>
+      <point x="958" y="-274" type="curve" smooth="yes"/>
+      <point x="1007" y="-216"/>
+      <point x="937" y="-67"/>
+    </contour>
+    <contour>
+      <point x="896" y="-226" type="curve"/>
+      <point x="887" y="-241"/>
+      <point x="864" y="-244"/>
+      <point x="818" y="-244" type="curve" smooth="yes"/>
+      <point x="510" y="-244" type="line"/>
+      <point x="616" y="-173"/>
+      <point x="658" y="-103"/>
+      <point x="721" y="0" type="curve"/>
+      <point x="824" y="-52"/>
+      <point x="923" y="-189"/>
+    </contour>
+    <contour>
+      <point x="672" y="43" type="curve"/>
+      <point x="741" y="43" type="line"/>
+      <point x="795" y="129"/>
+      <point x="804" y="225"/>
+      <point x="805" y="275" type="curve"/>
+      <point x="738" y="275" type="line"/>
+      <point x="737" y="221"/>
+      <point x="727" y="126"/>
+    </contour>
+    <component base="_pabeak" xOffset="5"/>
+    <component base="_ssa1" xOffset="-5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:53:15 +0000</string>
+    </dict>
+  </lib>
+</glyph>

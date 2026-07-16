@@ -1,0 +1,115 @@
+# Ikshu-Regular (Tulu-Tigalari) — build pipeline
+
+All commands below run from `tools/`, under WSL (`ufoLib2`/`fontTools`/`fontmake`
+aren't installed for native Windows Python in this environment):
+
+```
+cd tools
+wsl python3 <script>.py
+```
+
+## The three things you'll actually want to do
+
+### 1. Recreate the glyph testing page
+
+```
+wsl python3 build_test_page.py
+```
+
+Rebuilds `../glyph_test_page.html` from whatever's currently in `tools/Ikshu-Regular.ttf`
+and `Ikshu-Regular.ufo`. Runs `export_svg_data.py` → `build_test_page_data.py` →
+`build_sample_texts.py` → `compile_test_page.py` in order.
+
+### 2. Recreate the font
+
+```
+wsl python3 compile_font.py
+```
+
+Runs `fontmake` on `../Ikshu-Regular.ufo`, writes `../master_ttf/Ikshu-Regular.ttf`,
+copies it to `tools/Ikshu-Regular.ttf`.
+
+If you've dropped in a **fresh/raw UFO** (not yet anchored, no `akhn` feature, etc.),
+run `build_ufo.py` first (see below) — `compile_font.py` just compiles whatever UFO
+is already there, it doesn't fix anything.
+
+### 3. Add a sample text
+
+Add one entry to `sample_texts_source.json`:
+
+```json
+{ "id": "MyText", "label": "My Text", "sourceScript": "sharada", "text": "..." }
+```
+
+`sourceScript` is one of `devanagari` / `kannada` / `sharada` / `tigalari`. If it's
+already Tulu-Tigalari, use `"tigalari"` — it's displayed as-is, not round-tripped
+through the transliteration engine (see `brahmic_translit.py`'s docstring). Then:
+
+```
+wsl python3 build_test_page.py
+```
+
+## Drop a fresh UFO → rebuild everything
+
+```
+wsl python3 build_ufo.py      # fixes + anchors + akhn feature, backs up first
+wsl python3 compile_font.py   # -> tools/Ikshu-Regular.ttf
+wsl python3 build_test_page.py
+```
+
+`build_ufo.py` is safe to run more than once (every step it runs is idempotent —
+reruns just report "already exists" / "already merged" / "0 removed" and move on),
+so if you're not sure what state the UFO is in, running it again is harmless.
+
+## Script reference
+
+**`build_ufo.py`** orchestrates, in order:
+
+| # | Script | What it does |
+|---|--------|--------------|
+| 1 | `classify_glyphs.py` | Classifies every `-tutg` glyph name into consonant/vowel/ligature/etc. categories → `glyph_classification.json`. Read-only on the UFO; steps 4–5 depend on its output. |
+| 2 | `fix_guillemet_duplicate_cmap.py` | Clears a duplicate cmap entry (`guillemet*` vs `guillemot*`). |
+| 3 | `fix_unicode_mappings.py` | Adds cmap entries for 5 drawn-but-uncmapped characters. |
+| 4 | `generate_anchors.py` | Adds/updates GPOS mark-attachment anchors (`top`/`bottom`/`topright`/`bottomright` + their `_`-prefixed mark counterparts). |
+| 5 | `generate_akhn_feature.py` | Generates the `akhn` GSUB feature (conjunct/vowel-sign ligature rules) from glyph-name conventions → `tutg_akhn.fea` + `tutg_akhn_rules.json`. |
+| 6 | `merge_features.py` | Merges `tutg_akhn.fea` into `features.fea`. Has its own guard — skips if already merged. |
+| 7 | `remove_stub_numeral_features.py` | Strips incomplete `numr`/`dnom`/`frac` feature blocks. |
+
+**`compile_font.py`** — `fontmake` on the UFO → `.ttf`.
+
+**`build_test_page.py`** orchestrates, in order:
+
+| # | Script | What it does |
+|---|--------|--------------|
+| 1 | `export_svg_data.py` | Exports every glyph's outline/anchors/bounds/components → `glyph_svg_data.json`. |
+| 2 | `build_test_page_data.py` | Builds consonant/vowel/akhn-rule/mark/syllable-matrix/conjunct-list test data as real Unicode code points → `test_page_data.json`. |
+| 3 | `build_sample_texts.py` | Transliterates each passage in `sample_texts_source.json` (per its `sourceScript`) into Tigalari + Kannada + IAST → `sample_texts.json`. |
+| 4 | `compile_test_page.py` | Embeds the font (base64) + both data files into `glyph_test_page_template.html` → `../glyph_test_page.html`. |
+
+**`brahmic_translit.py`** — the transliteration engine itself (Sharada / Devanagari /
+Kannada / Tigalari, any direction, plus one-way IAST). Not run directly; imported by
+`build_sample_texts.py`.
+
+**`compile_glyph_viewer.py`** — a separate, smaller tool: the searchable SVG glyph
+browser (`../glyph_viewer.html`), with anchors plotted and component drill-down.
+Only depends on `export_svg_data.py`'s output (`glyph_svg_data.json`), so if you've
+just run `build_test_page.py` (which already regenerates that file), you can rebuild
+the viewer too with:
+
+```
+wsl python3 compile_glyph_viewer.py
+```
+
+**Reference-only, not part of either pipeline** (nothing downstream depends on
+these — see `GSUB_TODO.md` for what each was for):
+`extract_stacking_offsets.py`, `extract_vowel_sign_offsets.py`,
+`document_vowel_variant_choice.py`, `generate_gsub_rules.py` (superseded by
+`generate_akhn_feature.py`), `_selfcheck_render.py`, `extract_source_texts.py`
+(one-time migration that produced `sample_texts_source.json`; satisarsharada isn't
+a dependency of anything anymore).
+
+**Static/hand-edited input files** (not generated by any script):
+`gsub_ignore_list.json` (glyphs to exclude from `akhn` generation, with a reason
+each), `sample_texts_source.json` (the sample-text passages themselves).
+
+See `GSUB_TODO.md` for the full history of what each fix/decision was for.

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pha-tutg" format="2">
+  <advance width="1068"/>
+  <unicode hex="113A7"/>
+  <guideline x="489" y="275" angle="0"/>
+  <anchor x="484.0" y="620" name="top"/>
+  <anchor x="484.0" y="-80" name="bottom"/>
+  <anchor x="958.0" y="620" name="topright"/>
+  <anchor x="921.0" y="13.2" name="bottomright"/>
+  <outline>
+    <component base="_tharigharmloop" xOffset="177"/>
+    <component base="_horizontalline64" xScale="1.1952" xOffset="-484"/>
+    <component base="_pabeak"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.67,0.95,0.38,1</string>
+    </dict>
+  </lib>
+</glyph>

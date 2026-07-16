@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_maJoining.1" format="2">
+  <advance width="1129"/>
+  <outline>
+    <component base="_maarm" xOffset="382" yOffset="-151"/>
+    <component base="_CaMaLoop" xOffset="-976"/>
+  </outline>
+</glyph>

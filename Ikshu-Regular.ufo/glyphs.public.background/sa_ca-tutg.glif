@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_ca-tutg" format="2">
+  <advance width="1385"/>
+  <outline>
+    <component base="ca-tutg" xOffset="693" yOffset="-660"/>
+  </outline>
+</glyph>

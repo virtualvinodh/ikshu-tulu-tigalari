@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_na-tutg" format="2">
+  <advance width="1180"/>
+  <anchor x="539.5" y="622" name="top"/>
+  <anchor x="539.5" y="-65" name="bottom"/>
+  <anchor x="1069" y="622" name="topright"/>
+  <outline>
+    <contour>
+      <point x="997" y="298" type="curve" smooth="yes"/>
+      <point x="997" y="0" type="line"/>
+      <point x="1012" y="-10"/>
+      <point x="1054" y="-10"/>
+      <point x="1069" y="0" type="curve"/>
+      <point x="1069" y="287" type="line" smooth="yes"/>
+      <point x="1069" y="441"/>
+      <point x="1003" y="570"/>
+      <point x="866" y="570" type="curve" smooth="yes"/>
+      <point x="784" y="570"/>
+      <point x="711" y="524"/>
+      <point x="681" y="438" type="curve"/>
+      <point x="646" y="355" type="line"/>
+      <point x="646" y="267" type="line"/>
+      <point x="650" y="260"/>
+      <point x="714" y="260"/>
+      <point x="718" y="267" type="curve"/>
+      <point x="718" y="348" type="line" smooth="yes"/>
+      <point x="718" y="439"/>
+      <point x="784" y="501"/>
+      <point x="858" y="501" type="curve" smooth="yes"/>
+      <point x="951" y="501"/>
+      <point x="997" y="415"/>
+    </contour>
+    <component base="_ga_1" xOffset="13"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 16:07:24 +0000</string>
+    </dict>
+  </lib>
+</glyph>

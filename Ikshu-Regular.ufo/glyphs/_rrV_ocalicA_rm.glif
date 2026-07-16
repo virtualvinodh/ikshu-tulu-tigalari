@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_rrVocalicArm" format="2">
+  <advance width="480"/>
+  <anchor x="120" y="-95" name="_connect"/>
+  <outline>
+    <contour>
+      <point x="131" y="-74" type="curve"/>
+      <point x="127" y="-131" type="line"/>
+      <point x="294" y="-131"/>
+      <point x="306" y="-251"/>
+      <point x="306" y="-301" type="curve"/>
+      <point x="306" y="-427"/>
+      <point x="236" y="-545"/>
+      <point x="137" y="-545" type="curve" smooth="yes"/>
+      <point x="98" y="-545"/>
+      <point x="77" y="-527"/>
+      <point x="77" y="-501" type="curve" smooth="yes"/>
+      <point x="77" y="-471"/>
+      <point x="104" y="-441"/>
+      <point x="167" y="-411" type="curve" smooth="yes"/>
+      <point x="210" y="-391"/>
+      <point x="277" y="-368"/>
+      <point x="353" y="-368" type="curve"/>
+      <point x="351" y="-312" type="line"/>
+      <point x="269" y="-312"/>
+      <point x="193" y="-335"/>
+      <point x="141" y="-358" type="curve" smooth="yes"/>
+      <point x="57" y="-395"/>
+      <point x="10" y="-443"/>
+      <point x="10" y="-503" type="curve" smooth="yes"/>
+      <point x="10" y="-567"/>
+      <point x="59" y="-607"/>
+      <point x="131" y="-607" type="curve" smooth="yes"/>
+      <point x="257" y="-607"/>
+      <point x="370" y="-491"/>
+      <point x="370" y="-301" type="curve"/>
+      <point x="370" y="-227"/>
+      <point x="349" y="-74"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:06 +0000</string>
+    </dict>
+  </lib>
+</glyph>

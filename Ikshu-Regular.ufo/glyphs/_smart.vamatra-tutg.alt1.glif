@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_smart.vamatra-tutg.alt1" format="2">
+  <advance width="457"/>
+  <outline>
+    <contour>
+      <point x="94" y="555" type="curve"/>
+      <point x="94" y="115" type="line"/>
+      <point x="166" y="115" type="line"/>
+      <point x="166" y="555" type="line"/>
+      <point x="153" y="565"/>
+      <point x="107" y="565"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="-11"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="-883"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:05 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+    </dict>
+  </lib>
+</glyph>

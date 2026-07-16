@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_ta_va-tutg" format="2">
+  <advance width="1585"/>
+  <anchor x="745.0" y="623.5" name="top"/>
+  <anchor x="745.0" y="-66" name="bottom"/>
+  <anchor x="1475" y="623.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1403" y="555" type="curve"/>
+      <point x="1403" y="107" type="line"/>
+      <point x="1475" y="107" type="line"/>
+      <point x="1475" y="555" type="line"/>
+      <point x="1462" y="565"/>
+      <point x="1416" y="565"/>
+    </contour>
+    <component base="na_ta-tutg" xOffset="5"/>
+    <component base="_roundedcorner" xOffset="1298" yOffset="-8"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="426" yOffset="-8"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:46:53 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="da_dha_ma-tutg" format="2">
+  <advance width="1451"/>
+  <anchor x="693.4" y="649" name="top"/>
+  <anchor x="693.4" y="-306" name="bottom"/>
+  <anchor x="1371.4" y="649" name="topright"/>
+  <outline>
+    <component base="mamatra-tutg.below.alt1" xOffset="1340" yOffset="128"/>
+    <component base="da_dha-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:44:55 +0000</string>
+    </dict>
+  </lib>
+</glyph>

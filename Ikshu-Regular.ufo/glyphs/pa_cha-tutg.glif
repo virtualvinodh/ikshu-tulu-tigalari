@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_cha-tutg" format="2">
+  <advance width="2191"/>
+  <anchor x="1048.0" y="615.5" name="top"/>
+  <anchor x="1048.0" y="-740" name="bottom"/>
+  <anchor x="2081" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1123" y="82" type="curve"/>
+      <point x="1052" y="80" type="line"/>
+      <point x="1052" y="-65"/>
+      <point x="1056" y="-193"/>
+      <point x="1062" y="-403" type="curve" smooth="yes"/>
+      <point x="1065" y="-517"/>
+      <point x="1068" y="-627"/>
+      <point x="980" y="-627" type="curve" smooth="yes"/>
+      <point x="908" y="-627"/>
+      <point x="862" y="-553"/>
+      <point x="862" y="-458" type="curve" smooth="yes"/>
+      <point x="862" y="-311"/>
+      <point x="972" y="-169"/>
+      <point x="1125" y="-169" type="curve" smooth="yes"/>
+      <point x="1279" y="-169"/>
+      <point x="1295" y="-312"/>
+      <point x="1298" y="-394" type="curve" smooth="yes"/>
+      <point x="1302" y="-491"/>
+      <point x="1297" y="-690"/>
+      <point x="1487" y="-690" type="curve" smooth="yes"/>
+      <point x="1679" y="-690"/>
+      <point x="1672" y="-486"/>
+      <point x="1677" y="-394" type="curve" smooth="yes"/>
+      <point x="1681" y="-315"/>
+      <point x="1698" y="-169"/>
+      <point x="1832" y="-169" type="curve" smooth="yes"/>
+      <point x="1973" y="-169"/>
+      <point x="2018" y="-331"/>
+      <point x="2005" y="-455" type="curve"/>
+      <point x="1975" y="-426"/>
+      <point x="1937" y="-412"/>
+      <point x="1901" y="-412" type="curve" smooth="yes"/>
+      <point x="1823" y="-412"/>
+      <point x="1762" y="-474"/>
+      <point x="1762" y="-557" type="curve" smooth="yes"/>
+      <point x="1762" y="-628"/>
+      <point x="1806" y="-690"/>
+      <point x="1893" y="-690" type="curve" smooth="yes"/>
+      <point x="2027" y="-690"/>
+      <point x="2081" y="-544"/>
+      <point x="2081" y="-417" type="curve" smooth="yes"/>
+      <point x="2081" y="-255"/>
+      <point x="1996" y="-105"/>
+      <point x="1825" y="-105" type="curve" smooth="yes"/>
+      <point x="1701" y="-105"/>
+      <point x="1612" y="-186"/>
+      <point x="1603" y="-387" type="curve" smooth="yes"/>
+      <point x="1597" y="-519"/>
+      <point x="1593" y="-626"/>
+      <point x="1487" y="-624" type="curve" smooth="yes"/>
+      <point x="1382" y="-622"/>
+      <point x="1378" y="-514"/>
+      <point x="1373" y="-390" type="curve" smooth="yes"/>
+      <point x="1364" y="-178"/>
+      <point x="1271" y="-105"/>
+      <point x="1129" y="-105" type="curve" smooth="yes"/>
+      <point x="902" y="-105"/>
+      <point x="787" y="-295"/>
+      <point x="787" y="-458" type="curve" smooth="yes"/>
+      <point x="787" y="-582"/>
+      <point x="852" y="-690"/>
+      <point x="984" y="-690" type="curve" smooth="yes"/>
+      <point x="1146" y="-690"/>
+      <point x="1140" y="-526"/>
+      <point x="1136" y="-403" type="curve" smooth="yes"/>
+      <point x="1126" y="-103"/>
+      <point x="1123" y="-20"/>
+    </contour>
+    <contour>
+      <point x="1895" y="-627" type="curve" smooth="yes"/>
+      <point x="1852" y="-627"/>
+      <point x="1828" y="-595"/>
+      <point x="1828" y="-554" type="curve" smooth="yes"/>
+      <point x="1828" y="-502"/>
+      <point x="1868" y="-468"/>
+      <point x="1914" y="-468" type="curve" smooth="yes"/>
+      <point x="1945" y="-468"/>
+      <point x="1978" y="-483"/>
+      <point x="1996" y="-516" type="curve"/>
+      <point x="1984" y="-574"/>
+      <point x="1952" y="-627"/>
+    </contour>
+    <component base="pa-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:05 +0000</string>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>pa-malayalam</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>cha-malayalam</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+    </dict>
+  </lib>
+</glyph>

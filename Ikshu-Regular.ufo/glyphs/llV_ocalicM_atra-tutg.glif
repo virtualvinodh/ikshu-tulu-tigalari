@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="llVocalicMatra-tutg" format="2">
+  <advance width="50"/>
+  <unicode hex="113C0"/>
+  <anchor x="-7.1" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="llVocalic-tutg" xScale="0.863" yScale="0.863" xOffset="-430" yOffset="-677" identifier="DC2D2943"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:03 +0000</string>
+      <key>public.markColor</key>
+      <string>0.97,0.9,0,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>DC2D2943</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

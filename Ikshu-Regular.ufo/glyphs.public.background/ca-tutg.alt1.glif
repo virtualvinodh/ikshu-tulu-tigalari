@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ca-tutg.alt1" format="2">
+  <advance width="800"/>
+  <outline>
+    <contour>
+      <point x="317" y="149" type="curve"/>
+      <point x="260" y="183" type="line"/>
+      <point x="260" y="182"/>
+      <point x="259" y="181"/>
+      <point x="258" y="180" type="curve" smooth="yes"/>
+      <point x="206" y="106"/>
+      <point x="125" y="57"/>
+      <point x="31" y="29" type="curve"/>
+      <point x="29" y="9"/>
+      <point x="46" y="-23"/>
+      <point x="63" y="-30" type="curve"/>
+      <point x="142" y="0"/>
+      <point x="229" y="0"/>
+      <point x="442" y="0" type="curve" smooth="yes"/>
+      <point x="560" y="0" type="line"/>
+      <point x="560" y="64" type="line"/>
+      <point x="339" y="63" type="line" smooth="yes"/>
+      <point x="286" y="63"/>
+      <point x="224" y="59"/>
+      <point x="171" y="44" type="curve"/>
+      <point x="201" y="50" type="line"/>
+      <point x="249" y="76"/>
+      <point x="287" y="110"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1048" identifier="5EB1EB68"/>
+    <component base="_roundedcorner" xOffset="1048" identifier="444E435A"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>444E435A</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>5EB1EB68</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

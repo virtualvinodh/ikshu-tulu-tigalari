@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nnna-tutg" format="2">
+  <advance width="668"/>
+  <anchor x="334.0" y="621" name="top"/>
+  <anchor x="334.0" y="-64" name="bottom"/>
+  <anchor x="624" y="621" name="topright"/>
+  <anchor x="601" y="-14" name="bottomright"/>
+  <outline>
+    <contour>
+      <point x="44" y="539" type="line"/>
+      <point x="601" y="-14" type="line"/>
+      <point x="624" y="18" type="line"/>
+      <point x="67" y="571" type="line"/>
+    </contour>
+    <contour>
+      <point x="624" y="539" type="line"/>
+      <point x="601" y="571" type="line"/>
+      <point x="44" y="18" type="line"/>
+      <point x="67" y="-14" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.25,0.25,0.25,1</string>
+    </dict>
+  </lib>
+</glyph>

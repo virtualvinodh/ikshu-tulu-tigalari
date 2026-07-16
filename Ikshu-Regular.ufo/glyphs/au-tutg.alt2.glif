@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="au-tutg.alt2" format="2">
+  <advance width="1168"/>
+  <outline>
+    <contour>
+      <point x="809" y="-200" type="curve"/>
+      <point x="826" y="-210"/>
+      <point x="873" y="-210"/>
+      <point x="890" y="-200" type="curve"/>
+      <point x="995" y="-48"/>
+      <point x="1058" y="116"/>
+      <point x="1058" y="251" type="curve" smooth="yes"/>
+      <point x="1058" y="372"/>
+      <point x="1007" y="437"/>
+      <point x="912" y="437" type="curve" smooth="yes"/>
+      <point x="862" y="437"/>
+      <point x="827" y="418"/>
+      <point x="797" y="372" type="curve"/>
+      <point x="774" y="412"/>
+      <point x="729" y="437"/>
+      <point x="681" y="437" type="curve" smooth="yes"/>
+      <point x="607" y="437"/>
+      <point x="557" y="378"/>
+      <point x="557" y="292" type="curve" smooth="yes"/>
+      <point x="557" y="249"/>
+      <point x="569" y="208"/>
+      <point x="592" y="173" type="curve"/>
+      <point x="605" y="166"/>
+      <point x="647" y="166"/>
+      <point x="663" y="172" type="curve"/>
+      <point x="638" y="211"/>
+      <point x="623" y="257"/>
+      <point x="623" y="295" type="curve" smooth="yes"/>
+      <point x="623" y="344"/>
+      <point x="649" y="374"/>
+      <point x="691" y="374" type="curve" smooth="yes"/>
+      <point x="736" y="374"/>
+      <point x="764" y="342"/>
+      <point x="766" y="292" type="curve" smooth="yes"/>
+      <point x="768" y="229" type="line"/>
+      <point x="778" y="219"/>
+      <point x="818" y="219"/>
+      <point x="828" y="229" type="curve"/>
+      <point x="828" y="280" type="line" smooth="yes"/>
+      <point x="828" y="342"/>
+      <point x="855" y="374"/>
+      <point x="905" y="374" type="curve" smooth="yes"/>
+      <point x="962" y="374"/>
+      <point x="990" y="332"/>
+      <point x="990" y="247" type="curve" smooth="yes"/>
+      <point x="990" y="114"/>
+      <point x="921" y="-50"/>
+    </contour>
+    <component base="oo-tutg.alt2"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+    </dict>
+  </lib>
+</glyph>

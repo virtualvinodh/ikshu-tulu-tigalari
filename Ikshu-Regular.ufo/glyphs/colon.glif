@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="colon" format="2">
+  <advance width="200"/>
+  <unicode hex="003A"/>
+  <note>
+colon
+</note>
+  <anchor x="100" y="882" name="top"/>
+  <outline>
+    <contour>
+      <point x="100" y="-17" type="curve" smooth="yes"/>
+      <point x="133" y="-17"/>
+      <point x="159" y="9"/>
+      <point x="159" y="41" type="curve" smooth="yes"/>
+      <point x="159" y="74"/>
+      <point x="133" y="99"/>
+      <point x="100" y="99" type="curve" smooth="yes"/>
+      <point x="68" y="99"/>
+      <point x="42" y="74"/>
+      <point x="42" y="41" type="curve" smooth="yes"/>
+      <point x="42" y="9"/>
+      <point x="68" y="-17"/>
+    </contour>
+    <contour>
+      <point x="100" y="383" type="curve" smooth="yes"/>
+      <point x="133" y="383"/>
+      <point x="159" y="409"/>
+      <point x="159" y="441" type="curve" smooth="yes"/>
+      <point x="159" y="474"/>
+      <point x="133" y="499"/>
+      <point x="100" y="499" type="curve" smooth="yes"/>
+      <point x="68" y="499"/>
+      <point x="42" y="474"/>
+      <point x="42" y="441" type="curve" smooth="yes"/>
+      <point x="42" y="409"/>
+      <point x="68" y="383"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

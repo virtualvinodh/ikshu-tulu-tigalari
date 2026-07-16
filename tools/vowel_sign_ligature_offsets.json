@@ -1,0 +1,11417 @@
+[
+  {
+    "parentGlyph": "ba_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1315,
+      570
+    ],
+    "component": "ba-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1310,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1310
+  },
+  {
+    "parentGlyph": "ba_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1315,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 534,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ba-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ba_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      2009,
+      570
+    ],
+    "component": "ba-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1310,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1310
+  },
+  {
+    "parentGlyph": "ba_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      2009,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 1270,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ba-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ba_rVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -362,
+      1311,
+      570
+    ],
+    "component": "ba-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1310,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1310
+  },
+  {
+    "parentGlyph": "ba_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -587,
+      1477,
+      570
+    ],
+    "component": "ba_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      11,
+      -362,
+      1311,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1311
+  },
+  {
+    "parentGlyph": "ba_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -587,
+      1477,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 1107,
+      "dy": 20,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ba_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ba_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      1315,
+      570
+    ],
+    "component": "ba-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1310,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1310
+  },
+  {
+    "parentGlyph": "ba_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      1389,
+      570
+    ],
+    "component": "ba-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1310,
+      570
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 1310
+  },
+  {
+    "parentGlyph": "ba_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      1389,
+      570
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 922,
+      "dy": 1,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "ba-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "bha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1180,
+      570
+    ],
+    "component": "bha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1175,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1175
+  },
+  {
+    "parentGlyph": "bha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1180,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 175,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "bha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "bha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -245,
+      1491,
+      570
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 1060,
+      "dy": -13,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "bha-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "bha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -245,
+      1491,
+      570
+    ],
+    "component": "bha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1175,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 1175
+  },
+  {
+    "parentGlyph": "bha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1180,
+      570
+    ],
+    "component": "_horizontalline64",
+    "transform": {
+      "dx": 2,
+      "dy": 0,
+      "xx": 0.7094,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      853,
+      0,
+      1101,
+      64
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1101
+  },
+  {
+    "parentGlyph": "bha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -546,
+      1344,
+      570
+    ],
+    "component": "bha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      1180,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1180
+  },
+  {
+    "parentGlyph": "bha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -546,
+      1344,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 974,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "bha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "bha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -87,
+      1175,
+      570
+    ],
+    "component": "_horizontalline64",
+    "transform": {
+      "dx": -3,
+      "dy": 0,
+      "xx": 0.7094,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      853,
+      0,
+      1101,
+      64
+    ],
+    "siblingComponents": [
+      "_umatra"
+    ],
+    "componentRightEdge": 1101
+  },
+  {
+    "parentGlyph": "bha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -87,
+      1175,
+      570
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 840,
+      "dy": 137,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [
+      "_horizontalline64"
+    ],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "bha_uMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -266,
+      1325.5,
+      571
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 664,
+      "dy": 54,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "bha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1399.5,
+      572
+    ],
+    "component": "_horizontalline64",
+    "transform": {
+      "dx": -3,
+      "dy": 0,
+      "xx": 0.7094,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      853,
+      0,
+      1101,
+      64
+    ],
+    "siblingComponents": [
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 1101
+  },
+  {
+    "parentGlyph": "bha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1399.5,
+      572
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 738,
+      "dy": 55,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "_horizontalline64"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "bha_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10.193070155989005,
+      -543,
+      564,
+      572
+    ],
+    "component": "bha-tutg.alt1",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.193070155989005,
+      -205,
+      463,
+      572
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 463
+  },
+  {
+    "parentGlyph": "ca_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1051,
+      575.5051633730756
+    ],
+    "component": "ca-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      928,
+      575.5051633730756
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 928
+  },
+  {
+    "parentGlyph": "ca_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1051,
+      575.5051633730756
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 270,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ca-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ca_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1376,
+      575.5051633730756
+    ],
+    "component": "ca-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      928,
+      575.5051633730756
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 928
+  },
+  {
+    "parentGlyph": "ca_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1376,
+      575.5051633730756
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 637,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ca-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ca_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      933,
+      575.5051633730756
+    ],
+    "component": "ca-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      928,
+      575.5051633730756
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 928
+  },
+  {
+    "parentGlyph": "ca_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      1096,
+      575.5051633730756
+    ],
+    "component": "ca_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      933,
+      575.5051633730756
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 933
+  },
+  {
+    "parentGlyph": "ca_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      1096,
+      575.5051633730756
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 726,
+      "dy": 21,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ca_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ca_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      933,
+      575.5051633730756
+    ],
+    "component": "ca-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      928,
+      575.5051633730756
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 928
+  },
+  {
+    "parentGlyph": "ca_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -443,
+      1008,
+      575.5051633730756
+    ],
+    "component": "ca-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      928,
+      575.5051633730756
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 928
+  },
+  {
+    "parentGlyph": "ca_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -443,
+      1008,
+      575.5051633730756
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 541,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "ca-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "cha_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1230,
+      571
+    ],
+    "component": "cha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1230,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1230
+  },
+  {
+    "parentGlyph": "cha_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1230,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 330,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "cha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "cha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1622,
+      571
+    ],
+    "component": "cha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1230,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1230
+  },
+  {
+    "parentGlyph": "cha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1622,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 883,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "cha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "cha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      1235,
+      571
+    ],
+    "component": "cha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1230,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1230
+  },
+  {
+    "parentGlyph": "cha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -585,
+      1395,
+      571
+    ],
+    "component": "cha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": -4,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      1235,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1235
+  },
+  {
+    "parentGlyph": "cha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -585,
+      1395,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 1025,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "cha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "cha_uMatra-tutg",
+    "parentBounds": [
+      11,
+      -321,
+      1457.5,
+      571
+    ],
+    "component": "cha-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1230,
+      571
+    ],
+    "siblingComponents": [
+      "_umatra.01"
+    ],
+    "componentRightEdge": 1230
+  },
+  {
+    "parentGlyph": "cha_uMatra-tutg",
+    "parentBounds": [
+      11,
+      -321,
+      1457.5,
+      571
+    ],
+    "component": "_umatra.01",
+    "transform": {
+      "dx": 883,
+      "dy": 25,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      11,
+      -346,
+      574.5,
+      200
+    ],
+    "siblingComponents": [
+      "cha-tutg"
+    ],
+    "componentRightEdge": 574.5
+  },
+  {
+    "parentGlyph": "cha_uMatra-tutg.alt1",
+    "parentBounds": [
+      10.183858744421961,
+      -454,
+      1421.5,
+      570.1332128652591
+    ],
+    "component": "_uMatra.02",
+    "transform": {
+      "dx": 866,
+      "dy": 13,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -62,
+      -467,
+      555.5,
+      292
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 555.5
+  },
+  {
+    "parentGlyph": "cha_uuMatra-tutg",
+    "parentBounds": [
+      9.789116990664612,
+      -467,
+      1419.5,
+      570.419844875946
+    ],
+    "component": "_uMatra.02",
+    "transform": {
+      "dx": 864,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -62,
+      -467,
+      555.5,
+      292
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 555.5
+  },
+  {
+    "parentGlyph": "da_lVocalicMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -483,
+      799,
+      572
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 18,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "da-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "da_lVocalicMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -483,
+      799,
+      572
+    ],
+    "component": "da-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.404494141578326,
+      -7.5,
+      621,
+      572
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 621
+  },
+  {
+    "parentGlyph": "da_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      10,
+      -259,
+      1108,
+      571
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 677,
+      "dy": -27,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "da_rVocalicMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -320,
+      621,
+      572
+    ],
+    "component": "da-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.404494141578326,
+      -7.5,
+      621,
+      572
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 621
+  },
+  {
+    "parentGlyph": "da_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -545,
+      784,
+      572
+    ],
+    "component": "da_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.404494141578326,
+      -320,
+      621,
+      572
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 621
+  },
+  {
+    "parentGlyph": "da_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -545,
+      784,
+      572
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 414,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "da_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "da_uMatra-tutg",
+    "parentBounds": [
+      15.404494141578326,
+      -224,
+      626,
+      572
+    ],
+    "component": "da-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.404494141578326,
+      -7.5,
+      621,
+      572
+    ],
+    "siblingComponents": [
+      "_umatra"
+    ],
+    "componentRightEdge": 621
+  },
+  {
+    "parentGlyph": "da_uMatra-tutg",
+    "parentBounds": [
+      15.404494141578326,
+      -224,
+      626,
+      572
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 291,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [
+      "da-tutg"
+    ],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "da_uuMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -342,
+      695,
+      572
+    ],
+    "component": "da-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10.404494141578326,
+      -7.5,
+      621,
+      572
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 621
+  },
+  {
+    "parentGlyph": "da_uuMatra-tutg",
+    "parentBounds": [
+      10.404494141578326,
+      -342,
+      695,
+      572
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 228,
+      "dy": 101,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "da-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "dda_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1095,
+      571
+    ],
+    "component": "dda-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      986,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 986
+  },
+  {
+    "parentGlyph": "dda_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1095,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 314,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "dda-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "dda_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.75,
+      -361,
+      1332,
+      564.5
+    ],
+    "component": "dda-tutg.alt1",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.75,
+      -15,
+      907,
+      564.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 907
+  },
+  {
+    "parentGlyph": "dda_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.75,
+      -361,
+      1332,
+      564.5
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 593,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "dda-tutg.alt1"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "dda_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -360,
+      986,
+      571
+    ],
+    "component": "dda-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      986,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 986
+  },
+  {
+    "parentGlyph": "dda_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      1147,
+      571
+    ],
+    "component": "dda_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -360,
+      986,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 986
+  },
+  {
+    "parentGlyph": "dda_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      1147,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 777,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "dda_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "dda_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -212,
+      1051,
+      571
+    ],
+    "component": "dda-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      986,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 986
+  },
+  {
+    "parentGlyph": "dda_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -212,
+      1051,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 1117,
+      "dy": 40,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "dda-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "dda_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -351,
+      1100,
+      571
+    ],
+    "component": "dda-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      986,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg"
+    ],
+    "componentRightEdge": 986
+  },
+  {
+    "parentGlyph": "dda_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -351,
+      1100,
+      571
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 820,
+      "dy": -14,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [
+      "dda-tutg"
+    ],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "ddha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1073,
+      571
+    ],
+    "component": "ddha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1068,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1068
+  },
+  {
+    "parentGlyph": "ddha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1073,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 187,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ddha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ddha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.75,
+      -361,
+      1392,
+      570
+    ],
+    "component": "ddha-tutg.alt1",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.75,
+      -15,
+      989,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 989
+  },
+  {
+    "parentGlyph": "ddha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.75,
+      -361,
+      1392,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 653,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ddha-tutg.alt1"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ddha_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -360,
+      1068,
+      571
+    ],
+    "component": "ddha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1068,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1068
+  },
+  {
+    "parentGlyph": "ddha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      1229,
+      571
+    ],
+    "component": "ddha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -360,
+      1068,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1068
+  },
+  {
+    "parentGlyph": "ddha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      1229,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 859,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ddha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ddha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -191,
+      1126,
+      571
+    ],
+    "component": "ddha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1068,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 1068
+  },
+  {
+    "parentGlyph": "ddha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -191,
+      1126,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 1192,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "ddha-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "ddha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -355,
+      1120,
+      571
+    ],
+    "component": "ddha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1068,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg"
+    ],
+    "componentRightEdge": 1068
+  },
+  {
+    "parentGlyph": "ddha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -355,
+      1120,
+      571
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 840,
+      "dy": -18,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [
+      "ddha-tutg"
+    ],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "dha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      789,
+      562.5
+    ],
+    "component": "dha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      784,
+      562.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "dha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      789,
+      562.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -15,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "dha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "dha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1198,
+      562.5
+    ],
+    "component": "dha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      784,
+      562.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "dha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1198,
+      562.5
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 459,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "dha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "dha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      951,
+      562.5
+    ],
+    "component": "dha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -361,
+      789,
+      562.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 789
+  },
+  {
+    "parentGlyph": "dha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      951,
+      562.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 581,
+      "dy": 21,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "dha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "dha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -234,
+      789,
+      562.5
+    ],
+    "component": "dha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      784,
+      562.5
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "dha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -234,
+      789,
+      562.5
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 850,
+      "dy": 18,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "dha-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "dha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -337,
+      905,
+      562.5
+    ],
+    "component": "dha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      784,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "ga_ga_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1359,
+      572
+    ],
+    "component": "ga_ga-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1354,
+      572
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1354
+  },
+  {
+    "parentGlyph": "ga_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      879,
+      572
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 98,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ga_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1143,
+      572
+    ],
+    "component": "ga-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      765,
+      572
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "ga_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1143,
+      572
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 712,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "ga-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "ga_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -545,
+      929,
+      572
+    ],
+    "component": "ga_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -320,
+      765,
+      572
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "ga_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -545,
+      929,
+      572
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 559,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ga_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ga_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      995.5,
+      572
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 334,
+      "dy": 55,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "gha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1208,
+      570
+    ],
+    "component": "gha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1120,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1120
+  },
+  {
+    "parentGlyph": "gha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1208,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 427,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "gha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "gha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1551,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 812,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "gha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "gha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1551,
+      570
+    ],
+    "component": "gha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1120,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1120
+  },
+  {
+    "parentGlyph": "gha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -362,
+      1125,
+      570
+    ],
+    "component": "gha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1120,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1120
+  },
+  {
+    "parentGlyph": "gha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -587,
+      1292,
+      570
+    ],
+    "component": "gha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -362,
+      1125,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1125
+  },
+  {
+    "parentGlyph": "gha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -587,
+      1292,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 922,
+      "dy": 20,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "gha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "gha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -185,
+      1179,
+      570
+    ],
+    "component": "gha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1120,
+      570
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 1120
+  },
+  {
+    "parentGlyph": "gha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -185,
+      1179,
+      570
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 1245,
+      "dy": 67,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "gha-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "gha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -352,
+      1171,
+      570
+    ],
+    "component": "gha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1120,
+      570
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg"
+    ],
+    "componentRightEdge": 1120
+  },
+  {
+    "parentGlyph": "gha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -352,
+      1171,
+      570
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 891,
+      "dy": -15,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [
+      "gha-tutg"
+    ],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "ha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1134,
+      570
+    ],
+    "component": "ha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1129,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1129
+  },
+  {
+    "parentGlyph": "ha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1134,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 292,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -254,
+      1527,
+      570
+    ],
+    "component": "ha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1129,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 1129
+  },
+  {
+    "parentGlyph": "ha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -254,
+      1527,
+      570
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 1096,
+      "dy": -22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "ha-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "ha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -546,
+      1300,
+      570
+    ],
+    "component": "ha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      1134,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1134
+  },
+  {
+    "parentGlyph": "ha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -546,
+      1300,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 930,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1129,
+      570
+    ],
+    "component": "ha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1129,
+      570
+    ],
+    "siblingComponents": [
+      "_umatra"
+    ],
+    "componentRightEdge": 1129
+  },
+  {
+    "parentGlyph": "ha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1129,
+      570
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 794,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [
+      "ha-tutg"
+    ],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "ha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -266,
+      1339.5,
+      572
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 678,
+      "dy": 54,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "ja_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1509,
+      571
+    ],
+    "component": "ja-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1509,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1509
+  },
+  {
+    "parentGlyph": "ja_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1509,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 604,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ja-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ja_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1907,
+      571
+    ],
+    "component": "ja-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1509,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1509
+  },
+  {
+    "parentGlyph": "ja_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1907,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 1168,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ja-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ja_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -365,
+      1509,
+      571
+    ],
+    "component": "ja-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1509,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1509
+  },
+  {
+    "parentGlyph": "ja_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -591,
+      1671,
+      571
+    ],
+    "component": "ja_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -365,
+      1509,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1509
+  },
+  {
+    "parentGlyph": "ja_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -591,
+      1671,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 1301,
+      "dy": 16,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ja_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ja_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1733.5,
+      571
+    ],
+    "component": "ja-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1509,
+      571
+    ],
+    "siblingComponents": [
+      "_umatra.01"
+    ],
+    "componentRightEdge": 1509
+  },
+  {
+    "parentGlyph": "ja_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1733.5,
+      571
+    ],
+    "component": "_umatra.01",
+    "transform": {
+      "dx": 1159,
+      "dy": 26,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      11,
+      -346,
+      574.5,
+      200
+    ],
+    "siblingComponents": [
+      "ja-tutg"
+    ],
+    "componentRightEdge": 574.5
+  },
+  {
+    "parentGlyph": "ja_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -467,
+      1699.5,
+      571
+    ],
+    "component": "_uMatra.02",
+    "transform": {
+      "dx": 1144,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -62,
+      -467,
+      555.5,
+      292
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 555.5
+  },
+  {
+    "parentGlyph": "jha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      879,
+      643.5
+    ],
+    "component": "jha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      874,
+      643.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 874
+  },
+  {
+    "parentGlyph": "jha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      879,
+      643.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 30,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "jha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "jha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1343,
+      643.5
+    ],
+    "component": "jha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      874,
+      643.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 874
+  },
+  {
+    "parentGlyph": "jha_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      874,
+      643.5
+    ],
+    "component": "_roundedcorner",
+    "transform": {
+      "dx": 697,
+      "dy": 240,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      0,
+      177,
+      130
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 177
+  },
+  {
+    "parentGlyph": "jha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -546,
+      1039,
+      643.5
+    ],
+    "component": "jha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -320,
+      874,
+      643.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 874
+  },
+  {
+    "parentGlyph": "jha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -546,
+      1039,
+      643.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 669,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "jha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "jha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -15,
+      961.2136,
+      643.5
+    ],
+    "component": "_roundedcorner",
+    "transform": {
+      "dx": 784.2136,
+      "dy": 240,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      0,
+      177,
+      130
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 177
+  },
+  {
+    "parentGlyph": "jha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -204,
+      1107,
+      643.5
+    ],
+    "component": "_roundedcorner",
+    "transform": {
+      "dx": 854.8728,
+      "dy": 240,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      0,
+      177,
+      130
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 177
+  },
+  {
+    "parentGlyph": "jha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -204,
+      1107,
+      643.5
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 640,
+      "dy": 239,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "_roundedcorner"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "ka_iMatra_dotreph-tutg",
+    "parentBounds": [
+      15,
+      -15,
+      1294.003366040675,
+      919
+    ],
+    "component": "ka-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1054,
+      571
+    ],
+    "siblingComponents": [
+      "repha-tutg.alt1",
+      "iiMatra-tutg"
+    ],
+    "componentRightEdge": 1054
+  },
+  {
+    "parentGlyph": "ka_iMatra_dotreph-tutg",
+    "parentBounds": [
+      15,
+      -15,
+      1294.003366040675,
+      919
+    ],
+    "component": "repha-tutg.alt1",
+    "transform": {
+      "dx": 880,
+      "dy": -31,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -360,
+      617.5,
+      -297,
+      859.5
+    ],
+    "siblingComponents": [
+      "ka-tutg",
+      "iiMatra-tutg"
+    ],
+    "componentRightEdge": -297
+  },
+  {
+    "parentGlyph": "ka_iMatra_dotreph-tutg",
+    "parentBounds": [
+      15,
+      -15,
+      1294.003366040675,
+      919
+    ],
+    "component": "iiMatra-tutg",
+    "transform": {
+      "dx": 1220,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -593,
+      -7.5,
+      74.00336604067493,
+      919
+    ],
+    "siblingComponents": [
+      "ka-tutg",
+      "repha-tutg.alt1"
+    ],
+    "componentRightEdge": 74.00336604067493
+  },
+  {
+    "parentGlyph": "ka_ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1706,
+      595.7519330239322
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 682,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm",
+      "_kabowl"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1706,
+      595.7519330239322
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_kabowl"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1706,
+      595.7519330239322
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_karightarm"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1519,
+      571
+    ],
+    "component": "ka-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1054,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 1054
+  },
+  {
+    "parentGlyph": "ka_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1519,
+      571
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 1088,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "ka-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1059,
+      571
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1059,
+      571
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -546,
+      1228,
+      571
+    ],
+    "component": "ka_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      1059,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1059
+  },
+  {
+    "parentGlyph": "ka_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -546,
+      1228,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 858,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ka_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ka_ta_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1925.5,
+      595.0333278483961
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_ta_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1925.5,
+      595.0333278483961
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_ta_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1925.5,
+      595.0333278483961
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 668,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_karightarm"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ka_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1871.5,
+      595.0333278483961
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm",
+      "_tamiddle",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1871.5,
+      595.0333278483961
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_tamiddle",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1871.5,
+      595.0333278483961
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 668,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ka_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -265,
+      1871.5,
+      595.0333278483961
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 1210,
+      "dy": 55,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "ka_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1409.5,
+      571
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1409.5,
+      571
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1336.5,
+      571
+    ],
+    "component": "_kabowl",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      231,
+      -15,
+      846,
+      513
+    ],
+    "siblingComponents": [
+      "_karightarm",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 846
+  },
+  {
+    "parentGlyph": "ka_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1336.5,
+      571
+    ],
+    "component": "_karightarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.879459237034226,
+      589,
+      571
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 589
+  },
+  {
+    "parentGlyph": "ka_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1336.5,
+      571
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 675,
+      "dy": 96,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "_kabowl",
+      "_karightarm"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "kha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1347,
+      565.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 566,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "kha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "kha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1347,
+      565.5
+    ],
+    "component": "kha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1224,
+      565.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1224
+  },
+  {
+    "parentGlyph": "kha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1665,
+      565.5
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 926,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "kha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "kha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1665,
+      565.5
+    ],
+    "component": "kha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1224,
+      565.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1224
+  },
+  {
+    "parentGlyph": "kha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -374,
+      1229,
+      565.5
+    ],
+    "component": "kha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1224,
+      565.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1224
+  },
+  {
+    "parentGlyph": "kha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -600,
+      1398,
+      565.5
+    ],
+    "component": "kha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -374,
+      1229,
+      565.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1229
+  },
+  {
+    "parentGlyph": "kha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      20,
+      -600,
+      1398,
+      565.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 1028,
+      "dy": 7,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "kha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "kha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      1229,
+      565.5
+    ],
+    "component": "kha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1224,
+      565.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1224
+  },
+  {
+    "parentGlyph": "kha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -443,
+      1303,
+      565.5
+    ],
+    "component": "kha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1224,
+      565.5
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 1224
+  },
+  {
+    "parentGlyph": "kha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -443,
+      1303,
+      565.5
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 836,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "kha-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "la_ka_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -708.8370157086247,
+      959,
+      571
+    ],
+    "component": "la_ka-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -483,
+      831,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 831
+  },
+  {
+    "parentGlyph": "la_lVocalicMatra-tutg",
+    "parentBounds": [
+      57,
+      -483,
+      785,
+      571
+    ],
+    "component": "la-tutg",
+    "transform": {
+      "dx": 93,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      652,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 652
+  },
+  {
+    "parentGlyph": "la_lVocalicMatra-tutg",
+    "parentBounds": [
+      57,
+      -483,
+      785,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 4,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "la-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "la_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1027,
+      571
+    ],
+    "component": "la-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      652,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 652
+  },
+  {
+    "parentGlyph": "la_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1027,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 288,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "la-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "la_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      816,
+      571
+    ],
+    "component": "la_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -360,
+      652,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 652
+  },
+  {
+    "parentGlyph": "la_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -585,
+      816,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 446,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "la_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "la_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      657,
+      571
+    ],
+    "component": "la-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      652,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 652
+  },
+  {
+    "parentGlyph": "la_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      657,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 723,
+      "dy": 23,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "la-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "la_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      694,
+      571
+    ],
+    "component": "la-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      652,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 652
+  },
+  {
+    "parentGlyph": "lla_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -669,
+      1135.5,
+      571
+    ],
+    "component": "lla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -184,
+      1130.5,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1130.5
+  },
+  {
+    "parentGlyph": "lla_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -669,
+      1135.5,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 264,
+      "dy": -186,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "lla-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "lla_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      10,
+      -561,
+      1010,
+      570
+    ],
+    "component": "lla-tutg.alt1",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -191,
+      912.5,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 912.5
+  },
+  {
+    "parentGlyph": "lla_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -540,
+      1135.5,
+      571
+    ],
+    "component": "lla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -184,
+      1130.5,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1130.5
+  },
+  {
+    "parentGlyph": "lla_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -766,
+      1150,
+      571
+    ],
+    "component": "lla_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -540,
+      1135.5,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1135.5
+  },
+  {
+    "parentGlyph": "lla_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -766,
+      1150,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 780,
+      "dy": -159,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "lla_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "lla_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -406,
+      1135.5,
+      571
+    ],
+    "component": "lla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -184,
+      1130.5,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 1130.5
+  },
+  {
+    "parentGlyph": "lla_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -406,
+      1135.5,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 1033,
+      "dy": -154,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "lla-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "lla_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -530,
+      1135.5,
+      571
+    ],
+    "component": "lla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -184,
+      1130.5,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg"
+    ],
+    "componentRightEdge": 1130.5
+  },
+  {
+    "parentGlyph": "lla_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -530,
+      1135.5,
+      571
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 825,
+      "dy": -193,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [
+      "lla-tutg"
+    ],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "llla_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      770,
+      571
+    ],
+    "component": "llla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      765,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "llla_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      770,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -34,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "llla-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "llla_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1145,
+      571
+    ],
+    "component": "llla-tutg.alt1",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      883,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 883
+  },
+  {
+    "parentGlyph": "llla_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1145,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 406,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "llla-tutg.alt1"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "llla_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -362,
+      770,
+      571
+    ],
+    "component": "llla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      765,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "llla_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      933,
+      571
+    ],
+    "component": "llla_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -362,
+      770,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 770
+  },
+  {
+    "parentGlyph": "llla_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      933,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 563,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "llla_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "llla_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -193,
+      770,
+      571
+    ],
+    "component": "llla-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      765,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "llla_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -193,
+      770,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 836,
+      "dy": 59,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "llla-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "llla_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      1006,
+      571
+    ],
+    "component": "llla-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      765,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 765
+  },
+  {
+    "parentGlyph": "ma_lVocalicMatra-tutg",
+    "parentBounds": [
+      59,
+      -483,
+      787,
+      571
+    ],
+    "component": "ma-tutg",
+    "transform": {
+      "dx": 93,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      620,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 620
+  },
+  {
+    "parentGlyph": "ma_lVocalicMatra-tutg",
+    "parentBounds": [
+      59,
+      -483,
+      787,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 6,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ma-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ma_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1135,
+      571
+    ],
+    "component": "ma-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      620,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 620
+  },
+  {
+    "parentGlyph": "ma_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1135,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 396,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ma-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ma_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      625,
+      571
+    ],
+    "component": "ma-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      620,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 620
+  },
+  {
+    "parentGlyph": "ma_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      788,
+      571
+    ],
+    "component": "ma_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      625,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 625
+  },
+  {
+    "parentGlyph": "ma_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -586,
+      788,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 418,
+      "dy": 21,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ma_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ma_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      625,
+      571
+    ],
+    "component": "ma-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      620,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 620
+  },
+  {
+    "parentGlyph": "ma_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      625,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 691,
+      "dy": 23,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "ma-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "ma_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -337,
+      854,
+      571
+    ],
+    "component": "ma-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      620,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 620
+  },
+  {
+    "parentGlyph": "na_ka_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -542.6754938927738,
+      788,
+      571
+    ],
+    "component": "na_ka-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -225,
+      783,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 783
+  },
+  {
+    "parentGlyph": "na_ka_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -465,
+      892,
+      571
+    ],
+    "component": "na_ka-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -225,
+      783,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 783
+  },
+  {
+    "parentGlyph": "na_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      785,
+      570
+    ],
+    "component": "na-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      784,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "na_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      785,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -19,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "na-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "na_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -246,
+      1174,
+      570
+    ],
+    "component": "na-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      784,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "na_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -246,
+      1174,
+      570
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 743,
+      "dy": -14,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "na-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "na_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -545,
+      953,
+      570
+    ],
+    "component": "na_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      789,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 789
+  },
+  {
+    "parentGlyph": "na_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -545,
+      953,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 583,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "na_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "na_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -87,
+      784.1623006229961,
+      570
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 448,
+      "dy": 137,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "na_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      858,
+      570
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 391,
+      "dy": 106,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "na-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "na_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      858,
+      570
+    ],
+    "component": "na-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      784,
+      570
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 784
+  },
+  {
+    "parentGlyph": "na_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -266,
+      1009.5,
+      571
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 348,
+      "dy": 54,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "nga_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1052,
+      571
+    ],
+    "component": "nga-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1052,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_lVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -483,
+      1052,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 242,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "nga-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "nga_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -433,
+      1557,
+      571
+    ],
+    "component": "nga-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1052,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -433,
+      1557,
+      571
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 1126,
+      "dy": -201,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "nga-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "nga_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1052,
+      571
+    ],
+    "component": "_nga1",
+    "transform": {
+      "dx": 50,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      361,
+      -7.5,
+      1002,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1002
+  },
+  {
+    "parentGlyph": "nga_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -545,
+      1215,
+      571
+    ],
+    "component": "nga_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -320,
+      1052,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -545,
+      1215,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 845,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "nga_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "nga_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1052,
+      571
+    ],
+    "component": "nga-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1052,
+      571
+    ],
+    "siblingComponents": [
+      "_umatra"
+    ],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1052,
+      571
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 717,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [
+      "nga-tutg"
+    ],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "nga_uMatra-tutg.alt1",
+    "parentBounds": [
+      15,
+      -226,
+      1412.5,
+      571
+    ],
+    "component": "nga-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1052,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -353,
+      1126,
+      571
+    ],
+    "component": "nga-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1052,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 1052
+  },
+  {
+    "parentGlyph": "nga_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -353,
+      1126,
+      571
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 659,
+      "dy": 90,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "nga-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "nna_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      1204,
+      571
+    ],
+    "component": "nna-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1203,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1203
+  },
+  {
+    "parentGlyph": "nna_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      1204,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 318,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "nna-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "nna_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1588,
+      571
+    ],
+    "component": "nna-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1203,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 1203
+  },
+  {
+    "parentGlyph": "nna_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1588,
+      571
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 1157,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "nna-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "nna_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -537,
+      1367,
+      571
+    ],
+    "component": "nna_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -312,
+      1203.0428600587554,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1203.0428600587554
+  },
+  {
+    "parentGlyph": "nna_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -537,
+      1367,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 997,
+      "dy": 70,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "nna_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "nna_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -87,
+      1203.2470676288085,
+      571
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 868,
+      "dy": 137,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "nna_uMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -118.83701570862472,
+      1216,
+      571
+    ],
+    "component": "uMatra-tutg.alt6",
+    "transform": {
+      "dx": 1244,
+      "dy": 136,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -371.5,
+      -254.83701570862473,
+      -28,
+      10
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": -28
+  },
+  {
+    "parentGlyph": "nna_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -355,
+      1277,
+      571
+    ],
+    "component": "nna-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      1203,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 1203
+  },
+  {
+    "parentGlyph": "nna_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -355,
+      1277,
+      571
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 810,
+      "dy": 88,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "nna-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "nna_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -266,
+      1435.5,
+      573
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 774,
+      "dy": 54,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "nya_ja_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      2375.5,
+      571
+    ],
+    "component": "nya_ja-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      2145,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 2145
+  },
+  {
+    "parentGlyph": "nya_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1171,
+      571
+    ],
+    "component": "nya-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -92.5,
+      1166,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1166
+  },
+  {
+    "parentGlyph": "nya_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1171,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 359,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "nya-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "nya_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -511,
+      1448,
+      571
+    ],
+    "component": "nya-tutg.alt1",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -268,
+      998,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 998
+  },
+  {
+    "parentGlyph": "nya_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -511,
+      1448,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 709,
+      "dy": -150,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "nya-tutg.alt1"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "nya_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1171,
+      571
+    ],
+    "component": "_initA",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      111,
+      472,
+      570
+    ],
+    "siblingComponents": [
+      "_center"
+    ],
+    "componentRightEdge": 472
+  },
+  {
+    "parentGlyph": "nya_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      1171,
+      571
+    ],
+    "component": "_center",
+    "transform": {
+      "dx": 59,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      544,
+      -15,
+      894,
+      504
+    ],
+    "siblingComponents": [
+      "_initA"
+    ],
+    "componentRightEdge": 894
+  },
+  {
+    "parentGlyph": "nya_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -546,
+      1330,
+      571
+    ],
+    "component": "nya_rVocalicMatra-tutg",
+    "transform": {
+      "dx": -4,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      1171,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1171
+  },
+  {
+    "parentGlyph": "nya_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -546,
+      1330,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 960,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "nya_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "nya_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -185,
+      1538.5,
+      571
+    ],
+    "component": "_initA",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      111,
+      472,
+      570
+    ],
+    "siblingComponents": [
+      "_center"
+    ],
+    "componentRightEdge": 472
+  },
+  {
+    "parentGlyph": "nya_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -185,
+      1538.5,
+      571
+    ],
+    "component": "_center",
+    "transform": {
+      "dx": 54,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      544,
+      -15,
+      894,
+      504
+    ],
+    "siblingComponents": [
+      "_initA"
+    ],
+    "componentRightEdge": 894
+  },
+  {
+    "parentGlyph": "nya_uMatra-tutg.alt1",
+    "parentBounds": [
+      15,
+      -123.83701570862472,
+      1276,
+      571
+    ],
+    "component": "_initA",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      111,
+      472,
+      570
+    ],
+    "siblingComponents": [
+      "_center"
+    ],
+    "componentRightEdge": 472
+  },
+  {
+    "parentGlyph": "nya_uMatra-tutg.alt1",
+    "parentBounds": [
+      15,
+      -123.83701570862472,
+      1276,
+      571
+    ],
+    "component": "_center",
+    "transform": {
+      "dx": 59,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      544,
+      -15,
+      894,
+      504
+    ],
+    "siblingComponents": [
+      "_initA"
+    ],
+    "componentRightEdge": 894
+  },
+  {
+    "parentGlyph": "pa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      913,
+      565.5
+    ],
+    "component": "pa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      908,
+      565.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "pa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      913,
+      565.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 132,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "pa-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "pa_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1567,
+      565.5
+    ],
+    "component": "pa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      908,
+      565.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "pa_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1567,
+      565.5
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 828,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "pa-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "pa_rVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -362,
+      909,
+      565.5
+    ],
+    "component": "pa-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      908,
+      565.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "pa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -587,
+      1073,
+      565.5
+    ],
+    "component": "pa_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      11,
+      -362,
+      909,
+      565.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 909
+  },
+  {
+    "parentGlyph": "pa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -587,
+      1073,
+      565.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 703,
+      "dy": 20,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "pa_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "pa_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      913,
+      565.5
+    ],
+    "component": "pa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      908,
+      565.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "pa_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      987,
+      565.5
+    ],
+    "component": "pa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      908,
+      565.5
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "pa_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      987,
+      565.5
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 520,
+      "dy": 1,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "pa-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "pha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      963.0126882269742,
+      570
+    ],
+    "component": "pha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      958.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 958.0126882269742
+  },
+  {
+    "parentGlyph": "pha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      963.0126882269742,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 182,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "pha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "pha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1655,
+      570
+    ],
+    "component": "pha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      958.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 958.0126882269742
+  },
+  {
+    "parentGlyph": "pha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1655,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 916,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "pha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "pha_rVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -362,
+      959.0126882269742,
+      570
+    ],
+    "component": "pha-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      958.0126882269742,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 958.0126882269742
+  },
+  {
+    "parentGlyph": "pha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -588,
+      1121,
+      570
+    ],
+    "component": "pha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      11,
+      -362,
+      959.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 959.0126882269742
+  },
+  {
+    "parentGlyph": "pha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -588,
+      1121,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 751,
+      "dy": 19,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "pha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "pha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      963.0126882269742,
+      570
+    ],
+    "component": "pha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      958.0126882269742,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 958.0126882269742
+  },
+  {
+    "parentGlyph": "pha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      1036,
+      570
+    ],
+    "component": "pha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      958.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 958.0126882269742
+  },
+  {
+    "parentGlyph": "pha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      1036,
+      570
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 569,
+      "dy": 1,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "pha-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "rVocalicMatra_uuMatra-tutg",
+    "parentBounds": [
+      -457,
+      -620,
+      398,
+      187
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 118,
+      "dy": -283,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "raMatra_ya-tutg.below",
+    "parentBounds": [
+      -820.5233768197029,
+      -553,
+      94,
+      453.5
+    ],
+    "component": "ya-tutg.below",
+    "transform": {
+      "dx": 2,
+      "dy": -117,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -490,
+      -436,
+      92,
+      570.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 92
+  },
+  {
+    "parentGlyph": "ra_lVocalicMatra-tutg",
+    "parentBounds": [
+      103,
+      -483,
+      874,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 93,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_lVocalicMatra-tutg",
+    "parentBounds": [
+      103,
+      -483,
+      874,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 93,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ra-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ra_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1085,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1085,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 346,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ra-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ra_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -362,
+      670,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -588,
+      832,
+      570
+    ],
+    "component": "ra_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -362,
+      670,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 670
+  },
+  {
+    "parentGlyph": "ra_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -588,
+      832,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 462,
+      "dy": 19,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ra_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ra_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      670,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      670,
+      570
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 736,
+      "dy": 23,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "ra-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "ra_uMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -340.38605251648926,
+      692,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_uMatra-tutg.alt2",
+    "parentBounds": [
+      10,
+      -336,
+      935.5,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      784,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -483,
+      869.5,
+      570
+    ],
+    "component": "ra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      665,
+      570
+    ],
+    "siblingComponents": [
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 665
+  },
+  {
+    "parentGlyph": "ra_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -483,
+      869.5,
+      570
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 208,
+      "dy": -163,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "ra-tutg"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "rra_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      888,
+      634.5
+    ],
+    "component": "rra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      883,
+      634.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 883
+  },
+  {
+    "parentGlyph": "rra_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      888,
+      634.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 34,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "rra-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "rra_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1328,
+      634.5
+    ],
+    "component": "rra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      883,
+      634.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 883
+  },
+  {
+    "parentGlyph": "rra_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1328,
+      634.5
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 589,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "rra-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "rra_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -362,
+      888,
+      634.5
+    ],
+    "component": "_smart.jaleft",
+    "transform": {
+      "dx": 898,
+      "dy": 556,
+      "xx": -1,
+      "xy": 0,
+      "yx": 0,
+      "yy": -1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      482,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 482
+  },
+  {
+    "parentGlyph": "rra_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -587,
+      1050,
+      634.5
+    ],
+    "component": "rra_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -362,
+      888,
+      634.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 888
+  },
+  {
+    "parentGlyph": "rra_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -587,
+      1050,
+      634.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 680,
+      "dy": 20,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "rra_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "rra_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      888,
+      634.5
+    ],
+    "component": "rra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      883,
+      634.5
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 883
+  },
+  {
+    "parentGlyph": "rra_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      888,
+      634.5
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 954,
+      "dy": 23,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "rra-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "rra_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -337,
+      1012,
+      634.5
+    ],
+    "component": "rra-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      883,
+      634.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 883
+  },
+  {
+    "parentGlyph": "sa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1014,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1014,
+      562.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 233,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "sa-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "sa_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      10,
+      -361,
+      1496,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      961,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      1126,
+      562.5
+    ],
+    "component": "sa_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      961,
+      562.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 961
+  },
+  {
+    "parentGlyph": "sa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      1126,
+      562.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 756,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "sa_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "sa_sa_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -859,
+      961,
+      562.5
+    ],
+    "component": "sa_sa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -500,
+      956,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_sa_ta_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -1192,
+      1633.5,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "sa_ta_uMatra-tutg"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_sa_ta_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -1192,
+      1633.5,
+      562.5
+    ],
+    "component": "sa_ta_uMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": -484,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -708,
+      1633.5,
+      562.5
+    ],
+    "siblingComponents": [
+      "sa-tutg"
+    ],
+    "componentRightEdge": 1633.5
+  },
+  {
+    "parentGlyph": "sa_sa_tha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -500,
+      1608.0126882269742,
+      571
+    ],
+    "component": "sa_sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -500,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "sa_sa-tutg"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_sa_tha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -500,
+      1608.0126882269742,
+      571
+    ],
+    "component": "sa_sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -500,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "sa_sa-tutg"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_ta_raMatra-tutg",
+    "parentBounds": [
+      10,
+      -580,
+      1073,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_ta_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -708,
+      1633.5,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "_tavattu",
+      "uMatra-tutg.alt1"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_ta_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -708,
+      1633.5,
+      562.5
+    ],
+    "component": "_tavattu",
+    "transform": {
+      "dx": 55,
+      "dy": -2,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      569,
+      -441.5,
+      1049,
+      283
+    ],
+    "siblingComponents": [
+      "sa-tutg",
+      "uMatra-tutg.alt1"
+    ],
+    "componentRightEdge": 1049
+  },
+  {
+    "parentGlyph": "sa_ta_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -708,
+      1633.5,
+      562.5
+    ],
+    "component": "uMatra-tutg.alt1",
+    "transform": {
+      "dx": 1225,
+      "dy": -516,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -193,
+      -192,
+      408.5,
+      155
+    ],
+    "siblingComponents": [
+      "sa-tutg",
+      "_tavattu"
+    ],
+    "componentRightEdge": 408.5
+  },
+  {
+    "parentGlyph": "sa_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -814,
+      1360.5,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sa_ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -814,
+      1360.5,
+      562.5
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 699,
+      "dy": -494,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "sa-tutg"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "sa_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -336,
+      1176,
+      562.5
+    ],
+    "component": "sa-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      956,
+      562.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 956
+  },
+  {
+    "parentGlyph": "sha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      973,
+      570
+    ],
+    "component": "sha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      968,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 968
+  },
+  {
+    "parentGlyph": "sha_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      973,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 166,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "sha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "sha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1395,
+      570
+    ],
+    "component": "sha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      968,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 968
+  },
+  {
+    "parentGlyph": "sha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1395,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 656,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "sha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "sha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      973,
+      570
+    ],
+    "component": "sha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      968,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 968
+  },
+  {
+    "parentGlyph": "sha_ra_iiMatra-tutg.alt1",
+    "parentBounds": [
+      10.5,
+      -245,
+      1184.003366040675,
+      919
+    ],
+    "component": "sha-tutg",
+    "transform": {
+      "dx": 8,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      968,
+      570
+    ],
+    "siblingComponents": [
+      "iiMatra-tutg"
+    ],
+    "componentRightEdge": 968
+  },
+  {
+    "parentGlyph": "sha_ra_iiMatra-tutg.alt1",
+    "parentBounds": [
+      10.5,
+      -245,
+      1184.003366040675,
+      919
+    ],
+    "component": "iiMatra-tutg",
+    "transform": {
+      "dx": 1110,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -593,
+      -7.5,
+      74.00336604067493,
+      919
+    ],
+    "siblingComponents": [
+      "sha-tutg"
+    ],
+    "componentRightEdge": 74.00336604067493
+  },
+  {
+    "parentGlyph": "sha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      1137,
+      570
+    ],
+    "component": "sha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      973,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 973
+  },
+  {
+    "parentGlyph": "sha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      1137,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 767,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "sha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "sha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1702.5,
+      570
+    ],
+    "component": "_sha-tutg.conjunct",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      973,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 973
+  },
+  {
+    "parentGlyph": "sha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1487.5,
+      571
+    ],
+    "component": "_sha-tutg.conjunct",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      973,
+      570
+    ],
+    "siblingComponents": [
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 973
+  },
+  {
+    "parentGlyph": "sha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1487.5,
+      571
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 826,
+      "dy": 96,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "_sha-tutg.conjunct"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "ssa_ka_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -889,
+      1262.5,
+      570
+    ],
+    "component": "_ssa-tutg.conjunct",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1016,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -593,
+      1161,
+      570
+    ],
+    "component": "ssa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -157,
+      1016,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -593,
+      1161,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 380,
+      "dy": -110,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ssa-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ssa_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -401,
+      1485,
+      570
+    ],
+    "component": "ssa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -157,
+      1016,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -401,
+      1485,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 746,
+      "dy": -40,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ssa-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ssa_nna_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1838.5,
+      570
+    ],
+    "component": "_ssa-tutg.conjunct",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1016,
+      570
+    ],
+    "siblingComponents": [
+      "_nnabelow"
+    ],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_nna_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      1838.5,
+      570
+    ],
+    "component": "_nnabelow",
+    "transform": {
+      "dx": -608,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      1149.2496937553149,
+      -482,
+      1986,
+      49
+    ],
+    "siblingComponents": [
+      "_ssa-tutg.conjunct"
+    ],
+    "componentRightEdge": 1986
+  },
+  {
+    "parentGlyph": "ssa_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -399,
+      1021,
+      570
+    ],
+    "component": "_pabeak",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      541,
+      370
+    ],
+    "siblingComponents": [
+      "_ssa1"
+    ],
+    "componentRightEdge": 541
+  },
+  {
+    "parentGlyph": "ssa_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -399,
+      1021,
+      570
+    ],
+    "component": "_ssa1",
+    "transform": {
+      "dx": -5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      497,
+      0,
+      1026,
+      570
+    ],
+    "siblingComponents": [
+      "_pabeak"
+    ],
+    "componentRightEdge": 1026
+  },
+  {
+    "parentGlyph": "ssa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -624,
+      1021,
+      570
+    ],
+    "component": "ssa_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -399,
+      1021,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 1021
+  },
+  {
+    "parentGlyph": "ssa_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -624,
+      1021,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 603,
+      "dy": -17,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ssa_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ssa_tta_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -814.1012770976994,
+      1069,
+      570
+    ],
+    "component": "_ssa-tutg.conjunct",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -30,
+      1016,
+      570
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_tta_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -814.1012770976994,
+      1069,
+      570
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 636,
+      "dy": -504,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "_ssa-tutg.conjunct"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "ssa_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      1145,
+      570
+    ],
+    "component": "ssa-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -157,
+      1016,
+      570
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 1016
+  },
+  {
+    "parentGlyph": "ssa_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -229,
+      1145,
+      570
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 1211,
+      "dy": 23,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "ssa-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "ssa_uuMatra-tutg.alt1",
+    "parentBounds": [
+      10,
+      -482,
+      1063.5,
+      570
+    ],
+    "component": "uuMatra-tutg.alt3",
+    "transform": {
+      "dx": 402,
+      "dy": 2,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -484,
+      661.5,
+      48
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "ta_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      904,
+      569
+    ],
+    "component": "ta-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      903,
+      569
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 903
+  },
+  {
+    "parentGlyph": "ta_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      904,
+      569
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 40,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ta-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ta_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1346,
+      569
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 915,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "ta-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "ta_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -232,
+      1346,
+      569
+    ],
+    "component": "ta-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -16,
+      903,
+      569
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 903
+  },
+  {
+    "parentGlyph": "ta_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -322,
+      908,
+      569
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_taleftarm"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ta_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -322,
+      908,
+      569
+    ],
+    "component": "_taleftarm",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      474,
+      569
+    ],
+    "siblingComponents": [
+      "_tamiddle"
+    ],
+    "componentRightEdge": 474
+  },
+  {
+    "parentGlyph": "ta_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -548,
+      1067,
+      569
+    ],
+    "component": "ta_rVocalicMatra-tutg",
+    "transform": {
+      "dx": -4,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -322,
+      908,
+      569
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 908
+  },
+  {
+    "parentGlyph": "ta_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -548,
+      1067,
+      569
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 697,
+      "dy": 59,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ta_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ta_ta_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1413,
+      596
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_taleftarm",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ta_ta_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1413,
+      596
+    ],
+    "component": "_taleftarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      474,
+      569
+    ],
+    "siblingComponents": [
+      "_tamiddle",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 474
+  },
+  {
+    "parentGlyph": "ta_ta_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      1413,
+      596
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 510,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_tamiddle",
+      "_taleftarm"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ta_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1258.5,
+      569
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_taleftarm"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ta_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -186,
+      1258.5,
+      569
+    ],
+    "component": "_taleftarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      474,
+      569
+    ],
+    "siblingComponents": [
+      "_tamiddle"
+    ],
+    "componentRightEdge": 474
+  },
+  {
+    "parentGlyph": "ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1160.5,
+      569
+    ],
+    "component": "_taleftarm",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -7.5,
+      474,
+      569
+    ],
+    "siblingComponents": [
+      "_tamiddle",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 474
+  },
+  {
+    "parentGlyph": "ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1160.5,
+      569
+    ],
+    "component": "_tamiddle",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      246,
+      -16,
+      675,
+      524
+    ],
+    "siblingComponents": [
+      "_taleftarm",
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 675
+  },
+  {
+    "parentGlyph": "ta_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -224,
+      1160.5,
+      569
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 499,
+      "dy": 96,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "_taleftarm",
+      "_tamiddle"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "tha_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      782.0126882269742,
+      570
+    ],
+    "component": "tha-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      0,
+      781.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 781.0126882269742
+  },
+  {
+    "parentGlyph": "tha_lVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -483,
+      782.0126882269742,
+      570
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -20,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "tha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "tha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1229,
+      570
+    ],
+    "component": "tha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      0,
+      781.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 781.0126882269742
+  },
+  {
+    "parentGlyph": "tha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1229,
+      570
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 490,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "tha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "tha_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      786.0126882269742,
+      570
+    ],
+    "component": "tha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      0,
+      781.0126882269742,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 781.0126882269742
+  },
+  {
+    "parentGlyph": "tha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -585,
+      944,
+      570
+    ],
+    "component": "tha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": -4,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      786.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 786.0126882269742
+  },
+  {
+    "parentGlyph": "tha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      11,
+      -585,
+      944,
+      570
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 574,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "tha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "tha_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -224,
+      786.0126882269742,
+      570
+    ],
+    "component": "tha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      0,
+      781.0126882269742,
+      570
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 781.0126882269742
+  },
+  {
+    "parentGlyph": "tha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      859,
+      570
+    ],
+    "component": "tha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      0,
+      781.0126882269742,
+      570
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 781.0126882269742
+  },
+  {
+    "parentGlyph": "tha_uuMatra-tutg",
+    "parentBounds": [
+      15,
+      -442,
+      859,
+      570
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 392,
+      "dy": 1,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "tha-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "tta_lVocalicMatra-tutg",
+    "parentBounds": [
+      14.52221979213338,
+      -488,
+      764,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_lVocalicMatra-tutg",
+    "parentBounds": [
+      14.52221979213338,
+      -488,
+      764,
+      573.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -17,
+      "dy": -5,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "tta_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.52221979213338,
+      -467,
+      910,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg.alt"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      14.52221979213338,
+      -467,
+      910,
+      573.5
+    ],
+    "component": "lVocalicMatra-tutg.alt",
+    "transform": {
+      "dx": 479,
+      "dy": -235,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -308,
+      -232,
+      431,
+      58
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 431
+  },
+  {
+    "parentGlyph": "tta_rVocalicMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -320,
+      433,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_rrVocalicMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -546,
+      595,
+      573.5
+    ],
+    "component": "tta_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -320,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_rrVocalicMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -546,
+      595,
+      573.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 225,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "tta_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "tta_uMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -224,
+      433,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "_umatra"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_uMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -224,
+      433,
+      573.5
+    ],
+    "component": "_umatra",
+    "transform": {
+      "dx": 98,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -224,
+      335,
+      112
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 335
+  },
+  {
+    "parentGlyph": "tta_uuMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -371,
+      506,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_uuMatra-tutg",
+    "parentBounds": [
+      9.52221979213338,
+      -371,
+      506,
+      573.5
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 39,
+      "dy": 72,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 467
+  },
+  {
+    "parentGlyph": "tta_uuMatra-tutg.alt1",
+    "parentBounds": [
+      9.52221979213338,
+      -483,
+      661.5,
+      573.5
+    ],
+    "component": "tta-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      9.52221979213338,
+      -7.5,
+      433,
+      573.5
+    ],
+    "siblingComponents": [
+      "_uumatraBelow"
+    ],
+    "componentRightEdge": 433
+  },
+  {
+    "parentGlyph": "tta_uuMatra-tutg.alt1",
+    "parentBounds": [
+      9.52221979213338,
+      -483,
+      661.5,
+      573.5
+    ],
+    "component": "_uumatraBelow",
+    "transform": {
+      "dx": 0,
+      "dy": -163,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      44,
+      -320,
+      661.5,
+      86
+    ],
+    "siblingComponents": [
+      "tta-tutg"
+    ],
+    "componentRightEdge": 661.5
+  },
+  {
+    "parentGlyph": "ttha_lVocalicMatra-tutg",
+    "parentBounds": [
+      -67,
+      -483,
+      661,
+      571
+    ],
+    "component": "ttha-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      574,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_lVocalicMatra-tutg",
+    "parentBounds": [
+      -67,
+      -483,
+      661,
+      571
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": -120,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ttha-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ttha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      983,
+      571
+    ],
+    "component": "ttha-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      574,
+      571
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      983,
+      571
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 244,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "ttha-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "ttha_rVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -320,
+      574,
+      571
+    ],
+    "component": "ttha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      574,
+      571
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -546,
+      736,
+      571
+    ],
+    "component": "ttha_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -320,
+      574,
+      571
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_rrVocalicMatra-tutg",
+    "parentBounds": [
+      10,
+      -546,
+      736,
+      571
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 366,
+      "dy": 61,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ttha_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ttha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -190,
+      631,
+      571
+    ],
+    "component": "ttha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      574,
+      571
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_uMatra-tutg",
+    "parentBounds": [
+      10,
+      -190,
+      631,
+      571
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 697,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "ttha-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "ttha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -346,
+      659,
+      571
+    ],
+    "component": "ttha-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      574,
+      571
+    ],
+    "siblingComponents": [
+      "uuMatra-tutg"
+    ],
+    "componentRightEdge": 574
+  },
+  {
+    "parentGlyph": "ttha_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -346,
+      659,
+      571
+    ],
+    "component": "uuMatra-tutg",
+    "transform": {
+      "dx": 379,
+      "dy": -9,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -186,
+      -337,
+      280,
+      74.309241054893
+    ],
+    "siblingComponents": [
+      "ttha-tutg"
+    ],
+    "componentRightEdge": 280
+  },
+  {
+    "parentGlyph": "va_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      782,
+      572
+    ],
+    "component": "va-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      743,
+      572
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 743
+  },
+  {
+    "parentGlyph": "va_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      782,
+      572
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 1,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "va-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "va_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1164,
+      572
+    ],
+    "component": "va-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      743,
+      572
+    ],
+    "siblingComponents": [
+      "lVocalicMatra_tall-tutg.alt2"
+    ],
+    "componentRightEdge": 743
+  },
+  {
+    "parentGlyph": "va_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1164,
+      572
+    ],
+    "component": "lVocalicMatra_tall-tutg.alt2",
+    "transform": {
+      "dx": 425,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      0,
+      -361,
+      739,
+      116
+    ],
+    "siblingComponents": [
+      "va-tutg"
+    ],
+    "componentRightEdge": 739
+  },
+  {
+    "parentGlyph": "va_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -360,
+      748,
+      572
+    ],
+    "component": "va-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      743,
+      572
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 743
+  },
+  {
+    "parentGlyph": "va_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      912,
+      572
+    ],
+    "component": "va_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -360,
+      748,
+      572
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 748
+  },
+  {
+    "parentGlyph": "va_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -585,
+      912,
+      572
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 542,
+      "dy": 22,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "va_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "va_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -234,
+      748,
+      572
+    ],
+    "component": "va-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      743,
+      572
+    ],
+    "siblingComponents": [
+      "uMatra-tutg"
+    ],
+    "componentRightEdge": 743
+  },
+  {
+    "parentGlyph": "va_uMatra-tutg",
+    "parentBounds": [
+      15,
+      -234,
+      748,
+      572
+    ],
+    "component": "uMatra-tutg",
+    "transform": {
+      "dx": 814,
+      "dy": 18,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      -351,
+      -252,
+      -66,
+      35
+    ],
+    "siblingComponents": [
+      "va-tutg"
+    ],
+    "componentRightEdge": -66
+  },
+  {
+    "parentGlyph": "va_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -337,
+      871,
+      572
+    ],
+    "component": "va-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      743,
+      572
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 743
+  },
+  {
+    "parentGlyph": "ya_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      948,
+      571.5
+    ],
+    "component": "ya-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      748,
+      571.5
+    ],
+    "siblingComponents": [
+      "lVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 748
+  },
+  {
+    "parentGlyph": "ya_lVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -483,
+      948,
+      571.5
+    ],
+    "component": "lVocalicMatra-tutg",
+    "transform": {
+      "dx": 167,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      53,
+      -483,
+      781,
+      -84
+    ],
+    "siblingComponents": [
+      "ya-tutg"
+    ],
+    "componentRightEdge": 781
+  },
+  {
+    "parentGlyph": "ya_lVocalicMatra-tutg.alt",
+    "parentBounds": [
+      15,
+      -361,
+      1353,
+      571.5
+    ],
+    "component": "ya-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      748,
+      571.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 748
+  },
+  {
+    "parentGlyph": "ya_rVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -320,
+      753,
+      571.5
+    ],
+    "component": "ya-tutg",
+    "transform": {
+      "dx": 5,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -15,
+      748,
+      571.5
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 748
+  },
+  {
+    "parentGlyph": "ya_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -545,
+      917,
+      571.5
+    ],
+    "component": "ya_rVocalicMatra-tutg",
+    "transform": {
+      "dx": 0,
+      "dy": 0,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      15,
+      -320,
+      753,
+      571.5
+    ],
+    "siblingComponents": [
+      "_rrVocalicArm"
+    ],
+    "componentRightEdge": 753
+  },
+  {
+    "parentGlyph": "ya_rrVocalicMatra-tutg",
+    "parentBounds": [
+      15,
+      -545,
+      917,
+      571.5
+    ],
+    "component": "_rrVocalicArm",
+    "transform": {
+      "dx": 547,
+      "dy": 62,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      10,
+      -607,
+      370,
+      -74
+    ],
+    "siblingComponents": [
+      "ya_rVocalicMatra-tutg"
+    ],
+    "componentRightEdge": 370
+  },
+  {
+    "parentGlyph": "ya_uuMatra-tutg",
+    "parentBounds": [
+      10,
+      -201,
+      1098,
+      643.5
+    ],
+    "component": "uuMatra-tutg.alt2",
+    "transform": {
+      "dx": 631,
+      "dy": 242,
+      "xx": 1,
+      "xy": 0,
+      "yx": 0,
+      "yy": 1
+    },
+    "componentOwnBounds": [
+      5,
+      -443,
+      467,
+      110
+    ],
+    "siblingComponents": [],
+    "componentRightEdge": 467
+  }
+]

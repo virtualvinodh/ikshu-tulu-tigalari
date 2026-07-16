@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kha-tutg.below.alt2" format="2">
+  <advance width="29"/>
+  <anchor x="-1.2" y="-752.4" name="bottom"/>
+  <outline>
+    <component base="kha-tutg.alt2" xScale="0.8474" yScale="0.8474" xOffset="-527" yOffset="-677" identifier="FDFF03D8"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>FDFF03D8</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

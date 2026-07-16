@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_ta_ra-tutg" format="2">
+  <advance width="1336"/>
+  <outline>
+    <component base="_tamiddle" xOffset="319"/>
+    <component base="_taleftarm" xOffset="319"/>
+    <component base="_raJoin" xOffset="-469"/>
+  </outline>
+</glyph>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_maarm" format="2">
+  <advance width="730"/>
+  <outline>
+    <contour>
+      <point x="448" y="64" type="curve" smooth="yes"/>
+      <point x="308" y="64" type="line"/>
+      <point x="308" y="0" type="line"/>
+      <point x="467" y="0" type="line" smooth="yes"/>
+      <point x="573" y="0"/>
+      <point x="620" y="51"/>
+      <point x="620" y="143" type="curve" smooth="yes"/>
+      <point x="620" y="286"/>
+      <point x="505" y="490"/>
+      <point x="320" y="526" type="curve"/>
+      <point x="348" y="444" type="line"/>
+      <point x="480" y="392"/>
+      <point x="546" y="246"/>
+      <point x="546" y="145" type="curve" smooth="yes"/>
+      <point x="546" y="80"/>
+      <point x="518" y="64"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:06 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ttha_uuMatra-tutg" format="2">
+  <advance width="755"/>
+  <anchor x="334.5" y="621" name="top"/>
+  <anchor x="334.5" y="-396" name="bottom"/>
+  <anchor x="659" y="621" name="topright"/>
+  <outline>
+    <component base="ttha-tutg"/>
+    <component base="uuMatra-tutg" xOffset="379" yOffset="-9"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 14:53:15 +0000</string>
+    </dict>
+  </lib>
+</glyph>

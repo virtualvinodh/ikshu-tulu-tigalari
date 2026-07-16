@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cha-tutg.below.alt1" format="2">
+  <advance width="50"/>
+  <anchor x="10.2" y="-752.8" name="bottom"/>
+  <outline>
+    <component base="cha-tutg.alt1" xScale="0.8585" yScale="0.8585" xOffset="-371" yOffset="-677" identifier="A3EAF171"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>A3EAF171</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

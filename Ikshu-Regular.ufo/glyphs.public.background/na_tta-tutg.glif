@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_tta-tutg" format="2">
+  <advance width="1113"/>
+  <outline>
+    <component base="tta-tutg" xOffset="622" yOffset="-185"/>
+  </outline>
+</glyph>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_rVocalicMatra-tutg" format="2">
+  <advance width="1020"/>
+  <anchor x="865" y="-68" name="connect"/>
+  <anchor x="460.0" y="615.5" name="top"/>
+  <anchor x="460.0" y="-412" name="bottom"/>
+  <anchor x="909" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="648" y="-362" type="curve" smooth="yes"/>
+      <point x="809" y="-362"/>
+      <point x="909" y="-195"/>
+      <point x="909" y="-22" type="curve" smooth="yes"/>
+      <point x="909" y="345" type="line"/>
+      <point x="837" y="345" type="line"/>
+      <point x="837" y="-22" type="line" smooth="yes"/>
+      <point x="837" y="-171"/>
+      <point x="768" y="-298"/>
+      <point x="648" y="-298" type="curve" smooth="yes"/>
+      <point x="616" y="-298"/>
+      <point x="592" y="-279"/>
+      <point x="592" y="-246" type="curve" smooth="yes"/>
+      <point x="592" y="-219"/>
+      <point x="628" y="-179"/>
+      <point x="689" y="-152" type="curve" smooth="yes"/>
+      <point x="729" y="-133"/>
+      <point x="782" y="-122"/>
+      <point x="841" y="-109" type="curve"/>
+      <point x="857" y="-47" type="line"/>
+      <point x="779" y="-55"/>
+      <point x="713" y="-74"/>
+      <point x="661" y="-96" type="curve" smooth="yes"/>
+      <point x="569" y="-136"/>
+      <point x="525" y="-192"/>
+      <point x="525" y="-251" type="curve" smooth="yes"/>
+      <point x="525" y="-325"/>
+      <point x="579" y="-362"/>
+    </contour>
+    <component base="pa-tutg" xOffset="1" identifier="C5A2091E"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>C5A2091E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

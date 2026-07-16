@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bha_uuMatra-tutg" format="2">
+  <advance width="1294"/>
+  <outline>
+    <component base="ga_uuMatra-tutg" xOffset="404"/>
+    <component base="bha-tutg"/>
+  </outline>
+</glyph>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_pa_rvocalicMatra-tutg" format="2">
+  <advance width="1068"/>
+  <anchor x="914" y="-189" name="connect"/>
+  <anchor x="486.5" y="824.5" name="top"/>
+  <anchor x="486.5" y="-533" name="bottom"/>
+  <anchor x="958" y="824.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="697" y="-483" type="curve" smooth="yes"/>
+      <point x="858" y="-483"/>
+      <point x="958" y="-316"/>
+      <point x="958" y="-143" type="curve" smooth="yes"/>
+      <point x="958" y="405" type="line"/>
+      <point x="886" y="405" type="line"/>
+      <point x="886" y="-143" type="line" smooth="yes"/>
+      <point x="886" y="-292"/>
+      <point x="817" y="-419"/>
+      <point x="697" y="-419" type="curve" smooth="yes"/>
+      <point x="665" y="-419"/>
+      <point x="641" y="-400"/>
+      <point x="641" y="-367" type="curve" smooth="yes"/>
+      <point x="641" y="-340"/>
+      <point x="677" y="-300"/>
+      <point x="738" y="-273" type="curve" smooth="yes"/>
+      <point x="778" y="-254"/>
+      <point x="831" y="-243"/>
+      <point x="890" y="-230" type="curve"/>
+      <point x="906" y="-168" type="line"/>
+      <point x="828" y="-176"/>
+      <point x="762" y="-195"/>
+      <point x="710" y="-217" type="curve" smooth="yes"/>
+      <point x="618" y="-257"/>
+      <point x="574" y="-313"/>
+      <point x="574" y="-372" type="curve" smooth="yes"/>
+      <point x="574" y="-446"/>
+      <point x="628" y="-483"/>
+    </contour>
+    <component base="sa_pa-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

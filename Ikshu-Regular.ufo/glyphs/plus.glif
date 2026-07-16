@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="plus" format="2">
+  <advance width="522"/>
+  <unicode hex="002B"/>
+  <guideline x="209" y="61" angle="0"/>
+  <outline>
+    <contour>
+      <point x="307" y="493" type="curve"/>
+      <point x="285" y="501"/>
+      <point x="265" y="499"/>
+      <point x="237" y="493" type="curve"/>
+      <point x="236" y="348"/>
+      <point x="235" y="149"/>
+      <point x="237" y="32" type="curve"/>
+      <point x="260" y="25"/>
+      <point x="289" y="24"/>
+      <point x="307" y="32" type="curve"/>
+      <point x="306" y="149"/>
+      <point x="306" y="348"/>
+    </contour>
+    <contour>
+      <point x="44" y="297" type="curve"/>
+      <point x="40" y="275"/>
+      <point x="38" y="255"/>
+      <point x="44" y="227" type="curve"/>
+      <point x="189" y="226"/>
+      <point x="377" y="225"/>
+      <point x="494" y="227" type="curve"/>
+      <point x="497" y="250"/>
+      <point x="498" y="279"/>
+      <point x="494" y="297" type="curve"/>
+      <point x="377" y="296"/>
+      <point x="189" y="296"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:05 +0000</string>
+      <key>public.markColor</key>
+      <string>0.75,0.75,0.75,1</string>
+    </dict>
+  </lib>
+</glyph>

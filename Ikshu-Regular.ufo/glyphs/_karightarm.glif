@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_karightarm" format="2">
+  <advance width="633"/>
+  <outline>
+    <contour>
+      <point x="505" y="484" type="curve"/>
+      <point x="589" y="508" type="line"/>
+      <point x="514" y="546"/>
+      <point x="433" y="571"/>
+      <point x="355" y="571" type="curve" smooth="yes"/>
+      <point x="287" y="571"/>
+      <point x="218" y="552"/>
+      <point x="159" y="506" type="curve" smooth="yes"/>
+      <point x="53" y="426"/>
+      <point x="10" y="299"/>
+      <point x="10" y="180" type="curve" smooth="yes"/>
+      <point x="10" y="118"/>
+      <point x="22" y="50"/>
+      <point x="44" y="0" type="curve"/>
+      <point x="58" y="-11"/>
+      <point x="113" y="-10"/>
+      <point x="122" y="0" type="curve"/>
+      <point x="98" y="50"/>
+      <point x="83" y="119"/>
+      <point x="83" y="182" type="curve" smooth="yes"/>
+      <point x="83" y="282"/>
+      <point x="120" y="385"/>
+      <point x="198" y="450" type="curve" smooth="yes"/>
+      <point x="247" y="493"/>
+      <point x="323" y="511"/>
+      <point x="365" y="511" type="curve" smooth="yes"/>
+      <point x="409" y="511"/>
+      <point x="458" y="502"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 15:49:33 +0000</string>
+    </dict>
+  </lib>
+</glyph>

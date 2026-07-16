@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nna_uuMatra-tutg.alt1" format="2">
+  <advance width="1550"/>
+  <outline>
+    <component base="ga_uuMatra-tutg" xOffset="444"/>
+  </outline>
+</glyph>

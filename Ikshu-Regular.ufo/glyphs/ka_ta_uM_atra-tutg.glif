@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ta_uMatra-tutg" format="2">
+  <advance width="1680"/>
+  <anchor x="1537" y="143.7" name="height"/>
+  <anchor x="1925.24" y="-153" name="width"/>
+  <anchor x="967.8" y="645.0" name="top"/>
+  <anchor x="967.8" y="-236" name="bottom"/>
+  <anchor x="1925.5" y="645.0" name="topright"/>
+  <outline>
+    <contour>
+      <point x="510" y="530" type="curve"/>
+      <point x="592" y="494" type="line"/>
+      <point x="771" y="543"/>
+      <point x="909" y="543"/>
+      <point x="1071" y="494" type="curve"/>
+      <point x="1154" y="525" type="line"/>
+      <point x="967" y="616"/>
+      <point x="695" y="619"/>
+    </contour>
+    <contour>
+      <point x="1498" y="182" type="curve" smooth="yes"/>
+      <point x="1498" y="108" type="line"/>
+      <point x="1513" y="98"/>
+      <point x="1555" y="98"/>
+      <point x="1570" y="108" type="curve"/>
+      <point x="1570" y="180" type="line" smooth="yes"/>
+      <point x="1570" y="451"/>
+      <point x="1422" y="569"/>
+      <point x="1267" y="569" type="curve" smooth="yes"/>
+      <point x="1208" y="569"/>
+      <point x="1158" y="553"/>
+      <point x="1112" y="529" type="curve"/>
+      <point x="1173" y="489" type="line"/>
+      <point x="1201" y="501"/>
+      <point x="1229" y="507"/>
+      <point x="1262" y="507" type="curve" smooth="yes"/>
+      <point x="1381" y="507"/>
+      <point x="1498" y="402"/>
+    </contour>
+    <contour>
+      <point x="1776" y="-186" type="curve" smooth="yes"/>
+      <point x="1915" y="-186" type="line"/>
+      <point x="1929" y="-182"/>
+      <point x="1929" y="-126"/>
+      <point x="1915" y="-122" type="curve"/>
+      <point x="1787" y="-122" type="line" smooth="yes"/>
+      <point x="1608" y="-122"/>
+      <point x="1570" y="-32"/>
+      <point x="1570" y="84" type="curve" smooth="yes"/>
+      <point x="1570" y="144" type="line"/>
+      <point x="1498" y="144" type="line"/>
+      <point x="1498" y="72" type="line" smooth="yes"/>
+      <point x="1498" y="-74"/>
+      <point x="1567" y="-186"/>
+    </contour>
+    <component base="_kabowl"/>
+    <component base="_karightarm"/>
+    <component base="_tamiddle" xOffset="668"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ya_ya-tutg" format="2">
+  <advance width="863"/>
+  <anchor x="384.0" y="643" name="top"/>
+  <anchor x="384.0" y="-724" name="bottom"/>
+  <anchor x="753" y="643" name="topright"/>
+  <outline>
+    <contour>
+      <point x="681" y="593" type="line"/>
+      <point x="681" y="-121" type="line"/>
+      <point x="753" y="-121" type="line"/>
+      <point x="753" y="593" type="line"/>
+    </contour>
+    <component base="ya-tutg" xOffset="5"/>
+    <component base="ya-tutg" xOffset="5" yOffset="-659" identifier="774D7C31"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:52:45 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>774D7C31</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

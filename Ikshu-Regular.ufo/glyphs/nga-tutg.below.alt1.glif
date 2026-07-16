@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nga-tutg.below.alt1" format="2">
+  <anchor x="109.1" y="-733.5" name="bottom"/>
+  <outline>
+    <component base="nga-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-325" yOffset="-677" identifier="8AA490BD"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>8AA490BD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

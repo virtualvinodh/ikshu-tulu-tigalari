@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_ka_rVocalicMatra-tutg" format="2">
+  <advance width="898"/>
+  <anchor x="401.5" y="621" name="top"/>
+  <anchor x="401.5" y="-592.7" name="bottom"/>
+  <anchor x="788" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="675" y="-486" type="curve" smooth="yes"/>
+      <point x="737" y="-433"/>
+      <point x="788" y="-342"/>
+      <point x="788" y="-203" type="curve" smooth="yes"/>
+      <point x="788" y="-152" type="line"/>
+      <point x="717" y="-152" type="line"/>
+      <point x="717" y="-203" type="line" smooth="yes"/>
+      <point x="717" y="-352"/>
+      <point x="647" y="-479"/>
+      <point x="527" y="-479" type="curve" smooth="yes"/>
+      <point x="495" y="-479"/>
+      <point x="471" y="-460"/>
+      <point x="471" y="-427" type="curve" smooth="yes"/>
+      <point x="471" y="-400"/>
+      <point x="507" y="-360"/>
+      <point x="568" y="-333" type="curve" smooth="yes"/>
+      <point x="608" y="-314"/>
+      <point x="661" y="-303"/>
+      <point x="720" y="-290" type="curve"/>
+      <point x="736" y="-228" type="line"/>
+      <point x="658" y="-236"/>
+      <point x="592" y="-255"/>
+      <point x="540" y="-277" type="curve" smooth="yes"/>
+      <point x="448" y="-317"/>
+      <point x="399" y="-373"/>
+      <point x="399" y="-432" type="curve" smooth="yes"/>
+      <point x="399" y="-558"/>
+      <point x="571" y="-577"/>
+    </contour>
+    <component base="na_ka-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:46:27 +0000</string>
+    </dict>
+  </lib>
+</glyph>

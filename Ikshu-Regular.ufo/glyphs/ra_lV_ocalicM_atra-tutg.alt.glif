@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ra_lVocalicMatra-tutg.alt" format="2">
+  <advance width="1195"/>
+  <anchor x="550.0" y="620" name="top"/>
+  <anchor x="550.0" y="-411" name="bottom"/>
+  <anchor x="1085" y="620" name="topright"/>
+  <outline>
+    <component base="ra-tutg" xOffset="5" identifier="5530BD3F"/>
+    <component base="lVocalicMatra_tall-tutg.alt2" xOffset="346"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:01 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>5530BD3F</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

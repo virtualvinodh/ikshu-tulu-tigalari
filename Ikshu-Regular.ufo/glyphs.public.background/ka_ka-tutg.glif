@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ka-tutg" format="2">
+  <advance width="1833"/>
+  <outline>
+    <component base="ka-tutg" xOffset="679"/>
+  </outline>
+</glyph>

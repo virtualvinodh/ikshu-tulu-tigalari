@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kha_ya-tutg" format="2">
+  <advance width="1568"/>
+  <anchor x="736.5" y="615.5" name="top"/>
+  <anchor x="736.5" y="-277" name="bottom"/>
+  <anchor x="1458" y="615.5" name="topright"/>
+  <outline>
+    <component base="kha-tutg" xOffset="5"/>
+    <component base="_yavattu-1" xOffset="322"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

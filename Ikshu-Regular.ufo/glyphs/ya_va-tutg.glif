@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ya_va-tutg" format="2">
+  <advance width="1115"/>
+  <anchor x="510.0" y="621.5" name="top"/>
+  <anchor x="510.0" y="-65" name="bottom"/>
+  <anchor x="1005" y="621.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="681" y="0" type="line"/>
+      <point x="753" y="0" type="line"/>
+      <point x="753" y="400" type="line"/>
+      <point x="681" y="400" type="line"/>
+    </contour>
+    <contour>
+      <point x="933" y="564" type="curve"/>
+      <point x="933" y="114" type="line"/>
+      <point x="1005" y="114" type="line"/>
+      <point x="1005" y="564" type="line"/>
+      <point x="992" y="574"/>
+      <point x="946" y="574"/>
+    </contour>
+    <component base="ya-tutg" xOffset="5"/>
+    <component base="_roundedcorner" xOffset="828" yOffset="-1" identifier="8FF99841"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="-44" yOffset="-1" identifier="1C2693FE"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:53:14 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>1C2693FE</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>8FF99841</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lla_lla-tutg" format="2">
+  <advance width="1515"/>
+  <anchor x="862.2" y="621" name="top"/>
+  <anchor x="862.2" y="-234" name="bottom"/>
+  <anchor x="1714.5" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1101" y="-118" type="curve"/>
+      <point x="1042" y="-184" type="line"/>
+      <point x="1467" y="-184" type="line"/>
+      <point x="1259" y="-122"/>
+      <point x="1227" y="-118"/>
+    </contour>
+    <component base="lla-tutg"/>
+    <component base="lla-tutg" xOffset="584" identifier="FACCA712"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:50:33 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>FACCA712</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

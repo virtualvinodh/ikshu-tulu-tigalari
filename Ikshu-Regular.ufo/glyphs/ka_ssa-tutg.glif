@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ssa-tutg" format="2">
+  <advance width="1751"/>
+  <anchor x="1026" y="-8" name="short"/>
+  <anchor x="828.0" y="621" name="top"/>
+  <anchor x="828.0" y="-216" name="bottom"/>
+  <anchor x="1641" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="987" y="55" type="line"/>
+      <point x="987" y="-9" type="line"/>
+      <point x="1164" y="-9" type="line"/>
+      <point x="1164" y="55" type="line"/>
+    </contour>
+    <component base="ka-tutg" xOffset="5"/>
+    <component base="_ssa" xOffset="615" yOffset="-9"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

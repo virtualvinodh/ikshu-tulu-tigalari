@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nna_ttha-tutg" format="2">
+  <advance width="1318"/>
+  <anchor x="611.5" y="621" name="top"/>
+  <anchor x="611.5" y="-276.9" name="bottom"/>
+  <anchor x="1208" y="621" name="topright"/>
+  <outline>
+    <component base="ttha-tutg.below" xOffset="794" yOffset="463" identifier="EB0D8D66"/>
+    <component base="nna-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>EB0D8D66</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_pa-tutg" format="2">
+  <advance width="1023"/>
+  <anchor x="464.0" y="615.5" name="top"/>
+  <anchor x="464.0" y="-563" name="bottom"/>
+  <anchor x="913" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="842" y="255" type="line"/>
+      <point x="842" y="-30" type="line"/>
+      <point x="913" y="-30" type="line"/>
+      <point x="913" y="255" type="line"/>
+    </contour>
+    <component base="pa-tutg" xOffset="5"/>
+    <component base="pa-tutg" xOffset="5" yOffset="-483"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 17:15:00 +0000</string>
+    </dict>
+  </lib>
+</glyph>

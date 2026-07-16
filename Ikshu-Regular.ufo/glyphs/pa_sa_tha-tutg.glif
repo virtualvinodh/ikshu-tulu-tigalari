@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa_tha-tutg" format="2">
+  <advance width="1872"/>
+  <anchor x="888.5" y="615.5" name="top"/>
+  <anchor x="888.5" y="-707" name="bottom"/>
+  <anchor x="1762.0" y="615.5" name="topright"/>
+  <outline>
+    <component base="tha-tutg" xOffset="981" yOffset="-657" identifier="DACB2408"/>
+    <component base="pa_sa-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:59 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>DACB2408</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

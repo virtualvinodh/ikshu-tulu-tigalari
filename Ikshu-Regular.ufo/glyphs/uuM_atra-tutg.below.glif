@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uuMatra-tutg.below" format="2">
+  <outline>
+    <component base="uuMatra-tutg" xScale="0.8432" yScale="0.8432" xOffset="-40" yOffset="12"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 16:39:15 +0000</string>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+    </dict>
+  </lib>
+</glyph>

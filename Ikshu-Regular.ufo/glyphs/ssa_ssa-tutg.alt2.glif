@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_ssa-tutg.alt2" format="2">
+  <advance width="1131"/>
+  <anchor x="518.0" y="627" name="top"/>
+  <anchor x="518.0" y="-878" name="bottom"/>
+  <anchor x="1021" y="627" name="topright"/>
+  <outline>
+    <contour>
+      <point x="741" y="-63" type="line"/>
+      <point x="741" y="-401" type="line"/>
+      <point x="806" y="-401" type="line"/>
+      <point x="806" y="-63" type="line"/>
+    </contour>
+    <component base="ssa-tutg" xOffset="5" yOffset="7" identifier="95D91C35"/>
+    <component base="ssa-tutg" xOffset="5" yOffset="-671" identifier="8184E214"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-27 17:21:33 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>8184E214</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>95D91C35</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

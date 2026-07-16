@@ -1,0 +1,3 @@
+{
+  "taChillu-tutg": "Name implies TA + Looped Virama, but its only component is 'ya-tutg.below' (YA's below-base form), not any TA sub-part. Confirmed mismatch between name and artwork on 2026-07-16 by checking glyph.components. Excluded from auto-generated GSUB rules until resolved."
+}

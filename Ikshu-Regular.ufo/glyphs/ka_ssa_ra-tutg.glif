@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ssa_ra-tutg" format="2">
+  <advance width="1748"/>
+  <anchor x="1026" y="-8" name="short"/>
+  <anchor x="826.5" y="621" name="top"/>
+  <anchor x="826.5" y="-287" name="bottom"/>
+  <anchor x="1638" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="923" y="-237" type="curve" smooth="yes"/>
+      <point x="1210" y="-237"/>
+      <point x="1329" y="-97"/>
+      <point x="1379" y="49" type="curve"/>
+      <point x="1311" y="51" type="line"/>
+      <point x="1261" y="-66"/>
+      <point x="1157" y="-172"/>
+      <point x="923" y="-172" type="curve" smooth="yes"/>
+      <point x="827" y="-172"/>
+      <point x="713" y="-153"/>
+      <point x="586" y="-102" type="curve"/>
+      <point x="578" y="-123"/>
+      <point x="579" y="-151"/>
+      <point x="587" y="-172" type="curve"/>
+      <point x="691" y="-217"/>
+      <point x="825" y="-237"/>
+    </contour>
+    <contour>
+      <point x="1168" y="-10" type="line"/>
+      <point x="1168" y="54" type="line"/>
+      <point x="987" y="54" type="line"/>
+      <point x="987" y="-10" type="line"/>
+    </contour>
+    <contour>
+      <point x="1280" y="3" type="curve"/>
+      <point x="1349" y="3" type="line"/>
+      <point x="1403" y="89"/>
+      <point x="1422" y="215"/>
+      <point x="1423" y="265" type="curve"/>
+      <point x="1356" y="265" type="line"/>
+      <point x="1355" y="211"/>
+      <point x="1335" y="86"/>
+    </contour>
+    <component base="ka-tutg" xOffset="5"/>
+    <component base="_ssa1" xOffset="612" yOffset="-10"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

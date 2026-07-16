@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_tta-tutg" format="2">
+  <advance width="1179"/>
+  <anchor x="542.0" y="620" name="top"/>
+  <anchor x="542.0" y="-561.5" name="bottom"/>
+  <anchor x="1069" y="620" name="topright"/>
+  <outline>
+    <component base="_ssa-tutg.conjunct" xOffset="5"/>
+    <component base="tta-tutg" xOffset="636" yOffset="-504"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:53:15 +0000</string>
+    </dict>
+  </lib>
+</glyph>

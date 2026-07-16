@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lla-tutg.below.alt1" format="2">
+  <advance width="28"/>
+  <anchor x="-7.9" y="-891.8" name="bottom"/>
+  <outline>
+    <component base="lla-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-406" yOffset="-677" identifier="4BD8A3C7"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>4BD8A3C7</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

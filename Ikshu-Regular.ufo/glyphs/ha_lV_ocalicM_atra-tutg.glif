@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ha_lVocalicMatra-tutg" format="2">
+  <advance width="1244"/>
+  <anchor x="574.5" y="620" name="top"/>
+  <anchor x="574.5" y="-533" name="bottom"/>
+  <anchor x="1134" y="620" name="topright"/>
+  <outline>
+    <component base="ha-tutg" xOffset="5"/>
+    <component base="lVocalicMatra-tutg" xOffset="292"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:01 +0000</string>
+    </dict>
+  </lib>
+</glyph>

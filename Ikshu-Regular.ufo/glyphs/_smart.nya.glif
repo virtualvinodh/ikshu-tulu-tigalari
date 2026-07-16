@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_smart.nya" format="2">
+  <advance width="1699"/>
+  <outline>
+    <contour>
+      <point x="1168" y="501" type="curve"/>
+      <point x="1173" y="570" type="line"/>
+      <point x="1095" y="570"/>
+      <point x="1020" y="519"/>
+      <point x="993" y="438" type="curve"/>
+      <point x="958" y="355" type="line"/>
+      <point x="958" y="264" type="line"/>
+      <point x="962" y="257"/>
+      <point x="1026" y="257"/>
+      <point x="1030" y="264" type="curve"/>
+      <point x="1030" y="348" type="line" smooth="yes"/>
+      <point x="1030" y="439"/>
+      <point x="1097" y="501"/>
+    </contour>
+    <component base="_ya_1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:05 +0000</string>
+    </dict>
+  </lib>
+</glyph>

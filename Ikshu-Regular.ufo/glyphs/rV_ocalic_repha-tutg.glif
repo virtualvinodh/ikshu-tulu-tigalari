@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rVocalic_repha-tutg" format="2">
+  <advance width="844"/>
+  <outline>
+    <component base="rVocalic-tutg"/>
+    <component base="repha-tutg.alt1" xOffset="701" identifier="AF3C6EC9"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>AF3C6EC9</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_ta_ra-tutg" format="2">
+  <advance width="1565"/>
+  <anchor x="732.5" y="646" name="top"/>
+  <anchor x="732.5" y="-275" name="bottom"/>
+  <anchor x="1455" y="646" name="topright"/>
+  <outline>
+    <contour>
+      <point x="927" y="489" type="curve"/>
+      <point x="985" y="529" type="line"/>
+      <point x="900" y="572"/>
+      <point x="808" y="596"/>
+      <point x="714" y="596" type="curve" smooth="yes"/>
+      <point x="624" y="596"/>
+      <point x="533" y="574"/>
+      <point x="444" y="528" type="curve"/>
+      <point x="504" y="489" type="line"/>
+      <point x="581" y="517"/>
+      <point x="647" y="532"/>
+      <point x="714" y="532" type="curve" smooth="yes"/>
+      <point x="780" y="532"/>
+      <point x="847" y="518"/>
+    </contour>
+    <component base="_tamiddle"/>
+    <component base="_taleftarm"/>
+    <component base="_tamiddle" xOffset="510"/>
+    <component base="_raJoin" xOffset="-277"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

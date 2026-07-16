@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="l" format="2">
+  <advance width="314"/>
+  <unicode hex="006C"/>
+  <note>
+l
+</note>
+  <anchor x="180" y="0" name="bottom"/>
+  <anchor x="113" y="710" name="top"/>
+  <anchor x="113" y="412" name="center"/>
+  <outline>
+    <contour>
+      <point x="182" y="-7" type="curve" smooth="yes"/>
+      <point x="204" y="-7"/>
+      <point x="222" y="-2"/>
+      <point x="237" y="4" type="curve"/>
+      <point x="237" y="56" type="line"/>
+      <point x="198" y="56" type="line" smooth="yes"/>
+      <point x="166" y="56"/>
+      <point x="148" y="74"/>
+      <point x="148" y="119" type="curve" smooth="yes"/>
+      <point x="148" y="716" type="line"/>
+      <point x="77" y="716" type="line"/>
+      <point x="77" y="113" type="line" smooth="yes"/>
+      <point x="77" y="31"/>
+      <point x="117" y="-7"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

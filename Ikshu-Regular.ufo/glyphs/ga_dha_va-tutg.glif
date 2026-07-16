@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_dha_va-tutg" format="2">
+  <advance width="1826"/>
+  <anchor x="865.5" y="622" name="top"/>
+  <anchor x="865.5" y="-138" name="bottom"/>
+  <anchor x="1716" y="622" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1644" y="555" type="curve"/>
+      <point x="1644" y="27" type="line"/>
+      <point x="1716" y="27" type="line"/>
+      <point x="1716" y="555" type="line"/>
+      <point x="1703" y="565"/>
+      <point x="1657" y="565"/>
+    </contour>
+    <contour>
+      <point x="1345" y="209" type="line"/>
+      <point x="1336" y="-88" type="line"/>
+      <point x="1402" y="-88" type="line"/>
+      <point x="1402" y="209" type="line"/>
+    </contour>
+    <component base="ga_dha-tutg" xOffset="5"/>
+    <component base="_roundedcorner" xOffset="1539" yOffset="-88"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="667" yOffset="-88"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

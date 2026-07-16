@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lla_pa-tutg" format="2">
+  <advance width="1027"/>
+  <anchor x="575.2" y="621" name="top"/>
+  <anchor x="575.2" y="-564" name="bottom"/>
+  <anchor x="1135.5" y="621" name="topright"/>
+  <outline>
+    <component base="lla-tutg" xOffset="5"/>
+    <component base="pa-tutg" xOffset="5" yOffset="-484"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:49:01 +0000</string>
+    </dict>
+  </lib>
+</glyph>

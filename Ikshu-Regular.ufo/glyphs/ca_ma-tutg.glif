@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ca_ma-tutg" format="2">
+  <advance width="1145"/>
+  <anchor x="525.2" y="625.5" name="top"/>
+  <anchor x="525.2" y="-321" name="bottom"/>
+  <anchor x="1035.4" y="625.5" name="topright"/>
+  <outline>
+    <component base="ca-tutg" xOffset="5"/>
+    <component base="mamatra-tutg.below.alt1" xOffset="1004" yOffset="113" identifier="DCC4499B"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>DCC4499B</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

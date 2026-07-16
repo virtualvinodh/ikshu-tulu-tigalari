@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_ta_va-tutg" format="2">
+  <advance width="1410"/>
+  <anchor x="655.0" y="615.5" name="top"/>
+  <anchor x="655.0" y="-534.5" name="bottom"/>
+  <anchor x="1300" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="1228" y="555" type="curve"/>
+      <point x="1228" y="-357" type="line"/>
+      <point x="1300" y="-357" type="line"/>
+      <point x="1300" y="555" type="line"/>
+      <point x="1287" y="565"/>
+      <point x="1241" y="565"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="1123" yOffset="-483"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="251" yOffset="-483"/>
+    <component base="pa_ta-tutg" xOffset="-5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:48:01 +0000</string>
+    </dict>
+  </lib>
+</glyph>

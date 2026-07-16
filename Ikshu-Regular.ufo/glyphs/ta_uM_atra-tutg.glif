@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_uMatra-tutg" format="2">
+  <advance width="1014"/>
+  <anchor x="870" y="143.7" name="height"/>
+  <anchor x="1258.24" y="-153" name="width"/>
+  <anchor x="634.2" y="619" name="top"/>
+  <anchor x="634.2" y="-236" name="bottom"/>
+  <anchor x="1258.5" y="619" name="topright"/>
+  <outline>
+    <contour>
+      <point x="831" y="182" type="curve" smooth="yes"/>
+      <point x="831" y="116" type="line"/>
+      <point x="846" y="106"/>
+      <point x="888" y="106"/>
+      <point x="903" y="116" type="curve"/>
+      <point x="903" y="180" type="line" smooth="yes"/>
+      <point x="903" y="451"/>
+      <point x="755" y="569"/>
+      <point x="600" y="569" type="curve" smooth="yes"/>
+      <point x="541" y="569"/>
+      <point x="491" y="553"/>
+      <point x="445" y="529" type="curve"/>
+      <point x="506" y="489" type="line"/>
+      <point x="534" y="501"/>
+      <point x="562" y="507"/>
+      <point x="595" y="507" type="curve" smooth="yes"/>
+      <point x="714" y="507"/>
+      <point x="831" y="402"/>
+    </contour>
+    <contour>
+      <point x="1109" y="-186" type="curve" smooth="yes"/>
+      <point x="1248" y="-186" type="line"/>
+      <point x="1262" y="-182"/>
+      <point x="1262" y="-126"/>
+      <point x="1248" y="-122" type="curve"/>
+      <point x="1120" y="-122" type="line" smooth="yes"/>
+      <point x="941" y="-122"/>
+      <point x="903" y="-32"/>
+      <point x="903" y="84" type="curve" smooth="yes"/>
+      <point x="903" y="144" type="line"/>
+      <point x="831" y="144" type="line"/>
+      <point x="831" y="72" type="line" smooth="yes"/>
+      <point x="831" y="-74"/>
+      <point x="900" y="-186"/>
+    </contour>
+    <component base="_tamiddle"/>
+    <component base="_taleftarm"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ra_uMatra-tutg" format="2">
+  <advance width="780"/>
+  <anchor x="342.5" y="620" name="top"/>
+  <anchor x="342.5" y="-279" name="bottom"/>
+  <anchor x="670" y="620" name="topright"/>
+  <outline>
+    <component base="ra-tutg" xOffset="5"/>
+    <component base="uMatra-tutg" xOffset="736" yOffset="23" identifier="389C5682"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-11 15:09:36 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>389C5682</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

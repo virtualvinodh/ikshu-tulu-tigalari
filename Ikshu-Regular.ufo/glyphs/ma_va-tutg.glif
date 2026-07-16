@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ma_va-tutg" format="2">
+  <advance width="1012"/>
+  <anchor x="458.5" y="621" name="top"/>
+  <anchor x="458.5" y="-138" name="bottom"/>
+  <anchor x="902" y="621" name="topright"/>
+  <outline>
+    <contour>
+      <point x="553" y="-88" type="line"/>
+      <point x="625" y="-88" type="line"/>
+      <point x="625" y="138" type="line"/>
+      <point x="553" y="138" type="line"/>
+    </contour>
+    <contour>
+      <point x="830" y="556" type="curve"/>
+      <point x="830" y="27" type="line"/>
+      <point x="902" y="27" type="line"/>
+      <point x="902" y="556" type="line"/>
+      <point x="889" y="566"/>
+      <point x="843" y="566"/>
+    </contour>
+    <component base="ma-tutg" xOffset="5"/>
+    <component base="_roundedcorner" xOffset="725" yOffset="-88"/>
+    <component base="_horizontalline64" xScale="0.8511" xOffset="-147" yOffset="-88"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:52:41 +0000</string>
+    </dict>
+  </lib>
+</glyph>

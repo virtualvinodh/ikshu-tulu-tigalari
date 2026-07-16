@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="conjoiner-tutg" format="2">
+  <advance width="1125"/>
+  <unicode hex="113D0"/>
+  <outline>
+    <component base="dottedCircle" xOffset="234" yOffset="5"/>
+    <component base="Tappu" xScale="0.829" yScale="0.829" xOffset="485" yOffset="459"/>
+    <component base="dottedSquare" xOffset="-55" yOffset="-220"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

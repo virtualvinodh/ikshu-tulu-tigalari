@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ca_ca-tutg" format="2">
+  <advance width="1043"/>
+  <anchor x="474.0" y="625.5" name="top"/>
+  <anchor x="474.0" y="-742" name="bottom"/>
+  <anchor x="933" y="625.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="861" y="176" type="curve"/>
+      <point x="861" y="-134" type="line"/>
+      <point x="933" y="-134" type="line"/>
+      <point x="933" y="176" type="line"/>
+      <point x="920" y="186"/>
+      <point x="874" y="186"/>
+    </contour>
+    <component base="ca-tutg" xOffset="5" yOffset="-662"/>
+    <component base="ca-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

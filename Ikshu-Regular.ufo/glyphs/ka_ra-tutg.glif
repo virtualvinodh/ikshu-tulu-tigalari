@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ra-tutg" format="2">
+  <advance width="1161"/>
+  <anchor x="530.5" y="621" name="top"/>
+  <anchor x="530.5" y="-275" name="bottom"/>
+  <anchor x="1051" y="621" name="topright"/>
+  <outline>
+    <component base="_kabowl" xOffset="1"/>
+    <component base="_karightarm"/>
+    <component base="_raJoin" xOffset="-681"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:35:45 +0000</string>
+    </dict>
+  </lib>
+</glyph>

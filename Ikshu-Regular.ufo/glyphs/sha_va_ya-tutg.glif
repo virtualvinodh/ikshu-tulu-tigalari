@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_va_ya-tutg" format="2">
+  <advance width="1840"/>
+  <anchor x="872.5" y="620" name="top"/>
+  <anchor x="872.5" y="-277" name="bottom"/>
+  <anchor x="1730" y="620" name="topright"/>
+  <outline>
+    <component base="sha_va-tutg" xOffset="5"/>
+    <component base="_yavattu-1" xOffset="594"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:51:52 +0000</string>
+    </dict>
+  </lib>
+</glyph>

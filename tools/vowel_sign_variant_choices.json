@@ -1,0 +1,2969 @@
+[
+  {
+    "glyph": "ba_rVocalicMatra-tutg",
+    "consonant": "ba",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ba-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ba_rrVocalicMatra-tutg",
+    "consonant": "ba",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ba_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ba_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ba_uMatra-tutg",
+    "consonant": "ba",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ba-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ba_uuMatra-tutg",
+    "consonant": "ba",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "ba-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_rVocalicMatra-tutg",
+    "consonant": "bha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_horizontalline64"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_rrVocalicMatra-tutg",
+    "consonant": "bha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "bha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "bha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_uMatra-tutg",
+    "consonant": "bha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "_horizontalline64",
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_uMatra-tutg.alt1",
+    "consonant": "bha",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_uuMatra-tutg",
+    "consonant": "bha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_horizontalline64",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "bha_uuMatra-tutg.alt1",
+    "consonant": "bha",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "bha-tutg.alt1"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ca_rVocalicMatra-tutg",
+    "consonant": "ca",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ca-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ca_rrVocalicMatra-tutg",
+    "consonant": "ca",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ca_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ca_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ca_uMatra-tutg",
+    "consonant": "ca",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ca-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ca_uuMatra-tutg",
+    "consonant": "ca",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "ca-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "cha_rVocalicMatra-tutg",
+    "consonant": "cha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "cha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "cha_rrVocalicMatra-tutg",
+    "consonant": "cha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "cha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "cha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "cha_uMatra-tutg",
+    "consonant": "cha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra.01",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "cha-tutg",
+      "_umatra.01"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "cha_uMatra-tutg.alt1",
+    "consonant": "cha",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uMatra.02",
+        "kind": "u"
+      },
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu",
+        "viaComponent": "_uMatra.02"
+      }
+    ],
+    "allComponents": [
+      "_uMatra.02"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "cha_uuMatra-tutg",
+    "consonant": "cha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uMatra.02",
+        "kind": "u"
+      },
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu",
+        "viaComponent": "_uMatra.02"
+      }
+    ],
+    "allComponents": [
+      "_uMatra.02"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "da_rVocalicMatra-tutg",
+    "consonant": "da",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "da-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "da_rrVocalicMatra-tutg",
+    "consonant": "da",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "da_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "da_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "da_uMatra-tutg",
+    "consonant": "da",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "da-tutg",
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "da_uuMatra-tutg",
+    "consonant": "da",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "da-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dda_rVocalicMatra-tutg",
+    "consonant": "dda",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "dda-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dda_rrVocalicMatra-tutg",
+    "consonant": "dda",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "dda_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "dda_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dda_uMatra-tutg",
+    "consonant": "dda",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "dda-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dda_uuMatra-tutg",
+    "consonant": "dda",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "dda-tutg",
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ddha_rVocalicMatra-tutg",
+    "consonant": "ddha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ddha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ddha_rrVocalicMatra-tutg",
+    "consonant": "ddha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ddha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ddha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ddha_uMatra-tutg",
+    "consonant": "ddha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ddha-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ddha_uuMatra-tutg",
+    "consonant": "ddha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "ddha-tutg",
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dha_rVocalicMatra-tutg",
+    "consonant": "dha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "dha_rrVocalicMatra-tutg",
+    "consonant": "dha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "dha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "dha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dha_uMatra-tutg",
+    "consonant": "dha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "dha-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "dha_uuMatra-tutg",
+    "consonant": "dha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "dha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ga_ga_rVocalicMatra-tutg",
+    "consonant": "ga_ga",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ga_ga-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ga_rVocalicMatra-tutg",
+    "consonant": "ga",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ga_rrVocalicMatra-tutg",
+    "consonant": "ga",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ga_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ga_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ga_uMatra-tutg",
+    "consonant": "ga",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ga_uMatra-tutg.alt1",
+    "consonant": "ga",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ga_uMatra-tutg.below",
+    "consonant": "ga",
+    "vowelSign": "uMatra",
+    "variant": ".below",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ga_uuMatra-tutg",
+    "consonant": "ga",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "gha_rVocalicMatra-tutg",
+    "consonant": "gha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "gha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "gha_rrVocalicMatra-tutg",
+    "consonant": "gha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "gha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "gha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "gha_uMatra-tutg",
+    "consonant": "gha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "gha-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "gha_uuMatra-tutg",
+    "consonant": "gha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "gha-tutg",
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ha_rVocalicMatra-tutg",
+    "consonant": "ha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ha_rrVocalicMatra-tutg",
+    "consonant": "ha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ha_uMatra-tutg",
+    "consonant": "ha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ha-tutg",
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ha_uMatra-tutg.alt1",
+    "consonant": "ha",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ha_uuMatra-tutg",
+    "consonant": "ha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ja_rVocalicMatra-tutg",
+    "consonant": "ja",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ja-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ja_rrVocalicMatra-tutg",
+    "consonant": "ja",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ja_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ja_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ja_uMatra-tutg",
+    "consonant": "ja",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra.01",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ja-tutg",
+      "_umatra.01"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ja_uMatra-tutg.alt1",
+    "consonant": "ja",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ja_uuMatra-tutg",
+    "consonant": "ja",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uMatra.02",
+        "kind": "u"
+      },
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu",
+        "viaComponent": "_uMatra.02"
+      }
+    ],
+    "allComponents": [
+      "_uMatra.02"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ja_uuMatra-tutg.below",
+    "consonant": "ja",
+    "vowelSign": "uuMatra",
+    "variant": ".below",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "jha_rVocalicMatra-tutg",
+    "consonant": "jha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_roundedcorner"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "jha_rrVocalicMatra-tutg",
+    "consonant": "jha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "jha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "jha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "jha_uMatra-tutg",
+    "consonant": "jha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_roundedcorner"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "jha_uuMatra-tutg",
+    "consonant": "jha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_roundedcorner",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_ka_rVocalicMatra-tutg",
+    "consonant": "ka_ka",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_kabowl"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_rVocalicMatra-tutg",
+    "consonant": "ka",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_rrVocalicMatra-tutg",
+    "consonant": "ka",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ka_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ka_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_ta_uMatra-tutg",
+    "consonant": "ka_ta",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_tamiddle"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_ta_uuMatra-tutg",
+    "consonant": "ka_ta",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_tamiddle",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_uMatra-tutg",
+    "consonant": "ka",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ka_uMatra-tutg.alt1",
+    "consonant": "ka",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ka_uuMatra-tutg",
+    "consonant": "ka",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_kabowl",
+      "_karightarm",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "kha_rVocalicMatra-tutg",
+    "consonant": "kha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "kha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "kha_rrVocalicMatra-tutg",
+    "consonant": "kha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "kha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "kha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "kha_uMatra-tutg",
+    "consonant": "kha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "kha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "kha_uuMatra-tutg",
+    "consonant": "kha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "kha-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "la_ka_uMatra-tutg",
+    "consonant": "la_ka",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "la_ka-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "la_rVocalicMatra-tutg",
+    "consonant": "la",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "la_rrVocalicMatra-tutg",
+    "consonant": "la",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "la_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "la_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "la_uMatra-tutg",
+    "consonant": "la",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "la-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "la_uuMatra-tutg",
+    "consonant": "la",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "la-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "lla_rVocalicMatra-tutg",
+    "consonant": "lla",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "lla-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "lla_rrVocalicMatra-tutg",
+    "consonant": "lla",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "lla_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "lla_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "lla_uMatra-tutg",
+    "consonant": "lla",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "lla-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "lla_uuMatra-tutg",
+    "consonant": "lla",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "lla-tutg",
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "llla_rVocalicMatra-tutg",
+    "consonant": "llla",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "llla-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "llla_rrVocalicMatra-tutg",
+    "consonant": "llla",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "llla_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "llla_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "llla_uMatra-tutg",
+    "consonant": "llla",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "llla-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "llla_uuMatra-tutg",
+    "consonant": "llla",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "llla-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ma_rVocalicMatra-tutg",
+    "consonant": "ma",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ma-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ma_rrVocalicMatra-tutg",
+    "consonant": "ma",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ma_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ma_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ma_uMatra-tutg",
+    "consonant": "ma",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ma-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ma_uuMatra-tutg",
+    "consonant": "ma",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ma-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_ka_rVocalicMatra-tutg",
+    "consonant": "na_ka",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "na_ka-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_ka_uMatra-tutg",
+    "consonant": "na_ka",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "na_ka-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_rVocalicMatra-tutg",
+    "consonant": "na",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "na_rrVocalicMatra-tutg",
+    "consonant": "na",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "na_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "na_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_uMatra-tutg",
+    "consonant": "na",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_uMatra-tutg.alt1",
+    "consonant": "na",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "na_uMatra-tutg.below",
+    "consonant": "na",
+    "vowelSign": "uMatra",
+    "variant": ".below",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "na_uuMatra-tutg",
+    "consonant": "na",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "uuMatra-tutg.alt2",
+      "na-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "na_uuMatra-tutg.alt1",
+    "consonant": "na",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nga_rVocalicMatra-tutg",
+    "consonant": "nga",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_nga1"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nga_rrVocalicMatra-tutg",
+    "consonant": "nga",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "nga_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "nga_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nga_uMatra-tutg",
+    "consonant": "nga",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "nga-tutg",
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nga_uMatra-tutg.alt1",
+    "consonant": "nga",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "nga-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nga_uuMatra-tutg",
+    "consonant": "nga",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "nga-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nna_rVocalicMatra-tutg",
+    "consonant": "nna",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "nna_rrVocalicMatra-tutg",
+    "consonant": "nna",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "nna_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "nna_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nna_uMatra-tutg",
+    "consonant": "nna",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nna_uMatra-tutg.alt1",
+    "consonant": "nna",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg.alt6",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "uMatra-tutg.alt6"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nna_uuMatra-tutg",
+    "consonant": "nna",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "nna-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nna_uuMatra-tutg.alt1",
+    "consonant": "nna",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nya_ja_uMatra-tutg",
+    "consonant": "nya_ja",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "nya_ja-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nya_rVocalicMatra-tutg",
+    "consonant": "nya",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_initA",
+      "_center"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nya_rrVocalicMatra-tutg",
+    "consonant": "nya",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "nya_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "nya_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nya_uMatra-tutg",
+    "consonant": "nya",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_initA",
+      "_center"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "nya_uMatra-tutg.alt1",
+    "consonant": "nya",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_initA",
+      "_center"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pa_rVocalicMatra-tutg",
+    "consonant": "pa",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "pa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pa_rrVocalicMatra-tutg",
+    "consonant": "pa",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "pa_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "pa_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pa_uMatra-tutg",
+    "consonant": "pa",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "pa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pa_uuMatra-tutg",
+    "consonant": "pa",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "pa-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pha_rVocalicMatra-tutg",
+    "consonant": "pha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "pha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pha_rrVocalicMatra-tutg",
+    "consonant": "pha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "pha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "pha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pha_uMatra-tutg",
+    "consonant": "pha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "pha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "pha_uuMatra-tutg",
+    "consonant": "pha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "pha-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "rVocalicMatra_uMatra-tutg",
+    "consonant": "rVocalicMatra",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "rVocalicMatra_uuMatra-tutg",
+    "consonant": "rVocalicMatra",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_rVocalicMatra-tutg",
+    "consonant": "ra",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_rrVocalicMatra-tutg",
+    "consonant": "ra",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ra_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ra_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_uMatra-tutg",
+    "consonant": "ra",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ra-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_uMatra-tutg.alt1",
+    "consonant": "ra",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_uMatra-tutg.alt2",
+    "consonant": "ra",
+    "vowelSign": "uMatra",
+    "variant": ".alt2",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_uuMatra-tutg",
+    "consonant": "ra",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ra_uuMatra-tutg.alt1",
+    "consonant": "ra",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "ra-tutg",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "rra_rVocalicMatra-tutg",
+    "consonant": "rra",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_smart.jaleft"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "rra_rrVocalicMatra-tutg",
+    "consonant": "rra",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "rra_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "rra_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "rra_uMatra-tutg",
+    "consonant": "rra",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "rra-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "rra_uMatra-tutg.001",
+    "consonant": "rra",
+    "vowelSign": "uMatra",
+    "variant": ".001",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "rra_uuMatra-tutg",
+    "consonant": "rra",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "rra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_rVocalicMatra-tutg",
+    "consonant": "sa",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "sa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_rrVocalicMatra-tutg",
+    "consonant": "sa",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "sa_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "sa_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_sa_rVocalicMatra-tutg",
+    "consonant": "sa_sa",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "sa_sa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_sa_ta_uMatra-tutg",
+    "consonant": "sa_sa_ta",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "sa_ta_uMatra-tutg",
+        "kind": "u"
+      },
+      {
+        "name": "uMatra-tutg.alt1",
+        "kind": "u",
+        "viaComponent": "sa_ta_uMatra-tutg"
+      }
+    ],
+    "allComponents": [
+      "sa-tutg",
+      "sa_ta_uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_sa_tha_uMatra-tutg",
+    "consonant": "sa_sa_tha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "sa_sa-tutg",
+      "sa_sa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_ta_uMatra-tutg",
+    "consonant": "sa_ta",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg.alt1",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "sa-tutg",
+      "_tavattu",
+      "uMatra-tutg.alt1"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_ta_uuMatra-tutg",
+    "consonant": "sa_ta",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "sa-tutg",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sa_uMatra-tutg",
+    "consonant": "sa",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "sa_uuMatra-tutg",
+    "consonant": "sa",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "sa-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sha_rVocalicMatra-tutg",
+    "consonant": "sha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "sha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sha_rrVocalicMatra-tutg",
+    "consonant": "sha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "sha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "sha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sha_uMatra-tutg",
+    "consonant": "sha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_sha-tutg.conjunct"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "sha_uMatra-tutg.alt1",
+    "consonant": "sha",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "sha_uuMatra-tutg",
+    "consonant": "sha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_sha-tutg.conjunct",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_ka_uuMatra-tutg",
+    "consonant": "ssa_ka",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_ssa-tutg.conjunct"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_nna_uMatra-tutg",
+    "consonant": "ssa_nna",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_ssa-tutg.conjunct",
+      "_nnabelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_rVocalicMatra-tutg",
+    "consonant": "ssa",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_pabeak",
+      "_ssa1"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_rrVocalicMatra-tutg",
+    "consonant": "ssa",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ssa_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ssa_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_tta_rVocalicMatra-tutg",
+    "consonant": "ssa_tta",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_ssa-tutg.conjunct",
+      "tta-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_uMatra-tutg",
+    "consonant": "ssa",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ssa-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ssa_uuMatra-tutg",
+    "consonant": "ssa",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ssa_uuMatra-tutg.alt1",
+    "consonant": "ssa",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt3",
+        "kind": "uu"
+      },
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu",
+        "viaComponent": "uuMatra-tutg.alt3"
+      }
+    ],
+    "allComponents": [
+      "uuMatra-tutg.alt3"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ta_rVocalicMatra-tutg",
+    "consonant": "ta",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_tamiddle",
+      "_taleftarm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ta_rrVocalicMatra-tutg",
+    "consonant": "ta",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ta_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ta_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ta_ta_rVocalicMatra-tutg",
+    "consonant": "ta_ta",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_tamiddle",
+      "_taleftarm",
+      "_tamiddle"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ta_uMatra-tutg",
+    "consonant": "ta",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "_tamiddle",
+      "_taleftarm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ta_uMatra-tutg.alt1",
+    "consonant": "ta",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ta_uMatra-tutg.below",
+    "consonant": "ta",
+    "vowelSign": "uMatra",
+    "variant": ".below",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ta_uuMatra-tutg",
+    "consonant": "ta",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "_taleftarm",
+      "_tamiddle",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tha_rVocalicMatra-tutg",
+    "consonant": "tha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "tha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tha_rrVocalicMatra-tutg",
+    "consonant": "tha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "tha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "tha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tha_uMatra-tutg",
+    "consonant": "tha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "tha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tha_uuMatra-tutg",
+    "consonant": "tha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "tha-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tta_rVocalicMatra-tutg",
+    "consonant": "tta",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "tta-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tta_rrVocalicMatra-tutg",
+    "consonant": "tta",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "tta_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "tta_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tta_uMatra-tutg",
+    "consonant": "tta",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_umatra",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "tta-tutg",
+      "_umatra"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tta_uMatra-tutg.alt1",
+    "consonant": "tta",
+    "vowelSign": "uMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "tta_uuMatra-tutg",
+    "consonant": "tta",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "tta-tutg",
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "tta_uuMatra-tutg.alt1",
+    "consonant": "tta",
+    "vowelSign": "uuMatra",
+    "variant": ".alt1",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "_uumatraBelow",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "tta-tutg",
+      "_uumatraBelow"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ttha_rVocalicMatra-tutg",
+    "consonant": "ttha",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ttha-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ttha_rrVocalicMatra-tutg",
+    "consonant": "ttha",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ttha_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ttha_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ttha_uMatra-tutg",
+    "consonant": "ttha",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "ttha-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ttha_uuMatra-tutg",
+    "consonant": "ttha",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "ttha-tutg",
+      "uuMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "va_rVocalicMatra-tutg",
+    "consonant": "va",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "va-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "va_rrVocalicMatra-tutg",
+    "consonant": "va",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "va_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "va_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "va_uMatra-tutg",
+    "consonant": "va",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uMatra-tutg",
+        "kind": "u"
+      }
+    ],
+    "allComponents": [
+      "va-tutg",
+      "uMatra-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "va_uuMatra-tutg",
+    "consonant": "va",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "va-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ya_rVocalicMatra-tutg",
+    "consonant": "ya",
+    "vowelSign": "rVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "bespoke-shape-only-consonant-componentized",
+    "shapeComponentsUsed": [],
+    "allComponents": [
+      "ya-tutg"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ya_rrVocalicMatra-tutg",
+    "consonant": "ya",
+    "vowelSign": "rrVocalicMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "ya_rVocalicMatra-tutg",
+        "kind": "r"
+      },
+      {
+        "name": "_rrVocalicArm",
+        "kind": "rr"
+      }
+    ],
+    "allComponents": [
+      "ya_rVocalicMatra-tutg",
+      "_rrVocalicArm"
+    ],
+    "isHandDrawn": false
+  },
+  {
+    "glyph": "ya_uMatra-tutg",
+    "consonant": "ya",
+    "vowelSign": "uMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "fully-hand-drawn",
+    "shapeComponentsUsed": [],
+    "allComponents": [],
+    "isHandDrawn": true
+  },
+  {
+    "glyph": "ya_uuMatra-tutg",
+    "consonant": "ya",
+    "vowelSign": "uuMatra",
+    "variant": "(default)",
+    "vowelShapeStatus": "reused-named-variant",
+    "shapeComponentsUsed": [
+      {
+        "name": "uuMatra-tutg.alt2",
+        "kind": "uu"
+      }
+    ],
+    "allComponents": [
+      "uuMatra-tutg.alt2"
+    ],
+    "isHandDrawn": false
+  }
+]

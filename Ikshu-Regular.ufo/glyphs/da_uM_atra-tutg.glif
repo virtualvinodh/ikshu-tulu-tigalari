@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="da_uMatra-tutg" format="2">
+  <advance width="803"/>
+  <anchor x="320.7" y="622" name="top"/>
+  <anchor x="320.7" y="-274" name="bottom"/>
+  <anchor x="626" y="622" name="topright"/>
+  <outline>
+    <component base="da-tutg" xOffset="5"/>
+    <component base="_umatra" xOffset="291"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-11 15:07:05 +0000</string>
+    </dict>
+  </lib>
+</glyph>

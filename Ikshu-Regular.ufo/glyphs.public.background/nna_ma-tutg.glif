@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nna_ma-tutg" format="2">
+  <advance width="1572"/>
+  <outline>
+    <component base="ma-tutg" xOffset="752"/>
+  </outline>
+</glyph>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="H" format="2">
+  <advance width="677"/>
+  <unicode hex="0048"/>
+  <note>
+H
+</note>
+  <anchor x="333" y="0" name="bottom"/>
+  <anchor x="333" y="700" name="top"/>
+  <anchor x="333" y="525" name="center"/>
+  <outline>
+    <contour>
+      <point x="526" y="320" type="line"/>
+      <point x="526" y="-3" type="line"/>
+      <point x="599" y="-3" type="line"/>
+      <point x="599" y="703" type="line"/>
+      <point x="526" y="703" type="line"/>
+      <point x="526" y="383" type="line"/>
+      <point x="152" y="383" type="line"/>
+      <point x="152" y="703" type="line"/>
+      <point x="79" y="703" type="line"/>
+      <point x="79" y="-3" type="line"/>
+      <point x="152" y="-3" type="line"/>
+      <point x="152" y="320" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa-tutg" format="2">
+  <advance width="1018"/>
+  <unicode hex="113A6"/>
+  <anchor x="459.0" y="615.5" name="top"/>
+  <anchor x="459.0" y="-80" name="bottom"/>
+  <anchor x="908" y="615.5" name="topright"/>
+  <anchor x="872.0" y="13.2" name="bottomright"/>
+  <outline>
+    <contour>
+      <point x="836" y="558" type="curve"/>
+      <point x="836" y="120" type="line"/>
+      <point x="908" y="120" type="line"/>
+      <point x="908" y="558" type="line"/>
+      <point x="895" y="568"/>
+      <point x="849" y="568"/>
+    </contour>
+    <component base="_roundedcorner" xOffset="731"/>
+    <component base="_horizontalline64" xOffset="-318"/>
+    <component base="_pabeak"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.67,0.95,0.38,1</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Ikshu-Regular Test Page</title>
+<style>
+  @font-face {
+    font-family: 'Ikshu Test';
+    src: url(data:font/ttf;base64,__FONT_BASE64__) format('truetype');
+  }
+  :root {
+    --canvas-dark: #1a1820;
+    --panel-dark: #242230;
+    --panel-dark-2: #2c2938;
+    --border-dark: #3a3648;
+    --text-light: #e8e3d8;
+    --text-light-dim: #a49bb0;
+    --paper: #fbfaf7;
+    --paper-line: #e4e0d6;
+    --ink: #000;
+    --accent: #4f8f7d;
+    --accent-strong: #63ab97;
+
+    /* #main content-area theme - the sidebar (--canvas-dark/--panel-dark/etc.
+       above) is deliberately always dark, like a permanent toolbar; this set is
+       what actually switches with the light/dark toggle. */
+    --card-bg: #fff;
+    --hover-bg: #f7f5ef;
+    --text-dim: #8a8578;
+    --text-dimmer: #6b6558;
+    --text-faint: #a39d8e;
+    --scrollbar-thumb-main: #d8d3c5;
+  }
+  :root[data-theme="dark"] {
+    --paper: #16151a;
+    --paper-line: #2c2b31;
+    --ink: #e9e5da;
+    --card-bg: #201f24;
+    --hover-bg: #29282e;
+    --text-dim: #9c9686;
+    --text-dimmer: #b7b1a2;
+    --text-faint: #837d6e;
+    --scrollbar-thumb-main: #3a3844;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--canvas-dark);
+    color: var(--text-light);
+    font-family: "Avenir Next", "Century Gothic", "Segoe UI", sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0 0 2px 0;
+  }
+  .subtitle { font-size: 0.76rem; color: var(--text-light-dim); margin: 0 0 16px 0; }
+
+  #sidebar {
+    width: 210px;
+    min-width: 210px;
+    background: var(--panel-dark);
+    border-right: 1px solid var(--border-dark);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+  }
+  .tab-btn {
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-light-dim);
+    font-size: 0.83rem;
+    cursor: pointer;
+  }
+  .tab-btn:hover { background: var(--panel-dark-2); color: var(--text-light); }
+  .tab-btn.active {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    border-color: var(--accent);
+    color: var(--text-light);
+  }
+  .control-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-light-dim);
+    margin-bottom: 3px;
+  }
+  input[type="range"] { width: 100%; }
+  .cat-chip {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: var(--panel-dark-2);
+    border: 1px solid var(--border-dark);
+    color: var(--text-light-dim);
+    cursor: pointer;
+  }
+  .cat-chip:hover { color: var(--text-light); }
+  .cat-chip.active {
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    border-color: var(--accent);
+    color: var(--text-light);
+  }
+  /* .cat-chip's default palette above is tuned for the dark sidebar (a translucent
+     accent tint over a dark backdrop still reads dark); reused inside #main
+     (light by default, but toggleable) the same translucent .active background
+     composites to near-white and its light-cream text nearly disappears. Blend
+     toward the theme-aware --card-bg instead of transparent so it's always
+     opaque, and use --ink for text so it flips correctly with dark mode. */
+  #main .cat-chip { background: var(--hover-bg); border-color: var(--paper-line); color: var(--text-dimmer); }
+  #main .cat-chip:hover { color: var(--ink); }
+  #main .cat-chip.active {
+    background: color-mix(in srgb, var(--accent) 30%, var(--card-bg));
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  #search {
+    width: 100%;
+    padding: 7px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border-dark);
+    background: var(--panel-dark-2);
+    color: var(--text-light);
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.78rem;
+  }
+
+  #main { flex: 1; overflow-y: auto; padding: 24px 30px; background: var(--paper); color: var(--ink); }
+  .tigalari { font-family: 'Ikshu Test', sans-serif; }
+
+  .cons-grid, .vowel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+  }
+  .cons-cell {
+    background: var(--card-bg);
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+  }
+  .cons-cell .glyph { font-size: 2.2rem; line-height: 1.3; }
+  .cons-cell .label { font-family: "SF Mono", Consolas, monospace; font-size: 0.62rem; color: var(--text-dim); margin-top: 4px; }
+  .cons-cell.clickable { cursor: pointer; }
+  .cons-cell.clickable:hover { border-color: var(--accent); background: var(--hover-bg); }
+  .cons-cell.clickable:active { background: color-mix(in srgb, var(--accent) 20%, var(--card-bg)); }
+
+  table.test-table { border-collapse: collapse; width: 100%; }
+  table.test-table th, table.test-table td {
+    border-bottom: 1px solid var(--paper-line);
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  table.test-table th {
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    background: var(--card-bg);
+    position: sticky;
+    top: 0;
+  }
+  /* Matrix/Conjunct Matrix stack a .sticky-controls bar above their table, so the
+     table's own sticky header needs to sit below that bar's height instead of at
+     top:0, or the two would overlap. */
+  #panel-matrix table.test-table th, #panel-conjmatrix table.test-table th { top: 46px; }
+  table.test-table td.rendered { font-size: 1.8rem; }
+  table.test-table td.label { font-family: "SF Mono", Consolas, monospace; font-size: 0.72rem; color: var(--text-dimmer); }
+  table.test-table td.seq { font-family: "SF Mono", Consolas, monospace; font-size: 0.68rem; color: var(--text-faint); }
+  table.test-table tr:hover td { background: var(--hover-bg); }
+
+  /* Native <ruby>/<rt> spacing is computed by the browser from the base text's
+     font metrics, and Tigalari's above-base marks (topright anchors, stacked vowel
+     signs) reach well above what a Latin-oriented ruby algorithm expects - the
+     annotation ends up sitting down into the word's own marks, and CSS
+     margin/padding on <rt> isn't reliably honored by native ruby layout to fix it.
+     So this is built as a plain flex column instead: full manual control over the
+     gap, no dependence on the browser's ruby placement heuristics. */
+  .sampletext-passage { line-height: 1.3; }
+  .word-block { display: inline-flex; flex-direction: column; align-items: center; vertical-align: bottom; margin: 0 4px 0.6em; }
+  .word-block .ann { font-size: 0.35em; line-height: 1.3; margin-bottom: 1.1em; color: var(--text-dim); font-family: "SF Mono", Consolas, monospace; white-space: nowrap; }
+  .word-block .word { line-height: 1; }
+  .word-block .ann + .ann { margin-top: -0.3em; }
+
+  .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
+  .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
+  .text-tab:hover { color: var(--ink); }
+  .text-tab.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 600; }
+
+  .ann-checkboxes { display: flex; gap: 18px; margin-bottom: 14px; font-size: 0.85rem; color: var(--text-dimmer); }
+  .ann-checkboxes label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+  textarea#live-input {
+    width: 100%;
+    min-height: 160px;
+    font-size: 2rem;
+    padding: 16px;
+    border: 1px solid var(--paper-line);
+    border-radius: 10px;
+    background: var(--card-bg);
+    color: var(--ink);
+  }
+  .filter-dropdown { position: relative; display: inline-block; }
+  .filter-dropdown-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--paper-line);
+    background: var(--card-bg);
+    color: var(--ink);
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.78rem;
+    cursor: pointer;
+  }
+  .filter-dropdown-btn:after { content: " \25be"; opacity: 0.6; }
+  /* Keeps the category/filter controls visible while scrolling through a long
+     grouped list below - #main is the scroll container, so "sticky" pins these
+     to its top edge rather than scrolling away with the content. */
+  .sticky-controls {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: var(--paper);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+  }
+  .filter-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 20;
+    background: var(--card-bg);
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    padding: 8px;
+    min-width: 180px;
+  }
+  .filter-dropdown-actions { display: flex; gap: 6px; margin-bottom: 6px; }
+  .filter-dropdown-actions button {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--paper-line);
+    background: var(--hover-bg);
+    color: var(--text-dimmer);
+    cursor: pointer;
+  }
+  .filter-dropdown-list {
+    max-height: 220px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px 10px;
+  }
+  .filter-dropdown-list label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.72rem;
+    color: var(--ink);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .live-preview {
+    width: 100%;
+    min-height: 100px;
+    font-size: 2rem;
+    padding: 16px;
+    border: 1px solid var(--paper-line);
+    border-radius: 10px;
+    background: var(--hover-bg);
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .count-note { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 14px; }
+
+  .theme-toggle {
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--panel-dark-2);
+    border: 1px solid var(--border-dark);
+    color: var(--text-light-dim);
+    font-size: 0.83rem;
+    cursor: pointer;
+  }
+  .theme-toggle:hover { color: var(--text-light); }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 6px; }
+  #main::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-main); }
+  ::-webkit-scrollbar-track { background: transparent; }
+</style>
+
+<div id="sidebar">
+  <div>
+    <h1>Ikshu-Regular</h1>
+    <p class="subtitle">Compiled test build &middot; tutg</p>
+  </div>
+  <div class="tab-btn active" data-tab="overview">Basic</div>
+  <div class="tab-btn" data-tab="akhn">Conjuncts &amp; Vowel Signs</div>
+  <div class="tab-btn" data-tab="conjlist">Standard Conjunct List</div>
+  <div class="tab-btn" data-tab="matrix">Syllable Matrix</div>
+  <div class="tab-btn" data-tab="conjmatrix">Conjunct Matrix</div>
+  <div class="tab-btn" data-tab="marks">Marks</div>
+  <div class="tab-btn" data-tab="sampletext">Sample Texts</div>
+  <div class="tab-btn" data-tab="live">Live Input</div>
+  <div class="tab-btn" data-tab="unicode">Unicode</div>
+  <div id="theme-toggle" class="theme-toggle">Dark mode: off</div>
+  <div>
+    <div class="control-label">Font size</div>
+    <input id="size-slider" type="range" min="14" max="72" value="32" oninput="setSize(this.value)">
+  </div>
+  <div>
+    <div class="control-label">Line height</div>
+    <input id="line-slider" type="range" min="1" max="3" value="1.6" step="0.1" oninput="setLineHeight(this.value)">
+  </div>
+  <div id="search-wrap" style="display:none;">
+    <div class="control-label">Category</div>
+    <div id="cat-filters" style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;"></div>
+    <div class="control-label">Filter (output glyph name)</div>
+    <input id="search" type="text" placeholder="e.g. ka_ka">
+  </div>
+</div>
+
+<div id="main">
+  <div class="panel active" id="panel-overview">
+    <div class="count-note" id="vowel-count"></div>
+    <div class="vowel-grid" id="vowel-grid"></div>
+
+    <div class="count-note" id="cons-count" style="margin-top:26px;"></div>
+    <div class="cons-grid" id="cons-grid"></div>
+
+    <div class="count-note" style="margin-top:26px;">Under symbols (5)</div>
+    <div class="cons-grid" id="under-symbols-grid"></div>
+
+    <div class="count-note" style="margin-top:26px;">KA + every vowel sign, plus Halant/virama (18)</div>
+    <div class="cons-grid" id="ka-vowelsign-grid"></div>
+
+    <div class="count-note" style="margin-top:26px;">a + Svarita/Anudatta (2)</div>
+    <div class="cons-grid" id="a-marks-grid"></div>
+
+    <div class="count-note" style="margin-top:26px;">KA + every mark (4)</div>
+    <div class="cons-grid" id="ka-marks-grid"></div>
+  </div>
+  <div class="panel" id="panel-akhn">
+    <div class="count-note" id="akhn-count"></div>
+    <table class="test-table">
+      <thead><tr><th style="width:120px">Rendered</th><th>Expected output glyph</th><th>Input sequence (typed)</th></tr></thead>
+      <tbody id="akhn-body"></tbody>
+    </table>
+  </div>
+  <div class="panel" id="panel-conjlist">
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:10px;">
+        <select id="conjlist-vowel-select" class="filter-dropdown-btn"></select>
+        <div id="conjlist-mark-select" style="display:flex; gap:6px;"></div>
+      </div>
+      <div id="conjlist-ann-toggle" class="ann-checkboxes"></div>
+    </div>
+    <div id="conjlist-body"></div>
+  </div>
+  <div class="panel" id="panel-matrix">
+    <p class="count-note">Every consonant against every vowel sign (36 &times; 18: inherent-vowel column, 13 vowel signs,
+      Candrabindu/Anusvara/Visarga, and Halant/virama) - not limited to combinations with a dedicated ligature glyph.
+      EE/AI (reorder before the base) and OO/AU (split before+after the base) are shaped entirely by HarfBuzz's own
+      built-in Tigalari support, not this font's GSUB - so this table also doubles as a check on that.</p>
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <button id="matrix-transpose" class="cat-chip">Transpose (vowel signs &rarr; rows)</button>
+        <div id="matrix-row-filter"></div>
+        <div id="matrix-col-filter"></div>
+        <div id="matrix-mark-select" style="display:flex; gap:6px;"></div>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <table class="test-table" id="matrix-table"></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-conjmatrix">
+    <p class="count-note">Every consonant against every consonant (36 &times; 36, including the diagonal - geminate
+      clusters like "kka" are real conjuncts too), typed as C1 + conjoiner + C2 - the same shape our <code>akhn</code>
+      GSUB rules match on. Only a fraction of these 1296 pairs have a dedicated ligature glyph; this table shows at a
+      glance which fall back to unligated default rendering instead.</p>
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <button id="conjmatrix-transpose" class="cat-chip">Transpose</button>
+        <select id="conjmatrix-vowel-select" class="filter-dropdown-btn"></select>
+        <div id="conjmatrix-mark-select" style="display:flex; gap:6px;"></div>
+        <div id="conjmatrix-c1-filter"></div>
+        <div id="conjmatrix-c2-filter"></div>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <table class="test-table" id="conjmatrix-table"></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-marks">
+    <p class="count-note">Every independent vowel &times; the two Vedic tone marks we have glyphs for ("svaras" -
+      Svarita and Anudatta; Udatta is conventionally left unmarked), and every consonant &times; all 4 Repha/Svarita/
+      Anudatta/Gemination marks.</p>
+    <div style="overflow:auto; margin-bottom:26px;">
+      <table class="test-table" id="mark-vowel-table"></table>
+    </div>
+    <div style="overflow:auto; margin-bottom:26px;">
+      <table class="test-table" id="mark-consonant-table"></table>
+    </div>
+  </div>
+  <div class="panel" id="panel-sampletext">
+    <p class="count-note">Real Sanskrit Buddhist/Vedic texts (Heart Sutra, dharanis, Lotus Sutra, Lalitavistara,
+      Dhammacakkappavattana Sutta, a Vedic passage) - the same texts satisarsharada's own test page uses, sourced
+      from its Sharada-script text and mechanically transliterated (see brahmic_translit.py) rather than retyped.
+      Main line is Tigalari; the small annotation above each word can show Kannada, IAST, or both.</p>
+    <div id="sampletext-list" class="text-tab-bar"></div>
+    <div id="sampletext-ann-toggle" class="ann-checkboxes"></div>
+    <div id="sampletext-body"></div>
+  </div>
+  <div class="panel" id="panel-live">
+    <p class="count-note" id="live-count-note">Type or paste Tulu-Tigalari Unicode text (U+11380-U+113FF) below - rendered live through the compiled font.</p>
+    <div id="live-script-select" class="text-tab-bar"></div>
+    <textarea id="live-input" class="tigalari" placeholder="Type here..."></textarea>
+    <div id="live-preview-wrap" style="display:none; margin-top:16px;">
+      <p class="count-note">Transliterated to Tigalari (live, in the browser - see brahmic_translit.py for the Python original this mirrors):</p>
+      <div id="live-preview" class="tigalari live-preview"></div>
+    </div>
+  </div>
+  <div class="panel" id="panel-unicode">
+    <p class="count-note" id="unicode-count-note">Every actually-encoded character in the Tulu-Tigalari block (U+11380-U+113FF) - click one to type it below.</p>
+    <div style="display:flex; gap:10px; align-items:flex-start; margin-bottom:14px;">
+      <div id="unicode-output" class="tigalari live-preview" style="flex:1; min-height:60px;"></div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <button id="unicode-backspace" class="cat-chip">&larr; Backspace</button>
+        <button id="unicode-clear" class="cat-chip">Clear</button>
+      </div>
+    </div>
+    <div class="cons-grid" id="unicode-grid"></div>
+  </div>
+</div>
+
+<script type="application/json" id="test-data">__TEST_DATA_JSON__</script>
+<script type="application/json" id="sample-texts-data">__SAMPLE_TEXTS_JSON__</script>
+<script type="application/json" id="brahmic-tables-data">__BRAHMIC_TABLES_JSON__</script>
+<script type="application/json" id="conjunct-lists-data">__CONJUNCT_LISTS_JSON__</script>
+<script>
+(function() {
+  const DATA = JSON.parse(document.getElementById('test-data').textContent);
+  const SAMPLE_TEXTS = JSON.parse(document.getElementById('sample-texts-data').textContent);
+  const BRAHMIC = JSON.parse(document.getElementById('brahmic-tables-data').textContent);
+  const CONJUNCT_LISTS = JSON.parse(document.getElementById('conjunct-lists-data').textContent);
+  const S = String.fromCodePoint;
+  const stripTutg = name => name.replace(/-tutg$/, '');
+  let sampleTextId = (SAMPLE_TEXTS.passages[0] || {}).id || null;
+  const sampleAnnModes = new Set(['kannada']);
+  let liveScriptMode = 'tigalari';
+  let conjListVowelChoice = 'None';
+  let conjListMarkChoice = 'None';
+  const conjListAnnModes = new Set(['kannada']);
+  const ENDING_TOKEN = {
+    'AA': ['vowel_signs', 'aa'], 'I': ['vowel_signs', 'i'], 'II': ['vowel_signs', 'ii'],
+    'U': ['vowel_signs', 'u'], 'UU': ['vowel_signs', 'uu'],
+    'Vocalic R': ['vowel_signs', 'vocalicR'], 'Vocalic RR': ['vowel_signs', 'vocalicRR'],
+    'Vocalic L': ['vowel_signs', 'vocalicL'], 'Vocalic LL': ['vowel_signs', 'vocalicLL'],
+    'EE': ['vowel_signs', 'e'], 'AI': ['vowel_signs', 'ai'], 'OO': ['vowel_signs', 'o'], 'AU': ['vowel_signs', 'au'],
+    'Candrabindu': ['candrabindu', null], 'Anusvara': ['anusvara', null], 'Visarga': ['visarga', null],
+    'Halant': ['virama', null],
+  };
+  const CONSONANT_NAME_BY_CP = {};
+  DATA.consonants.forEach(c => { CONSONANT_NAME_BY_CP[c.cp] = stripTutg(c.name); });
+
+  // Reverse (codepoint -> phoneme) lookup for each of the four Brahmic scripts -
+  // needed by textToPhonemes() below, and needed early since renderConjList() can
+  // fire before the tab is switched to (see activateTab's tab-specific hooks).
+  function buildReverseTable(table) {
+    const rev = {};
+    ['independent_vowels', 'vowel_signs', 'consonants'].forEach(kind => {
+      Object.entries(table[kind]).forEach(([key, cp]) => { rev[cp] = [kind, key]; });
+    });
+    ['virama', 'conjoiner', 'anusvara', 'visarga', 'candrabindu', 'avagraha', 'danda', 'doubleDanda'].forEach(kind => {
+      const cp = table[kind];
+      if (cp !== undefined && cp !== null && !(cp in rev)) {
+        rev[cp] = [kind === 'conjoiner' ? 'virama' : kind, null];
+      }
+    });
+    return rev;
+  }
+  const REVERSE_TABLES = {};
+  Object.entries(BRAHMIC.scripts).forEach(([name, table]) => { REVERSE_TABLES[name] = buildReverseTable(table); });
+  Object.entries(BRAHMIC.digitBases).forEach(([name, base]) => {
+    for (let i = 0; i < 10; i++) REVERSE_TABLES[name][base + i] = ['digit', String(i)];
+  });
+
+  // dark mode toggle for #main (the sidebar is deliberately always dark) - persists
+  // across reloads via localStorage since this is a self-contained offline file,
+  // not a hosted app with its own settings.
+  const themeToggle = document.getElementById('theme-toggle');
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeToggle.textContent = 'Dark mode: ' + (theme === 'dark' ? 'on' : 'off');
+    localStorage.setItem('ikshu-test-page-theme', theme);
+  }
+  themeToggle.addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
+  applyTheme(localStorage.getItem('ikshu-test-page-theme') === 'dark' ? 'dark' : 'light');
+
+  function setSize(px) {
+    document.querySelectorAll('.tigalari, .cons-cell .glyph, td.rendered').forEach(el => {
+      el.style.fontSize = px + 'px';
+    });
+  }
+  document.getElementById('size-slider').addEventListener('input', e => setSize(e.target.value));
+
+  function setLineHeight(val) {
+    document.querySelectorAll('table.test-table td, textarea#live-input, .conj-block').forEach(el => {
+      el.style.lineHeight = val;
+    });
+  }
+  document.getElementById('line-slider').addEventListener('input', e => setLineHeight(e.target.value));
+
+  // tabs - active tab syncs to ?tab= in the URL so a specific tab can be bookmarked/shared
+  function activateTab(tabName, opts) {
+    opts = opts || {};
+    const btn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+    if (!btn) return;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tabName).classList.add('active');
+    document.getElementById('search-wrap').style.display = tabName === 'akhn' ? 'block' : 'none';
+    if (tabName === 'conjlist') renderConjList();
+    if (tabName === 'sampletext') renderSampleText();
+    if (!opts.skipUrl) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('tab', tabName);
+      window.history.replaceState(null, '', url);
+    }
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+  const initialTab = new URL(window.location.href).searchParams.get('tab');
+  if (initialTab && document.querySelector(`.tab-btn[data-tab="${initialTab}"]`)) {
+    activateTab(initialTab, { skipUrl: true });
+  }
+
+  // consonants
+  const consGrid = document.getElementById('cons-grid');
+  document.getElementById('cons-count').textContent = DATA.consonants.length + ' consonants';
+  DATA.consonants.forEach(c => {
+    const cell = document.createElement('div');
+    cell.className = 'cons-cell';
+    cell.innerHTML = `<div class="glyph tigalari">${S(c.cp)}</div><div class="label">${c.name}<br>U+${c.cp.toString(16).toUpperCase()}</div>`;
+    consGrid.appendChild(cell);
+  });
+
+  // vowels
+  const vowelGrid = document.getElementById('vowel-grid');
+  document.getElementById('vowel-count').textContent = DATA.vowels.length + ' independent vowels';
+  DATA.vowels.forEach(v => {
+    const cell = document.createElement('div');
+    cell.className = 'cons-cell';
+    cell.innerHTML = `<div class="glyph tigalari">${S(v.cp)}</div><div class="label">${v.name}<br>U+${v.cp.toString(16).toUpperCase()}</div>`;
+    vowelGrid.appendChild(cell);
+  });
+
+  // under symbols - labels are the real Unicode character names (verified against
+  // the Unicode 17.0 code chart), not this UFO's internal glyph names: notably
+  // U+113D8's glyph is named "sha_ra_iiMatra-tutg" after its component shapes, but
+  // its actual Unicode identity is SIGN SHRII PUSHPIKA (a decorative auspicious-
+  // word mark, same idea as Om Pushpika next to it) - not a real sha+ra+ii-matra
+  // ligature at all. U+113D6 in between the others is unassigned/reserved.
+  const UNDER_SYMBOLS = [
+    [0x113D3, 'Pluta'],
+    [0x113D4, 'Danda'],
+    [0x113D5, 'Double Danda'],
+    [0x113D7, 'Om Pushpika'],
+    [0x113D8, 'Shrii Pushpika'],
+  ];
+  const underSymbolsGrid = document.getElementById('under-symbols-grid');
+  UNDER_SYMBOLS.forEach(([cp, label]) => {
+    const cell = document.createElement('div');
+    cell.className = 'cons-cell';
+    cell.innerHTML = `<div class="glyph tigalari">${S(cp)}</div><div class="label">${label}<br>U+${cp.toString(16).toUpperCase()}</div>`;
+    underSymbolsGrid.appendChild(cell);
+  });
+
+  // KA + every vowel sign (the syllable matrix's own KA row, which now includes
+  // Halant/virama as its last column too).
+  function addComboCell(grid, label, cps) {
+    const cell = document.createElement('div');
+    cell.className = 'cons-cell';
+    cell.innerHTML = `<div class="glyph tigalari">${cps.map(cp => S(cp)).join('')}</div><div class="label">${label}</div>`;
+    grid.appendChild(cell);
+  }
+  const kaEntry = DATA.consonants.find(c => c.name === 'ka-tutg');
+  const aEntry = DATA.vowels.find(v => v.name === 'a-tutg');
+  const kaRow = DATA.matrix.rows.find(r => r.consonant === 'ka-tutg');
+  const kaVowelSignGrid = document.getElementById('ka-vowelsign-grid');
+  DATA.matrix.vowelSignLabels.forEach((label, i) => {
+    addComboCell(kaVowelSignGrid, 'KA + ' + label, kaRow.cells[i]);
+  });
+
+  // a + every mark, and KA + every mark (Repha prefixes, the other three
+  // suffix - same positions used everywhere else these marks appear). Repha and
+  // Gemination are excluded for "a" - both are defined to attach to a consonant
+  // base (see GPOS anchors), and correctly render as an invalid-cluster fallback
+  // (dotted circle) rather than actually attaching to an independent vowel.
+  const aMarksGrid = document.getElementById('a-marks-grid');
+  const kaMarksGrid = document.getElementById('ka-marks-grid');
+  Object.entries(DATA.matrix.markOptions).forEach(([label, mark]) => {
+    if (label !== 'Repha' && label !== 'Gemination') {
+      addComboCell(aMarksGrid, 'a + ' + label, mark.position === 'prefix' ? [mark.cp, aEntry.cp] : [aEntry.cp, mark.cp]);
+    }
+    addComboCell(kaMarksGrid, 'KA + ' + label, mark.position === 'prefix' ? [mark.cp, kaEntry.cp] : [kaEntry.cp, mark.cp]);
+  });
+
+  // akhn conjunct/vowel-sign tests
+  const akhnBody = document.getElementById('akhn-body');
+
+  // categorize each rule by which vowel-sign (if any) its output name contains,
+  // similar in spirit to Sharada's per-vowel Conjuncts tab buttons (A/AA/I/II/U/UU/...)
+  const CATEGORY_PATTERNS = [
+    ['+UU', /uumatra/i],
+    ['+U', /(?<!u)umatra/i],
+    ['+Vocalic RR', /rrvocalicmatra/i],
+    ['+Vocalic R', /(?<!r)rvocalicmatra/i],
+    ['+Vocalic LL', /llvocalicmatra/i],
+    ['+Vocalic L', /(?<!l)lvocalicmatra/i],
+  ];
+  function categoryOf(outputName) {
+    for (const [label, re] of CATEGORY_PATTERNS) if (re.test(outputName)) return label;
+    return 'Plain conjunct';
+  }
+  DATA.akhnTests.forEach(t => { t.category = categoryOf(t.output); });
+  const categoryCounts = {};
+  DATA.akhnTests.forEach(t => { categoryCounts[t.category] = (categoryCounts[t.category] || 0) + 1; });
+
+  const catFilters = document.getElementById('cat-filters');
+  let akhnCategory = null;
+  function renderCatChips() {
+    catFilters.innerHTML = '';
+    const allChip = document.createElement('div');
+    allChip.className = 'cat-chip' + (akhnCategory === null ? ' active' : '');
+    allChip.textContent = 'All (' + DATA.akhnTests.length + ')';
+    allChip.onclick = () => { akhnCategory = null; renderCatChips(); renderAkhn(); };
+    catFilters.appendChild(allChip);
+    Object.keys(categoryCounts).sort((a, b) => categoryCounts[b] - categoryCounts[a]).forEach(cat => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (akhnCategory === cat ? ' active' : '');
+      chip.textContent = cat + ' (' + categoryCounts[cat] + ')';
+      chip.onclick = () => { akhnCategory = (akhnCategory === cat ? null : cat); renderCatChips(); renderAkhn(); };
+      catFilters.appendChild(chip);
+    });
+  }
+  renderCatChips();
+
+  let akhnQuery = '';
+  function renderAkhn() {
+    akhnBody.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    let shown = 0;
+    DATA.akhnTests.forEach(t => {
+      if (akhnCategory && t.category !== akhnCategory) return;
+      if (akhnQuery && !t.output.toLowerCase().includes(akhnQuery)) return;
+      shown++;
+      const tr = document.createElement('tr');
+      const text = t.cps.map(cp => S(cp)).join('');
+      const seqLabel = t.cps.map(cp => 'U+' + cp.toString(16).toUpperCase()).join(' ');
+      tr.innerHTML = `<td class="rendered tigalari">${text}</td><td class="label">${t.output}</td><td class="seq">${seqLabel}</td>`;
+      frag.appendChild(tr);
+    });
+    document.getElementById('akhn-count').textContent = shown === DATA.akhnTests.length
+      ? DATA.akhnTests.length + ' auto-generated GSUB rules (type each input sequence, compare against the expected output glyph name)'
+      : `Showing ${shown} of ${DATA.akhnTests.length} rules`;
+    akhnBody.appendChild(frag);
+  }
+  document.getElementById('search').addEventListener('input', e => {
+    akhnQuery = e.target.value.toLowerCase();
+    renderAkhn();
+  });
+  renderAkhn();
+
+  // Reusable multi-select checkbox dropdown for the matrix row/column filters
+  // below - a closed popover listing every item with a checkbox, "All"/"None"
+  // quick actions, closes on an outside click. Returns { selected } (a Set kept
+  // up to date in place) plus the render callback is already wired to fire on
+  // every change, so callers just read .selected inside their own render function.
+  function createFilterDropdown(mountId, items, label, onChange) {
+    const mount = document.getElementById(mountId);
+    const selected = new Set(items);
+    const btn = document.createElement('button');
+    btn.className = 'filter-dropdown-btn';
+    const panel = document.createElement('div');
+    panel.className = 'filter-dropdown-panel';
+    panel.style.display = 'none';
+
+    function updateBtnLabel() {
+      btn.textContent = selected.size === items.length ? `${label}: All` : `${label}: ${selected.size} selected`;
+    }
+    function rebuildPanel() {
+      panel.innerHTML = '';
+      const actions = document.createElement('div');
+      actions.className = 'filter-dropdown-actions';
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'All';
+      allBtn.onclick = () => { items.forEach(i => selected.add(i)); rebuildPanel(); updateBtnLabel(); onChange(); };
+      const noneBtn = document.createElement('button');
+      noneBtn.textContent = 'None';
+      noneBtn.onclick = () => { selected.clear(); rebuildPanel(); updateBtnLabel(); onChange(); };
+      actions.appendChild(allBtn);
+      actions.appendChild(noneBtn);
+      panel.appendChild(actions);
+      const list = document.createElement('div');
+      list.className = 'filter-dropdown-list';
+      items.forEach(item => {
+        const lbl = document.createElement('label');
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = selected.has(item);
+        cb.onchange = () => {
+          if (cb.checked) selected.add(item); else selected.delete(item);
+          updateBtnLabel();
+          onChange();
+        };
+        lbl.appendChild(cb);
+        lbl.appendChild(document.createTextNode(item));
+        list.appendChild(lbl);
+      });
+      panel.appendChild(list);
+    }
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    };
+    // Stop clicks inside the panel from ever reaching the document listener below -
+    // "All"/"None" rebuild the panel's own DOM (replacing the very button that was
+    // clicked) before the event finishes bubbling, so by the time a document-level
+    // listener saw it, the original target would already be detached and
+    // mount.contains(e.target) would (wrongly) say "outside", closing the panel
+    // the instant you click All/None. Stopping propagation here sidesteps that
+    // entirely rather than trying to out-race the DOM mutation.
+    panel.addEventListener('click', (e) => e.stopPropagation());
+    document.addEventListener('click', (e) => {
+      if (!mount.contains(e.target)) panel.style.display = 'none';
+    });
+    rebuildPanel();
+    updateBtnLabel();
+    const wrap = document.createElement('div');
+    wrap.className = 'filter-dropdown';
+    wrap.appendChild(btn);
+    wrap.appendChild(panel);
+    mount.appendChild(wrap);
+    return { selected };
+  }
+
+  // syllable matrix: consonant x vowel-sign, transposable (same UX idea as Adinatha's
+  // buildSyllableTable - rows/cols swap on click rather than being two separate tables).
+  // Row/column filters are bound to the semantic axis (consonant / vowel sign), not to
+  // whichever one currently happens to render as a row - so they stay meaningful across
+  // a transpose instead of swapping meaning underneath you.
+  let matrixTransposed = false;
+  let matrixMarkChoice = 'None';  // 'None' | one of the keys in DATA.matrix.markOptions
+  const matrixConsDropdown = createFilterDropdown('matrix-row-filter', DATA.matrix.rows.map(r => stripTutg(r.consonant)), 'Consonants', () => renderMatrix());
+  const matrixVowelDropdown = createFilterDropdown('matrix-col-filter', DATA.matrix.vowelSignLabels, 'Vowel signs', () => renderMatrix());
+  function applyMatrixMark(cps) {
+    if (matrixMarkChoice === 'None') return cps;
+    const mark = DATA.matrix.markOptions[matrixMarkChoice];
+    return mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+  }
+  function renderMatrixMarkSelect() {
+    const wrap = document.getElementById('matrix-mark-select');
+    wrap.innerHTML = '';
+    ['None'].concat(Object.keys(DATA.matrix.markOptions)).forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (matrixMarkChoice === key ? ' active' : '');
+      chip.textContent = key === 'None' ? 'Mark: None' : key;
+      chip.onclick = () => { matrixMarkChoice = key; renderMatrix(); };
+      wrap.appendChild(chip);
+    });
+  }
+  function renderMatrix() {
+    renderMatrixMarkSelect();
+    const m = DATA.matrix;
+    const table = document.getElementById('matrix-table');
+    const rowIdxs = m.rows.map((r, i) => i).filter(i => matrixConsDropdown.selected.has(stripTutg(m.rows[i].consonant)));
+    const colIdxs = m.vowelSignLabels.map((l, i) => i).filter(i => matrixVowelDropdown.selected.has(m.vowelSignLabels[i]));
+    let html = '<thead><tr>';
+    if (!matrixTransposed) {
+      html += '<th>consonant \\ sign</th>';
+      colIdxs.forEach(ci => { html += `<th>${m.vowelSignLabels[ci]}</th>`; });
+      html += '</tr></thead><tbody>';
+      rowIdxs.forEach(ri => {
+        const row = m.rows[ri];
+        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(row.consonant)}</th>`;
+        colIdxs.forEach(ci => {
+          html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+        });
+        html += '</tr>';
+      });
+    } else {
+      html += '<th>sign \\ consonant</th>';
+      rowIdxs.forEach(ri => { html += `<th>${stripTutg(m.rows[ri].consonant)}</th>`; });
+      html += '</tr></thead><tbody>';
+      colIdxs.forEach(ci => {
+        html += `<tr><th class="label" style="background:var(--card-bg);">${m.vowelSignLabels[ci]}</th>`;
+        rowIdxs.forEach(ri => {
+          html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+        });
+        html += '</tr>';
+      });
+    }
+    table.innerHTML = html;
+    setSize(document.getElementById('size-slider').value);
+  }
+  document.getElementById('matrix-transpose').addEventListener('click', () => {
+    matrixTransposed = !matrixTransposed;
+    renderMatrix();
+  });
+  renderMatrix();
+
+  // conjunct matrix: consonant x consonant (36x36), transposable, with an
+  // optional vowel-sign suffix and an optional overlay mark, both applied
+  // client-side (not baked into the data) so every combination shares one table
+  // without needing a separate JSON payload per variant.
+  let conjMatrixTransposed = false;
+  let conjMatrixVowelChoice = 'None';  // 'None' | a key in CM.vowelSignOptions
+  let conjMatrixMarkChoice = 'None';   // 'None' | a key in CM.markOptions
+  const CM = DATA.conjunctMatrix;
+  const conjMatrixC1Dropdown = createFilterDropdown('conjmatrix-c1-filter', CM.consonants.map(stripTutg), 'C1', () => renderConjMatrix());
+  const conjMatrixC2Dropdown = createFilterDropdown('conjmatrix-c2-filter', CM.consonants.map(stripTutg), 'C2', () => renderConjMatrix());
+  function conjMatrixCells(baseCps) {
+    let cps = baseCps;
+    if (conjMatrixVowelChoice !== 'None') cps = cps.concat([CM.vowelSignOptions[conjMatrixVowelChoice]]);
+    if (conjMatrixMarkChoice !== 'None') {
+      const mark = CM.markOptions[conjMatrixMarkChoice];
+      cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+    }
+    return cps;
+  }
+  const vowelSelectEl = document.getElementById('conjmatrix-vowel-select');
+  ['None'].concat(Object.keys(CM.vowelSignOptions)).forEach(key => {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = key === 'None' ? 'Vowel sign: None' : '+' + key;
+    vowelSelectEl.appendChild(opt);
+  });
+  vowelSelectEl.addEventListener('change', () => {
+    conjMatrixVowelChoice = vowelSelectEl.value;
+    renderConjMatrix();
+  });
+  function renderConjMatrixMarkSelect() {
+    const wrap = document.getElementById('conjmatrix-mark-select');
+    wrap.innerHTML = '';
+    ['None'].concat(Object.keys(CM.markOptions)).forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (conjMatrixMarkChoice === key ? ' active' : '');
+      chip.textContent = key === 'None' ? 'Mark: None' : key;
+      chip.onclick = () => { conjMatrixMarkChoice = key; renderConjMatrix(); };
+      wrap.appendChild(chip);
+    });
+  }
+  function renderConjMatrix() {
+    renderConjMatrixMarkSelect();
+    const table = document.getElementById('conjmatrix-table');
+    // c1Idxs/c2Idxs are bound to C1/C2 semantically, same reasoning as the
+    // syllable matrix above - stay meaningful across a transpose.
+    const c1Idxs = CM.consonants.map((n, i) => i).filter(i => conjMatrixC1Dropdown.selected.has(stripTutg(CM.consonants[i])));
+    const c2Idxs = CM.consonants.map((n, i) => i).filter(i => conjMatrixC2Dropdown.selected.has(stripTutg(CM.consonants[i])));
+    let html = '<thead><tr>';
+    if (!conjMatrixTransposed) {
+      html += '<th>C1 \\ C2</th>';
+      c2Idxs.forEach(ci => { html += `<th>${stripTutg(CM.consonants[ci])}</th>`; });
+      html += '</tr></thead><tbody>';
+      c1Idxs.forEach(ri => {
+        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(CM.consonants[ri])}</th>`;
+        c2Idxs.forEach(ci => {
+          html += `<td class="rendered tigalari">${conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')}</td>`;
+        });
+        html += '</tr>';
+      });
+    } else {
+      html += '<th>C2 \\ C1</th>';
+      c1Idxs.forEach(ri => { html += `<th>${stripTutg(CM.consonants[ri])}</th>`; });
+      html += '</tr></thead><tbody>';
+      c2Idxs.forEach(ci => {
+        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(CM.consonants[ci])}</th>`;
+        c1Idxs.forEach(ri => {
+          html += `<td class="rendered tigalari">${conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')}</td>`;
+        });
+        html += '</tr>';
+      });
+    }
+    table.innerHTML = html;
+    setSize(document.getElementById('size-slider').value);
+  }
+  document.getElementById('conjmatrix-transpose').addEventListener('click', () => {
+    conjMatrixTransposed = !conjMatrixTransposed;
+    renderConjMatrix();
+  });
+  renderConjMatrix();
+
+  // standard conjunct list: satisarsharada's own real conjunct corpus (one bare
+  // consonant-skeleton dataset - see build_conjunct_lists.py), with the trailing
+  // vowel-sign/ending and an overlay mark both applied client-side, exactly like
+  // the Conjunct Matrix's dropdown+marks selectors (in fact CONJUNCT_LISTS.
+  // vowelSignOptions/markOptions are literally the same tables reused). Each
+  // item's base tigalariCps is re-parsed into phonemes (textToPhonemes with
+  // sourceScript 'tigalari' - Tigalari is one of the four reversible scripts the
+  // engine already supports) so the selected ending can be rendered in Kannada
+  // and IAST too, not just Tigalari, the same way Sample Texts shows ruby
+  // annotations - one phoneme stream, three renderers.
+  function itemPhonemes(item) {
+    const baseText = item.tigalariCps.map(cp => S(cp)).join('');
+    let tokens = textToPhonemes(baseText, 'tigalari');
+    if (conjListVowelChoice !== 'None') tokens = tokens.concat([ENDING_TOKEN[conjListVowelChoice]]);
+    return tokens;
+  }
+  function itemTigalariText(item) {
+    let cps = phonemesToScript(itemPhonemes(item), 'tigalari');
+    if (conjListMarkChoice !== 'None') {
+      const mark = CONJUNCT_LISTS.markOptions[conjListMarkChoice];
+      cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+    }
+    return cps.map(cp => S(cp)).join('');
+  }
+  function itemKannadaText(item) {
+    return phonemesToScript(itemPhonemes(item), 'kannada').map(cp => S(cp)).join('');
+  }
+  function itemIastText(item) {
+    return phonemesToIast(itemPhonemes(item));
+  }
+  function groupItemsByFinalConsonant(items) {
+    const groups = new Map();
+    items.forEach(item => {
+      const finalCp = item.tigalariCps[item.tigalariCps.length - 1];
+      if (!groups.has(finalCp)) groups.set(finalCp, []);
+      groups.get(finalCp).push(item);
+    });
+    return [...groups.entries()].sort((a, b) => a[0] - b[0]);
+  }
+
+  const conjListVowelSelectEl = document.getElementById('conjlist-vowel-select');
+  ['None'].concat(Object.keys(CONJUNCT_LISTS.vowelSignOptions)).forEach(key => {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = key === 'None' ? 'Ending: None (inherent)' : key;
+    conjListVowelSelectEl.appendChild(opt);
+  });
+  conjListVowelSelectEl.addEventListener('change', () => {
+    conjListVowelChoice = conjListVowelSelectEl.value;
+    renderConjList();
+  });
+  function renderConjListMarkSelect() {
+    const wrap = document.getElementById('conjlist-mark-select');
+    wrap.innerHTML = '';
+    ['None'].concat(Object.keys(CONJUNCT_LISTS.markOptions)).forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (conjListMarkChoice === key ? ' active' : '');
+      chip.textContent = key === 'None' ? 'Mark: None' : key;
+      chip.onclick = () => { conjListMarkChoice = key; renderConjList(); };
+      wrap.appendChild(chip);
+    });
+  }
+  function renderConjListAnnCheckboxes() {
+    const wrap = document.getElementById('conjlist-ann-toggle');
+    wrap.innerHTML = '';
+    [['kannada', 'Kannada'], ['iast', 'IAST']].forEach(([mode, label]) => {
+      const lbl = document.createElement('label');
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = conjListAnnModes.has(mode);
+      cb.onchange = () => {
+        if (cb.checked) conjListAnnModes.add(mode); else conjListAnnModes.delete(mode);
+        renderConjList();
+      };
+      lbl.appendChild(cb);
+      lbl.appendChild(document.createTextNode(label));
+      wrap.appendChild(lbl);
+    });
+  }
+  function renderConjList() {
+    renderConjListMarkSelect();
+    renderConjListAnnCheckboxes();
+    const body = document.getElementById('conjlist-body');
+    body.innerHTML = '';
+    CONJUNCT_LISTS.counts.forEach(c => {
+      const sectionHeading = document.createElement('div');
+      sectionHeading.className = 'count-note';
+      sectionHeading.style.fontWeight = '700';
+      sectionHeading.textContent = c.n + '-consonant clusters (' + c.items.length + ')';
+      body.appendChild(sectionHeading);
+      groupItemsByFinalConsonant(c.items).forEach(([finalCp, items]) => {
+        const heading = document.createElement('div');
+        heading.className = 'count-note';
+        heading.textContent = 'Ending in ' + (CONSONANT_NAME_BY_CP[finalCp] || S(finalCp)) + ' (' + items.length + ')';
+        const rowWrap = document.createElement('div');
+        rowWrap.className = 'sampletext-passage tigalari';
+        rowWrap.style.marginBottom = '18px';
+        items.forEach(item => {
+          const block = document.createElement('span');
+          block.className = 'word-block';
+          if (conjListAnnModes.has('iast')) {
+            const ann = document.createElement('span');
+            ann.className = 'ann';
+            ann.textContent = itemIastText(item);
+            block.appendChild(ann);
+          }
+          if (conjListAnnModes.has('kannada')) {
+            const ann = document.createElement('span');
+            ann.className = 'ann';
+            ann.textContent = itemKannadaText(item);
+            block.appendChild(ann);
+          }
+          const word = document.createElement('span');
+          word.className = 'word';
+          word.textContent = itemTigalariText(item);
+          block.appendChild(word);
+          rowWrap.appendChild(block);
+        });
+        body.appendChild(heading);
+        body.appendChild(rowWrap);
+      });
+    });
+    setSize(document.getElementById('size-slider').value);
+    setLineHeight(document.getElementById('line-slider').value);
+  }
+
+  // sample texts: real Sanskrit passages, Tigalari main text with optional Kannada
+  // and/or IAST annotation per word (word order/spacing follows the Sharada source)
+  function renderSampleTextTabs() {
+    const wrap = document.getElementById('sampletext-list');
+    wrap.innerHTML = '';
+    SAMPLE_TEXTS.passages.forEach(p => {
+      const tab = document.createElement('div');
+      tab.className = 'text-tab' + (sampleTextId === p.id ? ' active' : '');
+      tab.textContent = p.label;
+      tab.onclick = () => { sampleTextId = p.id; renderSampleText(); };
+      wrap.appendChild(tab);
+    });
+  }
+  function renderAnnCheckboxes() {
+    const wrap = document.getElementById('sampletext-ann-toggle');
+    wrap.innerHTML = '';
+    [['kannada', 'Kannada'], ['iast', 'IAST']].forEach(([mode, label]) => {
+      const lbl = document.createElement('label');
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = sampleAnnModes.has(mode);
+      cb.onchange = () => {
+        if (cb.checked) sampleAnnModes.add(mode); else sampleAnnModes.delete(mode);
+        renderSampleText();
+      };
+      lbl.appendChild(cb);
+      lbl.appendChild(document.createTextNode(label));
+      wrap.appendChild(lbl);
+    });
+  }
+  function renderSampleText() {
+    renderSampleTextTabs();
+    renderAnnCheckboxes();
+    const body = document.getElementById('sampletext-body');
+    body.innerHTML = '';
+    const passage = SAMPLE_TEXTS.passages.find(p => p.id === sampleTextId);
+    if (!passage) return;
+    const para = document.createElement('div');
+    para.className = 'sampletext-passage tigalari';
+    const annKeys = [];
+    if (sampleAnnModes.has('iast')) annKeys.push('iastCps');
+    if (sampleAnnModes.has('kannada')) annKeys.push('kannadaCps');
+    passage.words.forEach(w => {
+      if (w.tigalariCps === null) return;  // unmapped word, already logged at build time
+      const block = document.createElement('span');
+      block.className = 'word-block';
+      annKeys.forEach(key => {
+        const ann = document.createElement('span');
+        ann.className = 'ann';
+        ann.textContent = w[key].map(cp => S(cp)).join('');
+        block.appendChild(ann);
+      });
+      const word = document.createElement('span');
+      word.className = 'word';
+      word.textContent = w.tigalariCps.map(cp => S(cp)).join('');
+      block.appendChild(word);
+      para.appendChild(block);
+    });
+    body.appendChild(para);
+    setSize(document.getElementById('size-slider').value);
+  }
+
+  // marks: vowels x svaras, and consonants x all 4 marks (mark = row)
+  function renderMarkGrid(tableId, grid) {
+    const table = document.getElementById(tableId);
+    let html = '<thead><tr><th>mark \\ base</th>';
+    grid.colLabels.forEach(name => { html += `<th>${stripTutg(name)}</th>`; });
+    html += '</tr></thead><tbody>';
+    grid.rowLabels.forEach((label, ri) => {
+      html += `<tr><th class="label" style="background:var(--card-bg);">${label}</th>`;
+      grid.cells[ri].forEach(cps => {
+        html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+      });
+      html += '</tr>';
+    });
+    table.innerHTML = html;
+  }
+  renderMarkGrid('mark-vowel-table', DATA.markVowelGrid);
+  renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid);
+
+  // Live Input: type Kannada/Devanagari and see it transliterated to Tigalari in
+  // the browser, live. This is a JS port of brahmic_translit.py's text_to_phonemes
+  // / phonemes_to_script - only the control flow is re-typed here; the codepoint
+  // tables themselves come from export_brahmic_tables.py (BRAHMIC above), so the
+  // two language copies of the *data* can never drift, only the (short, easy to
+  // eyeball against the Python original) logic could.
+
+  function textToPhonemes(text, sourceScript) {
+    const rev = REVERSE_TABLES[sourceScript];
+    const [lo, hi] = BRAHMIC.blockRanges[sourceScript];
+    const tokens = [];
+    for (const ch of text) {  // iterates by code point, not UTF-16 code unit
+      const cp = ch.codePointAt(0);
+      if (ch === ' ' || ch === '\n') { tokens.push(['space', ch]); continue; }
+      const entry = rev[cp];
+      if (entry !== undefined) { tokens.push(entry); continue; }
+      tokens.push([(cp >= lo && cp <= hi) ? 'error' : 'literal', ch]);
+    }
+    return tokens;
+  }
+
+  function phonemesToScript(tokens, scriptName) {
+    const table = BRAHMIC.scripts[scriptName];
+    const out = [];
+    let i = 0;
+    const n = tokens.length;
+    while (i < n) {
+      const [kind, key] = tokens[i];
+      if (kind === 'consonants') {
+        out.push(table.consonants[key]);
+        const nxt = i + 1 < n ? tokens[i + 1] : [null, null];
+        if (nxt[0] === 'virama') {
+          const after = i + 2 < n ? tokens[i + 2] : [null, null];
+          out.push(after[0] === 'consonants' ? table.conjoiner : table.virama);
+          i += 2;
+        } else if (nxt[0] === 'vowel_signs') {
+          out.push(table.vowel_signs[nxt[1]]);
+          i += 2;
+        } else {
+          i += 1;  // bare consonant -> inherent vowel, no sign to emit
+        }
+        continue;
+      }
+      if (kind === 'independent_vowels') {
+        out.push(table.independent_vowels[key]);
+      } else if (['anusvara', 'visarga', 'candrabindu', 'avagraha', 'danda', 'doubleDanda'].includes(kind)) {
+        out.push(table[kind]);
+      } else if (kind === 'space' || kind === 'digit' || kind === 'literal') {
+        out.push(key.codePointAt(0));
+      } else if (kind === 'error') {
+        out.push(0xFFFD);  // unmapped source character - show the replacement character, not a crash
+      }
+      i += 1;
+    }
+    return out;
+  }
+
+  // IAST is alphabetic, not an abugida - a consonant's inherent "a" has to be
+  // spelled out (or suppressed, when a virama/conjoiner follows) rather than
+  // being implicit. Mirrors brahmic_translit.py's phonemes_to_iast() exactly.
+  const IAST_MARK_KINDS = ['anusvara', 'visarga', 'candrabindu', 'avagraha', 'danda', 'doubleDanda'];
+  function phonemesToIast(tokens) {
+    const out = [];
+    let i = 0;
+    const n = tokens.length;
+    while (i < n) {
+      const [kind, key] = tokens[i];
+      if (kind === 'consonants') {
+        out.push(BRAHMIC.iast.consonants[key]);
+        const nxt = i + 1 < n ? tokens[i + 1] : [null, null];
+        if (nxt[0] === 'virama') {
+          i += 2;  // virama/conjoiner both just suppress the inherent "a" here
+        } else if (nxt[0] === 'vowel_signs') {
+          out.push(BRAHMIC.iast.vowelSigns[nxt[1]]);
+          i += 2;
+        } else {
+          out.push('a');
+          i += 1;
+        }
+        continue;
+      }
+      if (kind === 'independent_vowels') {
+        out.push(BRAHMIC.iast.independentVowels[key]);
+      } else if (IAST_MARK_KINDS.includes(kind)) {
+        out.push(BRAHMIC.iast.signs[kind]);
+      } else if (kind === 'space' || kind === 'digit' || kind === 'literal') {
+        out.push(key);
+      } else if (kind === 'error') {
+        out.push('�');
+      }
+      i += 1;
+    }
+    return out.join('');
+  }
+
+  function transliterateToTigalari(text, sourceScript) {
+    if (sourceScript === 'tigalari') return text;
+    return phonemesToScript(textToPhonemes(text, sourceScript), 'tigalari').map(cp => S(cp)).join('');
+  }
+
+  const LIVE_SCRIPTS = [['tigalari', 'Tulu (native)'], ['kannada', 'Kannada'], ['devanagari', 'Devanagari']];
+  const liveInput = document.getElementById('live-input');
+  const livePreviewWrap = document.getElementById('live-preview-wrap');
+  const livePreview = document.getElementById('live-preview');
+  const liveCountNote = document.getElementById('live-count-note');
+
+  function updateLivePreview() {
+    if (liveScriptMode === 'tigalari') return;
+    livePreview.textContent = transliterateToTigalari(liveInput.value, liveScriptMode);
+  }
+  function renderLiveScriptTabs() {
+    const wrap = document.getElementById('live-script-select');
+    wrap.innerHTML = '';
+    LIVE_SCRIPTS.forEach(([mode, label]) => {
+      const tab = document.createElement('div');
+      tab.className = 'text-tab' + (liveScriptMode === mode ? ' active' : '');
+      tab.textContent = label;
+      tab.onclick = () => {
+        liveScriptMode = mode;
+        renderLiveScriptTabs();
+        if (mode === 'tigalari') {
+          liveInput.classList.add('tigalari');
+          livePreviewWrap.style.display = 'none';
+          liveCountNote.textContent = 'Type or paste Tulu-Tigalari Unicode text (U+11380-U+113FF) below - rendered live through the compiled font.';
+        } else {
+          liveInput.classList.remove('tigalari');
+          livePreviewWrap.style.display = 'block';
+          liveCountNote.textContent = `Type ${label} below (shown in a regular system font so you can check what you typed) - the box underneath shows it transliterated to Tigalari, live.`;
+          updateLivePreview();
+        }
+      };
+      wrap.appendChild(tab);
+    });
+  }
+  liveInput.addEventListener('input', updateLivePreview);
+  renderLiveScriptTabs();
+
+  // Unicode: click-to-type palette of every actually-encoded Tulu-Tigalari
+  // character (built once - only the output area changes on click).
+  let unicodeTypedCps = [];
+  const unicodeOutput = document.getElementById('unicode-output');
+  function updateUnicodeOutput() {
+    unicodeOutput.textContent = unicodeTypedCps.map(cp => S(cp)).join('');
+  }
+  const unicodeGrid = document.getElementById('unicode-grid');
+  DATA.unicodeChars.forEach(ch => {
+    const cell = document.createElement('div');
+    cell.className = 'cons-cell clickable';
+    cell.innerHTML = `<div class="glyph tigalari">${S(ch.cp)}</div><div class="label">${stripTutg(ch.name)}<br>U+${ch.cp.toString(16).toUpperCase()}</div>`;
+    cell.onclick = () => { unicodeTypedCps.push(ch.cp); updateUnicodeOutput(); };
+    unicodeGrid.appendChild(cell);
+  });
+  document.getElementById('unicode-backspace').addEventListener('click', () => {
+    unicodeTypedCps.pop();
+    updateUnicodeOutput();
+  });
+  document.getElementById('unicode-clear').addEventListener('click', () => {
+    unicodeTypedCps = [];
+    updateUnicodeOutput();
+  });
+  document.getElementById('unicode-count-note').textContent =
+    DATA.unicodeChars.length + ' encoded characters (U+11380-U+113FF) - click one to type it below.';
+
+  setSize(32);
+  setLineHeight(1.6);
+})();
+</script>

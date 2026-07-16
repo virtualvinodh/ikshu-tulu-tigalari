@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sha_ttha-tutg" format="2">
+  <advance width="1083"/>
+  <anchor x="494.2" y="620" name="top"/>
+  <anchor x="494.2" y="-511.9" name="bottom"/>
+  <anchor x="973.4" y="620" name="topright"/>
+  <outline>
+    <component base="sha-tutg" xOffset="5"/>
+    <component base="ttha-tutg.below" xOffset="730" yOffset="228" identifier="9D46B823"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-08 13:51:29 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>9D46B823</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

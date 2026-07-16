@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa_ma-tutg" format="2">
+  <advance width="1268"/>
+  <anchor x="584.2" y="615.5" name="top"/>
+  <anchor x="584.2" y="-764" name="bottom"/>
+  <anchor x="1158.4" y="615.5" name="topright"/>
+  <outline>
+    <component base="mamatra-tutg.below.alt1" xOffset="1127" yOffset="-330" identifier="29184F16"/>
+    <component base="pa_sa-tutg"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:49:48 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>29184F16</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

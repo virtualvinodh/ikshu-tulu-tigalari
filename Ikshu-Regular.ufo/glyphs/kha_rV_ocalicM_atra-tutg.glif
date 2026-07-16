@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kha_rVocalicMatra-tutg" format="2">
+  <advance width="1339"/>
+  <anchor x="1186" y="-80" name="connect"/>
+  <anchor x="622.0" y="615.5" name="top"/>
+  <anchor x="622.0" y="-424" name="bottom"/>
+  <anchor x="1229" y="615.5" name="topright"/>
+  <outline>
+    <contour>
+      <point x="969" y="-374" type="curve" smooth="yes"/>
+      <point x="1130" y="-374"/>
+      <point x="1229" y="-207"/>
+      <point x="1229" y="-34" type="curve" smooth="yes"/>
+      <point x="1229" y="175" type="line"/>
+      <point x="1157" y="175" type="line"/>
+      <point x="1157" y="-34" type="line" smooth="yes"/>
+      <point x="1157" y="-183"/>
+      <point x="1089" y="-310"/>
+      <point x="969" y="-310" type="curve" smooth="yes"/>
+      <point x="937" y="-310"/>
+      <point x="913" y="-291"/>
+      <point x="913" y="-258" type="curve" smooth="yes"/>
+      <point x="913" y="-231"/>
+      <point x="949" y="-191"/>
+      <point x="1010" y="-164" type="curve" smooth="yes"/>
+      <point x="1050" y="-145"/>
+      <point x="1103" y="-134"/>
+      <point x="1162" y="-121" type="curve"/>
+      <point x="1178" y="-59" type="line"/>
+      <point x="1100" y="-67"/>
+      <point x="1034" y="-86"/>
+      <point x="982" y="-108" type="curve" smooth="yes"/>
+      <point x="890" y="-148"/>
+      <point x="846" y="-204"/>
+      <point x="846" y="-263" type="curve" smooth="yes"/>
+      <point x="846" y="-337"/>
+      <point x="900" y="-374"/>
+    </contour>
+    <component base="kha-tutg" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

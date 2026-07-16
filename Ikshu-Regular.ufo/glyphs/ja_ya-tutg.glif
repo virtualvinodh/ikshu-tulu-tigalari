@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ja_ya-tutg" format="2">
+  <advance width="1882"/>
+  <anchor x="893.5" y="621" name="top"/>
+  <anchor x="893.5" y="-391" name="bottom"/>
+  <anchor x="1772" y="621" name="topright"/>
+  <outline>
+    <component base="ja-tutg" xOffset="5"/>
+    <component base="_yavattuwithloop" xOffset="-1250"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+    </dict>
+  </lib>
+</glyph>

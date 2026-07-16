@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_rVocalicMatra-tutg" format="2">
+  <advance width="1024"/>
+  <anchor x="865" y="-28" name="connect"/>
+  <anchor x="461.5" y="619" name="top"/>
+  <anchor x="461.5" y="-372" name="bottom"/>
+  <anchor x="908" y="619" name="topright"/>
+  <outline>
+    <contour>
+      <point x="648" y="-322" type="curve" smooth="yes"/>
+      <point x="809" y="-322"/>
+      <point x="908" y="-155"/>
+      <point x="908" y="18" type="curve" smooth="yes"/>
+      <point x="908" y="150" type="line"/>
+      <point x="836" y="150" type="line"/>
+      <point x="836" y="18" type="line" smooth="yes"/>
+      <point x="836" y="-131"/>
+      <point x="768" y="-258"/>
+      <point x="648" y="-258" type="curve" smooth="yes"/>
+      <point x="616" y="-258"/>
+      <point x="592" y="-239"/>
+      <point x="592" y="-206" type="curve" smooth="yes"/>
+      <point x="592" y="-179"/>
+      <point x="628" y="-139"/>
+      <point x="689" y="-112" type="curve" smooth="yes"/>
+      <point x="729" y="-93"/>
+      <point x="782" y="-82"/>
+      <point x="841" y="-69" type="curve"/>
+      <point x="857" y="-7" type="line"/>
+      <point x="779" y="-15"/>
+      <point x="713" y="-34"/>
+      <point x="661" y="-56" type="curve" smooth="yes"/>
+      <point x="569" y="-96"/>
+      <point x="525" y="-152"/>
+      <point x="525" y="-211" type="curve" smooth="yes"/>
+      <point x="525" y="-285"/>
+      <point x="579" y="-322"/>
+    </contour>
+    <contour>
+      <point x="836" y="182" type="curve" smooth="yes"/>
+      <point x="836" y="38" type="line"/>
+      <point x="851" y="28"/>
+      <point x="893" y="28"/>
+      <point x="908" y="38" type="curve"/>
+      <point x="908" y="180" type="line" smooth="yes"/>
+      <point x="908" y="451"/>
+      <point x="760" y="569"/>
+      <point x="605" y="569" type="curve" smooth="yes"/>
+      <point x="546" y="569"/>
+      <point x="496" y="553"/>
+      <point x="450" y="529" type="curve"/>
+      <point x="511" y="489" type="line"/>
+      <point x="539" y="501"/>
+      <point x="567" y="507"/>
+      <point x="600" y="507" type="curve" smooth="yes"/>
+      <point x="719" y="507"/>
+      <point x="836" y="402"/>
+    </contour>
+    <component base="_tamiddle" xOffset="5"/>
+    <component base="_taleftarm" xOffset="5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+    </dict>
+  </lib>
+</glyph>

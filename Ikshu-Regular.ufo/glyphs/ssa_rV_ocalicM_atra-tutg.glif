@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_rVocalicMatra-tutg" format="2">
+  <advance width="1142"/>
+  <anchor x="766" y="-105" name="connect"/>
+  <anchor x="518.0" y="620" name="top"/>
+  <anchor x="518.0" y="-449" name="bottom"/>
+  <anchor x="1021" y="620" name="topright"/>
+  <outline>
+    <contour>
+      <point x="549" y="-399" type="curve" smooth="yes"/>
+      <point x="710" y="-399"/>
+      <point x="810" y="-232"/>
+      <point x="810" y="-59" type="curve" smooth="yes"/>
+      <point x="810" y="281" type="line"/>
+      <point x="738" y="281" type="line"/>
+      <point x="738" y="-59" type="line" smooth="yes"/>
+      <point x="738" y="-208"/>
+      <point x="669" y="-335"/>
+      <point x="549" y="-335" type="curve" smooth="yes"/>
+      <point x="517" y="-335"/>
+      <point x="493" y="-316"/>
+      <point x="493" y="-283" type="curve" smooth="yes"/>
+      <point x="493" y="-256"/>
+      <point x="529" y="-216"/>
+      <point x="590" y="-189" type="curve" smooth="yes"/>
+      <point x="630" y="-170"/>
+      <point x="683" y="-159"/>
+      <point x="742" y="-146" type="curve"/>
+      <point x="758" y="-84" type="line"/>
+      <point x="680" y="-92"/>
+      <point x="614" y="-111"/>
+      <point x="562" y="-133" type="curve" smooth="yes"/>
+      <point x="470" y="-173"/>
+      <point x="426" y="-229"/>
+      <point x="426" y="-288" type="curve" smooth="yes"/>
+      <point x="426" y="-362"/>
+      <point x="480" y="-399"/>
+    </contour>
+    <component base="_pabeak" xOffset="5" identifier="3F646A51"/>
+    <component base="_ssa1" xOffset="-5" identifier="E90E09FE"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2026-07-13 18:14:48 +0000</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>3F646A51</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>E90E09FE</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

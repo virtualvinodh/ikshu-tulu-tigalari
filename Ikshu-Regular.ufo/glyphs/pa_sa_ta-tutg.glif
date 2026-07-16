@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa_ta-tutg" format="2">
+  <advance width="1313"/>
+  <anchor x="609.0" y="615.5" name="top"/>
+  <anchor x="609.0" y="-976.5" name="bottom"/>
+  <anchor x="1203" y="615.5" name="topright"/>
+  <outline>
+    <component base="pa_sa-tutg" xOffset="5"/>
+    <component base="_tavattu" xOffset="154" yOffset="-485"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-03-13 14:48:16 +0000</string>
+    </dict>
+  </lib>
+</glyph>

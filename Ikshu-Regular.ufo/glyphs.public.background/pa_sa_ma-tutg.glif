@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_sa_ma-tutg" format="2">
+  <advance width="1268"/>
+  <outline>
+    <component base="sa_ma-tutg" xOffset="-3" yOffset="-483"/>
+  </outline>
+</glyph>

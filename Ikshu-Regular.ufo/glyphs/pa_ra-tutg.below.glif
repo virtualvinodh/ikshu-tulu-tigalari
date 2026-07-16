@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pa_ra-tutg.below" format="2">
+  <advance width="537"/>
+  <guideline x="823" y="-888" angle="0"/>
+  <anchor x="-17.0" y="-69.5" name="top"/>
+  <anchor x="-17.0" y="-937.9" name="bottom"/>
+  <anchor x="432" y="-69.5" name="topright"/>
+  <outline>
+    <component base="pa-tutg.below" xOffset="5"/>
+    <component base="raMatra-tutg" xScale="0.9591" yScale="0.9591" xOffset="496" yOffset="-628" identifier="9661C981"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:08:02 +0000</string>
+      <key>public.markColor</key>
+      <string>0,0.2,0.88,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>9661C981</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>
