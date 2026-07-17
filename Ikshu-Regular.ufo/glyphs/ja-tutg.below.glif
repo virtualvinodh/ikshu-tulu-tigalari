@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ja-tutg.below" format="2">
   <anchor x="4.8" y="-739.9" name="bottom"/>
+  <anchor x="4.8" y="-184.7" name="_bottom"/>
   <outline>
     <component base="ja-tutg" xScale="0.8621" yScale="0.8621" xOffset="-650" yOffset="-677"/>
   </outline>
@@ -10,6 +11,8 @@
       <string>2025-02-26 10:08:02 +0000</string>
       <key>public.markColor</key>
       <string>0,0.2,0.88,1</string>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="pa-tutg.below" format="2">
   <anchor x="-22.0" y="-765" name="bottom"/>
+  <anchor x="-22.0" y="-119.5" name="_bottom"/>
   <outline>
     <component base="pa-tutg" xOffset="-481" yOffset="-685"/>
   </outline>
@@ -10,6 +11,8 @@
       <string>2025-02-26 10:08:02 +0000</string>
       <key>public.markColor</key>
       <string>0,0.2,0.88,1</string>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

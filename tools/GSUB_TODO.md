@@ -25,13 +25,13 @@ documented mapping):
   not just a case typo). See `TOKEN_ALIASES`.
 - `na_ta_ra_ya_-tutg` -> confirmed stray trailing underscore typo; parser now drops
   empty segments from a trailing `_` rather than failing the whole name.
-- `ha_ra-tutg.below`, `pa_ra-tutg.below` -> confirmed these should get real rules
-  even with no bare (non-`.below`) sibling glyph existing - parser now promotes a
-  lone `.below` variant to serve as its own default when that's the only glyph for
-  that input sequence. One open caveat (not yet verified): this assumes typing HA+RA
-  / PA+RA standalone should render using this specific below-base artwork, rather
-  than these being internal-only pieces for some bigger not-yet-existing stack -
-  worth a visual check in the glyph viewer before this ships.
+- `ha_ra-tutg.below`, `pa_ra-tutg.below` -> **reversed 2026-07-17, see item 12.**
+  Originally the parser promoted a lone `.below` variant to serve as its own
+  default when no bare sibling glyph existed, so these two got real top-level
+  `akhn` rules. Per the flagged caveat at the time ("worth a visual check before
+  this ships") - confirmed wrong: these are below-base-only construction pieces,
+  not stand-ins for the real bare `ha_ra-tutg`/`pa_ra-tutg` ligatures, which are
+  genuinely missing artwork. The promotion mechanism was removed entirely.
 - `raMatra_ya-tutg.below` -> resolved automatically by the `raMatra` alias + the
   `.below`-promotion fix together (RA+YA below-base form).
 - `ta_taChillu-tutg` -> confirmed 2026-07-16 as **T.T with Looped Virama** (a
@@ -44,16 +44,19 @@ documented mapping):
   actually applied before) so this can never accidentally resolve the *standalone*
   `taChillu-tutg` too - that one stays excluded regardless of category scoping.
 
-**All 543 conjunct + vowel-sign ligature names now parse - zero skipped.**
+**At the time: all 543 conjunct + vowel-sign ligature names parsed - zero skipped.**
+No longer current - see item 12 (2026-07-17): removing the `.below`-promotion
+mechanism put `ha_ra-tutg.below`/`pa_ra-tutg.below` back into the skipped list,
+on purpose. 450 rules, 3 skipped as of that change.
 
 ## 3. Still open
 
 - `taChillu-tutg` (and by extension `ta_taChillu-tutg`) - **confirmed wrong**,
   excluded via `gsub_ignore_list.json` (component check showed it's built from
   `ya-tutg.below`, not any TA part - name/artwork mismatch). Still the only
-  confirmed-bad glyph found in this whole audit, and the only remaining unparsed
-  name in `tutg_akhn.fea`. Needs a content decision (redraw from TA parts / reassign
-  / delete) before it can be renamed or given a real rule.
+  confirmed-bad *existing* glyph found in this whole audit. Needs a content
+  decision (redraw from TA parts / reassign / delete) before it can be renamed or
+  given a real rule.
 - ~~`nChillu-tutg`, `nnChillu-tutg`, `llChillu-tutg`, `rrChillu-tutg`,
   `bhChillu-tutg`~~ - **resolved 2026-07-16, confirmed correct by project owner.**
   (Structurally these are built from generic Looped-Virama pieces with no
@@ -65,6 +68,12 @@ documented mapping):
   `rephajoiner_dottedCircle-tutg`, `pluta_pluta-tutg`, `ramatra_uumatra-tutg.below`,
   `lVocalicMatra_tall-tutg.alt2` - don't fit the consonant/vowel-sign decomposition
   pattern at all; need hand-written rules, not auto-generation.
+- **Missing artwork, confirmed 2026-07-17 (see item 12):** the real bare
+  `ha_ra-tutg` and `pa_ra-tutg` conjunct ligatures don't exist - only the
+  below-base-only `ha_ra-tutg.below`/`pa_ra-tutg.below` pieces do. These need to
+  be drawn before HA+RA / PA+RA can get a proper top-level `akhn` rule; until
+  then they correctly fall back to `blwf`'s generic below-base stacking (RA's
+  own below-form) instead of a dedicated ligature.
 
 ## 4. `oMatra-tutg` / `ooMatra-tutg` naming vs. cmap mismatch (found 2026-07-16)
 
@@ -378,3 +387,146 @@ correct regardless of what the underlying glyph is called. Renaming the actual
 UFO glyph (`sha_ra_iiMatra-tutg` -> something like `shriiPushpika-tutg`) is a
 separate, still-open cleanup item - flagged here rather than done silently, same
 principle as every other naming issue in this doc.
+
+## 10. `blwf` feature added: generic below-base fallback for all 36 consonants (2026-07-17)
+
+Added `generate_blwf_feature.py` -> `tutg_blwf.fea`, merged into
+`Ikshu-Regular.ufo/features.fea` right after `akhn`. Per the standard Indic/USE
+feature order, `akhn` runs first and claims whatever specific conjunct it
+recognizes (452 hand-drawn ligatures); any "conjoiner + consonant" pair `akhn`
+doesn't touch reaches `blwf`, which substitutes the consonant for its below-base
+("Adi Vottu") allograph - so every one of the 36*36 possible consonant pairs
+renders as a shaped stack, not just the ~small fraction with a bespoke ligature.
+
+All 36 consonants have a below-base glyph: 35 via the `{consonant}.below` naming
+convention, RA via a documented override (`raMatra-tutg` - a different glyph
+entirely, the same fact `generate_akhn_feature.py`'s `TOKEN_ALIASES` already
+relies on). Coverage report (regenerated by the script every run): `BLWF_TODO.md`.
+
+**Bug found and fixed before merging:** the first version used a chaining-
+contextual single substitution (`sub conjoiner-tutg ka-tutg' by ka-tutg.below;`),
+which only replaces the marked glyph and leaves `conjoiner-tutg` itself sitting in
+the glyph stream afterward. `conjoiner-tutg` turns out to have real, visible
+dotted-circle-style artwork (the intended USE fallback appearance for an
+Invisible_Stacker that's never consumed) - so every below-base conjunct rendered
+with a dotted circle glaring out of it, confirmed both via `uharfbuzz` (shaped
+glyph list still contained `u113D0`, the conjoiner) and visually (screenshot of
+the "Ye Dharma Hetu" verse's `mahāśramaṇaḥ`, and the full Conjunct Matrix grid).
+Fixed by switching to a real ligature substitution (`sub conjoiner-tutg ka-tutg by
+ka-tutg.below;`, both inputs consumed into one output glyph) - same rule shape
+`akhn`'s own ligatures already use. Re-verified with `uharfbuzz` (conjoiner no
+longer appears in the shaped output for any tested pair, dedicated `akhn`
+ligatures like KA+KA still correctly take priority over the fallback) and
+Playwright screenshots (dotted circle gone from both the sample verse and the
+full 36x36 Conjunct Matrix).
+
+**Made reproducible for a from-scratch build (2026-07-17):** `blwf` had only been
+hand-merged into the already-built `Ikshu-Regular.ufo/features.fea`, not wired into
+`build_ufo.py`'s pipeline - a from-scratch rebuild off a fresh/raw UFO would have
+silently produced a font missing `blwf` entirely. Added `generate_blwf_feature.py`
+and `merge_blwf_feature.py` as real pipeline steps. Also renamed `merge_features.py`
+-> `merge_akhn_feature.py` for symmetry (it had been the generic name back when
+`akhn` was the only merge step; keeping one generic and one feature-specific name
+once a second merge script existed was an inconsistency, not a deliberate choice).
+Smoke-tested the full 9-step pipeline end to end - both merge guards correctly
+skipped (already merged, no duplication), UFO still compiles.
+
+## 11. `.below` glyphs needed GDEF Mark classification + a `_bottom` anchor (2026-07-17)
+
+Found by inspecting the compiled font's actual GPOS/GDEF tables (fontTools +
+`uharfbuzz`) after a request to verify GPOS was really working: `blwf`'s rule is a
+plain ligature substitution (`conjoiner + consonant -> consonant.below`) - it swaps
+in the below-base glyph but does no positioning. Without a `_bottom` anchor pairing
+to the preceding base's own `bottom` anchor (added by `generate_anchors.py`),
+HarfBuzz had no attachment point to snap it to, so every `blwf`-substituted
+below-base form was rendering at normal advance-width position (`x_advance` = its
+own natural width) instead of stacking under the previous consonant like every
+other mark on this font.
+
+Confirmed via `uharfbuzz` before the fix: shaping KHA+conjoiner+PA (no dedicated
+`akhn` ligature, falls through to `blwf`) showed `pa-tutg.below` was not GDEF-
+classified as Mark. After: `classify_blwf_marks.py` sets `public.openTypeCategory =
+"mark"` and a `_bottom` anchor (x = own bbox center, y = own bbox **top** edge - the
+same "Lego block" fit already used by every other `_bottom`-anchored mark on this
+font, e.g. `anudatta-tutg`) on every glyph in `consonant_below_base` (60 of 61,
+excluding `ya-tutg.below` per project owner - it's a ligature-only construction
+piece, not meant to independently attach as a generic fallback target). Re-verified:
+`pa-tutg.below` now GDEF-classified Mark, `x_advance` is `0`, and shaping produces a
+real non-zero attachment offset (`x=-695, y=39`) instead of sitting at default
+position - confirmed both via `uharfbuzz` and Playwright screenshots of the full
+Conjunct Matrix (below-base forms now visibly tucked under the preceding consonant
+across the whole 36x36 grid, not just adjacent at normal spacing).
+
+Added as its own `build_ufo.py` pipeline step (`classify_blwf_marks.py`, right
+after `generate_anchors.py`), not folded into `generate_anchors.py` itself - keeps
+this below-base-specific concern separately reviewable/revertable from the main
+anchor plan.
+
+**Other things checked at the same time, found NOT to be problems:** anchor naming
+convention (mark anchors ARE correctly `_`-prefixed to pair with their base's plain
+name everywhere an anchor exists - `_bottom`/`_top`/`_topright`/`_bottomright` on
+marks, `bottom`/`top`/`topright`/`bottomright` on bases) and anchor Y-placement
+"Lego fit" (every existing `_bottom`/`_top`-anchored mark already sits at the
+correct edge of its own bounding box, confirmed by checking every underscore-
+anchored glyph in the font against its own bbox) were both already correct before
+this fix - the real gap was specifically the missing classification + anchor on
+`.below` glyphs, not a systemic naming or placement bug.
+
+## 12. `akhn`'s below-only promotion reversed: `ha_ra-tutg`/`pa_ra-tutg` are genuinely missing (2026-07-17)
+
+Followed up on section 1&2's own flagged-but-unverified caveat about the
+`.below`-promotion mechanism. Project owner confirmed it's wrong: `ha_ra-tutg.below`
+and `pa_ra-tutg.below` are below-base-only construction pieces (they're classified
+`conjunct_ligature`, not `consonant_below_base` - not touched by item 11's fix),
+not stand-ins for the real bare `ha_ra-tutg`/`pa_ra-tutg` ligatures. Those two
+bare glyphs simply don't exist yet and need to be drawn.
+
+**First confirmed there were no OTHER cases of this pattern** (asked, before
+changing anything): scanned all 452 `akhn` rules for outputs ending in `.below` -
+found exactly these same 2, nothing new. Also confirmed no cross-contamination
+with item 11's fix (`classify_blwf_marks.py` only reads `consonant_below_base`;
+these two are `conjunct_ligature`) and that both compile as GDEF `Base` (correct
+for a ligature output), not `Mark`.
+
+**Fix:** removed the below-only-promotion branch from `generate_akhn_feature.py`
+entirely (previously: a lone `.below` alt with no bare sibling got silently
+promoted to serve as the default). Now falls through to the same
+"no default exists, skip and report" path every other unparseable name already
+takes. Result: 450 rules (down from 452), 3 skipped (`ka_iMatra_dotreph-tutg` plus
+these two, up from 1).
+
+**Gotcha found while verifying the fix actually took effect, then fixed
+properly:** regenerating `tutg_akhn.fea` alone did nothing to the real font -
+`merge_akhn_feature.py`'s idempotency guard only checked whether `features.fea`
+had ever been merged before (`"languagesystem tutg dflt" in features`), not
+whether the merged content was *stale* relative to a changed generator output.
+The two obsolete rules were still sitting in the already-merged
+`Ikshu-Regular.ufo/features.fea` until removed by hand this one time. Since this
+would silently bite again on any future edit to `generate_akhn_feature.py` or
+`generate_blwf_feature.py` that changes existing rules (not just adds new ones),
+rewrote both `merge_akhn_feature.py` and `merge_blwf_feature.py`: instead of
+skip-if-a-block-already-exists, they now detect an existing block and *replace*
+it in place with whatever the generator currently outputs (byte-comparing first
+so an unchanged run is still a no-op, not a needless rewrite). Verified three
+ways: (1) both scripts report "already matches - nothing to do" against the
+current, already-correct UFO; (2) a synthetic test - hand-injected one of the
+just-removed stale rules back into the merged `features.fea`, reran
+`merge_akhn_feature.py`, confirmed it detected the mismatch, replaced the whole
+block, and produced output byte-identical (`md5sum` match) to the pre-test
+correct state; (3) the full 10-step `build_ufo.py` pipeline and `compile_font.py`
+still run clean end to end.
+
+Re-verified via `uharfbuzz` after removing the stale rules by hand and
+recompiling: HA+conjoiner+RA and PA+conjoiner+RA now correctly fall through to
+`blwf`'s generic RA fallback (`raMatra-tutg`) instead of the removed ligatures.
+
+**One more gap surfaced in the process, NOT fixed (flagging, not silently
+patching):** `raMatra-tutg` itself has zero anchors and isn't GDEF-Mark-classified
+- shaping HA+RA now shows it at `x_offset=0, y_offset=0, x_advance=50` (sitting at
+normal inline position with its own small advance width, not snapped under HA via
+GPOS). It's the same category of problem item 11 just fixed for `consonant_below_base`
+glyphs, but `raMatra-tutg` lives in a different classification bucket
+(`vowel_sign_component`) that `classify_blwf_marks.py` doesn't touch. Since RA is
+the only consonant using this naming pattern instead of `.below` (see
+`generate_blwf_feature.py`'s `BELOW_FORM_OVERRIDES`), this is a single-glyph fix if
+wanted - not addressed here since it wasn't what was asked.

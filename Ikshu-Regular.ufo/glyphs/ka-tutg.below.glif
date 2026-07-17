@@ -2,6 +2,7 @@
 <glyph name="ka-tutg.below" format="2">
   <anchor x="421.123" y="-683.904" name="short"/>
   <anchor x="-0.9" y="-739.9" name="bottom"/>
+  <anchor x="-0.9" y="-184.2" name="_bottom"/>
   <outline>
     <component base="ka-tutg" xScale="0.863" yScale="0.863" xOffset="-460" yOffset="-677" identifier="B1D567A9"/>
   </outline>
@@ -19,6 +20,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

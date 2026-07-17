@@ -2,6 +2,7 @@
 <glyph name="kha-tutg.below" format="2">
   <advance width="50"/>
   <anchor x="13.5" y="-752.9" name="bottom"/>
+  <anchor x="13.5" y="-189.0" name="_bottom"/>
   <outline>
     <component base="kha-tutg" xScale="0.863" yScale="0.863" xOffset="-519" yOffset="-677" identifier="5BFBE5D3"/>
   </outline>
@@ -19,6 +20,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

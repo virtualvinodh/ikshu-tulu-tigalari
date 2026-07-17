@@ -2,6 +2,7 @@
 <glyph name="nya-tutg.below.alt1" format="2">
   <advance width="50"/>
   <anchor x="-0.0" y="-958.3" name="bottom"/>
+  <anchor x="-0.0" y="-184.2" name="_bottom"/>
   <outline>
     <component base="nya-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-435" yOffset="-677" identifier="2054D2F7"/>
   </outline>
@@ -19,6 +20,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

@@ -57,6 +57,14 @@
     margin: 0 0 2px 0;
   }
   .subtitle { font-size: 0.76rem; color: var(--text-light-dim); margin: 0 0 16px 0; }
+  #sidebar-tigalari-title {
+    font-family: 'Ikshu Test', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin: 10px 0 6px 0;
+    line-height: 0.7;
+    white-space: nowrap;
+  }
 
   #sidebar {
     width: 210px;
@@ -121,6 +129,7 @@
     border-color: var(--accent);
     color: var(--ink);
   }
+  #main .control-label { color: var(--text-dimmer); }
   #search {
     width: 100%;
     padding: 7px 9px;
@@ -131,8 +140,16 @@
     font-family: "SF Mono", Consolas, monospace;
     font-size: 0.78rem;
   }
+  #main #search { background: var(--card-bg); color: var(--ink); border-color: var(--paper-line); }
 
-  #main { flex: 1; overflow-y: auto; padding: 24px 30px; background: var(--paper); color: var(--ink); }
+  /* overflow-x here (not on a per-table wrapper) matters: any descendant with its
+     own non-visible overflow becomes the position:sticky containing block for its
+     children, regardless of whether it actually overflows - so a wide table's own
+     "overflow:auto" wrapper silently hijacks its th's sticky reference away from
+     #main, breaking the sticky header and adding a second, barely-there scrollbar.
+     Letting #main itself absorb horizontal overflow keeps it the single scrolling
+     ancestor everything sticks against. */
+  #main { flex: 1; overflow-y: auto; overflow-x: auto; padding: 24px 30px; background: var(--paper); color: var(--ink); }
   .tigalari { font-family: 'Ikshu Test', sans-serif; }
 
   .cons-grid, .vowel-grid {
@@ -140,6 +157,10 @@
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     gap: 10px;
   }
+  /* Collapse mode (Basic tab): a section's cards become one flowing line of
+     glyphs instead of a grid of labeled boxes - "Collapse" packs them with no
+     separator, "Collapse (space)" joins them with a literal space. */
+  .collapsed-line { line-height: 1.5; word-break: break-all; }
   .cons-cell {
     background: var(--card-bg);
     border: 1px solid var(--paper-line);
@@ -173,11 +194,35 @@
   /* Matrix/Conjunct Matrix stack a .sticky-controls bar above their table, so the
      table's own sticky header needs to sit below that bar's height instead of at
      top:0, or the two would overlap. */
-  #panel-matrix table.test-table th, #panel-conjmatrix table.test-table th { top: 46px; }
+  #panel-marks table.test-table th { top: 46px; }
+  /* panel-matrix's sticky-controls grew to 3 stacked rows (transpose/collapse,
+     filters, marks), so its own table header needs a bigger offset than the
+     other panels' single-row bars. */
+  #panel-matrix table.test-table th { top: 110px; }
+  /* panel-conjmatrix's controls are now the same 3-stacked-row layout as
+     panel-matrix (measured 105px), so it needs the same offset. */
+  #panel-conjmatrix table.test-table th { top: 110px; }
+  /* Akhn's sticky bar is taller (label + wrapped chips + label + text input) than
+     the single-row bars above, so it needs a bigger offset. */
+  #panel-akhn table.test-table th { top: 116px; }
   table.test-table td.rendered { font-size: 1.8rem; }
   table.test-table td.label { font-family: "SF Mono", Consolas, monospace; font-size: 0.72rem; color: var(--text-dimmer); }
   table.test-table td.seq { font-family: "SF Mono", Consolas, monospace; font-size: 0.68rem; color: var(--text-faint); }
   table.test-table tr:hover td { background: var(--hover-bg); }
+  /* Conjunct Matrix's 3-way U/UU/Vocalic-R/RR decomposition: two small reference
+     renders (vowel-alone, bare stack) above the actual full combination, so a
+     broken or missing ligature is visible against its own references at a glance. */
+  .conjref-row { display: flex; gap: 6px; justify-content: center; font-size: 0.5em; line-height: 1.3; color: var(--text-dim); margin-top: 0.2em; margin-bottom: 1em; }
+  .conjref-row .conjref-sep { opacity: 0.4; }
+  /* The 2-consonant stack ("pga") and the full combination ("pgu") both sit
+     visually lower than the single-consonant reference ("gu") since a below-base
+     stack's own ink extends further down - nudge them up to compensate. */
+  .conjref-row .conjref:last-child, .conjref-main { position: relative; top: -0.15em; }
+  .conjref-main { line-height: 1.1; text-align: center; }
+  /* Standard Conjunct List can stack IAST + Kannada annotations above the
+     conjref-row too (up to 3 levels before the main word), so it needs more
+     clearance than the Conjunct Matrix's plain cell does. */
+  #panel-conjlist .conjref-row { margin-bottom: 1.3em; }
 
   /* Native <ruby>/<rt> spacing is computed by the browser from the base text's
      font metrics, and Tigalari's above-base marks (topright anchors, stacked vowel
@@ -188,9 +233,18 @@
      gap, no dependence on the browser's ruby placement heuristics. */
   .sampletext-passage { line-height: 1.3; }
   .word-block { display: inline-flex; flex-direction: column; align-items: center; vertical-align: bottom; margin: 0 4px 0.6em; }
-  .word-block .ann { font-size: 0.35em; line-height: 1.3; margin-bottom: 1.1em; color: var(--text-dim); font-family: "SF Mono", Consolas, monospace; white-space: nowrap; }
+  .word-block .ann { font-size: 0.35em; line-height: 1.3; margin-bottom: 1.6em; color: var(--text-dim); font-family: "SF Mono", Consolas, monospace; white-space: nowrap; }
   .word-block .word { line-height: 1; }
   .word-block .ann + .ann { margin-top: -0.3em; }
+  /* Standard Conjunct List's default view: each item as its own bordered card
+     (same visual language as .cons-cell) instead of bare inline text. */
+  .word-block.card {
+    background: var(--card-bg);
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    padding: 12px 10px 8px;
+    margin: 4px;
+  }
 
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
   .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
@@ -307,15 +361,15 @@
 
 <div id="sidebar">
   <div>
+    <div id="sidebar-tigalari-title">&#x11382;&#x11392;&#x113D0;&#x113B0;&#x113BB;</div>
     <h1>Ikshu-Regular</h1>
-    <p class="subtitle">Compiled test build &middot; tutg</p>
   </div>
   <div class="tab-btn active" data-tab="overview">Basic</div>
-  <div class="tab-btn" data-tab="akhn">Conjuncts &amp; Vowel Signs</div>
-  <div class="tab-btn" data-tab="conjlist">Standard Conjunct List</div>
   <div class="tab-btn" data-tab="matrix">Syllable Matrix</div>
   <div class="tab-btn" data-tab="conjmatrix">Conjunct Matrix</div>
+  <div class="tab-btn" data-tab="conjlist">Standard Conjunct List</div>
   <div class="tab-btn" data-tab="marks">Marks</div>
+  <div class="tab-btn" data-tab="akhn">Auto GSUB</div>
   <div class="tab-btn" data-tab="sampletext">Sample Texts</div>
   <div class="tab-btn" data-tab="live">Live Input</div>
   <div class="tab-btn" data-tab="unicode">Unicode</div>
@@ -328,16 +382,14 @@
     <div class="control-label">Line height</div>
     <input id="line-slider" type="range" min="1" max="3" value="1.6" step="0.1" oninput="setLineHeight(this.value)">
   </div>
-  <div id="search-wrap" style="display:none;">
-    <div class="control-label">Category</div>
-    <div id="cat-filters" style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;"></div>
-    <div class="control-label">Filter (output glyph name)</div>
-    <input id="search" type="text" placeholder="e.g. ka_ka">
-  </div>
 </div>
 
 <div id="main">
   <div class="panel active" id="panel-overview">
+    <p class="tigalari" style="margin: 0 0 26px 0; line-height: 1.6; text-align: center;">&#x113AB;&#x113C2; &#x113A4;&#x113AC;&#x113D0;&#x113AA;&#x113B8; &#x113B2;&#x113C2;&#x113A1;&#x113BB;&#x113A6;&#x113D0;&#x113AC;&#x113A9;&#x113AE;&#x113B8; &#x113B2;&#x113C2;&#x113A1;&#x113BB;&#x113CC; &#x113A1;&#x113C2;&#x113B0;&#x113B8;&#x113CC; &#x113A1;&#x113A2;&#x113B8;&#x11394;&#x113A1;&#x113C7; &#x113B2;&#x113D0;&#x113AB;&#x113AE;&#x113A3;&#x113A1;&#x113CE; &#x113D4;<br>&#x113A1;&#x113C2;&#x113B0;&#x113B8;&#x113CC; &#x11397; &#x113AB;&#x113C7; &#x113A5;&#x113B9;&#x113AC;&#x113C7;&#x113A4; &#x1138B;&#x113AE;&#x113CC; &#x113AE;&#x113B8;&#x113A3;&#x113BA; &#x113AA;&#x113B2;&#x113B8;&#x113AF;&#x113D0;&#x113AC;&#x113AA;&#x113A0;&#x113CD; &#x113D5;</p>
+    <div class="sticky-controls">
+      <div id="overview-collapse-select" style="display:flex; gap:6px;"></div>
+    </div>
     <div class="count-note" id="vowel-count"></div>
     <div class="vowel-grid" id="vowel-grid"></div>
 
@@ -356,74 +408,84 @@
     <div class="count-note" style="margin-top:26px;">KA + every mark (4)</div>
     <div class="cons-grid" id="ka-marks-grid"></div>
   </div>
-  <div class="panel" id="panel-akhn">
-    <div class="count-note" id="akhn-count"></div>
-    <table class="test-table">
-      <thead><tr><th style="width:120px">Rendered</th><th>Expected output glyph</th><th>Input sequence (typed)</th></tr></thead>
-      <tbody id="akhn-body"></tbody>
-    </table>
+  <div class="panel" id="panel-matrix">
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <button id="matrix-transpose" class="cat-chip">Transpose</button>
+        <div id="matrix-collapse-select" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <div id="matrix-row-filter"></div>
+        <div id="matrix-col-filter"></div>
+        <div id="matrix-cons2-position" style="display:flex; gap:6px;"></div>
+        <div id="matrix-cons2-showbase" style="display:flex; gap:6px;"></div>
+      </div>
+      <div id="matrix-cons2-quick" style="margin-bottom:8px;"></div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <div id="matrix-mark-select" style="display:flex; gap:6px;"></div>
+      </div>
+    </div>
+    <table class="test-table" id="matrix-table"></table>
+  </div>
+  <div class="panel" id="panel-conjmatrix">
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <button id="conjmatrix-transpose" class="cat-chip">Transpose</button>
+        <div id="conjmatrix-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="conjmatrix-showall-toggle" style="display:flex; gap:6px;"></div>
+        <div id="conjmatrix-guide-toggle" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <div id="conjmatrix-c1-filter"></div>
+        <div id="conjmatrix-c2-filter"></div>
+        <div id="conjmatrix-suffix-quick" style="display:flex; gap:6px;"></div>
+        <select id="conjmatrix-vowel-select" class="filter-dropdown-btn"></select>
+        <div id="conjmatrix-vowel-quick" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <div id="conjmatrix-mark-select" style="display:flex; gap:6px;"></div>
+      </div>
+    </div>
+    <table class="test-table" id="conjmatrix-table"></table>
   </div>
   <div class="panel" id="panel-conjlist">
     <div class="sticky-controls">
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:10px;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <div id="conjlist-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="conjlist-guide-toggle" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <select id="conjlist-vowel-select" class="filter-dropdown-btn"></select>
+        <div id="conjlist-vowel-quick" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:10px;">
         <div id="conjlist-mark-select" style="display:flex; gap:6px;"></div>
       </div>
       <div id="conjlist-ann-toggle" class="ann-checkboxes"></div>
     </div>
     <div id="conjlist-body"></div>
   </div>
-  <div class="panel" id="panel-matrix">
-    <p class="count-note">Every consonant against every vowel sign (36 &times; 18: inherent-vowel column, 13 vowel signs,
-      Candrabindu/Anusvara/Visarga, and Halant/virama) - not limited to combinations with a dedicated ligature glyph.
-      EE/AI (reorder before the base) and OO/AU (split before+after the base) are shaped entirely by HarfBuzz's own
-      built-in Tigalari support, not this font's GSUB - so this table also doubles as a check on that.</p>
-    <div class="sticky-controls">
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-        <button id="matrix-transpose" class="cat-chip">Transpose (vowel signs &rarr; rows)</button>
-        <div id="matrix-row-filter"></div>
-        <div id="matrix-col-filter"></div>
-        <div id="matrix-mark-select" style="display:flex; gap:6px;"></div>
-      </div>
-    </div>
-    <div style="overflow:auto;">
-      <table class="test-table" id="matrix-table"></table>
-    </div>
-  </div>
-  <div class="panel" id="panel-conjmatrix">
-    <p class="count-note">Every consonant against every consonant (36 &times; 36, including the diagonal - geminate
-      clusters like "kka" are real conjuncts too), typed as C1 + conjoiner + C2 - the same shape our <code>akhn</code>
-      GSUB rules match on. Only a fraction of these 1296 pairs have a dedicated ligature glyph; this table shows at a
-      glance which fall back to unligated default rendering instead.</p>
-    <div class="sticky-controls">
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-        <button id="conjmatrix-transpose" class="cat-chip">Transpose</button>
-        <select id="conjmatrix-vowel-select" class="filter-dropdown-btn"></select>
-        <div id="conjmatrix-mark-select" style="display:flex; gap:6px;"></div>
-        <div id="conjmatrix-c1-filter"></div>
-        <div id="conjmatrix-c2-filter"></div>
-      </div>
-    </div>
-    <div style="overflow:auto;">
-      <table class="test-table" id="conjmatrix-table"></table>
-    </div>
-  </div>
   <div class="panel" id="panel-marks">
-    <p class="count-note">Every independent vowel &times; the two Vedic tone marks we have glyphs for ("svaras" -
-      Svarita and Anudatta; Udatta is conventionally left unmarked), and every consonant &times; all 4 Repha/Svarita/
-      Anudatta/Gemination marks.</p>
-    <div style="overflow:auto; margin-bottom:26px;">
-      <table class="test-table" id="mark-vowel-table"></table>
+    <div class="sticky-controls">
+      <div id="marks-collapse-select" style="display:flex; gap:6px;"></div>
     </div>
-    <div style="overflow:auto; margin-bottom:26px;">
-      <table class="test-table" id="mark-consonant-table"></table>
+    <table class="test-table" id="mark-vowel-table" style="margin-bottom:26px;"></table>
+    <table class="test-table" id="mark-consonant-table"></table>
+  </div>
+  <div class="panel" id="panel-akhn">
+    <div class="count-note" id="akhn-count"></div>
+    <div class="sticky-controls">
+      <div class="control-label">Category</div>
+      <div id="cat-filters" style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;"></div>
+      <div class="control-label">Filter (output glyph name)</div>
+      <input id="search" type="text" placeholder="e.g. ka_ka">
     </div>
+    <table class="test-table">
+      <thead><tr><th style="width:120px">Rendered</th><th>Expected output glyph</th><th>Input sequence (typed)</th></tr></thead>
+      <tbody id="akhn-body"></tbody>
+    </table>
   </div>
   <div class="panel" id="panel-sampletext">
-    <p class="count-note">Real Sanskrit Buddhist/Vedic texts (Heart Sutra, dharanis, Lotus Sutra, Lalitavistara,
-      Dhammacakkappavattana Sutta, a Vedic passage) - the same texts satisarsharada's own test page uses, sourced
-      from its Sharada-script text and mechanically transliterated (see brahmic_translit.py) rather than retyped.
-      Main line is Tigalari; the small annotation above each word can show Kannada, IAST, or both.</p>
     <div id="sampletext-list" class="text-tab-bar"></div>
     <div id="sampletext-ann-toggle" class="ann-checkboxes"></div>
     <div id="sampletext-body"></div>
@@ -468,6 +530,31 @@
   let conjListVowelChoice = 'None';
   let conjListMarkChoice = 'None';
   const conjListAnnModes = new Set(['kannada']);
+  let conjListGuideOn = true; // master on/off for the ab|bc / gu|pga reference guide
+  // Declared here (not next to renderConjList's own definition further down) for
+  // the same reason as the other conjList state above: activateTab's early
+  // ?tab=conjlist hook can call renderConjList() before later script runs.
+  const conjListCollapse = makeCollapseButtons('conjlist-collapse-select', () => renderConjList());
+  function renderConjListGuideToggle() {
+    const wrap = document.getElementById('conjlist-guide-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (conjListGuideOn ? ' active' : '');
+    chip.textContent = 'Guide: ' + (conjListGuideOn ? 'On' : 'Off');
+    chip.onclick = () => { conjListGuideOn = !conjListGuideOn; renderConjList(); };
+    wrap.appendChild(chip);
+  }
+  const conjListVowelSelectEl = document.getElementById('conjlist-vowel-select');
+  ['None'].concat(Object.keys(CONJUNCT_LISTS.vowelSignOptions)).forEach(key => {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = key === 'None' ? 'Ending: None (inherent)' : key;
+    conjListVowelSelectEl.appendChild(opt);
+  });
+  conjListVowelSelectEl.addEventListener('change', () => {
+    conjListVowelChoice = conjListVowelSelectEl.value;
+    renderConjList();
+  });
   const ENDING_TOKEN = {
     'AA': ['vowel_signs', 'aa'], 'I': ['vowel_signs', 'i'], 'II': ['vowel_signs', 'ii'],
     'U': ['vowel_signs', 'u'], 'UU': ['vowel_signs', 'uu'],
@@ -479,6 +566,14 @@
   };
   const CONSONANT_NAME_BY_CP = {};
   DATA.consonants.forEach(c => { CONSONANT_NAME_BY_CP[c.cp] = stripTutg(c.name); });
+  // For the 4 "below+ligating" vowel signs (U/UU/Vocalic R/Vocalic RR - the ones
+  // that actually change shape per consonant, per the shaping model, unlike the
+  // plain spacing/reorder ones), both the Conjunct Matrix and the Standard
+  // Conjunct List show a 3-way comparison (vowel-alone / bare-stack / full
+  // combination) instead of just the final result. Declared here, not next to
+  // either render function, for the same early-?tab=conjlist-firing reason as
+  // ENDING_TOKEN/CONSONANT_NAME_BY_CP above.
+  const CONJMATRIX_DECOMPOSE_VOWELS = new Set(['U', 'UU', 'Vocalic R', 'Vocalic RR']);
 
   // Reverse (codepoint -> phoneme) lookup for each of the four Brahmic scripts -
   // needed by textToPhonemes() below, and needed early since renderConjList() can
@@ -539,7 +634,6 @@
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('panel-' + tabName).classList.add('active');
-    document.getElementById('search-wrap').style.display = tabName === 'akhn' ? 'block' : 'none';
     if (tabName === 'conjlist') renderConjList();
     if (tabName === 'sampletext') renderSampleText();
     if (!opts.skipUrl) {
@@ -556,25 +650,15 @@
     activateTab(initialTab, { skipUrl: true });
   }
 
-  // consonants
-  const consGrid = document.getElementById('cons-grid');
+  // consonants / vowels / under symbols / KA+vowel-sign / a+marks / KA+marks -
+  // six flat "gallery" sections, each just a list of {cps, label} items.
+  // renderOverviewGrids repopulates all six according to the current view mode:
+  // the normal card grid, or (see makeCollapseButtons) a single flattened line
+  // of running text per section with no separator or a literal space.
   document.getElementById('cons-count').textContent = DATA.consonants.length + ' consonants';
-  DATA.consonants.forEach(c => {
-    const cell = document.createElement('div');
-    cell.className = 'cons-cell';
-    cell.innerHTML = `<div class="glyph tigalari">${S(c.cp)}</div><div class="label">${c.name}<br>U+${c.cp.toString(16).toUpperCase()}</div>`;
-    consGrid.appendChild(cell);
-  });
-
-  // vowels
-  const vowelGrid = document.getElementById('vowel-grid');
   document.getElementById('vowel-count').textContent = DATA.vowels.length + ' independent vowels';
-  DATA.vowels.forEach(v => {
-    const cell = document.createElement('div');
-    cell.className = 'cons-cell';
-    cell.innerHTML = `<div class="glyph tigalari">${S(v.cp)}</div><div class="label">${v.name}<br>U+${v.cp.toString(16).toUpperCase()}</div>`;
-    vowelGrid.appendChild(cell);
-  });
+  const consItems = DATA.consonants.map(c => ({ cps: [c.cp], label: `${c.name}<br>U+${c.cp.toString(16).toUpperCase()}` }));
+  const vowelItems = DATA.vowels.map(v => ({ cps: [v.cp], label: `${v.name}<br>U+${v.cp.toString(16).toUpperCase()}` }));
 
   // under symbols - labels are the real Unicode character names (verified against
   // the Unicode 17.0 code chart), not this UFO's internal glyph names: notably
@@ -589,43 +673,48 @@
     [0x113D7, 'Om Pushpika'],
     [0x113D8, 'Shrii Pushpika'],
   ];
-  const underSymbolsGrid = document.getElementById('under-symbols-grid');
-  UNDER_SYMBOLS.forEach(([cp, label]) => {
-    const cell = document.createElement('div');
-    cell.className = 'cons-cell';
-    cell.innerHTML = `<div class="glyph tigalari">${S(cp)}</div><div class="label">${label}<br>U+${cp.toString(16).toUpperCase()}</div>`;
-    underSymbolsGrid.appendChild(cell);
-  });
+  const underSymbolItems = UNDER_SYMBOLS.map(([cp, label]) => ({ cps: [cp], label: `${label}<br>U+${cp.toString(16).toUpperCase()}` }));
 
   // KA + every vowel sign (the syllable matrix's own KA row, which now includes
   // Halant/virama as its last column too).
-  function addComboCell(grid, label, cps) {
-    const cell = document.createElement('div');
-    cell.className = 'cons-cell';
-    cell.innerHTML = `<div class="glyph tigalari">${cps.map(cp => S(cp)).join('')}</div><div class="label">${label}</div>`;
-    grid.appendChild(cell);
-  }
   const kaEntry = DATA.consonants.find(c => c.name === 'ka-tutg');
   const aEntry = DATA.vowels.find(v => v.name === 'a-tutg');
   const kaRow = DATA.matrix.rows.find(r => r.consonant === 'ka-tutg');
-  const kaVowelSignGrid = document.getElementById('ka-vowelsign-grid');
-  DATA.matrix.vowelSignLabels.forEach((label, i) => {
-    addComboCell(kaVowelSignGrid, 'KA + ' + label, kaRow.cells[i]);
-  });
+  const kaVowelSignItems = DATA.matrix.vowelSignLabels.map((label, i) => ({ cps: kaRow.cells[i], label: 'KA + ' + label }));
 
   // a + every mark, and KA + every mark (Repha prefixes, the other three
   // suffix - same positions used everywhere else these marks appear). Repha and
   // Gemination are excluded for "a" - both are defined to attach to a consonant
   // base (see GPOS anchors), and correctly render as an invalid-cluster fallback
   // (dotted circle) rather than actually attaching to an independent vowel.
-  const aMarksGrid = document.getElementById('a-marks-grid');
-  const kaMarksGrid = document.getElementById('ka-marks-grid');
+  const aMarksItems = [];
+  const kaMarksItems = [];
   Object.entries(DATA.matrix.markOptions).forEach(([label, mark]) => {
     if (label !== 'Repha' && label !== 'Gemination') {
-      addComboCell(aMarksGrid, 'a + ' + label, mark.position === 'prefix' ? [mark.cp, aEntry.cp] : [aEntry.cp, mark.cp]);
+      aMarksItems.push({ cps: mark.position === 'prefix' ? [mark.cp, aEntry.cp] : [aEntry.cp, mark.cp], label: 'a + ' + label });
     }
-    addComboCell(kaMarksGrid, 'KA + ' + label, mark.position === 'prefix' ? [mark.cp, kaEntry.cp] : [kaEntry.cp, mark.cp]);
+    kaMarksItems.push({ cps: mark.position === 'prefix' ? [mark.cp, kaEntry.cp] : [kaEntry.cp, mark.cp], label: 'KA + ' + label });
   });
+
+  function renderGlyphSection(gridId, items, mode) {
+    const grid = document.getElementById(gridId);
+    if (mode === 'grid') {
+      grid.innerHTML = items.map(it => `<div class="cons-cell"><div class="glyph tigalari">${it.cps.map(cp => S(cp)).join('')}</div><div class="label">${it.label}</div></div>`).join('');
+    } else {
+      const sep = mode === 'collapse-space' ? ' ' : '';
+      grid.innerHTML = `<div class="collapsed-line tigalari">${items.map(it => it.cps.map(cp => S(cp)).join('')).join(sep)}</div>`;
+    }
+  }
+  function renderOverviewGrids(mode) {
+    renderGlyphSection('cons-grid', consItems, mode);
+    renderGlyphSection('vowel-grid', vowelItems, mode);
+    renderGlyphSection('under-symbols-grid', underSymbolItems, mode);
+    renderGlyphSection('ka-vowelsign-grid', kaVowelSignItems, mode);
+    renderGlyphSection('a-marks-grid', aMarksItems, mode);
+    renderGlyphSection('ka-marks-grid', kaMarksItems, mode);
+  }
+  const overviewCollapse = makeCollapseButtons('overview-collapse-select', mode => renderOverviewGrids(mode));
+  renderOverviewGrids('grid');
 
   // akhn conjunct/vowel-sign tests
   const akhnBody = document.getElementById('akhn-body');
@@ -692,6 +781,30 @@
     renderAkhn();
   });
   renderAkhn();
+
+  // Reusable pair of "Collapse" / "Collapse (space)" toggle chips: each grid/
+  // table view has a normal (grid or table) mode plus two flattened-to-text
+  // modes that drop the card/table chrome and just run every cell's glyphs
+  // together, joined by nothing or by a literal space. Clicking the active chip
+  // again returns to the normal view. Returns an object whose .mode getter the
+  // caller reads inside its own render function - same pattern as
+  // createFilterDropdown below.
+  function makeCollapseButtons(mountId, onChange) {
+    let mode = 'grid'; // 'grid' | 'collapse' | 'collapse-space'
+    const wrap = document.getElementById(mountId);
+    function render() {
+      wrap.innerHTML = '';
+      [['collapse', 'Collapse'], ['collapse-space', 'Collapse (space)']].forEach(([key, label]) => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (mode === key ? ' active' : '');
+        chip.textContent = label;
+        chip.onclick = () => { mode = (mode === key ? 'grid' : key); render(); onChange(mode); };
+        wrap.appendChild(chip);
+      });
+    }
+    render();
+    return { get mode() { return mode; } };
+  }
 
   // Reusable multi-select checkbox dropdown for the matrix row/column filters
   // below - a closed popover listing every item with a checkbox, "All"/"None"
@@ -775,10 +888,40 @@
   let matrixMarkChoice = 'None';  // 'None' | one of the keys in DATA.matrix.markOptions
   const matrixConsDropdown = createFilterDropdown('matrix-row-filter', DATA.matrix.rows.map(r => stripTutg(r.consonant)), 'Consonants', () => renderMatrix());
   const matrixVowelDropdown = createFilterDropdown('matrix-col-filter', DATA.matrix.vowelSignLabels, 'Vowel signs', () => renderMatrix());
-  function applyMatrixMark(cps) {
+  const matrixCollapse = makeCollapseButtons('matrix-collapse-select', () => renderMatrix());
+  // Second-consonant insert: turns "C + vowel sign" into "C + conjoiner +
+  // secondConsonant + vowel sign" (e.g. KA row + "KA" selected = kka, kki, kku...
+  // across every column at once) - so a whole conjunct+vowel-sign row can be
+  // scanned in one go instead of looking up each cell individually in the
+  // Conjunct Matrix. Options/codepoints are read off the syllable matrix's own
+  // data (each row's "(inherent)" cell is just that row's own consonant
+  // codepoint) rather than duplicated; the conjoiner codepoint comes from
+  // DATA.conjunctMatrix, which is always present regardless of script order.
+  let matrixCons2Choice = 'None'; // 'None' | a stripped consonant name, e.g. 'ra'
+  let matrixCons2Position = 'suffix'; // 'suffix' (row+added, e.g. "kkha") | 'prefix' (added+row, e.g. "khka")
+  let matrixShowBase = false; // when a cons2 is active, also show the plain (un-augmented) row alongside it
+  const MATRIX_CONJOINER_CP = DATA.conjunctMatrix.rows[0][0][1];
+  const MATRIX_CONS2_OPTIONS = {};
+  DATA.matrix.rows.forEach(r => { MATRIX_CONS2_OPTIONS[stripTutg(r.consonant)] = r.cells[0][0]; });
+  function applyMatrixCons2(cps) {
+    if (matrixCons2Choice === 'None') return cps;
+    const cp2 = MATRIX_CONS2_OPTIONS[matrixCons2Choice];
+    if (matrixCons2Position === 'prefix') {
+      // added consonant goes first (e.g. row=KA, added=KHA -> "khka")
+      return [cp2, MATRIX_CONJOINER_CP, cps[0]].concat(cps.slice(1));
+    }
+    // added consonant goes second (e.g. row=KA, added=KHA -> "kkha")
+    return [cps[0], MATRIX_CONJOINER_CP, cp2].concat(cps.slice(1));
+  }
+  // Mark only (no cons2 insert) - used for the plain base row when "Show base"
+  // is on, so that row reflects the mark choice but not the added consonant.
+  function applyMatrixMarkOnly(cps) {
     if (matrixMarkChoice === 'None') return cps;
     const mark = DATA.matrix.markOptions[matrixMarkChoice];
     return mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+  }
+  function applyMatrixMark(cps) {
+    return applyMatrixMarkOnly(applyMatrixCons2(cps));
   }
   function renderMatrixMarkSelect() {
     const wrap = document.getElementById('matrix-mark-select');
@@ -791,37 +934,177 @@
       wrap.appendChild(chip);
     });
   }
+  // Every consonant gets its own button (not just ra/ya/va) - easier to click
+  // than opening a dropdown 36 times. Wrapped into fixed-size rows of 10 rather
+  // than left to natural flex-wrap, so the grouping stays the same regardless of
+  // window width.
+  function renderMatrixCons2Quick() {
+    const wrap = document.getElementById('matrix-cons2-quick');
+    wrap.innerHTML = '';
+    const names = Object.keys(MATRIX_CONS2_OPTIONS);
+    const CHUNK = 10;
+    for (let i = 0; i < names.length; i += CHUNK) {
+      const rowEl = document.createElement('div');
+      rowEl.style.display = 'flex';
+      rowEl.style.flexWrap = 'wrap';
+      rowEl.style.gap = '6px';
+      rowEl.style.marginBottom = '4px';
+      names.slice(i, i + CHUNK).forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (matrixCons2Choice === key ? ' active' : '');
+        chip.textContent = '+' + key;
+        chip.onclick = () => {
+          matrixCons2Choice = (matrixCons2Choice === key ? 'None' : key);
+          renderMatrix();
+        };
+        rowEl.appendChild(chip);
+      });
+      wrap.appendChild(rowEl);
+    }
+  }
+  // Whether the added consonant goes after the row's own consonant ("kkha") or
+  // before it ("khka") - same added consonant, opposite reading order.
+  function renderMatrixCons2Position() {
+    const wrap = document.getElementById('matrix-cons2-position');
+    wrap.innerHTML = '';
+    [['suffix', 'row+cons'], ['prefix', 'cons+row']].forEach(([key, label]) => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (matrixCons2Position === key ? ' active' : '');
+      chip.textContent = label;
+      chip.onclick = () => { matrixCons2Position = key; renderMatrix(); };
+      wrap.appendChild(chip);
+    });
+  }
+  // When a cons2 is active, shows the original (un-augmented) row alongside the
+  // augmented one instead of replacing it - e.g. row KA with cons2 "ka" active
+  // shows both the plain "KA" row and a "KA+ka" row underneath. In Collapse
+  // view this becomes two flowing-text lines instead of two rows; in Transposed
+  // view (where a row is a vowel sign, not a consonant) it doubles COLUMNS
+  // instead - each consonant gets a base column and an augmented column.
+  function renderMatrixShowBaseToggle() {
+    const wrap = document.getElementById('matrix-cons2-showbase');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (matrixShowBase ? ' active' : '');
+    chip.textContent = 'Show base: ' + (matrixShowBase ? 'On' : 'Off');
+    chip.onclick = () => { matrixShowBase = !matrixShowBase; renderMatrix(); };
+    wrap.appendChild(chip);
+  }
   function renderMatrix() {
     renderMatrixMarkSelect();
+    renderMatrixCons2Quick();
+    renderMatrixCons2Position();
+    renderMatrixShowBaseToggle();
     const m = DATA.matrix;
     const table = document.getElementById('matrix-table');
     const rowIdxs = m.rows.map((r, i) => i).filter(i => matrixConsDropdown.selected.has(stripTutg(m.rows[i].consonant)));
     const colIdxs = m.vowelSignLabels.map((l, i) => i).filter(i => matrixVowelDropdown.selected.has(m.vowelSignLabels[i]));
-    let html = '<thead><tr>';
+    const collapsed = matrixCollapse.mode !== 'grid';
+    const sep = matrixCollapse.mode === 'collapse-space' ? ' ' : '';
+    let html = '';
+    if (!collapsed) html += '<thead><tr>';
     if (!matrixTransposed) {
-      html += '<th>consonant \\ sign</th>';
-      colIdxs.forEach(ci => { html += `<th>${m.vowelSignLabels[ci]}</th>`; });
-      html += '</tr></thead><tbody>';
+      if (!collapsed) {
+        html += '<th>consonant \\ sign</th>';
+        colIdxs.forEach(ci => { html += `<th>${m.vowelSignLabels[ci]}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      const showBaseActive = matrixShowBase && matrixCons2Choice !== 'None';
+      const augLabelFor = name => matrixCons2Position === 'prefix' ? matrixCons2Choice + '+' + name : name + '+' + matrixCons2Choice;
       rowIdxs.forEach(ri => {
         const row = m.rows[ri];
-        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(row.consonant)}</th>`;
-        colIdxs.forEach(ci => {
-          html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
-        });
-        html += '</tr>';
+        const name = stripTutg(row.consonant);
+        if (collapsed) {
+          if (showBaseActive) {
+            // base line, no cons2 applied
+            html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMarkOnly(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+            // augmented line, cons2 applied
+            html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(name)}</th>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+          } else {
+            html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+          }
+        } else if (showBaseActive) {
+          // plain base row, no cons2 applied
+          html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
+          colIdxs.forEach(ci => {
+            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          });
+          html += '</tr>';
+          // augmented row, cons2 applied
+          html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(name)}</th>`;
+          colIdxs.forEach(ci => {
+            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          });
+          html += '</tr>';
+        } else {
+          html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
+          colIdxs.forEach(ci => {
+            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          });
+          html += '</tr>';
+        }
       });
     } else {
-      html += '<th>sign \\ consonant</th>';
-      rowIdxs.forEach(ri => { html += `<th>${stripTutg(m.rows[ri].consonant)}</th>`; });
-      html += '</tr></thead><tbody>';
-      colIdxs.forEach(ci => {
-        html += `<tr><th class="label" style="background:var(--card-bg);">${m.vowelSignLabels[ci]}</th>`;
+      // Transposed: rows are vowel signs, columns are consonants - "Show base"
+      // can't double rows here (a row isn't one consonant), so it doubles
+      // COLUMNS instead: each consonant gets a base column and an augmented
+      // column side by side, instead of a base+augmented row pair.
+      const showBaseActive = matrixShowBase && matrixCons2Choice !== 'None';
+      const augLabelFor = name => matrixCons2Position === 'prefix' ? matrixCons2Choice + '+' + name : name + '+' + matrixCons2Choice;
+      if (!collapsed) {
+        html += '<th>sign \\ consonant</th>';
         rowIdxs.forEach(ri => {
-          html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          const name = stripTutg(m.rows[ri].consonant);
+          if (showBaseActive) {
+            html += `<th>${name}</th><th>${augLabelFor(name)}</th>`;
+          } else {
+            html += `<th>${name}</th>`;
+          }
         });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      colIdxs.forEach(ci => {
+        const signLabel = m.vowelSignLabels[ci];
+        if (collapsed) {
+          if (showBaseActive) {
+            // base sweep across all consonants, no cons2 applied
+            html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMarkOnly(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+            // augmented sweep, cons2 applied
+            html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(signLabel)}</th>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+          } else {
+            html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+          }
+          return;
+        }
+        html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
+        if (showBaseActive) {
+          rowIdxs.forEach(ri => {
+            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          });
+        } else {
+          rowIdxs.forEach(ri => {
+            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+          });
+        }
         html += '</tr>';
       });
     }
+    html += '</tbody>';
     table.innerHTML = html;
     setSize(document.getElementById('size-slider').value);
   }
@@ -838,12 +1121,31 @@
   let conjMatrixTransposed = false;
   let conjMatrixVowelChoice = 'None';  // 'None' | a key in CM.vowelSignOptions
   let conjMatrixMarkChoice = 'None';   // 'None' | a key in CM.markOptions
+  let conjMatrixSuffixChoice = 'None'; // 'None' | 'RA' | 'YA' | 'VA' - third consonant appended via conjoiner
+  let conjMatrixGuideOn = true; // master on/off for the gu|pga reference guide
   const CM = DATA.conjunctMatrix;
   const conjMatrixC1Dropdown = createFilterDropdown('conjmatrix-c1-filter', CM.consonants.map(stripTutg), 'C1', () => renderConjMatrix());
   const conjMatrixC2Dropdown = createFilterDropdown('conjmatrix-c2-filter', CM.consonants.map(stripTutg), 'C2', () => renderConjMatrix());
-  function conjMatrixCells(baseCps) {
+  const conjMatrixCollapse = makeCollapseButtons('conjmatrix-collapse-select', () => renderConjMatrix());
+  // RA/YA/VA's own codepoint and the conjoiner's, both read off any row/cell of
+  // the existing C1xC2 data rather than duplicated as new fields - every cell's
+  // first element is that row's C1 codepoint, and every cell's second element is
+  // always the conjoiner, regardless of which row/column it came from.
+  const conjMatrixC1Names = CM.consonants.map(stripTutg);
+  const CONJOINER_CP = CM.rows[0][0][1];
+  const SUFFIX_CONS_OPTIONS = {
+    'RA': CM.rows[conjMatrixC1Names.indexOf('ra')][0][0],
+    'YA': CM.rows[conjMatrixC1Names.indexOf('ya')][0][0],
+    'VA': CM.rows[conjMatrixC1Names.indexOf('va')][0][0],
+  };
+  function conjMatrixCells(baseCps, vowelKeyOverride) {
     let cps = baseCps;
-    if (conjMatrixVowelChoice !== 'None') cps = cps.concat([CM.vowelSignOptions[conjMatrixVowelChoice]]);
+    const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : conjMatrixVowelChoice;
+    // Third-consonant suffix (e.g. K+K+RA = "kkra") goes right after the C1+C2
+    // pair, before any vowel-sign suffix - the vowel sign always lands on
+    // whichever consonant is last in the cluster.
+    if (conjMatrixSuffixChoice !== 'None') cps = cps.concat([CONJOINER_CP, SUFFIX_CONS_OPTIONS[conjMatrixSuffixChoice]]);
+    if (vowelKey !== 'None') cps = cps.concat([CM.vowelSignOptions[vowelKey]]);
     if (conjMatrixMarkChoice !== 'None') {
       const mark = CM.markOptions[conjMatrixMarkChoice];
       cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
@@ -872,37 +1174,158 @@
       wrap.appendChild(chip);
     });
   }
+  // Quick one-click access to the 4 most-checked vowel signs (U/UU/Vocalic R/RR)
+  // alongside the full dropdown - clicking toggles that sign on/off (off = back
+  // to "None") instead of opening the dropdown and picking it every time.
+  function renderConjMatrixVowelQuick() {
+    const wrap = document.getElementById('conjmatrix-vowel-quick');
+    wrap.innerHTML = '';
+    ['U', 'UU', 'Vocalic R', 'Vocalic RR'].forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (conjMatrixVowelChoice === key ? ' active' : '');
+      chip.textContent = key;
+      chip.onclick = () => {
+        conjMatrixVowelChoice = (conjMatrixVowelChoice === key ? 'None' : key);
+        vowelSelectEl.value = conjMatrixVowelChoice;
+        renderConjMatrix();
+      };
+      wrap.appendChild(chip);
+    });
+  }
+  // Quick one-click restrict of C2 to just RA/VA/YA (their combining forms as the
+  // second member of a conjunct) instead of picking them one-by-one in the C2
+  // filter dropdown - toggles back to "All" if clicked while already active.
+  // Quick one-click third-consonant suffix (RA/YA/VA appended via conjoiner onto
+  // whatever C1+C2 pair is showing, e.g. K+K+RA = "kkra", P+P+RA = "ppra",
+  // S+T+YA = "stya") - same single-select toggle pattern as the vowel-sign quick
+  // chips above, just appending a consonant instead of a vowel sign.
+  function renderConjMatrixSuffixQuick() {
+    const wrap = document.getElementById('conjmatrix-suffix-quick');
+    wrap.innerHTML = '';
+    ['RA', 'YA', 'VA'].forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (conjMatrixSuffixChoice === key ? ' active' : '');
+      chip.textContent = '+' + key;
+      chip.onclick = () => {
+        conjMatrixSuffixChoice = (conjMatrixSuffixChoice === key ? 'None' : key);
+        renderConjMatrix();
+      };
+      wrap.appendChild(chip);
+    });
+  }
+  // Cell shows a 3-way comparison instead of just the final combination when
+  // CONJMATRIX_DECOMPOSE_VOWELS.has(conjMatrixVowelChoice) (declared near
+  // ENDING_TOKEN above) - so a broken or missing ligature is obvious at a
+  // glance against its own reference shapes, across the whole matrix at once:
+  //   [C2 + vowel alone]  |  [C1 + C2 bare stack]
+  //   [C1 + C2 + vowel - the actual combination, with any suffix/mark applied]
+  function conjMatrixCellHTML(ri, ci, vowelKeyOverride) {
+    const baseCps = CM.rows[ri][ci]; // [c1cp, conjoiner, c2cp]
+    const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : conjMatrixVowelChoice;
+    const full = conjMatrixCells(baseCps, vowelKey).map(cp => S(cp)).join('');
+    if (!conjMatrixGuideOn || !CONJMATRIX_DECOMPOSE_VOWELS.has(vowelKey)) return full;
+    const vsCp = CM.vowelSignOptions[vowelKey];
+    const c2cp = baseCps[baseCps.length - 1];
+    const vowelAlone = [c2cp, vsCp].map(cp => S(cp)).join('');
+    const bareStack = baseCps.map(cp => S(cp)).join('');
+    return `<div class="conjref-row"><span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span></div><div class="conjref-main">${full}</div>`;
+  }
+  function renderConjMatrixGuideToggle() {
+    const wrap = document.getElementById('conjmatrix-guide-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (conjMatrixGuideOn ? ' active' : '');
+    chip.textContent = 'Guide: ' + (conjMatrixGuideOn ? 'On' : 'Off');
+    chip.onclick = () => { conjMatrixGuideOn = !conjMatrixGuideOn; renderConjMatrix(); };
+    wrap.appendChild(chip);
+  }
+  // Shows the bare row plus U/UU/Vocalic R/Vocalic RR stacked underneath it
+  // (ignoring whatever single vowel sign is currently picked), so all 4 of the
+  // "below+ligating" signs can be compared at once for every C1xC2 pair - same
+  // scope as the Syllable Matrix's "Show base" (normal grid view only, not
+  // Transposed or Collapse, since "row" only cleanly means one C1 there).
+  let conjMatrixShowAllVowels = false;
+  function renderConjMatrixShowAllToggle() {
+    const wrap = document.getElementById('conjmatrix-showall-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (conjMatrixShowAllVowels ? ' active' : '');
+    chip.textContent = 'Show U/UU/R/RR: ' + (conjMatrixShowAllVowels ? 'On' : 'Off');
+    chip.onclick = () => { conjMatrixShowAllVowels = !conjMatrixShowAllVowels; renderConjMatrix(); };
+    wrap.appendChild(chip);
+  }
+  const CONJMATRIX_SHOWALL_ROWS = [['(base)', 'None'], ['U', 'U'], ['UU', 'UU'], ['Vocalic R', 'Vocalic R'], ['Vocalic RR', 'Vocalic RR']];
   function renderConjMatrix() {
     renderConjMatrixMarkSelect();
+    renderConjMatrixVowelQuick();
+    renderConjMatrixSuffixQuick();
+    renderConjMatrixGuideToggle();
+    renderConjMatrixShowAllToggle();
     const table = document.getElementById('conjmatrix-table');
     // c1Idxs/c2Idxs are bound to C1/C2 semantically, same reasoning as the
     // syllable matrix above - stay meaningful across a transpose.
     const c1Idxs = CM.consonants.map((n, i) => i).filter(i => conjMatrixC1Dropdown.selected.has(stripTutg(CM.consonants[i])));
     const c2Idxs = CM.consonants.map((n, i) => i).filter(i => conjMatrixC2Dropdown.selected.has(stripTutg(CM.consonants[i])));
-    let html = '<thead><tr>';
+    const collapsed = conjMatrixCollapse.mode !== 'grid';
+    const sep = conjMatrixCollapse.mode === 'collapse-space' ? ' ' : '';
+    let html = '';
+    if (!collapsed) html += '<thead><tr>';
     if (!conjMatrixTransposed) {
-      html += '<th>C1 \\ C2</th>';
-      c2Idxs.forEach(ci => { html += `<th>${stripTutg(CM.consonants[ci])}</th>`; });
-      html += '</tr></thead><tbody>';
+      if (!collapsed) {
+        html += '<th>C1 \\ C2</th>';
+        c2Idxs.forEach(ci => { html += `<th>${stripTutg(CM.consonants[ci])}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      const showAll = !collapsed && conjMatrixShowAllVowels;
       c1Idxs.forEach(ri => {
-        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(CM.consonants[ri])}</th>`;
-        c2Idxs.forEach(ci => {
-          html += `<td class="rendered tigalari">${conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')}</td>`;
-        });
-        html += '</tr>';
+        const c1Name = stripTutg(CM.consonants[ri]);
+        if (collapsed) {
+          html += `<tr><th class="label" style="background:var(--card-bg);">${c1Name}</th>`;
+          html += `<td class="rendered tigalari">${c2Idxs.map(ci => conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+          html += '</tr>';
+        } else if (showAll) {
+          CONJMATRIX_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+            const rowLabel = vowelKey === 'None' ? c1Name : c1Name + ' + ' + label;
+            html += `<tr><th class="label" style="background:var(--card-bg);">${rowLabel}</th>`;
+            c2Idxs.forEach(ci => {
+              const cell = conjMatrixCellHTML(ri, ci, vowelKey);
+              // The base row has no guide wrapper (conjMatrixCellHTML returns
+              // plain text for it), so it'd default to left-aligned like a
+              // normal cell - wrap it in conjref-main too so it centers the
+              // same way the U/UU/R/RR rows below it do.
+              html += `<td class="rendered tigalari">${vowelKey === 'None' ? `<div class="conjref-main">${cell}</div>` : cell}</td>`;
+            });
+            html += '</tr>';
+          });
+        } else {
+          html += `<tr><th class="label" style="background:var(--card-bg);">${c1Name}</th>`;
+          c2Idxs.forEach(ci => {
+            html += `<td class="rendered tigalari">${conjMatrixCellHTML(ri, ci)}</td>`;
+          });
+          html += '</tr>';
+        }
       });
     } else {
-      html += '<th>C2 \\ C1</th>';
-      c1Idxs.forEach(ri => { html += `<th>${stripTutg(CM.consonants[ri])}</th>`; });
-      html += '</tr></thead><tbody>';
+      if (!collapsed) {
+        html += '<th>C2 \\ C1</th>';
+        c1Idxs.forEach(ri => { html += `<th>${stripTutg(CM.consonants[ri])}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
       c2Idxs.forEach(ci => {
         html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(CM.consonants[ci])}</th>`;
-        c1Idxs.forEach(ri => {
-          html += `<td class="rendered tigalari">${conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')}</td>`;
-        });
+        if (collapsed) {
+          html += `<td class="rendered tigalari">${c1Idxs.map(ri => conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+        } else {
+          c1Idxs.forEach(ri => {
+            html += `<td class="rendered tigalari">${conjMatrixCellHTML(ri, ci)}</td>`;
+          });
+        }
         html += '</tr>';
       });
     }
+    html += '</tbody>';
     table.innerHTML = html;
     setSize(document.getElementById('size-slider').value);
   }
@@ -952,17 +1375,24 @@
     return [...groups.entries()].sort((a, b) => a[0] - b[0]);
   }
 
-  const conjListVowelSelectEl = document.getElementById('conjlist-vowel-select');
-  ['None'].concat(Object.keys(CONJUNCT_LISTS.vowelSignOptions)).forEach(key => {
-    const opt = document.createElement('option');
-    opt.value = key;
-    opt.textContent = key === 'None' ? 'Ending: None (inherent)' : key;
-    conjListVowelSelectEl.appendChild(opt);
-  });
-  conjListVowelSelectEl.addEventListener('change', () => {
-    conjListVowelChoice = conjListVowelSelectEl.value;
-    renderConjList();
-  });
+  // Quick one-click access to the 4 "below+ligating" endings (same set the 3-way
+  // decomposition applies to) alongside the full dropdown - same pattern as the
+  // Conjunct Matrix's vowel quick chips.
+  function renderConjListVowelQuick() {
+    const wrap = document.getElementById('conjlist-vowel-quick');
+    wrap.innerHTML = '';
+    ['U', 'UU', 'Vocalic R', 'Vocalic RR'].forEach(key => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (conjListVowelChoice === key ? ' active' : '');
+      chip.textContent = key;
+      chip.onclick = () => {
+        conjListVowelChoice = (conjListVowelChoice === key ? 'None' : key);
+        conjListVowelSelectEl.value = conjListVowelChoice;
+        renderConjList();
+      };
+      wrap.appendChild(chip);
+    });
+  }
   function renderConjListMarkSelect() {
     const wrap = document.getElementById('conjlist-mark-select');
     wrap.innerHTML = '';
@@ -993,9 +1423,13 @@
   }
   function renderConjList() {
     renderConjListMarkSelect();
+    renderConjListVowelQuick();
+    renderConjListGuideToggle();
     renderConjListAnnCheckboxes();
     const body = document.getElementById('conjlist-body');
     body.innerHTML = '';
+    const collapsed = conjListCollapse.mode !== 'grid';
+    const sep = conjListCollapse.mode === 'collapse-space' ? ' ' : '';
     CONJUNCT_LISTS.counts.forEach(c => {
       const sectionHeading = document.createElement('div');
       sectionHeading.className = 'count-note';
@@ -1006,32 +1440,69 @@
         const heading = document.createElement('div');
         heading.className = 'count-note';
         heading.textContent = 'Ending in ' + (CONSONANT_NAME_BY_CP[finalCp] || S(finalCp)) + ' (' + items.length + ')';
-        const rowWrap = document.createElement('div');
-        rowWrap.className = 'sampletext-passage tigalari';
-        rowWrap.style.marginBottom = '18px';
-        items.forEach(item => {
-          const block = document.createElement('span');
-          block.className = 'word-block';
-          if (conjListAnnModes.has('iast')) {
-            const ann = document.createElement('span');
-            ann.className = 'ann';
-            ann.textContent = itemIastText(item);
-            block.appendChild(ann);
-          }
-          if (conjListAnnModes.has('kannada')) {
-            const ann = document.createElement('span');
-            ann.className = 'ann';
-            ann.textContent = itemKannadaText(item);
-            block.appendChild(ann);
-          }
-          const word = document.createElement('span');
-          word.className = 'word';
-          word.textContent = itemTigalariText(item);
-          block.appendChild(word);
-          rowWrap.appendChild(block);
-        });
         body.appendChild(heading);
-        body.appendChild(rowWrap);
+        if (collapsed) {
+          const line = document.createElement('div');
+          line.className = 'collapsed-line tigalari';
+          line.style.marginBottom = '18px';
+          line.textContent = items.map(item => itemTigalariText(item)).join(sep);
+          body.appendChild(line);
+        } else {
+          const rowWrap = document.createElement('div');
+          rowWrap.className = 'sampletext-passage tigalari';
+          rowWrap.style.marginBottom = '18px';
+          items.forEach(item => {
+            const block = document.createElement('span');
+            block.className = 'word-block card';
+            if (conjListAnnModes.has('iast')) {
+              const ann = document.createElement('span');
+              ann.className = 'ann';
+              ann.textContent = itemIastText(item);
+              block.appendChild(ann);
+            }
+            if (conjListAnnModes.has('kannada')) {
+              const ann = document.createElement('span');
+              ann.className = 'ann';
+              ann.textContent = itemKannadaText(item);
+              block.appendChild(ann);
+            }
+            // Same 3-way U/UU/Vocalic-R/RR decomposition as the Conjunct Matrix:
+            // [final consonant + vowel alone] | [bare cluster, no ending] above
+            // the actual full item - so a broken/missing ligature is visible
+            // against its own reference shapes here too.
+            const showVowelRef = conjListGuideOn && CONJMATRIX_DECOMPOSE_VOWELS.has(conjListVowelChoice);
+            // For plain (no ending) 3-consonant clusters specifically, show the
+            // two overlapping 2-consonant sub-stacks instead - e.g. "abc" ->
+            // "ab | bc" - so a 3-way stack can be checked against its own
+            // adjacent pairs, which is what it's actually built from.
+            const showPairRef = conjListGuideOn && !showVowelRef && c.n === 3;
+            const showRef = showVowelRef || showPairRef;
+            if (showVowelRef) {
+              const vsCp = CONJUNCT_LISTS.vowelSignOptions[conjListVowelChoice];
+              const finalCp = item.tigalariCps[item.tigalariCps.length - 1];
+              const vowelAlone = [finalCp, vsCp].map(cp => S(cp)).join('');
+              const bareStack = item.tigalariCps.map(cp => S(cp)).join('');
+              const refRow = document.createElement('div');
+              refRow.className = 'conjref-row';
+              refRow.innerHTML = `<span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span>`;
+              block.appendChild(refRow);
+            } else if (showPairRef) {
+              const cps = item.tigalariCps; // [c1, conjoiner, c2, conjoiner, c3]
+              const ab = cps.slice(0, 3).map(cp => S(cp)).join('');
+              const bc = cps.slice(2, 5).map(cp => S(cp)).join('');
+              const refRow = document.createElement('div');
+              refRow.className = 'conjref-row';
+              refRow.innerHTML = `<span class="conjref">${ab}</span><span class="conjref-sep">|</span><span class="conjref">${bc}</span>`;
+              block.appendChild(refRow);
+            }
+            const word = document.createElement('span');
+            word.className = showRef ? 'word conjref-main' : 'word';
+            word.textContent = itemTigalariText(item);
+            block.appendChild(word);
+            rowWrap.appendChild(block);
+          });
+          body.appendChild(rowWrap);
+        }
       });
     });
     setSize(document.getElementById('size-slider').value);
@@ -1103,18 +1574,33 @@
   // marks: vowels x svaras, and consonants x all 4 marks (mark = row)
   function renderMarkGrid(tableId, grid) {
     const table = document.getElementById(tableId);
-    let html = '<thead><tr><th>mark \\ base</th>';
-    grid.colLabels.forEach(name => { html += `<th>${stripTutg(name)}</th>`; });
-    html += '</tr></thead><tbody>';
+    const collapsed = marksCollapse.mode !== 'grid';
+    const sep = marksCollapse.mode === 'collapse-space' ? ' ' : '';
+    let html = '';
+    if (!collapsed) {
+      html += '<thead><tr><th>mark \\ base</th>';
+      grid.colLabels.forEach(name => { html += `<th>${stripTutg(name)}</th>`; });
+      html += '</tr></thead>';
+    }
+    html += '<tbody>';
     grid.rowLabels.forEach((label, ri) => {
       html += `<tr><th class="label" style="background:var(--card-bg);">${label}</th>`;
-      grid.cells[ri].forEach(cps => {
-        html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
-      });
+      if (collapsed) {
+        html += `<td class="rendered tigalari">${grid.cells[ri].map(cps => cps.map(cp => S(cp)).join('')).join(sep)}</td>`;
+      } else {
+        grid.cells[ri].forEach(cps => {
+          html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+        });
+      }
       html += '</tr>';
     });
+    html += '</tbody>';
     table.innerHTML = html;
   }
+  const marksCollapse = makeCollapseButtons('marks-collapse-select', () => {
+    renderMarkGrid('mark-vowel-table', DATA.markVowelGrid);
+    renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid);
+  });
   renderMarkGrid('mark-vowel-table', DATA.markVowelGrid);
   renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid);
 

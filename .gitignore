@@ -4,3 +4,6 @@
 # Timestamped safety backups made before batch UFO edits - git itself is the
 # backup mechanism now that this is a repo; see README.md for the build pipeline.
 Ikshu-Regular.ufo.backup-*/
+
+# Python bytecode cache - regenerated locally, never meant to be tracked.
+__pycache__/

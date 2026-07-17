@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rra-tutg.below" format="2">
   <anchor x="-13.7" y="-795.9" name="bottom"/>
+  <anchor x="-13.7" y="-185.4" name="_bottom"/>
   <outline>
     <component base="rra-tutg" xScale="0.863" yScale="0.863" xOffset="-399" yOffset="-733" identifier="57406156"/>
   </outline>
@@ -18,6 +19,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

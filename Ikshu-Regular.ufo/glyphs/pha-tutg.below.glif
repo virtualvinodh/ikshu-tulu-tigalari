@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="pha-tutg.below" format="2">
   <anchor x="-102.3" y="-752.9" name="bottom"/>
+  <anchor x="-102.3" y="-185.1" name="_bottom"/>
   <outline>
     <component base="pha-tutg" xScale="0.863" yScale="0.863" xOffset="-520" yOffset="-677" identifier="ACE3A825"/>
   </outline>
@@ -18,6 +19,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

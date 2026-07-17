@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="la-tutg.below" format="2">
   <anchor x="-0.3" y="-740.8" name="bottom"/>
+  <anchor x="-0.3" y="-184.2" name="_bottom"/>
   <outline>
     <component base="la-tutg" xScale="0.863" yScale="0.863" xOffset="-286" yOffset="-677" identifier="9157DFA6"/>
   </outline>
@@ -18,6 +19,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

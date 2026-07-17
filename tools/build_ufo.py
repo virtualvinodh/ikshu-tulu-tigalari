@@ -14,12 +14,24 @@ project's history) before touching anything, then runs, in order:
   2. fix_guillemet_duplicate_cmap.py  - cmap fix (idempotent)
   3. fix_unicode_mappings.py          - cmap fix (idempotent)
   4. generate_anchors.py      - GPOS anchors (idempotent/upsert-based)
-  5. generate_akhn_feature.py - tutg_akhn.fea + tutg_akhn_rules.json (regenerated
+  5. classify_blwf_marks.py   - classifies every ".below" glyph (blwf's fallback
+                                 output, except ya-tutg.below) as GDEF Mark and gives
+                                 it a _bottom anchor, so it actually snaps under the
+                                 preceding consonant instead of sitting at normal
+                                 advance-width position (idempotent/upsert-based,
+                                 same pattern as generate_anchors.py)
+  6. generate_akhn_feature.py - tutg_akhn.fea + tutg_akhn_rules.json (regenerated
                                  fresh every run; not a UFO write)
-  6. merge_features.py        - merges tutg_akhn.fea into features.fea (has its own
+  7. merge_akhn_feature.py    - merges tutg_akhn.fea into features.fea (has its own
                                  idempotency guard - skips if already merged, so
                                  this pipeline is safe to run on its own output too)
-  7. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
+  8. generate_blwf_feature.py - tutg_blwf.fea + BLWF_TODO.md (regenerated fresh
+                                 every run; not a UFO write)
+  9. merge_blwf_feature.py    - merges tutg_blwf.fea into features.fea, right after
+                                 the akhn block (own idempotency guard, same pattern
+                                 as merge_akhn_feature.py - must run after it, see
+                                 that script's docstring)
+  10. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
 
 Everything else in tools/ (extract_stacking_offsets.py, extract_vowel_sign_offsets.py,
 document_vowel_variant_choice.py, generate_gsub_rules.py, _selfcheck_render.py) is
@@ -41,8 +53,11 @@ STEPS = [
     "fix_guillemet_duplicate_cmap.py",
     "fix_unicode_mappings.py",
     "generate_anchors.py",
+    "classify_blwf_marks.py",
     "generate_akhn_feature.py",
-    "merge_features.py",
+    "merge_akhn_feature.py",
+    "generate_blwf_feature.py",
+    "merge_blwf_feature.py",
     "remove_stub_numeral_features.py",
 ]
 

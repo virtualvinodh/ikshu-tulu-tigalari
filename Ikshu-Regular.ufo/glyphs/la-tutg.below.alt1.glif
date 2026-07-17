@@ -3,6 +3,7 @@
   <advance width="50"/>
   <guideline x="428" y="-251" angle="0"/>
   <anchor x="10.5" y="-282" name="bottom"/>
+  <anchor x="10.5" y="58" name="_bottom"/>
   <outline>
     <contour>
       <point x="-170" y="-232" type="curve" smooth="yes"/>
@@ -59,6 +60,8 @@
       <string>2025-02-26 10:08:02 +0000</string>
       <key>public.markColor</key>
       <string>0,0.2,0.88,1</string>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

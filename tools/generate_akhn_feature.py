@@ -151,17 +151,15 @@ for category in ("conjunct_ligature", "vowel_sign_ligature"):
 
 for base_key, info in by_base.items():
     if info["default"] is None:
-        # No bare glyph exists for this input sequence - if there's exactly one
-        # ".below"-suffixed variant, it's not really an "alternate" of a default
-        # that doesn't exist, it's the only glyph for this combination (e.g.
-        # ha_ra-tutg.below with no bare ha_ra-tutg) - treat it as the default.
-        below_only = [a for a in info["alts"] if a.endswith(".below")]
-        if len(info["alts"]) == 1 and below_only:
-            info["default"] = below_only[0]
-            info["alts"] = []
-        else:
-            skipped_unparsed.extend(info["alts"])
-            continue
+        # No bare glyph exists for this input sequence. A lone ".below"-suffixed
+        # variant used to get silently promoted to serve as the default here (e.g.
+        # ha_ra-tutg.below standing in for a bare ha_ra-tutg that doesn't exist) -
+        # removed 2026-07-17: confirmed these are below-base-only construction
+        # pieces, not stand-ins for the real bare ligature. The real ha_ra-tutg /
+        # pa_ra-tutg glyphs are genuinely missing artwork that needs to be drawn,
+        # not auto-substituted - see GSUB_TODO.md item 12. Skip and report instead.
+        skipped_unparsed.extend(info["alts"])
+        continue
     seq = build_input_sequence(info["resolved"])
     rules.append((seq, info["default"]))
     if info["alts"]:

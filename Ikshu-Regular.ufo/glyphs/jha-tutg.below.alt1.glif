@@ -2,6 +2,7 @@
 <glyph name="jha-tutg.below.alt1" format="2">
   <advance width="50"/>
   <anchor x="4.9" y="-739.9" name="bottom"/>
+  <anchor x="4.9" y="-186.8" name="_bottom"/>
   <outline>
     <component base="jha-tutg.alt1" xScale="0.8585" yScale="0.8585" xOffset="-636" yOffset="-677" identifier="4FC823DF"/>
   </outline>
@@ -19,6 +20,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

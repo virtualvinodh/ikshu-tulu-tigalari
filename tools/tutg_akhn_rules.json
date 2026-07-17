@@ -1407,14 +1407,6 @@
     "input": [
       "ha-tutg",
       "conjoiner-tutg",
-      "ra-tutg"
-    ],
-    "output": "ha_ra-tutg.below"
-  },
-  {
-    "input": [
-      "ha-tutg",
-      "conjoiner-tutg",
       "ya-tutg"
     ],
     "output": "ha_ya-tutg"
@@ -1962,14 +1954,6 @@
       "pa-tutg"
     ],
     "output": "pa_pa-tutg"
-  },
-  {
-    "input": [
-      "pa-tutg",
-      "conjoiner-tutg",
-      "ra-tutg"
-    ],
-    "output": "pa_ra-tutg.below"
   },
   {
     "input": [

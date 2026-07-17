@@ -160,7 +160,6 @@ feature akhn {
         sub ga-tutg conjoiner-tutg ya-tutg by ga_ya-tutg;
         sub ha-tutg conjoiner-tutg ma-tutg by ha_ma-tutg;
         sub ha-tutg conjoiner-tutg na-tutg by ha_na-tutg;
-        sub ha-tutg conjoiner-tutg ra-tutg by ha_ra-tutg.below;
         sub ha-tutg conjoiner-tutg ya-tutg by ha_ya-tutg;
         sub ja-tutg conjoiner-tutg cha-tutg by ja_cha-tutg;
         sub ja-tutg conjoiner-tutg ja-tutg by ja_ja-tutg;
@@ -230,7 +229,6 @@ feature akhn {
         sub nya-tutg conjoiner-tutg ja-tutg by nya_ja-tutg;
         sub pa-tutg conjoiner-tutg cha-tutg by pa_cha-tutg;
         sub pa-tutg conjoiner-tutg pa-tutg by pa_pa-tutg;
-        sub pa-tutg conjoiner-tutg ra-tutg by pa_ra-tutg.below;
         sub pa-tutg conjoiner-tutg sa-tutg by pa_sa-tutg;
         sub pa-tutg conjoiner-tutg ta-tutg by pa_ta-tutg;
         sub pa-tutg conjoiner-tutg ya-tutg by pa_ya-tutg;
@@ -555,5 +553,7 @@ feature akhn {
 
 # --- Skipped: name doesn't cleanly decompose, needs manual rule (see GSUB_TODO.md) ---
 # ka_iMatra_dotreph-tutg
+# ha_ra-tutg.below
+# pa_ra-tutg.below
 
 # --- Skipped: explicitly excluded via gsub_ignore_list.json ---

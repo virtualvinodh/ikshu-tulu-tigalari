@@ -119,6 +119,7 @@ for label, glyph, position in ALL_FOUR_MARKS:
 # Indic_Positional_Category data, not something our font's GSUB controls at all.
 VOWEL_SIGN_COLUMNS = [
     ("(inherent)", None),
+    ("Halant", cp_of("virama-tutg")),
     ("AA", 0x113B8),
     ("I", 0x113B9),
     ("II", 0x113BA),
@@ -139,7 +140,6 @@ VOWEL_SIGN_COLUMNS = [
     ("Candrabindu", cp_of("candraanunasika-tutg")),
     ("Anusvara", cp_of("anusvara-tutg")),
     ("Visarga", cp_of("visarga-tutg")),
-    ("Halant", cp_of("virama-tutg")),
 ]
 matrix = {
     "vowelSignLabels": [label for label, _ in VOWEL_SIGN_COLUMNS],

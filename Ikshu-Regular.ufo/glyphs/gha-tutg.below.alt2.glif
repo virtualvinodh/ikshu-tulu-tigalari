@@ -2,6 +2,7 @@
 <glyph name="gha-tutg.below.alt2" format="2">
   <advance width="50"/>
   <anchor x="4.2" y="-739.1" name="bottom"/>
+  <anchor x="4.2" y="-185.1" name="_bottom"/>
   <outline>
     <component base="gha-tutg.alt2" xScale="0.863" yScale="0.863" xOffset="-486" yOffset="-677" identifier="73FB6C36"/>
   </outline>
@@ -19,6 +20,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

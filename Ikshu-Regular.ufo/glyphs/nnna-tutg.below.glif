@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="nnna-tutg.below" format="2">
   <anchor x="4.9" y="-736.9" name="bottom"/>
+  <anchor x="4.9" y="-181.7" name="_bottom"/>
   <outline>
     <component base="nna-tutg" xScale="0.8621" yScale="0.8621" xOffset="-518" yOffset="-674"/>
   </outline>
@@ -10,6 +11,8 @@
       <string>2025-02-26 10:08:02 +0000</string>
       <key>public.markColor</key>
       <string>0,0.2,0.88,1</string>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

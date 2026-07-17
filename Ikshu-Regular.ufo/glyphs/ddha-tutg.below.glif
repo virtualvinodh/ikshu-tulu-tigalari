@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ddha-tutg.below" format="2">
   <anchor x="-4.8" y="-739.9" name="bottom"/>
+  <anchor x="-4.8" y="-184.2" name="_bottom"/>
   <outline>
     <component base="ddha-tutg" xScale="0.863" yScale="0.863" xOffset="-470" yOffset="-677" identifier="F8316935"/>
   </outline>
@@ -18,6 +19,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

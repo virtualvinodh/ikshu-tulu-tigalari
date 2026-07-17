@@ -71,9 +71,12 @@ so if you're not sure what state the UFO is in, running it again is harmless.
 | 2 | `fix_guillemet_duplicate_cmap.py` | Clears a duplicate cmap entry (`guillemet*` vs `guillemot*`). |
 | 3 | `fix_unicode_mappings.py` | Adds cmap entries for 5 drawn-but-uncmapped characters. |
 | 4 | `generate_anchors.py` | Adds/updates GPOS mark-attachment anchors (`top`/`bottom`/`topright`/`bottomright` + their `_`-prefixed mark counterparts). |
-| 5 | `generate_akhn_feature.py` | Generates the `akhn` GSUB feature (conjunct/vowel-sign ligature rules) from glyph-name conventions → `tutg_akhn.fea` + `tutg_akhn_rules.json`. |
-| 6 | `merge_features.py` | Merges `tutg_akhn.fea` into `features.fea`. Has its own guard — skips if already merged. |
-| 7 | `remove_stub_numeral_features.py` | Strips incomplete `numr`/`dnom`/`frac` feature blocks. |
+| 5 | `classify_blwf_marks.py` | Classifies every `.below` glyph (`blwf`'s fallback output, except `ya-tutg.below`) as GDEF Mark and adds a `_bottom` anchor so it snaps under the preceding consonant. |
+| 6 | `generate_akhn_feature.py` | Generates the `akhn` GSUB feature (conjunct/vowel-sign ligature rules) from glyph-name conventions → `tutg_akhn.fea` + `tutg_akhn_rules.json`. |
+| 7 | `merge_akhn_feature.py` | Merges `tutg_akhn.fea` into `features.fea`. Has its own guard — skips if already merged. |
+| 8 | `generate_blwf_feature.py` | Generates the `blwf` GSUB feature (below-base form fallback for all 36 consonants) → `tutg_blwf.fea` + `BLWF_TODO.md`. |
+| 9 | `merge_blwf_feature.py` | Merges `tutg_blwf.fea` into `features.fea`, right after the `akhn` block. Has its own guard — skips if already merged. |
+| 10 | `remove_stub_numeral_features.py` | Strips incomplete `numr`/`dnom`/`frac` feature blocks. |
 
 **`compile_font.py`** — `fontmake` on the UFO → `.ttf`.
 

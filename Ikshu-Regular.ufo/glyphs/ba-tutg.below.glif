@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ba-tutg.below" format="2">
   <anchor x="-49.4" y="-752.9" name="bottom"/>
+  <anchor x="-49.4" y="-185.1" name="_bottom"/>
   <outline>
     <component base="ba-tutg" xScale="0.863" yScale="0.863" xOffset="-619" yOffset="-677" identifier="4005E58B"/>
   </outline>
@@ -18,6 +19,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>
