@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ikshu-Regular — Tulu-Tigalari</title>
+<meta name="description" content="Ikshu-Regular: a Tulu-Tigalari (tutg) OpenType font, with glyph proofing and browsing tools.">
+<style>
+  :root {
+    --bg: #f4f2ee;
+    --panel: #ffffff;
+    --border: #dcd6ca;
+    --text: #201d28;
+    --text-dim: #6b6577;
+    --accent: #4f8f7d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1820;
+      --panel: #242230;
+      --border: #3a3648;
+      --text: #e8e3d8;
+      --text-dim: #a49bb0;
+      --accent: #63ab97;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+  }
+  main { max-width: 640px; width: 100%; }
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: 1.8rem;
+    margin: 0 0 6px 0;
+  }
+  .subtitle { color: var(--text-dim); margin: 0 0 32px 0; font-size: 0.95rem; }
+  .card-list { display: flex; flex-direction: column; gap: 14px; }
+  a.card {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.1s ease;
+  }
+  a.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+  a.card .card-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 4px; }
+  a.card .card-desc { color: var(--text-dim); font-size: 0.9rem; }
+  footer { margin-top: 36px; color: var(--text-dim); font-size: 0.85rem; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ikshu-Regular</h1>
+  <p class="subtitle">An OpenType font for Tulu-Tigalari (script tag <code>tutg</code>).</p>
+
+  <div class="card-list">
+    <a class="card" href="glyph_test_page.html">
+      <div class="card-title">Glyph test page</div>
+      <div class="card-desc">Proofing tool: consonants, conjuncts, vowel signs, marks, sample texts, and a live-typing box — all rendered through the compiled font.</div>
+    </a>
+    <a class="card" href="glyph_viewer.html">
+      <div class="card-title">Glyph viewer</div>
+      <div class="card-desc">Searchable browser for every glyph in the font, with outlines, anchors, and component references.</div>
+    </a>
+    <a class="card" href="README.md">
+      <div class="card-title">Build pipeline (README)</div>
+      <div class="card-desc">How the UFO, GSUB/GPOS features, and these test pages are generated.</div>
+    </a>
+  </div>
+
+  <footer>
+    Source: <a href="https://github.com/virtualvinodh/ikshu-tulu-tigalari">github.com/virtualvinodh/ikshu-tulu-tigalari</a>
+  </footer>
+</main>
+</body>
+</html>
