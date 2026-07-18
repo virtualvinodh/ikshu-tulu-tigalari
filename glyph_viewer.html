@@ -311,15 +311,41 @@
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
+
+  /* Mobile: sidebar becomes a bottom panel instead of a left rail, same
+     reasoning as the main test page. The category list switches from a tall
+     single-column list to a wrapped row of chips so it doesn't eat the whole
+     panel height on a phone. */
+  @media (max-width: 760px) {
+    body { flex-direction: column; height: 100vh; }
+    #main { order: 1; width: 100%; padding: 16px 14px; }
+    #sidebar {
+      order: 2;
+      width: 100%;
+      min-width: 0;
+      max-height: 45vh;
+      gap: 10px;
+      padding: 12px 14px;
+      border-right: none;
+      border-top: 1px solid var(--border-dark);
+      flex-shrink: 0;
+    }
+    #sidebar-brand { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    #sidebar-brand h1 { font-size: 1rem; margin: 0; }
+    #sidebar-brand .subtitle { margin: 0; }
+    #categories { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+    .cat-chip { flex: 0 0 auto; }
+    #grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+  }
 </style>
 
 <div id="sidebar">
-  <div>
+  <div id="sidebar-brand">
     <h1>Tulu-Tigalari Glyphs</h1>
     <p class="subtitle">Ikshu-Regular &middot; <span id="total-count"></span> glyphs</p>
   </div>
   <input id="search" type="text" placeholder="Search glyph name&hellip;" autocomplete="off">
-  <div>
+  <div id="sidebar-categories">
     <div class="cat-label">Category</div>
     <div id="categories"></div>
   </div>
