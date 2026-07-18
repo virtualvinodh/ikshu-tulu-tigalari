@@ -98,6 +98,13 @@ Any consonant that turns out to have NO below-base glyph at all (neither the
 ".below" suffix nor a listed override) is reported in BLWF_TODO.md instead of
 silently skipped or guessed at - same principle as every other gap in this
 project's GSUB tooling.
+
+blwf_decompose_ignore_list.json (added 2026-07-18): hand-maintained, like
+gsub_ignore_list.json - ligature names that should NEVER get the vowel-sign
+decompose fix (see below), regardless of what the automated missing-compound
+check would otherwise say. E.g. ka_ssa-tutg (KSHA) - project owner confirmed it
+should stay as one recognizable conjunct rather than being decomposed back to
+KA+conjoiner+SSA before a vowel sign it happens to have no compound for.
 """
 import json
 import os
@@ -113,6 +120,8 @@ with open(os.path.join(HERE, "tutg_akhn_rules.json"), encoding="utf-8") as f:
     akhn_rules = json.load(f)
 with open(os.path.join(HERE, "names_override.json"), encoding="utf-8") as f:
     names_override = json.load(f)
+with open(os.path.join(HERE, "blwf_decompose_ignore_list.json"), encoding="utf-8") as f:
+    DECOMPOSE_IGNORE = json.load(f)
 
 
 def cp_of(name):
@@ -226,7 +235,11 @@ consonant_bases = {n[: -len("-tutg")] for n in consonants}
 decompose_rules = []         # (ligature_name, raw_input_seq, [missing_roots])
 decompose_no_input_seq = []  # has missing roots but no known akhn input sequence - can't decompose
 decompose_not_plain_last = []  # last "_"-token isn't a plain consonant name - see below
+decompose_ignored = []       # hand-excluded via blwf_decompose_ignore_list.json
 for lig in conjunct_ligs_default:
+    if lig in DECOMPOSE_IGNORE:
+        decompose_ignored.append(lig)
+        continue
     base = lig[: -len("-tutg")]
     # The last underscore-token must be a PLAIN consonant name for the
     # last_consonant/needed_pairs logic further down to make sense. Some
@@ -360,6 +373,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         for name in no_below_form:
             f.write(f"# {name}\n")
 
+    if decompose_ignored:
+        f.write("\n# --- Ligatures hand-excluded from the decompose fix via blwf_decompose_ignore_list.json (see BLWF_TODO.md) ---\n")
+        for name in decompose_ignored:
+            f.write(f"# {name}: {DECOMPOSE_IGNORE[name]}\n")
+
     if decompose_not_plain_last:
         f.write("\n# --- Ligatures skipped from the decompose fix: last component isn't a plain consonant (see BLWF_TODO.md) ---\n")
         for name in decompose_not_plain_last:
@@ -440,6 +458,14 @@ with open(report_path, "w", encoding="utf-8") as f:
             "rules generated to support these.\n")
     f.write("\n")
 
+    if decompose_ignored:
+        f.write(f"## {len(decompose_ignored)} ligature(s) hand-excluded from the decompose fix\n\n")
+        f.write("Via `blwf_decompose_ignore_list.json` - overrides whatever the automated "
+                "missing-compound check would otherwise say:\n\n")
+        for name in decompose_ignored:
+            f.write(f"- `{name}`: {DECOMPOSE_IGNORE[name]}\n")
+        f.write("\n")
+
     if decompose_not_plain_last:
         f.write(f"## {len(decompose_not_plain_last)} ligature(s) skipped from the decompose fix: last component isn't a plain consonant\n\n")
         f.write("Chillu-suffixed compounds (e.g. `ka_kChillu-tutg`), names that are actually a\n")
@@ -485,6 +511,7 @@ print(f"Rules written: {len(compound_rules) + len(rules)} ({len(compound_rules)}
 print(f"Missing below-base glyph (consonants): {len(missing)} {missing}")
 print(f"No below-base glyph at all (ligatures): {len(no_below_form)} {no_below_form}")
 print(f"Unreachable (base ligature not a real akhn output): {len(unreachable)} {unreachable}")
+print(f"Decompose hand-excluded (blwf_decompose_ignore_list.json): {len(decompose_ignored)} {decompose_ignored}")
 print(f"Decompose skipped (last component not a plain consonant): {len(decompose_not_plain_last)} {decompose_not_plain_last}")
 print(f"Decompose ligatures with no known akhn input sequence: {len(decompose_no_input_seq)} {decompose_no_input_seq}")
 print(f"Needed compound pairs with no glyph at all: {len(compound_no_glyph)} {compound_no_glyph}")

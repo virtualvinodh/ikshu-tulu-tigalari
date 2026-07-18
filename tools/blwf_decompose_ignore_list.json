@@ -1,0 +1,3 @@
+{
+  "ka_ssa-tutg": "Project owner requested this stay undecomposed (2026-07-18) - confirmed as KSHA, a highly-recognizable conjunct in its own right; decomposing it back to KA+conjoiner+SSA before a vowel sign it has no compound for isn't the desired behavior here. Excluded from generate_blwf_feature.py's vowel-sign decompose fix regardless of what the automated missing-compound check would otherwise say - see VOWEL_SIGN_LIGATURE_GAP.md for the general mechanism this overrides."
+}
