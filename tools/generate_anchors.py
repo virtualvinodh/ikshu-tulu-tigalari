@@ -19,6 +19,12 @@ Placement:
 Re-runnable: if an anchor of the target name already exists on a glyph, its x/y is
 updated in place rather than skipped, so changing a GAP constant and re-running
 retunes every affected glyph without needing to delete anything first.
+
+BOTTOM_POP also includes every "*.below.auto" glyph (added 2026-07-17, see
+generate_below_auto_glyphs.py) so they get a "bottom" anchor too, letting them
+serve as the base for further stacking, matching consonant_below_base - read
+directly off the font's own glyph list since these postdate
+glyph_classification.json.
 """
 import ufoLib2
 import json
@@ -36,8 +42,15 @@ font = ufoLib2.Font.open(UFO_PATH)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     d = json.load(f)
 
+# Auto-generated ligature below-base forms (generate_below_auto_glyphs.py) aren't
+# in glyph_classification.json - it predates them and classify_glyphs.py has no
+# naming rule for ".below.auto" - so they're picked up directly from the font's
+# own glyph list instead, same as consonant_below_base gets a "bottom" anchor
+# below (a below-base form can itself be the base for further stacking).
+BELOW_AUTO_POP = [n for n in font.keys() if n.endswith(".below.auto")]
+
 TOP_POP = d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"]
-BOTTOM_POP = d["consonant"] + d["consonant_below_base"] + d["conjunct_ligature"] + d["vowel_sign_ligature"]
+BOTTOM_POP = d["consonant"] + d["consonant_below_base"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + BELOW_AUTO_POP
 
 SPACING_VS_ROOTS = ("aaMatra-tutg", "iMatra-tutg", "iiMatra-tutg", "eeMatra-tutg",
                     "aiMatra-tutg", "ooMatra-tutg", "auMatra-tutg", "aulengthmark-tutg")

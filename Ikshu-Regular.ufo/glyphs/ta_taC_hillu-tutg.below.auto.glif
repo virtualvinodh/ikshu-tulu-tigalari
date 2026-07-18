@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ta_taChillu-tutg.below.auto" format="2">
+  <anchor x="814.5" y="-740.8" name="bottom"/>
+  <anchor x="814.5" y="-48.7" name="_bottom"/>
+  <outline>
+    <component base="ta_taChillu-tutg" xScale="0.863" yScale="0.863" xOffset="111.6" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

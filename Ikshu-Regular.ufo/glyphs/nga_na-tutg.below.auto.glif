@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nga_na-tutg.below.auto" format="2">
+  <anchor x="706.0" y="-928.5" name="bottom"/>
+  <anchor x="706.0" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="nga_na-tutg" xScale="0.863" yScale="0.863" xOffset="96.7" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

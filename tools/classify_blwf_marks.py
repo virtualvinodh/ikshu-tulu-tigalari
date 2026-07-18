@@ -16,7 +16,19 @@ category (61 glyphs - includes the ".alt1"/".alt2" stylistic variants, which nee
 the same treatment in case they're ever selected via a stylistic-alternate
 feature), EXCEPT ya-tutg.below (excluded per project owner - it's a ligature-only
 construction piece, not meant to independently attach as a generic fallback
-target).
+target) - PLUS every "*.below.auto" glyph (added 2026-07-17, see
+generate_below_auto_glyphs.py), read directly off the font's own glyph list
+since these postdate glyph_classification.json and classify_glyphs.py has no
+naming rule that would ever put them in "consonant_below_base" itself - PLUS the
+9 ligatures that already had a real hand-drawn ".below" before
+generate_below_auto_glyphs.py ran (ga_uMatra-tutg, ha_ya-tutg, ja_uuMatra-tutg,
+na_uMatra-tutg, na_ya-tutg, pa_ya-tutg, sha_ya-tutg, ssa_va-tutg, ta_uMatra-tutg -
+added 2026-07-17, found the same way generate_blwf_feature.py finds them: default-
+form conjunct_ligature/vowel_sign_ligature entries where "{name}.below" exists).
+These already carried top/bottom/topright anchors (swept in by generate_anchors.py's
+general ligature pass, which doesn't filter out ".below"-suffixed compound names),
+but had no _bottom anchor or mark classification until now - same gap as the
+.below.auto glyphs, just for pre-existing artwork instead of auto-generated.
 
 Anchor placement mirrors generate_anchors.py's own mark_pass(MARKS_BOTTOM, "_bottom",
 x_from="center", y_edge="max") exactly: x = the glyph's own bbox center, y = the
@@ -41,7 +53,24 @@ font = ufoLib2.Font.open(UFO_PATH)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     d = json.load(f)
 
-targets = [n for n in d["consonant_below_base"] if n not in EXCLUDE]
+# Auto-generated ligature below-base forms (generate_below_auto_glyphs.py) aren't
+# in glyph_classification.json - it predates them and classify_glyphs.py has no
+# naming rule for ".below.auto" - so they're picked up directly from the font's
+# own glyph list and get the exact same treatment as consonant_below_base.
+below_auto = [n for n in font.keys() if n.endswith(".below.auto")]
+
+
+def is_default_form(name):
+    return "-tutg" in name and "." not in name.partition("-tutg")[2]
+
+
+# The 9 ligatures with a real pre-existing ".below" - same discovery logic
+# generate_blwf_feature.py uses (default-form ligature candidates where
+# "{name}.below" already exists as a real glyph).
+ligature_candidates = set(d.get("conjunct_ligature", []) + d.get("vowel_sign_ligature", []))
+ligature_below_real = [f"{n}.below" for n in ligature_candidates if is_default_form(n) and f"{n}.below" in font]
+
+targets = [n for n in d["consonant_below_base"] + below_auto + ligature_below_real if n not in EXCLUDE]
 
 
 def find_anchor(glyph, name):

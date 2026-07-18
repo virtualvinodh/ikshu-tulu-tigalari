@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_nChillu-tutg.below.auto" format="2">
+  <anchor x="747.0" y="-739.9" name="bottom"/>
+  <anchor x="747.0" y="-48.7" name="_bottom"/>
+  <outline>
+    <component base="ka_nChillu-tutg" xScale="0.863" yScale="0.863" xOffset="102.3" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

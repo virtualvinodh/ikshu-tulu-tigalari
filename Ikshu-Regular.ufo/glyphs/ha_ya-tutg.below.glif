@@ -4,6 +4,7 @@
   <anchor x="90.4" y="28.0" name="top"/>
   <anchor x="90.4" y="-1114" name="bottom"/>
   <anchor x="661" y="28.0" name="topright"/>
+  <anchor x="90.4" y="-22.0" name="_bottom"/>
   <outline>
     <contour>
       <point x="451" y="-635" type="curve"/>
@@ -47,6 +48,8 @@
           <integer>-1</integer>
         </dict>
       </dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

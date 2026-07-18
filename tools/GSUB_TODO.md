@@ -1,10 +1,66 @@
 # GSUB rule generation - open items
 
-Superseded by `generate_akhn_feature.py` -> `tutg_akhn.fea` (453 rules, sorted
+Superseded by `generate_akhn_feature.py` -> `tutg_akhn.fea` (458 rules, sorted
 longest-input-sequence-first, wrapped in a real `feature akhn { script tutg; ... }`
 block with `languagesystem tutg dflt;`). `generate_gsub_rules.py` -> `generated_gsub_rules.fea`
 was the earlier draft (unsorted, no feature wrapper); keeping both scripts since the
 fixes below were only ported into `generate_akhn_feature.py` so far.
+
+`TOKEN_ALIASES`/`CHILLU_ABBREV` moved out of `generate_akhn_feature.py` into
+`names_override.json` (2026-07-17) - same content, just externalized as the single
+source of truth for every non-standard/typo/shorthand token this generator
+special-cases. Verified byte-identical `tutg_akhn.fea` output before/after. The
+point: `split_name()` already checks the *standard* name sets (`CONSONANTS`/
+`VOWEL_SIGN_ROOTS`) before falling back to this file, so manually renaming a glyph
+in the font to its correct standard form (e.g. fixing a typo, or eventually
+renaming `rrChillu-tutg`/`llChillu-tutg` to match what they actually are) makes it
+resolve via the standard path with no code change - the override entry just goes
+unused. Two `forward_compat` entries (`"g"`/`"r"` in `chillu_abbreviations`) exist
+purely to cover that rrChillu/llChillu rename before it happens.
+
+## Repha (2026-07-17): typed input, ligating variant, and a real two-lookup bug
+
+Tulu-Tigalari has its own encoded REPHA character (U+113D1, cmap'd to `repha-tutg`)
+- the expected typed input for repha is that character directly, not "RA +
+conjoiner" (confirmed: typing RA+conjoiner+X now falls back to ordinary below-base
+stacking via `blwf`, a different, still-valid rendering, not repha at all).
+
+Two akhn rules implement this:
+1. `sub repha-tutg by repha-tutg.alt1;` - upgrades typed repha-tutg to the ligating
+   variant (the proposal's recommended default shape).
+2. Every `ra_X-tutg` ligature (`ra_ma-tutg`, `ra_ya-tutg`, `ra_va-tutg`, `ra_ra-tutg`,
+   `ra_sha-tutg`, `ra_ma_ma-tutg`) now matches on `repha-tutg.alt1 + X`, not
+   `ra-tutg + conjoiner-tutg + X`, even though the glyph is *named* starting with
+   "ra" - the name reflects the ligature's drawn components/history, not its real
+   GSUB input, which is "Repha + X". RA+own-vowel-sign ligatures like
+   `ra_uMatra-tutg` are unrelated (RA is the base taking its own vowel sign) and
+   stay untouched.
+
+**Real bug found and fixed:** rule 1 and rule 2 must be in TWO SEPARATE named
+lookups (`TutgRephaUpgrade` then `TutgAkhand`), not the same lookup with rule 1
+listed first. Confirmed via `uharfbuzz` shaping (screenshots alone were misleading
+here - visually, a floating Repha mark above a consonant looks a lot like the
+dedicated ligature at a glance): within a single GSUB lookup, HarfBuzz scans
+left-to-right and substitutes at most once per starting position per pass, then
+moves on - it never re-examines a glyph it just substituted to try a longer match
+against a later rule in that same lookup. So with both rules in one lookup, typing
+REPHA+MA would convert `repha-tutg`→`repha-tutg.alt1` at position 0, then advance to
+position 1 (MA) without ever re-trying `repha-tutg.alt1 + ma-tutg` at position 0 -
+the ligature silently never formed, output stayed as two separate glyphs. Splitting
+into two lookups makes the upgrade a complete first pass over the whole buffer, so
+`TutgAkhand`'s pass always sees `repha-tutg.alt1` already in place. Verified
+end-to-end (typed U+113D1 + consonant, real compiled font, `uharfbuzz.shape()` glyph
+names): `REPHA+MA -> ra_matutg`, `+YA -> ra_yatutg`, `+RA -> ra_ratutg`,
+`+VA -> ra_vatutg`, `+SHA -> ra_shatutg`, 3-way `REPHA+MA+conj+MA -> ra_ma_matutg`,
+and `REPHA+KA -> [u11392, rephatutg.alt1]` (correctly stays as a floating GPOS-anchored
+mark for consonants with no dedicated ligature, not silently broken).
+
+Also tried, and confirmed wrong: swapping the `ra_X-tutg` rules to consonant-then-
+Repha order (`X + repha-tutg.alt1`) on the theory that HarfBuzz's own reph-
+repositioning might reorder the glyph stream before GSUB runs. Verified via
+`uharfbuzz` that GSUB lookups always operate on typed/logical order (Repha first) -
+reph-repositioning is a separate, later shaping step that only reorders glyphs for
+on-screen placement. `repha-tutg.alt1`-then-`X` is the only order that works.
 
 ## 1 & 2. RESOLVED 2026-07-16 - naming inconsistencies confirmed and fixed
 
@@ -61,9 +117,19 @@ on purpose. 450 rules, 3 skipped as of that change.
   `bhChillu-tutg`~~ - **resolved 2026-07-16, confirmed correct by project owner.**
   (Structurally these are built from generic Looped-Virama pieces with no
   consonant-specific sub-part to cross-check against, unlike `kChillu`/`tChillu`/
-  `ttChillu.alt1`, and LLA/RRA/BHA aren't in the proposal's documented K/G/TT/T/N
-  list - so this couldn't be verified from the file alone, but is confirmed
-  intentional. No longer blocking the rename batch.)
+  `ttChillu.alt1`, so this couldn't be verified from the file alone, but is
+  confirmed intentional. No longer blocking the rename batch.)
+  **Superseded 2026-07-17:** despite their names, `llChillu-tutg` and
+  `rrChillu-tutg` are NOT LLA/RRA + Looped Virama - project owner confirmed via
+  visual inspection they're actually **GA + Looped Virama** and **RA + Looped
+  Virama** respectively. Same as the earlier `ta_taChillu-tutg` situation, this
+  can't be verified from glif component names (both are custom-drawn contours,
+  no consonant sub-part components), so it's taken on the project owner's word.
+  `CHILLU_ABBREV` in `generate_akhn_feature.py` now maps `"ll" -> "ga"` and
+  `"rr" -> "ra"` (previously `"lla"`/`"rra"`) to reflect this. Note GA *is* one of
+  the proposal's documented Looped-Virama bases (K/G/TT/T/N), so "llChillu is
+  really G" lines up with that list; RA is not on that list, so "rrChillu is
+  really R" extends beyond the documented set rather than confirming it.
 - `rVocalic_repha-tutg`, `virama_dotrepha-tutg`, `virama_virama-tutg`,
   `rephajoiner_dottedCircle-tutg`, `pluta_pluta-tutg`, `ramatra_uumatra-tutg.below`,
   `lVocalicMatra_tall-tutg.alt2` - don't fit the consonant/vowel-sign decomposition
@@ -74,6 +140,18 @@ on purpose. 450 rules, 3 skipped as of that change.
   be drawn before HA+RA / PA+RA can get a proper top-level `akhn` rule; until
   then they correctly fall back to `blwf`'s generic below-base stacking (RA's
   own below-form) instead of a dedicated ligature.
+- **Resolved 2026-07-17:** the standalone Chillu glyphs (`kChillu-tutg`,
+  `tChillu-tutg`, `nChillu-tutg`, `nnChillu-tutg`, `llChillu-tutg`,
+  `rrChillu-tutg`, `bhChillu-tutg`, `ttChillu-tutg`/`.alt1`) had no top-level
+  `akhn` rule at all - only their compound forms did (e.g. `ka_kChillu-tutg`).
+  Root cause: `glyph_classification.json` files them under their own
+  `looped_virama_ligature` category, separate from `conjunct_ligature`/
+  `vowel_sign_ligature`, and `generate_akhn_feature.py`'s main loop hardcoded
+  only those latter two categories - `looped_virama_ligature` was simply never
+  added to the scan, not deliberately excluded (`taChillu-tutg` is the only one
+  of the 9 actually in `gsub_ignore_list.json`). Fixed by adding
+  `"looped_virama_ligature"` to the category tuple; 8 new rules (`X + Looped
+  Virama -> XChillu-tutg`) now generated, 450 -> 458 total.
 
 ## 4. `oMatra-tutg` / `ooMatra-tutg` naming vs. cmap mismatch (found 2026-07-16)
 

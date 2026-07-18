@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ka_ya-tutg.below.auto" format="2">
+  <anchor x="651.5" y="-934.1" name="bottom"/>
+  <anchor x="651.5" y="-179.5" name="_bottom"/>
+  <outline>
+    <component base="ka_ya-tutg" xScale="0.863" yScale="0.863" xOffset="89.3" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

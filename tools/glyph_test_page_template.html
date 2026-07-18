@@ -206,6 +206,12 @@
      the single-row bars above, so it needs a bigger offset. */
   #panel-akhn table.test-table th { top: 116px; }
   table.test-table td.rendered { font-size: 1.8rem; }
+  /* Repha (above-base) and Anudatta/Gemination (below-base) marks extend well
+     past the glyph's own line box - extra vertical padding here keeps them
+     from visually clipping into the row above/below in this densely-packed
+     table (unlike other tables, cells here are just base+mark, only 2 glyphs
+     wide, so there's no natural extra width/height cushion from longer text). */
+  #panel-marks table.test-table td.rendered { padding-top: 24px; padding-bottom: 24px; }
   table.test-table td.label { font-family: "SF Mono", Consolas, monospace; font-size: 0.72rem; color: var(--text-dimmer); }
   table.test-table td.seq { font-family: "SF Mono", Consolas, monospace; font-size: 0.68rem; color: var(--text-faint); }
   table.test-table tr:hover td { background: var(--hover-bg); }
@@ -244,6 +250,12 @@
     border-radius: 8px;
     padding: 12px 10px 8px;
     margin: 4px;
+  }
+  /* Flags cards where the Repha toggle actually substituted RA+conjoiner
+     with the combining mark, so it's easy to spot which items changed. */
+  .word-block.card.repha-applied {
+    border-color: #c0392b;
+    border-width: 2px;
   }
 
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
@@ -439,9 +451,8 @@
         <div id="conjmatrix-c1-filter"></div>
         <div id="conjmatrix-c2-filter"></div>
         <div id="conjmatrix-suffix-quick" style="display:flex; gap:6px;"></div>
-        <select id="conjmatrix-vowel-select" class="filter-dropdown-btn"></select>
-        <div id="conjmatrix-vowel-quick" style="display:flex; gap:6px;"></div>
       </div>
+      <div id="conjmatrix-vowel-quick" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;"></div>
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
         <div id="conjmatrix-mark-select" style="display:flex; gap:6px;"></div>
       </div>
@@ -452,12 +463,11 @@
     <div class="sticky-controls">
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <div id="conjlist-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="conjlist-showall-toggle" style="display:flex; gap:6px;"></div>
+        <div id="conjlist-repha-toggle" style="display:flex; gap:6px;"></div>
         <div id="conjlist-guide-toggle" style="display:flex; gap:6px;"></div>
       </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
-        <select id="conjlist-vowel-select" class="filter-dropdown-btn"></select>
-        <div id="conjlist-vowel-quick" style="display:flex; gap:6px;"></div>
-      </div>
+      <div id="conjlist-vowel-quick" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;"></div>
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:10px;">
         <div id="conjlist-mark-select" style="display:flex; gap:6px;"></div>
       </div>
@@ -487,6 +497,10 @@
   </div>
   <div class="panel" id="panel-sampletext">
     <div id="sampletext-list" class="text-tab-bar"></div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+      <div id="sampletext-repha-toggle" style="display:flex; gap:6px;"></div>
+      <div id="sampletext-chillu-toggle" style="display:flex; gap:6px;"></div>
+    </div>
     <div id="sampletext-ann-toggle" class="ann-checkboxes"></div>
     <div id="sampletext-body"></div>
   </div>
@@ -494,8 +508,12 @@
     <p class="count-note" id="live-count-note">Type or paste Tulu-Tigalari Unicode text (U+11380-U+113FF) below - rendered live through the compiled font.</p>
     <div id="live-script-select" class="text-tab-bar"></div>
     <textarea id="live-input" class="tigalari" placeholder="Type here..."></textarea>
-    <div id="live-preview-wrap" style="display:none; margin-top:16px;">
-      <p class="count-note">Transliterated to Tigalari (live, in the browser - see brahmic_translit.py for the Python original this mirrors):</p>
+    <div id="live-preview-wrap" style="margin-top:16px;">
+      <p class="count-note" id="live-preview-note">With Repha/Chillu corrections applied (live, in the browser):</p>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <div id="live-repha-toggle" style="display:flex; gap:6px;"></div>
+        <div id="live-chillu-toggle" style="display:flex; gap:6px;"></div>
+      </div>
       <div id="live-preview" class="tigalari live-preview"></div>
     </div>
   </div>
@@ -526,11 +544,16 @@
   const stripTutg = name => name.replace(/-tutg$/, '');
   let sampleTextId = (SAMPLE_TEXTS.passages[0] || {}).id || null;
   const sampleAnnModes = new Set(['kannada']);
+  let sampleRephaOn = true; // replace RA+conjoiner with the Repha combining mark, on by default
+  let sampleChilluOn = true; // replace word-final "consonant + virama" with "consonant + looped virama" (Chillu-eligible), on by default
   let liveScriptMode = 'tigalari';
   let conjListVowelChoice = 'None';
   let conjListMarkChoice = 'None';
   const conjListAnnModes = new Set(['kannada']);
   let conjListGuideOn = true; // master on/off for the ab|bc / gu|pga reference guide
+  let conjListShowAllVowels = false; // show base + U/UU/Vocalic R/RR all at once per item, ignoring the single ending choice
+  let conjListRephaOn = false; // replace RA-initial conjuncts' RA+conjoiner with the Repha combining mark
+  const CONJLIST_SHOWALL_ROWS = [['(base)', 'None'], ['U', 'U'], ['UU', 'UU'], ['Vocalic R', 'Vocalic R'], ['Vocalic RR', 'Vocalic RR']];
   // Declared here (not next to renderConjList's own definition further down) for
   // the same reason as the other conjList state above: activateTab's early
   // ?tab=conjlist hook can call renderConjList() before later script runs.
@@ -544,17 +567,24 @@
     chip.onclick = () => { conjListGuideOn = !conjListGuideOn; renderConjList(); };
     wrap.appendChild(chip);
   }
-  const conjListVowelSelectEl = document.getElementById('conjlist-vowel-select');
-  ['None'].concat(Object.keys(CONJUNCT_LISTS.vowelSignOptions)).forEach(key => {
-    const opt = document.createElement('option');
-    opt.value = key;
-    opt.textContent = key === 'None' ? 'Ending: None (inherent)' : key;
-    conjListVowelSelectEl.appendChild(opt);
-  });
-  conjListVowelSelectEl.addEventListener('change', () => {
-    conjListVowelChoice = conjListVowelSelectEl.value;
-    renderConjList();
-  });
+  function renderConjListShowAllToggle() {
+    const wrap = document.getElementById('conjlist-showall-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (conjListShowAllVowels ? ' active' : '');
+    chip.textContent = 'Show U/UU/R/RR: ' + (conjListShowAllVowels ? 'On' : 'Off');
+    chip.onclick = () => { conjListShowAllVowels = !conjListShowAllVowels; renderConjList(); };
+    wrap.appendChild(chip);
+  }
+  function renderConjListRephaToggle() {
+    const wrap = document.getElementById('conjlist-repha-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (conjListRephaOn ? ' active' : '');
+    chip.textContent = 'Repha: ' + (conjListRephaOn ? 'On' : 'Off');
+    chip.onclick = () => { conjListRephaOn = !conjListRephaOn; renderConjList(); };
+    wrap.appendChild(chip);
+  }
   const ENDING_TOKEN = {
     'AA': ['vowel_signs', 'aa'], 'I': ['vowel_signs', 'i'], 'II': ['vowel_signs', 'ii'],
     'U': ['vowel_signs', 'u'], 'UU': ['vowel_signs', 'uu'],
@@ -566,6 +596,74 @@
   };
   const CONSONANT_NAME_BY_CP = {};
   DATA.consonants.forEach(c => { CONSONANT_NAME_BY_CP[c.cp] = stripTutg(c.name); });
+  // RA's codepoint, for detecting RA-initial conjuncts in the Standard
+  // Conjunct List (see conjListRephaOn below) - hoisted here for the same
+  // early-?tab=conjlist-firing reason as CONSONANT_NAME_BY_CP.
+  const RA_CP = DATA.consonants.find(c => stripTutg(c.name) === 'ra').cp;
+  // Same conjoiner codepoint the Conjunct Matrix/Matrix sections read later as
+  // CONJOINER_CP/MATRIX_CONJOINER_CP - read directly here (DATA is already
+  // parsed) so Sample Text's repha substitution can't hit the same early-tab
+  // TDZ trap.
+  const REPHA_CONJOINER_CP = DATA.conjunctMatrix.rows[0][0][1];
+  // Scans a word's codepoints for RA immediately followed by the conjoiner,
+  // where that RA is itself cluster-initial (not preceded by a conjoiner -
+  // i.e. not the middle consonant of some other conjunct), and replaces that
+  // pair with the single Repha combining-mark character - used by Sample Text.
+  function applyRephaToCps(cps) {
+    const rephaCp = CONJUNCT_LISTS.markOptions.Repha.cp;
+    const out = [];
+    for (let i = 0; i < cps.length; i++) {
+      const clusterInitial = i === 0 || cps[i - 1] !== REPHA_CONJOINER_CP;
+      if (clusterInitial && cps[i] === RA_CP && cps[i + 1] === REPHA_CONJOINER_CP) {
+        out.push(rephaCp);
+        i++;
+      } else {
+        out.push(cps[i]);
+      }
+    }
+    return out;
+  }
+  // Plain virama (U+113CE) vs Looped Virama (U+113CF) - the latter is the form
+  // that actually ligates into a Chillu glyph with the preceding consonant (see
+  // the akhn "XChillu" rules). Not part of BRAHMIC's reversible phoneme tables
+  // (it's a stylistic alternate virama form, not a distinct phoneme), so hardcoded
+  // directly here; confirmed against the compiled font's cmap.
+  const TIGALARI_VIRAMA_CP = BRAHMIC.scripts.tigalari.virama;
+  const LOOPED_VIRAMA_CP = 0x113CF;
+  // Only these 8 consonants have an actual pre-drawn Chillu ligature glyph in the
+  // font's akhn feature (kChillu-tutg, tChillu-tutg, ttChillu-tutg, nChillu-tutg,
+  // nnChillu-tutg, llChillu-tutg [confirmed to really be GA], rrChillu-tutg
+  // [confirmed to really be RA], bhChillu-tutg) - substituting looped virama for
+  // any OTHER consonant would just show the raw looped-virama character
+  // unligated, which isn't a real Chillu form, so the toggle is scoped to these.
+  const CHILLU_ELIGIBLE_CONSONANTS = new Set(['ka', 'ta', 'tta', 'na', 'nna', 'ga', 'ra', 'bha']);
+  // Replaces every word-final "consonant + virama" with "consonant + looped
+  // virama" - "word-final" here means the virama is either the very last
+  // codepoint of the array, or immediately followed by something outside the
+  // Tulu-Tigalari block (space, punctuation, digit, newline...) - i.e. a real
+  // word/cluster boundary, not a virama mid-word. Works on a whole multi-word
+  // string (Live Input) as well as a single-word array (Sample Text/Standard
+  // Conjunct List), since it scans every position rather than just the end of
+  // the array. Only applies when that consonant is one of the 8 Chillu-eligible
+  // ones above. Whatever precedes the final consonant (nothing, or a whole
+  // C+conjoiner+C... chain) doesn't matter - the virama always attaches to
+  // whichever consonant immediately precedes it, so this covers both
+  // "cons+virama" and "cons+conjoiner+cons+virama" (and any longer conjunct
+  // chain) uniformly, without needing to special-case by length.
+  function applyChilluToCps(cps) {
+    const out = cps.slice();
+    for (let i = 0; i < out.length; i++) {
+      if (out[i] !== TIGALARI_VIRAMA_CP) continue;
+      const next = out[i + 1];
+      const isWordFinal = next === undefined || next < 0x11380 || next > 0x113FF;
+      if (!isWordFinal) continue;
+      const consonantName = CONSONANT_NAME_BY_CP[out[i - 1]];
+      if (consonantName !== undefined && CHILLU_ELIGIBLE_CONSONANTS.has(consonantName)) {
+        out[i] = LOOPED_VIRAMA_CP;
+      }
+    }
+    return out;
+  }
   // For the 4 "below+ligating" vowel signs (U/UU/Vocalic R/Vocalic RR - the ones
   // that actually change shape per consonant, per the shaping model, unlike the
   // plain spacing/reorder ones), both the Conjunct Matrix and the Standard
@@ -574,6 +672,10 @@
   // either render function, for the same early-?tab=conjlist-firing reason as
   // ENDING_TOKEN/CONSONANT_NAME_BY_CP above.
   const CONJMATRIX_DECOMPOSE_VOWELS = new Set(['U', 'UU', 'Vocalic R', 'Vocalic RR']);
+  // Svarita/Anudatta (Vedic accent marks) must land BEFORE these three signs
+  // rather than after them, unlike every other ending - shared across Matrix,
+  // Conjunct Matrix and Standard Conjunct List's mark-application logic.
+  const SIGN_AFTER_ACCENT = new Set(['Candrabindu', 'Anusvara', 'Visarga']);
 
   // Reverse (codepoint -> phoneme) lookup for each of the four Brahmic scripts -
   // needed by textToPhonemes() below, and needed early since renderConjList() can
@@ -913,15 +1015,46 @@
     // added consonant goes second (e.g. row=KA, added=KHA -> "kkha")
     return [cps[0], MATRIX_CONJOINER_CP, cp2].concat(cps.slice(1));
   }
+  // Gemination attaches directly to the consonant cluster and must land
+  // BEFORE any trailing vowel sign. Svarita/Anudatta normally apply after
+  // everything else, EXCEPT when the sign is Candrabindu/Anusvara/Visarga
+  // (SIGN_AFTER_ACCENT), in which case they must land before that sign too.
+  // `signCp`/`signLabel` describe the sign already destined for the end of
+  // `cluster` (or null if there isn't one).
+  function applyMarkAroundSign(cluster, signCp, signLabel) {
+    if (matrixMarkChoice === 'Gemination') {
+      cluster = cluster.concat([DATA.matrix.markOptions.Gemination.cp]);
+    }
+    const accentBeforeSign = signCp !== null && SIGN_AFTER_ACCENT.has(signLabel) &&
+      (matrixMarkChoice === 'Svarita' || matrixMarkChoice === 'Anudatta');
+    if (accentBeforeSign) {
+      cluster = cluster.concat([DATA.matrix.markOptions[matrixMarkChoice].cp]);
+    }
+    let result = signCp !== null ? cluster.concat([signCp]) : cluster;
+    if (matrixMarkChoice !== 'None' && matrixMarkChoice !== 'Gemination' && !accentBeforeSign) {
+      const mark = DATA.matrix.markOptions[matrixMarkChoice];
+      result = mark.position === 'prefix' ? [mark.cp].concat(result) : result.concat([mark.cp]);
+    }
+    return result;
+  }
   // Mark only (no cons2 insert) - used for the plain base row when "Show base"
   // is on, so that row reflects the mark choice but not the added consonant.
-  function applyMatrixMarkOnly(cps) {
-    if (matrixMarkChoice === 'None') return cps;
-    const mark = DATA.matrix.markOptions[matrixMarkChoice];
-    return mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+  function applyMatrixMarkOnly(cps, signLabel) {
+    const hasSign = cps.length === 2;
+    return applyMarkAroundSign([cps[0]], hasSign ? cps[1] : null, signLabel);
   }
-  function applyMatrixMark(cps) {
-    return applyMatrixMarkOnly(applyMatrixCons2(cps));
+  function applyMatrixMark(cps, signLabel) {
+    const hasSign = cps.length === 2;
+    const baseCp = cps[0];
+    const signCp = hasSign ? cps[1] : null;
+    let cluster = [baseCp];
+    if (matrixCons2Choice !== 'None') {
+      const cp2 = MATRIX_CONS2_OPTIONS[matrixCons2Choice];
+      cluster = matrixCons2Position === 'prefix'
+        ? [cp2, MATRIX_CONJOINER_CP, baseCp]
+        : [baseCp, MATRIX_CONJOINER_CP, cp2];
+    }
+    return applyMarkAroundSign(cluster, signCp, signLabel);
   }
   function renderMatrixMarkSelect() {
     const wrap = document.getElementById('matrix-mark-select');
@@ -1019,34 +1152,34 @@
           if (showBaseActive) {
             // base line, no cons2 applied
             html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
-            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMarkOnly(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMarkOnly(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
             // augmented line, cons2 applied
             html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(name)}</th>`;
-            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
           } else {
             html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
-            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${colIdxs.map(ci => applyMatrixMark(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
           }
         } else if (showBaseActive) {
           // plain base row, no cons2 applied
           html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
           colIdxs.forEach(ci => {
-            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')}</td>`;
           });
           html += '</tr>';
           // augmented row, cons2 applied
           html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(name)}</th>`;
           colIdxs.forEach(ci => {
-            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')}</td>`;
           });
           html += '</tr>';
         } else {
           html += `<tr><th class="label" style="background:var(--card-bg);">${name}</th>`;
           colIdxs.forEach(ci => {
-            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMark(row.cells[ci], m.vowelSignLabels[ci]).map(cp => S(cp)).join('')}</td>`;
           });
           html += '</tr>';
         }
@@ -1077,15 +1210,15 @@
           if (showBaseActive) {
             // base sweep across all consonants, no cons2 applied
             html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
-            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMarkOnly(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMarkOnly(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
             // augmented sweep, cons2 applied
             html += `<tr><th class="label" style="background:var(--card-bg);">${augLabelFor(signLabel)}</th>`;
-            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
           } else {
             html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
-            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += `<td class="rendered tigalari">${rowIdxs.map(ri => applyMatrixMark(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')).join(sep)}</td>`;
             html += '</tr>';
           }
           return;
@@ -1093,12 +1226,12 @@
         html += `<tr><th class="label" style="background:var(--card-bg);">${signLabel}</th>`;
         if (showBaseActive) {
           rowIdxs.forEach(ri => {
-            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
-            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMarkOnly(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')}</td>`;
           });
         } else {
           rowIdxs.forEach(ri => {
-            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci]).map(cp => S(cp)).join('')}</td>`;
+            html += `<td class="rendered tigalari">${applyMatrixMark(m.rows[ri].cells[ci], signLabel).map(cp => S(cp)).join('')}</td>`;
           });
         }
         html += '</tr>';
@@ -1145,24 +1278,25 @@
     // pair, before any vowel-sign suffix - the vowel sign always lands on
     // whichever consonant is last in the cluster.
     if (conjMatrixSuffixChoice !== 'None') cps = cps.concat([CONJOINER_CP, SUFFIX_CONS_OPTIONS[conjMatrixSuffixChoice]]);
+    // Gemination attaches directly to the consonant cluster, before any
+    // vowel sign - unlike Svarita/Anudatta/Repha, which apply after
+    // everything else (including the vowel sign) - EXCEPT that Svarita/
+    // Anudatta must still land before Candrabindu/Anusvara/Visarga specifically.
+    if (conjMatrixMarkChoice === 'Gemination') {
+      cps = cps.concat([CM.markOptions.Gemination.cp]);
+    }
+    const accentBeforeSign = SIGN_AFTER_ACCENT.has(vowelKey) &&
+      (conjMatrixMarkChoice === 'Svarita' || conjMatrixMarkChoice === 'Anudatta');
+    if (accentBeforeSign) {
+      cps = cps.concat([CM.markOptions[conjMatrixMarkChoice].cp]);
+    }
     if (vowelKey !== 'None') cps = cps.concat([CM.vowelSignOptions[vowelKey]]);
-    if (conjMatrixMarkChoice !== 'None') {
+    if (conjMatrixMarkChoice !== 'None' && conjMatrixMarkChoice !== 'Gemination' && !accentBeforeSign) {
       const mark = CM.markOptions[conjMatrixMarkChoice];
       cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
     }
     return cps;
   }
-  const vowelSelectEl = document.getElementById('conjmatrix-vowel-select');
-  ['None'].concat(Object.keys(CM.vowelSignOptions)).forEach(key => {
-    const opt = document.createElement('option');
-    opt.value = key;
-    opt.textContent = key === 'None' ? 'Vowel sign: None' : '+' + key;
-    vowelSelectEl.appendChild(opt);
-  });
-  vowelSelectEl.addEventListener('change', () => {
-    conjMatrixVowelChoice = vowelSelectEl.value;
-    renderConjMatrix();
-  });
   function renderConjMatrixMarkSelect() {
     const wrap = document.getElementById('conjmatrix-mark-select');
     wrap.innerHTML = '';
@@ -1174,19 +1308,18 @@
       wrap.appendChild(chip);
     });
   }
-  // Quick one-click access to the 4 most-checked vowel signs (U/UU/Vocalic R/RR)
-  // alongside the full dropdown - clicking toggles that sign on/off (off = back
-  // to "None") instead of opening the dropdown and picking it every time.
+  // Every vowel-sign option as its own tag (replaces the old dropdown+4-chip
+  // split with one consistent set, on its own line) - clicking toggles that
+  // sign on/off (off = back to "None").
   function renderConjMatrixVowelQuick() {
     const wrap = document.getElementById('conjmatrix-vowel-quick');
     wrap.innerHTML = '';
-    ['U', 'UU', 'Vocalic R', 'Vocalic RR'].forEach(key => {
+    Object.keys(CM.vowelSignOptions).forEach(key => {
       const chip = document.createElement('div');
       chip.className = 'cat-chip' + (conjMatrixVowelChoice === key ? ' active' : '');
       chip.textContent = key;
       chip.onclick = () => {
         conjMatrixVowelChoice = (conjMatrixVowelChoice === key ? 'None' : key);
-        vowelSelectEl.value = conjMatrixVowelChoice;
         renderConjMatrix();
       };
       wrap.appendChild(chip);
@@ -1268,6 +1401,7 @@
     const c2Idxs = CM.consonants.map((n, i) => i).filter(i => conjMatrixC2Dropdown.selected.has(stripTutg(CM.consonants[i])));
     const collapsed = conjMatrixCollapse.mode !== 'grid';
     const sep = conjMatrixCollapse.mode === 'collapse-space' ? ' ' : '';
+    const showAll = conjMatrixShowAllVowels;
     let html = '';
     if (!collapsed) html += '<thead><tr>';
     if (!conjMatrixTransposed) {
@@ -1277,7 +1411,6 @@
         html += '</tr></thead>';
       }
       html += '<tbody>';
-      const showAll = !collapsed && conjMatrixShowAllVowels;
       c1Idxs.forEach(ri => {
         const c1Name = stripTutg(CM.consonants[ri]);
         if (collapsed) {
@@ -1286,15 +1419,20 @@
           html += '</tr>';
         } else if (showAll) {
           CONJMATRIX_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
-            const rowLabel = vowelKey === 'None' ? c1Name : c1Name + ' + ' + label;
+            // Base row shows the plain consonant name; the 4 vowel rows just
+            // show "+U"/"+UU"/etc - the consonant is already implied by being
+            // grouped right under its own base row, no need to repeat it.
+            const rowLabel = vowelKey === 'None' ? c1Name : '+' + label;
             html += `<tr><th class="label" style="background:var(--card-bg);">${rowLabel}</th>`;
             c2Idxs.forEach(ci => {
               const cell = conjMatrixCellHTML(ri, ci, vowelKey);
-              // The base row has no guide wrapper (conjMatrixCellHTML returns
-              // plain text for it), so it'd default to left-aligned like a
-              // normal cell - wrap it in conjref-main too so it centers the
-              // same way the U/UU/R/RR rows below it do.
-              html += `<td class="rendered tigalari">${vowelKey === 'None' ? `<div class="conjref-main">${cell}</div>` : cell}</td>`;
+              // conjMatrixCellHTML only wraps in the centered conjref-main div
+              // when Guide is on AND this is one of the decomposed vowel signs -
+              // the base row (always) and every row when Guide is off otherwise
+              // fall back to plain text, which defaults to left-aligned like a
+              // normal cell. Center the <td> itself directly so every row in
+              // Show All mode lines up the same regardless of Guide state.
+              html += `<td class="rendered tigalari" style="text-align:center;">${cell}</td>`;
             });
             html += '</tr>';
           });
@@ -1307,6 +1445,9 @@
         }
       });
     } else {
+      // Transposed: rows are C2, columns are C1 - still one consonant per row
+      // (just C2 instead of C1), so "Show U/UU/R/RR" expands into extra ROWS
+      // here exactly like the non-transposed view does, columns unchanged.
       if (!collapsed) {
         html += '<th>C2 \\ C1</th>';
         c1Idxs.forEach(ri => { html += `<th>${stripTutg(CM.consonants[ri])}</th>`; });
@@ -1314,15 +1455,37 @@
       }
       html += '<tbody>';
       c2Idxs.forEach(ci => {
-        html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(CM.consonants[ci])}</th>`;
+        const c2Name = stripTutg(CM.consonants[ci]);
         if (collapsed) {
-          html += `<td class="rendered tigalari">${c1Idxs.map(ri => conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+          if (showAll) {
+            CONJMATRIX_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+              const rowLabel = vowelKey === 'None' ? c2Name : '+' + label;
+              html += `<tr><th class="label" style="background:var(--card-bg);">${rowLabel}</th>`;
+              html += `<td class="rendered tigalari">${c1Idxs.map(ri => conjMatrixCells(CM.rows[ri][ci], vowelKey).map(cp => S(cp)).join('')).join(sep)}</td>`;
+              html += '</tr>';
+            });
+          } else {
+            html += `<tr><th class="label" style="background:var(--card-bg);">${c2Name}</th>`;
+            html += `<td class="rendered tigalari">${c1Idxs.map(ri => conjMatrixCells(CM.rows[ri][ci]).map(cp => S(cp)).join('')).join(sep)}</td>`;
+            html += '</tr>';
+          }
+        } else if (showAll) {
+          CONJMATRIX_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+            const rowLabel = vowelKey === 'None' ? c2Name : '+' + label;
+            html += `<tr><th class="label" style="background:var(--card-bg);">${rowLabel}</th>`;
+            c1Idxs.forEach(ri => {
+              const cell = conjMatrixCellHTML(ri, ci, vowelKey);
+              html += `<td class="rendered tigalari" style="text-align:center;">${cell}</td>`;
+            });
+            html += '</tr>';
+          });
         } else {
+          html += `<tr><th class="label" style="background:var(--card-bg);">${c2Name}</th>`;
           c1Idxs.forEach(ri => {
             html += `<td class="rendered tigalari">${conjMatrixCellHTML(ri, ci)}</td>`;
           });
+          html += '</tr>';
         }
-        html += '</tr>';
       });
     }
     html += '</tbody>';
@@ -1345,25 +1508,47 @@
   // engine already supports) so the selected ending can be rendered in Kannada
   // and IAST too, not just Tigalari, the same way Sample Texts shows ruby
   // annotations - one phoneme stream, three renderers.
-  function itemPhonemes(item) {
+  function itemPhonemes(item, vowelKeyOverride) {
+    const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : conjListVowelChoice;
     const baseText = item.tigalariCps.map(cp => S(cp)).join('');
     let tokens = textToPhonemes(baseText, 'tigalari');
-    if (conjListVowelChoice !== 'None') tokens = tokens.concat([ENDING_TOKEN[conjListVowelChoice]]);
+    if (vowelKey !== 'None') tokens = tokens.concat([ENDING_TOKEN[vowelKey]]);
     return tokens;
   }
-  function itemTigalariText(item) {
-    let cps = phonemesToScript(itemPhonemes(item), 'tigalari');
-    if (conjListMarkChoice !== 'None') {
+  function itemIsRaInitial(item) {
+    return item.tigalariCps[0] === RA_CP;
+  }
+  function itemTigalariText(item, vowelKeyOverride) {
+    const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : conjListVowelChoice;
+    let cps = phonemesToScript(itemPhonemes(item, vowelKey), 'tigalari');
+    if (conjListRephaOn && itemIsRaInitial(item)) {
+      // Repha replaces the leading RA+conjoiner pair with the single
+      // combining-mark character, prefixed onto whatever's left of the cluster.
+      cps = [CONJUNCT_LISTS.markOptions.Repha.cp].concat(cps.slice(2));
+    }
+    if (conjListMarkChoice === 'Gemination') {
+      // Gemination attaches directly to the consonant cluster, before any
+      // trailing vowel-sign codepoint the ending appended.
+      const geminationCp = CONJUNCT_LISTS.markOptions.Gemination.cp;
+      cps = vowelKey !== 'None'
+        ? cps.slice(0, -1).concat([geminationCp]).concat(cps.slice(-1))
+        : cps.concat([geminationCp]);
+    } else if ((conjListMarkChoice === 'Svarita' || conjListMarkChoice === 'Anudatta') && SIGN_AFTER_ACCENT.has(vowelKey)) {
+      // These accent marks must land before Candrabindu/Anusvara/Visarga
+      // specifically, unlike every other ending where they go at the very end.
+      const markCp = CONJUNCT_LISTS.markOptions[conjListMarkChoice].cp;
+      cps = cps.slice(0, -1).concat([markCp]).concat(cps.slice(-1));
+    } else if (conjListMarkChoice !== 'None') {
       const mark = CONJUNCT_LISTS.markOptions[conjListMarkChoice];
       cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
     }
     return cps.map(cp => S(cp)).join('');
   }
-  function itemKannadaText(item) {
-    return phonemesToScript(itemPhonemes(item), 'kannada').map(cp => S(cp)).join('');
+  function itemKannadaText(item, vowelKeyOverride) {
+    return phonemesToScript(itemPhonemes(item, vowelKeyOverride), 'kannada').map(cp => S(cp)).join('');
   }
-  function itemIastText(item) {
-    return phonemesToIast(itemPhonemes(item));
+  function itemIastText(item, vowelKeyOverride) {
+    return phonemesToIast(itemPhonemes(item, vowelKeyOverride));
   }
   function groupItemsByFinalConsonant(items) {
     const groups = new Map();
@@ -1375,19 +1560,17 @@
     return [...groups.entries()].sort((a, b) => a[0] - b[0]);
   }
 
-  // Quick one-click access to the 4 "below+ligating" endings (same set the 3-way
-  // decomposition applies to) alongside the full dropdown - same pattern as the
-  // Conjunct Matrix's vowel quick chips.
+  // Every ending option as its own tag (replaces the old dropdown+4-chip split
+  // with one consistent set, matching the Conjunct Matrix's vowel tags).
   function renderConjListVowelQuick() {
     const wrap = document.getElementById('conjlist-vowel-quick');
     wrap.innerHTML = '';
-    ['U', 'UU', 'Vocalic R', 'Vocalic RR'].forEach(key => {
+    Object.keys(CONJUNCT_LISTS.vowelSignOptions).forEach(key => {
       const chip = document.createElement('div');
       chip.className = 'cat-chip' + (conjListVowelChoice === key ? ' active' : '');
       chip.textContent = key;
       chip.onclick = () => {
         conjListVowelChoice = (conjListVowelChoice === key ? 'None' : key);
-        conjListVowelSelectEl.value = conjListVowelChoice;
         renderConjList();
       };
       wrap.appendChild(chip);
@@ -1421,10 +1604,67 @@
       wrap.appendChild(lbl);
     });
   }
+  // Builds one item's card for a given ending choice (vowelKey) - same 3-way
+  // U/UU/Vocalic-R/RR decomposition and 3-consonant ab|bc pairing logic as
+  // before, just parameterized so "Show U/UU/R/RR" can call this 5 times per
+  // item (once per vowelKey) instead of once using the single global choice.
+  function buildConjListCard(item, n, vowelKey, extraLabel) {
+    const block = document.createElement('span');
+    block.className = 'word-block card';
+    if (conjListRephaOn && itemIsRaInitial(item)) {
+      block.classList.add('repha-applied');
+    }
+    if (extraLabel) {
+      const lbl = document.createElement('span');
+      lbl.className = 'ann';
+      lbl.textContent = extraLabel;
+      block.appendChild(lbl);
+    }
+    if (conjListAnnModes.has('iast')) {
+      const ann = document.createElement('span');
+      ann.className = 'ann';
+      ann.textContent = itemIastText(item, vowelKey);
+      block.appendChild(ann);
+    }
+    if (conjListAnnModes.has('kannada')) {
+      const ann = document.createElement('span');
+      ann.className = 'ann';
+      ann.textContent = itemKannadaText(item, vowelKey);
+      block.appendChild(ann);
+    }
+    const showVowelRef = conjListGuideOn && CONJMATRIX_DECOMPOSE_VOWELS.has(vowelKey);
+    const showPairRef = conjListGuideOn && !showVowelRef && n === 3;
+    const showRef = showVowelRef || showPairRef;
+    if (showVowelRef) {
+      const vsCp = CONJUNCT_LISTS.vowelSignOptions[vowelKey];
+      const finalCp = item.tigalariCps[item.tigalariCps.length - 1];
+      const vowelAlone = [finalCp, vsCp].map(cp => S(cp)).join('');
+      const bareStack = item.tigalariCps.map(cp => S(cp)).join('');
+      const refRow = document.createElement('div');
+      refRow.className = 'conjref-row';
+      refRow.innerHTML = `<span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span>`;
+      block.appendChild(refRow);
+    } else if (showPairRef) {
+      const cps = item.tigalariCps; // [c1, conjoiner, c2, conjoiner, c3]
+      const ab = cps.slice(0, 3).map(cp => S(cp)).join('');
+      const bc = cps.slice(2, 5).map(cp => S(cp)).join('');
+      const refRow = document.createElement('div');
+      refRow.className = 'conjref-row';
+      refRow.innerHTML = `<span class="conjref">${ab}</span><span class="conjref-sep">|</span><span class="conjref">${bc}</span>`;
+      block.appendChild(refRow);
+    }
+    const word = document.createElement('span');
+    word.className = showRef ? 'word conjref-main' : 'word';
+    word.textContent = itemTigalariText(item, vowelKey);
+    block.appendChild(word);
+    return block;
+  }
   function renderConjList() {
     renderConjListMarkSelect();
     renderConjListVowelQuick();
     renderConjListGuideToggle();
+    renderConjListShowAllToggle();
+    renderConjListRephaToggle();
     renderConjListAnnCheckboxes();
     const body = document.getElementById('conjlist-body');
     body.innerHTML = '';
@@ -1442,64 +1682,33 @@
         heading.textContent = 'Ending in ' + (CONSONANT_NAME_BY_CP[finalCp] || S(finalCp)) + ' (' + items.length + ')';
         body.appendChild(heading);
         if (collapsed) {
-          const line = document.createElement('div');
-          line.className = 'collapsed-line tigalari';
-          line.style.marginBottom = '18px';
-          line.textContent = items.map(item => itemTigalariText(item)).join(sep);
-          body.appendChild(line);
+          if (conjListShowAllVowels) {
+            CONJLIST_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+              const line = document.createElement('div');
+              line.className = 'collapsed-line tigalari';
+              line.style.marginBottom = '18px';
+              line.textContent = items.map(item => itemTigalariText(item, vowelKey)).join(sep);
+              body.appendChild(line);
+            });
+          } else {
+            const line = document.createElement('div');
+            line.className = 'collapsed-line tigalari';
+            line.style.marginBottom = '18px';
+            line.textContent = items.map(item => itemTigalariText(item)).join(sep);
+            body.appendChild(line);
+          }
         } else {
           const rowWrap = document.createElement('div');
           rowWrap.className = 'sampletext-passage tigalari';
           rowWrap.style.marginBottom = '18px';
           items.forEach(item => {
-            const block = document.createElement('span');
-            block.className = 'word-block card';
-            if (conjListAnnModes.has('iast')) {
-              const ann = document.createElement('span');
-              ann.className = 'ann';
-              ann.textContent = itemIastText(item);
-              block.appendChild(ann);
+            if (conjListShowAllVowels) {
+              CONJLIST_SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+                rowWrap.appendChild(buildConjListCard(item, c.n, vowelKey, vowelKey === 'None' ? null : '+' + label));
+              });
+            } else {
+              rowWrap.appendChild(buildConjListCard(item, c.n, conjListVowelChoice));
             }
-            if (conjListAnnModes.has('kannada')) {
-              const ann = document.createElement('span');
-              ann.className = 'ann';
-              ann.textContent = itemKannadaText(item);
-              block.appendChild(ann);
-            }
-            // Same 3-way U/UU/Vocalic-R/RR decomposition as the Conjunct Matrix:
-            // [final consonant + vowel alone] | [bare cluster, no ending] above
-            // the actual full item - so a broken/missing ligature is visible
-            // against its own reference shapes here too.
-            const showVowelRef = conjListGuideOn && CONJMATRIX_DECOMPOSE_VOWELS.has(conjListVowelChoice);
-            // For plain (no ending) 3-consonant clusters specifically, show the
-            // two overlapping 2-consonant sub-stacks instead - e.g. "abc" ->
-            // "ab | bc" - so a 3-way stack can be checked against its own
-            // adjacent pairs, which is what it's actually built from.
-            const showPairRef = conjListGuideOn && !showVowelRef && c.n === 3;
-            const showRef = showVowelRef || showPairRef;
-            if (showVowelRef) {
-              const vsCp = CONJUNCT_LISTS.vowelSignOptions[conjListVowelChoice];
-              const finalCp = item.tigalariCps[item.tigalariCps.length - 1];
-              const vowelAlone = [finalCp, vsCp].map(cp => S(cp)).join('');
-              const bareStack = item.tigalariCps.map(cp => S(cp)).join('');
-              const refRow = document.createElement('div');
-              refRow.className = 'conjref-row';
-              refRow.innerHTML = `<span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span>`;
-              block.appendChild(refRow);
-            } else if (showPairRef) {
-              const cps = item.tigalariCps; // [c1, conjoiner, c2, conjoiner, c3]
-              const ab = cps.slice(0, 3).map(cp => S(cp)).join('');
-              const bc = cps.slice(2, 5).map(cp => S(cp)).join('');
-              const refRow = document.createElement('div');
-              refRow.className = 'conjref-row';
-              refRow.innerHTML = `<span class="conjref">${ab}</span><span class="conjref-sep">|</span><span class="conjref">${bc}</span>`;
-              block.appendChild(refRow);
-            }
-            const word = document.createElement('span');
-            word.className = showRef ? 'word conjref-main' : 'word';
-            word.textContent = itemTigalariText(item);
-            block.appendChild(word);
-            rowWrap.appendChild(block);
           });
           body.appendChild(rowWrap);
         }
@@ -1522,6 +1731,24 @@
       wrap.appendChild(tab);
     });
   }
+  function renderSampleTextRephaToggle() {
+    const wrap = document.getElementById('sampletext-repha-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (sampleRephaOn ? ' active' : '');
+    chip.textContent = 'Repha: ' + (sampleRephaOn ? 'On' : 'Off');
+    chip.onclick = () => { sampleRephaOn = !sampleRephaOn; renderSampleText(); };
+    wrap.appendChild(chip);
+  }
+  function renderSampleTextChilluToggle() {
+    const wrap = document.getElementById('sampletext-chillu-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (sampleChilluOn ? ' active' : '');
+    chip.textContent = 'Chillu: ' + (sampleChilluOn ? 'On' : 'Off');
+    chip.onclick = () => { sampleChilluOn = !sampleChilluOn; renderSampleText(); };
+    wrap.appendChild(chip);
+  }
   function renderAnnCheckboxes() {
     const wrap = document.getElementById('sampletext-ann-toggle');
     wrap.innerHTML = '';
@@ -1541,6 +1768,8 @@
   }
   function renderSampleText() {
     renderSampleTextTabs();
+    renderSampleTextRephaToggle();
+    renderSampleTextChilluToggle();
     renderAnnCheckboxes();
     const body = document.getElementById('sampletext-body');
     body.innerHTML = '';
@@ -1563,7 +1792,9 @@
       });
       const word = document.createElement('span');
       word.className = 'word';
-      word.textContent = w.tigalariCps.map(cp => S(cp)).join('');
+      let wordCps = sampleRephaOn ? applyRephaToCps(w.tigalariCps) : w.tigalariCps;
+      if (sampleChilluOn) wordCps = applyChilluToCps(wordCps);
+      word.textContent = wordCps.map(cp => S(cp)).join('');
       block.appendChild(word);
       para.appendChild(block);
     });
@@ -1572,24 +1803,37 @@
   }
 
   // marks: vowels x svaras, and consonants x all 4 marks (mark = row)
-  function renderMarkGrid(tableId, grid) {
+  // Transposed relative to the underlying grid data (base as rows, mark as
+  // columns) - there are only 2-4 marks but up to 36 bases, so this way the
+  // long axis scrolls naturally with the page instead of needing horizontal
+  // scrolling to see every consonant. extraCols (optional) appends further
+  // columns computed client-side from the base name, e.g. two marks stacked
+  // together on the same consonant - used by the consonant table only.
+  function renderMarkGrid(tableId, grid, extraCols) {
     const table = document.getElementById(tableId);
     const collapsed = marksCollapse.mode !== 'grid';
     const sep = marksCollapse.mode === 'collapse-space' ? ' ' : '';
+    extraCols = extraCols || [];
     let html = '';
     if (!collapsed) {
-      html += '<thead><tr><th>mark \\ base</th>';
-      grid.colLabels.forEach(name => { html += `<th>${stripTutg(name)}</th>`; });
+      html += '<thead><tr><th>base \\ mark</th>';
+      grid.rowLabels.forEach(label => { html += `<th>${label}</th>`; });
+      extraCols.forEach(ec => { html += `<th>${ec.label}</th>`; });
       html += '</tr></thead>';
     }
     html += '<tbody>';
-    grid.rowLabels.forEach((label, ri) => {
-      html += `<tr><th class="label" style="background:var(--card-bg);">${label}</th>`;
+    grid.colLabels.forEach((name, ci) => {
+      html += `<tr><th class="label" style="background:var(--card-bg);">${stripTutg(name)}</th>`;
       if (collapsed) {
-        html += `<td class="rendered tigalari">${grid.cells[ri].map(cps => cps.map(cp => S(cp)).join('')).join(sep)}</td>`;
+        const cellsText = grid.rowLabels.map((_, ri) => grid.cells[ri][ci].map(cp => S(cp)).join(''))
+          .concat(extraCols.map(ec => ec.computeCps(name).map(cp => S(cp)).join('')));
+        html += `<td class="rendered tigalari">${cellsText.join(sep)}</td>`;
       } else {
-        grid.cells[ri].forEach(cps => {
-          html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+        grid.rowLabels.forEach((_, ri) => {
+          html += `<td class="rendered tigalari">${grid.cells[ri][ci].map(cp => S(cp)).join('')}</td>`;
+        });
+        extraCols.forEach(ec => {
+          html += `<td class="rendered tigalari">${ec.computeCps(name).map(cp => S(cp)).join('')}</td>`;
         });
       }
       html += '</tr>';
@@ -1597,12 +1841,31 @@
     html += '</tbody>';
     table.innerHTML = html;
   }
+  // Two-marks-stacked-together combo columns, consonants only (Repha is
+  // cluster-initial so it can combine with a suffix mark on the same base;
+  // Gemination+Anudatta likewise both attach to the one consonant, just in
+  // sequence). Built client-side from DATA.matrix.markOptions (cp + prefix/
+  // suffix position) rather than a new server-side data field.
+  const CONS_CP_BY_NAME = {};
+  DATA.consonants.forEach(c => { CONS_CP_BY_NAME[c.name] = c.cp; });
+  function markComboCps(name, markKeys) {
+    let cps = [CONS_CP_BY_NAME[name]];
+    markKeys.forEach(key => {
+      const mark = DATA.matrix.markOptions[key];
+      cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+    });
+    return cps;
+  }
+  const MARK_CONSONANT_EXTRA_COLS = [
+    { label: 'Repha + Svarita', computeCps: name => markComboCps(name, ['Repha', 'Svarita']) },
+    { label: 'Gemination + Anudatta', computeCps: name => markComboCps(name, ['Gemination', 'Anudatta']) },
+  ];
   const marksCollapse = makeCollapseButtons('marks-collapse-select', () => {
     renderMarkGrid('mark-vowel-table', DATA.markVowelGrid);
-    renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid);
+    renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid, MARK_CONSONANT_EXTRA_COLS);
   });
   renderMarkGrid('mark-vowel-table', DATA.markVowelGrid);
-  renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid);
+  renderMarkGrid('mark-consonant-table', DATA.markConsonantGrid, MARK_CONSONANT_EXTRA_COLS);
 
   // Live Input: type Kannada/Devanagari and see it transliterated to Tigalari in
   // the browser, live. This is a JS port of brahmic_translit.py's text_to_phonemes
@@ -1709,10 +1972,38 @@
   const livePreviewWrap = document.getElementById('live-preview-wrap');
   const livePreview = document.getElementById('live-preview');
   const liveCountNote = document.getElementById('live-count-note');
+  let liveRephaOn = true; // same substitution as Sample Text's Repha toggle, on by default
+  let liveChilluOn = true; // same substitution as Sample Text's Chillu toggle, on by default
 
+  function renderLiveRephaToggle() {
+    const wrap = document.getElementById('live-repha-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (liveRephaOn ? ' active' : '');
+    chip.textContent = 'Repha: ' + (liveRephaOn ? 'On' : 'Off');
+    chip.onclick = () => { liveRephaOn = !liveRephaOn; renderLiveRephaToggle(); updateLivePreview(); };
+    wrap.appendChild(chip);
+  }
+  function renderLiveChilluToggle() {
+    const wrap = document.getElementById('live-chillu-toggle');
+    wrap.innerHTML = '';
+    const chip = document.createElement('div');
+    chip.className = 'cat-chip' + (liveChilluOn ? ' active' : '');
+    chip.textContent = 'Chillu: ' + (liveChilluOn ? 'On' : 'Off');
+    chip.onclick = () => { liveChilluOn = !liveChilluOn; renderLiveChilluToggle(); updateLivePreview(); };
+    wrap.appendChild(chip);
+  }
+  // Always shows the preview now (previously hidden in native-Tulu mode, since
+  // the textarea itself rendered live through the font and no substitution was
+  // applied) - now that Repha/Chillu can correct the raw typed text in any
+  // mode, the preview is the only place that correction is visible, so it needs
+  // to stay visible even when typing native Tigalari directly.
   function updateLivePreview() {
-    if (liveScriptMode === 'tigalari') return;
-    livePreview.textContent = transliterateToTigalari(liveInput.value, liveScriptMode);
+    const baseText = liveScriptMode === 'tigalari' ? liveInput.value : transliterateToTigalari(liveInput.value, liveScriptMode);
+    let cps = Array.from(baseText).map(c => c.codePointAt(0));
+    if (liveRephaOn) cps = applyRephaToCps(cps);
+    if (liveChilluOn) cps = applyChilluToCps(cps);
+    livePreview.textContent = cps.map(cp => S(cp)).join('');
   }
   function renderLiveScriptTabs() {
     const wrap = document.getElementById('live-script-select');
@@ -1726,20 +2017,21 @@
         renderLiveScriptTabs();
         if (mode === 'tigalari') {
           liveInput.classList.add('tigalari');
-          livePreviewWrap.style.display = 'none';
           liveCountNote.textContent = 'Type or paste Tulu-Tigalari Unicode text (U+11380-U+113FF) below - rendered live through the compiled font.';
         } else {
           liveInput.classList.remove('tigalari');
-          livePreviewWrap.style.display = 'block';
           liveCountNote.textContent = `Type ${label} below (shown in a regular system font so you can check what you typed) - the box underneath shows it transliterated to Tigalari, live.`;
-          updateLivePreview();
         }
+        updateLivePreview();
       };
       wrap.appendChild(tab);
     });
   }
+  renderLiveRephaToggle();
+  renderLiveChilluToggle();
   liveInput.addEventListener('input', updateLivePreview);
   renderLiveScriptTabs();
+  updateLivePreview();
 
   // Unicode: click-to-type palette of every actually-encoded Tulu-Tigalari
   // character (built once - only the output area changes on click).

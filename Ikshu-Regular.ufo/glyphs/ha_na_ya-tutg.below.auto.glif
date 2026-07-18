@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ha_na_ya-tutg.below.auto" format="2">
+  <anchor x="835.5" y="-922.0" name="bottom"/>
+  <anchor x="835.5" y="-178.6" name="_bottom"/>
+  <outline>
+    <component base="ha_na_ya-tutg" xScale="0.863" yScale="0.863" xOffset="114.5" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

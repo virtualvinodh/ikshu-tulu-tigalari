@@ -19,6 +19,14 @@ instead of leaving stale rules sitting in features.fea. The old skip-if-present
 guard was how ha_ra-tutg.below/pa_ra-tutg.below stayed merged into the real font
 after being removed from generate_akhn_feature.py - regenerating the .fea file
 alone did nothing until the merged block was fixed by hand.
+
+Extraction/replacement pattern also covers an optional standalone
+"lookup TutgBlwfDecompose { ... } TutgBlwfDecompose;" block immediately BEFORE
+"feature blwf { ... } blwf;" (added 2026-07-18, see generate_blwf_feature.py's
+module docstring) - it must live outside the feature block or FEA semantics
+apply it unconditionally, so it's a separate top-level declaration that needs
+to be merged/replaced alongside the feature block, not just the feature block
+alone.
 """
 import os
 import re
@@ -37,16 +45,20 @@ if "} akhn;" not in features:
 with open(BLWF_PATH, encoding="utf-8") as f:
     blwf_content = f.read()
 
-# Extract just the "feature blwf { ... } blwf;" block from tutg_blwf.fea (skip its
-# own header comment and languagesystem lines, already present in features.fea).
-m = re.search(r"feature blwf \{.*?\} blwf;", blwf_content, re.S)
+# Extract the "feature blwf { ... } blwf;" block from tutg_blwf.fea (skip its
+# own header comment and languagesystem lines, already present in features.fea),
+# PLUS an optional standalone "lookup TutgBlwfDecompose { ... } TutgBlwfDecompose;"
+# block immediately before it - must travel together, see module docstring for
+# why that lookup can't live inside the feature block itself.
+BLOCK_PATTERN = r"(?:lookup TutgBlwfDecompose \{.*?\} TutgBlwfDecompose;\n\n)?feature blwf \{.*?\} blwf;"
+m = re.search(BLOCK_PATTERN, blwf_content, re.S)
 if not m:
     raise SystemExit("Could not find 'feature blwf { ... } blwf;' block in tutg_blwf.fea")
 new_blwf_block = m.group(0)
 
 # Insert the real blwf block, or replace it in place if a previous run already
 # inserted one (see docstring).
-existing = re.search(r"feature blwf \{.*?\} blwf;", features, re.S)
+existing = re.search(BLOCK_PATTERN, features, re.S)
 if existing:
     if existing.group(0) == new_blwf_block:
         print("features.fea's blwf block already matches tutg_blwf.fea - nothing to do.")

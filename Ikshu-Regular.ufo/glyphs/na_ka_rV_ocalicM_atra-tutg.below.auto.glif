@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_ka_rVocalicMatra-tutg.below.auto" format="2">
+  <anchor x="401.5" y="-1195.3" name="bottom"/>
+  <anchor x="401.5" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="na_ka_rVocalicMatra-tutg" xScale="0.863" yScale="0.863" xOffset="55.0" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

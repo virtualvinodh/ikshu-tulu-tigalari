@@ -4,6 +4,7 @@
   <anchor x="227.0" y="-134" name="top"/>
   <anchor x="227.0" y="-846" name="bottom"/>
   <anchor x="785.0" y="-134" name="topright"/>
+  <anchor x="227.0" y="-184" name="_bottom"/>
   <outline>
     <contour>
       <point x="-269" y="-678" type="curve"/>
@@ -86,6 +87,8 @@
       <string>2025-02-26 10:08:02 +0000</string>
       <key>public.markColor</key>
       <string>0,0.2,0.88,1</string>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
     </dict>
   </lib>
 </glyph>

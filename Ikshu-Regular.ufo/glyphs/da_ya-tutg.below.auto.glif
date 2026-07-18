@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="da_ya-tutg.below.auto" format="2">
+  <anchor x="429.2" y="-903.1" name="bottom"/>
+  <anchor x="429.2" y="-183.4" name="_bottom"/>
+  <outline>
+    <component base="da_ya-tutg" xScale="0.863" yScale="0.863" xOffset="58.8" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

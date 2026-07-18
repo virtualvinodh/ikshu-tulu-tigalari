@@ -75,9 +75,19 @@ for rule in akhn_rules:
         # insert a dotted circle - correct USE behavior for a base-less mark
         # sequence, not a bug, but misleading in a proofing table. Prepend a
         # representative KA so the row reflects how this actually looks in real
-        # text (some consonant always precedes it there).
-        prefix = [] if rule["input"][0] in consonant_glyph_names or KA_CP is None else [KA_CP]
-        akhn_tests.append({"cps": prefix + cps, "output": rule["output"]})
+        # text (some consonant always precedes it there) - EXCEPT repha-tutg
+        # (REPHA_FIRST_RULE), which is the opposite: Repha attaches to the base
+        # that FOLLOWS it, not one before it (confirmed this session - typed
+        # order is always Repha-then-consonant, e.g. REPHA+MA -> ra_matutg), so
+        # its representative KA needs to be a suffix, not a prefix.
+        starts_with_consonant = rule["input"][0] in consonant_glyph_names
+        prefix, suffix = [], []
+        if not starts_with_consonant and KA_CP is not None:
+            if rule["input"][0] == "repha-tutg":
+                suffix = [KA_CP]
+            else:
+                prefix = [KA_CP]
+        akhn_tests.append({"cps": prefix + cps + suffix, "output": rule["output"]})
 
 # --- Marks tab: every independent vowel x the two Vedic tone marks we
 # have glyphs for ("svaras" - Svarita and Anudatta; Udatta is conventionally

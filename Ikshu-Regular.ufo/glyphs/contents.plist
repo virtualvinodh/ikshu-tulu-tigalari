@@ -280,22 +280,38 @@
     <string>ba-tutg.below.glif</string>
     <key>ba_ba-tutg</key>
     <string>ba_ba-tutg.glif</string>
+    <key>ba_ba-tutg.below.auto</key>
+    <string>ba_ba-tutg.below.auto.glif</string>
     <key>ba_da-tutg</key>
     <string>ba_da-tutg.glif</string>
+    <key>ba_da-tutg.below.auto</key>
+    <string>ba_da-tutg.below.auto.glif</string>
     <key>ba_lVocalicMatra-tutg</key>
     <string>ba_lV_ocalicM_atra-tutg.glif</string>
     <key>ba_lVocalicMatra-tutg.alt</key>
     <string>ba_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ba_lVocalicMatra-tutg.below.auto</key>
+    <string>ba_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ba_rVocalicMatra-tutg</key>
     <string>ba_rV_ocalicM_atra-tutg.glif</string>
+    <key>ba_rVocalicMatra-tutg.below.auto</key>
+    <string>ba_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ba_ra-tutg</key>
     <string>ba_ra-tutg.glif</string>
+    <key>ba_ra-tutg.below.auto</key>
+    <string>ba_ra-tutg.below.auto.glif</string>
     <key>ba_rrVocalicMatra-tutg</key>
     <string>ba_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ba_rrVocalicMatra-tutg.below.auto</key>
+    <string>ba_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ba_uMatra-tutg</key>
     <string>ba_uM_atra-tutg.glif</string>
+    <key>ba_uMatra-tutg.below.auto</key>
+    <string>ba_uM_atra-tutg.below.auto.glif</string>
     <key>ba_uuMatra-tutg</key>
     <string>ba_uuM_atra-tutg.glif</string>
+    <key>ba_uuMatra-tutg.below.auto</key>
+    <string>ba_uuM_atra-tutg.below.auto.glif</string>
     <key>backslash</key>
     <string>backslash.glif</string>
     <key>bhChillu-tutg</key>
@@ -312,30 +328,50 @@
     <string>bha_lV_ocalicM_atra-tutg.glif</string>
     <key>bha_lVocalicMatra-tutg.alt</key>
     <string>bha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>bha_lVocalicMatra-tutg.below.auto</key>
+    <string>bha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>bha_ma-tutg</key>
     <string>bha_ma-tutg.glif</string>
+    <key>bha_ma-tutg.below.auto</key>
+    <string>bha_ma-tutg.below.auto.glif</string>
     <key>bha_na-tutg</key>
     <string>bha_na-tutg.glif</string>
+    <key>bha_na-tutg.below.auto</key>
+    <string>bha_na-tutg.below.auto.glif</string>
     <key>bha_rVocalicMatra-tutg</key>
     <string>bha_rV_ocalicM_atra-tutg.glif</string>
+    <key>bha_rVocalicMatra-tutg.below.auto</key>
+    <string>bha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>bha_ra-tutg</key>
     <string>bha_ra-tutg.glif</string>
     <key>bha_ra-tutg.alt1</key>
     <string>bha_ra-tutg.alt1.glif</string>
+    <key>bha_ra-tutg.below.auto</key>
+    <string>bha_ra-tutg.below.auto.glif</string>
     <key>bha_rrVocalicMatra-tutg</key>
     <string>bha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>bha_rrVocalicMatra-tutg.below.auto</key>
+    <string>bha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>bha_uMatra-tutg</key>
     <string>bha_uM_atra-tutg.glif</string>
     <key>bha_uMatra-tutg.alt1</key>
     <string>bha_uM_atra-tutg.alt1.glif</string>
+    <key>bha_uMatra-tutg.below.auto</key>
+    <string>bha_uM_atra-tutg.below.auto.glif</string>
     <key>bha_uuMatra-tutg</key>
     <string>bha_uuM_atra-tutg.glif</string>
     <key>bha_uuMatra-tutg.alt1</key>
     <string>bha_uuM_atra-tutg.alt1.glif</string>
+    <key>bha_uuMatra-tutg.below.auto</key>
+    <string>bha_uuM_atra-tutg.below.auto.glif</string>
     <key>bha_va-tutg</key>
     <string>bha_va-tutg.glif</string>
+    <key>bha_va-tutg.below.auto</key>
+    <string>bha_va-tutg.below.auto.glif</string>
     <key>bha_ya-tutg</key>
     <string>bha_ya-tutg.glif</string>
+    <key>bha_ya-tutg.below.auto</key>
+    <string>bha_ya-tutg.below.auto.glif</string>
     <key>braceleft</key>
     <string>braceleft.glif</string>
     <key>braceleft.case</key>
@@ -366,24 +402,40 @@
     <string>ca_ca-tutg.glif</string>
     <key>ca_ca-tutg.alt1</key>
     <string>ca_ca-tutg.alt1.glif</string>
+    <key>ca_ca-tutg.below.auto</key>
+    <string>ca_ca-tutg.below.auto.glif</string>
     <key>ca_cha-tutg</key>
     <string>ca_cha-tutg.glif</string>
     <key>ca_cha-tutg.alt2</key>
     <string>ca_cha-tutg.alt2.glif</string>
+    <key>ca_cha-tutg.below.auto</key>
+    <string>ca_cha-tutg.below.auto.glif</string>
     <key>ca_lVocalicMatra-tutg</key>
     <string>ca_lV_ocalicM_atra-tutg.glif</string>
     <key>ca_lVocalicMatra-tutg.alt</key>
     <string>ca_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ca_lVocalicMatra-tutg.below.auto</key>
+    <string>ca_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ca_ma-tutg</key>
     <string>ca_ma-tutg.glif</string>
+    <key>ca_ma-tutg.below.auto</key>
+    <string>ca_ma-tutg.below.auto.glif</string>
     <key>ca_rVocalicMatra-tutg</key>
     <string>ca_rV_ocalicM_atra-tutg.glif</string>
+    <key>ca_rVocalicMatra-tutg.below.auto</key>
+    <string>ca_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ca_rrVocalicMatra-tutg</key>
     <string>ca_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ca_rrVocalicMatra-tutg.below.auto</key>
+    <string>ca_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ca_uMatra-tutg</key>
     <string>ca_uM_atra-tutg.glif</string>
+    <key>ca_uMatra-tutg.below.auto</key>
+    <string>ca_uM_atra-tutg.below.auto.glif</string>
     <key>ca_uuMatra-tutg</key>
     <string>ca_uuM_atra-tutg.glif</string>
+    <key>ca_uuMatra-tutg.below.auto</key>
+    <string>ca_uuM_atra-tutg.below.auto.glif</string>
     <key>candraanunasika-tutg</key>
     <string>candraanunasika-tutg.glif</string>
     <key>candrabindu-tutg</key>
@@ -400,18 +452,30 @@
     <string>cha_lV_ocalicM_atra-tutg.glif</string>
     <key>cha_lVocalicMatra-tutg.alt</key>
     <string>cha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>cha_lVocalicMatra-tutg.below.auto</key>
+    <string>cha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>cha_nya-tutg</key>
     <string>cha_nya-tutg.glif</string>
+    <key>cha_nya-tutg.below.auto</key>
+    <string>cha_nya-tutg.below.auto.glif</string>
     <key>cha_rVocalicMatra-tutg</key>
     <string>cha_rV_ocalicM_atra-tutg.glif</string>
+    <key>cha_rVocalicMatra-tutg.below.auto</key>
+    <string>cha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>cha_rrVocalicMatra-tutg</key>
     <string>cha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>cha_rrVocalicMatra-tutg.below.auto</key>
+    <string>cha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>cha_uMatra-tutg</key>
     <string>cha_uM_atra-tutg.glif</string>
     <key>cha_uMatra-tutg.alt1</key>
     <string>cha_uM_atra-tutg.alt1.glif</string>
+    <key>cha_uMatra-tutg.below.auto</key>
+    <string>cha_uM_atra-tutg.below.auto.glif</string>
     <key>cha_uuMatra-tutg</key>
     <string>cha_uuM_atra-tutg.glif</string>
+    <key>cha_uuMatra-tutg.below.auto</key>
+    <string>cha_uuM_atra-tutg.below.auto.glif</string>
     <key>colon</key>
     <string>colon.glif</string>
     <key>comma</key>
@@ -434,50 +498,94 @@
     <string>da-tutg.below.alt2.glif</string>
     <key>da_ba-tutg</key>
     <string>da_ba-tutg.glif</string>
+    <key>da_ba-tutg.below.auto</key>
+    <string>da_ba-tutg.below.auto.glif</string>
     <key>da_bha-tutg</key>
     <string>da_bha-tutg.glif</string>
+    <key>da_bha-tutg.below.auto</key>
+    <string>da_bha-tutg.below.auto.glif</string>
     <key>da_da-tutg</key>
     <string>da_da-tutg.glif</string>
+    <key>da_da-tutg.below.auto</key>
+    <string>da_da-tutg.below.auto.glif</string>
     <key>da_da_ra-tutg</key>
     <string>da_da_ra-tutg.glif</string>
+    <key>da_da_ra-tutg.below.auto</key>
+    <string>da_da_ra-tutg.below.auto.glif</string>
     <key>da_da_ya-tutg</key>
     <string>da_da_ya-tutg.glif</string>
+    <key>da_da_ya-tutg.below.auto</key>
+    <string>da_da_ya-tutg.below.auto.glif</string>
     <key>da_dha-tutg</key>
     <string>da_dha-tutg.glif</string>
+    <key>da_dha-tutg.below.auto</key>
+    <string>da_dha-tutg.below.auto.glif</string>
     <key>da_dha_ma-tutg</key>
     <string>da_dha_ma-tutg.glif</string>
+    <key>da_dha_ma-tutg.below.auto</key>
+    <string>da_dha_ma-tutg.below.auto.glif</string>
     <key>da_dha_ra-tutg</key>
     <string>da_dha_ra-tutg.glif</string>
+    <key>da_dha_ra-tutg.below.auto</key>
+    <string>da_dha_ra-tutg.below.auto.glif</string>
     <key>da_dha_va-tutg</key>
     <string>da_dha_va-tutg.glif</string>
+    <key>da_dha_va-tutg.below.auto</key>
+    <string>da_dha_va-tutg.below.auto.glif</string>
     <key>da_dha_ya-tutg</key>
     <string>da_dha_ya-tutg.glif</string>
+    <key>da_dha_ya-tutg.below.auto</key>
+    <string>da_dha_ya-tutg.below.auto.glif</string>
     <key>da_ga-tutg</key>
     <string>da_ga-tutg.glif</string>
+    <key>da_ga-tutg.below.auto</key>
+    <string>da_ga-tutg.below.auto.glif</string>
     <key>da_gha-tutg</key>
     <string>da_gha-tutg.glif</string>
+    <key>da_gha-tutg.below.auto</key>
+    <string>da_gha-tutg.below.auto.glif</string>
     <key>da_lVocalicMatra-tutg</key>
     <string>da_lV_ocalicM_atra-tutg.glif</string>
     <key>da_lVocalicMatra-tutg.alt</key>
     <string>da_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>da_lVocalicMatra-tutg.below.auto</key>
+    <string>da_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>da_la-tutg</key>
     <string>da_la-tutg.glif</string>
+    <key>da_la-tutg.below.auto</key>
+    <string>da_la-tutg.below.auto.glif</string>
     <key>da_ma-tutg</key>
     <string>da_ma-tutg.glif</string>
+    <key>da_ma-tutg.below.auto</key>
+    <string>da_ma-tutg.below.auto.glif</string>
     <key>da_rVocalicMatra-tutg</key>
     <string>da_rV_ocalicM_atra-tutg.glif</string>
+    <key>da_rVocalicMatra-tutg.below.auto</key>
+    <string>da_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>da_ra-tutg</key>
     <string>da_ra-tutg.glif</string>
+    <key>da_ra-tutg.below.auto</key>
+    <string>da_ra-tutg.below.auto.glif</string>
     <key>da_rrVocalicMatra-tutg</key>
     <string>da_rrV_ocalicM_atra-tutg.glif</string>
+    <key>da_rrVocalicMatra-tutg.below.auto</key>
+    <string>da_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>da_uMatra-tutg</key>
     <string>da_uM_atra-tutg.glif</string>
+    <key>da_uMatra-tutg.below.auto</key>
+    <string>da_uM_atra-tutg.below.auto.glif</string>
     <key>da_uuMatra-tutg</key>
     <string>da_uuM_atra-tutg.glif</string>
+    <key>da_uuMatra-tutg.below.auto</key>
+    <string>da_uuM_atra-tutg.below.auto.glif</string>
     <key>da_va-tutg</key>
     <string>da_va-tutg.glif</string>
+    <key>da_va-tutg.below.auto</key>
+    <string>da_va-tutg.below.auto.glif</string>
     <key>da_ya-tutg</key>
     <string>da_ya-tutg.glif</string>
+    <key>da_ya-tutg.below.auto</key>
+    <string>da_ya-tutg.below.auto.glif</string>
     <key>danda-tutg</key>
     <string>danda-tutg.glif</string>
     <key>dda-tutg</key>
@@ -490,18 +598,30 @@
     <string>dda-tutg.below.alt1.glif</string>
     <key>dda_ga-tutg</key>
     <string>dda_ga-tutg.glif</string>
+    <key>dda_ga-tutg.below.auto</key>
+    <string>dda_ga-tutg.below.auto.glif</string>
     <key>dda_lVocalicMatra-tutg</key>
     <string>dda_lV_ocalicM_atra-tutg.glif</string>
     <key>dda_lVocalicMatra-tutg.alt</key>
     <string>dda_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>dda_lVocalicMatra-tutg.below.auto</key>
+    <string>dda_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dda_rVocalicMatra-tutg</key>
     <string>dda_rV_ocalicM_atra-tutg.glif</string>
+    <key>dda_rVocalicMatra-tutg.below.auto</key>
+    <string>dda_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dda_rrVocalicMatra-tutg</key>
     <string>dda_rrV_ocalicM_atra-tutg.glif</string>
+    <key>dda_rrVocalicMatra-tutg.below.auto</key>
+    <string>dda_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dda_uMatra-tutg</key>
     <string>dda_uM_atra-tutg.glif</string>
+    <key>dda_uMatra-tutg.below.auto</key>
+    <string>dda_uM_atra-tutg.below.auto.glif</string>
     <key>dda_uuMatra-tutg</key>
     <string>dda_uuM_atra-tutg.glif</string>
+    <key>dda_uuMatra-tutg.below.auto</key>
+    <string>dda_uuM_atra-tutg.below.auto.glif</string>
     <key>ddha-tutg</key>
     <string>ddha-tutg.glif</string>
     <key>ddha-tutg.alt1</key>
@@ -514,14 +634,24 @@
     <string>ddha_lV_ocalicM_atra-tutg.glif</string>
     <key>ddha_lVocalicMatra-tutg.alt</key>
     <string>ddha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ddha_lVocalicMatra-tutg.below.auto</key>
+    <string>ddha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ddha_rVocalicMatra-tutg</key>
     <string>ddha_rV_ocalicM_atra-tutg.glif</string>
+    <key>ddha_rVocalicMatra-tutg.below.auto</key>
+    <string>ddha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ddha_rrVocalicMatra-tutg</key>
     <string>ddha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ddha_rrVocalicMatra-tutg.below.auto</key>
+    <string>ddha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ddha_uMatra-tutg</key>
     <string>ddha_uM_atra-tutg.glif</string>
+    <key>ddha_uMatra-tutg.below.auto</key>
+    <string>ddha_uM_atra-tutg.below.auto.glif</string>
     <key>ddha_uuMatra-tutg</key>
     <string>ddha_uuM_atra-tutg.glif</string>
+    <key>ddha_uuMatra-tutg.below.auto</key>
+    <string>ddha_uuM_atra-tutg.below.auto.glif</string>
     <key>dha-tutg</key>
     <string>dha-tutg.glif</string>
     <key>dha-tutg.below</key>
@@ -530,14 +660,24 @@
     <string>dha_lV_ocalicM_atra-tutg.glif</string>
     <key>dha_lVocalicMatra-tutg.alt</key>
     <string>dha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>dha_lVocalicMatra-tutg.below.auto</key>
+    <string>dha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dha_rVocalicMatra-tutg</key>
     <string>dha_rV_ocalicM_atra-tutg.glif</string>
+    <key>dha_rVocalicMatra-tutg.below.auto</key>
+    <string>dha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dha_rrVocalicMatra-tutg</key>
     <string>dha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>dha_rrVocalicMatra-tutg.below.auto</key>
+    <string>dha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>dha_uMatra-tutg</key>
     <string>dha_uM_atra-tutg.glif</string>
+    <key>dha_uMatra-tutg.below.auto</key>
+    <string>dha_uM_atra-tutg.below.auto.glif</string>
     <key>dha_uuMatra-tutg</key>
     <string>dha_uuM_atra-tutg.glif</string>
+    <key>dha_uuMatra-tutg.below.auto</key>
+    <string>dha_uuM_atra-tutg.below.auto.glif</string>
     <key>dotaccent</key>
     <string>dotaccent.glif</string>
     <key>dottedCircle</key>
@@ -610,48 +750,88 @@
     <string>ga-tutg.below.glif</string>
     <key>ga_ba-tutg</key>
     <string>ga_ba-tutg.glif</string>
+    <key>ga_ba-tutg.below.auto</key>
+    <string>ga_ba-tutg.below.auto.glif</string>
     <key>ga_bha-tutg</key>
     <string>ga_bha-tutg.glif</string>
+    <key>ga_bha-tutg.below.auto</key>
+    <string>ga_bha-tutg.below.auto.glif</string>
     <key>ga_bha_ya-tutg</key>
     <string>ga_bha_ya-tutg.glif</string>
+    <key>ga_bha_ya-tutg.below.auto</key>
+    <string>ga_bha_ya-tutg.below.auto.glif</string>
     <key>ga_da-tutg</key>
     <string>ga_da-tutg.glif</string>
+    <key>ga_da-tutg.below.auto</key>
+    <string>ga_da-tutg.below.auto.glif</string>
     <key>ga_da_dha-tutg</key>
     <string>ga_da_dha-tutg.glif</string>
+    <key>ga_da_dha-tutg.below.auto</key>
+    <string>ga_da_dha-tutg.below.auto.glif</string>
     <key>ga_da_dha_ra-tutg</key>
     <string>ga_da_dha_ra-tutg.glif</string>
+    <key>ga_da_dha_ra-tutg.below.auto</key>
+    <string>ga_da_dha_ra-tutg.below.auto.glif</string>
     <key>ga_da_dha_va-tutg</key>
     <string>ga_da_dha_va-tutg.glif</string>
+    <key>ga_da_dha_va-tutg.below.auto</key>
+    <string>ga_da_dha_va-tutg.below.auto.glif</string>
     <key>ga_dha-tutg</key>
     <string>ga_dha-tutg.glif</string>
+    <key>ga_dha-tutg.below.auto</key>
+    <string>ga_dha-tutg.below.auto.glif</string>
     <key>ga_dha_va-tutg</key>
     <string>ga_dha_va-tutg.glif</string>
+    <key>ga_dha_va-tutg.below.auto</key>
+    <string>ga_dha_va-tutg.below.auto.glif</string>
     <key>ga_ga-tutg</key>
     <string>ga_ga-tutg.glif</string>
     <key>ga_ga-tutg.alt1</key>
     <string>ga_ga-tutg.alt1.glif</string>
+    <key>ga_ga-tutg.below.auto</key>
+    <string>ga_ga-tutg.below.auto.glif</string>
     <key>ga_ga_rVocalicMatra-tutg</key>
     <string>ga_ga_rV_ocalicM_atra-tutg.glif</string>
+    <key>ga_ga_rVocalicMatra-tutg.below.auto</key>
+    <string>ga_ga_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ga_gha-tutg</key>
     <string>ga_gha-tutg.glif</string>
+    <key>ga_gha-tutg.below.auto</key>
+    <string>ga_gha-tutg.below.auto.glif</string>
     <key>ga_ja-tutg</key>
     <string>ga_ja-tutg.glif</string>
+    <key>ga_ja-tutg.below.auto</key>
+    <string>ga_ja-tutg.below.auto.glif</string>
     <key>ga_lVocalicMatra-tutg</key>
     <string>ga_lV_ocalicM_atra-tutg.glif</string>
     <key>ga_lVocalicMatra-tutg.alt</key>
     <string>ga_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ga_lVocalicMatra-tutg.below.auto</key>
+    <string>ga_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ga_ma-tutg</key>
     <string>ga_ma-tutg.glif</string>
+    <key>ga_ma-tutg.below.auto</key>
+    <string>ga_ma-tutg.below.auto.glif</string>
     <key>ga_na-tutg</key>
     <string>ga_na-tutg.glif</string>
+    <key>ga_na-tutg.below.auto</key>
+    <string>ga_na-tutg.below.auto.glif</string>
     <key>ga_na_va-tutg</key>
     <string>ga_na_va-tutg.glif</string>
+    <key>ga_na_va-tutg.below.auto</key>
+    <string>ga_na_va-tutg.below.auto.glif</string>
     <key>ga_na_ya-tutg</key>
     <string>ga_na_ya-tutg.glif</string>
+    <key>ga_na_ya-tutg.below.auto</key>
+    <string>ga_na_ya-tutg.below.auto.glif</string>
     <key>ga_rVocalicMatra-tutg</key>
     <string>ga_rV_ocalicM_atra-tutg.glif</string>
+    <key>ga_rVocalicMatra-tutg.below.auto</key>
+    <string>ga_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ga_rrVocalicMatra-tutg</key>
     <string>ga_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ga_rrVocalicMatra-tutg.below.auto</key>
+    <string>ga_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ga_uMatra-tutg</key>
     <string>ga_uM_atra-tutg.glif</string>
     <key>ga_uMatra-tutg.alt1</key>
@@ -660,8 +840,12 @@
     <string>ga_uM_atra-tutg.below.glif</string>
     <key>ga_uuMatra-tutg</key>
     <string>ga_uuM_atra-tutg.glif</string>
+    <key>ga_uuMatra-tutg.below.auto</key>
+    <string>ga_uuM_atra-tutg.below.auto.glif</string>
     <key>ga_ya-tutg</key>
     <string>ga_ya-tutg.glif</string>
+    <key>ga_ya-tutg.below.auto</key>
+    <string>ga_ya-tutg.below.auto.glif</string>
     <key>germinationmark-tutg</key>
     <string>germinationmark-tutg.glif</string>
     <key>gha-tutg</key>
@@ -680,14 +864,24 @@
     <string>gha_lV_ocalicM_atra-tutg.glif</string>
     <key>gha_lVocalicMatra-tutg.alt</key>
     <string>gha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>gha_lVocalicMatra-tutg.below.auto</key>
+    <string>gha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>gha_rVocalicMatra-tutg</key>
     <string>gha_rV_ocalicM_atra-tutg.glif</string>
+    <key>gha_rVocalicMatra-tutg.below.auto</key>
+    <string>gha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>gha_rrVocalicMatra-tutg</key>
     <string>gha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>gha_rrVocalicMatra-tutg.below.auto</key>
+    <string>gha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>gha_uMatra-tutg</key>
     <string>gha_uM_atra-tutg.glif</string>
+    <key>gha_uMatra-tutg.below.auto</key>
+    <string>gha_uM_atra-tutg.below.auto.glif</string>
     <key>gha_uuMatra-tutg</key>
     <string>gha_uuM_atra-tutg.glif</string>
+    <key>gha_uuMatra-tutg.below.auto</key>
+    <string>gha_uuM_atra-tutg.below.auto.glif</string>
     <key>glyph-not-found</key>
     <string>glyph-not-found.glif</string>
     <key>guillemetleft</key>
@@ -712,24 +906,40 @@
     <string>ha_lV_ocalicM_atra-tutg.glif</string>
     <key>ha_lVocalicMatra-tutg.alt</key>
     <string>ha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ha_lVocalicMatra-tutg.below.auto</key>
+    <string>ha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ha_ma-tutg</key>
     <string>ha_ma-tutg.glif</string>
+    <key>ha_ma-tutg.below.auto</key>
+    <string>ha_ma-tutg.below.auto.glif</string>
     <key>ha_na-tutg</key>
     <string>ha_na-tutg.glif</string>
+    <key>ha_na-tutg.below.auto</key>
+    <string>ha_na-tutg.below.auto.glif</string>
     <key>ha_na_ya-tutg</key>
     <string>ha_na_ya-tutg.glif</string>
+    <key>ha_na_ya-tutg.below.auto</key>
+    <string>ha_na_ya-tutg.below.auto.glif</string>
     <key>ha_rVocalicMatra-tutg</key>
     <string>ha_rV_ocalicM_atra-tutg.glif</string>
+    <key>ha_rVocalicMatra-tutg.below.auto</key>
+    <string>ha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ha_ra-tutg.below</key>
     <string>ha_ra-tutg.below.glif</string>
     <key>ha_rrVocalicMatra-tutg</key>
     <string>ha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ha_rrVocalicMatra-tutg.below.auto</key>
+    <string>ha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ha_uMatra-tutg</key>
     <string>ha_uM_atra-tutg.glif</string>
     <key>ha_uMatra-tutg.alt1</key>
     <string>ha_uM_atra-tutg.alt1.glif</string>
+    <key>ha_uMatra-tutg.below.auto</key>
+    <string>ha_uM_atra-tutg.below.auto.glif</string>
     <key>ha_uuMatra-tutg</key>
     <string>ha_uuM_atra-tutg.glif</string>
+    <key>ha_uuMatra-tutg.below.auto</key>
+    <string>ha_uuM_atra-tutg.below.auto.glif</string>
     <key>ha_ya-tutg</key>
     <string>ha_ya-tutg.glif</string>
     <key>ha_ya-tutg.below</key>
@@ -764,38 +974,64 @@
     <string>ja-tutg.below.glif</string>
     <key>ja_cha-tutg</key>
     <string>ja_cha-tutg.glif</string>
+    <key>ja_cha-tutg.below.auto</key>
+    <string>ja_cha-tutg.below.auto.glif</string>
     <key>ja_ja-tutg</key>
     <string>ja_ja-tutg.glif</string>
+    <key>ja_ja-tutg.below.auto</key>
+    <string>ja_ja-tutg.below.auto.glif</string>
     <key>ja_ja_nya-tutg</key>
     <string>ja_ja_nya-tutg.glif</string>
+    <key>ja_ja_nya-tutg.below.auto</key>
+    <string>ja_ja_nya-tutg.below.auto.glif</string>
     <key>ja_ja_ya-tutg</key>
     <string>ja_ja_ya-tutg.glif</string>
+    <key>ja_ja_ya-tutg.below.auto</key>
+    <string>ja_ja_ya-tutg.below.auto.glif</string>
     <key>ja_lVocalicMatra-tutg</key>
     <string>ja_lV_ocalicM_atra-tutg.glif</string>
     <key>ja_lVocalicMatra-tutg.alt</key>
     <string>ja_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ja_lVocalicMatra-tutg.below.auto</key>
+    <string>ja_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ja_ma-tutg</key>
     <string>ja_ma-tutg.glif</string>
+    <key>ja_ma-tutg.below.auto</key>
+    <string>ja_ma-tutg.below.auto.glif</string>
     <key>ja_nya-tutg</key>
     <string>ja_nya-tutg.glif</string>
+    <key>ja_nya-tutg.below.auto</key>
+    <string>ja_nya-tutg.below.auto.glif</string>
     <key>ja_rVocalicMatra-tutg</key>
     <string>ja_rV_ocalicM_atra-tutg.glif</string>
+    <key>ja_rVocalicMatra-tutg.below.auto</key>
+    <string>ja_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ja_ra-tutg</key>
     <string>ja_ra-tutg.glif</string>
+    <key>ja_ra-tutg.below.auto</key>
+    <string>ja_ra-tutg.below.auto.glif</string>
     <key>ja_rrVocalicMatra-tutg</key>
     <string>ja_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ja_rrVocalicMatra-tutg.below.auto</key>
+    <string>ja_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ja_uMatra-tutg</key>
     <string>ja_uM_atra-tutg.glif</string>
     <key>ja_uMatra-tutg.alt1</key>
     <string>ja_uM_atra-tutg.alt1.glif</string>
+    <key>ja_uMatra-tutg.below.auto</key>
+    <string>ja_uM_atra-tutg.below.auto.glif</string>
     <key>ja_uuMatra-tutg</key>
     <string>ja_uuM_atra-tutg.glif</string>
     <key>ja_uuMatra-tutg.below</key>
     <string>ja_uuM_atra-tutg.below.glif</string>
     <key>ja_va-tutg</key>
     <string>ja_va-tutg.glif</string>
+    <key>ja_va-tutg.below.auto</key>
+    <string>ja_va-tutg.below.auto.glif</string>
     <key>ja_ya-tutg</key>
     <string>ja_ya-tutg.glif</string>
+    <key>ja_ya-tutg.below.auto</key>
+    <string>ja_ya-tutg.below.auto.glif</string>
     <key>jha-tutg</key>
     <string>jha-tutg.glif</string>
     <key>jha-tutg.alt1</key>
@@ -814,18 +1050,30 @@
     <string>jha-tutg.below.alt3.glif</string>
     <key>jha_jha-tutg</key>
     <string>jha_jha-tutg.glif</string>
+    <key>jha_jha-tutg.below.auto</key>
+    <string>jha_jha-tutg.below.auto.glif</string>
     <key>jha_lVocalicMatra-tutg</key>
     <string>jha_lV_ocalicM_atra-tutg.glif</string>
     <key>jha_lVocalicMatra-tutg.alt</key>
     <string>jha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>jha_lVocalicMatra-tutg.below.auto</key>
+    <string>jha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>jha_rVocalicMatra-tutg</key>
     <string>jha_rV_ocalicM_atra-tutg.glif</string>
+    <key>jha_rVocalicMatra-tutg.below.auto</key>
+    <string>jha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>jha_rrVocalicMatra-tutg</key>
     <string>jha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>jha_rrVocalicMatra-tutg.below.auto</key>
+    <string>jha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>jha_uMatra-tutg</key>
     <string>jha_uM_atra-tutg.glif</string>
+    <key>jha_uMatra-tutg.below.auto</key>
+    <string>jha_uM_atra-tutg.below.auto.glif</string>
     <key>jha_uuMatra-tutg</key>
     <string>jha_uuM_atra-tutg.glif</string>
+    <key>jha_uuMatra-tutg.below.auto</key>
+    <string>jha_uuM_atra-tutg.below.auto.glif</string>
     <key>k</key>
     <string>k.glif</string>
     <key>kChillu-tutg</key>
@@ -836,90 +1084,170 @@
     <string>ka-tutg.below.glif</string>
     <key>ka_iMatra_dotreph-tutg</key>
     <string>ka_iM_atra_dotreph-tutg.glif</string>
+    <key>ka_iMatra_dotreph-tutg.below.auto</key>
+    <string>ka_iM_atra_dotreph-tutg.below.auto.glif</string>
     <key>ka_kChillu-tutg</key>
     <string>ka_kC_hillu-tutg.glif</string>
+    <key>ka_kChillu-tutg.below.auto</key>
+    <string>ka_kC_hillu-tutg.below.auto.glif</string>
     <key>ka_ka-tutg</key>
     <string>ka_ka-tutg.glif</string>
+    <key>ka_ka-tutg.below.auto</key>
+    <string>ka_ka-tutg.below.auto.glif</string>
     <key>ka_ka_rVocalicMatra-tutg</key>
     <string>ka_ka_rV_ocalicM_atra-tutg.glif</string>
+    <key>ka_ka_rVocalicMatra-tutg.below.auto</key>
+    <string>ka_ka_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ka_ka_ra-tutg</key>
     <string>ka_ka_ra-tutg.glif</string>
+    <key>ka_ka_ra-tutg.below.auto</key>
+    <string>ka_ka_ra-tutg.below.auto.glif</string>
     <key>ka_lVocalicMatra-tutg</key>
     <string>ka_lV_ocalicM_atra-tutg.glif</string>
     <key>ka_lVocalicMatra-tutg.alt</key>
     <string>ka_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ka_lVocalicMatra-tutg.below.auto</key>
+    <string>ka_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ka_ma-tutg</key>
     <string>ka_ma-tutg.glif</string>
+    <key>ka_ma-tutg.below.auto</key>
+    <string>ka_ma-tutg.below.auto.glif</string>
     <key>ka_nChillu-tutg</key>
     <string>ka_nC_hillu-tutg.glif</string>
+    <key>ka_nChillu-tutg.below.auto</key>
+    <string>ka_nC_hillu-tutg.below.auto.glif</string>
     <key>ka_na-tutg</key>
     <string>ka_na-tutg.glif</string>
+    <key>ka_na-tutg.below.auto</key>
+    <string>ka_na-tutg.below.auto.glif</string>
     <key>ka_na_ya-tutg</key>
     <string>ka_na_ya-tutg.glif</string>
+    <key>ka_na_ya-tutg.below.auto</key>
+    <string>ka_na_ya-tutg.below.auto.glif</string>
     <key>ka_rVocalicMatra-tutg</key>
     <string>ka_rV_ocalicM_atra-tutg.glif</string>
+    <key>ka_rVocalicMatra-tutg.below.auto</key>
+    <string>ka_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ka_ra-tutg</key>
     <string>ka_ra-tutg.glif</string>
+    <key>ka_ra-tutg.below.auto</key>
+    <string>ka_ra-tutg.below.auto.glif</string>
     <key>ka_rrVocalicMatra-tutg</key>
     <string>ka_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ka_rrVocalicMatra-tutg.below.auto</key>
+    <string>ka_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ka_sa-tutg</key>
     <string>ka_sa-tutg.glif</string>
+    <key>ka_sa-tutg.below.auto</key>
+    <string>ka_sa-tutg.below.auto.glif</string>
     <key>ka_sa_sa-tutg</key>
     <string>ka_sa_sa-tutg.glif</string>
     <key>ka_sa_sa-tutg.alt1</key>
     <string>ka_sa_sa-tutg.alt1.glif</string>
+    <key>ka_sa_sa-tutg.below.auto</key>
+    <string>ka_sa_sa-tutg.below.auto.glif</string>
     <key>ka_ssa-tutg</key>
     <string>ka_ssa-tutg.glif</string>
+    <key>ka_ssa-tutg.below.auto</key>
+    <string>ka_ssa-tutg.below.auto.glif</string>
     <key>ka_ssa_ma-tutg</key>
     <string>ka_ssa_ma-tutg.glif</string>
+    <key>ka_ssa_ma-tutg.below.auto</key>
+    <string>ka_ssa_ma-tutg.below.auto.glif</string>
     <key>ka_ssa_ma_ya-tutg</key>
     <string>ka_ssa_ma_ya-tutg.glif</string>
+    <key>ka_ssa_ma_ya-tutg.below.auto</key>
+    <string>ka_ssa_ma_ya-tutg.below.auto.glif</string>
     <key>ka_ssa_nna-tutg</key>
     <string>ka_ssa_nna-tutg.glif</string>
+    <key>ka_ssa_nna-tutg.below.auto</key>
+    <string>ka_ssa_nna-tutg.below.auto.glif</string>
     <key>ka_ssa_nna_ya-tutg</key>
     <string>ka_ssa_nna_ya-tutg.glif</string>
+    <key>ka_ssa_nna_ya-tutg.below.auto</key>
+    <string>ka_ssa_nna_ya-tutg.below.auto.glif</string>
     <key>ka_ssa_ra-tutg</key>
     <string>ka_ssa_ra-tutg.glif</string>
+    <key>ka_ssa_ra-tutg.below.auto</key>
+    <string>ka_ssa_ra-tutg.below.auto.glif</string>
     <key>ka_ssa_va-tutg</key>
     <string>ka_ssa_va-tutg.glif</string>
+    <key>ka_ssa_va-tutg.below.auto</key>
+    <string>ka_ssa_va-tutg.below.auto.glif</string>
     <key>ka_ssa_ya-tutg</key>
     <string>ka_ssa_ya-tutg.glif</string>
+    <key>ka_ssa_ya-tutg.below.auto</key>
+    <string>ka_ssa_ya-tutg.below.auto.glif</string>
     <key>ka_tChillu-tutg</key>
     <string>ka_tC_hillu-tutg.glif</string>
+    <key>ka_tChillu-tutg.below.auto</key>
+    <string>ka_tC_hillu-tutg.below.auto.glif</string>
     <key>ka_ta-tutg</key>
     <string>ka_ta-tutg.glif</string>
+    <key>ka_ta-tutg.below.auto</key>
+    <string>ka_ta-tutg.below.auto.glif</string>
     <key>ka_ta_ra-tutg</key>
     <string>ka_ta_ra-tutg.glif</string>
+    <key>ka_ta_ra-tutg.below.auto</key>
+    <string>ka_ta_ra-tutg.below.auto.glif</string>
     <key>ka_ta_ra_ya-tutg</key>
     <string>ka_ta_ra_ya-tutg.glif</string>
+    <key>ka_ta_ra_ya-tutg.below.auto</key>
+    <string>ka_ta_ra_ya-tutg.below.auto.glif</string>
     <key>ka_ta_tha-tutg</key>
     <string>ka_ta_tha-tutg.glif</string>
+    <key>ka_ta_tha-tutg.below.auto</key>
+    <string>ka_ta_tha-tutg.below.auto.glif</string>
     <key>ka_ta_uMatra-tutg</key>
     <string>ka_ta_uM_atra-tutg.glif</string>
+    <key>ka_ta_uMatra-tutg.below.auto</key>
+    <string>ka_ta_uM_atra-tutg.below.auto.glif</string>
     <key>ka_ta_uuMatra-tutg</key>
     <string>ka_ta_uuM_atra-tutg.glif</string>
+    <key>ka_ta_uuMatra-tutg.below.auto</key>
+    <string>ka_ta_uuM_atra-tutg.below.auto.glif</string>
     <key>ka_ta_va-tutg</key>
     <string>ka_ta_va-tutg.glif</string>
+    <key>ka_ta_va-tutg.below.auto</key>
+    <string>ka_ta_va-tutg.below.auto.glif</string>
     <key>ka_ta_ya-tutg</key>
     <string>ka_ta_ya-tutg.glif</string>
+    <key>ka_ta_ya-tutg.below.auto</key>
+    <string>ka_ta_ya-tutg.below.auto.glif</string>
     <key>ka_tha-tutg</key>
     <string>ka_tha-tutg.glif</string>
+    <key>ka_tha-tutg.below.auto</key>
+    <string>ka_tha-tutg.below.auto.glif</string>
     <key>ka_tha_ya-tutg</key>
     <string>ka_tha_ya-tutg.glif</string>
+    <key>ka_tha_ya-tutg.below.auto</key>
+    <string>ka_tha_ya-tutg.below.auto.glif</string>
     <key>ka_ttChillu-tutg</key>
     <string>ka_ttC_hillu-tutg.glif</string>
+    <key>ka_ttChillu-tutg.below.auto</key>
+    <string>ka_ttC_hillu-tutg.below.auto.glif</string>
     <key>ka_tta-tutg</key>
     <string>ka_tta-tutg.glif</string>
+    <key>ka_tta-tutg.below.auto</key>
+    <string>ka_tta-tutg.below.auto.glif</string>
     <key>ka_uMatra-tutg</key>
     <string>ka_uM_atra-tutg.glif</string>
     <key>ka_uMatra-tutg.alt1</key>
     <string>ka_uM_atra-tutg.alt1.glif</string>
+    <key>ka_uMatra-tutg.below.auto</key>
+    <string>ka_uM_atra-tutg.below.auto.glif</string>
     <key>ka_uuMatra-tutg</key>
     <string>ka_uuM_atra-tutg.glif</string>
+    <key>ka_uuMatra-tutg.below.auto</key>
+    <string>ka_uuM_atra-tutg.below.auto.glif</string>
     <key>ka_va-tutg</key>
     <string>ka_va-tutg.glif</string>
+    <key>ka_va-tutg.below.auto</key>
+    <string>ka_va-tutg.below.auto.glif</string>
     <key>ka_ya-tutg</key>
     <string>ka_ya-tutg.glif</string>
+    <key>ka_ya-tutg.below.auto</key>
+    <string>ka_ya-tutg.below.auto.glif</string>
     <key>kha-tutg</key>
     <string>kha-tutg.glif</string>
     <key>kha-tutg.alt1</key>
@@ -934,22 +1262,38 @@
     <string>kha-tutg.below.alt2.glif</string>
     <key>kha_ka-tutg</key>
     <string>kha_ka-tutg.glif</string>
+    <key>kha_ka-tutg.below.auto</key>
+    <string>kha_ka-tutg.below.auto.glif</string>
     <key>kha_kha-tutg</key>
     <string>kha_kha-tutg.glif</string>
+    <key>kha_kha-tutg.below.auto</key>
+    <string>kha_kha-tutg.below.auto.glif</string>
     <key>kha_lVocalicMatra-tutg</key>
     <string>kha_lV_ocalicM_atra-tutg.glif</string>
     <key>kha_lVocalicMatra-tutg.alt</key>
     <string>kha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>kha_lVocalicMatra-tutg.below.auto</key>
+    <string>kha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>kha_rVocalicMatra-tutg</key>
     <string>kha_rV_ocalicM_atra-tutg.glif</string>
+    <key>kha_rVocalicMatra-tutg.below.auto</key>
+    <string>kha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>kha_rrVocalicMatra-tutg</key>
     <string>kha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>kha_rrVocalicMatra-tutg.below.auto</key>
+    <string>kha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>kha_uMatra-tutg</key>
     <string>kha_uM_atra-tutg.glif</string>
+    <key>kha_uMatra-tutg.below.auto</key>
+    <string>kha_uM_atra-tutg.below.auto.glif</string>
     <key>kha_uuMatra-tutg</key>
     <string>kha_uuM_atra-tutg.glif</string>
+    <key>kha_uuMatra-tutg.below.auto</key>
+    <string>kha_uuM_atra-tutg.below.auto.glif</string>
     <key>kha_ya-tutg</key>
     <string>kha_ya-tutg.glif</string>
+    <key>kha_ya-tutg.below.auto</key>
+    <string>kha_ya-tutg.below.auto.glif</string>
     <key>l</key>
     <string>l.glif</string>
     <key>lVocalic-tutg</key>
@@ -968,30 +1312,54 @@
     <string>la-tutg.below.alt1.glif</string>
     <key>la_ka-tutg</key>
     <string>la_ka-tutg.glif</string>
+    <key>la_ka-tutg.below.auto</key>
+    <string>la_ka-tutg.below.auto.glif</string>
     <key>la_ka_uMatra-tutg</key>
     <string>la_ka_uM_atra-tutg.glif</string>
+    <key>la_ka_uMatra-tutg.below.auto</key>
+    <string>la_ka_uM_atra-tutg.below.auto.glif</string>
     <key>la_lVocalicMatra-tutg</key>
     <string>la_lV_ocalicM_atra-tutg.glif</string>
     <key>la_lVocalicMatra-tutg.alt</key>
     <string>la_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>la_lVocalicMatra-tutg.below.auto</key>
+    <string>la_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>la_la-tutg</key>
     <string>la_la-tutg.glif</string>
+    <key>la_la-tutg.below.auto</key>
+    <string>la_la-tutg.below.auto.glif</string>
     <key>la_la_ya-tutg</key>
     <string>la_la_ya-tutg.glif</string>
+    <key>la_la_ya-tutg.below.auto</key>
+    <string>la_la_ya-tutg.below.auto.glif</string>
     <key>la_rVocalicMatra-tutg</key>
     <string>la_rV_ocalicM_atra-tutg.glif</string>
+    <key>la_rVocalicMatra-tutg.below.auto</key>
+    <string>la_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>la_ra-tutg</key>
     <string>la_ra-tutg.glif</string>
+    <key>la_ra-tutg.below.auto</key>
+    <string>la_ra-tutg.below.auto.glif</string>
     <key>la_rrVocalicMatra-tutg</key>
     <string>la_rrV_ocalicM_atra-tutg.glif</string>
+    <key>la_rrVocalicMatra-tutg.below.auto</key>
+    <string>la_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>la_uMatra-tutg</key>
     <string>la_uM_atra-tutg.glif</string>
+    <key>la_uMatra-tutg.below.auto</key>
+    <string>la_uM_atra-tutg.below.auto.glif</string>
     <key>la_uuMatra-tutg</key>
     <string>la_uuM_atra-tutg.glif</string>
+    <key>la_uuMatra-tutg.below.auto</key>
+    <string>la_uuM_atra-tutg.below.auto.glif</string>
     <key>la_va-tutg</key>
     <string>la_va-tutg.glif</string>
+    <key>la_va-tutg.below.auto</key>
+    <string>la_va-tutg.below.auto.glif</string>
     <key>la_ya-tutg</key>
     <string>la_ya-tutg.glif</string>
+    <key>la_ya-tutg.below.auto</key>
+    <string>la_ya-tutg.below.auto.glif</string>
     <key>llChillu-tutg</key>
     <string>llC_hillu-tutg.glif</string>
     <key>llVocalic-tutg</key>
@@ -1012,20 +1380,36 @@
     <string>lla_lV_ocalicM_atra-tutg.glif</string>
     <key>lla_lVocalicMatra-tutg.alt</key>
     <string>lla_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>lla_lVocalicMatra-tutg.below.auto</key>
+    <string>lla_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>lla_lla-tutg</key>
     <string>lla_lla-tutg.glif</string>
+    <key>lla_lla-tutg.below.auto</key>
+    <string>lla_lla-tutg.below.auto.glif</string>
     <key>lla_pa-tutg</key>
     <string>lla_pa-tutg.glif</string>
+    <key>lla_pa-tutg.below.auto</key>
+    <string>lla_pa-tutg.below.auto.glif</string>
     <key>lla_rVocalicMatra-tutg</key>
     <string>lla_rV_ocalicM_atra-tutg.glif</string>
+    <key>lla_rVocalicMatra-tutg.below.auto</key>
+    <string>lla_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>lla_rrVocalicMatra-tutg</key>
     <string>lla_rrV_ocalicM_atra-tutg.glif</string>
+    <key>lla_rrVocalicMatra-tutg.below.auto</key>
+    <string>lla_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>lla_uMatra-tutg</key>
     <string>lla_uM_atra-tutg.glif</string>
+    <key>lla_uMatra-tutg.below.auto</key>
+    <string>lla_uM_atra-tutg.below.auto.glif</string>
     <key>lla_uuMatra-tutg</key>
     <string>lla_uuM_atra-tutg.glif</string>
+    <key>lla_uuMatra-tutg.below.auto</key>
+    <string>lla_uuM_atra-tutg.below.auto.glif</string>
     <key>lla_ya-tutg</key>
     <string>lla_ya-tutg.glif</string>
+    <key>lla_ya-tutg.below.auto</key>
+    <string>lla_ya-tutg.below.auto.glif</string>
     <key>llla-tutg</key>
     <string>llla-tutg.glif</string>
     <key>llla-tutg.alt1</key>
@@ -1038,14 +1422,24 @@
     <string>llla_lV_ocalicM_atra-tutg.glif</string>
     <key>llla_lVocalicMatra-tutg.alt</key>
     <string>llla_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>llla_lVocalicMatra-tutg.below.auto</key>
+    <string>llla_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>llla_rVocalicMatra-tutg</key>
     <string>llla_rV_ocalicM_atra-tutg.glif</string>
+    <key>llla_rVocalicMatra-tutg.below.auto</key>
+    <string>llla_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>llla_rrVocalicMatra-tutg</key>
     <string>llla_rrV_ocalicM_atra-tutg.glif</string>
+    <key>llla_rrVocalicMatra-tutg.below.auto</key>
+    <string>llla_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>llla_uMatra-tutg</key>
     <string>llla_uM_atra-tutg.glif</string>
+    <key>llla_uMatra-tutg.below.auto</key>
+    <string>llla_uM_atra-tutg.below.auto.glif</string>
     <key>llla_uuMatra-tutg</key>
     <string>llla_uuM_atra-tutg.glif</string>
+    <key>llla_uuMatra-tutg.below.auto</key>
+    <string>llla_uuM_atra-tutg.below.auto.glif</string>
     <key>loopedvirama-tutg</key>
     <string>loopedvirama-tutg.glif</string>
     <key>m</key>
@@ -1068,22 +1462,40 @@
     <string>ma_lV_ocalicM_atra-tutg.glif</string>
     <key>ma_lVocalicMatra-tutg.alt</key>
     <string>ma_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ma_lVocalicMatra-tutg.below.auto</key>
+    <string>ma_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ma_ma-tutg</key>
     <string>ma_ma-tutg.glif</string>
+    <key>ma_ma-tutg.below.auto</key>
+    <string>ma_ma-tutg.below.auto.glif</string>
     <key>ma_pa-tutg</key>
     <string>ma_pa-tutg.glif</string>
+    <key>ma_pa-tutg.below.auto</key>
+    <string>ma_pa-tutg.below.auto.glif</string>
     <key>ma_rVocalicMatra-tutg</key>
     <string>ma_rV_ocalicM_atra-tutg.glif</string>
+    <key>ma_rVocalicMatra-tutg.below.auto</key>
+    <string>ma_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ma_rrVocalicMatra-tutg</key>
     <string>ma_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ma_rrVocalicMatra-tutg.below.auto</key>
+    <string>ma_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ma_uMatra-tutg</key>
     <string>ma_uM_atra-tutg.glif</string>
+    <key>ma_uMatra-tutg.below.auto</key>
+    <string>ma_uM_atra-tutg.below.auto.glif</string>
     <key>ma_uuMatra-tutg</key>
     <string>ma_uuM_atra-tutg.glif</string>
+    <key>ma_uuMatra-tutg.below.auto</key>
+    <string>ma_uuM_atra-tutg.below.auto.glif</string>
     <key>ma_va-tutg</key>
     <string>ma_va-tutg.glif</string>
+    <key>ma_va-tutg.below.auto</key>
+    <string>ma_va-tutg.below.auto.glif</string>
     <key>ma_ya-tutg</key>
     <string>ma_ya-tutg.glif</string>
+    <key>ma_ya-tutg.below.auto</key>
+    <string>ma_ya-tutg.below.auto.glif</string>
     <key>mamatra-tutg.below.alt1</key>
     <string>mamatra-tutg.below.alt1.glif</string>
     <key>mamatra-tutg.below.alt2</key>
@@ -1098,74 +1510,136 @@
     <string>na-tutg.below.glif</string>
     <key>na_ba-tutg</key>
     <string>na_ba-tutg.glif</string>
+    <key>na_ba-tutg.below.auto</key>
+    <string>na_ba-tutg.below.auto.glif</string>
     <key>na_bha-tutg</key>
     <string>na_bha-tutg.glif</string>
+    <key>na_bha-tutg.below.auto</key>
+    <string>na_bha-tutg.below.auto.glif</string>
     <key>na_da-tutg</key>
     <string>na_da-tutg.glif</string>
+    <key>na_da-tutg.below.auto</key>
+    <string>na_da-tutg.below.auto.glif</string>
     <key>na_da_ra-tutg</key>
     <string>na_da_ra-tutg.glif</string>
+    <key>na_da_ra-tutg.below.auto</key>
+    <string>na_da_ra-tutg.below.auto.glif</string>
     <key>na_da_va-tutg</key>
     <string>na_da_va-tutg.glif</string>
+    <key>na_da_va-tutg.below.auto</key>
+    <string>na_da_va-tutg.below.auto.glif</string>
     <key>na_dha-tutg</key>
     <string>na_dha-tutg.glif</string>
+    <key>na_dha-tutg.below.auto</key>
+    <string>na_dha-tutg.below.auto.glif</string>
     <key>na_dha_va-tutg</key>
     <string>na_dha_va-tutg.glif</string>
+    <key>na_dha_va-tutg.below.auto</key>
+    <string>na_dha_va-tutg.below.auto.glif</string>
     <key>na_ga-tutg</key>
     <string>na_ga-tutg.glif</string>
+    <key>na_ga-tutg.below.auto</key>
+    <string>na_ga-tutg.below.auto.glif</string>
     <key>na_gha-tutg</key>
     <string>na_gha-tutg.glif</string>
+    <key>na_gha-tutg.below.auto</key>
+    <string>na_gha-tutg.below.auto.glif</string>
     <key>na_ka-tutg</key>
     <string>na_ka-tutg.glif</string>
     <key>na_ka-tutg.alt2</key>
     <string>na_ka-tutg.alt2.glif</string>
+    <key>na_ka-tutg.below.auto</key>
+    <string>na_ka-tutg.below.auto.glif</string>
     <key>na_ka_rVocalicMatra-tutg</key>
     <string>na_ka_rV_ocalicM_atra-tutg.glif</string>
+    <key>na_ka_rVocalicMatra-tutg.below.auto</key>
+    <string>na_ka_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>na_ka_ssa-tutg</key>
     <string>na_ka_ssa-tutg.glif</string>
+    <key>na_ka_ssa-tutg.below.auto</key>
+    <string>na_ka_ssa-tutg.below.auto.glif</string>
     <key>na_ka_ta-tutg</key>
     <string>na_ka_ta-tutg.glif</string>
     <key>na_ka_ta-tutg.alt2</key>
     <string>na_ka_ta-tutg.alt2.glif</string>
+    <key>na_ka_ta-tutg.below.auto</key>
+    <string>na_ka_ta-tutg.below.auto.glif</string>
     <key>na_ka_uMatra-tutg</key>
     <string>na_ka_uM_atra-tutg.glif</string>
+    <key>na_ka_uMatra-tutg.below.auto</key>
+    <string>na_ka_uM_atra-tutg.below.auto.glif</string>
     <key>na_lVocalicMatra-tutg</key>
     <string>na_lV_ocalicM_atra-tutg.glif</string>
     <key>na_lVocalicMatra-tutg.alt</key>
     <string>na_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>na_lVocalicMatra-tutg.below.auto</key>
+    <string>na_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>na_ma-tutg</key>
     <string>na_ma-tutg.glif</string>
+    <key>na_ma-tutg.below.auto</key>
+    <string>na_ma-tutg.below.auto.glif</string>
     <key>na_nChillu-tutg</key>
     <string>na_nC_hillu-tutg.glif</string>
+    <key>na_nChillu-tutg.below.auto</key>
+    <string>na_nC_hillu-tutg.below.auto.glif</string>
     <key>na_na-tutg</key>
     <string>na_na-tutg.glif</string>
+    <key>na_na-tutg.below.auto</key>
+    <string>na_na-tutg.below.auto.glif</string>
     <key>na_na_ya-tutg</key>
     <string>na_na_ya-tutg.glif</string>
+    <key>na_na_ya-tutg.below.auto</key>
+    <string>na_na_ya-tutg.below.auto.glif</string>
     <key>na_rVocalicMatra-tutg</key>
     <string>na_rV_ocalicM_atra-tutg.glif</string>
+    <key>na_rVocalicMatra-tutg.below.auto</key>
+    <string>na_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>na_rrVocalicMatra-tutg</key>
     <string>na_rrV_ocalicM_atra-tutg.glif</string>
+    <key>na_rrVocalicMatra-tutg.below.auto</key>
+    <string>na_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>na_tChillu-tutg</key>
     <string>na_tC_hillu-tutg.glif</string>
+    <key>na_tChillu-tutg.below.auto</key>
+    <string>na_tC_hillu-tutg.below.auto.glif</string>
     <key>na_ta-tutg</key>
     <string>na_ta-tutg.glif</string>
+    <key>na_ta-tutg.below.auto</key>
+    <string>na_ta-tutg.below.auto.glif</string>
     <key>na_ta_ra-tutg</key>
     <string>na_ta_ra-tutg.glif</string>
+    <key>na_ta_ra-tutg.below.auto</key>
+    <string>na_ta_ra-tutg.below.auto.glif</string>
     <key>na_ta_ra_ya_-tutg</key>
     <string>na_ta_ra_ya_-tutg.glif</string>
+    <key>na_ta_ra_ya_-tutg.below.auto</key>
+    <string>na_ta_ra_ya_-tutg.below.auto.glif</string>
     <key>na_ta_sa-tutg</key>
     <string>na_ta_sa-tutg.glif</string>
     <key>na_ta_sa-tutg.alt2</key>
     <string>na_ta_sa-tutg.alt2.glif</string>
+    <key>na_ta_sa-tutg.below.auto</key>
+    <string>na_ta_sa-tutg.below.auto.glif</string>
     <key>na_ta_va-tutg</key>
     <string>na_ta_va-tutg.glif</string>
+    <key>na_ta_va-tutg.below.auto</key>
+    <string>na_ta_va-tutg.below.auto.glif</string>
     <key>na_ta_ya-tutg</key>
     <string>na_ta_ya-tutg.glif</string>
+    <key>na_ta_ya-tutg.below.auto</key>
+    <string>na_ta_ya-tutg.below.auto.glif</string>
     <key>na_tha-tutg</key>
     <string>na_tha-tutg.glif</string>
+    <key>na_tha-tutg.below.auto</key>
+    <string>na_tha-tutg.below.auto.glif</string>
     <key>na_ttChillu-tutg</key>
     <string>na_ttC_hillu-tutg.glif</string>
+    <key>na_ttChillu-tutg.below.auto</key>
+    <string>na_ttC_hillu-tutg.below.auto.glif</string>
     <key>na_tta-tutg</key>
     <string>na_tta-tutg.glif</string>
+    <key>na_tta-tutg.below.auto</key>
+    <string>na_tta-tutg.below.auto.glif</string>
     <key>na_uMatra-tutg</key>
     <string>na_uM_atra-tutg.glif</string>
     <key>na_uMatra-tutg.alt1</key>
@@ -1176,8 +1650,12 @@
     <string>na_uuM_atra-tutg.glif</string>
     <key>na_uuMatra-tutg.alt1</key>
     <string>na_uuM_atra-tutg.alt1.glif</string>
+    <key>na_uuMatra-tutg.below.auto</key>
+    <string>na_uuM_atra-tutg.below.auto.glif</string>
     <key>na_va-tutg</key>
     <string>na_va-tutg.glif</string>
+    <key>na_va-tutg.below.auto</key>
+    <string>na_va-tutg.below.auto.glif</string>
     <key>na_ya-tutg</key>
     <string>na_ya-tutg.glif</string>
     <key>na_ya-tutg.below</key>
@@ -1192,38 +1670,66 @@
     <string>nga-tutg.below.alt1.glif</string>
     <key>nga_ba-tutg</key>
     <string>nga_ba-tutg.glif</string>
+    <key>nga_ba-tutg.below.auto</key>
+    <string>nga_ba-tutg.below.auto.glif</string>
     <key>nga_ka-tutg</key>
     <string>nga_ka-tutg.glif</string>
+    <key>nga_ka-tutg.below.auto</key>
+    <string>nga_ka-tutg.below.auto.glif</string>
     <key>nga_ka_ka-tutg</key>
     <string>nga_ka_ka-tutg.glif</string>
+    <key>nga_ka_ka-tutg.below.auto</key>
+    <string>nga_ka_ka-tutg.below.auto.glif</string>
     <key>nga_ka_ta-tutg</key>
     <string>nga_ka_ta-tutg.glif</string>
+    <key>nga_ka_ta-tutg.below.auto</key>
+    <string>nga_ka_ta-tutg.below.auto.glif</string>
     <key>nga_kha-tutg</key>
     <string>nga_kha-tutg.glif</string>
     <key>nga_kha-tutg.alt1</key>
     <string>nga_kha-tutg.alt1.glif</string>
+    <key>nga_kha-tutg.below.auto</key>
+    <string>nga_kha-tutg.below.auto.glif</string>
     <key>nga_lVocalicMatra-tutg</key>
     <string>nga_lV_ocalicM_atra-tutg.glif</string>
     <key>nga_lVocalicMatra-tutg.alt</key>
     <string>nga_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>nga_lVocalicMatra-tutg.below.auto</key>
+    <string>nga_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nga_ma-tutg</key>
     <string>nga_ma-tutg.glif</string>
+    <key>nga_ma-tutg.below.auto</key>
+    <string>nga_ma-tutg.below.auto.glif</string>
     <key>nga_na-tutg</key>
     <string>nga_na-tutg.glif</string>
+    <key>nga_na-tutg.below.auto</key>
+    <string>nga_na-tutg.below.auto.glif</string>
     <key>nga_nga-tutg</key>
     <string>nga_nga-tutg.glif</string>
+    <key>nga_nga-tutg.below.auto</key>
+    <string>nga_nga-tutg.below.auto.glif</string>
     <key>nga_rVocalicMatra-tutg</key>
     <string>nga_rV_ocalicM_atra-tutg.glif</string>
+    <key>nga_rVocalicMatra-tutg.below.auto</key>
+    <string>nga_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nga_rrVocalicMatra-tutg</key>
     <string>nga_rrV_ocalicM_atra-tutg.glif</string>
+    <key>nga_rrVocalicMatra-tutg.below.auto</key>
+    <string>nga_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nga_ta-tutg</key>
     <string>nga_ta-tutg.glif</string>
+    <key>nga_ta-tutg.below.auto</key>
+    <string>nga_ta-tutg.below.auto.glif</string>
     <key>nga_uMatra-tutg</key>
     <string>nga_uM_atra-tutg.glif</string>
     <key>nga_uMatra-tutg.alt1</key>
     <string>nga_uM_atra-tutg.alt1.glif</string>
+    <key>nga_uMatra-tutg.below.auto</key>
+    <string>nga_uM_atra-tutg.below.auto.glif</string>
     <key>nga_uuMatra-tutg</key>
     <string>nga_uuM_atra-tutg.glif</string>
+    <key>nga_uuMatra-tutg.below.auto</key>
+    <string>nga_uuM_atra-tutg.below.auto.glif</string>
     <key>nine</key>
     <string>nine.glif</string>
     <key>nine-tutg</key>
@@ -1242,40 +1748,68 @@
     <string>nna_dda-tutg.glif</string>
     <key>nna_dda-tutg.alt1</key>
     <string>nna_dda-tutg.alt1.glif</string>
+    <key>nna_dda-tutg.below.auto</key>
+    <string>nna_dda-tutg.below.auto.glif</string>
     <key>nna_ddha-tutg</key>
     <string>nna_ddha-tutg.glif</string>
+    <key>nna_ddha-tutg.below.auto</key>
+    <string>nna_ddha-tutg.below.auto.glif</string>
     <key>nna_ha-tutg</key>
     <string>nna_ha-tutg.glif</string>
+    <key>nna_ha-tutg.below.auto</key>
+    <string>nna_ha-tutg.below.auto.glif</string>
     <key>nna_lVocalicMatra-tutg</key>
     <string>nna_lV_ocalicM_atra-tutg.glif</string>
     <key>nna_lVocalicMatra-tutg.alt</key>
     <string>nna_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>nna_lVocalicMatra-tutg.below.auto</key>
+    <string>nna_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nna_ma-tutg</key>
     <string>nna_ma-tutg.glif</string>
+    <key>nna_ma-tutg.below.auto</key>
+    <string>nna_ma-tutg.below.auto.glif</string>
     <key>nna_nna-tutg</key>
     <string>nna_nna-tutg.glif</string>
+    <key>nna_nna-tutg.below.auto</key>
+    <string>nna_nna-tutg.below.auto.glif</string>
     <key>nna_nna_ya-tutg</key>
     <string>nna_nna_ya-tutg.glif</string>
+    <key>nna_nna_ya-tutg.below.auto</key>
+    <string>nna_nna_ya-tutg.below.auto.glif</string>
     <key>nna_rVocalicMatra-tutg</key>
     <string>nna_rV_ocalicM_atra-tutg.glif</string>
+    <key>nna_rVocalicMatra-tutg.below.auto</key>
+    <string>nna_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nna_rrVocalicMatra-tutg</key>
     <string>nna_rrV_ocalicM_atra-tutg.glif</string>
+    <key>nna_rrVocalicMatra-tutg.below.auto</key>
+    <string>nna_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nna_tta-tutg</key>
     <string>nna_tta-tutg.glif</string>
     <key>nna_tta-tutg.alt1</key>
     <string>nna_tta-tutg.alt1.glif</string>
+    <key>nna_tta-tutg.below.auto</key>
+    <string>nna_tta-tutg.below.auto.glif</string>
     <key>nna_ttha-tutg</key>
     <string>nna_ttha-tutg.glif</string>
+    <key>nna_ttha-tutg.below.auto</key>
+    <string>nna_ttha-tutg.below.auto.glif</string>
     <key>nna_uMatra-tutg</key>
     <string>nna_uM_atra-tutg.glif</string>
     <key>nna_uMatra-tutg.alt1</key>
     <string>nna_uM_atra-tutg.alt1.glif</string>
+    <key>nna_uMatra-tutg.below.auto</key>
+    <string>nna_uM_atra-tutg.below.auto.glif</string>
     <key>nna_uuMatra-tutg</key>
     <string>nna_uuM_atra-tutg.glif</string>
     <key>nna_uuMatra-tutg.alt1</key>
     <string>nna_uuM_atra-tutg.alt1.glif</string>
+    <key>nna_uuMatra-tutg.below.auto</key>
+    <string>nna_uuM_atra-tutg.below.auto.glif</string>
     <key>nna_ya-tutg</key>
     <string>nna_ya-tutg.glif</string>
+    <key>nna_ya-tutg.below.auto</key>
+    <string>nna_ya-tutg.below.auto.glif</string>
     <key>nnna-tutg</key>
     <string>nnna-tutg.glif</string>
     <key>nnna-tutg.below</key>
@@ -1298,28 +1832,46 @@
     <string>nya-tutg.below.alt2.glif</string>
     <key>nya_UuMatra-tutg</key>
     <string>nya_U_uM_atra-tutg.glif</string>
+    <key>nya_UuMatra-tutg.below.auto</key>
+    <string>nya_U_uM_atra-tutg.below.auto.glif</string>
     <key>nya_ca-tutg</key>
     <string>nya_ca-tutg.glif</string>
+    <key>nya_ca-tutg.below.auto</key>
+    <string>nya_ca-tutg.below.auto.glif</string>
     <key>nya_cha-tutg</key>
     <string>nya_cha-tutg.glif</string>
+    <key>nya_cha-tutg.below.auto</key>
+    <string>nya_cha-tutg.below.auto.glif</string>
     <key>nya_ja-tutg</key>
     <string>nya_ja-tutg.glif</string>
     <key>nya_ja-tutg.alt1</key>
     <string>nya_ja-tutg.alt1.glif</string>
+    <key>nya_ja-tutg.below.auto</key>
+    <string>nya_ja-tutg.below.auto.glif</string>
     <key>nya_ja_uMatra-tutg</key>
     <string>nya_ja_uM_atra-tutg.glif</string>
+    <key>nya_ja_uMatra-tutg.below.auto</key>
+    <string>nya_ja_uM_atra-tutg.below.auto.glif</string>
     <key>nya_lVocalicMatra-tutg</key>
     <string>nya_lV_ocalicM_atra-tutg.glif</string>
     <key>nya_lVocalicMatra-tutg.alt</key>
     <string>nya_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>nya_lVocalicMatra-tutg.below.auto</key>
+    <string>nya_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nya_rVocalicMatra-tutg</key>
     <string>nya_rV_ocalicM_atra-tutg.glif</string>
+    <key>nya_rVocalicMatra-tutg.below.auto</key>
+    <string>nya_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nya_rrVocalicMatra-tutg</key>
     <string>nya_rrV_ocalicM_atra-tutg.glif</string>
+    <key>nya_rrVocalicMatra-tutg.below.auto</key>
+    <string>nya_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>nya_uMatra-tutg</key>
     <string>nya_uM_atra-tutg.glif</string>
     <key>nya_uMatra-tutg.alt1</key>
     <string>nya_uM_atra-tutg.alt1.glif</string>
+    <key>nya_uMatra-tutg.below.auto</key>
+    <string>nya_uM_atra-tutg.below.auto.glif</string>
     <key>o</key>
     <string>o.glif</string>
     <key>o-tutg</key>
@@ -1354,38 +1906,68 @@
     <string>pa-tutg.below.glif</string>
     <key>pa_cha-tutg</key>
     <string>pa_cha-tutg.glif</string>
+    <key>pa_cha-tutg.below.auto</key>
+    <string>pa_cha-tutg.below.auto.glif</string>
     <key>pa_lVocalicMatra-tutg</key>
     <string>pa_lV_ocalicM_atra-tutg.glif</string>
     <key>pa_lVocalicMatra-tutg.alt</key>
     <string>pa_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>pa_lVocalicMatra-tutg.below.auto</key>
+    <string>pa_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pa_pa-tutg</key>
     <string>pa_pa-tutg.glif</string>
+    <key>pa_pa-tutg.below.auto</key>
+    <string>pa_pa-tutg.below.auto.glif</string>
     <key>pa_rVocalicMatra-tutg</key>
     <string>pa_rV_ocalicM_atra-tutg.glif</string>
+    <key>pa_rVocalicMatra-tutg.below.auto</key>
+    <string>pa_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pa_ra-tutg.below</key>
     <string>pa_ra-tutg.below.glif</string>
     <key>pa_rrVocalicMatra-tutg</key>
     <string>pa_rrV_ocalicM_atra-tutg.glif</string>
+    <key>pa_rrVocalicMatra-tutg.below.auto</key>
+    <string>pa_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pa_sa-tutg</key>
     <string>pa_sa-tutg.glif</string>
+    <key>pa_sa-tutg.below.auto</key>
+    <string>pa_sa-tutg.below.auto.glif</string>
     <key>pa_sa_ma-tutg</key>
     <string>pa_sa_ma-tutg.glif</string>
+    <key>pa_sa_ma-tutg.below.auto</key>
+    <string>pa_sa_ma-tutg.below.auto.glif</string>
     <key>pa_sa_ta-tutg</key>
     <string>pa_sa_ta-tutg.glif</string>
+    <key>pa_sa_ta-tutg.below.auto</key>
+    <string>pa_sa_ta-tutg.below.auto.glif</string>
     <key>pa_sa_tha-tutg</key>
     <string>pa_sa_tha-tutg.glif</string>
+    <key>pa_sa_tha-tutg.below.auto</key>
+    <string>pa_sa_tha-tutg.below.auto.glif</string>
     <key>pa_sa_va-tutg</key>
     <string>pa_sa_va-tutg.glif</string>
+    <key>pa_sa_va-tutg.below.auto</key>
+    <string>pa_sa_va-tutg.below.auto.glif</string>
     <key>pa_sa_ya-tutg</key>
     <string>pa_sa_ya-tutg.glif</string>
+    <key>pa_sa_ya-tutg.below.auto</key>
+    <string>pa_sa_ya-tutg.below.auto.glif</string>
     <key>pa_ta-tutg</key>
     <string>pa_ta-tutg.glif</string>
+    <key>pa_ta-tutg.below.auto</key>
+    <string>pa_ta-tutg.below.auto.glif</string>
     <key>pa_ta_va-tutg</key>
     <string>pa_ta_va-tutg.glif</string>
+    <key>pa_ta_va-tutg.below.auto</key>
+    <string>pa_ta_va-tutg.below.auto.glif</string>
     <key>pa_uMatra-tutg</key>
     <string>pa_uM_atra-tutg.glif</string>
+    <key>pa_uMatra-tutg.below.auto</key>
+    <string>pa_uM_atra-tutg.below.auto.glif</string>
     <key>pa_uuMatra-tutg</key>
     <string>pa_uuM_atra-tutg.glif</string>
+    <key>pa_uuMatra-tutg.below.auto</key>
+    <string>pa_uuM_atra-tutg.below.auto.glif</string>
     <key>pa_ya-tutg</key>
     <string>pa_ya-tutg.glif</string>
     <key>pa_ya-tutg.below</key>
@@ -1410,14 +1992,24 @@
     <string>pha_lV_ocalicM_atra-tutg.glif</string>
     <key>pha_lVocalicMatra-tutg.alt</key>
     <string>pha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>pha_lVocalicMatra-tutg.below.auto</key>
+    <string>pha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pha_rVocalicMatra-tutg</key>
     <string>pha_rV_ocalicM_atra-tutg.glif</string>
+    <key>pha_rVocalicMatra-tutg.below.auto</key>
+    <string>pha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pha_rrVocalicMatra-tutg</key>
     <string>pha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>pha_rrVocalicMatra-tutg.below.auto</key>
+    <string>pha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>pha_uMatra-tutg</key>
     <string>pha_uM_atra-tutg.glif</string>
+    <key>pha_uMatra-tutg.below.auto</key>
+    <string>pha_uM_atra-tutg.below.auto.glif</string>
     <key>pha_uuMatra-tutg</key>
     <string>pha_uuM_atra-tutg.glif</string>
+    <key>pha_uuMatra-tutg.below.auto</key>
+    <string>pha_uuM_atra-tutg.below.auto.glif</string>
     <key>plus</key>
     <string>plus.glif</string>
     <key>pluta-tutg</key>
@@ -1454,8 +2046,12 @@
     <string>rV_ocalicM_atra-tutg-alt1.glif</string>
     <key>rVocalicMatra_uMatra-tutg</key>
     <string>rV_ocalicM_atra_uM_atra-tutg.glif</string>
+    <key>rVocalicMatra_uMatra-tutg.below.auto</key>
+    <string>rV_ocalicM_atra_uM_atra-tutg.below.auto.glif</string>
     <key>rVocalicMatra_uuMatra-tutg</key>
     <string>rV_ocalicM_atra_uuM_atra-tutg.glif</string>
+    <key>rVocalicMatra_uuMatra-tutg.below.auto</key>
+    <string>rV_ocalicM_atra_uuM_atra-tutg.below.auto.glif</string>
     <key>rVocalic_repha-tutg</key>
     <string>rV_ocalic_repha-tutg.glif</string>
     <key>ra-tutg</key>
@@ -1472,36 +2068,58 @@
     <string>ra_lV_ocalicM_atra-tutg.glif</string>
     <key>ra_lVocalicMatra-tutg.alt</key>
     <string>ra_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ra_lVocalicMatra-tutg.below.auto</key>
+    <string>ra_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ra_ma-tutg</key>
     <string>ra_ma-tutg.glif</string>
     <key>ra_ma-tutg.alt1</key>
     <string>ra_ma-tutg.alt1.glif</string>
+    <key>ra_ma-tutg.below.auto</key>
+    <string>ra_ma-tutg.below.auto.glif</string>
     <key>ra_ma_ma-tutg</key>
     <string>ra_ma_ma-tutg.glif</string>
+    <key>ra_ma_ma-tutg.below.auto</key>
+    <string>ra_ma_ma-tutg.below.auto.glif</string>
     <key>ra_rVocalicMatra-tutg</key>
     <string>ra_rV_ocalicM_atra-tutg.glif</string>
+    <key>ra_rVocalicMatra-tutg.below.auto</key>
+    <string>ra_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ra_ra-tutg</key>
     <string>ra_ra-tutg.glif</string>
+    <key>ra_ra-tutg.below.auto</key>
+    <string>ra_ra-tutg.below.auto.glif</string>
     <key>ra_rrVocalicMatra-tutg</key>
     <string>ra_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ra_rrVocalicMatra-tutg.below.auto</key>
+    <string>ra_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ra_sha-tutg</key>
     <string>ra_sha-tutg.glif</string>
+    <key>ra_sha-tutg.below.auto</key>
+    <string>ra_sha-tutg.below.auto.glif</string>
     <key>ra_uMatra-tutg</key>
     <string>ra_uM_atra-tutg.glif</string>
     <key>ra_uMatra-tutg.alt1</key>
     <string>ra_uM_atra-tutg.alt1.glif</string>
     <key>ra_uMatra-tutg.alt2</key>
     <string>ra_uM_atra-tutg.alt2.glif</string>
+    <key>ra_uMatra-tutg.below.auto</key>
+    <string>ra_uM_atra-tutg.below.auto.glif</string>
     <key>ra_uuMatra-tutg</key>
     <string>ra_uuM_atra-tutg.glif</string>
     <key>ra_uuMatra-tutg.alt1</key>
     <string>ra_uuM_atra-tutg.alt1.glif</string>
+    <key>ra_uuMatra-tutg.below.auto</key>
+    <string>ra_uuM_atra-tutg.below.auto.glif</string>
     <key>ra_va-tutg</key>
     <string>ra_va-tutg.glif</string>
     <key>ra_va-tutg.alt1</key>
     <string>ra_va-tutg.alt1.glif</string>
+    <key>ra_va-tutg.below.auto</key>
+    <string>ra_va-tutg.below.auto.glif</string>
     <key>ra_ya-tutg</key>
     <string>ra_ya-tutg.glif</string>
+    <key>ra_ya-tutg.below.auto</key>
+    <string>ra_ya-tutg.below.auto.glif</string>
     <key>ramatra_uumatra-tutg.below</key>
     <string>ramatra_uumatra-tutg.below.glif</string>
     <key>repha-tutg</key>
@@ -1534,16 +2152,26 @@
     <string>rra_lV_ocalicM_atra-tutg.glif</string>
     <key>rra_lVocalicMatra-tutg.alt</key>
     <string>rra_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>rra_lVocalicMatra-tutg.below.auto</key>
+    <string>rra_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>rra_rVocalicMatra-tutg</key>
     <string>rra_rV_ocalicM_atra-tutg.glif</string>
+    <key>rra_rVocalicMatra-tutg.below.auto</key>
+    <string>rra_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>rra_rrVocalicMatra-tutg</key>
     <string>rra_rrV_ocalicM_atra-tutg.glif</string>
+    <key>rra_rrVocalicMatra-tutg.below.auto</key>
+    <string>rra_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>rra_uMatra-tutg</key>
     <string>rra_uM_atra-tutg.glif</string>
     <key>rra_uMatra-tutg.001</key>
     <string>rra_uM_atra-tutg.001.glif</string>
+    <key>rra_uMatra-tutg.below.auto</key>
+    <string>rra_uM_atra-tutg.below.auto.glif</string>
     <key>rra_uuMatra-tutg</key>
     <string>rra_uuM_atra-tutg.glif</string>
+    <key>rra_uuMatra-tutg.below.auto</key>
+    <string>rra_uuM_atra-tutg.below.auto.glif</string>
     <key>s</key>
     <string>s.glif</string>
     <key>sa-tutg</key>
@@ -1552,76 +2180,140 @@
     <string>sa-tutg.below.glif</string>
     <key>sa_ca-tutg</key>
     <string>sa_ca-tutg.glif</string>
+    <key>sa_ca-tutg.below.auto</key>
+    <string>sa_ca-tutg.below.auto.glif</string>
     <key>sa_ka-tutg</key>
     <string>sa_ka-tutg.glif</string>
+    <key>sa_ka-tutg.below.auto</key>
+    <string>sa_ka-tutg.below.auto.glif</string>
     <key>sa_ka_vocalicR-tutg</key>
     <string>sa_ka_vocalicR_-tutg.glif</string>
+    <key>sa_ka_vocalicR-tutg.below.auto</key>
+    <string>sa_ka_vocalicR_-tutg.below.auto.glif</string>
     <key>sa_lVocalicMatra-tutg</key>
     <string>sa_lV_ocalicM_atra-tutg.glif</string>
     <key>sa_lVocalicMatra-tutg.alt</key>
     <string>sa_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>sa_lVocalicMatra-tutg.below.auto</key>
+    <string>sa_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sa_ma-tutg</key>
     <string>sa_ma-tutg.glif</string>
+    <key>sa_ma-tutg.below.auto</key>
+    <string>sa_ma-tutg.below.auto.glif</string>
     <key>sa_ma_ya-tutg</key>
     <string>sa_ma_ya-tutg.glif</string>
+    <key>sa_ma_ya-tutg.below.auto</key>
+    <string>sa_ma_ya-tutg.below.auto.glif</string>
     <key>sa_pa-tutg</key>
     <string>sa_pa-tutg.glif</string>
+    <key>sa_pa-tutg.below.auto</key>
+    <string>sa_pa-tutg.below.auto.glif</string>
     <key>sa_pa_rvocalicMatra-tutg</key>
     <string>sa_pa_rvocalicM_atra-tutg.glif</string>
+    <key>sa_pa_rvocalicMatra-tutg.below.auto</key>
+    <string>sa_pa_rvocalicM_atra-tutg.below.auto.glif</string>
     <key>sa_rVocalicMatra-tutg</key>
     <string>sa_rV_ocalicM_atra-tutg.glif</string>
+    <key>sa_rVocalicMatra-tutg.below.auto</key>
+    <string>sa_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sa_rrVocalicMatra-tutg</key>
     <string>sa_rrV_ocalicM_atra-tutg.glif</string>
+    <key>sa_rrVocalicMatra-tutg.below.auto</key>
+    <string>sa_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sa_sa-tutg</key>
     <string>sa_sa-tutg.glif</string>
+    <key>sa_sa-tutg.below.auto</key>
+    <string>sa_sa-tutg.below.auto.glif</string>
     <key>sa_sa_ka-tutg</key>
     <string>sa_sa_ka-tutg.glif</string>
+    <key>sa_sa_ka-tutg.below.auto</key>
+    <string>sa_sa_ka-tutg.below.auto.glif</string>
     <key>sa_sa_pa-tutg</key>
     <string>sa_sa_pa-tutg.glif</string>
+    <key>sa_sa_pa-tutg.below.auto</key>
+    <string>sa_sa_pa-tutg.below.auto.glif</string>
     <key>sa_sa_rVocalicMatra-tutg</key>
     <string>sa_sa_rV_ocalicM_atra-tutg.glif</string>
+    <key>sa_sa_rVocalicMatra-tutg.below.auto</key>
+    <string>sa_sa_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sa_sa_ta-tutg</key>
     <string>sa_sa_ta-tutg.glif</string>
+    <key>sa_sa_ta-tutg.below.auto</key>
+    <string>sa_sa_ta-tutg.below.auto.glif</string>
     <key>sa_sa_ta_uMatra-tutg</key>
     <string>sa_sa_ta_uM_atra-tutg.glif</string>
+    <key>sa_sa_ta_uMatra-tutg.below.auto</key>
+    <string>sa_sa_ta_uM_atra-tutg.below.auto.glif</string>
     <key>sa_sa_tha-tutg</key>
     <string>sa_sa_tha-tutg.glif</string>
+    <key>sa_sa_tha-tutg.below.auto</key>
+    <string>sa_sa_tha-tutg.below.auto.glif</string>
     <key>sa_sa_tha_uMatra-tutg</key>
     <string>sa_sa_tha_uM_atra-tutg.glif</string>
+    <key>sa_sa_tha_uMatra-tutg.below.auto</key>
+    <string>sa_sa_tha_uM_atra-tutg.below.auto.glif</string>
     <key>sa_sa_va-tutg</key>
     <string>sa_sa_va-tutg.glif</string>
+    <key>sa_sa_va-tutg.below.auto</key>
+    <string>sa_sa_va-tutg.below.auto.glif</string>
     <key>sa_ta_raMatra-tutg</key>
     <string>sa_ta_raM_atra-tutg.glif</string>
+    <key>sa_ta_raMatra-tutg.below.auto</key>
+    <string>sa_ta_raM_atra-tutg.below.auto.glif</string>
     <key>sa_ta_ta-tutg</key>
     <string>sa_ta_ta-tutg.glif</string>
+    <key>sa_ta_ta-tutg.below.auto</key>
+    <string>sa_ta_ta-tutg.below.auto.glif</string>
     <key>sa_ta_tha-tutg</key>
     <string>sa_ta_tha-tutg.glif</string>
+    <key>sa_ta_tha-tutg.below.auto</key>
+    <string>sa_ta_tha-tutg.below.auto.glif</string>
     <key>sa_ta_tutg</key>
     <string>sa_ta_tutg.glif</string>
     <key>sa_ta_uMatra-tutg</key>
     <string>sa_ta_uM_atra-tutg.glif</string>
+    <key>sa_ta_uMatra-tutg.below.auto</key>
+    <string>sa_ta_uM_atra-tutg.below.auto.glif</string>
     <key>sa_ta_uuMatra-tutg</key>
     <string>sa_ta_uuM_atra-tutg.glif</string>
+    <key>sa_ta_uuMatra-tutg.below.auto</key>
+    <string>sa_ta_uuM_atra-tutg.below.auto.glif</string>
     <key>sa_ta_va-tutg</key>
     <string>sa_ta_va-tutg.glif</string>
+    <key>sa_ta_va-tutg.below.auto</key>
+    <string>sa_ta_va-tutg.below.auto.glif</string>
     <key>sa_ta_ya-tutg</key>
     <string>sa_ta_ya-tutg.glif</string>
+    <key>sa_ta_ya-tutg.below.auto</key>
+    <string>sa_ta_ya-tutg.below.auto.glif</string>
     <key>sa_tha-tutg</key>
     <string>sa_tha-tutg.glif</string>
     <key>sa_tha-tutg.alt1</key>
     <string>sa_tha-tutg.alt1.glif</string>
+    <key>sa_tha-tutg.below.auto</key>
+    <string>sa_tha-tutg.below.auto.glif</string>
     <key>sa_tta-tutg</key>
     <string>sa_tta-tutg.glif</string>
+    <key>sa_tta-tutg.below.auto</key>
+    <string>sa_tta-tutg.below.auto.glif</string>
     <key>sa_uMatra-tutg</key>
     <string>sa_uM_atra-tutg.glif</string>
+    <key>sa_uMatra-tutg.below.auto</key>
+    <string>sa_uM_atra-tutg.below.auto.glif</string>
     <key>sa_uuMatra-tutg</key>
     <string>sa_uuM_atra-tutg.glif</string>
+    <key>sa_uuMatra-tutg.below.auto</key>
+    <string>sa_uuM_atra-tutg.below.auto.glif</string>
     <key>sa_va-tutg</key>
     <string>sa_va-tutg.glif</string>
     <key>sa_va-tutg.alt1</key>
     <string>sa_va-tutg.alt1.glif</string>
+    <key>sa_va-tutg.below.auto</key>
+    <string>sa_va-tutg.below.auto.glif</string>
     <key>sa_ya-tutg</key>
     <string>sa_ya-tutg.glif</string>
+    <key>sa_ya-tutg.below.auto</key>
+    <string>sa_ya-tutg.below.auto.glif</string>
     <key>semicolon</key>
     <string>semicolon.glif</string>
     <key>seven</key>
@@ -1638,38 +2330,66 @@
     <string>sha-tutg.below.glif</string>
     <key>sha_ca-tutg</key>
     <string>sha_ca-tutg.glif</string>
+    <key>sha_ca-tutg.below.auto</key>
+    <string>sha_ca-tutg.below.auto.glif</string>
     <key>sha_cha-tutg</key>
     <string>sha_cha-tutg.glif</string>
+    <key>sha_cha-tutg.below.auto</key>
+    <string>sha_cha-tutg.below.auto.glif</string>
     <key>sha_lVocalicMatra-tutg</key>
     <string>sha_lV_ocalicM_atra-tutg.glif</string>
     <key>sha_lVocalicMatra-tutg.alt</key>
     <string>sha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>sha_lVocalicMatra-tutg.below.auto</key>
+    <string>sha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sha_ma-tutg</key>
     <string>sha_ma-tutg.glif</string>
+    <key>sha_ma-tutg.below.auto</key>
+    <string>sha_ma-tutg.below.auto.glif</string>
     <key>sha_na-tutg</key>
     <string>sha_na-tutg.glif</string>
+    <key>sha_na-tutg.below.auto</key>
+    <string>sha_na-tutg.below.auto.glif</string>
     <key>sha_rVocalicMatra-tutg</key>
     <string>sha_rV_ocalicM_atra-tutg.glif</string>
+    <key>sha_rVocalicMatra-tutg.below.auto</key>
+    <string>sha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sha_ra_iiMatra-tutg</key>
     <string>sha_ra_iiM_atra-tutg.glif</string>
     <key>sha_ra_iiMatra-tutg.alt1</key>
     <string>sha_ra_iiM_atra-tutg.alt1.glif</string>
+    <key>sha_ra_iiMatra-tutg.below.auto</key>
+    <string>sha_ra_iiM_atra-tutg.below.auto.glif</string>
     <key>sha_rrVocalicMatra-tutg</key>
     <string>sha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>sha_rrVocalicMatra-tutg.below.auto</key>
+    <string>sha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>sha_sha-tutg</key>
     <string>sha_sha-tutg.glif</string>
+    <key>sha_sha-tutg.below.auto</key>
+    <string>sha_sha-tutg.below.auto.glif</string>
     <key>sha_ttha-tutg</key>
     <string>sha_ttha-tutg.glif</string>
+    <key>sha_ttha-tutg.below.auto</key>
+    <string>sha_ttha-tutg.below.auto.glif</string>
     <key>sha_uMatra-tutg</key>
     <string>sha_uM_atra-tutg.glif</string>
     <key>sha_uMatra-tutg.alt1</key>
     <string>sha_uM_atra-tutg.alt1.glif</string>
+    <key>sha_uMatra-tutg.below.auto</key>
+    <string>sha_uM_atra-tutg.below.auto.glif</string>
     <key>sha_uuMatra-tutg</key>
     <string>sha_uuM_atra-tutg.glif</string>
+    <key>sha_uuMatra-tutg.below.auto</key>
+    <string>sha_uuM_atra-tutg.below.auto.glif</string>
     <key>sha_va-tutg</key>
     <string>sha_va-tutg.glif</string>
+    <key>sha_va-tutg.below.auto</key>
+    <string>sha_va-tutg.below.auto.glif</string>
     <key>sha_va_ya-tutg</key>
     <string>sha_va_ya-tutg.glif</string>
+    <key>sha_va_ya-tutg.below.auto</key>
+    <string>sha_va_ya-tutg.below.auto.glif</string>
     <key>sha_ya-tutg</key>
     <string>sha_ya-tutg.glif</string>
     <key>sha_ya-tutg.below</key>
@@ -1692,64 +2412,110 @@
     <string>ssa-tutg.below.glif</string>
     <key>ssa_ka-tutg</key>
     <string>ssa_ka-tutg.glif</string>
+    <key>ssa_ka-tutg.below.auto</key>
+    <string>ssa_ka-tutg.below.auto.glif</string>
     <key>ssa_ka_ra-tutg</key>
     <string>ssa_ka_ra-tutg.glif</string>
+    <key>ssa_ka_ra-tutg.below.auto</key>
+    <string>ssa_ka_ra-tutg.below.auto.glif</string>
     <key>ssa_ka_uuMatra-tutg</key>
     <string>ssa_ka_uuM_atra-tutg.glif</string>
+    <key>ssa_ka_uuMatra-tutg.below.auto</key>
+    <string>ssa_ka_uuM_atra-tutg.below.auto.glif</string>
     <key>ssa_ka_vocalicR-tutg</key>
     <string>ssa_ka_vocalicR_-tutg.glif</string>
+    <key>ssa_ka_vocalicR-tutg.below.auto</key>
+    <string>ssa_ka_vocalicR_-tutg.below.auto.glif</string>
     <key>ssa_lVocalicMatra-tutg</key>
     <string>ssa_lV_ocalicM_atra-tutg.glif</string>
     <key>ssa_lVocalicMatra-tutg.alt</key>
     <string>ssa_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ssa_lVocalicMatra-tutg.below.auto</key>
+    <string>ssa_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ssa_la-tutg</key>
     <string>ssa_la-tutg.glif</string>
+    <key>ssa_la-tutg.below.auto</key>
+    <string>ssa_la-tutg.below.auto.glif</string>
     <key>ssa_ma-tutg</key>
     <string>ssa_ma-tutg.glif</string>
+    <key>ssa_ma-tutg.below.auto</key>
+    <string>ssa_ma-tutg.below.auto.glif</string>
     <key>ssa_nna-tutg</key>
     <string>ssa_nna-tutg.glif</string>
+    <key>ssa_nna-tutg.below.auto</key>
+    <string>ssa_nna-tutg.below.auto.glif</string>
     <key>ssa_nna_uMatra-tutg</key>
     <string>ssa_nna_uM_atra-tutg.glif</string>
+    <key>ssa_nna_uMatra-tutg.below.auto</key>
+    <string>ssa_nna_uM_atra-tutg.below.auto.glif</string>
     <key>ssa_pa-tutg</key>
     <string>ssa_pa-tutg.glif</string>
+    <key>ssa_pa-tutg.below.auto</key>
+    <string>ssa_pa-tutg.below.auto.glif</string>
     <key>ssa_pa_ra-tutg</key>
     <string>ssa_pa_ra-tutg.glif</string>
+    <key>ssa_pa_ra-tutg.below.auto</key>
+    <string>ssa_pa_ra-tutg.below.auto.glif</string>
     <key>ssa_rVocalicMatra-tutg</key>
     <string>ssa_rV_ocalicM_atra-tutg.glif</string>
+    <key>ssa_rVocalicMatra-tutg.below.auto</key>
+    <string>ssa_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ssa_rrVocalicMatra-tutg</key>
     <string>ssa_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ssa_rrVocalicMatra-tutg.below.auto</key>
+    <string>ssa_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ssa_ssa-tutg</key>
     <string>ssa_ssa-tutg.glif</string>
     <key>ssa_ssa-tutg.alt2</key>
     <string>ssa_ssa-tutg.alt2.glif</string>
+    <key>ssa_ssa-tutg.below.auto</key>
+    <string>ssa_ssa-tutg.below.auto.glif</string>
     <key>ssa_tta-tutg</key>
     <string>ssa_tta-tutg.glif</string>
+    <key>ssa_tta-tutg.below.auto</key>
+    <string>ssa_tta-tutg.below.auto.glif</string>
     <key>ssa_tta_rVocalicMatra-tutg</key>
     <string>ssa_tta_rV_ocalicM_atra-tutg.glif</string>
+    <key>ssa_tta_rVocalicMatra-tutg.below.auto</key>
+    <string>ssa_tta_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ssa_tta_va-tutg</key>
     <string>ssa_tta_va-tutg.glif</string>
+    <key>ssa_tta_va-tutg.below.auto</key>
+    <string>ssa_tta_va-tutg.below.auto.glif</string>
     <key>ssa_tta_ya-tutg</key>
     <string>ssa_tta_ya-tutg.glif</string>
+    <key>ssa_tta_ya-tutg.below.auto</key>
+    <string>ssa_tta_ya-tutg.below.auto.glif</string>
     <key>ssa_ttha-tutg</key>
     <string>ssa_ttha-tutg.glif</string>
     <key>ssa_ttha-tutg.alt1</key>
     <string>ssa_ttha-tutg.alt1.glif</string>
     <key>ssa_ttha-tutg.alt2</key>
     <string>ssa_ttha-tutg.alt2.glif</string>
+    <key>ssa_ttha-tutg.below.auto</key>
+    <string>ssa_ttha-tutg.below.auto.glif</string>
     <key>ssa_ttha_ya-tutg</key>
     <string>ssa_ttha_ya-tutg.glif</string>
+    <key>ssa_ttha_ya-tutg.below.auto</key>
+    <string>ssa_ttha_ya-tutg.below.auto.glif</string>
     <key>ssa_uMatra-tutg</key>
     <string>ssa_uM_atra-tutg.glif</string>
+    <key>ssa_uMatra-tutg.below.auto</key>
+    <string>ssa_uM_atra-tutg.below.auto.glif</string>
     <key>ssa_uuMatra-tutg</key>
     <string>ssa_uuM_atra-tutg.glif</string>
     <key>ssa_uuMatra-tutg.alt1</key>
     <string>ssa_uuM_atra-tutg.alt1.glif</string>
+    <key>ssa_uuMatra-tutg.below.auto</key>
+    <string>ssa_uuM_atra-tutg.below.auto.glif</string>
     <key>ssa_va-tutg</key>
     <string>ssa_va-tutg.glif</string>
     <key>ssa_va-tutg.below</key>
     <string>ssa_va-tutg.below.glif</string>
     <key>ssa_ya-tutg</key>
     <string>ssa_ya-tutg.glif</string>
+    <key>ssa_ya-tutg.below.auto</key>
+    <string>ssa_ya-tutg.below.auto.glif</string>
     <key>svarita-tutg</key>
     <string>svarita-tutg.glif</string>
     <key>t</key>
@@ -1764,56 +2530,104 @@
     <string>taC_hillu-tutg.glif</string>
     <key>ta_bha-tutg</key>
     <string>ta_bha-tutg.glif</string>
+    <key>ta_bha-tutg.below.auto</key>
+    <string>ta_bha-tutg.below.auto.glif</string>
     <key>ta_kChillu-tutg</key>
     <string>ta_kC_hillu-tutg.glif</string>
+    <key>ta_kChillu-tutg.below.auto</key>
+    <string>ta_kC_hillu-tutg.below.auto.glif</string>
     <key>ta_ka-tutg</key>
     <string>ta_ka-tutg.glif</string>
+    <key>ta_ka-tutg.below.auto</key>
+    <string>ta_ka-tutg.below.auto.glif</string>
     <key>ta_ka_ssa-tutg</key>
     <string>ta_ka_ssa-tutg.glif</string>
+    <key>ta_ka_ssa-tutg.below.auto</key>
+    <string>ta_ka_ssa-tutg.below.auto.glif</string>
     <key>ta_ka_ssa_ma-tutg</key>
     <string>ta_ka_ssa_ma-tutg.glif</string>
+    <key>ta_ka_ssa_ma-tutg.below.auto</key>
+    <string>ta_ka_ssa_ma-tutg.below.auto.glif</string>
     <key>ta_lVocalicMatra-tutg</key>
     <string>ta_lV_ocalicM_atra-tutg.glif</string>
     <key>ta_lVocalicMatra-tutg.alt</key>
     <string>ta_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ta_lVocalicMatra-tutg.below.auto</key>
+    <string>ta_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ta_ma-tutg</key>
     <string>ta_ma-tutg.glif</string>
     <key>ta_ma-tutg.alt1</key>
     <string>ta_ma-tutg.alt1.glif</string>
+    <key>ta_ma-tutg.below.auto</key>
+    <string>ta_ma-tutg.below.auto.glif</string>
     <key>ta_ma_ra-tutg</key>
     <string>ta_ma_ra-tutg.glif</string>
+    <key>ta_ma_ra-tutg.below.auto</key>
+    <string>ta_ma_ra-tutg.below.auto.glif</string>
     <key>ta_ma_ya-tutg</key>
     <string>ta_ma_ya-tutg.glif</string>
+    <key>ta_ma_ya-tutg.below.auto</key>
+    <string>ta_ma_ya-tutg.below.auto.glif</string>
     <key>ta_nChillu-tutg</key>
     <string>ta_nC_hillu-tutg.glif</string>
+    <key>ta_nChillu-tutg.below.auto</key>
+    <string>ta_nC_hillu-tutg.below.auto.glif</string>
     <key>ta_na-tutg</key>
     <string>ta_na-tutg.glif</string>
+    <key>ta_na-tutg.below.auto</key>
+    <string>ta_na-tutg.below.auto.glif</string>
     <key>ta_rVocalicMatra-tutg</key>
     <string>ta_rV_ocalicM_atra-tutg.glif</string>
+    <key>ta_rVocalicMatra-tutg.below.auto</key>
+    <string>ta_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ta_ra-tutg</key>
     <string>ta_ra-tutg.glif</string>
+    <key>ta_ra-tutg.below.auto</key>
+    <string>ta_ra-tutg.below.auto.glif</string>
     <key>ta_ra_va-tutg</key>
     <string>ta_ra_va-tutg.glif</string>
+    <key>ta_ra_va-tutg.below.auto</key>
+    <string>ta_ra_va-tutg.below.auto.glif</string>
     <key>ta_rrVocalicMatra-tutg</key>
     <string>ta_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ta_rrVocalicMatra-tutg.below.auto</key>
+    <string>ta_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ta_sa-tutg</key>
     <string>ta_sa-tutg.glif</string>
+    <key>ta_sa-tutg.below.auto</key>
+    <string>ta_sa-tutg.below.auto.glif</string>
     <key>ta_sa_ta-tutg</key>
     <string>ta_sa_ta-tutg.glif</string>
+    <key>ta_sa_ta-tutg.below.auto</key>
+    <string>ta_sa_ta-tutg.below.auto.glif</string>
     <key>ta_ta-tutg</key>
     <string>ta_ta-tutg.glif</string>
+    <key>ta_ta-tutg.below.auto</key>
+    <string>ta_ta-tutg.below.auto.glif</string>
     <key>ta_taChillu-tutg</key>
     <string>ta_taC_hillu-tutg.glif</string>
+    <key>ta_taChillu-tutg.below.auto</key>
+    <string>ta_taC_hillu-tutg.below.auto.glif</string>
     <key>ta_ta_rVocalicMatra-tutg</key>
     <string>ta_ta_rV_ocalicM_atra-tutg.glif</string>
+    <key>ta_ta_rVocalicMatra-tutg.below.auto</key>
+    <string>ta_ta_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ta_ta_ra-tutg</key>
     <string>ta_ta_ra-tutg.glif</string>
+    <key>ta_ta_ra-tutg.below.auto</key>
+    <string>ta_ta_ra-tutg.below.auto.glif</string>
     <key>ta_ta_va-tutg</key>
     <string>ta_ta_va-tutg.glif</string>
+    <key>ta_ta_va-tutg.below.auto</key>
+    <string>ta_ta_va-tutg.below.auto.glif</string>
     <key>ta_tha-tutg</key>
     <string>ta_tha-tutg.glif</string>
+    <key>ta_tha-tutg.below.auto</key>
+    <string>ta_tha-tutg.below.auto.glif</string>
     <key>ta_tha_ya-tutg</key>
     <string>ta_tha_ya-tutg.glif</string>
+    <key>ta_tha_ya-tutg.below.auto</key>
+    <string>ta_tha_ya-tutg.below.auto.glif</string>
     <key>ta_uMatra-tutg</key>
     <string>ta_uM_atra-tutg.glif</string>
     <key>ta_uMatra-tutg.alt1</key>
@@ -1822,10 +2636,16 @@
     <string>ta_uM_atra-tutg.below.glif</string>
     <key>ta_uuMatra-tutg</key>
     <string>ta_uuM_atra-tutg.glif</string>
+    <key>ta_uuMatra-tutg.below.auto</key>
+    <string>ta_uuM_atra-tutg.below.auto.glif</string>
     <key>ta_va-tutg</key>
     <string>ta_va-tutg.glif</string>
+    <key>ta_va-tutg.below.auto</key>
+    <string>ta_va-tutg.below.auto.glif</string>
     <key>ta_ya-tutg</key>
     <string>ta_ya-tutg.glif</string>
+    <key>ta_ya-tutg.below.auto</key>
+    <string>ta_ya-tutg.below.auto.glif</string>
     <key>ten-tutg</key>
     <string>ten-tutg.glif</string>
     <key>tha-tutg</key>
@@ -1836,14 +2656,24 @@
     <string>tha_lV_ocalicM_atra-tutg.glif</string>
     <key>tha_lVocalicMatra-tutg.alt</key>
     <string>tha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>tha_lVocalicMatra-tutg.below.auto</key>
+    <string>tha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tha_rVocalicMatra-tutg</key>
     <string>tha_rV_ocalicM_atra-tutg.glif</string>
+    <key>tha_rVocalicMatra-tutg.below.auto</key>
+    <string>tha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tha_rrVocalicMatra-tutg</key>
     <string>tha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>tha_rrVocalicMatra-tutg.below.auto</key>
+    <string>tha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tha_uMatra-tutg</key>
     <string>tha_uM_atra-tutg.glif</string>
+    <key>tha_uMatra-tutg.below.auto</key>
+    <string>tha_uM_atra-tutg.below.auto.glif</string>
     <key>tha_uuMatra-tutg</key>
     <string>tha_uuM_atra-tutg.glif</string>
+    <key>tha_uuMatra-tutg.below.auto</key>
+    <string>tha_uuM_atra-tutg.below.auto.glif</string>
     <key>three</key>
     <string>three.glif</string>
     <key>three-tutg</key>
@@ -1864,24 +2694,40 @@
     <string>tta_lV_ocalicM_atra-tutg.glif</string>
     <key>tta_lVocalicMatra-tutg.alt</key>
     <string>tta_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>tta_lVocalicMatra-tutg.below.auto</key>
+    <string>tta_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tta_rVocalicMatra-tutg</key>
     <string>tta_rV_ocalicM_atra-tutg.glif</string>
+    <key>tta_rVocalicMatra-tutg.below.auto</key>
+    <string>tta_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tta_rrVocalicMatra-tutg</key>
     <string>tta_rrV_ocalicM_atra-tutg.glif</string>
+    <key>tta_rrVocalicMatra-tutg.below.auto</key>
+    <string>tta_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>tta_ttChillu-tutg</key>
     <string>tta_ttC_hillu-tutg.glif</string>
+    <key>tta_ttChillu-tutg.below.auto</key>
+    <string>tta_ttC_hillu-tutg.below.auto.glif</string>
     <key>tta_tta-tutg</key>
     <string>tta_tta-tutg.glif</string>
+    <key>tta_tta-tutg.below.auto</key>
+    <string>tta_tta-tutg.below.auto.glif</string>
     <key>tta_tta_ya-tutg</key>
     <string>tta_tta_ya-tutg.glif</string>
+    <key>tta_tta_ya-tutg.below.auto</key>
+    <string>tta_tta_ya-tutg.below.auto.glif</string>
     <key>tta_uMatra-tutg</key>
     <string>tta_uM_atra-tutg.glif</string>
     <key>tta_uMatra-tutg.alt1</key>
     <string>tta_uM_atra-tutg.alt1.glif</string>
+    <key>tta_uMatra-tutg.below.auto</key>
+    <string>tta_uM_atra-tutg.below.auto.glif</string>
     <key>tta_uuMatra-tutg</key>
     <string>tta_uuM_atra-tutg.glif</string>
     <key>tta_uuMatra-tutg.alt1</key>
     <string>tta_uuM_atra-tutg.alt1.glif</string>
+    <key>tta_uuMatra-tutg.below.auto</key>
+    <string>tta_uuM_atra-tutg.below.auto.glif</string>
     <key>ttha-tutg</key>
     <string>ttha-tutg.glif</string>
     <key>ttha-tutg.below</key>
@@ -1890,14 +2736,24 @@
     <string>ttha_lV_ocalicM_atra-tutg.glif</string>
     <key>ttha_lVocalicMatra-tutg.alt</key>
     <string>ttha_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ttha_lVocalicMatra-tutg.below.auto</key>
+    <string>ttha_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ttha_rVocalicMatra-tutg</key>
     <string>ttha_rV_ocalicM_atra-tutg.glif</string>
+    <key>ttha_rVocalicMatra-tutg.below.auto</key>
+    <string>ttha_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ttha_rrVocalicMatra-tutg</key>
     <string>ttha_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ttha_rrVocalicMatra-tutg.below.auto</key>
+    <string>ttha_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ttha_uMatra-tutg</key>
     <string>ttha_uM_atra-tutg.glif</string>
+    <key>ttha_uMatra-tutg.below.auto</key>
+    <string>ttha_uM_atra-tutg.below.auto.glif</string>
     <key>ttha_uuMatra-tutg</key>
     <string>ttha_uuM_atra-tutg.glif</string>
+    <key>ttha_uuMatra-tutg.below.auto</key>
+    <string>ttha_uuM_atra-tutg.below.auto.glif</string>
     <key>two</key>
     <string>two.glif</string>
     <key>two-tutg</key>
@@ -1960,18 +2816,32 @@
     <string>va_lV_ocalicM_atra-tutg.glif</string>
     <key>va_lVocalicMatra-tutg.alt</key>
     <string>va_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>va_lVocalicMatra-tutg.below.auto</key>
+    <string>va_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>va_rVocalicMatra-tutg</key>
     <string>va_rV_ocalicM_atra-tutg.glif</string>
+    <key>va_rVocalicMatra-tutg.below.auto</key>
+    <string>va_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>va_rrVocalicMatra-tutg</key>
     <string>va_rrV_ocalicM_atra-tutg.glif</string>
+    <key>va_rrVocalicMatra-tutg.below.auto</key>
+    <string>va_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>va_uMatra-tutg</key>
     <string>va_uM_atra-tutg.glif</string>
+    <key>va_uMatra-tutg.below.auto</key>
+    <string>va_uM_atra-tutg.below.auto.glif</string>
     <key>va_uuMatra-tutg</key>
     <string>va_uuM_atra-tutg.glif</string>
+    <key>va_uuMatra-tutg.below.auto</key>
+    <string>va_uuM_atra-tutg.below.auto.glif</string>
     <key>va_va-tutg</key>
     <string>va_va-tutg.glif</string>
+    <key>va_va-tutg.below.auto</key>
+    <string>va_va-tutg.below.auto.glif</string>
     <key>va_ya-tutg</key>
     <string>va_ya-tutg.glif</string>
+    <key>va_ya-tutg.below.auto</key>
+    <string>va_ya-tutg.below.auto.glif</string>
     <key>vamatra-tutg</key>
     <string>vamatra-tutg.glif</string>
     <key>vamatra-tutg.alt2</key>
@@ -2000,20 +2870,34 @@
     <string>ya_lV_ocalicM_atra-tutg.glif</string>
     <key>ya_lVocalicMatra-tutg.alt</key>
     <string>ya_lV_ocalicM_atra-tutg.alt.glif</string>
+    <key>ya_lVocalicMatra-tutg.below.auto</key>
+    <string>ya_lV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ya_rVocalicMatra-tutg</key>
     <string>ya_rV_ocalicM_atra-tutg.glif</string>
+    <key>ya_rVocalicMatra-tutg.below.auto</key>
+    <string>ya_rV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ya_rrVocalicMatra-tutg</key>
     <string>ya_rrV_ocalicM_atra-tutg.glif</string>
+    <key>ya_rrVocalicMatra-tutg.below.auto</key>
+    <string>ya_rrV_ocalicM_atra-tutg.below.auto.glif</string>
     <key>ya_uMatra-tutg</key>
     <string>ya_uM_atra-tutg.glif</string>
+    <key>ya_uMatra-tutg.below.auto</key>
+    <string>ya_uM_atra-tutg.below.auto.glif</string>
     <key>ya_uuMatra-tutg</key>
     <string>ya_uuM_atra-tutg.glif</string>
+    <key>ya_uuMatra-tutg.below.auto</key>
+    <string>ya_uuM_atra-tutg.below.auto.glif</string>
     <key>ya_va-tutg</key>
     <string>ya_va-tutg.glif</string>
+    <key>ya_va-tutg.below.auto</key>
+    <string>ya_va-tutg.below.auto.glif</string>
     <key>ya_ya-tutg</key>
     <string>ya_ya-tutg.glif</string>
     <key>ya_ya-tutg.alt2</key>
     <string>ya_ya-tutg.alt2.glif</string>
+    <key>ya_ya-tutg.below.auto</key>
+    <string>ya_ya-tutg.below.auto.glif</string>
     <key>yamatra-tutg</key>
     <string>yamatra-tutg.glif</string>
     <key>z</key>

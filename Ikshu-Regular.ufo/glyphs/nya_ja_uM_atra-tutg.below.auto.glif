@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nya_ja_uMatra-tutg.below.auto" format="2">
+  <anchor x="1195.2" y="-1003.2" name="bottom"/>
+  <anchor x="1195.2" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="nya_ja_uMatra-tutg" xScale="0.863" yScale="0.863" xOffset="163.7" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

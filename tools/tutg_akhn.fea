@@ -10,6 +10,10 @@ languagesystem tutg dflt;
 
 feature akhn {
     script tutg;
+    lookup TutgRephaUpgrade {
+        # Typed Repha (repha-tutg) -> ligating variant (repha-tutg.alt1).
+        sub repha-tutg by repha-tutg.alt1;
+    } TutgRephaUpgrade;
     lookup TutgAkhand {
         sub ga-tutg conjoiner-tutg da-tutg conjoiner-tutg dha-tutg conjoiner-tutg ra-tutg by ga_da_dha_ra-tutg;
         sub ga-tutg conjoiner-tutg da-tutg conjoiner-tutg dha-tutg conjoiner-tutg va-tutg by ga_da_dha_va-tutg;
@@ -67,7 +71,6 @@ feature akhn {
         sub pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg va-tutg by pa_sa_va-tutg;
         sub pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg ya-tutg by pa_sa_ya-tutg;
         sub pa-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg by pa_ta_va-tutg;
-        sub ra-tutg conjoiner-tutg ma-tutg conjoiner-tutg ma-tutg by ra_ma_ma-tutg;
         sub sa-tutg conjoiner-tutg ma-tutg conjoiner-tutg ya-tutg by sa_ma_ya-tutg;
         sub sa-tutg conjoiner-tutg sa-tutg conjoiner-tutg ka-tutg by sa_sa_ka-tutg;
         sub sa-tutg conjoiner-tutg sa-tutg conjoiner-tutg pa-tutg by sa_sa_pa-tutg;
@@ -109,6 +112,7 @@ feature akhn {
         sub na-tutg conjoiner-tutg ta-tutg loopedvirama-tutg by na_tChillu-tutg;
         sub na-tutg conjoiner-tutg tta-tutg loopedvirama-tutg by na_ttChillu-tutg;
         sub nya-tutg conjoiner-tutg ja-tutg uMatra-tutg by nya_ja_uMatra-tutg;
+        sub repha-tutg.alt1 ma-tutg conjoiner-tutg ma-tutg by ra_ma_ma-tutg;
         sub sa-tutg conjoiner-tutg ka-tutg rVocalicMatra-tutg by sa_ka_vocalicR-tutg;
         sub sa-tutg conjoiner-tutg pa-tutg rVocalicMatra-tutg by sa_pa_rvocalicMatra-tutg;
         sub sa-tutg conjoiner-tutg sa-tutg rVocalicMatra-tutg by sa_sa_rVocalicMatra-tutg;
@@ -232,11 +236,6 @@ feature akhn {
         sub pa-tutg conjoiner-tutg sa-tutg by pa_sa-tutg;
         sub pa-tutg conjoiner-tutg ta-tutg by pa_ta-tutg;
         sub pa-tutg conjoiner-tutg ya-tutg by pa_ya-tutg;
-        sub ra-tutg conjoiner-tutg ma-tutg by ra_ma-tutg;
-        sub ra-tutg conjoiner-tutg ra-tutg by ra_ra-tutg;
-        sub ra-tutg conjoiner-tutg sha-tutg by ra_sha-tutg;
-        sub ra-tutg conjoiner-tutg va-tutg by ra_va-tutg;
-        sub ra-tutg conjoiner-tutg ya-tutg by ra_ya-tutg;
         sub sa-tutg conjoiner-tutg ca-tutg by sa_ca-tutg;
         sub sa-tutg conjoiner-tutg ka-tutg by sa_ka-tutg;
         sub sa-tutg conjoiner-tutg ma-tutg by sa_ma-tutg;
@@ -284,6 +283,7 @@ feature akhn {
         sub ba-tutg rrVocalicMatra-tutg by ba_rrVocalicMatra-tutg;
         sub ba-tutg uMatra-tutg by ba_uMatra-tutg;
         sub ba-tutg uuMatra-tutg by ba_uuMatra-tutg;
+        sub bha-tutg loopedvirama-tutg by bhChillu-tutg;
         sub bha-tutg lVocalicMatra-tutg by bha_lVocalicMatra-tutg;
         sub bha-tutg rVocalicMatra-tutg by bha_rVocalicMatra-tutg;
         sub bha-tutg rrVocalicMatra-tutg by bha_rrVocalicMatra-tutg;
@@ -344,6 +344,7 @@ feature akhn {
         sub jha-tutg rrVocalicMatra-tutg by jha_rrVocalicMatra-tutg;
         sub jha-tutg uMatra-tutg by jha_uMatra-tutg;
         sub jha-tutg uuMatra-tutg by jha_uuMatra-tutg;
+        sub ka-tutg loopedvirama-tutg by kChillu-tutg;
         sub ka-tutg lVocalicMatra-tutg by ka_lVocalicMatra-tutg;
         sub ka-tutg rVocalicMatra-tutg by ka_rVocalicMatra-tutg;
         sub ka-tutg rrVocalicMatra-tutg by ka_rrVocalicMatra-tutg;
@@ -359,6 +360,7 @@ feature akhn {
         sub la-tutg rrVocalicMatra-tutg by la_rrVocalicMatra-tutg;
         sub la-tutg uMatra-tutg by la_uMatra-tutg;
         sub la-tutg uuMatra-tutg by la_uuMatra-tutg;
+        sub ga-tutg loopedvirama-tutg by llChillu-tutg;
         sub lla-tutg lVocalicMatra-tutg by lla_lVocalicMatra-tutg;
         sub lla-tutg rVocalicMatra-tutg by lla_rVocalicMatra-tutg;
         sub lla-tutg rrVocalicMatra-tutg by lla_rrVocalicMatra-tutg;
@@ -374,6 +376,7 @@ feature akhn {
         sub ma-tutg rrVocalicMatra-tutg by ma_rrVocalicMatra-tutg;
         sub ma-tutg uMatra-tutg by ma_uMatra-tutg;
         sub ma-tutg uuMatra-tutg by ma_uuMatra-tutg;
+        sub na-tutg loopedvirama-tutg by nChillu-tutg;
         sub na-tutg lVocalicMatra-tutg by na_lVocalicMatra-tutg;
         sub na-tutg rVocalicMatra-tutg by na_rVocalicMatra-tutg;
         sub na-tutg rrVocalicMatra-tutg by na_rrVocalicMatra-tutg;
@@ -384,6 +387,7 @@ feature akhn {
         sub nga-tutg rrVocalicMatra-tutg by nga_rrVocalicMatra-tutg;
         sub nga-tutg uMatra-tutg by nga_uMatra-tutg;
         sub nga-tutg uuMatra-tutg by nga_uuMatra-tutg;
+        sub nna-tutg loopedvirama-tutg by nnChillu-tutg;
         sub nna-tutg lVocalicMatra-tutg by nna_lVocalicMatra-tutg;
         sub nna-tutg rVocalicMatra-tutg by nna_rVocalicMatra-tutg;
         sub nna-tutg rrVocalicMatra-tutg by nna_rrVocalicMatra-tutg;
@@ -407,10 +411,16 @@ feature akhn {
         sub rVocalicMatra-tutg uMatra-tutg by rVocalicMatra_uMatra-tutg;
         sub rVocalicMatra-tutg uuMatra-tutg by rVocalicMatra_uuMatra-tutg;
         sub ra-tutg lVocalicMatra-tutg by ra_lVocalicMatra-tutg;
+        sub repha-tutg.alt1 ma-tutg by ra_ma-tutg;
         sub ra-tutg rVocalicMatra-tutg by ra_rVocalicMatra-tutg;
+        sub repha-tutg.alt1 ra-tutg by ra_ra-tutg;
         sub ra-tutg rrVocalicMatra-tutg by ra_rrVocalicMatra-tutg;
+        sub repha-tutg.alt1 sha-tutg by ra_sha-tutg;
         sub ra-tutg uMatra-tutg by ra_uMatra-tutg;
         sub ra-tutg uuMatra-tutg by ra_uuMatra-tutg;
+        sub repha-tutg.alt1 va-tutg by ra_va-tutg;
+        sub repha-tutg.alt1 ya-tutg by ra_ya-tutg;
+        sub ra-tutg loopedvirama-tutg by rrChillu-tutg;
         sub rra-tutg lVocalicMatra-tutg by rra_lVocalicMatra-tutg;
         sub rra-tutg rVocalicMatra-tutg by rra_rVocalicMatra-tutg;
         sub rra-tutg rrVocalicMatra-tutg by rra_rrVocalicMatra-tutg;
@@ -431,6 +441,7 @@ feature akhn {
         sub ssa-tutg rrVocalicMatra-tutg by ssa_rrVocalicMatra-tutg;
         sub ssa-tutg uMatra-tutg by ssa_uMatra-tutg;
         sub ssa-tutg uuMatra-tutg by ssa_uuMatra-tutg;
+        sub ta-tutg loopedvirama-tutg by tChillu-tutg;
         sub ta-tutg lVocalicMatra-tutg by ta_lVocalicMatra-tutg;
         sub ta-tutg rVocalicMatra-tutg by ta_rVocalicMatra-tutg;
         sub ta-tutg rrVocalicMatra-tutg by ta_rrVocalicMatra-tutg;
@@ -441,6 +452,7 @@ feature akhn {
         sub tha-tutg rrVocalicMatra-tutg by tha_rrVocalicMatra-tutg;
         sub tha-tutg uMatra-tutg by tha_uMatra-tutg;
         sub tha-tutg uuMatra-tutg by tha_uuMatra-tutg;
+        sub tta-tutg loopedvirama-tutg by ttChillu-tutg;
         sub tta-tutg lVocalicMatra-tutg by tta_lVocalicMatra-tutg;
         sub tta-tutg rVocalicMatra-tutg by tta_rVocalicMatra-tutg;
         sub tta-tutg rrVocalicMatra-tutg by tta_rrVocalicMatra-tutg;
@@ -543,6 +555,7 @@ feature akhn {
 # ta_ma-tutg -> ta_ma-tutg.alt1
 # ta_uMatra-tutg -> ta_uMatra-tutg.alt1, ta_uMatra-tutg.below
 # tha_lVocalicMatra-tutg -> tha_lVocalicMatra-tutg.alt
+# ttChillu-tutg -> ttChillu-tutg.alt1
 # tta_lVocalicMatra-tutg -> tta_lVocalicMatra-tutg.alt
 # tta_uMatra-tutg -> tta_uMatra-tutg.alt1
 # tta_uuMatra-tutg -> tta_uuMatra-tutg.alt1
@@ -557,3 +570,4 @@ feature akhn {
 # pa_ra-tutg.below
 
 # --- Skipped: explicitly excluded via gsub_ignore_list.json ---
+# taChillu-tutg: Name implies TA + Looped Virama, but its only component is 'ya-tutg.below' (YA's below-base form), not any TA sub-part. Confirmed mismatch between name and artwork on 2026-07-16 by checking glyph.components. Excluded from auto-generated GSUB rules until resolved.

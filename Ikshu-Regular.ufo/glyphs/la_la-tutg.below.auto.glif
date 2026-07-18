@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="la_la-tutg.below.auto" format="2">
+  <anchor x="497.0" y="-1073.9" name="bottom"/>
+  <anchor x="497.0" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="la_la-tutg" xScale="0.863" yScale="0.863" xOffset="68.1" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

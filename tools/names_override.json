@@ -1,0 +1,58 @@
+{
+  "_readme": "Single source of truth for every non-standard/typo/shorthand glyph-name token the akhn generator has to special-case, so the mapping lives in data instead of scattered Python dict literals. Consumed by generate_akhn_feature.py's split_name(). Standard names are always checked FIRST in split_name() (against CONSONANTS/VOWEL_SIGN_ROOTS), so once a glyph listed here is manually renamed in the font to its standard/correct form, it resolves via that standard-name path and the corresponding entry below simply goes unused - no code change needed. Entries marked forward_compat exist purely to cover a rename that hasn't happened yet, so the code doesn't need editing again once it does.",
+
+  "token_aliases": {
+    "raMatra": {
+      "resolves_to": "ra-tutg",
+      "kind": "consonant",
+      "reason": "This font's alternate token for consonant RA in its final/combining form (e.g. ba_ra-tutg is built from ba-tutg + raMatra-tutg components) - semantically just consonant RA for GSUB input-sequence purposes. Confirmed 2026-07-16: sa_ta_raMatra-tutg is the SA+TA+RA conjunct (\"stra\"), not an unparseable oddity."
+    },
+    "UuMatra": {
+      "resolves_to": "uuMatra-tutg",
+      "kind": "vowelsign",
+      "reason": "Capital-U typo for uuMatra (nya_UuMatra-tutg). Confirmed 2026-07-16."
+    },
+    "rvocalicMatra": {
+      "resolves_to": "rVocalicMatra-tutg",
+      "kind": "vowelsign",
+      "reason": "Lowercase-r typo for rVocalicMatra (sa_pa_rvocalicMatra-tutg). Confirmed 2026-07-16."
+    },
+    "vocalicR": {
+      "resolves_to": "rVocalicMatra-tutg",
+      "kind": "vowelsign",
+      "reason": "Different spelling/word-order for rVocalicMatra (sa_ka_vocalicR-tutg, ssa_ka_vocalicR-tutg). Confirmed 2026-07-16."
+    }
+  },
+
+  "chillu_abbreviations": {
+    "_readme": "\"XChillu\" is this font's shorthand for [consonant X] + Looped Virama (e.g. kChillu-tutg = ka-tutg + loopedvirama-tutg). Keys are the abbreviation prefix stripped of the trailing \"Chillu\"; values are the bare consonant name (no -tutg suffix - that's added by generate_akhn_feature.py).",
+    "k": {"resolves_to": "ka", "reason": "kChillu-tutg / ka_kChillu-tutg etc."},
+    "t": {"resolves_to": "ta", "reason": "tChillu-tutg / ka_tChillu-tutg etc."},
+    "tt": {"resolves_to": "tta", "reason": "ttChillu-tutg / ka_ttChillu-tutg etc."},
+    "n": {"resolves_to": "na", "reason": "nChillu-tutg / ka_nChillu-tutg etc."},
+    "nn": {"resolves_to": "nna", "reason": "nnChillu-tutg."},
+    "bh": {"resolves_to": "bha", "reason": "bhChillu-tutg."},
+    "ll": {
+      "resolves_to": "ga",
+      "reason": "MANUAL OVERRIDE, confirmed 2026-07-17 by project owner via visual inspection: despite the name implying LLA, llChillu-tutg is actually GA + Looped Virama. Can't be verified from the glif file the way ta_taChillu-tutg was (custom-drawn contours, no consonant-specific sub-part component) - taken on the project owner's word. GA *is* one of the proposal's documented Looped-Virama bases (K/G/TT/T/N), so this is consistent with that list."
+    },
+    "rr": {
+      "resolves_to": "ra",
+      "reason": "MANUAL OVERRIDE, confirmed 2026-07-17 by project owner via visual inspection: despite the name implying RRA, rrChillu-tutg is actually RA + Looped Virama. Same caveat as \"ll\" above - not verifiable from glif components, taken on the project owner's word. RA is NOT on the proposal's documented Looped-Virama base list (K/G/TT/T/N), so this extends beyond the documented set rather than confirming it."
+    },
+    "g": {
+      "resolves_to": "ga",
+      "forward_compat": true,
+      "reason": "llChillu-tutg is confirmed to actually be GA + Looped Virama (see \"ll\" above) - if it's ever manually renamed to gChillu-tutg to match its real sound (consistent with this font's single-letter-abbreviation convention for k/t/n/bh), this entry lets the renamed glyph keep resolving without touching the code."
+    },
+    "r": {
+      "resolves_to": "ra",
+      "forward_compat": true,
+      "reason": "rrChillu-tutg is confirmed to actually be RA + Looped Virama (see \"rr\" above) - if it's ever manually renamed to rChillu-tutg to match its real sound, this entry lets the renamed glyph keep resolving without touching the code."
+    },
+    "ta": {
+      "resolves_to": "ta",
+      "reason": "NOT the same thing as the standalone taChillu-tutg (see gsub_ignore_list.json - that one is a confirmed name/artwork mismatch, built from ya-tutg.below). This key only fires within a COMPOUND name like ta_taChillu-tutg, confirmed 2026-07-16 to be real T.T + Looped Virama (components: _taleftarm/_tamiddle - TA's own parts, same ones tChillu-tutg uses - plus _loopedviramaCombining.alt1 and a second _tamiddle). The gsub_ignore_list.json check in generate_akhn_feature.py's main loop is what guarantees this entry can never accidentally resolve the standalone broken taChillu-tutg too."
+    }
+  }
+}

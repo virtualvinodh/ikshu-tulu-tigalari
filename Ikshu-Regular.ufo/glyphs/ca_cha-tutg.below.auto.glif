@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ca_cha-tutg.below.auto" format="2">
+  <anchor x="846.5" y="-1170.6" name="bottom"/>
+  <anchor x="846.5" y="-180.3" name="_bottom"/>
+  <outline>
+    <component base="ca_cha-tutg" xScale="0.863" yScale="0.863" xOffset="116.0" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

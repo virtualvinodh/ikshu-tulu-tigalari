@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_ta_uMatra-tutg.below.auto" format="2">
+  <anchor x="824.2" y="-1338.0" name="bottom"/>
+  <anchor x="824.2" y="-191.6" name="_bottom"/>
+  <outline>
+    <component base="sa_ta_uMatra-tutg" xScale="0.863" yScale="0.863" xOffset="112.9" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

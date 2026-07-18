@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="da_dha_va-tutg.below.auto" format="2">
+  <anchor x="815.2" y="-801.2" name="bottom"/>
+  <anchor x="815.2" y="-160.1" name="_bottom"/>
+  <outline>
+    <component base="da_dha_va-tutg" xScale="0.863" yScale="0.863" xOffset="111.7" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

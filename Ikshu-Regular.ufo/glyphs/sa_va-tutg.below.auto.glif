@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sa_va-tutg.below.auto" format="2">
+  <anchor x="626.5" y="-802.1" name="bottom"/>
+  <anchor x="626.5" y="-126.0" name="_bottom"/>
+  <outline>
+    <component base="sa_va-tutg" xScale="0.863" yScale="0.863" xOffset="85.8" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

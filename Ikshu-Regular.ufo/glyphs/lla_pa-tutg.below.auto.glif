@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lla_pa-tutg.below.auto" format="2">
+  <anchor x="575.2" y="-1170.6" name="bottom"/>
+  <anchor x="575.2" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="lla_pa-tutg" xScale="0.863" yScale="0.863" xOffset="78.8" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

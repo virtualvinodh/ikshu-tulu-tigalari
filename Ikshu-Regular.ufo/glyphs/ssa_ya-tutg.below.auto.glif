@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ssa_ya-tutg.below.auto" format="2">
+  <anchor x="633.0" y="-924.6" name="bottom"/>
+  <anchor x="633.0" y="-22.4" name="_bottom"/>
+  <outline>
+    <component base="ssa_ya-tutg" xScale="0.863" yScale="0.863" xOffset="86.7" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

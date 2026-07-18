@@ -18,6 +18,12 @@ category_of = {}
 for cat, names in classification.items():
     for n in names:
         category_of[n] = cat
+# Auto-generated ligature below-base miniatures (generate_below_auto_glyphs.py)
+# postdate glyph_classification.json and have no classify_glyphs.py naming rule,
+# so they're tagged directly here by their ".below.auto" suffix instead.
+for g in font:
+    if g.name.endswith(".below.auto"):
+        category_of[g.name] = "below_auto"
 
 # Export EVERY glyph in the font, no filtering - including empty ones (no contours,
 # no components, e.g. "space", ".notdef", or genuinely unbuilt glyphs like

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ga_ba-tutg.below.auto" format="2">
+  <anchor x="945.0" y="-752.9" name="bottom"/>
+  <anchor x="945.0" y="-183.0" name="_bottom"/>
+  <outline>
+    <component base="ga_ba-tutg" xScale="0.863" yScale="0.863" xOffset="129.5" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

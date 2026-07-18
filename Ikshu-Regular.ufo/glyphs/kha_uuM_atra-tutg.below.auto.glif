@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="kha_uuMatra-tutg.below.auto" format="2">
+  <anchor x="659.0" y="-1109.3" name="bottom"/>
+  <anchor x="659.0" y="-189.0" name="_bottom"/>
+  <outline>
+    <component base="kha_uuMatra-tutg" xScale="0.863" yScale="0.863" xOffset="90.3" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nga_ka_ka-tutg.below.auto" format="2">
+  <anchor x="1024.5" y="-739.9" name="bottom"/>
+  <anchor x="1024.5" y="-162.7" name="_bottom"/>
+  <outline>
+    <component base="nga_ka_ka-tutg" xScale="0.863" yScale="0.863" xOffset="140.4" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

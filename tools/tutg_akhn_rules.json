@@ -1,6 +1,12 @@
 [
   {
     "input": [
+      "repha-tutg"
+    ],
+    "output": "repha-tutg.alt1"
+  },
+  {
+    "input": [
       "ga-tutg",
       "conjoiner-tutg",
       "da-tutg",
@@ -577,16 +583,6 @@
   },
   {
     "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "ma-tutg",
-      "conjoiner-tutg",
-      "ma-tutg"
-    ],
-    "output": "ra_ma_ma-tutg"
-  },
-  {
-    "input": [
       "sa-tutg",
       "conjoiner-tutg",
       "ma-tutg",
@@ -979,6 +975,15 @@
       "uMatra-tutg"
     ],
     "output": "nya_ja_uMatra-tutg"
+  },
+  {
+    "input": [
+      "repha-tutg.alt1",
+      "ma-tutg",
+      "conjoiner-tutg",
+      "ma-tutg"
+    ],
+    "output": "ra_ma_ma-tutg"
   },
   {
     "input": [
@@ -1981,46 +1986,6 @@
   },
   {
     "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "ma-tutg"
-    ],
-    "output": "ra_ma-tutg"
-  },
-  {
-    "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "ra-tutg"
-    ],
-    "output": "ra_ra-tutg"
-  },
-  {
-    "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "sha-tutg"
-    ],
-    "output": "ra_sha-tutg"
-  },
-  {
-    "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "va-tutg"
-    ],
-    "output": "ra_va-tutg"
-  },
-  {
-    "input": [
-      "ra-tutg",
-      "conjoiner-tutg",
-      "ya-tutg"
-    ],
-    "output": "ra_ya-tutg"
-  },
-  {
-    "input": [
       "sa-tutg",
       "conjoiner-tutg",
       "ca-tutg"
@@ -2389,6 +2354,13 @@
       "uuMatra-tutg"
     ],
     "output": "ba_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "bha-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "bhChillu-tutg"
   },
   {
     "input": [
@@ -2813,6 +2785,13 @@
   {
     "input": [
       "ka-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "kChillu-tutg"
+  },
+  {
+    "input": [
+      "ka-tutg",
       "lVocalicMatra-tutg"
     ],
     "output": "ka_lVocalicMatra-tutg"
@@ -2914,6 +2893,13 @@
       "uuMatra-tutg"
     ],
     "output": "la_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "llChillu-tutg"
   },
   {
     "input": [
@@ -3023,6 +3009,13 @@
   {
     "input": [
       "na-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "nChillu-tutg"
+  },
+  {
+    "input": [
+      "na-tutg",
       "lVocalicMatra-tutg"
     ],
     "output": "na_lVocalicMatra-tutg"
@@ -3089,6 +3082,13 @@
       "uuMatra-tutg"
     ],
     "output": "nga_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "nna-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "nnChillu-tutg"
   },
   {
     "input": [
@@ -3253,6 +3253,13 @@
   },
   {
     "input": [
+      "repha-tutg.alt1",
+      "ma-tutg"
+    ],
+    "output": "ra_ma-tutg"
+  },
+  {
+    "input": [
       "ra-tutg",
       "rVocalicMatra-tutg"
     ],
@@ -3260,10 +3267,24 @@
   },
   {
     "input": [
+      "repha-tutg.alt1",
+      "ra-tutg"
+    ],
+    "output": "ra_ra-tutg"
+  },
+  {
+    "input": [
       "ra-tutg",
       "rrVocalicMatra-tutg"
     ],
     "output": "ra_rrVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "repha-tutg.alt1",
+      "sha-tutg"
+    ],
+    "output": "ra_sha-tutg"
   },
   {
     "input": [
@@ -3278,6 +3299,27 @@
       "uuMatra-tutg"
     ],
     "output": "ra_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "repha-tutg.alt1",
+      "va-tutg"
+    ],
+    "output": "ra_va-tutg"
+  },
+  {
+    "input": [
+      "repha-tutg.alt1",
+      "ya-tutg"
+    ],
+    "output": "ra_ya-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "rrChillu-tutg"
   },
   {
     "input": [
@@ -3422,6 +3464,13 @@
   {
     "input": [
       "ta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "tChillu-tutg"
+  },
+  {
+    "input": [
+      "ta-tutg",
       "lVocalicMatra-tutg"
     ],
     "output": "ta_lVocalicMatra-tutg"
@@ -3488,6 +3537,13 @@
       "uuMatra-tutg"
     ],
     "output": "tha_uuMatra-tutg"
+  },
+  {
+    "input": [
+      "tta-tutg",
+      "loopedvirama-tutg"
+    ],
+    "output": "ttChillu-tutg"
   },
   {
     "input": [

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="na_bha-tutg.below.auto" format="2">
+  <anchor x="751.5" y="-752.9" name="bottom"/>
+  <anchor x="751.5" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="na_bha-tutg" xScale="0.863" yScale="0.863" xOffset="103.0" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>
