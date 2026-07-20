@@ -248,9 +248,15 @@ independent_vowel_cards = []  # one per independent-vowel base (or chunk of one)
 independent_vowel_cards_by_base = {}  # base_name -> list of ALL its alt entries, chunked into cards after the loop
 dependent_vowel_entries = []     # {label, variant, baseCp, vsCp} - reused by dependent_vowel_matrix below
 variant_missing = []     # (base_name, variant_name) - no cmap entry, skipped
-for base_name, variants in sorted(variant_registry.items()):
-    if base_name.startswith("_"):
-        continue
+# Sorted by actual Unicode codepoint (real script/reading order), not by the
+# romanized glyph name string - "bha" < "ca" alphabetically, but that's not
+# where they actually sit in the Tulu-Tigalari block. Registry entries with no
+# real codepoint (shouldn't happen, but see variant_missing below) sort last.
+registry_items_by_cp = sorted(
+    ((name, variants) for name, variants in variant_registry.items() if not name.startswith("_")),
+    key=lambda kv: (cp_of(kv[0]) is None, cp_of(kv[0])),
+)
+for base_name, variants in registry_items_by_cp:
     base_cp = cp_of(base_name)
     if base_cp is None:
         variant_missing.append((base_name, None))
