@@ -8,6 +8,15 @@ lookup, which collapses a typed "conjoiner + VS1" into the subjoiner-tutg
 glyph this lookup matches on. See its own comment further down for the full
 reasoning.
 
+Alt-consonant fallback (added 2026-07-20, folded directly into TutgBlwf's own
+rule list): every registered variant_registry.json .altN consonant form also
+gets a "conjoiner-tutg + CONS.altN -> CONS's below-form" rule, not just the
+plain consonant. Without this, a variant-selected consonant used as the
+second half of a plain (non-VS) conjunct left the conjoiner completely
+unconsumed - confirmed via the Variant Registry tab's Consonant Variant
+Matrix, which showed the conjoiner's own real fallback artwork in every cell
+before this fix.
+
 Three more kinds of rule, in two more lookups:
 
 **Lookup `TutgBlwfDecompose`** (added 2026-07-18, runs first): a targeted fix
@@ -173,6 +182,35 @@ for name in consonants:
         consonant_below[name] = below
     else:
         missing.append(name)
+
+# --- Alt-consonant fallback (added 2026-07-20) ---
+#
+# The loop above only ever matched the PLAIN consonant name as the second
+# glyph of "conjoiner-tutg + X" - a consonant already switched to one of its
+# variant_registry.json .altN forms (via akhn's TutgVariantSelect) didn't
+# match ANYTHING here, so a plain (non-VS) "conjoiner-tutg" preceding it was
+# left completely unconsumed, rendering as the font's real dotted-circle-style
+# conjoiner-tutg fallback artwork - confirmed via the Variant Registry tab's
+# Consonant Variant Matrix (24x24 grid of every registered variant conjoined
+# with every other): the conjoiner never disappeared in any cell. Fixed here
+# the same way TutgBlwfSubjoiner already handles it for the subjoiner-tutg
+# case: every registered .altN variant maps to the SAME below-form as its
+# plain consonant (alt/stylistic variants don't get their own separate
+# below-base miniature), added directly into TutgBlwf's own rule list (not a
+# separate lookup) since it's the exact same rule shape, just with more
+# second-glyph names recognized.
+alt_consonant_missing = []  # (base_name, variant_name) - registered but not a real glyph
+alt_consonant_rule_count = 0
+for name in consonants:
+    below = consonant_below.get(name)
+    if below is None:
+        continue
+    for index_str, variant_name in sorted(VARIANT_REGISTRY.get(name, {}).items(), key=lambda kv: int(kv[0])):
+        if variant_name not in glyphs:
+            alt_consonant_missing.append((name, variant_name))
+            continue
+        rules.append((["conjoiner-tutg", variant_name], below))
+        alt_consonant_rule_count += 1
 
 # --- TutgBlwfSubjoiner (added 2026-07-20) ---
 #
@@ -456,6 +494,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         for name, variant_name in subjoiner_missing_variant:
             f.write(f"# {name} -> {variant_name}\n")
 
+    if alt_consonant_missing:
+        f.write("\n# --- Alt-consonant fallback: variant_registry.json entry skipped, not a real glyph ---\n")
+        for name, variant_name in alt_consonant_missing:
+            f.write(f"# {name} -> {variant_name}\n")
+
 # markdown report - written even when nothing is missing, so a re-run's "all clear"
 # is an explicit, checkable fact rather than the mere absence of a file.
 report_path = os.path.join(HERE, "BLWF_TODO.md")
@@ -576,5 +619,7 @@ print(f"Needed compound pairs with no glyph at all: {len(compound_no_glyph)} {co
 print(f"Needed compound pairs with no below-form: {len(compound_no_below)} {compound_no_below}")
 print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)}")
 print(f"TutgBlwfSubjoiner variant entries skipped (not a real glyph): {len(subjoiner_missing_variant)} {subjoiner_missing_variant}")
+print(f"Alt-consonant fallback rules added to TutgBlwf: {alt_consonant_rule_count}")
+print(f"Alt-consonant fallback entries skipped (not a real glyph): {len(alt_consonant_missing)} {alt_consonant_missing}")
 print("Written to:", out_path)
 print("Written to:", report_path)
