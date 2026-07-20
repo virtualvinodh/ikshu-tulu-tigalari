@@ -184,6 +184,10 @@
      the default glyph, muted background, no stacked alt list. */
   .cons-cell.muted { background: var(--hover-bg); }
   .cons-cell.muted .label { font-style: italic; }
+  /* Default/base form in a default-vs-alt(s) card: dimmed so the alt(s)
+     below it (the actual point of this tab) read as the visual focus. */
+  .cons-cell .glyph.is-default { opacity: 0.4; }
+  .cons-cell .label.is-default { opacity: 0.7; }
 
   table.test-table { border-collapse: collapse; width: 100%; }
   table.test-table th, table.test-table td {
@@ -922,8 +926,8 @@
         <div class="label">${isChunked ? `${a.variant.split('.').pop()}<br>${a.variant}` : a.variant}</div>
       `).join('');
       return `<div class="cons-cell">
-        <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-        <div class="label">${defaultLabel}</div>
+        <div class="glyph tigalari is-default">${card.defaultCps.map(cp => S(cp)).join('')}</div>
+        <div class="label is-default">${defaultLabel}</div>
         ${altRows}
       </div>`;
     }).join('');
@@ -939,8 +943,8 @@
         <div class="label">${a.variant}</div>
       `).join('');
       return `<div class="cons-cell">
-        <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-        <div class="label">${card.label} (default)</div>
+        <div class="glyph tigalari is-default">${card.defaultCps.map(cp => S(cp)).join('')}</div>
+        <div class="label is-default">${card.label} (default)</div>
         ${altRows}
       </div>`;
     }).join('');
@@ -1019,8 +1023,8 @@
         <div class="label">${a.variant}</div>
       `).join('');
       return `<div class="cons-cell">
-        <div class="glyph tigalari">${row.default.map(cp => S(cp)).join('')}</div>
-        <div class="label">${row.label} (default)</div>
+        <div class="glyph tigalari is-default">${row.default.map(cp => S(cp)).join('')}</div>
+        <div class="label is-default">${row.label} (default)</div>
         ${altRows}
       </div>`;
     }).join('');
