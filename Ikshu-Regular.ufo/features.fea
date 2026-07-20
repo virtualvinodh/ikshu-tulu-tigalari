@@ -759,9 +759,9 @@ feature akhn {
         # Conjunct ligature + variation selector -> registered alternate ligature.
         sub bha_ra-tutg vs11-tutg by bha_ra-tutg.alt1;
         sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;
-        sub ca_cha-tutg vs11-tutg by ca_cha-tutg.alt2;
+        sub ca_cha-tutg vs12-tutg by ca_cha-tutg.alt2;
         sub ga_ga-tutg vs11-tutg by ga_ga-tutg.alt1;
-        sub na_ka-tutg vs11-tutg by na_ka-tutg.alt2;
+        sub na_ka-tutg vs12-tutg by na_ka-tutg.alt2;
         sub nga_kha-tutg vs11-tutg by nga_kha-tutg.alt1;
         sub nna_dda-tutg vs11-tutg by nna_dda-tutg.alt1;
         sub nna_tta-tutg vs11-tutg by nna_tta-tutg.alt1;
@@ -770,11 +770,11 @@ feature akhn {
         sub ra_va-tutg vs11-tutg by ra_va-tutg.alt1;
         sub sa_tha-tutg vs11-tutg by sa_tha-tutg.alt1;
         sub sa_va-tutg vs11-tutg by sa_va-tutg.alt1;
-        sub ssa_ssa-tutg vs11-tutg by ssa_ssa-tutg.alt2;
+        sub ssa_ssa-tutg vs12-tutg by ssa_ssa-tutg.alt2;
         sub ssa_ttha-tutg vs11-tutg by ssa_ttha-tutg.alt1;
         sub ssa_ttha-tutg vs12-tutg by ssa_ttha-tutg.alt2;
         sub ta_ma-tutg vs11-tutg by ta_ma-tutg.alt1;
-        sub ya_ya-tutg vs11-tutg by ya_ya-tutg.alt2;
+        sub ya_ya-tutg vs12-tutg by ya_ya-tutg.alt2;
     } TutgConjunctVariantSelect;
 } akhn;
 
