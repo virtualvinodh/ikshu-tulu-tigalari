@@ -286,13 +286,13 @@ for base_name, variants in sorted(variant_registry.items()):
 
 for base_name, raw in independent_vowel_cards_by_base.items():
     if base_name not in ROW_LAYOUT_BASES:
-        independent_vowel_cards.append({**raw, "layout": "stack"})
+        independent_vowel_cards.append({**raw, "baseName": base_name, "layout": "stack"})
         continue
     alts = raw["alts"]
     chunks = [alts[i:i + ROW_LAYOUT_CHUNK_SIZE] for i in range(0, len(alts), ROW_LAYOUT_CHUNK_SIZE)]
     for i, chunk in enumerate(chunks):
         label = raw["label"] if len(chunks) == 1 else f"{raw['label']} ({i + 1}/{len(chunks)})"
-        independent_vowel_cards.append({"label": label, "defaultCps": raw["defaultCps"], "alts": chunk, "layout": "row"})
+        independent_vowel_cards.append({"label": label, "baseName": base_name, "defaultCps": raw["defaultCps"], "alts": chunk, "layout": "row"})
 
 # Dependent (vowel-sign) variants shown attached to two different base
 # consonants (KA, LA) as two rows, rather than just one - makes it easier to

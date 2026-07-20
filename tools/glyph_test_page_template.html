@@ -919,13 +919,13 @@
         const altCols = card.alts.map(a => `
           <div>
             <div class="glyph tigalari">${a.cps.map(cp => S(cp)).join('')}</div>
-            <div class="label">${a.variant}</div>
+            <div class="label">${a.variant.split('.').pop()}<br>${a.variant}</div>
           </div>
         `).join('');
         return `<div class="cons-cell" style="grid-column: span 3; display:flex; align-items:flex-start; justify-content:center; gap:14px; text-align:center;">
           <div>
             <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-            <div class="label">${card.label} (default)</div>
+            <div class="label">default<br>${card.baseName}</div>
           </div>
           ${altCols}
         </div>`;
