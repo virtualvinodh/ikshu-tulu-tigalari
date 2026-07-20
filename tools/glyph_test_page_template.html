@@ -582,11 +582,14 @@
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <button id="vm-charvar-transpose" class="cat-chip">Transpose</button>
         <div id="vm-charvar-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="vm-charvar-cons2-position" style="display:flex; gap:6px;"></div>
+        <div id="vm-charvar-cons2-showbase" style="display:flex; gap:6px;"></div>
       </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <div id="vm-charvar-row-filter"></div>
         <div id="vm-charvar-col-filter"></div>
       </div>
+      <div id="vm-charvar-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
     </div>
     <table class="test-table" id="vm-charvar-table"></table>
 
@@ -1120,8 +1123,20 @@
   // further down - those are declared with const, not hoisted like the
   // function declarations above, so referencing them this early would hit
   // the temporal dead zone).
-  (function buildConjSignMatrix() {
-    const rows = VR2.conjunctVariantSigns;
+  // Reusable builder for the two "Syllable-Matrix-toolkit" variant matrices
+  // (Conjunct-ligature variants x vowel signs, Character variants x vowel
+  // signs): both share the exact same row shape - {label, variantBaseCps,
+  // defaultBaseCps, cells: [{label, variantCps, defaultCps?, signCp}]} - so
+  // one function drives both, parameterized by DOM id prefix. A "Cons2"
+  // quick-select inserts a third consonant via conjoiner (prefix - Cons+Row,
+  // or suffix - Row+Cons), and a Show-base toggle doubles the outer axis so
+  // the un-augmented row/column sits right next to the augmented one. Own
+  // small CONS2_OPTIONS/CONJOINER_CP here (not reusing
+  // MATRIX_CONS2_OPTIONS/MATRIX_CONJOINER_CP from the Syllable Matrix section
+  // further down - those are declared with const, not hoisted like the
+  // function declarations above, so referencing them this early would hit
+  // the temporal dead zone).
+  function buildCons2Matrix(prefix, rows, countLabel, rowAxisLabel) {
     const rowLabels = rows.map(r => r.label);
     const colLabels = rows.length ? rows[0].cells.map(c => c.label) : [];
     const CONS2_OPTIONS = {};
@@ -1132,12 +1147,12 @@
     let cons2Choice = 'None';
     let cons2Position = 'suffix'; // 'suffix' (Row+Cons) | 'prefix' (Cons+Row)
     let showBase = false;
-    const rowDropdown = createFilterDropdown('vm-conjsign-row-filter', rowLabels, 'Pair/VS', () => render());
-    const colDropdown = createFilterDropdown('vm-conjsign-col-filter', colLabels, 'Vowel signs', () => render());
-    const collapse = makeCollapseButtons('vm-conjsign-collapse-select', () => render());
+    const rowDropdown = createFilterDropdown(`${prefix}-row-filter`, rowLabels, rowAxisLabel, () => render());
+    const colDropdown = createFilterDropdown(`${prefix}-col-filter`, colLabels, 'Vowel signs', () => render());
+    const collapse = makeCollapseButtons(`${prefix}-collapse-select`, () => render());
 
     function renderCons2Quick() {
-      const wrap = document.getElementById('vm-conjsign-cons2-quick');
+      const wrap = document.getElementById(`${prefix}-cons2-quick`);
       wrap.innerHTML = '';
       const noneChip = document.createElement('div');
       noneChip.className = 'cat-chip' + (cons2Choice === 'None' ? ' active' : '');
@@ -1153,7 +1168,7 @@
       });
     }
     function renderCons2Position() {
-      const wrap = document.getElementById('vm-conjsign-cons2-position');
+      const wrap = document.getElementById(`${prefix}-cons2-position`);
       wrap.innerHTML = '';
       [['prefix', 'Cons + Row'], ['suffix', 'Row + Cons']].forEach(([key, label]) => {
         const chip = document.createElement('div');
@@ -1164,7 +1179,7 @@
       });
     }
     function renderShowBaseToggle() {
-      const wrap = document.getElementById('vm-conjsign-cons2-showbase');
+      const wrap = document.getElementById(`${prefix}-cons2-showbase`);
       wrap.innerHTML = '';
       const chip = document.createElement('div');
       chip.className = 'cat-chip' + (showBase ? ' active' : '');
@@ -1183,7 +1198,7 @@
       const row = rows[ri];
       const base = augmented ? applyCons2(row.variantBaseCps) : row.variantBaseCps;
       const signCp = row.cells[ci].signCp;
-      return signCp !== null ? base.concat([signCp]) : base;
+      return signCp !== null && signCp !== undefined ? base.concat([signCp]) : base;
     }
     function augLabel(label) {
       if (cons2Choice === 'None') return label;
@@ -1251,25 +1266,16 @@
         html += '</tr>';
       });
       html += '</tbody>';
-      document.getElementById('vm-conjsign-table').innerHTML = html;
-      document.getElementById('vm-conjsign-count').textContent =
-        `Conjunct-ligature variants x vowel signs (${rowLabels.length}x${colLabels.length})`;
+      document.getElementById(`${prefix}-table`).innerHTML = html;
+      document.getElementById(`${prefix}-count`).textContent = `${countLabel} (${rowLabels.length}x${colLabels.length})`;
       setSize(document.getElementById('size-slider').value);
     }
-    document.getElementById('vm-conjsign-transpose').addEventListener('click', () => { transposed = !transposed; render(); });
+    document.getElementById(`${prefix}-transpose`).addEventListener('click', () => { transposed = !transposed; render(); });
     render();
-  })();
+  }
 
-  buildInteractiveMatrix({
-    tableId: 'vm-charvar-table', countId: 'vm-charvar-count',
-    countLabel: 'Character variants x vowel signs',
-    transposeBtnId: 'vm-charvar-transpose', collapseId: 'vm-charvar-collapse-select',
-    rowFilterId: 'vm-charvar-row-filter', colFilterId: 'vm-charvar-col-filter',
-    rowAxisLabel: 'Variant', colAxisLabel: 'Vowel signs',
-    rowLabels: VR2.characterVariants.map(r => r.label),
-    colLabels: VR2.characterVariants.length ? VR2.characterVariants[0].cells.map(c => c.label) : [],
-    cell: (ri, ci) => VR2.characterVariants[ri].cells[ci],
-  });
+  buildCons2Matrix('vm-conjsign', VR2.conjunctVariantSigns, 'Conjunct-ligature variants x vowel signs', 'Pair/VS');
+  buildCons2Matrix('vm-charvar', VR2.characterVariants, 'Character variants x vowel signs', 'Variant');
 
   buildInteractiveMatrix({
     tableId: 'vm-consvar-table', countId: 'vm-consvar-count',

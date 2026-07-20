@@ -283,10 +283,15 @@ for base_name, variants in registry_items_by_cp:
         vs = vs_label_of(vs_cp)
         label = f"{base} {vs}"
         if base_name in consonant_names:
+            variant_base_cps = [base_cp, vs_cp]
             cells = []
             for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
-                variant_cps = [base_cp, vs_cp] + ([] if sign_cp is None else [sign_cp])
-                cell = {"label": vs_sign_label, "variantCps": variant_cps}
+                variant_cps = variant_base_cps + ([] if sign_cp is None else [sign_cp])
+                # signCp exposed separately (nullable) alongside the merged
+                # cps, same as conjunct_variant_signs - lets the JS side
+                # reconstruct "base + inserted consonant + sign" for the
+                # cons2/show-base controls.
+                cell = {"label": vs_sign_label, "variantCps": variant_cps, "signCp": sign_cp}
                 # U/UU/Vocalic R/Vocalic RR are the 4 vowel signs that actually
                 # change shape when combined with a consonant (not just plain
                 # spacing/reorder marks like the others) - show the default
@@ -295,7 +300,11 @@ for base_name, variants in registry_items_by_cp:
                 if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
                     cell["defaultCps"] = [base_cp] + ([] if sign_cp is None else [sign_cp])
                 cells.append(cell)
-            character_variants.append({"label": label, "variant": variant_name, "vs": vs, "cells": cells})
+            character_variants.append({
+                "label": label, "variant": variant_name, "vs": vs,
+                "variantBaseCps": variant_base_cps, "defaultBaseCps": [base_cp],
+                "cells": cells,
+            })
             consonant_variant_entries.append({"label": label, "variant": variant_name, "vs": vs, "baseCp": base_cp, "vsCp": vs_cp})
             card = consonant_variant_cards_by_base.get(base_name)
             if card is None:
