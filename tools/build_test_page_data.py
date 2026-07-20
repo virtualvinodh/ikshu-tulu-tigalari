@@ -236,13 +236,16 @@ consonant_variant_cards_by_base = {}  # base_name -> the dict just appended to c
 # collected separately and shown attached to two different base consonants
 # (KA, LA) instead, as a small matrix (see dependent_vowel_matrix below).
 #
-# a-tutg (2 alts) and aa-tutg (5 alts) are collapsed to a single plain default
-# card (muted background, no stacked alts) rather than full stacking - between
-# the two of them that's 7 variants for what's really "the A sound", which
-# made for an oddly tall/cluttered card next to every other vowel's 1-2 alts.
-COLLAPSE_VARIANT_BASES = {"a-tutg", "aa-tutg"}
-independent_vowel_cards = []  # one per independent-vowel base: {label, defaultCps, alts, collapsed}
-independent_vowel_cards_by_base = {}
+# a-tutg (2 alts) and aa-tutg (5 alts) still show every alt, but laid out
+# horizontally next to the default (3 alts per card max) rather than stacked
+# vertically - between the two of them that's 7 variants for what's really
+# "the A sound", which made for an oddly tall/cluttered card when stacked the
+# same way as every other vowel's 1-2 alts. aa-tutg's 5 alts split across 2
+# cards (3 + 2), each repeating the same default glyph for context.
+ROW_LAYOUT_CHUNK_SIZE = 3
+ROW_LAYOUT_BASES = {"a-tutg", "aa-tutg"}
+independent_vowel_cards = []  # one per independent-vowel base (or chunk of one): {label, defaultCps, alts, layout}
+independent_vowel_cards_by_base = {}  # base_name -> list of ALL its alt entries, chunked into cards after the loop
 dependent_vowel_entries = []     # {label, variant, baseCp, vsCp} - reused by dependent_vowel_matrix below
 variant_missing = []     # (base_name, variant_name) - no cmap entry, skipped
 for base_name, variants in sorted(variant_registry.items()):
@@ -275,14 +278,21 @@ for base_name, variants in sorted(variant_registry.items()):
         elif base_name in vowel_sign_names:
             dependent_vowel_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
         else:
-            card = independent_vowel_cards_by_base.get(base_name)
-            if card is None:
-                collapsed = base_name in COLLAPSE_VARIANT_BASES
-                card = {"label": base, "defaultCps": [base_cp], "alts": [], "collapsed": collapsed}
-                independent_vowel_cards_by_base[base_name] = card
-                independent_vowel_cards.append(card)
-            if not card["collapsed"]:
-                card["alts"].append({"variant": variant_name, "cps": [base_cp, vs_cp]})
+            raw = independent_vowel_cards_by_base.get(base_name)
+            if raw is None:
+                raw = {"label": base, "defaultCps": [base_cp], "alts": []}
+                independent_vowel_cards_by_base[base_name] = raw
+            raw["alts"].append({"variant": variant_name, "cps": [base_cp, vs_cp]})
+
+for base_name, raw in independent_vowel_cards_by_base.items():
+    if base_name not in ROW_LAYOUT_BASES:
+        independent_vowel_cards.append({**raw, "layout": "stack"})
+        continue
+    alts = raw["alts"]
+    chunks = [alts[i:i + ROW_LAYOUT_CHUNK_SIZE] for i in range(0, len(alts), ROW_LAYOUT_CHUNK_SIZE)]
+    for i, chunk in enumerate(chunks):
+        label = raw["label"] if len(chunks) == 1 else f"{raw['label']} ({i + 1}/{len(chunks)})"
+        independent_vowel_cards.append({"label": label, "defaultCps": raw["defaultCps"], "alts": chunk, "layout": "row"})
 
 # Dependent (vowel-sign) variants shown attached to two different base
 # consonants (KA, LA) as two rows, rather than just one - makes it easier to
@@ -412,7 +422,7 @@ print("Variant registry - consonant variant cards:", len(consonant_variant_cards
 print("Variant registry - character variants:", len(character_variants))
 print("Variant registry - consonant variant matrix:", len(consonant_variant_matrix["labels"]), "x", len(consonant_variant_matrix["labels"]))
 print("Variant registry - independent vowel cards:", len(independent_vowel_cards),
-      "(collapsed:", sum(1 for c in independent_vowel_cards if c["collapsed"]), ")")
+      "(row-layout:", sum(1 for c in independent_vowel_cards if c["layout"] == "row"), ")")
 print("Variant registry - dependent vowel variants (columns):", len(dependent_vowel_entries))
 print("Variant registry - conjunct variants:", len(conjunct_variants))
 print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
