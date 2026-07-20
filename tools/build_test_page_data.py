@@ -379,6 +379,38 @@ for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {})
             "alts": alts,
         })
 
+# Conjunct-ligature variant x vowel-sign matrix (for the Variant Matrix tab):
+# each of the 18 registered (pair, VSn) entries crossed against all 18
+# vowel-sign columns, same double-row default/variant treatment as
+# character_variants for U/UU/Vocalic R/Vocalic RR (the 4 that actually
+# change shape). Typed sequence per cell: [C1, conjoiner, C2, VSn, sign] -
+# TutgAkhand forms the ligature, TutgConjunctVariantSelect picks the alt, then
+# whatever's left decides how the vowel sign attaches - largely untested
+# territory, which is the point of this matrix.
+conjunct_variant_signs = []  # {label, variant, cells: [{label, variantCps, defaultCps?}, ...]}
+for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {}).items()):
+    first_cp = cp_of(first_name)
+    for second_name, variants in sorted(seconds.items()):
+        second_cp = cp_of(second_name)
+        if first_cp is None or second_cp is None:
+            continue
+        default_cps = [first_cp, conjoiner_cp, second_cp]
+        pair_label = f"{first_name[: -len('-tutg')]}_{second_name[: -len('-tutg')]}"
+        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
+            if vs_cp is None:
+                continue
+            vs = vs_label_of(vs_cp)
+            variant_base_cps = default_cps + [vs_cp]
+            cells = []
+            for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
+                variant_cps = variant_base_cps + ([] if sign_cp is None else [sign_cp])
+                cell = {"label": vs_sign_label, "variantCps": variant_cps}
+                if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
+                    cell["defaultCps"] = default_cps + ([] if sign_cp is None else [sign_cp])
+                cells.append(cell)
+            conjunct_variant_signs.append({"label": f"{pair_label} {vs}", "variant": variant_name, "cells": cells})
+
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
 # 3 representative pairs (unlike the conjunct-ligature alternates above, this
 # mechanism works for ANY consonant pair, not just a registered list, so a
@@ -409,6 +441,7 @@ variant_registry_data = {
     "consonantVariantMatrix": consonant_variant_matrix,
     "dependentVowelMatrix": dependent_vowel_matrix,
     "conjunctVariants": conjunct_variants,
+    "conjunctVariantSigns": conjunct_variant_signs,
     "subjoinerDemo": subjoiner_demo,
 }
 

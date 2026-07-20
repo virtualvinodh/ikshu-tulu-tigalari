@@ -441,6 +441,7 @@
     <div class="tab-btn" data-tab="conjmatrix">Conjunct Matrix</div>
     <div class="tab-btn" data-tab="conjlist">Standard Conjunct List</div>
     <div class="tab-btn" data-tab="variants">Variant Registry</div>
+    <div class="tab-btn" data-tab="variantmatrix">Variant Matrix</div>
     <div class="tab-btn" data-tab="marks">Marks</div>
     <div class="tab-btn" data-tab="akhn">Auto GSUB</div>
     <div class="tab-btn" data-tab="sampletext">Sample Texts</div>
@@ -556,12 +557,48 @@
 
     <div class="count-note" style="margin-top:26px;">Forced below-base subjoining: conjoiner + VS1 forces the following consonant into its below-base form, overriding whatever akhn/blwf would otherwise produce (3 representative pairs - works for any consonant pair, not just a registered list)</div>
     <div id="variants-subjoiner-groups"></div>
+  </div>
+  <div class="panel" id="panel-variantmatrix">
+    <p class="count-note" style="margin-bottom:20px;">Full interactive matrices for the variation-selector-driven GSUB work - same transpose/collapse/filter controls as the Syllable Matrix and Conjunct Matrix tabs.</p>
 
-    <div class="count-note" id="variants-char-count" style="margin-top:26px;"></div>
-    <table class="test-table" id="variants-char-table"></table>
+    <div class="count-note" id="vm-conjsign-count"></div>
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <button id="vm-conjsign-transpose" class="cat-chip">Transpose</button>
+        <div id="vm-conjsign-collapse-select" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <div id="vm-conjsign-row-filter"></div>
+        <div id="vm-conjsign-col-filter"></div>
+      </div>
+    </div>
+    <table class="test-table" id="vm-conjsign-table"></table>
 
-    <div class="count-note" id="variants-consonant-matrix-count" style="margin-top:26px;"></div>
-    <table class="test-table" id="variants-consonant-matrix-table"></table>
+    <div class="count-note" id="vm-charvar-count" style="margin-top:30px;"></div>
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <button id="vm-charvar-transpose" class="cat-chip">Transpose</button>
+        <div id="vm-charvar-collapse-select" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <div id="vm-charvar-row-filter"></div>
+        <div id="vm-charvar-col-filter"></div>
+      </div>
+    </div>
+    <table class="test-table" id="vm-charvar-table"></table>
+
+    <div class="count-note" id="vm-consvar-count" style="margin-top:30px;"></div>
+    <div class="sticky-controls">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
+        <button id="vm-consvar-transpose" class="cat-chip">Transpose</button>
+        <div id="vm-consvar-collapse-select" style="display:flex; gap:6px;"></div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+        <div id="vm-consvar-row-filter"></div>
+        <div id="vm-consvar-col-filter"></div>
+      </div>
+    </div>
+    <table class="test-table" id="vm-consvar-table"></table>
   </div>
   <div class="panel" id="panel-marks">
     <div class="sticky-controls">
@@ -969,47 +1006,6 @@
     document.getElementById('variants-depvowel-count').textContent =
       `Dependent (vowel-sign) variants x KA/LA (${DVM.columnLabels.length} variants x ${DVM.rows.length} base letters)`;
 
-    const vsLabels = VR.characterVariants.length ? VR.characterVariants[0].cells.map(c => c.label) : [];
-    let charHtml = '<thead><tr><th>variant \\ sign</th>';
-    vsLabels.forEach(label => { charHtml += `<th>${label}</th>`; });
-    charHtml += '</tr></thead><tbody>';
-    VR.characterVariants.forEach(row => {
-      charHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.label}</th>`;
-      row.cells.forEach(cell => {
-        const variantText = cell.variantCps.map(cp => S(cp)).join('');
-        if (cell.defaultCps) {
-          // U/UU/Vocalic R/Vocalic RR: default combination on top (dimmed,
-          // same "is-default" treatment as the variant cards), variant's own
-          // combination below it, so the two are easy to compare directly.
-          const defaultText = cell.defaultCps.map(cp => S(cp)).join('');
-          charHtml += `<td class="rendered tigalari"><div class="is-default">${defaultText}</div><div style="margin-top:4px; padding-top:4px; border-top:1px dashed var(--paper-line);">${variantText}</div></td>`;
-        } else {
-          charHtml += `<td class="rendered tigalari">${variantText}</td>`;
-        }
-      });
-      charHtml += '</tr>';
-    });
-    charHtml += '</tbody>';
-    document.getElementById('variants-char-table').innerHTML = charHtml;
-    document.getElementById('variants-char-count').textContent =
-      `Character variants x vowel signs (${VR.characterVariants.length} variant rows x ${vsLabels.length} vowel-sign columns)`;
-
-    const CVM2 = VR.consonantVariantMatrix;
-    let cvm2Html = '<thead><tr><th>row \\ col</th>';
-    CVM2.labels.forEach(label => { cvm2Html += `<th>${label}</th>`; });
-    cvm2Html += '</tr></thead><tbody>';
-    CVM2.rows.forEach((row, ri) => {
-      cvm2Html += `<tr><th class="label" style="background:var(--card-bg);">${CVM2.labels[ri]}</th>`;
-      row.forEach(cps => {
-        cvm2Html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
-      });
-      cvm2Html += '</tr>';
-    });
-    cvm2Html += '</tbody>';
-    document.getElementById('variants-consonant-matrix-table').innerHTML = cvm2Html;
-    document.getElementById('variants-consonant-matrix-count').textContent =
-      `Consonant Variant Matrix (${CVM2.labels.length}x${CVM2.labels.length} - every registered consonant variant conjoined with every other, testing whether TutgAkhand/TutgBlwf still recognize .altN forms as conjunct participants)`;
-
     // Each pair gets its own labeled mini-gallery (plain / default conjunct /
     // forced below-base), stacked one group after another.
     const subjoinerGroupsHtml = VR.subjoinerDemo.groups.map(group => `
@@ -1045,6 +1041,104 @@
     setSize(document.getElementById('size-slider').value);
   }
   renderVariantRegistry();
+
+  // Variant Matrix tab: one reusable transpose/collapse/filter engine (same
+  // controls as Syllable Matrix / Conjunct Matrix, via the same
+  // createFilterDropdown/makeCollapseButtons helpers - defined further down
+  // in this file but hoisted, so calling them here is fine) driving all 3
+  // matrices, since they're all really the same shape: a grid of row labels x
+  // column labels, each cell a cps sequence (optionally with a dimmed default
+  // sequence above it for direct comparison).
+  function buildInteractiveMatrix(opts) {
+    const { tableId, countId, countLabel, transposeBtnId, collapseId, rowFilterId, colFilterId,
+            rowLabels, colLabels, rowAxisLabel, colAxisLabel, cell } = opts;
+    let transposed = false;
+    const rowDropdown = createFilterDropdown(rowFilterId, rowLabels, rowAxisLabel, () => render());
+    const colDropdown = createFilterDropdown(colFilterId, colLabels, colAxisLabel, () => render());
+    const collapse = makeCollapseButtons(collapseId, () => render());
+    function cellHtml(ri, ci) {
+      const c = cell(ri, ci);
+      const variantText = c.variantCps.map(cp => S(cp)).join('');
+      if (!c.defaultCps) return variantText;
+      const defaultText = c.defaultCps.map(cp => S(cp)).join('');
+      return `<div class="is-default">${defaultText}</div><div style="margin-top:4px; padding-top:4px; border-top:1px dashed var(--paper-line);">${variantText}</div>`;
+    }
+    function render() {
+      const rowIdxs = rowLabels.map((l, i) => i).filter(i => rowDropdown.selected.has(rowLabels[i]));
+      const colIdxs = colLabels.map((l, i) => i).filter(i => colDropdown.selected.has(colLabels[i]));
+      const collapsed = collapse.mode !== 'grid';
+      const sep = collapse.mode === 'collapse-space' ? ' ' : '';
+      const outerIdxs = transposed ? colIdxs : rowIdxs;
+      const innerIdxs = transposed ? rowIdxs : colIdxs;
+      const outerLabels = transposed ? colLabels : rowLabels;
+      const innerLabels = transposed ? rowLabels : colLabels;
+      let html = '';
+      if (!collapsed) {
+        html += '<thead><tr><th></th>';
+        innerIdxs.forEach(ii => { html += `<th>${innerLabels[ii]}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      outerIdxs.forEach(oi => {
+        html += `<tr><th class="label" style="background:var(--card-bg);">${outerLabels[oi]}</th>`;
+        if (collapsed) {
+          const line = innerIdxs.map(ii => {
+            const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+            return cell(ri, ci).variantCps.map(cp => S(cp)).join('');
+          }).join(sep);
+          html += `<td class="rendered tigalari">${line}</td>`;
+        } else {
+          innerIdxs.forEach(ii => {
+            const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+            html += `<td class="rendered tigalari">${cellHtml(ri, ci)}</td>`;
+          });
+        }
+        html += '</tr>';
+      });
+      html += '</tbody>';
+      document.getElementById(tableId).innerHTML = html;
+      document.getElementById(countId).textContent = `${countLabel} (${rowLabels.length}x${colLabels.length})`;
+      setSize(document.getElementById('size-slider').value);
+    }
+    document.getElementById(transposeBtnId).addEventListener('click', () => { transposed = !transposed; render(); });
+    render();
+    return { render };
+  }
+
+  const VR2 = DATA.variantRegistry;
+
+  buildInteractiveMatrix({
+    tableId: 'vm-conjsign-table', countId: 'vm-conjsign-count',
+    countLabel: 'Conjunct-ligature variants x vowel signs',
+    transposeBtnId: 'vm-conjsign-transpose', collapseId: 'vm-conjsign-collapse-select',
+    rowFilterId: 'vm-conjsign-row-filter', colFilterId: 'vm-conjsign-col-filter',
+    rowAxisLabel: 'Pair/VS', colAxisLabel: 'Vowel signs',
+    rowLabels: VR2.conjunctVariantSigns.map(r => r.label),
+    colLabels: VR2.conjunctVariantSigns.length ? VR2.conjunctVariantSigns[0].cells.map(c => c.label) : [],
+    cell: (ri, ci) => VR2.conjunctVariantSigns[ri].cells[ci],
+  });
+
+  buildInteractiveMatrix({
+    tableId: 'vm-charvar-table', countId: 'vm-charvar-count',
+    countLabel: 'Character variants x vowel signs',
+    transposeBtnId: 'vm-charvar-transpose', collapseId: 'vm-charvar-collapse-select',
+    rowFilterId: 'vm-charvar-row-filter', colFilterId: 'vm-charvar-col-filter',
+    rowAxisLabel: 'Variant', colAxisLabel: 'Vowel signs',
+    rowLabels: VR2.characterVariants.map(r => r.label),
+    colLabels: VR2.characterVariants.length ? VR2.characterVariants[0].cells.map(c => c.label) : [],
+    cell: (ri, ci) => VR2.characterVariants[ri].cells[ci],
+  });
+
+  buildInteractiveMatrix({
+    tableId: 'vm-consvar-table', countId: 'vm-consvar-count',
+    countLabel: 'Consonant Variant Matrix - every registered consonant variant conjoined with every other',
+    transposeBtnId: 'vm-consvar-transpose', collapseId: 'vm-consvar-collapse-select',
+    rowFilterId: 'vm-consvar-row-filter', colFilterId: 'vm-consvar-col-filter',
+    rowAxisLabel: 'Row variant', colAxisLabel: 'Col variant',
+    rowLabels: VR2.consonantVariantMatrix.labels,
+    colLabels: VR2.consonantVariantMatrix.labels,
+    cell: (ri, ci) => ({ variantCps: VR2.consonantVariantMatrix.rows[ri][ci] }),
+  });
 
   // akhn conjunct/vowel-sign tests
   const akhnBody = document.getElementById('akhn-body');
