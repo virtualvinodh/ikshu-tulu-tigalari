@@ -607,11 +607,16 @@
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <button id="vm-consvar-transpose" class="cat-chip">Transpose</button>
         <div id="vm-consvar-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="vm-consvar-showall-toggle" style="display:flex; gap:6px;"></div>
+        <div id="vm-consvar-guide-toggle" style="display:flex; gap:6px;"></div>
       </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <div id="vm-consvar-row-filter"></div>
         <div id="vm-consvar-col-filter"></div>
+        <div id="vm-consvar-suffix-quick" style="display:flex; gap:6px;"></div>
       </div>
+      <div id="vm-consvar-vowel-quick" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;"></div>
+      <div id="vm-consvar-mark-select" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
     </div>
     <table class="test-table" id="vm-consvar-table"></table>
   </div>
@@ -1286,16 +1291,180 @@
   buildCons2Matrix('vm-conjsign', VR2.conjunctVariantSigns, 'Conjunct-ligature variants x vowel signs', 'Pair/VS');
   buildCons2Matrix('vm-charvar', VR2.characterVariants, 'Character variants x vowel signs', 'Variant');
 
-  buildInteractiveMatrix({
-    tableId: 'vm-consvar-table', countId: 'vm-consvar-count',
-    countLabel: 'Consonant Variant Matrix - every registered consonant variant conjoined with every other',
-    transposeBtnId: 'vm-consvar-transpose', collapseId: 'vm-consvar-collapse-select',
-    rowFilterId: 'vm-consvar-row-filter', colFilterId: 'vm-consvar-col-filter',
-    rowAxisLabel: 'Row variant', colAxisLabel: 'Col variant',
-    rowLabels: VR2.consonantVariantMatrix.labels,
-    colLabels: VR2.consonantVariantMatrix.labels,
-    cell: (ri, ci) => ({ variantCps: VR2.consonantVariantMatrix.rows[ri][ci] }),
-  });
+  // Consonant Variant Matrix gets the full Conjunct-Matrix toolkit: mark
+  // quick-select (Repha/Svarita/Anudatta/Gemination), vowel-sign quick-select
+  // (appends one sign after the whole row+conjoiner+col sequence), a 3rd-
+  // consonant suffix quick-select (RA/YA/VA), a Guide toggle (3-way
+  // vowel-alone|bare-stack|full comparison for U/UU/Vocalic R/RR), and a Show
+  // all vowels toggle (stacks all 4 of those signs at once, base grid view
+  // only - same scope Conjunct Matrix itself uses for this feature). Own
+  // small SIGN_AFTER_ACCENT2/CONJOINER_CP2/SUFFIX_OPTIONS here rather than
+  // reusing the Conjunct Matrix section's own const-declared versions further
+  // down the file (temporal dead zone, same reasoning as buildCons2Matrix).
+  (function buildConsVarMatrixFull() {
+    const CVM = VR2.consonantVariantMatrix;
+    const rowLabels = CVM.labels;
+    const colLabels = CVM.labels;
+    const SIGN_AFTER_ACCENT2 = new Set(['Candrabindu', 'Anusvara', 'Visarga']);
+    const CONJOINER_CP2 = DATA.conjunctMatrix.rows[0][0][1];
+    const C1_NAMES = DATA.conjunctMatrix.consonants.map(stripTutg);
+    const SUFFIX_OPTIONS = {
+      RA: DATA.conjunctMatrix.rows[C1_NAMES.indexOf('ra')][0][0],
+      YA: DATA.conjunctMatrix.rows[C1_NAMES.indexOf('ya')][0][0],
+      VA: DATA.conjunctMatrix.rows[C1_NAMES.indexOf('va')][0][0],
+    };
+
+    let transposed = false;
+    let vowelChoice = 'None';
+    let markChoice = 'None';
+    let suffixChoice = 'None';
+    let guideOn = true;
+    let showAllVowels = false;
+    const rowDropdown = createFilterDropdown('vm-consvar-row-filter', rowLabels, 'Row variant', () => render());
+    const colDropdown = createFilterDropdown('vm-consvar-col-filter', colLabels, 'Col variant', () => render());
+    const collapse = makeCollapseButtons('vm-consvar-collapse-select', () => render());
+
+    function cellsFor(ri, ci, vowelKeyOverride) {
+      let cps = CVM.rows[ri][ci];
+      const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : vowelChoice;
+      if (suffixChoice !== 'None') cps = cps.concat([CONJOINER_CP2, SUFFIX_OPTIONS[suffixChoice]]);
+      if (markChoice === 'Gemination') cps = cps.concat([DATA.matrix.markOptions.Gemination.cp]);
+      const accentBeforeSign = SIGN_AFTER_ACCENT2.has(vowelKey) && (markChoice === 'Svarita' || markChoice === 'Anudatta');
+      if (accentBeforeSign) cps = cps.concat([DATA.matrix.markOptions[markChoice].cp]);
+      if (vowelKey !== 'None') cps = cps.concat([DATA.conjunctMatrix.vowelSignOptions[vowelKey]]);
+      if (markChoice !== 'None' && markChoice !== 'Gemination' && !accentBeforeSign) {
+        const mark = DATA.matrix.markOptions[markChoice];
+        cps = mark.position === 'prefix' ? [mark.cp].concat(cps) : cps.concat([mark.cp]);
+      }
+      return cps;
+    }
+    function cellHTML(ri, ci, vowelKeyOverride) {
+      const baseCps = CVM.rows[ri][ci];
+      const vowelKey = vowelKeyOverride !== undefined ? vowelKeyOverride : vowelChoice;
+      const full = cellsFor(ri, ci, vowelKey).map(cp => S(cp)).join('');
+      if (!guideOn || !CONJMATRIX_DECOMPOSE_VOWELS.has(vowelKey)) return full;
+      const vsCp = DATA.conjunctMatrix.vowelSignOptions[vowelKey];
+      const c2cp = baseCps[baseCps.length - 1];
+      const vowelAlone = [c2cp, vsCp].map(cp => S(cp)).join('');
+      const bareStack = baseCps.map(cp => S(cp)).join('');
+      return `<div class="conjref-row"><span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span></div><div class="conjref-main">${full}</div>`;
+    }
+
+    function renderMarkSelect() {
+      const wrap = document.getElementById('vm-consvar-mark-select');
+      wrap.innerHTML = '';
+      ['None'].concat(Object.keys(DATA.matrix.markOptions)).forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (markChoice === key ? ' active' : '');
+        chip.textContent = key === 'None' ? 'Mark: None' : key;
+        chip.onclick = () => { markChoice = key; render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    function renderVowelQuick() {
+      const wrap = document.getElementById('vm-consvar-vowel-quick');
+      wrap.innerHTML = '';
+      Object.keys(DATA.conjunctMatrix.vowelSignOptions).forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (vowelChoice === key ? ' active' : '');
+        chip.textContent = key;
+        chip.onclick = () => { vowelChoice = (vowelChoice === key ? 'None' : key); render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    function renderSuffixQuick() {
+      const wrap = document.getElementById('vm-consvar-suffix-quick');
+      wrap.innerHTML = '';
+      ['RA', 'YA', 'VA'].forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (suffixChoice === key ? ' active' : '');
+        chip.textContent = '+' + key;
+        chip.onclick = () => { suffixChoice = (suffixChoice === key ? 'None' : key); render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    function renderGuideToggle() {
+      const wrap = document.getElementById('vm-consvar-guide-toggle');
+      wrap.innerHTML = '';
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (guideOn ? ' active' : '');
+      chip.textContent = 'Guide: ' + (guideOn ? 'On' : 'Off');
+      chip.onclick = () => { guideOn = !guideOn; render(); };
+      wrap.appendChild(chip);
+    }
+    function renderShowAllToggle() {
+      const wrap = document.getElementById('vm-consvar-showall-toggle');
+      wrap.innerHTML = '';
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (showAllVowels ? ' active' : '');
+      chip.textContent = 'Show U/UU/R/RR: ' + (showAllVowels ? 'On' : 'Off');
+      chip.onclick = () => { showAllVowels = !showAllVowels; render(); };
+      wrap.appendChild(chip);
+    }
+    const SHOWALL_ROWS = [['(base)', 'None'], ['U', 'U'], ['UU', 'UU'], ['Vocalic R', 'Vocalic R'], ['Vocalic RR', 'Vocalic RR']];
+
+    function render() {
+      renderMarkSelect();
+      renderVowelQuick();
+      renderSuffixQuick();
+      renderGuideToggle();
+      renderShowAllToggle();
+      const rowIdxs = rowLabels.map((l, i) => i).filter(i => rowDropdown.selected.has(rowLabels[i]));
+      const colIdxs = colLabels.map((l, i) => i).filter(i => colDropdown.selected.has(colLabels[i]));
+      const collapsed = collapse.mode !== 'grid';
+      const sep = collapse.mode === 'collapse-space' ? ' ' : '';
+      // Show all vowels only applies in the plain (non-transposed, non-collapsed)
+      // grid view - same scope Conjunct Matrix itself uses, since "stack 4 rows
+      // under one row label" only cleanly means something when rows are rows.
+      const showAll = showAllVowels && !transposed && !collapsed;
+      const outerIdxs = transposed ? colIdxs : rowIdxs;
+      const innerIdxs = transposed ? rowIdxs : colIdxs;
+      const outerLabels = transposed ? colLabels : rowLabels;
+      const innerLabels = transposed ? rowLabels : colLabels;
+
+      let html = '';
+      if (!collapsed) {
+        html += '<thead><tr><th></th>';
+        innerIdxs.forEach(ii => { html += `<th>${innerLabels[ii]}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      outerIdxs.forEach(oi => {
+        if (showAll) {
+          SHOWALL_ROWS.forEach(([label, vowelKey]) => {
+            html += `<tr><th class="label" style="background:var(--card-bg);">${outerLabels[oi]} ${label}</th>`;
+            innerIdxs.forEach(ii => {
+              const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+              html += `<td class="rendered tigalari">${cellHTML(ri, ci, vowelKey)}</td>`;
+            });
+            html += '</tr>';
+          });
+          return;
+        }
+        html += `<tr><th class="label" style="background:var(--card-bg);">${outerLabels[oi]}</th>`;
+        if (collapsed) {
+          const line = innerIdxs.map(ii => {
+            const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+            return cellsFor(ri, ci).map(cp => S(cp)).join('');
+          }).join(sep);
+          html += `<td class="rendered tigalari">${line}</td>`;
+        } else {
+          innerIdxs.forEach(ii => {
+            const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+            html += `<td class="rendered tigalari">${cellHTML(ri, ci)}</td>`;
+          });
+        }
+        html += '</tr>';
+      });
+      html += '</tbody>';
+      document.getElementById('vm-consvar-table').innerHTML = html;
+      document.getElementById('vm-consvar-count').textContent =
+        `Consonant Variant Matrix - every registered consonant variant conjoined with every other (${rowLabels.length}x${colLabels.length})`;
+      setSize(document.getElementById('size-slider').value);
+    }
+    document.getElementById('vm-consvar-transpose').addEventListener('click', () => { transposed = !transposed; render(); });
+    render();
+  })();
 
   // akhn conjunct/vowel-sign tests
   const akhnBody = document.getElementById('akhn-body');
