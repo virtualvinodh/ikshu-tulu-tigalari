@@ -10,12 +10,16 @@ reasoning.
 
 Alt-consonant fallback (added 2026-07-20, folded directly into TutgBlwf's own
 rule list): every registered variant_registry.json .altN consonant form also
-gets a "conjoiner-tutg + CONS.altN -> CONS's below-form" rule, not just the
-plain consonant. Without this, a variant-selected consonant used as the
-second half of a plain (non-VS) conjunct left the conjoiner completely
+gets a "conjoiner-tutg + CONS.altN -> CONS.altN's OWN below-form" rule, not
+just the plain consonant. Without this, a variant-selected consonant used as
+the second half of a plain (non-VS) conjunct left the conjoiner completely
 unconsumed - confirmed via the Variant Registry tab's Consonant Variant
 Matrix, which showed the conjoiner's own real fallback artwork in every cell
-before this fix.
+before this fix. Every one of the 24 registered consonant-variant entries
+turns out to have its own dedicated, hand-drawn "{base}.below.altN" glyph
+(e.g. bha-tutg.alt1 -> bha-tutg.below.alt1) - resolve_alt_below() prefers that
+over the plain consonant's own below-form, which is only a fallback for the
+one case with no dedicated alt-below drawn (ra-tutg.alt1).
 
 Three more kinds of rule, in two more lookups:
 
@@ -183,7 +187,7 @@ for name in consonants:
     else:
         missing.append(name)
 
-# --- Alt-consonant fallback (added 2026-07-20) ---
+# --- Alt-consonant fallback (added 2026-07-20, corrected 2026-07-20) ---
 #
 # The loop above only ever matched the PLAIN consonant name as the second
 # glyph of "conjoiner-tutg + X" - a consonant already switched to one of its
@@ -192,23 +196,39 @@ for name in consonants:
 # left completely unconsumed, rendering as the font's real dotted-circle-style
 # conjoiner-tutg fallback artwork - confirmed via the Variant Registry tab's
 # Consonant Variant Matrix (24x24 grid of every registered variant conjoined
-# with every other): the conjoiner never disappeared in any cell. Fixed here
-# the same way TutgBlwfSubjoiner already handles it for the subjoiner-tutg
-# case: every registered .altN variant maps to the SAME below-form as its
-# plain consonant (alt/stylistic variants don't get their own separate
-# below-base miniature), added directly into TutgBlwf's own rule list (not a
-# separate lookup) since it's the exact same rule shape, just with more
-# second-glyph names recognized.
+# with every other): the conjoiner never disappeared in any cell.
+#
+# CORRECTED: the first version of this fix assumed every .altN variant reused
+# the SAME below-form as its plain consonant - wrong, caught by the project
+# owner. Every one of the 24 registered consonant-variant entries actually has
+# its OWN dedicated, hand-drawn "{base}.below.altN" glyph (e.g.
+# bha-tutg.alt1 -> bha-tutg.below.alt1, not bha-tutg.below) - confirmed by
+# checking glyph_svg_data.json directly rather than assuming. resolve_alt_below()
+# prefers that dedicated glyph and only falls back to the plain consonant's own
+# below-form (still via consonant_below, which already applies
+# BELOW_FORM_OVERRIDES - e.g. RA's raMatra-tutg) for the one case with no
+# dedicated alt-below drawn at all: ra-tutg.alt1 (no raMatra-tutg.alt1 exists).
+def resolve_alt_below(name, index_str):
+    alt_below = f"{name}.below.alt{index_str}"
+    if alt_below in glyphs:
+        return alt_below, True
+    return consonant_below.get(name), False
+
+
 alt_consonant_missing = []  # (base_name, variant_name) - registered but not a real glyph
+alt_consonant_no_dedicated_below = []  # (base_name, variant_name) - falls back to the plain below-form
 alt_consonant_rule_count = 0
 for name in consonants:
-    below = consonant_below.get(name)
-    if below is None:
-        continue
     for index_str, variant_name in sorted(VARIANT_REGISTRY.get(name, {}).items(), key=lambda kv: int(kv[0])):
         if variant_name not in glyphs:
             alt_consonant_missing.append((name, variant_name))
             continue
+        below, is_dedicated = resolve_alt_below(name, index_str)
+        if below is None:
+            alt_consonant_missing.append((name, variant_name))
+            continue
+        if not is_dedicated:
+            alt_consonant_no_dedicated_below.append((name, variant_name))
         rules.append((["conjoiner-tutg", variant_name], below))
         alt_consonant_rule_count += 1
 
@@ -221,10 +241,12 @@ for name in consonants:
 # 2-glyph ligature substitution - same shape as the existing per-consonant
 # fallback rule above, just keyed on subjoiner-tutg instead of conjoiner-tutg.
 # Also covers every registered char-variant form of each consonant
-# (variant_registry.json's "ka-tutg" -> {"1": "ka-tutg.alt1", ...}) mapping to
-# the SAME below-form as the plain consonant, since alt/stylistic variants
-# don't get their own separate below-base miniatures - a variant selected via
-# TutgVariantSelect just before the subjoiner must still shrink correctly.
+# (variant_registry.json's "ka-tutg" -> {"1": "ka-tutg.alt1", ...}), preferring
+# each one's own dedicated "{base}.below.altN" glyph via resolve_alt_below()
+# (see the Alt-consonant fallback section above for why - every registered
+# variant actually has its own hand-drawn below-form, not a shared one) - a
+# variant selected via TutgVariantSelect just before the subjoiner must still
+# shrink into ITS OWN below shape, not its plain consonant's.
 #
 # Declared as its own explicit lookup, but - unlike TutgBlwfDecompose - INSIDE
 # feature blwf on purpose: it's meant to apply unconditionally whenever this
@@ -246,7 +268,8 @@ for name in consonants:
         if variant_name not in glyphs:
             subjoiner_missing_variant.append((name, variant_name))
             continue
-        subjoiner_rules.append((variant_name, below))
+        variant_below, _is_dedicated = resolve_alt_below(name, index_str)
+        subjoiner_rules.append((variant_name, variant_below))
 
 # Per-ligature rules: the ligature's own output glyph name, not its raw akhn
 # input sequence - see module docstring for why.
@@ -499,6 +522,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         for name, variant_name in alt_consonant_missing:
             f.write(f"# {name} -> {variant_name}\n")
 
+    if alt_consonant_no_dedicated_below:
+        f.write("\n# --- Alt-consonant fallback: no dedicated {base}.below.altN glyph, reused the plain consonant's below-form ---\n")
+        for name, variant_name in alt_consonant_no_dedicated_below:
+            f.write(f"# {name} -> {variant_name}\n")
+
 # markdown report - written even when nothing is missing, so a re-run's "all clear"
 # is an explicit, checkable fact rather than the mere absence of a file.
 report_path = os.path.join(HERE, "BLWF_TODO.md")
@@ -621,5 +649,6 @@ print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)}")
 print(f"TutgBlwfSubjoiner variant entries skipped (not a real glyph): {len(subjoiner_missing_variant)} {subjoiner_missing_variant}")
 print(f"Alt-consonant fallback rules added to TutgBlwf: {alt_consonant_rule_count}")
 print(f"Alt-consonant fallback entries skipped (not a real glyph): {len(alt_consonant_missing)} {alt_consonant_missing}")
+print(f"Alt-consonant fallback entries with no dedicated below.altN (reused plain below): {len(alt_consonant_no_dedicated_below)} {alt_consonant_no_dedicated_below}")
 print("Written to:", out_path)
 print("Written to:", report_path)
