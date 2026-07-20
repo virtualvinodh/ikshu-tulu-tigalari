@@ -222,6 +222,15 @@
   /* Akhn's sticky bar is taller (label + wrapped chips + label + text input) than
      the single-row bars above, so it needs a bigger offset. */
   #panel-akhn table.test-table th { top: 116px; }
+  /* panel-variantmatrix stacks 3 separate matrices (each with its own controls
+     bar + table) in one scroll container, unlike every other panel here which
+     only ever has ONE - sticky controls/headers pinning to the same top:0
+     would fight each other and overlap confusingly as you scroll from one
+     matrix into the next, so both are plain static here instead. */
+  #panel-variantmatrix .sticky-controls,
+  #panel-variantmatrix table.test-table th {
+    position: static;
+  }
   table.test-table td.rendered { font-size: 1.8rem; }
   /* Repha (above-base) and Anudatta/Gemination (below-base) marks extend well
      past the glyph's own line box - extra vertical padding here keeps them
