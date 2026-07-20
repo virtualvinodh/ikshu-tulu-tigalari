@@ -264,6 +264,13 @@
     border-color: #c0392b;
     border-width: 2px;
   }
+  /* Conjunct Variant Matrix: flags the cells that actually have a registered
+     alternate, so they're easy to spot among the mostly-default 36x36 grid. */
+  td.variant-cell {
+    border: 2px solid var(--accent-strong) !important;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+  td.variant-cell .alt-row { margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--accent-strong); }
 
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
   .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
@@ -430,6 +437,7 @@
     <div class="tab-btn" data-tab="matrix">Syllable Matrix</div>
     <div class="tab-btn" data-tab="conjmatrix">Conjunct Matrix</div>
     <div class="tab-btn" data-tab="conjlist">Standard Conjunct List</div>
+    <div class="tab-btn" data-tab="variants">Variant Registry</div>
     <div class="tab-btn" data-tab="marks">Marks</div>
     <div class="tab-btn" data-tab="akhn">Auto GSUB</div>
     <div class="tab-btn" data-tab="sampletext">Sample Texts</div>
@@ -527,6 +535,27 @@
       <div id="conjlist-ann-toggle" class="ann-checkboxes"></div>
     </div>
     <div id="conjlist-body"></div>
+  </div>
+  <div class="panel" id="panel-variants">
+    <p class="count-note" style="margin-bottom:20px;">Proofing table for the variation-selector-driven GSUB work (akhn's TutgVariantSelect/TutgSubjoinerForm/TutgConjunctVariantSelect, blwf's TutgBlwfSubjoiner) - real typed Unicode sequences (base + variation selector + ...) rendered through the compiled font, same as every other tab here.</p>
+
+    <div class="count-note" id="variants-char-count"></div>
+    <table class="test-table" id="variants-char-table"></table>
+
+    <div class="count-note" id="variants-consonant-matrix-count" style="margin-top:26px;"></div>
+    <table class="test-table" id="variants-consonant-matrix-table"></table>
+
+    <div class="count-note" id="variants-vowel-count" style="margin-top:26px;"></div>
+    <div class="cons-grid" id="variants-vowel-grid"></div>
+
+    <div class="count-note" style="margin-top:26px;">Forced below-base subjoining: conjoiner + VS1 forces the following consonant into its below-base form, overriding whatever akhn/blwf would otherwise produce (KA+KA as a representative example - works for any consonant pair, not just a registered list)</div>
+    <div class="cons-grid" id="variants-subjoiner-grid"></div>
+
+    <div class="count-note" id="variants-conjunct-count" style="margin-top:26px;"></div>
+    <table class="test-table" id="variants-conjunct-table"></table>
+
+    <div class="count-note" id="variants-conjunct-matrix-count" style="margin-top:26px;"></div>
+    <table class="test-table" id="variants-conjunct-matrix-table"></table>
   </div>
   <div class="panel" id="panel-marks">
     <div class="sticky-controls">
@@ -870,6 +899,96 @@
   }
   const overviewCollapse = makeCollapseButtons('overview-collapse-select', mode => renderOverviewGrids(mode));
   renderOverviewGrids('grid');
+
+  // Variant Registry tab - straight proofing table for the VS-driven GSUB work
+  // (see build_test_page_data.py's variantRegistry section for how each row's
+  // cps sequence is built). No transpose/filter machinery like Matrix/Conjunct
+  // Matrix - this is a small, fixed data set meant to be scanned in full.
+  function renderVariantRegistry() {
+    const VR = DATA.variantRegistry;
+
+    const vsLabels = VR.characterVariants.length ? VR.characterVariants[0].cells.map(c => c[0]) : [];
+    let charHtml = '<thead><tr><th>variant \\ sign</th>';
+    vsLabels.forEach(label => { charHtml += `<th>${label}</th>`; });
+    charHtml += '</tr></thead><tbody>';
+    VR.characterVariants.forEach(row => {
+      charHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.label}</th>`;
+      row.cells.forEach(([, cps]) => {
+        charHtml += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+      });
+      charHtml += '</tr>';
+    });
+    charHtml += '</tbody>';
+    document.getElementById('variants-char-table').innerHTML = charHtml;
+    document.getElementById('variants-char-count').textContent =
+      `Character variants x vowel signs (${VR.characterVariants.length} variant rows x ${vsLabels.length} vowel-sign columns)`;
+
+    const CVM2 = VR.consonantVariantMatrix;
+    let cvm2Html = '<thead><tr><th>row \\ col</th>';
+    CVM2.labels.forEach(label => { cvm2Html += `<th>${label}</th>`; });
+    cvm2Html += '</tr></thead><tbody>';
+    CVM2.rows.forEach((row, ri) => {
+      cvm2Html += `<tr><th class="label" style="background:var(--card-bg);">${CVM2.labels[ri]}</th>`;
+      row.forEach(cps => {
+        cvm2Html += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+      });
+      cvm2Html += '</tr>';
+    });
+    cvm2Html += '</tbody>';
+    document.getElementById('variants-consonant-matrix-table').innerHTML = cvm2Html;
+    document.getElementById('variants-consonant-matrix-count').textContent =
+      `Consonant Variant Matrix (${CVM2.labels.length}x${CVM2.labels.length} - every registered consonant variant conjoined with every other, testing whether TutgAkhand/TutgBlwf still recognize .altN forms as conjunct participants)`;
+
+    const vowelItems = VR.vowelVariants.map(v => ({ cps: v.cps, label: `${v.label}<br>${v.variant}` }));
+    renderGlyphSection('variants-vowel-grid', vowelItems, 'grid');
+    document.getElementById('variants-vowel-count').textContent = `Vowel / mark variants (${VR.vowelVariants.length})`;
+
+    const subjoinerItems = VR.subjoinerDemo.examples.map(e => ({ cps: e.cps, label: e.label }));
+    renderGlyphSection('variants-subjoiner-grid', subjoinerItems, 'grid');
+
+    let conjHtml = '<thead><tr><th>pair</th><th>default</th><th>alternate(s)</th></tr></thead><tbody>';
+    VR.conjunctVariants.forEach(row => {
+      const altsHtml = row.alts.map(a =>
+        `<span class="tigalari" style="margin-right:16px;" title="${a.variant}">${a.cps.map(cp => S(cp)).join('')}</span>`
+      ).join('');
+      conjHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.label}</th>`;
+      conjHtml += `<td class="rendered tigalari">${row.default.map(cp => S(cp)).join('')}</td>`;
+      conjHtml += `<td class="rendered tigalari">${altsHtml}</td></tr>`;
+    });
+    conjHtml += '</tbody>';
+    document.getElementById('variants-conjunct-table').innerHTML = conjHtml;
+    document.getElementById('variants-conjunct-count').textContent = `Conjunct-ligature alternates (${VR.conjunctVariants.length} pairs)`;
+
+    const CVM = VR.conjunctVariantMatrix;
+    const cvmNames = CVM.consonants.map(stripTutg);
+    let registeredCount = 0;
+    let matrixHtml = '<thead><tr><th>C1 \\ C2</th>';
+    cvmNames.forEach(name => { matrixHtml += `<th>${name}</th>`; });
+    matrixHtml += '</tr></thead><tbody>';
+    CVM.rows.forEach((row, ri) => {
+      matrixHtml += `<tr><th class="label" style="background:var(--card-bg);">${cvmNames[ri]}</th>`;
+      row.forEach(cell => {
+        const defaultText = cell.default.map(cp => S(cp)).join('');
+        if (cell.alts.length) {
+          registeredCount++;
+          const altRow = cell.alts.map(a =>
+            `<span title="${a.variant}">${a.cps.map(cp => S(cp)).join('')}</span>`
+          ).join(' ');
+          matrixHtml += `<td class="rendered tigalari variant-cell">${defaultText}<div class="alt-row">${altRow}</div></td>`;
+        } else {
+          matrixHtml += `<td class="rendered tigalari">${defaultText}</td>`;
+        }
+      });
+      matrixHtml += '</tr>';
+    });
+    matrixHtml += '</tbody>';
+    document.getElementById('variants-conjunct-matrix-table').innerHTML = matrixHtml;
+    document.getElementById('variants-conjunct-matrix-count').textContent =
+      `Conjunct Variant Matrix (${cvmNames.length}x${cvmNames.length} - ${registeredCount} cells with a registered alternate, highlighted)`;
+
+    setSize(document.getElementById('size-slider').value);
+  }
+  renderVariantRegistry();
 
   // akhn conjunct/vowel-sign tests
   const akhnBody = document.getElementById('akhn-body');

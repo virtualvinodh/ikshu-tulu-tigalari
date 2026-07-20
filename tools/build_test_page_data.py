@@ -17,6 +17,8 @@ with open(os.path.join(HERE, "tutg_akhn_rules.json"), encoding="utf-8") as f:
     akhn_rules = json.load(f)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     classification = json.load(f)
+with open(os.path.join(HERE, "variant_registry.json"), encoding="utf-8") as f:
+    variant_registry = json.load(f)
 
 
 def cp_of(glyph_name):
@@ -200,6 +202,164 @@ for c1 in consonants:
         row_cells.append([c1["cp"], conjoiner_cp, c2["cp"]])
     conjunct_matrix["rows"].append(row_cells)
 
+# --- Variant Registry tab (added 2026-07-20): proofing table for the
+# variation-selector-driven GSUB work (generate_akhn_feature.py's
+# TutgVariantSelect/TutgSubjoinerForm/TutgConjunctVariantSelect,
+# generate_blwf_feature.py's TutgBlwfSubjoiner). Real typed Unicode sequences
+# (base + VS + ...), same principle as every other tab here - rendered
+# through the compiled font, not hand-picked glyph names.
+#
+# VS_CP mirrors generate_vs_glyphs.py's VS_GLYPHS list exactly (index -> real
+# codepoint of visN-tutg/vs{10+n}-tutg) - duplicated here rather than derived
+# from glyphs.json, since that script's index-to-codepoint mapping isn't
+# itself recorded anywhere machine-readable other than its own source.
+VS_CP = {1: 0xFE00, 2: 0xFE01, 3: 0xFE02, 4: 0xFE03, 5: 0xFE04, 6: 0xFE05, 11: 0xFE0A, 12: 0xFE0B}
+# Matches generate_akhn_feature.py's CONJUNCT_VS_OFFSET exactly - registry index
+# "1" is real selector VS11 for this layer, not VS1 (which means something else
+# entirely, on other bases/lookups).
+CONJUNCT_VS_OFFSET = 10
+consonant_names = set(classification.get("consonant", []))
+vowel_sign_names = set(classification.get("vowel_sign", []))
+ka_cp = cp_of("ka-tutg")
+
+character_variants = []  # one row per (consonant base, altN): {label, cells: [[vowelSignLabel, cps], ...]}
+consonant_variant_entries = []  # one per (consonant base, altN): {label, variant, baseCp, vsCp} - reused by consonant_variant_matrix below
+vowel_variants = []      # one row per (non-consonant base, altN): {label, cps}
+variant_missing = []     # (base_name, variant_name) - no cmap entry, skipped
+for base_name, variants in sorted(variant_registry.items()):
+    if base_name.startswith("_"):
+        continue
+    base_cp = cp_of(base_name)
+    if base_cp is None:
+        variant_missing.append((base_name, None))
+        continue
+    base = base_name[: -len("-tutg")]
+    for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+        vs_cp = VS_CP.get(int(index_str))
+        label = f"{base} alt{index_str}"
+        if vs_cp is None:
+            variant_missing.append((base_name, variant_name))
+            continue
+        if base_name in consonant_names:
+            cells = []
+            for vs_label, sign_cp in VOWEL_SIGN_COLUMNS:
+                cps = [base_cp, vs_cp] + ([] if sign_cp is None else [sign_cp])
+                cells.append([vs_label, cps])
+            character_variants.append({"label": label, "variant": variant_name, "cells": cells})
+            consonant_variant_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
+        else:
+            # Vowel-SIGN bases (uMatra/uuMatra/iiMatra/lVocalicMatra) are
+            # combining marks with no independent glyph shape of their own -
+            # rendered orphaned (no preceding consonant) they correctly show
+            # HarfBuzz's dotted-circle "invalid base" fallback, which is
+            # accurate but useless as a proofing display. Prefix KA so they're
+            # shown attached the way they'd actually appear in real text.
+            # Independent vowels and repha (the rest of this branch) stand
+            # alone fine and get no prefix.
+            prefix = [ka_cp] if base_name in vowel_sign_names else []
+            vowel_variants.append({"label": label, "variant": variant_name, "cps": prefix + [base_cp, vs_cp]})
+
+# Consonant Variant Matrix: every registered consonant-variant entry (24, e.g.
+# "bha alt1", "da alt1", "da alt2", ...) crossed against every OTHER registered
+# consonant-variant entry, joined by a conjoiner - a 24x24 grid testing what
+# happens when TWO variant-selected consonant forms are conjoined together
+# (typed as ROW's base+VS, then conjoiner, then COL's base+VS - so
+# TutgVariantSelect resolves both to their .altN forms BEFORE TutgAkhand/blwf
+# ever see the pair, since TutgVariantSelect is akhn's first lookup). Distinct
+# from the Conjunct Variant Matrix above, which crosses plain DEFAULT
+# consonants and highlights the 17 pairs with a registered ligature-level
+# alternate - this one is about what happens when the CONSONANTS themselves
+# are already in an alternate form going into the conjunct.
+consonant_variant_matrix = {
+    "labels": [e["label"] for e in consonant_variant_entries],
+    "rows": [],
+}
+for row_e in consonant_variant_entries:
+    row_cells = []
+    for col_e in consonant_variant_entries:
+        cps = [row_e["baseCp"], row_e["vsCp"], conjoiner_cp, col_e["baseCp"], col_e["vsCp"]]
+        row_cells.append(cps)
+    consonant_variant_matrix["rows"].append(row_cells)
+
+# Conjunct-ligature alternates (registry["_conjunct_variants"]) - VS attaches
+# AFTER the whole formed ligature (TutgConjunctVariantSelect matches the
+# ligature's own output glyph + a trailing VS, not the conjoiner), unlike the
+# subjoiner demo below where the VS sits right after the conjoiner instead -
+# these are two genuinely different attachment points, not a typo.
+conjunct_variants = []
+for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {}).items()):
+    first_cp = cp_of(first_name)
+    for second_name, variants in sorted(seconds.items()):
+        second_cp = cp_of(second_name)
+        if first_cp is None or second_cp is None:
+            variant_missing.append((f"{first_name}+{second_name}", None))
+            continue
+        default_cps = [first_cp, conjoiner_cp, second_cp]
+        alts = []
+        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
+            if vs_cp is None:
+                variant_missing.append((variant_name, None))
+                continue
+            alts.append({"variant": variant_name, "cps": default_cps + [vs_cp]})
+        conjunct_variants.append({
+            "label": f"{first_name[: -len('-tutg')]}_{second_name[: -len('-tutg')]}",
+            "default": default_cps,
+            "alts": alts,
+        })
+
+# Conjunct Variant Matrix: same idea as conjunct_variants above, but laid out
+# as a full 36x36 grid (every consonant x every consonant, same shape as the
+# Conjunct Matrix tab) instead of a flat list of just the 17 registered pairs -
+# lets the 17 registered pairs be spotted at a glance against the full set of
+# possible conjuncts, most of which have no registered alternate at all (those
+# cells still show the real default conjunct, exactly like Conjunct Matrix
+# already does for pairs with no dedicated akhn ligature).
+conjunct_variant_lookup = {}  # (first_name, second_name) -> [{"variant", "vsCp"}, ...]
+for first_name, seconds in variant_registry.get("_conjunct_variants", {}).items():
+    for second_name, variants in seconds.items():
+        entries = []
+        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
+            if vs_cp is not None:
+                entries.append({"variant": variant_name, "vsCp": vs_cp})
+        conjunct_variant_lookup[(first_name, second_name)] = entries
+
+conjunct_variant_matrix = {
+    "consonants": [c["name"] for c in consonants],
+    "rows": [],
+}
+for c1 in consonants:
+    row_cells = []
+    for c2 in consonants:
+        default_cps = [c1["cp"], conjoiner_cp, c2["cp"]]
+        entries = conjunct_variant_lookup.get((c1["name"], c2["name"]), [])
+        alts = [{"variant": e["variant"], "cps": default_cps + [e["vsCp"]]} for e in entries]
+        row_cells.append({"default": default_cps, "alts": alts})
+    conjunct_variant_matrix["rows"].append(row_cells)
+
+# Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
+# KA+KA as a simple, always-available representative example (unlike the
+# conjunct-ligature alternates above, this mechanism works for ANY consonant
+# pair, not just a registered list, so one clear example stands in for all of
+# them rather than enumerating 36x36 pairs).
+subjoiner_demo = {
+    "examples": [
+        {"label": "KA + KA (plain, no conjoiner)", "cps": [ka_cp, ka_cp]},
+        {"label": "KA + conjoiner + KA (default conjunct)", "cps": [ka_cp, conjoiner_cp, ka_cp]},
+        {"label": "KA + conjoiner + VS1 + KA (forced below-base)", "cps": [ka_cp, conjoiner_cp, VS_CP[1], ka_cp]},
+    ],
+}
+
+variant_registry_data = {
+    "characterVariants": character_variants,
+    "consonantVariantMatrix": consonant_variant_matrix,
+    "vowelVariants": vowel_variants,
+    "conjunctVariants": conjunct_variants,
+    "conjunctVariantMatrix": conjunct_variant_matrix,
+    "subjoinerDemo": subjoiner_demo,
+}
+
 # --- Unicode tab: every actually-encoded character in the Tulu-Tigalari block
 # (U+11380-U+113FF) - i.e. every glyph with a real cmap entry there, regardless of
 # category (consonant/vowel/vowel-sign/mark/...). .alt/.below variants are reached
@@ -222,6 +382,7 @@ out = {
     "markConsonantGrid": mark_consonant_grid,
     "matrix": matrix,
     "conjunctMatrix": conjunct_matrix,
+    "variantRegistry": variant_registry_data,
     "unicodeChars": unicode_chars,
 }
 out_path = os.path.join(HERE, "test_page_data.json")
@@ -233,5 +394,11 @@ print("Independent vowels:", len(vowels))
 print("Akhn test rows:", len(akhn_tests), " (skipped, missing cmap:", len(missing_cp), set(missing_cp), ")")
 print("Matrix:", len(matrix["rows"]), "consonants x", len(matrix["vowelSignLabels"]), "vowel-sign columns")
 print("Conjunct matrix:", len(conjunct_matrix["rows"]), "x", len(conjunct_matrix["consonants"]))
+print("Variant registry - character variants:", len(character_variants))
+print("Variant registry - consonant variant matrix:", len(consonant_variant_matrix["labels"]), "x", len(consonant_variant_matrix["labels"]))
+print("Variant registry - vowel variants:", len(vowel_variants))
+print("Variant registry - conjunct variants:", len(conjunct_variants))
+print("Variant registry - conjunct variant matrix:", len(conjunct_variant_matrix["rows"]), "x", len(conjunct_variant_matrix["consonants"]))
+print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
 print("Unicode chars:", len(unicode_chars))
 print("Written to:", out_path)
