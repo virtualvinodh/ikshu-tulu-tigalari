@@ -1344,7 +1344,14 @@
       const full = cellsFor(ri, ci, vowelKey).map(cp => S(cp)).join('');
       if (!guideOn || !CONJMATRIX_DECOMPOSE_VOWELS.has(vowelKey)) return full;
       const vsCp = DATA.conjunctMatrix.vowelSignOptions[vowelKey];
-      const c2cp = baseCps[baseCps.length - 1];
+      // baseCps here is [rowBase, rowVs, conjoiner, colBase, colVs] (5
+      // elements, not the plain Conjunct Matrix's 3) - the last element is
+      // the COLUMN'S VARIATION SELECTOR, not its consonant, so grabbing it
+      // for the "vowel alone" reference produced garbage (a bare VS glyph
+      // followed by the vowel sign). The actually useful reference is the
+      // column's own PLAIN (non-variant) consonant + the vowel sign, one
+      // position further back.
+      const c2cp = baseCps[baseCps.length - 2];
       const vowelAlone = [c2cp, vsCp].map(cp => S(cp)).join('');
       const bareStack = baseCps.map(cp => S(cp)).join('');
       return `<div class="conjref-row"><span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span></div><div class="conjref-main">${full}</div>`;
