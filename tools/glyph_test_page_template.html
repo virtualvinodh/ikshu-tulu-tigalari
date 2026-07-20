@@ -184,10 +184,12 @@
      the default glyph, muted background, no stacked alt list. */
   .cons-cell.muted { background: var(--hover-bg); }
   .cons-cell.muted .label { font-style: italic; }
-  /* Default/base form in a default-vs-alt(s) card: dimmed so the alt(s)
-     below it (the actual point of this tab) read as the visual focus. */
-  .cons-cell .glyph.is-default { opacity: 0.4; }
-  .cons-cell .label.is-default { opacity: 0.7; }
+  /* Default/base form shown alongside a variant (cards and table cells
+     alike): dimmed so the variant (the actual point of this tab) reads as
+     the visual focus. */
+  .glyph.is-default { opacity: 0.4; }
+  .label.is-default { opacity: 0.7; }
+  td.rendered .is-default { opacity: 0.4; }
 
   table.test-table { border-collapse: collapse; width: 100%; }
   table.test-table th, table.test-table td {
@@ -967,14 +969,23 @@
     document.getElementById('variants-depvowel-count').textContent =
       `Dependent (vowel-sign) variants x KA/LA (${DVM.columnLabels.length} variants x ${DVM.rows.length} base letters)`;
 
-    const vsLabels = VR.characterVariants.length ? VR.characterVariants[0].cells.map(c => c[0]) : [];
+    const vsLabels = VR.characterVariants.length ? VR.characterVariants[0].cells.map(c => c.label) : [];
     let charHtml = '<thead><tr><th>variant \\ sign</th>';
     vsLabels.forEach(label => { charHtml += `<th>${label}</th>`; });
     charHtml += '</tr></thead><tbody>';
     VR.characterVariants.forEach(row => {
       charHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.label}</th>`;
-      row.cells.forEach(([, cps]) => {
-        charHtml += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+      row.cells.forEach(cell => {
+        const variantText = cell.variantCps.map(cp => S(cp)).join('');
+        if (cell.defaultCps) {
+          // U/UU/Vocalic R/Vocalic RR: default combination on top (dimmed,
+          // same "is-default" treatment as the variant cards), variant's own
+          // combination below it, so the two are easy to compare directly.
+          const defaultText = cell.defaultCps.map(cp => S(cp)).join('');
+          charHtml += `<td class="rendered tigalari"><div class="is-default">${defaultText}</div><div style="margin-top:4px; padding-top:4px; border-top:1px dashed var(--paper-line);">${variantText}</div></td>`;
+        } else {
+          charHtml += `<td class="rendered tigalari">${variantText}</td>`;
+        }
       });
       charHtml += '</tr>';
     });

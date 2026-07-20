@@ -153,6 +153,10 @@ VOWEL_SIGN_COLUMNS = [
     ("Anusvara", cp_of("anusvara-tutg")),
     ("Visarga", cp_of("visarga-tutg")),
 ]
+# Same set the Conjunct Matrix already treats specially (CONJMATRIX_DECOMPOSE_VOWELS
+# in the JS) - the 4 vowel signs that actually change shape per consonant, not
+# just plain spacing/reorder marks.
+DOUBLE_ROW_VOWEL_SIGN_LABELS = {"U", "UU", "Vocalic R", "Vocalic RR"}
 matrix = {
     "vowelSignLabels": [label for label, _ in VOWEL_SIGN_COLUMNS],
     "rows": [],
@@ -271,8 +275,16 @@ for base_name, variants in registry_items_by_cp:
         if base_name in consonant_names:
             cells = []
             for vs_label, sign_cp in VOWEL_SIGN_COLUMNS:
-                cps = [base_cp, vs_cp] + ([] if sign_cp is None else [sign_cp])
-                cells.append([vs_label, cps])
+                variant_cps = [base_cp, vs_cp] + ([] if sign_cp is None else [sign_cp])
+                cell = {"label": vs_label, "variantCps": variant_cps}
+                # U/UU/Vocalic R/Vocalic RR are the 4 vowel signs that actually
+                # change shape when combined with a consonant (not just plain
+                # spacing/reorder marks like the others) - show the default
+                # consonant's own combination alongside the variant's, so it's
+                # easy to compare whether the alt combines correctly.
+                if vs_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
+                    cell["defaultCps"] = [base_cp] + ([] if sign_cp is None else [sign_cp])
+                cells.append(cell)
             character_variants.append({"label": label, "variant": variant_name, "cells": cells})
             consonant_variant_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
             card = consonant_variant_cards_by_base.get(base_name)
