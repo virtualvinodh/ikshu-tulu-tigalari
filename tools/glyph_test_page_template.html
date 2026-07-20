@@ -535,6 +535,9 @@
     <div class="count-note" id="variants-indepvowel-count"></div>
     <div class="cons-grid" id="variants-indepvowel-grid"></div>
 
+    <div class="count-note" id="variants-consonant-cards-count" style="margin-top:26px;"></div>
+    <div class="cons-grid" id="variants-consonant-cards-grid"></div>
+
     <div class="count-note" id="variants-depvowel-count" style="margin-top:26px;"></div>
     <table class="test-table" id="variants-depvowel-table"></table>
 
@@ -903,6 +906,23 @@
     const indepVowelItems = VR.independentVowelVariants.map(v => ({ cps: v.cps, label: `${v.label}<br>${v.variant}` }));
     renderGlyphSection('variants-indepvowel-grid', indepVowelItems, 'grid');
     document.getElementById('variants-indepvowel-count').textContent = `Independent vowel variants (${VR.independentVowelVariants.length})`;
+
+    // Same card language as the Conjunct-ligature alternates further down:
+    // default consonant on top, each registered alt stacked below it behind a
+    // dashed divider.
+    const consCardsHtml = VR.consonantVariantCards.map(card => {
+      const altRows = card.alts.map(a => `
+        <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
+        <div class="label">${a.variant}</div>
+      `).join('');
+      return `<div class="cons-cell">
+        <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
+        <div class="label">${card.label} (default)</div>
+        ${altRows}
+      </div>`;
+    }).join('');
+    document.getElementById('variants-consonant-cards-grid').innerHTML = consCardsHtml;
+    document.getElementById('variants-consonant-cards-count').textContent = `Consonant variants (${VR.consonantVariantCards.length})`;
 
     const DVM = VR.dependentVowelMatrix;
     let depHtml = '<thead><tr><th>row \\ variant</th>';

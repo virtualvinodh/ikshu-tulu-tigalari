@@ -225,6 +225,8 @@ la_cp = cp_of("la-tutg")
 
 character_variants = []  # one row per (consonant base, altN): {label, cells: [[vowelSignLabel, cps], ...]}
 consonant_variant_entries = []  # one per (consonant base, altN): {label, variant, baseCp, vsCp} - reused by consonant_variant_matrix below
+consonant_variant_cards = []  # one per consonant base (17): {label, defaultCps, alts: [{variant, cps}, ...]}
+consonant_variant_cards_by_base = {}  # base_name -> the dict just appended to consonant_variant_cards, for easy lookup while looping
 # Independent vowels (a/aa/ai/.../uu) and repha stand alone fine with no base -
 # one flat gallery, shown first. Vowel-SIGN bases (uMatra/uuMatra/iiMatra/
 # lVocalicMatra) are combining marks with no independent glyph shape of their
@@ -257,6 +259,12 @@ for base_name, variants in sorted(variant_registry.items()):
                 cells.append([vs_label, cps])
             character_variants.append({"label": label, "variant": variant_name, "cells": cells})
             consonant_variant_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
+            card = consonant_variant_cards_by_base.get(base_name)
+            if card is None:
+                card = {"label": base, "defaultCps": [base_cp], "alts": []}
+                consonant_variant_cards_by_base[base_name] = card
+                consonant_variant_cards.append(card)
+            card["alts"].append({"variant": variant_name, "cps": [base_cp, vs_cp]})
         elif base_name in vowel_sign_names:
             dependent_vowel_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
         else:
@@ -344,6 +352,7 @@ subjoiner_demo = {"groups": subjoiner_demo_groups}
 
 variant_registry_data = {
     "independentVowelVariants": independent_vowel_variants,
+    "consonantVariantCards": consonant_variant_cards,
     "characterVariants": character_variants,
     "consonantVariantMatrix": consonant_variant_matrix,
     "dependentVowelMatrix": dependent_vowel_matrix,
@@ -385,6 +394,7 @@ print("Independent vowels:", len(vowels))
 print("Akhn test rows:", len(akhn_tests), " (skipped, missing cmap:", len(missing_cp), set(missing_cp), ")")
 print("Matrix:", len(matrix["rows"]), "consonants x", len(matrix["vowelSignLabels"]), "vowel-sign columns")
 print("Conjunct matrix:", len(conjunct_matrix["rows"]), "x", len(conjunct_matrix["consonants"]))
+print("Variant registry - consonant variant cards:", len(consonant_variant_cards))
 print("Variant registry - character variants:", len(character_variants))
 print("Variant registry - consonant variant matrix:", len(consonant_variant_matrix["labels"]), "x", len(consonant_variant_matrix["labels"]))
 print("Variant registry - independent vowel variants:", len(independent_vowel_variants))
