@@ -180,6 +180,10 @@
   .cons-cell.clickable { cursor: pointer; }
   .cons-cell.clickable:hover { border-color: var(--accent); background: var(--hover-bg); }
   .cons-cell.clickable:active { background: color-mix(in srgb, var(--accent) 20%, var(--card-bg)); }
+  /* Collapsed variant card (e.g. a-tutg/aa-tutg's too-many-alts case): just
+     the default glyph, muted background, no stacked alt list. */
+  .cons-cell.muted { background: var(--hover-bg); }
+  .cons-cell.muted .label { font-style: italic; }
 
   table.test-table { border-collapse: collapse; width: 100%; }
   table.test-table th, table.test-table td {
@@ -903,9 +907,28 @@
   function renderVariantRegistry() {
     const VR = DATA.variantRegistry;
 
-    const indepVowelItems = VR.independentVowelVariants.map(v => ({ cps: v.cps, label: `${v.label}<br>${v.variant}` }));
-    renderGlyphSection('variants-indepvowel-grid', indepVowelItems, 'grid');
-    document.getElementById('variants-indepvowel-count').textContent = `Independent vowel variants (${VR.independentVowelVariants.length})`;
+    // Same card language as consonant variants, except cards flagged
+    // "collapsed" (a-tutg/aa-tutg - too many alts between them to stack
+    // cleanly) show only the plain default, muted background, no alt list.
+    const indepVowelHtml = VR.independentVowelCards.map(card => {
+      if (card.collapsed) {
+        return `<div class="cons-cell muted">
+          <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
+          <div class="label">${card.label} (default only - ${card.alts.length || 'several'} variants not shown here)</div>
+        </div>`;
+      }
+      const altRows = card.alts.map(a => `
+        <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
+        <div class="label">${a.variant}</div>
+      `).join('');
+      return `<div class="cons-cell">
+        <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
+        <div class="label">${card.label} (default)</div>
+        ${altRows}
+      </div>`;
+    }).join('');
+    document.getElementById('variants-indepvowel-grid').innerHTML = indepVowelHtml;
+    document.getElementById('variants-indepvowel-count').textContent = `Independent vowel variants (${VR.independentVowelCards.length})`;
 
     // Same card language as the Conjunct-ligature alternates further down:
     // default consonant on top, each registered alt stacked below it behind a
