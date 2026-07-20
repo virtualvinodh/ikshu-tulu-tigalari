@@ -218,6 +218,15 @@ for c1 in consonants:
 # from glyphs.json, since that script's index-to-codepoint mapping isn't
 # itself recorded anywhere machine-readable other than its own source.
 VS_CP = {1: 0xFE00, 2: 0xFE01, 3: 0xFE02, 4: 0xFE03, 5: 0xFE04, 6: 0xFE05, 11: 0xFE0A, 12: 0xFE0B}
+VS_BASE_CP = 0xFE00
+
+
+def vs_label_of(vs_cp):
+    """"VS1"/"VS11"/etc - the actual Unicode variation selector number, not
+    this particular base glyph's own alt-index (which restarts at 1 for every
+    base and doesn't reveal which real selector triggers it - e.g. ssa_ttha's
+    "alt2" is really VS12, not obviously so from the name alone)."""
+    return f"VS{vs_cp - VS_BASE_CP + 1}"
 # Matches generate_akhn_feature.py's CONJUNCT_VS_OFFSET exactly - registry index
 # "1" is real selector VS11 for this layer, not VS1 (which means something else
 # entirely, on other bases/lookups).
@@ -268,39 +277,40 @@ for base_name, variants in registry_items_by_cp:
     base = base_name[: -len("-tutg")]
     for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
         vs_cp = VS_CP.get(int(index_str))
-        label = f"{base} alt{index_str}"
         if vs_cp is None:
             variant_missing.append((base_name, variant_name))
             continue
+        vs = vs_label_of(vs_cp)
+        label = f"{base} {vs}"
         if base_name in consonant_names:
             cells = []
-            for vs_label, sign_cp in VOWEL_SIGN_COLUMNS:
+            for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
                 variant_cps = [base_cp, vs_cp] + ([] if sign_cp is None else [sign_cp])
-                cell = {"label": vs_label, "variantCps": variant_cps}
+                cell = {"label": vs_sign_label, "variantCps": variant_cps}
                 # U/UU/Vocalic R/Vocalic RR are the 4 vowel signs that actually
                 # change shape when combined with a consonant (not just plain
                 # spacing/reorder marks like the others) - show the default
                 # consonant's own combination alongside the variant's, so it's
                 # easy to compare whether the alt combines correctly.
-                if vs_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
+                if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
                     cell["defaultCps"] = [base_cp] + ([] if sign_cp is None else [sign_cp])
                 cells.append(cell)
-            character_variants.append({"label": label, "variant": variant_name, "cells": cells})
-            consonant_variant_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
+            character_variants.append({"label": label, "variant": variant_name, "vs": vs, "cells": cells})
+            consonant_variant_entries.append({"label": label, "variant": variant_name, "vs": vs, "baseCp": base_cp, "vsCp": vs_cp})
             card = consonant_variant_cards_by_base.get(base_name)
             if card is None:
                 card = {"label": base, "defaultCps": [base_cp], "alts": []}
                 consonant_variant_cards_by_base[base_name] = card
                 consonant_variant_cards.append(card)
-            card["alts"].append({"variant": variant_name, "cps": [base_cp, vs_cp]})
+            card["alts"].append({"variant": variant_name, "vs": vs, "cps": [base_cp, vs_cp]})
         elif base_name in vowel_sign_names:
-            dependent_vowel_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
+            dependent_vowel_entries.append({"label": label, "variant": variant_name, "vs": vs, "baseCp": base_cp, "vsCp": vs_cp})
         else:
             raw = independent_vowel_cards_by_base.get(base_name)
             if raw is None:
                 raw = {"label": base, "defaultCps": [base_cp], "alts": []}
                 independent_vowel_cards_by_base[base_name] = raw
-            raw["alts"].append({"variant": variant_name, "cps": [base_cp, vs_cp]})
+            raw["alts"].append({"variant": variant_name, "vs": vs, "cps": [base_cp, vs_cp]})
 
 for base_name, raw in independent_vowel_cards_by_base.items():
     if base_name not in ROW_LAYOUT_BASES:
@@ -362,7 +372,7 @@ for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {})
             if vs_cp is None:
                 variant_missing.append((variant_name, None))
                 continue
-            alts.append({"variant": variant_name, "cps": default_cps + [vs_cp]})
+            alts.append({"variant": variant_name, "vs": vs_label_of(vs_cp), "cps": default_cps + [vs_cp]})
         conjunct_variants.append({
             "label": f"{first_name[: -len('-tutg')]}_{second_name[: -len('-tutg')]}",
             "default": default_cps,
