@@ -907,36 +907,23 @@
   function renderVariantRegistry() {
     const VR = DATA.variantRegistry;
 
-    // Same card language as consonant variants (default + alts), except
-    // cards flagged layout "row" (a-tutg/aa-tutg - too many alts between them
-    // to stack vertically without an oddly tall card) lay their alts out
-    // side by side next to the default instead of stacked underneath it, up
-    // to 3 alts per card (more than that splits across multiple cards, each
-    // repeating the same default for context - see ROW_LAYOUT_CHUNK_SIZE in
-    // build_test_page_data.py).
+    // Same card language as consonant variants (default on top, each alt
+    // stacked below behind a dashed divider) for every independent vowel.
+    // Cards flagged layout "row" (a-tutg/aa-tutg - too many alts between them
+    // to stack in one card without it getting oddly tall) are pre-chunked to
+    // at most 3 alts per card in build_test_page_data.py (aa-tutg's 5 split
+    // into 2 cards), but still stack vertically the same way, just with a
+    // two-line "short label / full glyph name" caption on each item.
     const indepVowelHtml = VR.independentVowelCards.map(card => {
-      if (card.layout === 'row') {
-        const altCols = card.alts.map(a => `
-          <div>
-            <div class="glyph tigalari">${a.cps.map(cp => S(cp)).join('')}</div>
-            <div class="label">${a.variant.split('.').pop()}<br>${a.variant}</div>
-          </div>
-        `).join('');
-        return `<div class="cons-cell" style="grid-column: span 3; display:flex; align-items:flex-start; justify-content:center; gap:14px; text-align:center;">
-          <div>
-            <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-            <div class="label">default<br>${card.baseName}</div>
-          </div>
-          ${altCols}
-        </div>`;
-      }
+      const isChunked = card.layout === 'row';
+      const defaultLabel = isChunked ? `default<br>${card.baseName}` : `${card.label} (default)`;
       const altRows = card.alts.map(a => `
         <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
-        <div class="label">${a.variant}</div>
+        <div class="label">${isChunked ? `${a.variant.split('.').pop()}<br>${a.variant}` : a.variant}</div>
       `).join('');
       return `<div class="cons-cell">
         <div class="glyph tigalari">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-        <div class="label">${card.label} (default)</div>
+        <div class="label">${defaultLabel}</div>
         ${altRows}
       </div>`;
     }).join('');
