@@ -1345,14 +1345,17 @@
       if (!guideOn || !CONJMATRIX_DECOMPOSE_VOWELS.has(vowelKey)) return full;
       const vsCp = DATA.conjunctMatrix.vowelSignOptions[vowelKey];
       // baseCps here is [rowBase, rowVs, conjoiner, colBase, colVs] (5
-      // elements, not the plain Conjunct Matrix's 3) - the last element is
-      // the COLUMN'S VARIATION SELECTOR, not its consonant, so grabbing it
-      // for the "vowel alone" reference produced garbage (a bare VS glyph
-      // followed by the vowel sign). The actually useful reference is the
-      // column's own PLAIN (non-variant) consonant + the vowel sign, one
-      // position further back.
-      const c2cp = baseCps[baseCps.length - 2];
-      const vowelAlone = [c2cp, vsCp].map(cp => S(cp)).join('');
+      // elements, not the plain Conjunct Matrix's 3) - grabbing only the last
+      // element for the "vowel alone" reference got just the COLUMN'S
+      // VARIATION SELECTOR, not its consonant (garbage: a bare VS glyph next
+      // to the vowel sign). Keep BOTH colBase and colVs here instead of
+      // dropping the VS entirely - the useful reference is "does this exact
+      // alt-selected consonant combine correctly with the vowel sign on its
+      // own", the same variant used in the full combination, not the plain
+      // default's behavior.
+      const colBaseCp = baseCps[baseCps.length - 2];
+      const colVsCp = baseCps[baseCps.length - 1];
+      const vowelAlone = [colBaseCp, colVsCp, vsCp].map(cp => S(cp)).join('');
       const bareStack = baseCps.map(cp => S(cp)).join('');
       return `<div class="conjref-row"><span class="conjref">${vowelAlone}</span><span class="conjref-sep">|</span><span class="conjref">${bareStack}</span></div><div class="conjref-main">${full}</div>`;
     }
