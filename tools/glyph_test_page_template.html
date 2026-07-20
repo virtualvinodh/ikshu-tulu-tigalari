@@ -920,7 +920,7 @@
     // two-line "short label / full glyph name" caption on each item.
     const indepVowelHtml = VR.independentVowelCards.map(card => {
       const isChunked = card.layout === 'row';
-      const defaultLabel = isChunked ? `default<br>${card.baseName}` : `${card.label} (default)`;
+      const defaultLabel = isChunked ? `default<br>${card.baseName}` : card.label;
       const altRows = card.alts.map(a => `
         <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
         <div class="label">${isChunked ? `${a.variant.split('.').pop()}<br>${a.variant}` : a.variant}</div>
@@ -944,7 +944,7 @@
       `).join('');
       return `<div class="cons-cell">
         <div class="glyph tigalari is-default">${card.defaultCps.map(cp => S(cp)).join('')}</div>
-        <div class="label is-default">${card.label} (default)</div>
+        <div class="label is-default">${card.label}</div>
         ${altRows}
       </div>`;
     }).join('');
@@ -1024,7 +1024,7 @@
       `).join('');
       return `<div class="cons-cell">
         <div class="glyph tigalari is-default">${row.default.map(cp => S(cp)).join('')}</div>
-        <div class="label is-default">${row.label} (default)</div>
+        <div class="label is-default">${row.label}</div>
         ${altRows}
       </div>`;
     }).join('');
