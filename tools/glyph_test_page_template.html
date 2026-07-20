@@ -532,17 +532,20 @@
   <div class="panel" id="panel-variants">
     <p class="count-note" style="margin-bottom:20px;">Proofing table for the variation-selector-driven GSUB work (akhn's TutgVariantSelect/TutgSubjoinerForm/TutgConjunctVariantSelect, blwf's TutgBlwfSubjoiner) - real typed Unicode sequences (base + variation selector + ...) rendered through the compiled font, same as every other tab here.</p>
 
-    <div class="count-note" id="variants-char-count"></div>
+    <div class="count-note" id="variants-indepvowel-count"></div>
+    <div class="cons-grid" id="variants-indepvowel-grid"></div>
+
+    <div class="count-note" id="variants-depvowel-count" style="margin-top:26px;"></div>
+    <table class="test-table" id="variants-depvowel-table"></table>
+
+    <div class="count-note" id="variants-char-count" style="margin-top:26px;"></div>
     <table class="test-table" id="variants-char-table"></table>
 
     <div class="count-note" id="variants-consonant-matrix-count" style="margin-top:26px;"></div>
     <table class="test-table" id="variants-consonant-matrix-table"></table>
 
-    <div class="count-note" id="variants-vowel-count" style="margin-top:26px;"></div>
-    <div class="cons-grid" id="variants-vowel-grid"></div>
-
-    <div class="count-note" style="margin-top:26px;">Forced below-base subjoining: conjoiner + VS1 forces the following consonant into its below-base form, overriding whatever akhn/blwf would otherwise produce (KA+KA as a representative example - works for any consonant pair, not just a registered list)</div>
-    <div class="cons-grid" id="variants-subjoiner-grid"></div>
+    <div class="count-note" style="margin-top:26px;">Forced below-base subjoining: conjoiner + VS1 forces the following consonant into its below-base form, overriding whatever akhn/blwf would otherwise produce (3 representative pairs - works for any consonant pair, not just a registered list)</div>
+    <div id="variants-subjoiner-groups"></div>
 
     <div class="count-note" id="variants-conjunct-count" style="margin-top:26px;"></div>
     <div class="cons-grid" id="variants-conjunct-grid"></div>
@@ -897,6 +900,26 @@
   function renderVariantRegistry() {
     const VR = DATA.variantRegistry;
 
+    const indepVowelItems = VR.independentVowelVariants.map(v => ({ cps: v.cps, label: `${v.label}<br>${v.variant}` }));
+    renderGlyphSection('variants-indepvowel-grid', indepVowelItems, 'grid');
+    document.getElementById('variants-indepvowel-count').textContent = `Independent vowel variants (${VR.independentVowelVariants.length})`;
+
+    const DVM = VR.dependentVowelMatrix;
+    let depHtml = '<thead><tr><th>row \\ variant</th>';
+    DVM.columnLabels.forEach(label => { depHtml += `<th>${label}</th>`; });
+    depHtml += '</tr></thead><tbody>';
+    DVM.rows.forEach(row => {
+      depHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.rowLabel}</th>`;
+      row.cells.forEach(cps => {
+        depHtml += `<td class="rendered tigalari">${cps.map(cp => S(cp)).join('')}</td>`;
+      });
+      depHtml += '</tr>';
+    });
+    depHtml += '</tbody>';
+    document.getElementById('variants-depvowel-table').innerHTML = depHtml;
+    document.getElementById('variants-depvowel-count').textContent =
+      `Dependent (vowel-sign) variants x KA/LA (${DVM.columnLabels.length} variants x ${DVM.rows.length} base letters)`;
+
     const vsLabels = VR.characterVariants.length ? VR.characterVariants[0].cells.map(c => c[0]) : [];
     let charHtml = '<thead><tr><th>variant \\ sign</th>';
     vsLabels.forEach(label => { charHtml += `<th>${label}</th>`; });
@@ -929,12 +952,20 @@
     document.getElementById('variants-consonant-matrix-count').textContent =
       `Consonant Variant Matrix (${CVM2.labels.length}x${CVM2.labels.length} - every registered consonant variant conjoined with every other, testing whether TutgAkhand/TutgBlwf still recognize .altN forms as conjunct participants)`;
 
-    const vowelItems = VR.vowelVariants.map(v => ({ cps: v.cps, label: `${v.label}<br>${v.variant}` }));
-    renderGlyphSection('variants-vowel-grid', vowelItems, 'grid');
-    document.getElementById('variants-vowel-count').textContent = `Vowel / mark variants (${VR.vowelVariants.length})`;
-
-    const subjoinerItems = VR.subjoinerDemo.examples.map(e => ({ cps: e.cps, label: e.label }));
-    renderGlyphSection('variants-subjoiner-grid', subjoinerItems, 'grid');
+    // Each pair gets its own labeled mini-gallery (plain / default conjunct /
+    // forced below-base), stacked one group after another.
+    const subjoinerGroupsHtml = VR.subjoinerDemo.groups.map(group => `
+      <div class="count-note" style="margin-top:14px;">${group.pairLabel}</div>
+      <div class="cons-grid">
+        ${group.examples.map(e => `
+          <div class="cons-cell">
+            <div class="glyph tigalari">${e.cps.map(cp => S(cp)).join('')}</div>
+            <div class="label">${e.label}</div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+    document.getElementById('variants-subjoiner-groups').innerHTML = subjoinerGroupsHtml;
 
     // One card per registered pair: default ligature on top, then each
     // alternate stacked below it behind a dashed divider - same .cons-cell

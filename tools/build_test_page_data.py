@@ -221,10 +221,20 @@ CONJUNCT_VS_OFFSET = 10
 consonant_names = set(classification.get("consonant", []))
 vowel_sign_names = set(classification.get("vowel_sign", []))
 ka_cp = cp_of("ka-tutg")
+la_cp = cp_of("la-tutg")
 
 character_variants = []  # one row per (consonant base, altN): {label, cells: [[vowelSignLabel, cps], ...]}
 consonant_variant_entries = []  # one per (consonant base, altN): {label, variant, baseCp, vsCp} - reused by consonant_variant_matrix below
-vowel_variants = []      # one row per (non-consonant base, altN): {label, cps}
+# Independent vowels (a/aa/ai/.../uu) and repha stand alone fine with no base -
+# one flat gallery, shown first. Vowel-SIGN bases (uMatra/uuMatra/iiMatra/
+# lVocalicMatra) are combining marks with no independent glyph shape of their
+# own - rendered orphaned they correctly show HarfBuzz's dotted-circle
+# "invalid base" fallback, accurate but useless as a proofing display, so
+# these are collected separately and shown attached to two different base
+# consonants (KA, LA) instead, as a small matrix (see dependent_vowel_matrix
+# below), not mixed into the same flat gallery as the independent vowels.
+independent_vowel_variants = []  # {label, variant, cps}
+dependent_vowel_entries = []     # {label, variant, baseCp, vsCp} - reused by dependent_vowel_matrix below
 variant_missing = []     # (base_name, variant_name) - no cmap entry, skipped
 for base_name, variants in sorted(variant_registry.items()):
     if base_name.startswith("_"):
@@ -247,17 +257,22 @@ for base_name, variants in sorted(variant_registry.items()):
                 cells.append([vs_label, cps])
             character_variants.append({"label": label, "variant": variant_name, "cells": cells})
             consonant_variant_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
+        elif base_name in vowel_sign_names:
+            dependent_vowel_entries.append({"label": label, "variant": variant_name, "baseCp": base_cp, "vsCp": vs_cp})
         else:
-            # Vowel-SIGN bases (uMatra/uuMatra/iiMatra/lVocalicMatra) are
-            # combining marks with no independent glyph shape of their own -
-            # rendered orphaned (no preceding consonant) they correctly show
-            # HarfBuzz's dotted-circle "invalid base" fallback, which is
-            # accurate but useless as a proofing display. Prefix KA so they're
-            # shown attached the way they'd actually appear in real text.
-            # Independent vowels and repha (the rest of this branch) stand
-            # alone fine and get no prefix.
-            prefix = [ka_cp] if base_name in vowel_sign_names else []
-            vowel_variants.append({"label": label, "variant": variant_name, "cps": prefix + [base_cp, vs_cp]})
+            independent_vowel_variants.append({"label": label, "variant": variant_name, "cps": [base_cp, vs_cp]})
+
+# Dependent (vowel-sign) variants shown attached to two different base
+# consonants (KA, LA) as two rows, rather than just one - makes it easier to
+# tell "this is the vowel-sign's own shape" from "this happens to be how it
+# looks specifically after KA".
+dependent_vowel_matrix = {
+    "columnLabels": [e["label"] for e in dependent_vowel_entries],
+    "rows": [
+        {"rowLabel": "KA", "cells": [[ka_cp, e["baseCp"], e["vsCp"]] for e in dependent_vowel_entries]},
+        {"rowLabel": "LA", "cells": [[la_cp, e["baseCp"], e["vsCp"]] for e in dependent_vowel_entries]},
+    ],
+}
 
 # Consonant Variant Matrix: every registered consonant-variant entry (24, e.g.
 # "bha alt1", "da alt1", "da alt2", ...) crossed against every OTHER registered
@@ -305,22 +320,33 @@ for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {})
         })
 
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
-# KA+KA as a simple, always-available representative example (unlike the
-# conjunct-ligature alternates above, this mechanism works for ANY consonant
-# pair, not just a registered list, so one clear example stands in for all of
-# them rather than enumerating 36x36 pairs).
-subjoiner_demo = {
-    "examples": [
-        {"label": "KA + KA (plain, no conjoiner)", "cps": [ka_cp, ka_cp]},
-        {"label": "KA + conjoiner + KA (default conjunct)", "cps": [ka_cp, conjoiner_cp, ka_cp]},
-        {"label": "KA + conjoiner + VS1 + KA (forced below-base)", "cps": [ka_cp, conjoiner_cp, VS_CP[1], ka_cp]},
-    ],
-}
+# 3 representative pairs (unlike the conjunct-ligature alternates above, this
+# mechanism works for ANY consonant pair, not just a registered list, so a
+# handful of examples stand in for all of them rather than enumerating 36x36
+# pairs): KA+KA (geminate), NGA+KA and KA+YA (two different-consonant pairs),
+# each shown 3 ways - plain/default conjunct/forced below-base.
+SUBJOINER_DEMO_PAIRS = [("ka-tutg", "ka-tutg"), ("nga-tutg", "ka-tutg"), ("ka-tutg", "ya-tutg")]
+subjoiner_demo_groups = []
+for first_name, second_name in SUBJOINER_DEMO_PAIRS:
+    first_cp = cp_of(first_name)
+    second_cp = cp_of(second_name)
+    first_label = first_name[: -len("-tutg")].upper()
+    second_label = second_name[: -len("-tutg")].upper()
+    subjoiner_demo_groups.append({
+        "pairLabel": f"{first_label}_{second_label}",
+        "examples": [
+            {"label": f"{first_label} + {second_label} (plain, no conjoiner)", "cps": [first_cp, second_cp]},
+            {"label": f"{first_label} + conjoiner + {second_label} (default conjunct)", "cps": [first_cp, conjoiner_cp, second_cp]},
+            {"label": f"{first_label} + conjoiner + VS1 + {second_label} (forced below-base)", "cps": [first_cp, conjoiner_cp, VS_CP[1], second_cp]},
+        ],
+    })
+subjoiner_demo = {"groups": subjoiner_demo_groups}
 
 variant_registry_data = {
+    "independentVowelVariants": independent_vowel_variants,
     "characterVariants": character_variants,
     "consonantVariantMatrix": consonant_variant_matrix,
-    "vowelVariants": vowel_variants,
+    "dependentVowelMatrix": dependent_vowel_matrix,
     "conjunctVariants": conjunct_variants,
     "subjoinerDemo": subjoiner_demo,
 }
@@ -361,7 +387,8 @@ print("Matrix:", len(matrix["rows"]), "consonants x", len(matrix["vowelSignLabel
 print("Conjunct matrix:", len(conjunct_matrix["rows"]), "x", len(conjunct_matrix["consonants"]))
 print("Variant registry - character variants:", len(character_variants))
 print("Variant registry - consonant variant matrix:", len(consonant_variant_matrix["labels"]), "x", len(consonant_variant_matrix["labels"]))
-print("Variant registry - vowel variants:", len(vowel_variants))
+print("Variant registry - independent vowel variants:", len(independent_vowel_variants))
+print("Variant registry - dependent vowel variants (columns):", len(dependent_vowel_entries))
 print("Variant registry - conjunct variants:", len(conjunct_variants))
 print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
 print("Unicode chars:", len(unicode_chars))
