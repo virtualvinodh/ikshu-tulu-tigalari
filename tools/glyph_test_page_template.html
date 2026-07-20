@@ -582,7 +582,8 @@
         <div id="vm-conjsign-row-filter"></div>
         <div id="vm-conjsign-col-filter"></div>
       </div>
-      <div id="vm-conjsign-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+      <div id="vm-conjsign-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;"></div>
+      <div id="vm-conjsign-mark-select" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
     </div>
     <table class="test-table" id="vm-conjsign-table"></table>
 
@@ -598,7 +599,8 @@
         <div id="vm-charvar-row-filter"></div>
         <div id="vm-charvar-col-filter"></div>
       </div>
-      <div id="vm-charvar-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+      <div id="vm-charvar-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;"></div>
+      <div id="vm-charvar-mark-select" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
     </div>
     <table class="test-table" id="vm-charvar-table"></table>
 
@@ -1161,6 +1163,7 @@
     let cons2Choice = 'None';
     let cons2Position = 'suffix'; // 'suffix' (Row+Cons) | 'prefix' (Cons+Row)
     let showBase = false;
+    let markChoice = 'None'; // 'None' | a key in DATA.matrix.markOptions
     const rowDropdown = createFilterDropdown(`${prefix}-row-filter`, rowLabels, rowAxisLabel, () => render());
     const colDropdown = createFilterDropdown(`${prefix}-col-filter`, colLabels, 'Vowel signs', () => render());
     const collapse = makeCollapseButtons(`${prefix}-collapse-select`, () => render());
@@ -1208,11 +1211,37 @@
       if (cons2Position === 'prefix') return [cp2, CONJOINER_CP].concat(baseCps);
       return baseCps.concat([CONJOINER_CP, cp2]);
     }
+    function renderMarkSelect() {
+      const wrap = document.getElementById(`${prefix}-mark-select`);
+      wrap.innerHTML = '';
+      ['None'].concat(Object.keys(DATA.matrix.markOptions)).forEach(key => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (markChoice === key ? ' active' : '');
+        chip.textContent = key === 'None' ? 'Mark: None' : key;
+        chip.onclick = () => { markChoice = key; render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    // Gemination attaches directly to the consonant cluster, before any vowel
+    // sign; Svarita/Anudatta normally land after everything (including the
+    // vowel sign), EXCEPT before Candrabindu/Anusvara/Visarga specifically -
+    // same ordering rules the Syllable Matrix/Conjunct Matrix already use.
     function seqFor(ri, ci, augmented) {
       const row = rows[ri];
-      const base = augmented ? applyCons2(row.variantBaseCps) : row.variantBaseCps;
-      const signCp = row.cells[ci].signCp;
-      return signCp !== null && signCp !== undefined ? base.concat([signCp]) : base;
+      let base = augmented ? applyCons2(row.variantBaseCps) : row.variantBaseCps;
+      const cell = row.cells[ci];
+      const signCp = cell.signCp;
+      const hasSign = signCp !== null && signCp !== undefined;
+      if (markChoice === 'Gemination') base = base.concat([DATA.matrix.markOptions.Gemination.cp]);
+      const accentBeforeSign = hasSign && SIGN_AFTER_ACCENT.has(cell.label) &&
+        (markChoice === 'Svarita' || markChoice === 'Anudatta');
+      if (accentBeforeSign) base = base.concat([DATA.matrix.markOptions[markChoice].cp]);
+      let result = hasSign ? base.concat([signCp]) : base;
+      if (markChoice !== 'None' && markChoice !== 'Gemination' && !accentBeforeSign) {
+        const mark = DATA.matrix.markOptions[markChoice];
+        result = mark.position === 'prefix' ? [mark.cp].concat(result) : result.concat([mark.cp]);
+      }
+      return result;
     }
     function augLabel(label) {
       if (cons2Choice === 'None') return label;
@@ -1223,6 +1252,7 @@
       renderCons2Quick();
       renderCons2Position();
       renderShowBaseToggle();
+      renderMarkSelect();
       const rowIdxs = rowLabels.map((l, i) => i).filter(i => rowDropdown.selected.has(rowLabels[i]));
       const colIdxs = colLabels.map((l, i) => i).filter(i => colDropdown.selected.has(colLabels[i]));
       const collapsed = collapse.mode !== 'grid';
