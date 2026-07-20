@@ -265,11 +265,7 @@ for base_name, variants in sorted(variant_registry.items()):
 # happens when TWO variant-selected consonant forms are conjoined together
 # (typed as ROW's base+VS, then conjoiner, then COL's base+VS - so
 # TutgVariantSelect resolves both to their .altN forms BEFORE TutgAkhand/blwf
-# ever see the pair, since TutgVariantSelect is akhn's first lookup). Distinct
-# from the Conjunct Variant Matrix above, which crosses plain DEFAULT
-# consonants and highlights the 17 pairs with a registered ligature-level
-# alternate - this one is about what happens when the CONSONANTS themselves
-# are already in an alternate form going into the conjunct.
+# ever see the pair, since TutgVariantSelect is akhn's first lookup).
 consonant_variant_matrix = {
     "labels": [e["label"] for e in consonant_variant_entries],
     "rows": [],
@@ -308,36 +304,6 @@ for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {})
             "alts": alts,
         })
 
-# Conjunct Variant Matrix: same idea as conjunct_variants above, but laid out
-# as a full 36x36 grid (every consonant x every consonant, same shape as the
-# Conjunct Matrix tab) instead of a flat list of just the 17 registered pairs -
-# lets the 17 registered pairs be spotted at a glance against the full set of
-# possible conjuncts, most of which have no registered alternate at all (those
-# cells still show the real default conjunct, exactly like Conjunct Matrix
-# already does for pairs with no dedicated akhn ligature).
-conjunct_variant_lookup = {}  # (first_name, second_name) -> [{"variant", "vsCp"}, ...]
-for first_name, seconds in variant_registry.get("_conjunct_variants", {}).items():
-    for second_name, variants in seconds.items():
-        entries = []
-        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
-            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
-            if vs_cp is not None:
-                entries.append({"variant": variant_name, "vsCp": vs_cp})
-        conjunct_variant_lookup[(first_name, second_name)] = entries
-
-conjunct_variant_matrix = {
-    "consonants": [c["name"] for c in consonants],
-    "rows": [],
-}
-for c1 in consonants:
-    row_cells = []
-    for c2 in consonants:
-        default_cps = [c1["cp"], conjoiner_cp, c2["cp"]]
-        entries = conjunct_variant_lookup.get((c1["name"], c2["name"]), [])
-        alts = [{"variant": e["variant"], "cps": default_cps + [e["vsCp"]]} for e in entries]
-        row_cells.append({"default": default_cps, "alts": alts})
-    conjunct_variant_matrix["rows"].append(row_cells)
-
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
 # KA+KA as a simple, always-available representative example (unlike the
 # conjunct-ligature alternates above, this mechanism works for ANY consonant
@@ -356,7 +322,6 @@ variant_registry_data = {
     "consonantVariantMatrix": consonant_variant_matrix,
     "vowelVariants": vowel_variants,
     "conjunctVariants": conjunct_variants,
-    "conjunctVariantMatrix": conjunct_variant_matrix,
     "subjoinerDemo": subjoiner_demo,
 }
 
@@ -398,7 +363,6 @@ print("Variant registry - character variants:", len(character_variants))
 print("Variant registry - consonant variant matrix:", len(consonant_variant_matrix["labels"]), "x", len(consonant_variant_matrix["labels"]))
 print("Variant registry - vowel variants:", len(vowel_variants))
 print("Variant registry - conjunct variants:", len(conjunct_variants))
-print("Variant registry - conjunct variant matrix:", len(conjunct_variant_matrix["rows"]), "x", len(conjunct_variant_matrix["consonants"]))
 print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
 print("Unicode chars:", len(unicode_chars))
 print("Written to:", out_path)

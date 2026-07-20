@@ -264,13 +264,6 @@
     border-color: #c0392b;
     border-width: 2px;
   }
-  /* Conjunct Variant Matrix: flags the cells that actually have a registered
-     alternate, so they're easy to spot among the mostly-default 36x36 grid. */
-  td.variant-cell {
-    border: 2px solid var(--accent-strong) !important;
-    background: color-mix(in srgb, var(--accent) 14%, transparent);
-  }
-  td.variant-cell .alt-row { margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--accent-strong); }
 
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
   .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
@@ -552,10 +545,7 @@
     <div class="cons-grid" id="variants-subjoiner-grid"></div>
 
     <div class="count-note" id="variants-conjunct-count" style="margin-top:26px;"></div>
-    <table class="test-table" id="variants-conjunct-table"></table>
-
-    <div class="count-note" id="variants-conjunct-matrix-count" style="margin-top:26px;"></div>
-    <table class="test-table" id="variants-conjunct-matrix-table"></table>
+    <div class="cons-grid" id="variants-conjunct-grid"></div>
   </div>
   <div class="panel" id="panel-marks">
     <div class="sticky-controls">
@@ -946,45 +936,22 @@
     const subjoinerItems = VR.subjoinerDemo.examples.map(e => ({ cps: e.cps, label: e.label }));
     renderGlyphSection('variants-subjoiner-grid', subjoinerItems, 'grid');
 
-    let conjHtml = '<thead><tr><th>pair</th><th>default</th><th>alternate(s)</th></tr></thead><tbody>';
-    VR.conjunctVariants.forEach(row => {
-      const altsHtml = row.alts.map(a =>
-        `<span class="tigalari" style="margin-right:16px;" title="${a.variant}">${a.cps.map(cp => S(cp)).join('')}</span>`
-      ).join('');
-      conjHtml += `<tr><th class="label" style="background:var(--card-bg);">${row.label}</th>`;
-      conjHtml += `<td class="rendered tigalari">${row.default.map(cp => S(cp)).join('')}</td>`;
-      conjHtml += `<td class="rendered tigalari">${altsHtml}</td></tr>`;
-    });
-    conjHtml += '</tbody>';
-    document.getElementById('variants-conjunct-table').innerHTML = conjHtml;
+    // One card per registered pair: default ligature on top, then each
+    // alternate stacked below it behind a dashed divider - same .cons-cell
+    // card language as every other gallery section on this tab.
+    const conjCardsHtml = VR.conjunctVariants.map(row => {
+      const altRows = row.alts.map(a => `
+        <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
+        <div class="label">${a.variant}</div>
+      `).join('');
+      return `<div class="cons-cell">
+        <div class="glyph tigalari">${row.default.map(cp => S(cp)).join('')}</div>
+        <div class="label">${row.label} (default)</div>
+        ${altRows}
+      </div>`;
+    }).join('');
+    document.getElementById('variants-conjunct-grid').innerHTML = conjCardsHtml;
     document.getElementById('variants-conjunct-count').textContent = `Conjunct-ligature alternates (${VR.conjunctVariants.length} pairs)`;
-
-    const CVM = VR.conjunctVariantMatrix;
-    const cvmNames = CVM.consonants.map(stripTutg);
-    let registeredCount = 0;
-    let matrixHtml = '<thead><tr><th>C1 \\ C2</th>';
-    cvmNames.forEach(name => { matrixHtml += `<th>${name}</th>`; });
-    matrixHtml += '</tr></thead><tbody>';
-    CVM.rows.forEach((row, ri) => {
-      matrixHtml += `<tr><th class="label" style="background:var(--card-bg);">${cvmNames[ri]}</th>`;
-      row.forEach(cell => {
-        const defaultText = cell.default.map(cp => S(cp)).join('');
-        if (cell.alts.length) {
-          registeredCount++;
-          const altRow = cell.alts.map(a =>
-            `<span title="${a.variant}">${a.cps.map(cp => S(cp)).join('')}</span>`
-          ).join(' ');
-          matrixHtml += `<td class="rendered tigalari variant-cell">${defaultText}<div class="alt-row">${altRow}</div></td>`;
-        } else {
-          matrixHtml += `<td class="rendered tigalari">${defaultText}</td>`;
-        }
-      });
-      matrixHtml += '</tr>';
-    });
-    matrixHtml += '</tbody>';
-    document.getElementById('variants-conjunct-matrix-table').innerHTML = matrixHtml;
-    document.getElementById('variants-conjunct-matrix-count').textContent =
-      `Conjunct Variant Matrix (${cvmNames.length}x${cvmNames.length} - ${registeredCount} cells with a registered alternate, highlighted)`;
 
     setSize(document.getElementById('size-slider').value);
   }
