@@ -566,11 +566,14 @@
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <button id="vm-conjsign-transpose" class="cat-chip">Transpose</button>
         <div id="vm-conjsign-collapse-select" style="display:flex; gap:6px;"></div>
+        <div id="vm-conjsign-cons2-position" style="display:flex; gap:6px;"></div>
+        <div id="vm-conjsign-cons2-showbase" style="display:flex; gap:6px;"></div>
       </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px;">
         <div id="vm-conjsign-row-filter"></div>
         <div id="vm-conjsign-col-filter"></div>
       </div>
+      <div id="vm-conjsign-cons2-quick" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
     </div>
     <table class="test-table" id="vm-conjsign-table"></table>
 
@@ -1107,16 +1110,155 @@
 
   const VR2 = DATA.variantRegistry;
 
-  buildInteractiveMatrix({
-    tableId: 'vm-conjsign-table', countId: 'vm-conjsign-count',
-    countLabel: 'Conjunct-ligature variants x vowel signs',
-    transposeBtnId: 'vm-conjsign-transpose', collapseId: 'vm-conjsign-collapse-select',
-    rowFilterId: 'vm-conjsign-row-filter', colFilterId: 'vm-conjsign-col-filter',
-    rowAxisLabel: 'Pair/VS', colAxisLabel: 'Vowel signs',
-    rowLabels: VR2.conjunctVariantSigns.map(r => r.label),
-    colLabels: VR2.conjunctVariantSigns.length ? VR2.conjunctVariantSigns[0].cells.map(c => c.label) : [],
-    cell: (ri, ci) => VR2.conjunctVariantSigns[ri].cells[ci],
-  });
+  // Conjunct-ligature variants x vowel signs gets the full Syllable-Matrix
+  // toolkit (not just transpose/collapse/filter like the other two matrices):
+  // a "Cons2" quick-select to insert a third consonant via conjoiner
+  // (prefix - Cons+Row, or suffix - Row+Cons), and a Show-base toggle that
+  // doubles the outer axis so the un-augmented row/column sits right next to
+  // the augmented one. Own small CONS2_OPTIONS/CONJOINER_CP here (not reusing
+  // MATRIX_CONS2_OPTIONS/MATRIX_CONJOINER_CP from the Syllable Matrix section
+  // further down - those are declared with const, not hoisted like the
+  // function declarations above, so referencing them this early would hit
+  // the temporal dead zone).
+  (function buildConjSignMatrix() {
+    const rows = VR2.conjunctVariantSigns;
+    const rowLabels = rows.map(r => r.label);
+    const colLabels = rows.length ? rows[0].cells.map(c => c.label) : [];
+    const CONS2_OPTIONS = {};
+    DATA.matrix.rows.forEach(r => { CONS2_OPTIONS[stripTutg(r.consonant)] = r.cells[0][0]; });
+    const CONJOINER_CP = DATA.conjunctMatrix.rows[0][0][1];
+
+    let transposed = false;
+    let cons2Choice = 'None';
+    let cons2Position = 'suffix'; // 'suffix' (Row+Cons) | 'prefix' (Cons+Row)
+    let showBase = false;
+    const rowDropdown = createFilterDropdown('vm-conjsign-row-filter', rowLabels, 'Pair/VS', () => render());
+    const colDropdown = createFilterDropdown('vm-conjsign-col-filter', colLabels, 'Vowel signs', () => render());
+    const collapse = makeCollapseButtons('vm-conjsign-collapse-select', () => render());
+
+    function renderCons2Quick() {
+      const wrap = document.getElementById('vm-conjsign-cons2-quick');
+      wrap.innerHTML = '';
+      const noneChip = document.createElement('div');
+      noneChip.className = 'cat-chip' + (cons2Choice === 'None' ? ' active' : '');
+      noneChip.textContent = 'Add consonant: None';
+      noneChip.onclick = () => { cons2Choice = 'None'; renderCons2Quick(); render(); };
+      wrap.appendChild(noneChip);
+      Object.keys(CONS2_OPTIONS).forEach(name => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (cons2Choice === name ? ' active' : '');
+        chip.textContent = name;
+        chip.onclick = () => { cons2Choice = (cons2Choice === name ? 'None' : name); renderCons2Quick(); render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    function renderCons2Position() {
+      const wrap = document.getElementById('vm-conjsign-cons2-position');
+      wrap.innerHTML = '';
+      [['prefix', 'Cons + Row'], ['suffix', 'Row + Cons']].forEach(([key, label]) => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip' + (cons2Position === key ? ' active' : '');
+        chip.textContent = label;
+        chip.onclick = () => { cons2Position = key; renderCons2Position(); render(); };
+        wrap.appendChild(chip);
+      });
+    }
+    function renderShowBaseToggle() {
+      const wrap = document.getElementById('vm-conjsign-cons2-showbase');
+      wrap.innerHTML = '';
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip' + (showBase ? ' active' : '');
+      chip.textContent = 'Show base: ' + (showBase ? 'On' : 'Off');
+      chip.onclick = () => { showBase = !showBase; renderShowBaseToggle(); render(); };
+      wrap.appendChild(chip);
+    }
+
+    function applyCons2(baseCps) {
+      if (cons2Choice === 'None') return baseCps;
+      const cp2 = CONS2_OPTIONS[cons2Choice];
+      if (cons2Position === 'prefix') return [cp2, CONJOINER_CP].concat(baseCps);
+      return baseCps.concat([CONJOINER_CP, cp2]);
+    }
+    function seqFor(ri, ci, augmented) {
+      const row = rows[ri];
+      const base = augmented ? applyCons2(row.variantBaseCps) : row.variantBaseCps;
+      const signCp = row.cells[ci].signCp;
+      return signCp !== null ? base.concat([signCp]) : base;
+    }
+    function augLabel(label) {
+      if (cons2Choice === 'None') return label;
+      return cons2Position === 'prefix' ? `${cons2Choice}+${label}` : `${label}+${cons2Choice}`;
+    }
+
+    function render() {
+      renderCons2Quick();
+      renderCons2Position();
+      renderShowBaseToggle();
+      const rowIdxs = rowLabels.map((l, i) => i).filter(i => rowDropdown.selected.has(rowLabels[i]));
+      const colIdxs = colLabels.map((l, i) => i).filter(i => colDropdown.selected.has(colLabels[i]));
+      const collapsed = collapse.mode !== 'grid';
+      const sep = collapse.mode === 'collapse-space' ? ' ' : '';
+      const cons2Active = cons2Choice !== 'None';
+      const doubleOuter = cons2Active && showBase;
+      const outerIdxs = transposed ? colIdxs : rowIdxs;
+      const innerIdxs = transposed ? rowIdxs : colIdxs;
+      const outerLabels = transposed ? colLabels : rowLabels;
+      const innerLabels = transposed ? rowLabels : colLabels;
+
+      function seq(oi, ii, augmented) {
+        const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+        return seqFor(ri, ci, augmented);
+      }
+      function cellText(oi, ii) {
+        const [ri, ci] = transposed ? [ii, oi] : [oi, ii];
+        const cell = rows[ri].cells[ci];
+        const variantText = seq(oi, ii, true).map(cp => S(cp)).join('');
+        // The default-vs-variant double-row (U/UU/Vocalic R/RR) only makes
+        // sense with no cons2 inserted - once a 3rd consonant is added,
+        // Show base (comparing augmented-vs-plain) takes over that role.
+        if (!cons2Active && cell.defaultCps) {
+          const defaultText = seq(oi, ii, false).map(cp => S(cp)).join('');
+          return `<div class="is-default">${defaultText}</div><div style="margin-top:4px; padding-top:4px; border-top:1px dashed var(--paper-line);">${variantText}</div>`;
+        }
+        return variantText;
+      }
+
+      let html = '';
+      if (!collapsed) {
+        html += '<thead><tr><th></th>';
+        innerIdxs.forEach(ii => { html += `<th>${innerLabels[ii]}</th>`; });
+        html += '</tr></thead>';
+      }
+      html += '<tbody>';
+      outerIdxs.forEach(oi => {
+        if (doubleOuter) {
+          html += `<tr><th class="label" style="background:var(--card-bg);">${outerLabels[oi]}</th>`;
+          if (collapsed) {
+            const line = innerIdxs.map(ii => seq(oi, ii, false).map(cp => S(cp)).join('')).join(sep);
+            html += `<td class="rendered tigalari">${line}</td>`;
+          } else {
+            innerIdxs.forEach(ii => { html += `<td class="rendered tigalari">${seq(oi, ii, false).map(cp => S(cp)).join('')}</td>`; });
+          }
+          html += '</tr>';
+        }
+        html += `<tr><th class="label" style="background:var(--card-bg);">${doubleOuter ? augLabel(outerLabels[oi]) : outerLabels[oi]}</th>`;
+        if (collapsed) {
+          const line = innerIdxs.map(ii => seq(oi, ii, true).map(cp => S(cp)).join('')).join(sep);
+          html += `<td class="rendered tigalari">${line}</td>`;
+        } else {
+          innerIdxs.forEach(ii => { html += `<td class="rendered tigalari">${cellText(oi, ii)}</td>`; });
+        }
+        html += '</tr>';
+      });
+      html += '</tbody>';
+      document.getElementById('vm-conjsign-table').innerHTML = html;
+      document.getElementById('vm-conjsign-count').textContent =
+        `Conjunct-ligature variants x vowel signs (${rowLabels.length}x${colLabels.length})`;
+      setSize(document.getElementById('size-slider').value);
+    }
+    document.getElementById('vm-conjsign-transpose').addEventListener('click', () => { transposed = !transposed; render(); });
+    render();
+  })();
 
   buildInteractiveMatrix({
     tableId: 'vm-charvar-table', countId: 'vm-charvar-count',

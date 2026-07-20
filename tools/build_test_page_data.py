@@ -405,11 +405,21 @@ for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {})
             cells = []
             for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
                 variant_cps = variant_base_cps + ([] if sign_cp is None else [sign_cp])
-                cell = {"label": vs_sign_label, "variantCps": variant_cps}
+                # signCp exposed separately (nullable) alongside the merged
+                # cps - lets the JS side reconstruct "row-base + inserted
+                # consonant + sign" for the cons2/show-base controls instead
+                # of only ever having the flat pre-merged sequence to work with.
+                cell = {"label": vs_sign_label, "variantCps": variant_cps, "signCp": sign_cp}
                 if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
                     cell["defaultCps"] = default_cps + ([] if sign_cp is None else [sign_cp])
                 cells.append(cell)
-            conjunct_variant_signs.append({"label": f"{pair_label} {vs}", "variant": variant_name, "cells": cells})
+            conjunct_variant_signs.append({
+                "label": f"{pair_label} {vs}",
+                "variant": variant_name,
+                "variantBaseCps": variant_base_cps,
+                "defaultBaseCps": default_cps,
+                "cells": cells,
+            })
 
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
 # 3 representative pairs (unlike the conjunct-ligature alternates above, this
