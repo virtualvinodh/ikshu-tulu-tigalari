@@ -32,6 +32,14 @@ auto-generated rule (built by build_input_sequence()) matches on repha-tutg.alt1
 X accordingly, even though the glyph's *name* starts with "ra" - see that
 function's docstring for the full reasoning and why RA+own-vowel-sign ligatures
 like ra_uMatra-tutg are excluded from this.
+
+Variation-selector variants (added 2026-07-20): two more lookups, TutgVariantSelect
+and TutgSubjoinerForm, run before TutgRephaUpgrade/TutgAkhand - see their own
+comments below for what each does and why they're both first. Chose real lookups
+inside `akhn` over a separate `rlig`-tagged feature or a cmap format 14 hack:
+`rlig` isn't part of the fixed feature set Indic/USE shapers actually apply by
+default, so it silently does nothing in real applications; `akhn`, by contrast,
+is already relied on for everything else in this font.
 """
 import json
 import os
@@ -44,6 +52,8 @@ with open(os.path.join(HERE, "gsub_ignore_list.json"), encoding="utf-8") as f:
     IGNORE = json.load(f)
 with open(os.path.join(HERE, "names_override.json"), encoding="utf-8") as f:
     NAMES_OVERRIDE = json.load(f)
+with open(os.path.join(HERE, "variant_registry.json"), encoding="utf-8") as f:
+    VARIANT_REGISTRY = json.load(f)
 
 CONSONANTS = {"ka", "kha", "ga", "gha", "nga", "ca", "cha", "ja", "jha", "nya", "tta", "ttha", "dda", "ddha", "nna",
               "ta", "tha", "da", "dha", "na", "pa", "pha", "ba", "bha", "ma", "ya", "ra", "la", "va", "sha", "ssa",
@@ -147,6 +157,94 @@ def build_input_sequence(resolved_parts):
 # first line of the lookup block rather than sorted in with the rest.
 REPHA_FIRST_RULE = (["repha-tutg"], "repha-tutg.alt1")
 
+# --- Variation-selector-driven glyph variants (added 2026-07-20) ---
+#
+# variant_registry.json's top-level entries (single base glyph -> {selector
+# index: alternate glyph}) become a real GSUB lookup here, TutgVariantSelect -
+# "sub bha-tutg vs1-tutg by bha-tutg.alt1;" and so on - instead of the earlier
+# prototype's cmap format 14 approach. See generate_vs_glyphs.py for why
+# vs1-tutg/vs2-tutg/vs3-tutg exist as real, ordinary encoded glyphs (U+FE00-
+# U+FE02): GSUB can only match glyph IDs, never Unicode codepoints directly, so
+# the selector characters need a real glyph identity before any `sub` rule can
+# reference them at all.
+#
+# This must be the FIRST lookup in the feature (before TutgRephaUpgrade and
+# TutgAkhand) so a requested variant is already resolved before any conjunct-
+# forming rule gets a chance to see the base glyph - same reasoning
+# TutgRephaUpgrade already establishes for repha-tutg -> repha-tutg.alt1 (which
+# is really the same pattern, just hand-written instead of registry-driven).
+#
+# registry["_conjunct_variants"] (two-consonant ligature alternates, e.g.
+# bha_ra-tutg -> bha_ra-tutg.alt1) is deliberately NOT included here - shelved
+# for now, see TutgSubjoinerForm below for the mechanism actually used instead.
+ALL_CLASSIFIED_GLYPHS = {n for category in d.values() for n in category}
+VARIANT_SELECT_RULES = []       # (base_name, vs_glyph, variant_name)
+variant_select_missing = []     # (base_name, variant_name) - not a known glyph, skipped
+for base_name, variants in sorted(VARIANT_REGISTRY.items()):
+    if base_name.startswith("_"):
+        continue
+    for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+        if base_name not in ALL_CLASSIFIED_GLYPHS or variant_name not in ALL_CLASSIFIED_GLYPHS:
+            variant_select_missing.append((base_name, variant_name))
+            continue
+        vs_glyph = f"vs{int(index_str)}-tutg"
+        VARIANT_SELECT_RULES.append((base_name, vs_glyph, variant_name))
+
+# --- Subjoiner formation (added 2026-07-20) ---
+#
+# "conjoiner-tutg + vs1-tutg" (typed to request forced below-base stacking
+# instead of whatever akhn/blwf would otherwise produce) collapses into a
+# single real glyph, subjoiner-tutg, so that blwf's own lookup only ever needs
+# a plain 2-glyph pattern ("subjoiner-tutg + CONSONANT -> CONSONANT.below",
+# see generate_blwf_feature.py's TutgBlwfSubjoiner) instead of having to
+# recognize a longer "CONS1 conjoiner-tutg vs1-tutg CONS2" sequence itself.
+# Reusing VS1 (rather than a dedicated index) is safe: TutgVariantSelect's
+# rules are keyed off variant_registry.json, which has no "conjoiner-tutg"
+# entry, so nothing there ever starts with conjoiner-tutg - this rule and any
+# "<other base> + vs1-tutg" rule can never both match the same input, no
+# matter which lookup either lives in.
+# Must be its OWN lookup (not folded into TutgVariantSelect above) so it runs
+# as a full separate pass, same reasoning as TutgRephaUpgrade/TutgAkhand's
+# split: a single lookup won't re-examine a glyph it just substituted, and
+# here nothing downstream needs to re-examine conjoiner-tutg/vs1-tutg anyway,
+# so a second lookup (not merged into the first) keeps this independent and
+# easy to reason about on its own.
+SUBJOINER_RULE = (["conjoiner-tutg", "vs1-tutg"], "subjoiner-tutg")
+
+# --- Conjunct-ligature alternates (added 2026-07-20) ---
+#
+# registry["_conjunct_variants"] (e.g. ca_ca-tutg -> ca_ca-tutg.alt1) becomes
+# TutgConjunctVariantSelect, the LAST lookup in this feature - it runs AFTER
+# TutgAkhand, not before/inside it, because by then TutgAkhand has already
+# collapsed e.g. "ca-tutg conjoiner-tutg ca-tutg" into the single glyph
+# ca_ca-tutg, so this only needs a plain 2-glyph rule keyed on the ligature's
+# own OUTPUT name - "sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;" - same
+# "match the output, not the raw input sequence" principle blwf's per-ligature
+# rules already rely on. Has to be its own lookup for the same reason
+# TutgRephaUpgrade/TutgAkhand are split: a single lookup won't re-examine a
+# glyph an earlier rule (here, TutgAkhand) just produced in the same pass.
+#
+# Index offset by +10 (registry index "1" -> VS11, "2" -> VS12) purely to keep
+# this layer's selectors visually distinct from TutgVariantSelect's VS1-VS6
+# and TutgSubjoinerForm's VS1 - see variant_registry.json's
+# "_conjunct_variants_readme" for why that's a convenience, not a requirement
+# (GSUB always disambiguates by the full starting glyph, never the selector
+# alone, so index reuse across layers is never actually ambiguous).
+CONJUNCT_VS_OFFSET = 10
+CONJUNCT_VARIANT_RULES = []      # (ligature_name, vs_glyph, variant_name)
+conjunct_variant_missing = []    # (ligature_name, variant_name) - not a known glyph, skipped
+for first_name, seconds in sorted(VARIANT_REGISTRY.get("_conjunct_variants", {}).items()):
+    first_base = first_name[: -len("-tutg")]
+    for second_name, variants in sorted(seconds.items()):
+        second_base = second_name[: -len("-tutg")]
+        ligature_name = f"{first_base}_{second_base}-tutg"
+        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+            if ligature_name not in ALL_CLASSIFIED_GLYPHS or variant_name not in ALL_CLASSIFIED_GLYPHS:
+                conjunct_variant_missing.append((ligature_name, variant_name))
+                continue
+            vs_glyph = f"vs{CONJUNCT_VS_OFFSET + int(index_str)}-tutg"
+            CONJUNCT_VARIANT_RULES.append((ligature_name, vs_glyph, variant_name))
+
 
 rules = []          # list of (seq_list, output_glyph_name)
 alt_candidates = {}  # default output glyph -> [alt glyph names]
@@ -232,6 +330,16 @@ with open(out_path, "w", encoding="utf-8") as f:
 
     f.write("feature akhn {\n")
     f.write("    script tutg;\n")
+    f.write("    lookup TutgVariantSelect {\n")
+    f.write("        # Base glyph + variation selector -> registered alternate glyph.\n")
+    for base_name, vs_glyph, variant_name in VARIANT_SELECT_RULES:
+        f.write(f"        sub {base_name} {vs_glyph} by {variant_name};\n")
+    f.write("    } TutgVariantSelect;\n")
+    f.write("    lookup TutgSubjoinerForm {\n")
+    f.write("        # Conjoiner + VS1 -> subjoiner-tutg (forces below-base stacking - see blwf's TutgBlwfSubjoiner).\n")
+    subjoiner_seq, subjoiner_out = SUBJOINER_RULE
+    f.write(f"        sub {' '.join(subjoiner_seq)} by {subjoiner_out};\n")
+    f.write("    } TutgSubjoinerForm;\n")
     # Must be its OWN lookup, applied as a separate pass BEFORE TutgAkhand - not
     # just the first rule inside the same lookup. Confirmed 2026-07-17 via
     # uharfbuzz shaping: within a single GSUB lookup, HarfBuzz scans left-to-right
@@ -253,6 +361,11 @@ with open(out_path, "w", encoding="utf-8") as f:
     for seq, out in rules:
         f.write(f"        sub {' '.join(seq)} by {out};\n")
     f.write("    } TutgAkhand;\n")
+    f.write("    lookup TutgConjunctVariantSelect {\n")
+    f.write("        # Conjunct ligature + variation selector -> registered alternate ligature.\n")
+    for ligature_name, vs_glyph, variant_name in CONJUNCT_VARIANT_RULES:
+        f.write(f"        sub {ligature_name} {vs_glyph} by {variant_name};\n")
+    f.write("    } TutgConjunctVariantSelect;\n")
     f.write("} akhn;\n\n")
 
     f.write("# --- Stylistic alternates (candidates for a later salt/ss0N feature, NOT included above) ---\n")
@@ -268,7 +381,21 @@ with open(out_path, "w", encoding="utf-8") as f:
     for gname in rules_skipped_by_ignore:
         f.write(f"# {gname}: {IGNORE[gname]}\n")
 
+    if variant_select_missing:
+        f.write("\n# --- Skipped: variant_registry.json entry referencing an unknown glyph ---\n")
+        for base_name, variant_name in variant_select_missing:
+            f.write(f"# {base_name} -> {variant_name}\n")
+
+    if conjunct_variant_missing:
+        f.write("\n# --- Skipped: _conjunct_variants entry referencing an unknown glyph ---\n")
+        for ligature_name, variant_name in conjunct_variant_missing:
+            f.write(f"# {ligature_name} -> {variant_name}\n")
+
 print(f"Total akhn rules: {len(rules)} + 1 hand-written (REPHA_FIRST_RULE)")
+print(f"Variant-select rules (TutgVariantSelect): {len(VARIANT_SELECT_RULES)}")
+print(f"Variant-select entries skipped (unknown glyph): {len(variant_select_missing)} {variant_select_missing}")
+print(f"Conjunct-variant rules (TutgConjunctVariantSelect): {len(CONJUNCT_VARIANT_RULES)}")
+print(f"Conjunct-variant entries skipped (unknown glyph): {len(conjunct_variant_missing)} {conjunct_variant_missing}")
 print(f"Longest sequence: {len(rules[0][0])} glyphs ({rules[0][1]})")
 print(f"Shortest sequence: {len(rules[-1][0])} glyphs ({rules[-1][1]})")
 print(f"Stylistic-alternate groups (not included, listed separately): {len(alt_candidates)}")

@@ -1,0 +1,65 @@
+{
+  "_readme": "Prototype registry for selecting stylistic-alternate glyphs via Unicode Variation Selectors (VS1-VS16, U+FE00-U+FE0F) instead of OpenType stylistic-set features (ssXX). Consumed by generate_variant_registry_cmap.py, which writes a 'cmap' subtable format 14 (Unicode Variation Sequences) into the compiled font: typing <base character><variation selector N> resolves to the glyph listed under key \"N\" here, via the font's cmap directly (no GSUB feature needs to be enabled by the application). Typing the base character alone (no selector) still resolves to its normal default glyph - variant selection only kicks in when the selector is actually present in the text. Index \"1\" = VS1 (U+FE00), \"2\" = VS2 (U+FE01), etc. - built from every single-codepoint glyph (consonant/independent vowel/vowel sign/special mark) that already has one or more unused '.altN' siblings in the font (32 base glyphs, up to 6 variants each, well within the 16-selector budget). PROTOTYPE (2026-07-20) - not yet wired into build_ufo.py/compile_font.py's normal pipeline; run generate_variant_registry_cmap.py directly to produce a test build. This is a private/font-specific convention, not a Unicode-registered Ideographic Variation Sequence - only this font (and any tooling that reads this registry) knows what these particular base+selector pairs mean.",
+  "bha-tutg": {"1": "bha-tutg.alt1"},
+  "ca-tutg": {"1": "ca-tutg.alt1"},
+  "cha-tutg": {"1": "cha-tutg.alt1"},
+  "da-tutg": {"1": "da-tutg.alt1", "2": "da-tutg.alt2"},
+  "dda-tutg": {"1": "dda-tutg.alt1"},
+  "ddha-tutg": {"1": "ddha-tutg.alt1"},
+  "gha-tutg": {"1": "gha-tutg.alt1", "2": "gha-tutg.alt2"},
+  "jha-tutg": {"1": "jha-tutg.alt1", "2": "jha-tutg.alt2", "3": "jha-tutg.alt3"},
+  "kha-tutg": {"1": "kha-tutg.alt1", "2": "kha-tutg.alt2"},
+  "lla-tutg": {"1": "lla-tutg.alt1"},
+  "llla-tutg": {"1": "llla-tutg.alt1"},
+  "ma-tutg": {"1": "ma-tutg.alt1", "2": "ma-tutg.alt2"},
+  "nga-tutg": {"1": "nga-tutg.alt1"},
+  "nya-tutg": {"1": "nya-tutg.alt1", "2": "nya-tutg.alt2"},
+  "ra-tutg": {"1": "ra-tutg.alt1"},
+  "rra-tutg": {"1": "rra-tutg.alt1"},
+  "va-tutg": {"1": "va-tutg.alt1"},
+  "a-tutg": {"1": "a-tutg.alt1", "2": "a-tutg.alt2"},
+  "aa-tutg": {"1": "aa-tutg.alt1", "2": "aa-tutg.alt2", "3": "aa-tutg.alt3", "4": "aa-tutg.alt4", "5": "aa-tutg.alt5"},
+  "ai-tutg": {"1": "ai-tutg.alt1"},
+  "au-tutg": {"1": "au-tutg.alt1", "2": "au-tutg.alt2"},
+  "ee-tutg": {"1": "ee-tutg.alt1"},
+  "ii-tutg": {"1": "ii-tutg.alt1", "2": "ii-tutg.alt2"},
+  "llVocalic-tutg": {"1": "llVocalic-tutg.alt1"},
+  "oo-tutg": {"1": "oo-tutg.alt1", "2": "oo-tutg.alt2"},
+  "rrVocalic-tutg": {"1": "rrVocalic-tutg.alt1", "2": "rrVocalic-tutg.alt2"},
+  "uu-tutg": {"1": "uu-tutg.alt1", "2": "uu-tutg.alt2"},
+  "iiMatra-tutg": {"1": "iiMatra-tutg.alt1"},
+  "lVocalicMatra-tutg": {"1": "lVocalicMatra-tutg.alt"},
+  "uMatra-tutg": {"1": "uMatra-tutg.alt1", "2": "uMatra-tutg.alt2", "3": "uMatra-tutg.alt3", "4": "uMatra-tutg.alt4", "5": "uMatra-tutg.alt5", "6": "uMatra-tutg.alt6"},
+  "uuMatra-tutg": {"1": "uuMatra-tutg.alt1", "2": "uuMatra-tutg.alt2", "3": "uuMatra-tutg.alt3", "4": "uuMatra-tutg.alt4"},
+  "repha-tutg": {"1": "repha-tutg.alt1"},
+  "_conjunct_variants_readme": "Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) for specific two-consonant subjoining conjuncts. Mechanism (2026-07-20, generate_akhn_feature.py's TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the time this lookup runs, TutgAkhand has already collapsed e.g. 'ca-tutg conjoiner-tutg ca-tutg' into the single glyph ca_ca-tutg, so this is just a plain 2-glyph substitution keyed on the ligature's own output name - 'sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's per-ligature rules already rely on (match the ligature's OUTPUT name, not its raw input sequence). Must be its own separate lookup, run AFTER TutgAkhand: a single GSUB lookup only substitutes once per starting position per pass and won't re-examine a glyph it (or an earlier lookup) just produced, so a rule matching the ligature glyph can't live in the same lookup that creates it. Indices here are offset by +10 (index \\\"1\\\" -> VS11, \\\"2\\\" -> VS12, ...) to keep this layer's selector range visually distinct from the base-glyph variant registry above (VS1-VS6) and the subjoiner mechanism (VS1 on the conjoiner) - though nothing stops index reuse across layers in practice, since GSUB always disambiguates by the full starting glyph, not the selector alone. Scoped to plain two-consonant conjuncts only - three-token conjuncts (e.g. ka_sa_sa-tutg) are excluded here because a VS on one of two conjoiners in a chain would be ambiguous about which pair it modifies. Candidates gathered from tutg_akhn.fea's stylistic-alternates comment block; every ligature/variant glyph referenced below was confirmed to exist in the compiled font. (Superseded an earlier conjoiner-marker-glyph + cmap14 prototype in generate_variant_registry_cmap.py, now dead/historical code - this is simpler and needed no marker glyphs at all.)",
+  "_conjunct_variants": {
+    "bha-tutg": {"ra-tutg": {"1": "bha_ra-tutg.alt1"}},
+    "ca-tutg": {
+      "ca-tutg": {"1": "ca_ca-tutg.alt1"},
+      "cha-tutg": {"1": "ca_cha-tutg.alt2"}
+    },
+    "ga-tutg": {"ga-tutg": {"1": "ga_ga-tutg.alt1"}},
+    "na-tutg": {"ka-tutg": {"1": "na_ka-tutg.alt2"}},
+    "nga-tutg": {"kha-tutg": {"1": "nga_kha-tutg.alt1"}},
+    "nna-tutg": {
+      "dda-tutg": {"1": "nna_dda-tutg.alt1"},
+      "tta-tutg": {"1": "nna_tta-tutg.alt1"}
+    },
+    "nya-tutg": {"ja-tutg": {"1": "nya_ja-tutg.alt1"}},
+    "ra-tutg": {
+      "ma-tutg": {"1": "ra_ma-tutg.alt1"},
+      "va-tutg": {"1": "ra_va-tutg.alt1"}
+    },
+    "sa-tutg": {
+      "tha-tutg": {"1": "sa_tha-tutg.alt1"},
+      "va-tutg": {"1": "sa_va-tutg.alt1"}
+    },
+    "ssa-tutg": {
+      "ssa-tutg": {"1": "ssa_ssa-tutg.alt2"},
+      "ttha-tutg": {"1": "ssa_ttha-tutg.alt1", "2": "ssa_ttha-tutg.alt2"}
+    },
+    "ta-tutg": {"ma-tutg": {"1": "ta_ma-tutg.alt1"}},
+    "ya-tutg": {"ya-tutg": {"1": "ya_ya-tutg.alt2"}}
+  }
+}

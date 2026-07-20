@@ -2516,6 +2516,8 @@
     <string>ssa_ya-tutg.glif</string>
     <key>ssa_ya-tutg.below.auto</key>
     <string>ssa_ya-tutg.below.auto.glif</string>
+    <key>subjoiner-tutg</key>
+    <string>subjoiner-tutg.glif</string>
     <key>svarita-tutg</key>
     <string>svarita-tutg.glif</string>
     <key>t</key>
@@ -2856,6 +2858,22 @@
     <string>virama_virama-tutg.glif</string>
     <key>visarga-tutg</key>
     <string>visarga-tutg.glif</string>
+    <key>vs1-tutg</key>
+    <string>vs1-tutg.glif</string>
+    <key>vs11-tutg</key>
+    <string>vs11-tutg.glif</string>
+    <key>vs12-tutg</key>
+    <string>vs12-tutg.glif</string>
+    <key>vs2-tutg</key>
+    <string>vs2-tutg.glif</string>
+    <key>vs3-tutg</key>
+    <string>vs3-tutg.glif</string>
+    <key>vs4-tutg</key>
+    <string>vs4-tutg.glif</string>
+    <key>vs5-tutg</key>
+    <string>vs5-tutg.glif</string>
+    <key>vs6-tutg</key>
+    <string>vs6-tutg.glif</string>
     <key>w</key>
     <string>w.glif</string>
     <key>x</key>

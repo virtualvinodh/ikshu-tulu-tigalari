@@ -10,6 +10,70 @@ languagesystem tutg dflt;
 
 feature akhn {
     script tutg;
+    lookup TutgVariantSelect {
+        # Base glyph + variation selector -> registered alternate glyph.
+        sub a-tutg vs1-tutg by a-tutg.alt1;
+        sub a-tutg vs2-tutg by a-tutg.alt2;
+        sub aa-tutg vs1-tutg by aa-tutg.alt1;
+        sub aa-tutg vs2-tutg by aa-tutg.alt2;
+        sub aa-tutg vs3-tutg by aa-tutg.alt3;
+        sub aa-tutg vs4-tutg by aa-tutg.alt4;
+        sub aa-tutg vs5-tutg by aa-tutg.alt5;
+        sub ai-tutg vs1-tutg by ai-tutg.alt1;
+        sub au-tutg vs1-tutg by au-tutg.alt1;
+        sub au-tutg vs2-tutg by au-tutg.alt2;
+        sub bha-tutg vs1-tutg by bha-tutg.alt1;
+        sub ca-tutg vs1-tutg by ca-tutg.alt1;
+        sub cha-tutg vs1-tutg by cha-tutg.alt1;
+        sub da-tutg vs1-tutg by da-tutg.alt1;
+        sub da-tutg vs2-tutg by da-tutg.alt2;
+        sub dda-tutg vs1-tutg by dda-tutg.alt1;
+        sub ddha-tutg vs1-tutg by ddha-tutg.alt1;
+        sub ee-tutg vs1-tutg by ee-tutg.alt1;
+        sub gha-tutg vs1-tutg by gha-tutg.alt1;
+        sub gha-tutg vs2-tutg by gha-tutg.alt2;
+        sub ii-tutg vs1-tutg by ii-tutg.alt1;
+        sub ii-tutg vs2-tutg by ii-tutg.alt2;
+        sub iiMatra-tutg vs1-tutg by iiMatra-tutg.alt1;
+        sub jha-tutg vs1-tutg by jha-tutg.alt1;
+        sub jha-tutg vs2-tutg by jha-tutg.alt2;
+        sub jha-tutg vs3-tutg by jha-tutg.alt3;
+        sub kha-tutg vs1-tutg by kha-tutg.alt1;
+        sub kha-tutg vs2-tutg by kha-tutg.alt2;
+        sub lVocalicMatra-tutg vs1-tutg by lVocalicMatra-tutg.alt;
+        sub llVocalic-tutg vs1-tutg by llVocalic-tutg.alt1;
+        sub lla-tutg vs1-tutg by lla-tutg.alt1;
+        sub llla-tutg vs1-tutg by llla-tutg.alt1;
+        sub ma-tutg vs1-tutg by ma-tutg.alt1;
+        sub ma-tutg vs2-tutg by ma-tutg.alt2;
+        sub nga-tutg vs1-tutg by nga-tutg.alt1;
+        sub nya-tutg vs1-tutg by nya-tutg.alt1;
+        sub nya-tutg vs2-tutg by nya-tutg.alt2;
+        sub oo-tutg vs1-tutg by oo-tutg.alt1;
+        sub oo-tutg vs2-tutg by oo-tutg.alt2;
+        sub ra-tutg vs1-tutg by ra-tutg.alt1;
+        sub repha-tutg vs1-tutg by repha-tutg.alt1;
+        sub rrVocalic-tutg vs1-tutg by rrVocalic-tutg.alt1;
+        sub rrVocalic-tutg vs2-tutg by rrVocalic-tutg.alt2;
+        sub rra-tutg vs1-tutg by rra-tutg.alt1;
+        sub uMatra-tutg vs1-tutg by uMatra-tutg.alt1;
+        sub uMatra-tutg vs2-tutg by uMatra-tutg.alt2;
+        sub uMatra-tutg vs3-tutg by uMatra-tutg.alt3;
+        sub uMatra-tutg vs4-tutg by uMatra-tutg.alt4;
+        sub uMatra-tutg vs5-tutg by uMatra-tutg.alt5;
+        sub uMatra-tutg vs6-tutg by uMatra-tutg.alt6;
+        sub uu-tutg vs1-tutg by uu-tutg.alt1;
+        sub uu-tutg vs2-tutg by uu-tutg.alt2;
+        sub uuMatra-tutg vs1-tutg by uuMatra-tutg.alt1;
+        sub uuMatra-tutg vs2-tutg by uuMatra-tutg.alt2;
+        sub uuMatra-tutg vs3-tutg by uuMatra-tutg.alt3;
+        sub uuMatra-tutg vs4-tutg by uuMatra-tutg.alt4;
+        sub va-tutg vs1-tutg by va-tutg.alt1;
+    } TutgVariantSelect;
+    lookup TutgSubjoinerForm {
+        # Conjoiner + VS1 -> subjoiner-tutg (forces below-base stacking - see blwf's TutgBlwfSubjoiner).
+        sub conjoiner-tutg vs1-tutg by subjoiner-tutg;
+    } TutgSubjoinerForm;
     lookup TutgRephaUpgrade {
         # Typed Repha (repha-tutg) -> ligating variant (repha-tutg.alt1).
         sub repha-tutg by repha-tutg.alt1;
@@ -474,6 +538,27 @@ feature akhn {
         sub ya-tutg uMatra-tutg by ya_uMatra-tutg;
         sub ya-tutg uuMatra-tutg by ya_uuMatra-tutg;
     } TutgAkhand;
+    lookup TutgConjunctVariantSelect {
+        # Conjunct ligature + variation selector -> registered alternate ligature.
+        sub bha_ra-tutg vs11-tutg by bha_ra-tutg.alt1;
+        sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;
+        sub ca_cha-tutg vs11-tutg by ca_cha-tutg.alt2;
+        sub ga_ga-tutg vs11-tutg by ga_ga-tutg.alt1;
+        sub na_ka-tutg vs11-tutg by na_ka-tutg.alt2;
+        sub nga_kha-tutg vs11-tutg by nga_kha-tutg.alt1;
+        sub nna_dda-tutg vs11-tutg by nna_dda-tutg.alt1;
+        sub nna_tta-tutg vs11-tutg by nna_tta-tutg.alt1;
+        sub nya_ja-tutg vs11-tutg by nya_ja-tutg.alt1;
+        sub ra_ma-tutg vs11-tutg by ra_ma-tutg.alt1;
+        sub ra_va-tutg vs11-tutg by ra_va-tutg.alt1;
+        sub sa_tha-tutg vs11-tutg by sa_tha-tutg.alt1;
+        sub sa_va-tutg vs11-tutg by sa_va-tutg.alt1;
+        sub ssa_ssa-tutg vs11-tutg by ssa_ssa-tutg.alt2;
+        sub ssa_ttha-tutg vs11-tutg by ssa_ttha-tutg.alt1;
+        sub ssa_ttha-tutg vs12-tutg by ssa_ttha-tutg.alt2;
+        sub ta_ma-tutg vs11-tutg by ta_ma-tutg.alt1;
+        sub ya_ya-tutg vs11-tutg by ya_ya-tutg.alt2;
+    } TutgConjunctVariantSelect;
 } akhn;
 
 # --- Stylistic alternates (candidates for a later salt/ss0N feature, NOT included above) ---

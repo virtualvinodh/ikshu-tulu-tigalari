@@ -2579,6 +2579,15 @@
       <string>ya_uuMatra-tutg.below.auto</string>
       <string>ya_va-tutg.below.auto</string>
       <string>ya_ya-tutg.below.auto</string>
+      <string>vs1-tutg</string>
+      <string>vs2-tutg</string>
+      <string>vs3-tutg</string>
+      <string>subjoiner-tutg</string>
+      <string>vs4-tutg</string>
+      <string>vs5-tutg</string>
+      <string>vs6-tutg</string>
+      <string>vs11-tutg</string>
+      <string>vs12-tutg</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>

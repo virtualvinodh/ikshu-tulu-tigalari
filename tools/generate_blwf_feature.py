@@ -1,7 +1,14 @@
 """
 Builds a ready-to-merge .fea file for the `blwf` (Below-base Forms) feature.
 
-Three kinds of rule now, in two lookups:
+TutgBlwfSubjoiner (added 2026-07-20, runs first): "subjoiner-tutg + consonant
+(or any registered char-variant of it) -> consonant's below-form". Forces
+below-base stacking on demand - the other half of akhn's TutgSubjoinerForm
+lookup, which collapses a typed "conjoiner + VS1" into the subjoiner-tutg
+glyph this lookup matches on. See its own comment further down for the full
+reasoning.
+
+Three more kinds of rule, in two more lookups:
 
 **Lookup `TutgBlwfDecompose`** (added 2026-07-18, runs first): a targeted fix
 for conjunct ligatures (akhn's own dedicated multi-consonant glyphs, e.g.
@@ -122,6 +129,8 @@ with open(os.path.join(HERE, "names_override.json"), encoding="utf-8") as f:
     names_override = json.load(f)
 with open(os.path.join(HERE, "blwf_decompose_ignore_list.json"), encoding="utf-8") as f:
     DECOMPOSE_IGNORE = json.load(f)
+with open(os.path.join(HERE, "variant_registry.json"), encoding="utf-8") as f:
+    VARIANT_REGISTRY = json.load(f)
 
 
 def cp_of(name):
@@ -155,13 +164,51 @@ BELOW_FORM_OVERRIDES = {"ra-tutg": "raMatra-tutg"}
 
 rules = []    # (input_seq, output_name) - input_seq always ["conjoiner-tutg", X]
 missing = []  # consonant_name
+consonant_below = {}  # consonant name -> resolved below-form name, reused below
 
 for name in consonants:
     below = BELOW_FORM_OVERRIDES.get(name, name + ".below")
     if below in glyphs:
         rules.append((["conjoiner-tutg", name], below))
+        consonant_below[name] = below
     else:
         missing.append(name)
+
+# --- TutgBlwfSubjoiner (added 2026-07-20) ---
+#
+# "subjoiner-tutg + CONSONANT -> CONSONANT.below" - the other half of the
+# akhn-side TutgSubjoinerForm lookup (generate_akhn_feature.py), which
+# collapses "conjoiner-tutg + vs3-tutg" into subjoiner-tutg. By the time this
+# lookup runs, subjoiner-tutg is just an ordinary glyph, so this is a plain
+# 2-glyph ligature substitution - same shape as the existing per-consonant
+# fallback rule above, just keyed on subjoiner-tutg instead of conjoiner-tutg.
+# Also covers every registered char-variant form of each consonant
+# (variant_registry.json's "ka-tutg" -> {"1": "ka-tutg.alt1", ...}) mapping to
+# the SAME below-form as the plain consonant, since alt/stylistic variants
+# don't get their own separate below-base miniatures - a variant selected via
+# TutgVariantSelect just before the subjoiner must still shrink correctly.
+#
+# Declared as its own explicit lookup, but - unlike TutgBlwfDecompose - INSIDE
+# feature blwf on purpose: it's meant to apply unconditionally whenever this
+# exact 2-glyph sequence occurs (same as TutgBlwf's own default rules), not
+# only when some other contextual rule references it, so the "declared inside
+# a feature block joins its default lookup set" FEA behavior is exactly what's
+# wanted here, not the bug it was for TutgBlwfDecompose. No ordering conflict
+# with TutgBlwfDecompose/TutgBlwf either - those rules all start with
+# "conjoiner-tutg" or a ligature glyph name, never "subjoiner-tutg", so there's
+# no shared starting glyph for HarfBuzz's first-match rule order to matter.
+subjoiner_rules = []          # (variant_or_plain_consonant_name, below_name)
+subjoiner_missing_variant = []  # (base_name, variant_name) registered but not a real glyph
+for name in consonants:
+    below = consonant_below.get(name)
+    if below is None:
+        continue
+    subjoiner_rules.append((name, below))
+    for index_str, variant_name in sorted(VARIANT_REGISTRY.get(name, {}).items(), key=lambda kv: int(kv[0])):
+        if variant_name not in glyphs:
+            subjoiner_missing_variant.append((name, variant_name))
+            continue
+        subjoiner_rules.append((variant_name, below))
 
 # Per-ligature rules: the ligature's own output glyph name, not its raw akhn
 # input sequence - see module docstring for why.
@@ -342,6 +389,12 @@ with open(out_path, "w", encoding="utf-8") as f:
     f.write("feature blwf {\n")
     f.write("    script tutg;\n")
 
+    f.write("    lookup TutgBlwfSubjoiner {\n")
+    f.write("        # subjoiner-tutg (conjoiner + VS1, formed in akhn) + consonant -> consonant's below-form.\n")
+    for name, below in subjoiner_rules:
+        f.write(f"        sub subjoiner-tutg {name} by {below};\n")
+    f.write("    } TutgBlwfSubjoiner;\n\n")
+
     if decompose_rules:
         for missing_key in sorted(trigger_groups):
             ligs = sorted(trigger_groups[missing_key])
@@ -397,6 +450,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n# --- (consonant, vowel-sign root) compound glyphs with no below-form at all (see BLWF_TODO.md) ---\n")
         for consonant, root in compound_no_below:
             f.write(f"# {consonant} + {root}\n")
+
+    if subjoiner_missing_variant:
+        f.write("\n# --- TutgBlwfSubjoiner: variant_registry.json entry skipped, not a real glyph ---\n")
+        for name, variant_name in subjoiner_missing_variant:
+            f.write(f"# {name} -> {variant_name}\n")
 
 # markdown report - written even when nothing is missing, so a re-run's "all clear"
 # is an explicit, checkable fact rather than the mere absence of a file.
@@ -516,5 +574,7 @@ print(f"Decompose skipped (last component not a plain consonant): {len(decompose
 print(f"Decompose ligatures with no known akhn input sequence: {len(decompose_no_input_seq)} {decompose_no_input_seq}")
 print(f"Needed compound pairs with no glyph at all: {len(compound_no_glyph)} {compound_no_glyph}")
 print(f"Needed compound pairs with no below-form: {len(compound_no_below)} {compound_no_below}")
+print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)}")
+print(f"TutgBlwfSubjoiner variant entries skipped (not a real glyph): {len(subjoiner_missing_variant)} {subjoiner_missing_variant}")
 print("Written to:", out_path)
 print("Written to:", report_path)
