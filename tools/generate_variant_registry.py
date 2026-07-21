@@ -13,22 +13,38 @@ sections by what the base actually is:
 
   - Single glyph (registry's top-level entries): base is classified as a
     "consonant", "vowel_independent", "vowel_sign", or "special_mark" (repha) -
-    i.e. one real Unicode character with its own alt presentation forms.
-  - Two-consonant conjunct ligature (registry["_conjunct_variants"]): base is
-    "<first>_<second>-tutg" where both "<first>-tutg" and "<second>-tutg" are
-    real, classified consonants - a real conjunct ligature glyph with its own
-    stylistic alternate(s).
+    one real Unicode character with its own alt presentation forms. Consumed
+    by generate_akhn_feature.py's TutgVariantSelect (akhn's first lookup).
 
-Anything else with an ".altN" sibling (compound consonant+vowel-sign ligatures
-like ka_uMatra-tutg.alt, 3+ consonant conjuncts like ka_sa_sa-tutg.alt1, or a
-base that turns out not to be a real glyph at all - a few genuine typos/
-internal-tool artifacts already in the font, e.g. "_smart.vamatra-tutg.alt1")
-is reported instead of guessed at, in VARIANT_REGISTRY_TODO.md - same
-principle as every other gap in this project's GSUB tooling. Confirmed via a
-2026-07 audit that every one of the current file's existing entries (57
-single-glyph, 18 conjunct-ligature) round-trips through this script unchanged;
-the "unclassified" list is new territory (mostly consonant+vowel-sign-ligature
-alternates) this registry has never covered, not a regression.
+  - Ligature (registry["_ligature_variants"]): base is classified under
+    "conjunct_ligature", "vowel_sign_ligature", or "looped_virama_ligature" -
+    i.e. it's a real output of one of TutgAkhand's own ligature-formation
+    rules (confirmed against tutg_akhn_rules.json), regardless of how many
+    tokens its name has or what they represent (two consonants, a consonant +
+    its own vowel sign, three consonants, a consonant+consonant+vowel-sign
+    mix, a Chillu form, ...). Consumed by generate_akhn_feature.py's
+    TutgConjunctVariantSelect (akhn's last lookup), which just matches
+    "ligature glyph + VSn -> alt glyph" - it never needed to know what KIND
+    of ligature it is, only that TutgAkhand already produced it as a single
+    glyph by the time this lookup runs. An earlier version of this script
+    tried to hand-decompose ligature names into "first consonant + second
+    consonant" and only handled the 2-consonant and consonant+vowel-sign
+    cases (as two separate registry sections) - unnecessary complexity that
+    also meant genuine 3+-token ligatures (ka_sa_sa-tutg, na_ka_ta-tutg,
+    na_ta_sa-tutg, sha_ra_iiMatra-tutg) and Chillu forms (ttChillu-tutg) sat
+    unhandled in VARIANT_REGISTRY_TODO.md even though they need zero special
+    handling - the classification-category check below is both simpler and
+    strictly more correct.
+
+Anything else with an ".altN" sibling - a base that isn't a real TutgAkhand
+ligature output at all (e.g. vamatra-tutg, classified as
+"vowel_sign_component" - a drawing component used inside OTHER glyphs, like
+raMatra-tutg, never itself a shaped output of any GSUB rule, so selecting an
+"alt" of it via VS would never be reachable in real text), or a base that
+turns out not to be a real glyph at all (a few genuine typos/internal-tool
+artifacts already in the font, e.g. "_smart.vamatra-tutg.alt1") - is reported
+instead of guessed at, in VARIANT_REGISTRY_TODO.md, same principle as every
+other gap in this project's GSUB tooling.
 """
 import json
 import os
@@ -47,14 +63,25 @@ vowel_sign_names = set(classification.get("vowel_sign", []))
 special_mark_names = set(classification.get("special_mark", []))
 single_glyph_bases = consonant_names | vowel_independent_names | vowel_sign_names | special_mark_names
 
+# The 3 categories TutgAkhand's own ligature-formation rules (in
+# generate_akhn_feature.py) already build rules for - see that script's
+# "for category in (...)" loop. Anything in one of these is, by
+# construction, a real single-glyph output some akhn rule produces, so
+# TutgConjunctVariantSelect can always match "this glyph + VSn -> its alt"
+# regardless of how the name is put together.
+ligature_bases = (
+    set(classification.get("conjunct_ligature", []))
+    | set(classification.get("vowel_sign_ligature", []))
+    | set(classification.get("looped_virama_ligature", []))
+)
+
 # Bare ".alt" (no digit) is a real, existing naming inconsistency in this font
 # (lVocalicMatra-tutg.alt, plus every "<cons>_lVocalicMatra-tutg.alt" compound)
 # - treated as index "1", matching how the hand-maintained file already had it.
 ALT_RE = re.compile(r"^(?P<base>.+-tutg)\.alt(?P<idx>\d*)$")
 
 single_glyph_variants = {}  # base_name -> {index_str: alt_name}
-conjunct_variants = {}      # first_name -> {second_name: {index_str: alt_name}}
-compound_variants = {}      # cons_name -> {vowel_sign_root_name: {index_str: alt_name}}
+ligature_variants = {}      # ligature_name -> {index_str: alt_name}
 skipped_no_base = []        # alt exists but "<base>-tutg" isn't a real glyph
 skipped_unclassified = []   # base is a real glyph but not a category this registry handles
 
@@ -70,108 +97,64 @@ for name in sorted(glyphs):
     if base in single_glyph_bases:
         single_glyph_variants.setdefault(base, {})[idx] = name
         continue
-    core = base[: -len("-tutg")]
-    parts = core.split("_")
-    if len(parts) == 2 and f"{parts[0]}-tutg" in consonant_names and f"{parts[1]}-tutg" in consonant_names:
-        first_name, second_name = f"{parts[0]}-tutg", f"{parts[1]}-tutg"
-        conjunct_variants.setdefault(first_name, {}).setdefault(second_name, {})[idx] = name
-        continue
-    # Prototype (2026-07-21): consonant + vowel-sign-root compound ligature
-    # (e.g. ka_uMatra-tutg.alt1) - mechanically identical to the conjunct
-    # case as far as GSUB is concerned (TutgConjunctVariantSelect just
-    # matches "ligature glyph + VSn -> alt glyph", it doesn't care whether
-    # the ligature is two consonants or a consonant+its own vowel sign), so
-    # routed the same way and merged into the same lookup by
-    # generate_akhn_feature.py - see its own comment for how.
-    if len(parts) == 2 and f"{parts[0]}-tutg" in consonant_names and f"{parts[1]}-tutg" in vowel_sign_names:
-        cons_name, vowel_root_name = f"{parts[0]}-tutg", f"{parts[1]}-tutg"
-        compound_variants.setdefault(cons_name, {}).setdefault(vowel_root_name, {})[idx] = name
+    if base in ligature_bases:
+        ligature_variants.setdefault(base, {})[idx] = name
         continue
     skipped_unclassified.append(name)
 
 registry = {
     "_readme": (
-        "Auto-generated by generate_variant_registry.py (2026-07-21) - re-run "
-        "it after adding a new '<name>-tutg.altN' glyph to the font instead of "
-        "hand-editing this file; it will pick up the new variant automatically. "
-        "Registry for selecting stylistic-alternate glyphs via Unicode "
-        "Variation Selectors (VS1-VS6 for this layer - U+FE00-U+FE05) instead "
-        "of OpenType stylistic-set features (ssXX). Consumed by "
-        "generate_akhn_feature.py's TutgVariantSelect (akhn's first lookup): "
-        "\"sub bha-tutg vs1-tutg by bha-tutg.alt1;\" and so on for every entry "
-        "below - typing <base character><VSn> resolves to the glyph listed "
-        "under key \"N\" here. Typing the base character alone (no selector) "
-        "still resolves to its normal default glyph. Index \"1\" = VS1 "
-        "(U+FE00), \"2\" = VS2 (U+FE01), etc. - built from every single-"
-        "codepoint glyph (consonant/independent vowel/vowel sign/special mark) "
-        "that has one or more '.altN' siblings in the font. This is a "
-        "private/font-specific convention, not a Unicode-registered "
-        "Ideographic Variation Sequence - only this font (and any tooling "
-        "that reads this registry) knows what these particular base+selector "
-        "pairs mean."
+        "Auto-generated by generate_variant_registry.py - re-run it after "
+        "adding a new '<name>-tutg.altN' glyph to the font instead of "
+        "hand-editing this file; it will pick up the new variant "
+        "automatically. Registry for selecting stylistic-alternate glyphs "
+        "via Unicode Variation Selectors (VS1-VS6 for this layer - "
+        "U+FE00-U+FE05) instead of OpenType stylistic-set features (ssXX). "
+        "Consumed by generate_akhn_feature.py's TutgVariantSelect (akhn's "
+        "first lookup): \"sub bha-tutg vs1-tutg by bha-tutg.alt1;\" and so "
+        "on for every entry below - typing <base character><VSn> resolves "
+        "to the glyph listed under key \"N\" here. Typing the base character "
+        "alone (no selector) still resolves to its normal default glyph. "
+        "Index \"1\" = VS1 (U+FE00), \"2\" = VS2 (U+FE01), etc. - built from "
+        "every single-codepoint glyph (consonant/independent vowel/vowel "
+        "sign/special mark) that has one or more '.altN' siblings in the "
+        "font. This is a private/font-specific convention, not a "
+        "Unicode-registered Ideographic Variation Sequence - only this font "
+        "(and any tooling that reads this registry) knows what these "
+        "particular base+selector pairs mean."
     ),
 }
 for base, variants in sorted(single_glyph_variants.items()):
     registry[base] = dict(sorted(variants.items(), key=lambda kv: int(kv[0])))
 
-registry["_conjunct_variants_readme"] = (
+registry["_ligature_variants_readme"] = (
     "Auto-generated alongside the section above - see generate_variant_registry.py. "
-    "Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) "
-    "for specific two-consonant subjoining conjuncts. Mechanism (generate_akhn_feature.py's "
-    "TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the time this "
-    "lookup runs, TutgAkhand has already collapsed e.g. 'ca-tutg conjoiner-tutg "
-    "ca-tutg' into the single glyph ca_ca-tutg, so this is just a plain 2-glyph "
-    "substitution keyed on the ligature's own output name - 'sub ca_ca-tutg "
-    "vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's per-ligature rules "
-    "already rely on (match the ligature's OUTPUT name, not its raw input "
-    "sequence). Indices here are offset by +10 (index \"1\" -> VS11, \"2\" -> "
-    "VS12, ...) to keep this layer's selector range visually distinct from the "
-    "base-glyph variant registry above (VS1-VS6) and the subjoiner mechanism "
-    "(VS1 on the conjoiner) - though nothing stops index reuse across layers "
-    "in practice, since GSUB always disambiguates by the full starting glyph, "
-    "not the selector alone. Scoped to plain two-consonant conjuncts only - "
-    "3+-consonant conjuncts (e.g. ka_sa_sa-tutg) are picked up by this "
-    "script's alt-glyph scan but deliberately left out of this section and "
-    "reported in VARIANT_REGISTRY_TODO.md instead. Consonant+vowel-sign-root "
-    "compound ligatures (e.g. ka_uMatra-tutg) get the identical mechanism but "
-    "live in their own registry[\"_compound_variants\"] section below, since "
-    "semantically they're a different thing (one consonant's own vowel sign, "
-    "not two consonants) even though the GSUB rule shape is the same."
+    "Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) - "
+    "any glyph classified under conjunct_ligature/vowel_sign_ligature/"
+    "looped_virama_ligature (i.e. any real output of one of TutgAkhand's own "
+    "ligature-formation rules), regardless of what kind of ligature it is: "
+    "two consonants (ca_ca-tutg), a consonant + its own vowel sign "
+    "(ka_uMatra-tutg), three consonants (ka_sa_sa-tutg), a mixed "
+    "consonant+consonant+vowel-sign compound (sha_ra_iiMatra-tutg), or a "
+    "Chillu form (ttChillu-tutg). Mechanism (generate_akhn_feature.py's "
+    "TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the "
+    "time this lookup runs, TutgAkhand has already collapsed the ligature's "
+    "raw input sequence into this single glyph, so this is just a plain "
+    "2-glyph substitution keyed on the ligature's own OUTPUT name - 'sub "
+    "ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's "
+    "per-ligature rules already rely on. Indices here are offset by +10 "
+    "(index \"1\" -> VS11, \"2\" -> VS12, ...) to keep this layer's selector "
+    "range visually distinct from the base-glyph variant registry above "
+    "(VS1-VS6) and the subjoiner mechanism (VS1 on the conjoiner) - though "
+    "nothing stops index reuse across layers in practice, since GSUB always "
+    "disambiguates by the full starting glyph, not the selector alone."
 )
-conjunct_out = {}
-for first_name, seconds in sorted(conjunct_variants.items()):
-    conjunct_out[first_name] = {
-        second_name: dict(sorted(variants.items(), key=lambda kv: int(kv[0])))
-        for second_name, variants in sorted(seconds.items())
-    }
-registry["_conjunct_variants"] = conjunct_out
+registry["_ligature_variants"] = {
+    name: dict(sorted(variants.items(), key=lambda kv: int(kv[0])))
+    for name, variants in sorted(ligature_variants.items())
+}
 
-registry["_compound_variants_readme"] = (
-    "PROTOTYPE (2026-07-21) - auto-generated alongside the sections above, see "
-    "generate_variant_registry.py. Selecting among alternate LIGATURE forms for "
-    "consonant + OWN vowel-sign compound ligatures (e.g. ka_uMatra-tutg vs "
-    "ka_uMatra-tutg.alt1) - mechanically identical to _conjunct_variants above "
-    "(TutgConjunctVariantSelect just matches \"ligature glyph + VSn -> alt "
-    "glyph\", it doesn't care whether the ligature came from two consonants or "
-    "one consonant + its own vowel sign), so generate_akhn_feature.py folds "
-    "these into the exact same lookup, same +10 VS-index offset, rather than "
-    "building a second lookup for what's really the same rule shape. Kept in "
-    "a separate registry section from _conjunct_variants purely because the "
-    "two are semantically different things worth being able to tell apart at "
-    "a glance, not because the mechanism differs."
-)
-compound_out = {}
-for cons_name, roots in sorted(compound_variants.items()):
-    compound_out[cons_name] = {
-        root_name: dict(sorted(variants.items(), key=lambda kv: int(kv[0])))
-        for root_name, variants in sorted(roots.items())
-    }
-registry["_compound_variants"] = compound_out
-
-conjunct_pair_count = sum(len(seconds) for seconds in conjunct_variants.values())
-conjunct_entry_count = sum(len(variants) for seconds in conjunct_variants.values() for variants in seconds.values())
-compound_pair_count = sum(len(roots) for roots in compound_variants.values())
-compound_entry_count = sum(len(variants) for roots in compound_variants.values() for variants in roots.values())
+ligature_entry_count = sum(len(v) for v in ligature_variants.values())
 
 out_path = os.path.join(HERE, "variant_registry.json")
 with open(out_path, "w", encoding="utf-8") as f:
@@ -185,25 +168,21 @@ with open(report_path, "w", encoding="utf-8") as f:
     f.write("# variant_registry.json coverage report\n\n")
     f.write(f"Generated by `generate_variant_registry.py` - {sum(len(v) for v in single_glyph_variants.values())} "
             f"single-glyph variant entries ({len(single_glyph_variants)} bases), "
-            f"{conjunct_entry_count} conjunct-ligature variant entries "
-            f"({conjunct_pair_count} pairs), {compound_entry_count} consonant+vowel-sign "
-            f"compound-ligature variant entries ({compound_pair_count} pairs, prototype).\n\n")
+            f"{ligature_entry_count} ligature variant entries ({len(ligature_variants)} bases).\n\n")
 
     if skipped_unclassified:
-        bases = sorted(set(n.rsplit(".alt", 1)[0] for n in skipped_unclassified))
-        f.write(f"## {len(skipped_unclassified)} alt glyph(s) with a base this registry doesn't handle yet ({len(bases)} distinct bases)\n\n")
-        f.write("Not consonant/vowel/vowel-sign/mark, not a plain two-consonant conjunct, and not a "
-                "consonant+own-vowel-sign compound - mostly 3+-consonant conjuncts (e.g. "
-                "`ka_sa_sa-tutg`). Neither `generate_akhn_feature.py` nor `generate_blwf_feature.py` "
-                "currently has a mechanism wired up for these - listed here for a future decision, "
-                "not included in variant_registry.json.\n\n")
-        for base in bases:
-            variants = sorted(n for n in skipped_unclassified if n.rsplit(".alt", 1)[0] == base)
-            f.write(f"- `{base}`: {', '.join(variants)}\n")
+        f.write(f"## {len(skipped_unclassified)} alt glyph(s) with a base this registry doesn't handle\n\n")
+        f.write("Base isn't consonant/vowel/vowel-sign/mark, and isn't classified under "
+                "conjunct_ligature/vowel_sign_ligature/looped_virama_ligature either (i.e. it's not "
+                "a real TutgAkhand ligature output) - e.g. vamatra-tutg, a drawing component used "
+                "inside other glyphs, never itself a shaped output. Listed here for a future "
+                "decision, not included in variant_registry.json.\n\n")
+        for name in skipped_unclassified:
+            f.write(f"- `{name}`\n")
         f.write("\n")
     else:
         f.write("**All clear** - every `.altN` glyph in the font is either a registered "
-                "single-glyph or conjunct-ligature variant.\n\n")
+                "single-glyph or ligature variant.\n\n")
 
     if skipped_no_base:
         f.write(f"## {len(skipped_no_base)} alt glyph(s) with no real base glyph at all\n\n")
@@ -215,11 +194,9 @@ with open(report_path, "w", encoding="utf-8") as f:
 
 print(f"Single-glyph variant bases: {len(single_glyph_variants)}")
 print(f"Single-glyph variant entries: {sum(len(v) for v in single_glyph_variants.values())}")
-print(f"Conjunct-ligature variant pairs: {conjunct_pair_count}")
-print(f"Conjunct-ligature variant entries: {conjunct_entry_count}")
-print(f"Compound (consonant+vowel-sign) variant pairs: {compound_pair_count}")
-print(f"Compound (consonant+vowel-sign) variant entries: {compound_entry_count}")
-print(f"Skipped - unclassified base: {len(skipped_unclassified)} (see {os.path.basename(report_path)})")
+print(f"Ligature variant bases: {len(ligature_variants)}")
+print(f"Ligature variant entries: {ligature_entry_count}")
+print(f"Skipped - unclassified base: {len(skipped_unclassified)} {skipped_unclassified}")
 print(f"Skipped - no real base glyph: {len(skipped_no_base)} {skipped_no_base}")
 print("Written to:", out_path)
 print("Written to:", report_path)

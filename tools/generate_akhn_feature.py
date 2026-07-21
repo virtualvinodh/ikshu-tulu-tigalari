@@ -211,61 +211,41 @@ for base_name, variants in sorted(VARIANT_REGISTRY.items()):
 # easy to reason about on its own.
 SUBJOINER_RULE = (["conjoiner-tutg", "vs1-tutg"], "subjoiner-tutg")
 
-# --- Conjunct-ligature alternates (added 2026-07-20) ---
+# --- Ligature alternates (added 2026-07-20, simplified 2026-07-21) ---
 #
-# registry["_conjunct_variants"] (e.g. ca_ca-tutg -> ca_ca-tutg.alt1) becomes
+# registry["_ligature_variants"] (e.g. ca_ca-tutg -> ca_ca-tutg.alt1) becomes
 # TutgConjunctVariantSelect, the LAST lookup in this feature - it runs AFTER
 # TutgAkhand, not before/inside it, because by then TutgAkhand has already
-# collapsed e.g. "ca-tutg conjoiner-tutg ca-tutg" into the single glyph
-# ca_ca-tutg, so this only needs a plain 2-glyph rule keyed on the ligature's
-# own OUTPUT name - "sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;" - same
-# "match the output, not the raw input sequence" principle blwf's per-ligature
-# rules already rely on. Has to be its own lookup for the same reason
-# TutgRephaUpgrade/TutgAkhand are split: a single lookup won't re-examine a
-# glyph an earlier rule (here, TutgAkhand) just produced in the same pass.
+# collapsed the ligature's raw input sequence (e.g. "ca-tutg conjoiner-tutg
+# ca-tutg") into the single glyph (ca_ca-tutg), so this only needs a plain
+# 2-glyph rule keyed on the ligature's own OUTPUT name - "sub ca_ca-tutg
+# vs11-tutg by ca_ca-tutg.alt1;" - same "match the output, not the raw input
+# sequence" principle blwf's per-ligature rules already rely on. Has to be
+# its own lookup for the same reason TutgRephaUpgrade/TutgAkhand are split: a
+# single lookup won't re-examine a glyph an earlier rule (here, TutgAkhand)
+# just produced in the same pass. Every registry entry here is, by
+# construction (see generate_variant_registry.py), already classified as a
+# conjunct_ligature/vowel_sign_ligature/looped_virama_ligature output, so this
+# needs no per-kind special-casing - two consonants, a consonant + its own
+# vowel sign, three consonants, a mixed compound, or a Chillu form are all the
+# exact same rule shape.
 #
 # Index offset by +10 (registry index "1" -> VS11, "2" -> VS12) purely to keep
 # this layer's selectors visually distinct from TutgVariantSelect's VS1-VS6
 # and TutgSubjoinerForm's VS1 - see variant_registry.json's
-# "_conjunct_variants_readme" for why that's a convenience, not a requirement
+# "_ligature_variants_readme" for why that's a convenience, not a requirement
 # (GSUB always disambiguates by the full starting glyph, never the selector
 # alone, so index reuse across layers is never actually ambiguous).
 CONJUNCT_VS_OFFSET = 10
 CONJUNCT_VARIANT_RULES = []      # (ligature_name, vs_glyph, variant_name)
 conjunct_variant_missing = []    # (ligature_name, variant_name) - not a known glyph, skipped
-for first_name, seconds in sorted(VARIANT_REGISTRY.get("_conjunct_variants", {}).items()):
-    first_base = first_name[: -len("-tutg")]
-    for second_name, variants in sorted(seconds.items()):
-        second_base = second_name[: -len("-tutg")]
-        ligature_name = f"{first_base}_{second_base}-tutg"
-        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
-            if ligature_name not in ALL_CLASSIFIED_GLYPHS or variant_name not in ALL_CLASSIFIED_GLYPHS:
-                conjunct_variant_missing.append((ligature_name, variant_name))
-                continue
-            vs_glyph = f"vs{CONJUNCT_VS_OFFSET + int(index_str)}-tutg"
-            CONJUNCT_VARIANT_RULES.append((ligature_name, vs_glyph, variant_name))
-
-# registry["_compound_variants"] (e.g. ka_uMatra-tutg -> ka_uMatra-tutg.alt1) -
-# PROTOTYPE (2026-07-21), folded into the exact same TutgConjunctVariantSelect
-# lookup/rule list as _conjunct_variants above: mechanically it's the same
-# rule shape ("ligature glyph + VSn -> alt glyph"), TutgConjunctVariantSelect
-# doesn't care whether the ligature came from two consonants or one consonant
-# + its own vowel sign, only that TutgAkhand has already formed it by the
-# time this lookup runs (true for consonant+vowel-sign ligatures too - they
-# go through the same "vowel_sign_ligature" category TutgAkhand already
-# builds rules for). Same +10 VS-index offset, same CONJUNCT_VARIANT_RULES
-# list, same lookup - no separate mechanism needed.
-for cons_name, roots in sorted(VARIANT_REGISTRY.get("_compound_variants", {}).items()):
-    cons_base = cons_name[: -len("-tutg")]
-    for root_name, variants in sorted(roots.items()):
-        root_base = root_name[: -len("-tutg")]
-        ligature_name = f"{cons_base}_{root_base}-tutg"
-        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
-            if ligature_name not in ALL_CLASSIFIED_GLYPHS or variant_name not in ALL_CLASSIFIED_GLYPHS:
-                conjunct_variant_missing.append((ligature_name, variant_name))
-                continue
-            vs_glyph = f"vs{CONJUNCT_VS_OFFSET + int(index_str)}-tutg"
-            CONJUNCT_VARIANT_RULES.append((ligature_name, vs_glyph, variant_name))
+for ligature_name, variants in sorted(VARIANT_REGISTRY.get("_ligature_variants", {}).items()):
+    for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+        if ligature_name not in ALL_CLASSIFIED_GLYPHS or variant_name not in ALL_CLASSIFIED_GLYPHS:
+            conjunct_variant_missing.append((ligature_name, variant_name))
+            continue
+        vs_glyph = f"vs{CONJUNCT_VS_OFFSET + int(index_str)}-tutg"
+        CONJUNCT_VARIANT_RULES.append((ligature_name, vs_glyph, variant_name))
 
 
 rules = []          # list of (seq_list, output_glyph_name)

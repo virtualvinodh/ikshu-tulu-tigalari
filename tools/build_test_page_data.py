@@ -361,74 +361,90 @@ for row_e in consonant_variant_entries:
         row_cells.append(cps)
     consonant_variant_matrix["rows"].append(row_cells)
 
-# Conjunct-ligature alternates (registry["_conjunct_variants"]) - VS attaches
-# AFTER the whole formed ligature (TutgConjunctVariantSelect matches the
-# ligature's own output glyph + a trailing VS, not the conjoiner), unlike the
-# subjoiner demo below where the VS sits right after the conjoiner instead -
-# these are two genuinely different attachment points, not a typo.
-conjunct_variants = []
-for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {}).items()):
-    first_cp = cp_of(first_name)
-    for second_name, variants in sorted(seconds.items()):
-        second_cp = cp_of(second_name)
-        if first_cp is None or second_cp is None:
-            variant_missing.append((f"{first_name}+{second_name}", None))
-            continue
-        default_cps = [first_cp, conjoiner_cp, second_cp]
-        alts = []
-        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
-            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
-            if vs_cp is None:
-                variant_missing.append((variant_name, None))
-                continue
-            alts.append({"variant": variant_name, "vs": vs_label_of(vs_cp), "cps": default_cps + [vs_cp]})
-        conjunct_variants.append({
-            "label": f"{first_name[: -len('-tutg')]}_{second_name[: -len('-tutg')]}",
-            "default": default_cps,
-            "alts": alts,
-        })
+# Ligature alternates (registry["_ligature_variants"]) - VS attaches AFTER
+# the whole formed ligature (TutgConjunctVariantSelect matches the ligature's
+# own output glyph + a trailing VS, not the conjoiner), unlike the subjoiner
+# demo below where the VS sits right after the conjoiner instead - two
+# genuinely different attachment points, not a typo. Flat registry (one
+# ligature name per entry, not a first/second consonant pair) since it covers
+# every kind of TutgAkhand ligature output uniformly - two consonants, a
+# consonant + its own vowel sign, three consonants, a mixed compound, or a
+# Chillu form - so the ligature's own raw input sequence (from
+# tutg_akhn_rules.json, the same data source akhnTests above already uses)
+# is what gives us its "default" cps, not a reconstructed [C1, conjoiner, C2].
+akhn_input_by_output = {r["output"]: r["input"] for r in akhn_rules}
 
-# Conjunct-ligature variant x vowel-sign matrix (for the Variant Matrix tab):
-# each of the 18 registered (pair, VSn) entries crossed against all 18
-# vowel-sign columns, same double-row default/variant treatment as
-# character_variants for U/UU/Vocalic R/Vocalic RR (the 4 that actually
-# change shape). Typed sequence per cell: [C1, conjoiner, C2, VSn, sign] -
-# TutgAkhand forms the ligature, TutgConjunctVariantSelect picks the alt, then
-# whatever's left decides how the vowel sign attaches - largely untested
-# territory, which is the point of this matrix.
-conjunct_variant_signs = []  # {label, variant, cells: [{label, variantCps, defaultCps?}, ...]}
-for first_name, seconds in sorted(variant_registry.get("_conjunct_variants", {}).items()):
-    first_cp = cp_of(first_name)
-    for second_name, variants in sorted(seconds.items()):
-        second_cp = cp_of(second_name)
-        if first_cp is None or second_cp is None:
+
+def raw_cp_of(name):
+    # RA-initial conjuncts (ra_ma-tutg, ra_va-tutg, ...) record their akhn
+    # input as repha-tutg.alt1 (TutgRephaUpgrade's output, what TutgAkhand's
+    # own rule actually matches on) - not a real encoded character, so it has
+    # no codepoint of its own. What you'd actually TYPE to reach it is plain
+    # repha-tutg, the character TutgRephaUpgrade upgrades FROM.
+    if name == "repha-tutg.alt1":
+        name = "repha-tutg"
+    return cp_of(name)
+
+
+conjunct_variants = []
+for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
+    raw_input_names = akhn_input_by_output.get(ligature_name)
+    default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
+    if not raw_input_names or any(cp is None for cp in default_cps):
+        variant_missing.append((ligature_name, None))
+        continue
+    alts = []
+    for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+        vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
+        if vs_cp is None:
+            variant_missing.append((variant_name, None))
             continue
-        default_cps = [first_cp, conjoiner_cp, second_cp]
-        pair_label = f"{first_name[: -len('-tutg')]}_{second_name[: -len('-tutg')]}"
-        for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
-            vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
-            if vs_cp is None:
-                continue
-            vs = vs_label_of(vs_cp)
-            variant_base_cps = default_cps + [vs_cp]
-            cells = []
-            for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
-                variant_cps = variant_base_cps + ([] if sign_cp is None else [sign_cp])
-                # signCp exposed separately (nullable) alongside the merged
-                # cps - lets the JS side reconstruct "row-base + inserted
-                # consonant + sign" for the cons2/show-base controls instead
-                # of only ever having the flat pre-merged sequence to work with.
-                cell = {"label": vs_sign_label, "variantCps": variant_cps, "signCp": sign_cp}
-                if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
-                    cell["defaultCps"] = default_cps + ([] if sign_cp is None else [sign_cp])
-                cells.append(cell)
-            conjunct_variant_signs.append({
-                "label": f"{pair_label} {vs}",
-                "variant": variant_name,
-                "variantBaseCps": variant_base_cps,
-                "defaultBaseCps": default_cps,
-                "cells": cells,
-            })
+        alts.append({"variant": variant_name, "vs": vs_label_of(vs_cp), "cps": default_cps + [vs_cp]})
+    conjunct_variants.append({
+        "label": ligature_name[: -len("-tutg")],
+        "default": default_cps,
+        "alts": alts,
+    })
+
+# Ligature variant x vowel-sign matrix (for the Variant Matrix tab): each
+# registered (ligature, VSn) entry crossed against all 18 vowel-sign columns,
+# same double-row default/variant treatment as character_variants for
+# U/UU/Vocalic R/Vocalic RR (the 4 that actually change shape). Typed
+# sequence per cell: [...raw ligature input, VSn, sign] - TutgAkhand forms
+# the ligature, TutgConjunctVariantSelect picks the alt, then whatever's left
+# decides how the vowel sign attaches - largely untested territory, which is
+# the point of this matrix.
+conjunct_variant_signs = []  # {label, variant, cells: [{label, variantCps, defaultCps?}, ...]}
+for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
+    raw_input_names = akhn_input_by_output.get(ligature_name)
+    default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
+    if not raw_input_names or any(cp is None for cp in default_cps):
+        continue
+    pair_label = ligature_name[: -len("-tutg")]
+    for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
+        vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
+        if vs_cp is None:
+            continue
+        vs = vs_label_of(vs_cp)
+        variant_base_cps = default_cps + [vs_cp]
+        cells = []
+        for vs_sign_label, sign_cp in VOWEL_SIGN_COLUMNS:
+            variant_cps = variant_base_cps + ([] if sign_cp is None else [sign_cp])
+            # signCp exposed separately (nullable) alongside the merged
+            # cps - lets the JS side reconstruct "row-base + inserted
+            # consonant + sign" for the cons2/show-base controls instead
+            # of only ever having the flat pre-merged sequence to work with.
+            cell = {"label": vs_sign_label, "variantCps": variant_cps, "signCp": sign_cp}
+            if vs_sign_label in DOUBLE_ROW_VOWEL_SIGN_LABELS:
+                cell["defaultCps"] = default_cps + ([] if sign_cp is None else [sign_cp])
+            cells.append(cell)
+        conjunct_variant_signs.append({
+            "label": f"{pair_label} {vs}",
+            "variant": variant_name,
+            "variantBaseCps": variant_base_cps,
+            "defaultBaseCps": default_cps,
+            "cells": cells,
+        })
 
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
 # 3 representative pairs (unlike the conjunct-ligature alternates above, this
