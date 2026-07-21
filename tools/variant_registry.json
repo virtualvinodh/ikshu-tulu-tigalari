@@ -121,7 +121,7 @@
   "va-tutg": {
     "1": "va-tutg.alt1"
   },
-  "_conjunct_variants_readme": "Auto-generated alongside the section above - see generate_variant_registry.py. Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) for specific two-consonant subjoining conjuncts. Mechanism (generate_akhn_feature.py's TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the time this lookup runs, TutgAkhand has already collapsed e.g. 'ca-tutg conjoiner-tutg ca-tutg' into the single glyph ca_ca-tutg, so this is just a plain 2-glyph substitution keyed on the ligature's own output name - 'sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's per-ligature rules already rely on (match the ligature's OUTPUT name, not its raw input sequence). Indices here are offset by +10 (index \"1\" -> VS11, \"2\" -> VS12, ...) to keep this layer's selector range visually distinct from the base-glyph variant registry above (VS1-VS6) and the subjoiner mechanism (VS1 on the conjoiner) - though nothing stops index reuse across layers in practice, since GSUB always disambiguates by the full starting glyph, not the selector alone. Scoped to plain two-consonant conjuncts only - 3+-consonant conjuncts (e.g. ka_sa_sa-tutg) and compound consonant+vowel-sign ligatures (e.g. ka_uMatra-tutg) are picked up by this script's alt-glyph scan but deliberately left out of this section and reported in VARIANT_REGISTRY_TODO.md instead - seeing this content below any of it.",
+  "_conjunct_variants_readme": "Auto-generated alongside the section above - see generate_variant_registry.py. Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) for specific two-consonant subjoining conjuncts. Mechanism (generate_akhn_feature.py's TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the time this lookup runs, TutgAkhand has already collapsed e.g. 'ca-tutg conjoiner-tutg ca-tutg' into the single glyph ca_ca-tutg, so this is just a plain 2-glyph substitution keyed on the ligature's own output name - 'sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's per-ligature rules already rely on (match the ligature's OUTPUT name, not its raw input sequence). Indices here are offset by +10 (index \"1\" -> VS11, \"2\" -> VS12, ...) to keep this layer's selector range visually distinct from the base-glyph variant registry above (VS1-VS6) and the subjoiner mechanism (VS1 on the conjoiner) - though nothing stops index reuse across layers in practice, since GSUB always disambiguates by the full starting glyph, not the selector alone. Scoped to plain two-consonant conjuncts only - 3+-consonant conjuncts (e.g. ka_sa_sa-tutg) are picked up by this script's alt-glyph scan but deliberately left out of this section and reported in VARIANT_REGISTRY_TODO.md instead. Consonant+vowel-sign-root compound ligatures (e.g. ka_uMatra-tutg) get the identical mechanism but live in their own registry[\"_compound_variants\"] section below, since semantically they're a different thing (one consonant's own vowel sign, not two consonants) even though the GSUB rule shape is the same.",
   "_conjunct_variants": {
     "bha-tutg": {
       "ra-tutg": {
@@ -197,6 +197,250 @@
     "ya-tutg": {
       "ya-tutg": {
         "2": "ya_ya-tutg.alt2"
+      }
+    }
+  },
+  "_compound_variants_readme": "PROTOTYPE (2026-07-21) - auto-generated alongside the sections above, see generate_variant_registry.py. Selecting among alternate LIGATURE forms for consonant + OWN vowel-sign compound ligatures (e.g. ka_uMatra-tutg vs ka_uMatra-tutg.alt1) - mechanically identical to _conjunct_variants above (TutgConjunctVariantSelect just matches \"ligature glyph + VSn -> alt glyph\", it doesn't care whether the ligature came from two consonants or one consonant + its own vowel sign), so generate_akhn_feature.py folds these into the exact same lookup, same +10 VS-index offset, rather than building a second lookup for what's really the same rule shape. Kept in a separate registry section from _conjunct_variants purely because the two are semantically different things worth being able to tell apart at a glance, not because the mechanism differs.",
+  "_compound_variants": {
+    "ba-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ba_lVocalicMatra-tutg.alt"
+      }
+    },
+    "bha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "bha_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "bha_uMatra-tutg.alt1"
+      },
+      "uuMatra-tutg": {
+        "1": "bha_uuMatra-tutg.alt1"
+      }
+    },
+    "ca-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ca_lVocalicMatra-tutg.alt"
+      }
+    },
+    "cha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "cha_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "cha_uMatra-tutg.alt1"
+      }
+    },
+    "da-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "da_lVocalicMatra-tutg.alt"
+      }
+    },
+    "dda-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "dda_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ddha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ddha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "dha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "dha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ga-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ga_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ga_uMatra-tutg.alt1"
+      }
+    },
+    "gha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "gha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ha_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ha_uMatra-tutg.alt1"
+      }
+    },
+    "ja-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ja_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ja_uMatra-tutg.alt1"
+      }
+    },
+    "jha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "jha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ka-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ka_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ka_uMatra-tutg.alt1"
+      }
+    },
+    "kha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "kha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "la-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "la_lVocalicMatra-tutg.alt"
+      }
+    },
+    "lla-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "lla_lVocalicMatra-tutg.alt"
+      }
+    },
+    "llla-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "llla_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ma-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ma_lVocalicMatra-tutg.alt"
+      }
+    },
+    "na-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "na_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "na_uMatra-tutg.alt1"
+      },
+      "uuMatra-tutg": {
+        "1": "na_uuMatra-tutg.alt1"
+      }
+    },
+    "nga-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "nga_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "nga_uMatra-tutg.alt1"
+      }
+    },
+    "nna-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "nna_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "nna_uMatra-tutg.alt1"
+      },
+      "uuMatra-tutg": {
+        "1": "nna_uuMatra-tutg.alt1"
+      }
+    },
+    "nya-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "nya_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "nya_uMatra-tutg.alt1"
+      }
+    },
+    "pa-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "pa_lVocalicMatra-tutg.alt"
+      }
+    },
+    "pha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "pha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ra-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ra_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ra_uMatra-tutg.alt1",
+        "2": "ra_uMatra-tutg.alt2"
+      },
+      "uuMatra-tutg": {
+        "1": "ra_uuMatra-tutg.alt1"
+      }
+    },
+    "rra-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "rra_lVocalicMatra-tutg.alt"
+      }
+    },
+    "sa-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "sa_lVocalicMatra-tutg.alt"
+      }
+    },
+    "sha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "sha_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "sha_uMatra-tutg.alt1"
+      }
+    },
+    "ssa-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ssa_lVocalicMatra-tutg.alt"
+      },
+      "uuMatra-tutg": {
+        "1": "ssa_uuMatra-tutg.alt1"
+      }
+    },
+    "ta-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ta_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "ta_uMatra-tutg.alt1"
+      }
+    },
+    "tha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "tha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "tta-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "tta_lVocalicMatra-tutg.alt"
+      },
+      "uMatra-tutg": {
+        "1": "tta_uMatra-tutg.alt1"
+      },
+      "uuMatra-tutg": {
+        "1": "tta_uuMatra-tutg.alt1"
+      }
+    },
+    "ttha-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ttha_lVocalicMatra-tutg.alt"
+      }
+    },
+    "va-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "va_lVocalicMatra-tutg.alt"
+      }
+    },
+    "ya-tutg": {
+      "lVocalicMatra-tutg": {
+        "1": "ya_lVocalicMatra-tutg.alt"
       }
     }
   }
