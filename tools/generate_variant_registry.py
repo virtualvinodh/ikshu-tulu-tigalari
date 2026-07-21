@@ -56,6 +56,25 @@ with open(os.path.join(HERE, "glyph_svg_data.json"), encoding="utf-8") as f:
     glyphs = json.load(f)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     classification = json.load(f)
+with open(os.path.join(HERE, "names_override.json"), encoding="utf-8") as f:
+    names_override = json.load(f)
+
+# Glyphs listed here are handled by generate_akhn_feature.py's
+# apply_ligature_alt_override() instead - a genuine TutgAkhand rule keyed on
+# one specific component's own registered alt, formed via TutgVariantSelect +
+# TutgAkhand with no VS11/TutgConjunctVariantSelect involved - so they must NOT
+# also be auto-registered into _ligature_variants below (that would give the
+# same output glyph two independent, redundant ways to reach it).
+ligature_alt_override_names = {
+    k for k in names_override.get("ligature_alt_overrides", {}) if not k.startswith("_")
+}
+
+# Single-glyph ".altN" siblings whose name doesn't match ALT_RE at all (e.g. a
+# hyphen instead of a dot before "altN") - not caught by the regex scan below,
+# so registered directly from names_override.json instead.
+single_glyph_alt_overrides = {
+    k: v for k, v in names_override.get("single_glyph_alt_overrides", {}).items() if not k.startswith("_")
+}
 
 consonant_names = set(classification.get("consonant", []))
 vowel_independent_names = set(classification.get("vowel_independent", []))
@@ -84,10 +103,14 @@ single_glyph_variants = {}  # base_name -> {index_str: alt_name}
 ligature_variants = {}      # ligature_name -> {index_str: alt_name}
 skipped_no_base = []        # alt exists but "<base>-tutg" isn't a real glyph
 skipped_unclassified = []   # base is a real glyph but not a category this registry handles
+skipped_ligature_alt_override = []  # handled by names_override.json instead - see above
 
 for name in sorted(glyphs):
     m = ALT_RE.match(name)
     if not m:
+        continue
+    if name in ligature_alt_override_names:
+        skipped_ligature_alt_override.append(name)
         continue
     base = m.group("base")
     idx = m.group("idx") or "1"
@@ -101,6 +124,15 @@ for name in sorted(glyphs):
         ligature_variants.setdefault(base, {})[idx] = name
         continue
     skipped_unclassified.append(name)
+
+skipped_single_glyph_override_bad = []  # override names a base/alt that isn't a real glyph
+for alt_name, info in sorted(single_glyph_alt_overrides.items()):
+    base = info["base"]
+    idx = str(info["index"])
+    if alt_name not in glyphs or base not in glyphs:
+        skipped_single_glyph_override_bad.append(alt_name)
+        continue
+    single_glyph_variants.setdefault(base, {})[idx] = alt_name
 
 registry = {
     "_readme": (
@@ -192,11 +224,32 @@ with open(report_path, "w", encoding="utf-8") as f:
             f.write(f"- `{name}`\n")
         f.write("\n")
 
+    if skipped_ligature_alt_override:
+        f.write(f"## {len(skipped_ligature_alt_override)} ligature alt glyph(s) handled via names_override.json instead\n\n")
+        f.write("Listed in names_override.json's `ligature_alt_overrides` - these form directly "
+                "through TutgVariantSelect + TutgAkhand (one component's own registered alt, "
+                "substituted into an otherwise-normal ligature-formation rule), not through "
+                "TutgConjunctVariantSelect/VS11+, so they're deliberately excluded here.\n\n")
+        for name in skipped_ligature_alt_override:
+            f.write(f"- `{name}`\n")
+        f.write("\n")
+
+    if skipped_single_glyph_override_bad:
+        f.write(f"## {len(skipped_single_glyph_override_bad)} single-glyph override(s) in names_override.json naming a glyph that doesn't exist\n\n")
+        f.write("names_override.json's `single_glyph_alt_overrides` names an alt or base glyph "
+                "that isn't actually in the font - likely stale after a rename.\n\n")
+        for name in skipped_single_glyph_override_bad:
+            f.write(f"- `{name}`\n")
+        f.write("\n")
+
 print(f"Single-glyph variant bases: {len(single_glyph_variants)}")
 print(f"Single-glyph variant entries: {sum(len(v) for v in single_glyph_variants.values())}")
 print(f"Ligature variant bases: {len(ligature_variants)}")
 print(f"Ligature variant entries: {ligature_entry_count}")
 print(f"Skipped - unclassified base: {len(skipped_unclassified)} {skipped_unclassified}")
 print(f"Skipped - no real base glyph: {len(skipped_no_base)} {skipped_no_base}")
+print(f"Skipped - handled via names_override.json ligature_alt_overrides: {len(skipped_ligature_alt_override)} {skipped_ligature_alt_override}")
+print(f"Single-glyph overrides applied (names_override.json): {len(single_glyph_alt_overrides) - len(skipped_single_glyph_override_bad)}")
+print(f"Single-glyph overrides skipped (bad base/alt): {len(skipped_single_glyph_override_bad)} {skipped_single_glyph_override_bad}")
 print("Written to:", out_path)
 print("Written to:", report_path)

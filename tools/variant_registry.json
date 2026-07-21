@@ -87,6 +87,9 @@
     "1": "oo-tutg.alt1",
     "2": "oo-tutg.alt2"
   },
+  "rVocalicMatra-tutg": {
+    "1": "rVocalicMatra-tutg-alt1"
+  },
   "ra-tutg": {
     "1": "ra-tutg.alt1"
   },
@@ -123,15 +126,6 @@
   },
   "_ligature_variants_readme": "Auto-generated alongside the section above - see generate_variant_registry.py. Selecting among alternate LIGATURE forms (e.g. ca_ca-tutg vs ca_ca-tutg.alt1) - any glyph classified under conjunct_ligature/vowel_sign_ligature/looped_virama_ligature (i.e. any real output of one of TutgAkhand's own ligature-formation rules), regardless of what kind of ligature it is: two consonants (ca_ca-tutg), a consonant + its own vowel sign (ka_uMatra-tutg), three consonants (ka_sa_sa-tutg), a mixed consonant+consonant+vowel-sign compound (sha_ra_iiMatra-tutg), or a Chillu form (ttChillu-tutg). Mechanism (generate_akhn_feature.py's TutgConjunctVariantSelect, the LAST lookup in feature akhn): by the time this lookup runs, TutgAkhand has already collapsed the ligature's raw input sequence into this single glyph, so this is just a plain 2-glyph substitution keyed on the ligature's own OUTPUT name - 'sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;' - same principle blwf's per-ligature rules already rely on. Indices here are offset by +10 (index \"1\" -> VS11, \"2\" -> VS12, ...) to keep this layer's selector range visually distinct from the base-glyph variant registry above (VS1-VS6) and the subjoiner mechanism (VS1 on the conjoiner) - though nothing stops index reuse across layers in practice, since GSUB always disambiguates by the full starting glyph, not the selector alone.",
   "_ligature_variants": {
-    "ba_lVocalicMatra-tutg": {
-      "1": "ba_lVocalicMatra-tutg.alt"
-    },
-    "bha_lVocalicMatra-tutg": {
-      "1": "bha_lVocalicMatra-tutg.alt"
-    },
-    "bha_ra-tutg": {
-      "1": "bha_ra-tutg.alt1"
-    },
     "bha_uMatra-tutg": {
       "1": "bha_uMatra-tutg.alt1"
     },
@@ -144,56 +138,20 @@
     "ca_cha-tutg": {
       "2": "ca_cha-tutg.alt2"
     },
-    "ca_lVocalicMatra-tutg": {
-      "1": "ca_lVocalicMatra-tutg.alt"
-    },
-    "cha_lVocalicMatra-tutg": {
-      "1": "cha_lVocalicMatra-tutg.alt"
-    },
     "cha_uMatra-tutg": {
       "1": "cha_uMatra-tutg.alt1"
-    },
-    "da_lVocalicMatra-tutg": {
-      "1": "da_lVocalicMatra-tutg.alt"
-    },
-    "dda_lVocalicMatra-tutg": {
-      "1": "dda_lVocalicMatra-tutg.alt"
-    },
-    "ddha_lVocalicMatra-tutg": {
-      "1": "ddha_lVocalicMatra-tutg.alt"
-    },
-    "dha_lVocalicMatra-tutg": {
-      "1": "dha_lVocalicMatra-tutg.alt"
     },
     "ga_ga-tutg": {
       "1": "ga_ga-tutg.alt1"
     },
-    "ga_lVocalicMatra-tutg": {
-      "1": "ga_lVocalicMatra-tutg.alt"
-    },
     "ga_uMatra-tutg": {
       "1": "ga_uMatra-tutg.alt1"
-    },
-    "gha_lVocalicMatra-tutg": {
-      "1": "gha_lVocalicMatra-tutg.alt"
-    },
-    "ha_lVocalicMatra-tutg": {
-      "1": "ha_lVocalicMatra-tutg.alt"
     },
     "ha_uMatra-tutg": {
       "1": "ha_uMatra-tutg.alt1"
     },
-    "ja_lVocalicMatra-tutg": {
-      "1": "ja_lVocalicMatra-tutg.alt"
-    },
     "ja_uMatra-tutg": {
       "1": "ja_uMatra-tutg.alt1"
-    },
-    "jha_lVocalicMatra-tutg": {
-      "1": "jha_lVocalicMatra-tutg.alt"
-    },
-    "ka_lVocalicMatra-tutg": {
-      "1": "ka_lVocalicMatra-tutg.alt"
     },
     "ka_sa_sa-tutg": {
       "1": "ka_sa_sa-tutg.alt1"
@@ -201,29 +159,11 @@
     "ka_uMatra-tutg": {
       "1": "ka_uMatra-tutg.alt1"
     },
-    "kha_lVocalicMatra-tutg": {
-      "1": "kha_lVocalicMatra-tutg.alt"
-    },
-    "la_lVocalicMatra-tutg": {
-      "1": "la_lVocalicMatra-tutg.alt"
-    },
-    "lla_lVocalicMatra-tutg": {
-      "1": "lla_lVocalicMatra-tutg.alt"
-    },
-    "llla_lVocalicMatra-tutg": {
-      "1": "llla_lVocalicMatra-tutg.alt"
-    },
-    "ma_lVocalicMatra-tutg": {
-      "1": "ma_lVocalicMatra-tutg.alt"
-    },
     "na_ka-tutg": {
       "2": "na_ka-tutg.alt2"
     },
     "na_ka_ta-tutg": {
       "2": "na_ka_ta-tutg.alt2"
-    },
-    "na_lVocalicMatra-tutg": {
-      "1": "na_lVocalicMatra-tutg.alt"
     },
     "na_ta_sa-tutg": {
       "2": "na_ta_sa-tutg.alt2"
@@ -237,17 +177,11 @@
     "nga_kha-tutg": {
       "1": "nga_kha-tutg.alt1"
     },
-    "nga_lVocalicMatra-tutg": {
-      "1": "nga_lVocalicMatra-tutg.alt"
-    },
     "nga_uMatra-tutg": {
       "1": "nga_uMatra-tutg.alt1"
     },
     "nna_dda-tutg": {
       "1": "nna_dda-tutg.alt1"
-    },
-    "nna_lVocalicMatra-tutg": {
-      "1": "nna_lVocalicMatra-tutg.alt"
     },
     "nna_tta-tutg": {
       "1": "nna_tta-tutg.alt1"
@@ -261,20 +195,8 @@
     "nya_ja-tutg": {
       "1": "nya_ja-tutg.alt1"
     },
-    "nya_lVocalicMatra-tutg": {
-      "1": "nya_lVocalicMatra-tutg.alt"
-    },
     "nya_uMatra-tutg": {
       "1": "nya_uMatra-tutg.alt1"
-    },
-    "pa_lVocalicMatra-tutg": {
-      "1": "pa_lVocalicMatra-tutg.alt"
-    },
-    "pha_lVocalicMatra-tutg": {
-      "1": "pha_lVocalicMatra-tutg.alt"
-    },
-    "ra_lVocalicMatra-tutg": {
-      "1": "ra_lVocalicMatra-tutg.alt"
     },
     "ra_ma-tutg": {
       "1": "ra_ma-tutg.alt1"
@@ -289,29 +211,17 @@
     "ra_va-tutg": {
       "1": "ra_va-tutg.alt1"
     },
-    "rra_lVocalicMatra-tutg": {
-      "1": "rra_lVocalicMatra-tutg.alt"
-    },
-    "sa_lVocalicMatra-tutg": {
-      "1": "sa_lVocalicMatra-tutg.alt"
-    },
     "sa_tha-tutg": {
       "1": "sa_tha-tutg.alt1"
     },
     "sa_va-tutg": {
       "1": "sa_va-tutg.alt1"
     },
-    "sha_lVocalicMatra-tutg": {
-      "1": "sha_lVocalicMatra-tutg.alt"
-    },
     "sha_ra_iiMatra-tutg": {
       "1": "sha_ra_iiMatra-tutg.alt1"
     },
     "sha_uMatra-tutg": {
       "1": "sha_uMatra-tutg.alt1"
-    },
-    "ssa_lVocalicMatra-tutg": {
-      "1": "ssa_lVocalicMatra-tutg.alt"
     },
     "ssa_ssa-tutg": {
       "2": "ssa_ssa-tutg.alt2"
@@ -323,38 +233,20 @@
     "ssa_uuMatra-tutg": {
       "1": "ssa_uuMatra-tutg.alt1"
     },
-    "ta_lVocalicMatra-tutg": {
-      "1": "ta_lVocalicMatra-tutg.alt"
-    },
     "ta_ma-tutg": {
       "1": "ta_ma-tutg.alt1"
     },
     "ta_uMatra-tutg": {
       "1": "ta_uMatra-tutg.alt1"
     },
-    "tha_lVocalicMatra-tutg": {
-      "1": "tha_lVocalicMatra-tutg.alt"
-    },
     "ttChillu-tutg": {
       "1": "ttChillu-tutg.alt1"
-    },
-    "tta_lVocalicMatra-tutg": {
-      "1": "tta_lVocalicMatra-tutg.alt"
     },
     "tta_uMatra-tutg": {
       "1": "tta_uMatra-tutg.alt1"
     },
     "tta_uuMatra-tutg": {
       "1": "tta_uuMatra-tutg.alt1"
-    },
-    "ttha_lVocalicMatra-tutg": {
-      "1": "ttha_lVocalicMatra-tutg.alt"
-    },
-    "va_lVocalicMatra-tutg": {
-      "1": "va_lVocalicMatra-tutg.alt"
-    },
-    "ya_lVocalicMatra-tutg": {
-      "1": "ya_lVocalicMatra-tutg.alt"
     },
     "ya_ya-tutg": {
       "2": "ya_ya-tutg.alt2"

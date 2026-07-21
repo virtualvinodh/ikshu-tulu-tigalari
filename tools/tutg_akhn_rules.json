@@ -1170,6 +1170,14 @@
   },
   {
     "input": [
+      "bha-tutg.alt1",
+      "conjoiner-tutg",
+      "ra-tutg"
+    ],
+    "output": "bha_ra-tutg.alt1"
+  },
+  {
+    "input": [
       "bha-tutg",
       "conjoiner-tutg",
       "va-tutg"
@@ -2330,6 +2338,13 @@
   {
     "input": [
       "ba-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ba_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "ba-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "ba_rVocalicMatra-tutg"
@@ -2372,6 +2387,13 @@
   {
     "input": [
       "bha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "bha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "bha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "bha_rVocalicMatra-tutg"
@@ -2403,6 +2425,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ca_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ca-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ca_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2442,6 +2471,13 @@
   {
     "input": [
       "cha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "cha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "cha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "cha_rVocalicMatra-tutg"
@@ -2473,6 +2509,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "da_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "da-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "da_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2512,6 +2555,13 @@
   {
     "input": [
       "dda-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "dda_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "dda-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "dda_rVocalicMatra-tutg"
@@ -2543,6 +2593,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ddha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ddha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ddha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2582,6 +2639,13 @@
   {
     "input": [
       "dha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "dha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "dha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "dha_rVocalicMatra-tutg"
@@ -2613,6 +2677,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ga_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ga-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ga_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2652,6 +2723,13 @@
   {
     "input": [
       "gha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "gha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "gha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "gha_rVocalicMatra-tutg"
@@ -2683,6 +2761,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2722,6 +2807,13 @@
   {
     "input": [
       "ja-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ja_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "ja-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "ja_rVocalicMatra-tutg"
@@ -2753,6 +2845,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "jha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "jha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "jha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2799,6 +2898,13 @@
   {
     "input": [
       "ka-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ka_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "ka-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "ka_rVocalicMatra-tutg"
@@ -2834,6 +2940,13 @@
   {
     "input": [
       "kha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "kha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "kha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "kha_rVocalicMatra-tutg"
@@ -2865,6 +2978,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "la_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "la-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "la_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -2911,6 +3031,13 @@
   {
     "input": [
       "lla-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "lla_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "lla-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "lla_rVocalicMatra-tutg"
@@ -2946,6 +3073,13 @@
   {
     "input": [
       "llla-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "llla_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "llla-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "llla_rVocalicMatra-tutg"
@@ -2977,6 +3111,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ma_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ma-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ma_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3023,6 +3164,13 @@
   {
     "input": [
       "na-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "na_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "na-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "na_rVocalicMatra-tutg"
@@ -3054,6 +3202,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "nga_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "nga-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "nga_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3100,6 +3255,13 @@
   {
     "input": [
       "nna-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "nna_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "nna-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "nna_rVocalicMatra-tutg"
@@ -3142,6 +3304,13 @@
   {
     "input": [
       "nya-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "nya_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "nya-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "nya_rVocalicMatra-tutg"
@@ -3166,6 +3335,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "pa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pa-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "pa_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3201,6 +3377,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "pha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "pha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "pha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3250,6 +3433,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ra_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ra-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ra_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3331,6 +3521,13 @@
   {
     "input": [
       "rra-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "rra_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "rra-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "rra_rVocalicMatra-tutg"
@@ -3362,6 +3559,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "sa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "sa-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "sa_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3401,6 +3605,13 @@
   {
     "input": [
       "sha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "sha_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "sha-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "sha_rVocalicMatra-tutg"
@@ -3432,6 +3643,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ssa_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ssa-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ssa_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3478,6 +3696,13 @@
   {
     "input": [
       "ta-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ta_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "ta-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "ta_rVocalicMatra-tutg"
@@ -3509,6 +3734,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "tha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "tha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "tha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3555,6 +3787,13 @@
   {
     "input": [
       "tta-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "tta_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "tta-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "tta_rVocalicMatra-tutg"
@@ -3586,6 +3825,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ttha_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ttha-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ttha_lVocalicMatra-tutg.alt"
   },
   {
     "input": [
@@ -3625,6 +3871,13 @@
   {
     "input": [
       "va-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "va_lVocalicMatra-tutg.alt"
+  },
+  {
+    "input": [
+      "va-tutg",
       "rVocalicMatra-tutg"
     ],
     "output": "va_rVocalicMatra-tutg"
@@ -3656,6 +3909,13 @@
       "lVocalicMatra-tutg"
     ],
     "output": "ya_lVocalicMatra-tutg"
+  },
+  {
+    "input": [
+      "ya-tutg",
+      "lVocalicMatra-tutg.alt"
+    ],
+    "output": "ya_lVocalicMatra-tutg.alt"
   },
   {
     "input": [

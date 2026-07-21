@@ -51,6 +51,7 @@ feature akhn {
         sub nya-tutg vs2-tutg by nya-tutg.alt2;
         sub oo-tutg vs1-tutg by oo-tutg.alt1;
         sub oo-tutg vs2-tutg by oo-tutg.alt2;
+        sub rVocalicMatra-tutg vs1-tutg by rVocalicMatra-tutg-alt1;
         sub ra-tutg vs1-tutg by ra-tutg.alt1;
         sub repha-tutg vs1-tutg by repha-tutg.alt1;
         sub rrVocalic-tutg vs1-tutg by rrVocalic-tutg.alt1;
@@ -198,6 +199,7 @@ feature akhn {
         sub bha-tutg conjoiner-tutg ma-tutg by bha_ma-tutg;
         sub bha-tutg conjoiner-tutg na-tutg by bha_na-tutg;
         sub bha-tutg conjoiner-tutg ra-tutg by bha_ra-tutg;
+        sub bha-tutg.alt1 conjoiner-tutg ra-tutg by bha_ra-tutg.alt1;
         sub bha-tutg conjoiner-tutg va-tutg by bha_va-tutg;
         sub bha-tutg conjoiner-tutg ya-tutg by bha_ya-tutg;
         sub ca-tutg conjoiner-tutg ca-tutg by ca_ca-tutg;
@@ -343,131 +345,156 @@ feature akhn {
         sub ya-tutg conjoiner-tutg va-tutg by ya_va-tutg;
         sub ya-tutg conjoiner-tutg ya-tutg by ya_ya-tutg;
         sub ba-tutg lVocalicMatra-tutg by ba_lVocalicMatra-tutg;
+        sub ba-tutg lVocalicMatra-tutg.alt by ba_lVocalicMatra-tutg.alt;
         sub ba-tutg rVocalicMatra-tutg by ba_rVocalicMatra-tutg;
         sub ba-tutg rrVocalicMatra-tutg by ba_rrVocalicMatra-tutg;
         sub ba-tutg uMatra-tutg by ba_uMatra-tutg;
         sub ba-tutg uuMatra-tutg by ba_uuMatra-tutg;
         sub bha-tutg loopedvirama-tutg by bhChillu-tutg;
         sub bha-tutg lVocalicMatra-tutg by bha_lVocalicMatra-tutg;
+        sub bha-tutg lVocalicMatra-tutg.alt by bha_lVocalicMatra-tutg.alt;
         sub bha-tutg rVocalicMatra-tutg by bha_rVocalicMatra-tutg;
         sub bha-tutg rrVocalicMatra-tutg by bha_rrVocalicMatra-tutg;
         sub bha-tutg uMatra-tutg by bha_uMatra-tutg;
         sub bha-tutg uuMatra-tutg by bha_uuMatra-tutg;
         sub ca-tutg lVocalicMatra-tutg by ca_lVocalicMatra-tutg;
+        sub ca-tutg lVocalicMatra-tutg.alt by ca_lVocalicMatra-tutg.alt;
         sub ca-tutg rVocalicMatra-tutg by ca_rVocalicMatra-tutg;
         sub ca-tutg rrVocalicMatra-tutg by ca_rrVocalicMatra-tutg;
         sub ca-tutg uMatra-tutg by ca_uMatra-tutg;
         sub ca-tutg uuMatra-tutg by ca_uuMatra-tutg;
         sub cha-tutg lVocalicMatra-tutg by cha_lVocalicMatra-tutg;
+        sub cha-tutg lVocalicMatra-tutg.alt by cha_lVocalicMatra-tutg.alt;
         sub cha-tutg rVocalicMatra-tutg by cha_rVocalicMatra-tutg;
         sub cha-tutg rrVocalicMatra-tutg by cha_rrVocalicMatra-tutg;
         sub cha-tutg uMatra-tutg by cha_uMatra-tutg;
         sub cha-tutg uuMatra-tutg by cha_uuMatra-tutg;
         sub da-tutg lVocalicMatra-tutg by da_lVocalicMatra-tutg;
+        sub da-tutg lVocalicMatra-tutg.alt by da_lVocalicMatra-tutg.alt;
         sub da-tutg rVocalicMatra-tutg by da_rVocalicMatra-tutg;
         sub da-tutg rrVocalicMatra-tutg by da_rrVocalicMatra-tutg;
         sub da-tutg uMatra-tutg by da_uMatra-tutg;
         sub da-tutg uuMatra-tutg by da_uuMatra-tutg;
         sub dda-tutg lVocalicMatra-tutg by dda_lVocalicMatra-tutg;
+        sub dda-tutg lVocalicMatra-tutg.alt by dda_lVocalicMatra-tutg.alt;
         sub dda-tutg rVocalicMatra-tutg by dda_rVocalicMatra-tutg;
         sub dda-tutg rrVocalicMatra-tutg by dda_rrVocalicMatra-tutg;
         sub dda-tutg uMatra-tutg by dda_uMatra-tutg;
         sub dda-tutg uuMatra-tutg by dda_uuMatra-tutg;
         sub ddha-tutg lVocalicMatra-tutg by ddha_lVocalicMatra-tutg;
+        sub ddha-tutg lVocalicMatra-tutg.alt by ddha_lVocalicMatra-tutg.alt;
         sub ddha-tutg rVocalicMatra-tutg by ddha_rVocalicMatra-tutg;
         sub ddha-tutg rrVocalicMatra-tutg by ddha_rrVocalicMatra-tutg;
         sub ddha-tutg uMatra-tutg by ddha_uMatra-tutg;
         sub ddha-tutg uuMatra-tutg by ddha_uuMatra-tutg;
         sub dha-tutg lVocalicMatra-tutg by dha_lVocalicMatra-tutg;
+        sub dha-tutg lVocalicMatra-tutg.alt by dha_lVocalicMatra-tutg.alt;
         sub dha-tutg rVocalicMatra-tutg by dha_rVocalicMatra-tutg;
         sub dha-tutg rrVocalicMatra-tutg by dha_rrVocalicMatra-tutg;
         sub dha-tutg uMatra-tutg by dha_uMatra-tutg;
         sub dha-tutg uuMatra-tutg by dha_uuMatra-tutg;
         sub ga-tutg lVocalicMatra-tutg by ga_lVocalicMatra-tutg;
+        sub ga-tutg lVocalicMatra-tutg.alt by ga_lVocalicMatra-tutg.alt;
         sub ga-tutg rVocalicMatra-tutg by ga_rVocalicMatra-tutg;
         sub ga-tutg rrVocalicMatra-tutg by ga_rrVocalicMatra-tutg;
         sub ga-tutg uMatra-tutg by ga_uMatra-tutg;
         sub ga-tutg uuMatra-tutg by ga_uuMatra-tutg;
         sub gha-tutg lVocalicMatra-tutg by gha_lVocalicMatra-tutg;
+        sub gha-tutg lVocalicMatra-tutg.alt by gha_lVocalicMatra-tutg.alt;
         sub gha-tutg rVocalicMatra-tutg by gha_rVocalicMatra-tutg;
         sub gha-tutg rrVocalicMatra-tutg by gha_rrVocalicMatra-tutg;
         sub gha-tutg uMatra-tutg by gha_uMatra-tutg;
         sub gha-tutg uuMatra-tutg by gha_uuMatra-tutg;
         sub ha-tutg lVocalicMatra-tutg by ha_lVocalicMatra-tutg;
+        sub ha-tutg lVocalicMatra-tutg.alt by ha_lVocalicMatra-tutg.alt;
         sub ha-tutg rVocalicMatra-tutg by ha_rVocalicMatra-tutg;
         sub ha-tutg rrVocalicMatra-tutg by ha_rrVocalicMatra-tutg;
         sub ha-tutg uMatra-tutg by ha_uMatra-tutg;
         sub ha-tutg uuMatra-tutg by ha_uuMatra-tutg;
         sub ja-tutg lVocalicMatra-tutg by ja_lVocalicMatra-tutg;
+        sub ja-tutg lVocalicMatra-tutg.alt by ja_lVocalicMatra-tutg.alt;
         sub ja-tutg rVocalicMatra-tutg by ja_rVocalicMatra-tutg;
         sub ja-tutg rrVocalicMatra-tutg by ja_rrVocalicMatra-tutg;
         sub ja-tutg uMatra-tutg by ja_uMatra-tutg;
         sub ja-tutg uuMatra-tutg by ja_uuMatra-tutg;
         sub jha-tutg lVocalicMatra-tutg by jha_lVocalicMatra-tutg;
+        sub jha-tutg lVocalicMatra-tutg.alt by jha_lVocalicMatra-tutg.alt;
         sub jha-tutg rVocalicMatra-tutg by jha_rVocalicMatra-tutg;
         sub jha-tutg rrVocalicMatra-tutg by jha_rrVocalicMatra-tutg;
         sub jha-tutg uMatra-tutg by jha_uMatra-tutg;
         sub jha-tutg uuMatra-tutg by jha_uuMatra-tutg;
         sub ka-tutg loopedvirama-tutg by kChillu-tutg;
         sub ka-tutg lVocalicMatra-tutg by ka_lVocalicMatra-tutg;
+        sub ka-tutg lVocalicMatra-tutg.alt by ka_lVocalicMatra-tutg.alt;
         sub ka-tutg rVocalicMatra-tutg by ka_rVocalicMatra-tutg;
         sub ka-tutg rrVocalicMatra-tutg by ka_rrVocalicMatra-tutg;
         sub ka-tutg uMatra-tutg by ka_uMatra-tutg;
         sub ka-tutg uuMatra-tutg by ka_uuMatra-tutg;
         sub kha-tutg lVocalicMatra-tutg by kha_lVocalicMatra-tutg;
+        sub kha-tutg lVocalicMatra-tutg.alt by kha_lVocalicMatra-tutg.alt;
         sub kha-tutg rVocalicMatra-tutg by kha_rVocalicMatra-tutg;
         sub kha-tutg rrVocalicMatra-tutg by kha_rrVocalicMatra-tutg;
         sub kha-tutg uMatra-tutg by kha_uMatra-tutg;
         sub kha-tutg uuMatra-tutg by kha_uuMatra-tutg;
         sub la-tutg lVocalicMatra-tutg by la_lVocalicMatra-tutg;
+        sub la-tutg lVocalicMatra-tutg.alt by la_lVocalicMatra-tutg.alt;
         sub la-tutg rVocalicMatra-tutg by la_rVocalicMatra-tutg;
         sub la-tutg rrVocalicMatra-tutg by la_rrVocalicMatra-tutg;
         sub la-tutg uMatra-tutg by la_uMatra-tutg;
         sub la-tutg uuMatra-tutg by la_uuMatra-tutg;
         sub ga-tutg loopedvirama-tutg by llChillu-tutg;
         sub lla-tutg lVocalicMatra-tutg by lla_lVocalicMatra-tutg;
+        sub lla-tutg lVocalicMatra-tutg.alt by lla_lVocalicMatra-tutg.alt;
         sub lla-tutg rVocalicMatra-tutg by lla_rVocalicMatra-tutg;
         sub lla-tutg rrVocalicMatra-tutg by lla_rrVocalicMatra-tutg;
         sub lla-tutg uMatra-tutg by lla_uMatra-tutg;
         sub lla-tutg uuMatra-tutg by lla_uuMatra-tutg;
         sub llla-tutg lVocalicMatra-tutg by llla_lVocalicMatra-tutg;
+        sub llla-tutg lVocalicMatra-tutg.alt by llla_lVocalicMatra-tutg.alt;
         sub llla-tutg rVocalicMatra-tutg by llla_rVocalicMatra-tutg;
         sub llla-tutg rrVocalicMatra-tutg by llla_rrVocalicMatra-tutg;
         sub llla-tutg uMatra-tutg by llla_uMatra-tutg;
         sub llla-tutg uuMatra-tutg by llla_uuMatra-tutg;
         sub ma-tutg lVocalicMatra-tutg by ma_lVocalicMatra-tutg;
+        sub ma-tutg lVocalicMatra-tutg.alt by ma_lVocalicMatra-tutg.alt;
         sub ma-tutg rVocalicMatra-tutg by ma_rVocalicMatra-tutg;
         sub ma-tutg rrVocalicMatra-tutg by ma_rrVocalicMatra-tutg;
         sub ma-tutg uMatra-tutg by ma_uMatra-tutg;
         sub ma-tutg uuMatra-tutg by ma_uuMatra-tutg;
         sub na-tutg loopedvirama-tutg by nChillu-tutg;
         sub na-tutg lVocalicMatra-tutg by na_lVocalicMatra-tutg;
+        sub na-tutg lVocalicMatra-tutg.alt by na_lVocalicMatra-tutg.alt;
         sub na-tutg rVocalicMatra-tutg by na_rVocalicMatra-tutg;
         sub na-tutg rrVocalicMatra-tutg by na_rrVocalicMatra-tutg;
         sub na-tutg uMatra-tutg by na_uMatra-tutg;
         sub na-tutg uuMatra-tutg by na_uuMatra-tutg;
         sub nga-tutg lVocalicMatra-tutg by nga_lVocalicMatra-tutg;
+        sub nga-tutg lVocalicMatra-tutg.alt by nga_lVocalicMatra-tutg.alt;
         sub nga-tutg rVocalicMatra-tutg by nga_rVocalicMatra-tutg;
         sub nga-tutg rrVocalicMatra-tutg by nga_rrVocalicMatra-tutg;
         sub nga-tutg uMatra-tutg by nga_uMatra-tutg;
         sub nga-tutg uuMatra-tutg by nga_uuMatra-tutg;
         sub nna-tutg loopedvirama-tutg by nnChillu-tutg;
         sub nna-tutg lVocalicMatra-tutg by nna_lVocalicMatra-tutg;
+        sub nna-tutg lVocalicMatra-tutg.alt by nna_lVocalicMatra-tutg.alt;
         sub nna-tutg rVocalicMatra-tutg by nna_rVocalicMatra-tutg;
         sub nna-tutg rrVocalicMatra-tutg by nna_rrVocalicMatra-tutg;
         sub nna-tutg uMatra-tutg by nna_uMatra-tutg;
         sub nna-tutg uuMatra-tutg by nna_uuMatra-tutg;
         sub nya-tutg uuMatra-tutg by nya_UuMatra-tutg;
         sub nya-tutg lVocalicMatra-tutg by nya_lVocalicMatra-tutg;
+        sub nya-tutg lVocalicMatra-tutg.alt by nya_lVocalicMatra-tutg.alt;
         sub nya-tutg rVocalicMatra-tutg by nya_rVocalicMatra-tutg;
         sub nya-tutg rrVocalicMatra-tutg by nya_rrVocalicMatra-tutg;
         sub nya-tutg uMatra-tutg by nya_uMatra-tutg;
         sub pa-tutg lVocalicMatra-tutg by pa_lVocalicMatra-tutg;
+        sub pa-tutg lVocalicMatra-tutg.alt by pa_lVocalicMatra-tutg.alt;
         sub pa-tutg rVocalicMatra-tutg by pa_rVocalicMatra-tutg;
         sub pa-tutg rrVocalicMatra-tutg by pa_rrVocalicMatra-tutg;
         sub pa-tutg uMatra-tutg by pa_uMatra-tutg;
         sub pa-tutg uuMatra-tutg by pa_uuMatra-tutg;
         sub pha-tutg lVocalicMatra-tutg by pha_lVocalicMatra-tutg;
+        sub pha-tutg lVocalicMatra-tutg.alt by pha_lVocalicMatra-tutg.alt;
         sub pha-tutg rVocalicMatra-tutg by pha_rVocalicMatra-tutg;
         sub pha-tutg rrVocalicMatra-tutg by pha_rrVocalicMatra-tutg;
         sub pha-tutg uMatra-tutg by pha_uMatra-tutg;
@@ -475,6 +502,7 @@ feature akhn {
         sub rVocalicMatra-tutg uMatra-tutg by rVocalicMatra_uMatra-tutg;
         sub rVocalicMatra-tutg uuMatra-tutg by rVocalicMatra_uuMatra-tutg;
         sub ra-tutg lVocalicMatra-tutg by ra_lVocalicMatra-tutg;
+        sub ra-tutg lVocalicMatra-tutg.alt by ra_lVocalicMatra-tutg.alt;
         sub repha-tutg.alt1 ma-tutg by ra_ma-tutg;
         sub ra-tutg rVocalicMatra-tutg by ra_rVocalicMatra-tutg;
         sub repha-tutg.alt1 ra-tutg by ra_ra-tutg;
@@ -486,53 +514,63 @@ feature akhn {
         sub repha-tutg.alt1 ya-tutg by ra_ya-tutg;
         sub ra-tutg loopedvirama-tutg by rrChillu-tutg;
         sub rra-tutg lVocalicMatra-tutg by rra_lVocalicMatra-tutg;
+        sub rra-tutg lVocalicMatra-tutg.alt by rra_lVocalicMatra-tutg.alt;
         sub rra-tutg rVocalicMatra-tutg by rra_rVocalicMatra-tutg;
         sub rra-tutg rrVocalicMatra-tutg by rra_rrVocalicMatra-tutg;
         sub rra-tutg uMatra-tutg by rra_uMatra-tutg;
         sub rra-tutg uuMatra-tutg by rra_uuMatra-tutg;
         sub sa-tutg lVocalicMatra-tutg by sa_lVocalicMatra-tutg;
+        sub sa-tutg lVocalicMatra-tutg.alt by sa_lVocalicMatra-tutg.alt;
         sub sa-tutg rVocalicMatra-tutg by sa_rVocalicMatra-tutg;
         sub sa-tutg rrVocalicMatra-tutg by sa_rrVocalicMatra-tutg;
         sub sa-tutg uMatra-tutg by sa_uMatra-tutg;
         sub sa-tutg uuMatra-tutg by sa_uuMatra-tutg;
         sub sha-tutg lVocalicMatra-tutg by sha_lVocalicMatra-tutg;
+        sub sha-tutg lVocalicMatra-tutg.alt by sha_lVocalicMatra-tutg.alt;
         sub sha-tutg rVocalicMatra-tutg by sha_rVocalicMatra-tutg;
         sub sha-tutg rrVocalicMatra-tutg by sha_rrVocalicMatra-tutg;
         sub sha-tutg uMatra-tutg by sha_uMatra-tutg;
         sub sha-tutg uuMatra-tutg by sha_uuMatra-tutg;
         sub ssa-tutg lVocalicMatra-tutg by ssa_lVocalicMatra-tutg;
+        sub ssa-tutg lVocalicMatra-tutg.alt by ssa_lVocalicMatra-tutg.alt;
         sub ssa-tutg rVocalicMatra-tutg by ssa_rVocalicMatra-tutg;
         sub ssa-tutg rrVocalicMatra-tutg by ssa_rrVocalicMatra-tutg;
         sub ssa-tutg uMatra-tutg by ssa_uMatra-tutg;
         sub ssa-tutg uuMatra-tutg by ssa_uuMatra-tutg;
         sub ta-tutg loopedvirama-tutg by tChillu-tutg;
         sub ta-tutg lVocalicMatra-tutg by ta_lVocalicMatra-tutg;
+        sub ta-tutg lVocalicMatra-tutg.alt by ta_lVocalicMatra-tutg.alt;
         sub ta-tutg rVocalicMatra-tutg by ta_rVocalicMatra-tutg;
         sub ta-tutg rrVocalicMatra-tutg by ta_rrVocalicMatra-tutg;
         sub ta-tutg uMatra-tutg by ta_uMatra-tutg;
         sub ta-tutg uuMatra-tutg by ta_uuMatra-tutg;
         sub tha-tutg lVocalicMatra-tutg by tha_lVocalicMatra-tutg;
+        sub tha-tutg lVocalicMatra-tutg.alt by tha_lVocalicMatra-tutg.alt;
         sub tha-tutg rVocalicMatra-tutg by tha_rVocalicMatra-tutg;
         sub tha-tutg rrVocalicMatra-tutg by tha_rrVocalicMatra-tutg;
         sub tha-tutg uMatra-tutg by tha_uMatra-tutg;
         sub tha-tutg uuMatra-tutg by tha_uuMatra-tutg;
         sub tta-tutg loopedvirama-tutg by ttChillu-tutg;
         sub tta-tutg lVocalicMatra-tutg by tta_lVocalicMatra-tutg;
+        sub tta-tutg lVocalicMatra-tutg.alt by tta_lVocalicMatra-tutg.alt;
         sub tta-tutg rVocalicMatra-tutg by tta_rVocalicMatra-tutg;
         sub tta-tutg rrVocalicMatra-tutg by tta_rrVocalicMatra-tutg;
         sub tta-tutg uMatra-tutg by tta_uMatra-tutg;
         sub tta-tutg uuMatra-tutg by tta_uuMatra-tutg;
         sub ttha-tutg lVocalicMatra-tutg by ttha_lVocalicMatra-tutg;
+        sub ttha-tutg lVocalicMatra-tutg.alt by ttha_lVocalicMatra-tutg.alt;
         sub ttha-tutg rVocalicMatra-tutg by ttha_rVocalicMatra-tutg;
         sub ttha-tutg rrVocalicMatra-tutg by ttha_rrVocalicMatra-tutg;
         sub ttha-tutg uMatra-tutg by ttha_uMatra-tutg;
         sub ttha-tutg uuMatra-tutg by ttha_uuMatra-tutg;
         sub va-tutg lVocalicMatra-tutg by va_lVocalicMatra-tutg;
+        sub va-tutg lVocalicMatra-tutg.alt by va_lVocalicMatra-tutg.alt;
         sub va-tutg rVocalicMatra-tutg by va_rVocalicMatra-tutg;
         sub va-tutg rrVocalicMatra-tutg by va_rrVocalicMatra-tutg;
         sub va-tutg uMatra-tutg by va_uMatra-tutg;
         sub va-tutg uuMatra-tutg by va_uuMatra-tutg;
         sub ya-tutg lVocalicMatra-tutg by ya_lVocalicMatra-tutg;
+        sub ya-tutg lVocalicMatra-tutg.alt by ya_lVocalicMatra-tutg.alt;
         sub ya-tutg rVocalicMatra-tutg by ya_rVocalicMatra-tutg;
         sub ya-tutg rrVocalicMatra-tutg by ya_rrVocalicMatra-tutg;
         sub ya-tutg uMatra-tutg by ya_uMatra-tutg;
@@ -540,179 +578,508 @@ feature akhn {
     } TutgAkhand;
     lookup TutgConjunctVariantSelect {
         # Conjunct ligature + variation selector -> registered alternate ligature.
-        sub ba_lVocalicMatra-tutg vs11-tutg by ba_lVocalicMatra-tutg.alt;
-        sub bha_lVocalicMatra-tutg vs11-tutg by bha_lVocalicMatra-tutg.alt;
-        sub bha_ra-tutg vs11-tutg by bha_ra-tutg.alt1;
         sub bha_uMatra-tutg vs11-tutg by bha_uMatra-tutg.alt1;
         sub bha_uuMatra-tutg vs11-tutg by bha_uuMatra-tutg.alt1;
         sub ca_ca-tutg vs11-tutg by ca_ca-tutg.alt1;
         sub ca_cha-tutg vs12-tutg by ca_cha-tutg.alt2;
-        sub ca_lVocalicMatra-tutg vs11-tutg by ca_lVocalicMatra-tutg.alt;
-        sub cha_lVocalicMatra-tutg vs11-tutg by cha_lVocalicMatra-tutg.alt;
         sub cha_uMatra-tutg vs11-tutg by cha_uMatra-tutg.alt1;
-        sub da_lVocalicMatra-tutg vs11-tutg by da_lVocalicMatra-tutg.alt;
-        sub dda_lVocalicMatra-tutg vs11-tutg by dda_lVocalicMatra-tutg.alt;
-        sub ddha_lVocalicMatra-tutg vs11-tutg by ddha_lVocalicMatra-tutg.alt;
-        sub dha_lVocalicMatra-tutg vs11-tutg by dha_lVocalicMatra-tutg.alt;
         sub ga_ga-tutg vs11-tutg by ga_ga-tutg.alt1;
-        sub ga_lVocalicMatra-tutg vs11-tutg by ga_lVocalicMatra-tutg.alt;
         sub ga_uMatra-tutg vs11-tutg by ga_uMatra-tutg.alt1;
-        sub gha_lVocalicMatra-tutg vs11-tutg by gha_lVocalicMatra-tutg.alt;
-        sub ha_lVocalicMatra-tutg vs11-tutg by ha_lVocalicMatra-tutg.alt;
         sub ha_uMatra-tutg vs11-tutg by ha_uMatra-tutg.alt1;
-        sub ja_lVocalicMatra-tutg vs11-tutg by ja_lVocalicMatra-tutg.alt;
         sub ja_uMatra-tutg vs11-tutg by ja_uMatra-tutg.alt1;
-        sub jha_lVocalicMatra-tutg vs11-tutg by jha_lVocalicMatra-tutg.alt;
-        sub ka_lVocalicMatra-tutg vs11-tutg by ka_lVocalicMatra-tutg.alt;
         sub ka_sa_sa-tutg vs11-tutg by ka_sa_sa-tutg.alt1;
         sub ka_uMatra-tutg vs11-tutg by ka_uMatra-tutg.alt1;
-        sub kha_lVocalicMatra-tutg vs11-tutg by kha_lVocalicMatra-tutg.alt;
-        sub la_lVocalicMatra-tutg vs11-tutg by la_lVocalicMatra-tutg.alt;
-        sub lla_lVocalicMatra-tutg vs11-tutg by lla_lVocalicMatra-tutg.alt;
-        sub llla_lVocalicMatra-tutg vs11-tutg by llla_lVocalicMatra-tutg.alt;
-        sub ma_lVocalicMatra-tutg vs11-tutg by ma_lVocalicMatra-tutg.alt;
         sub na_ka-tutg vs12-tutg by na_ka-tutg.alt2;
         sub na_ka_ta-tutg vs12-tutg by na_ka_ta-tutg.alt2;
-        sub na_lVocalicMatra-tutg vs11-tutg by na_lVocalicMatra-tutg.alt;
         sub na_ta_sa-tutg vs12-tutg by na_ta_sa-tutg.alt2;
         sub na_uMatra-tutg vs11-tutg by na_uMatra-tutg.alt1;
         sub na_uuMatra-tutg vs11-tutg by na_uuMatra-tutg.alt1;
         sub nga_kha-tutg vs11-tutg by nga_kha-tutg.alt1;
-        sub nga_lVocalicMatra-tutg vs11-tutg by nga_lVocalicMatra-tutg.alt;
         sub nga_uMatra-tutg vs11-tutg by nga_uMatra-tutg.alt1;
         sub nna_dda-tutg vs11-tutg by nna_dda-tutg.alt1;
-        sub nna_lVocalicMatra-tutg vs11-tutg by nna_lVocalicMatra-tutg.alt;
         sub nna_tta-tutg vs11-tutg by nna_tta-tutg.alt1;
         sub nna_uMatra-tutg vs11-tutg by nna_uMatra-tutg.alt1;
         sub nna_uuMatra-tutg vs11-tutg by nna_uuMatra-tutg.alt1;
         sub nya_ja-tutg vs11-tutg by nya_ja-tutg.alt1;
-        sub nya_lVocalicMatra-tutg vs11-tutg by nya_lVocalicMatra-tutg.alt;
         sub nya_uMatra-tutg vs11-tutg by nya_uMatra-tutg.alt1;
-        sub pa_lVocalicMatra-tutg vs11-tutg by pa_lVocalicMatra-tutg.alt;
-        sub pha_lVocalicMatra-tutg vs11-tutg by pha_lVocalicMatra-tutg.alt;
-        sub ra_lVocalicMatra-tutg vs11-tutg by ra_lVocalicMatra-tutg.alt;
         sub ra_ma-tutg vs11-tutg by ra_ma-tutg.alt1;
         sub ra_uMatra-tutg vs11-tutg by ra_uMatra-tutg.alt1;
         sub ra_uMatra-tutg vs12-tutg by ra_uMatra-tutg.alt2;
         sub ra_uuMatra-tutg vs11-tutg by ra_uuMatra-tutg.alt1;
         sub ra_va-tutg vs11-tutg by ra_va-tutg.alt1;
-        sub rra_lVocalicMatra-tutg vs11-tutg by rra_lVocalicMatra-tutg.alt;
-        sub sa_lVocalicMatra-tutg vs11-tutg by sa_lVocalicMatra-tutg.alt;
         sub sa_tha-tutg vs11-tutg by sa_tha-tutg.alt1;
         sub sa_va-tutg vs11-tutg by sa_va-tutg.alt1;
-        sub sha_lVocalicMatra-tutg vs11-tutg by sha_lVocalicMatra-tutg.alt;
         sub sha_ra_iiMatra-tutg vs11-tutg by sha_ra_iiMatra-tutg.alt1;
         sub sha_uMatra-tutg vs11-tutg by sha_uMatra-tutg.alt1;
-        sub ssa_lVocalicMatra-tutg vs11-tutg by ssa_lVocalicMatra-tutg.alt;
         sub ssa_ssa-tutg vs12-tutg by ssa_ssa-tutg.alt2;
         sub ssa_ttha-tutg vs11-tutg by ssa_ttha-tutg.alt1;
         sub ssa_ttha-tutg vs12-tutg by ssa_ttha-tutg.alt2;
         sub ssa_uuMatra-tutg vs11-tutg by ssa_uuMatra-tutg.alt1;
-        sub ta_lVocalicMatra-tutg vs11-tutg by ta_lVocalicMatra-tutg.alt;
         sub ta_ma-tutg vs11-tutg by ta_ma-tutg.alt1;
         sub ta_uMatra-tutg vs11-tutg by ta_uMatra-tutg.alt1;
-        sub tha_lVocalicMatra-tutg vs11-tutg by tha_lVocalicMatra-tutg.alt;
         sub ttChillu-tutg vs11-tutg by ttChillu-tutg.alt1;
-        sub tta_lVocalicMatra-tutg vs11-tutg by tta_lVocalicMatra-tutg.alt;
         sub tta_uMatra-tutg vs11-tutg by tta_uMatra-tutg.alt1;
         sub tta_uuMatra-tutg vs11-tutg by tta_uuMatra-tutg.alt1;
-        sub ttha_lVocalicMatra-tutg vs11-tutg by ttha_lVocalicMatra-tutg.alt;
-        sub va_lVocalicMatra-tutg vs11-tutg by va_lVocalicMatra-tutg.alt;
-        sub ya_lVocalicMatra-tutg vs11-tutg by ya_lVocalicMatra-tutg.alt;
         sub ya_ya-tutg vs12-tutg by ya_ya-tutg.alt2;
     } TutgConjunctVariantSelect;
 } akhn;
 
 # --- Stylistic alternates (candidates for a later salt/ss0N feature, NOT included above) ---
-# ba_lVocalicMatra-tutg -> ba_lVocalicMatra-tutg.alt
-# bha_lVocalicMatra-tutg -> bha_lVocalicMatra-tutg.alt
-# bha_ra-tutg -> bha_ra-tutg.alt1
-# bha_uMatra-tutg -> bha_uMatra-tutg.alt1
-# bha_uuMatra-tutg -> bha_uuMatra-tutg.alt1
-# ca_ca-tutg -> ca_ca-tutg.alt1
-# ca_cha-tutg -> ca_cha-tutg.alt2
-# ca_lVocalicMatra-tutg -> ca_lVocalicMatra-tutg.alt
-# cha_lVocalicMatra-tutg -> cha_lVocalicMatra-tutg.alt
-# cha_uMatra-tutg -> cha_uMatra-tutg.alt1
-# da_lVocalicMatra-tutg -> da_lVocalicMatra-tutg.alt
-# dda_lVocalicMatra-tutg -> dda_lVocalicMatra-tutg.alt
-# ddha_lVocalicMatra-tutg -> ddha_lVocalicMatra-tutg.alt
-# dha_lVocalicMatra-tutg -> dha_lVocalicMatra-tutg.alt
-# ga_ga-tutg -> ga_ga-tutg.alt1
-# ga_lVocalicMatra-tutg -> ga_lVocalicMatra-tutg.alt
+# ba_ba-tutg -> ba_ba-tutg.below.auto
+# ba_da-tutg -> ba_da-tutg.below.auto
+# ba_lVocalicMatra-tutg -> ba_lVocalicMatra-tutg.below.auto
+# ba_rVocalicMatra-tutg -> ba_rVocalicMatra-tutg.below.auto
+# ba_ra-tutg -> ba_ra-tutg.below.auto
+# ba_rrVocalicMatra-tutg -> ba_rrVocalicMatra-tutg.below.auto
+# ba_uMatra-tutg -> ba_uMatra-tutg.below.auto
+# ba_uuMatra-tutg -> ba_uuMatra-tutg.below.auto
+# bha_lVocalicMatra-tutg -> bha_lVocalicMatra-tutg.below.auto
+# bha_ma-tutg -> bha_ma-tutg.below.auto
+# bha_na-tutg -> bha_na-tutg.below.auto
+# bha_rVocalicMatra-tutg -> bha_rVocalicMatra-tutg.below.auto
+# bha_ra-tutg -> bha_ra-tutg.below.auto
+# bha_rrVocalicMatra-tutg -> bha_rrVocalicMatra-tutg.below.auto
+# bha_uMatra-tutg -> bha_uMatra-tutg.alt1, bha_uMatra-tutg.below.auto
+# bha_uuMatra-tutg -> bha_uuMatra-tutg.alt1, bha_uuMatra-tutg.below.auto
+# bha_va-tutg -> bha_va-tutg.below.auto
+# bha_ya-tutg -> bha_ya-tutg.below.auto
+# ca_ca-tutg -> ca_ca-tutg.alt1, ca_ca-tutg.below.auto
+# ca_cha-tutg -> ca_cha-tutg.alt2, ca_cha-tutg.below.auto
+# ca_lVocalicMatra-tutg -> ca_lVocalicMatra-tutg.below.auto
+# ca_ma-tutg -> ca_ma-tutg.below.auto
+# ca_rVocalicMatra-tutg -> ca_rVocalicMatra-tutg.below.auto
+# ca_rrVocalicMatra-tutg -> ca_rrVocalicMatra-tutg.below.auto
+# ca_uMatra-tutg -> ca_uMatra-tutg.below.auto
+# ca_uuMatra-tutg -> ca_uuMatra-tutg.below.auto
+# cha_lVocalicMatra-tutg -> cha_lVocalicMatra-tutg.below.auto
+# cha_nya-tutg -> cha_nya-tutg.below.auto
+# cha_rVocalicMatra-tutg -> cha_rVocalicMatra-tutg.below.auto
+# cha_rrVocalicMatra-tutg -> cha_rrVocalicMatra-tutg.below.auto
+# cha_uMatra-tutg -> cha_uMatra-tutg.alt1, cha_uMatra-tutg.below.auto
+# cha_uuMatra-tutg -> cha_uuMatra-tutg.below.auto
+# da_ba-tutg -> da_ba-tutg.below.auto
+# da_bha-tutg -> da_bha-tutg.below.auto
+# da_da-tutg -> da_da-tutg.below.auto
+# da_da_ra-tutg -> da_da_ra-tutg.below.auto
+# da_da_ya-tutg -> da_da_ya-tutg.below.auto
+# da_dha-tutg -> da_dha-tutg.below.auto
+# da_dha_ma-tutg -> da_dha_ma-tutg.below.auto
+# da_dha_ra-tutg -> da_dha_ra-tutg.below.auto
+# da_dha_va-tutg -> da_dha_va-tutg.below.auto
+# da_dha_ya-tutg -> da_dha_ya-tutg.below.auto
+# da_ga-tutg -> da_ga-tutg.below.auto
+# da_gha-tutg -> da_gha-tutg.below.auto
+# da_lVocalicMatra-tutg -> da_lVocalicMatra-tutg.below.auto
+# da_la-tutg -> da_la-tutg.below.auto
+# da_ma-tutg -> da_ma-tutg.below.auto
+# da_rVocalicMatra-tutg -> da_rVocalicMatra-tutg.below.auto
+# da_ra-tutg -> da_ra-tutg.below.auto
+# da_rrVocalicMatra-tutg -> da_rrVocalicMatra-tutg.below.auto
+# da_uMatra-tutg -> da_uMatra-tutg.below.auto
+# da_uuMatra-tutg -> da_uuMatra-tutg.below.auto
+# da_va-tutg -> da_va-tutg.below.auto
+# da_ya-tutg -> da_ya-tutg.below.auto
+# dda_ga-tutg -> dda_ga-tutg.below.auto
+# dda_lVocalicMatra-tutg -> dda_lVocalicMatra-tutg.below.auto
+# dda_rVocalicMatra-tutg -> dda_rVocalicMatra-tutg.below.auto
+# dda_rrVocalicMatra-tutg -> dda_rrVocalicMatra-tutg.below.auto
+# dda_uMatra-tutg -> dda_uMatra-tutg.below.auto
+# dda_uuMatra-tutg -> dda_uuMatra-tutg.below.auto
+# ddha_lVocalicMatra-tutg -> ddha_lVocalicMatra-tutg.below.auto
+# ddha_rVocalicMatra-tutg -> ddha_rVocalicMatra-tutg.below.auto
+# ddha_rrVocalicMatra-tutg -> ddha_rrVocalicMatra-tutg.below.auto
+# ddha_uMatra-tutg -> ddha_uMatra-tutg.below.auto
+# ddha_uuMatra-tutg -> ddha_uuMatra-tutg.below.auto
+# dha_lVocalicMatra-tutg -> dha_lVocalicMatra-tutg.below.auto
+# dha_rVocalicMatra-tutg -> dha_rVocalicMatra-tutg.below.auto
+# dha_rrVocalicMatra-tutg -> dha_rrVocalicMatra-tutg.below.auto
+# dha_uMatra-tutg -> dha_uMatra-tutg.below.auto
+# dha_uuMatra-tutg -> dha_uuMatra-tutg.below.auto
+# ga_ba-tutg -> ga_ba-tutg.below.auto
+# ga_bha-tutg -> ga_bha-tutg.below.auto
+# ga_bha_ya-tutg -> ga_bha_ya-tutg.below.auto
+# ga_da-tutg -> ga_da-tutg.below.auto
+# ga_da_dha-tutg -> ga_da_dha-tutg.below.auto
+# ga_da_dha_ra-tutg -> ga_da_dha_ra-tutg.below.auto
+# ga_da_dha_va-tutg -> ga_da_dha_va-tutg.below.auto
+# ga_dha-tutg -> ga_dha-tutg.below.auto
+# ga_dha_va-tutg -> ga_dha_va-tutg.below.auto
+# ga_ga-tutg -> ga_ga-tutg.alt1, ga_ga-tutg.below.auto
+# ga_ga_rVocalicMatra-tutg -> ga_ga_rVocalicMatra-tutg.below.auto
+# ga_gha-tutg -> ga_gha-tutg.below.auto
+# ga_ja-tutg -> ga_ja-tutg.below.auto
+# ga_lVocalicMatra-tutg -> ga_lVocalicMatra-tutg.below.auto
+# ga_ma-tutg -> ga_ma-tutg.below.auto
+# ga_na-tutg -> ga_na-tutg.below.auto
+# ga_na_va-tutg -> ga_na_va-tutg.below.auto
+# ga_na_ya-tutg -> ga_na_ya-tutg.below.auto
+# ga_rVocalicMatra-tutg -> ga_rVocalicMatra-tutg.below.auto
+# ga_rrVocalicMatra-tutg -> ga_rrVocalicMatra-tutg.below.auto
 # ga_uMatra-tutg -> ga_uMatra-tutg.alt1, ga_uMatra-tutg.below
-# gha_lVocalicMatra-tutg -> gha_lVocalicMatra-tutg.alt
-# ha_lVocalicMatra-tutg -> ha_lVocalicMatra-tutg.alt
-# ha_uMatra-tutg -> ha_uMatra-tutg.alt1
+# ga_uuMatra-tutg -> ga_uuMatra-tutg.below.auto
+# ga_ya-tutg -> ga_ya-tutg.below.auto
+# gha_lVocalicMatra-tutg -> gha_lVocalicMatra-tutg.below.auto
+# gha_rVocalicMatra-tutg -> gha_rVocalicMatra-tutg.below.auto
+# gha_rrVocalicMatra-tutg -> gha_rrVocalicMatra-tutg.below.auto
+# gha_uMatra-tutg -> gha_uMatra-tutg.below.auto
+# gha_uuMatra-tutg -> gha_uuMatra-tutg.below.auto
+# ha_lVocalicMatra-tutg -> ha_lVocalicMatra-tutg.below.auto
+# ha_ma-tutg -> ha_ma-tutg.below.auto
+# ha_na-tutg -> ha_na-tutg.below.auto
+# ha_na_ya-tutg -> ha_na_ya-tutg.below.auto
+# ha_rVocalicMatra-tutg -> ha_rVocalicMatra-tutg.below.auto
+# ha_rrVocalicMatra-tutg -> ha_rrVocalicMatra-tutg.below.auto
+# ha_uMatra-tutg -> ha_uMatra-tutg.alt1, ha_uMatra-tutg.below.auto
+# ha_uuMatra-tutg -> ha_uuMatra-tutg.below.auto
 # ha_ya-tutg -> ha_ya-tutg.below
-# ja_lVocalicMatra-tutg -> ja_lVocalicMatra-tutg.alt
-# ja_uMatra-tutg -> ja_uMatra-tutg.alt1
+# ja_cha-tutg -> ja_cha-tutg.below.auto
+# ja_ja-tutg -> ja_ja-tutg.below.auto
+# ja_ja_nya-tutg -> ja_ja_nya-tutg.below.auto
+# ja_ja_ya-tutg -> ja_ja_ya-tutg.below.auto
+# ja_lVocalicMatra-tutg -> ja_lVocalicMatra-tutg.below.auto
+# ja_ma-tutg -> ja_ma-tutg.below.auto
+# ja_nya-tutg -> ja_nya-tutg.below.auto
+# ja_rVocalicMatra-tutg -> ja_rVocalicMatra-tutg.below.auto
+# ja_ra-tutg -> ja_ra-tutg.below.auto
+# ja_rrVocalicMatra-tutg -> ja_rrVocalicMatra-tutg.below.auto
+# ja_uMatra-tutg -> ja_uMatra-tutg.alt1, ja_uMatra-tutg.below.auto
 # ja_uuMatra-tutg -> ja_uuMatra-tutg.below
-# jha_lVocalicMatra-tutg -> jha_lVocalicMatra-tutg.alt
-# ka_lVocalicMatra-tutg -> ka_lVocalicMatra-tutg.alt
-# ka_sa_sa-tutg -> ka_sa_sa-tutg.alt1
-# ka_uMatra-tutg -> ka_uMatra-tutg.alt1
-# kha_lVocalicMatra-tutg -> kha_lVocalicMatra-tutg.alt
-# la_lVocalicMatra-tutg -> la_lVocalicMatra-tutg.alt
-# lla_lVocalicMatra-tutg -> lla_lVocalicMatra-tutg.alt
-# llla_lVocalicMatra-tutg -> llla_lVocalicMatra-tutg.alt
-# ma_lVocalicMatra-tutg -> ma_lVocalicMatra-tutg.alt
-# na_ka-tutg -> na_ka-tutg.alt2
-# na_ka_ta-tutg -> na_ka_ta-tutg.alt2
-# na_lVocalicMatra-tutg -> na_lVocalicMatra-tutg.alt
-# na_ta_sa-tutg -> na_ta_sa-tutg.alt2
+# ja_va-tutg -> ja_va-tutg.below.auto
+# ja_ya-tutg -> ja_ya-tutg.below.auto
+# jha_jha-tutg -> jha_jha-tutg.below.auto
+# jha_lVocalicMatra-tutg -> jha_lVocalicMatra-tutg.below.auto
+# jha_rVocalicMatra-tutg -> jha_rVocalicMatra-tutg.below.auto
+# jha_rrVocalicMatra-tutg -> jha_rrVocalicMatra-tutg.below.auto
+# jha_uMatra-tutg -> jha_uMatra-tutg.below.auto
+# jha_uuMatra-tutg -> jha_uuMatra-tutg.below.auto
+# ka_kChillu-tutg -> ka_kChillu-tutg.below.auto
+# ka_ka-tutg -> ka_ka-tutg.below.auto
+# ka_ka_rVocalicMatra-tutg -> ka_ka_rVocalicMatra-tutg.below.auto
+# ka_ka_ra-tutg -> ka_ka_ra-tutg.below.auto
+# ka_lVocalicMatra-tutg -> ka_lVocalicMatra-tutg.below.auto
+# ka_ma-tutg -> ka_ma-tutg.below.auto
+# ka_nChillu-tutg -> ka_nChillu-tutg.below.auto
+# ka_na-tutg -> ka_na-tutg.below.auto
+# ka_na_ya-tutg -> ka_na_ya-tutg.below.auto
+# ka_rVocalicMatra-tutg -> ka_rVocalicMatra-tutg.below.auto
+# ka_ra-tutg -> ka_ra-tutg.below.auto
+# ka_rrVocalicMatra-tutg -> ka_rrVocalicMatra-tutg.below.auto
+# ka_sa-tutg -> ka_sa-tutg.below.auto
+# ka_sa_sa-tutg -> ka_sa_sa-tutg.alt1, ka_sa_sa-tutg.below.auto
+# ka_ssa-tutg -> ka_ssa-tutg.below.auto
+# ka_ssa_ma-tutg -> ka_ssa_ma-tutg.below.auto
+# ka_ssa_ma_ya-tutg -> ka_ssa_ma_ya-tutg.below.auto
+# ka_ssa_nna-tutg -> ka_ssa_nna-tutg.below.auto
+# ka_ssa_nna_ya-tutg -> ka_ssa_nna_ya-tutg.below.auto
+# ka_ssa_ra-tutg -> ka_ssa_ra-tutg.below.auto
+# ka_ssa_va-tutg -> ka_ssa_va-tutg.below.auto
+# ka_ssa_ya-tutg -> ka_ssa_ya-tutg.below.auto
+# ka_tChillu-tutg -> ka_tChillu-tutg.below.auto
+# ka_ta-tutg -> ka_ta-tutg.below.auto
+# ka_ta_ra-tutg -> ka_ta_ra-tutg.below.auto
+# ka_ta_ra_ya-tutg -> ka_ta_ra_ya-tutg.below.auto
+# ka_ta_tha-tutg -> ka_ta_tha-tutg.below.auto
+# ka_ta_uMatra-tutg -> ka_ta_uMatra-tutg.below.auto
+# ka_ta_uuMatra-tutg -> ka_ta_uuMatra-tutg.below.auto
+# ka_ta_va-tutg -> ka_ta_va-tutg.below.auto
+# ka_ta_ya-tutg -> ka_ta_ya-tutg.below.auto
+# ka_tha-tutg -> ka_tha-tutg.below.auto
+# ka_tha_ya-tutg -> ka_tha_ya-tutg.below.auto
+# ka_ttChillu-tutg -> ka_ttChillu-tutg.below.auto
+# ka_tta-tutg -> ka_tta-tutg.below.auto
+# ka_uMatra-tutg -> ka_uMatra-tutg.alt1, ka_uMatra-tutg.below.auto
+# ka_uuMatra-tutg -> ka_uuMatra-tutg.below.auto
+# ka_va-tutg -> ka_va-tutg.below.auto
+# ka_ya-tutg -> ka_ya-tutg.below.auto
+# kha_ka-tutg -> kha_ka-tutg.below.auto
+# kha_kha-tutg -> kha_kha-tutg.below.auto
+# kha_lVocalicMatra-tutg -> kha_lVocalicMatra-tutg.below.auto
+# kha_rVocalicMatra-tutg -> kha_rVocalicMatra-tutg.below.auto
+# kha_rrVocalicMatra-tutg -> kha_rrVocalicMatra-tutg.below.auto
+# kha_uMatra-tutg -> kha_uMatra-tutg.below.auto
+# kha_uuMatra-tutg -> kha_uuMatra-tutg.below.auto
+# kha_ya-tutg -> kha_ya-tutg.below.auto
+# la_ka-tutg -> la_ka-tutg.below.auto
+# la_ka_uMatra-tutg -> la_ka_uMatra-tutg.below.auto
+# la_lVocalicMatra-tutg -> la_lVocalicMatra-tutg.below.auto
+# la_la-tutg -> la_la-tutg.below.auto
+# la_la_ya-tutg -> la_la_ya-tutg.below.auto
+# la_rVocalicMatra-tutg -> la_rVocalicMatra-tutg.below.auto
+# la_ra-tutg -> la_ra-tutg.below.auto
+# la_rrVocalicMatra-tutg -> la_rrVocalicMatra-tutg.below.auto
+# la_uMatra-tutg -> la_uMatra-tutg.below.auto
+# la_uuMatra-tutg -> la_uuMatra-tutg.below.auto
+# la_va-tutg -> la_va-tutg.below.auto
+# la_ya-tutg -> la_ya-tutg.below.auto
+# lla_lVocalicMatra-tutg -> lla_lVocalicMatra-tutg.below.auto
+# lla_lla-tutg -> lla_lla-tutg.below.auto
+# lla_pa-tutg -> lla_pa-tutg.below.auto
+# lla_rVocalicMatra-tutg -> lla_rVocalicMatra-tutg.below.auto
+# lla_rrVocalicMatra-tutg -> lla_rrVocalicMatra-tutg.below.auto
+# lla_uMatra-tutg -> lla_uMatra-tutg.below.auto
+# lla_uuMatra-tutg -> lla_uuMatra-tutg.below.auto
+# lla_ya-tutg -> lla_ya-tutg.below.auto
+# llla_lVocalicMatra-tutg -> llla_lVocalicMatra-tutg.below.auto
+# llla_rVocalicMatra-tutg -> llla_rVocalicMatra-tutg.below.auto
+# llla_rrVocalicMatra-tutg -> llla_rrVocalicMatra-tutg.below.auto
+# llla_uMatra-tutg -> llla_uMatra-tutg.below.auto
+# llla_uuMatra-tutg -> llla_uuMatra-tutg.below.auto
+# ma_lVocalicMatra-tutg -> ma_lVocalicMatra-tutg.below.auto
+# ma_ma-tutg -> ma_ma-tutg.below.auto
+# ma_pa-tutg -> ma_pa-tutg.below.auto
+# ma_rVocalicMatra-tutg -> ma_rVocalicMatra-tutg.below.auto
+# ma_rrVocalicMatra-tutg -> ma_rrVocalicMatra-tutg.below.auto
+# ma_uMatra-tutg -> ma_uMatra-tutg.below.auto
+# ma_uuMatra-tutg -> ma_uuMatra-tutg.below.auto
+# ma_va-tutg -> ma_va-tutg.below.auto
+# ma_ya-tutg -> ma_ya-tutg.below.auto
+# na_ba-tutg -> na_ba-tutg.below.auto
+# na_bha-tutg -> na_bha-tutg.below.auto
+# na_da-tutg -> na_da-tutg.below.auto
+# na_da_ra-tutg -> na_da_ra-tutg.below.auto
+# na_da_va-tutg -> na_da_va-tutg.below.auto
+# na_dha-tutg -> na_dha-tutg.below.auto
+# na_dha_va-tutg -> na_dha_va-tutg.below.auto
+# na_ga-tutg -> na_ga-tutg.below.auto
+# na_gha-tutg -> na_gha-tutg.below.auto
+# na_ka-tutg -> na_ka-tutg.alt2, na_ka-tutg.below.auto
+# na_ka_rVocalicMatra-tutg -> na_ka_rVocalicMatra-tutg.below.auto
+# na_ka_ssa-tutg -> na_ka_ssa-tutg.below.auto
+# na_ka_ta-tutg -> na_ka_ta-tutg.alt2, na_ka_ta-tutg.below.auto
+# na_ka_uMatra-tutg -> na_ka_uMatra-tutg.below.auto
+# na_lVocalicMatra-tutg -> na_lVocalicMatra-tutg.below.auto
+# na_ma-tutg -> na_ma-tutg.below.auto
+# na_nChillu-tutg -> na_nChillu-tutg.below.auto
+# na_na-tutg -> na_na-tutg.below.auto
+# na_na_ya-tutg -> na_na_ya-tutg.below.auto
+# na_rVocalicMatra-tutg -> na_rVocalicMatra-tutg.below.auto
+# na_rrVocalicMatra-tutg -> na_rrVocalicMatra-tutg.below.auto
+# na_tChillu-tutg -> na_tChillu-tutg.below.auto
+# na_ta-tutg -> na_ta-tutg.below.auto
+# na_ta_ra-tutg -> na_ta_ra-tutg.below.auto
+# na_ta_ra_ya_-tutg -> na_ta_ra_ya_-tutg.below.auto
+# na_ta_sa-tutg -> na_ta_sa-tutg.alt2, na_ta_sa-tutg.below.auto
+# na_ta_va-tutg -> na_ta_va-tutg.below.auto
+# na_ta_ya-tutg -> na_ta_ya-tutg.below.auto
+# na_tha-tutg -> na_tha-tutg.below.auto
+# na_ttChillu-tutg -> na_ttChillu-tutg.below.auto
+# na_tta-tutg -> na_tta-tutg.below.auto
 # na_uMatra-tutg -> na_uMatra-tutg.alt1, na_uMatra-tutg.below
-# na_uuMatra-tutg -> na_uuMatra-tutg.alt1
+# na_uuMatra-tutg -> na_uuMatra-tutg.alt1, na_uuMatra-tutg.below.auto
+# na_va-tutg -> na_va-tutg.below.auto
 # na_ya-tutg -> na_ya-tutg.below
-# nga_kha-tutg -> nga_kha-tutg.alt1
-# nga_lVocalicMatra-tutg -> nga_lVocalicMatra-tutg.alt
-# nga_uMatra-tutg -> nga_uMatra-tutg.alt1
-# nna_dda-tutg -> nna_dda-tutg.alt1
-# nna_lVocalicMatra-tutg -> nna_lVocalicMatra-tutg.alt
-# nna_tta-tutg -> nna_tta-tutg.alt1
-# nna_uMatra-tutg -> nna_uMatra-tutg.alt1
-# nna_uuMatra-tutg -> nna_uuMatra-tutg.alt1
-# nya_ja-tutg -> nya_ja-tutg.alt1
-# nya_lVocalicMatra-tutg -> nya_lVocalicMatra-tutg.alt
-# nya_uMatra-tutg -> nya_uMatra-tutg.alt1
-# pa_lVocalicMatra-tutg -> pa_lVocalicMatra-tutg.alt
+# nga_ba-tutg -> nga_ba-tutg.below.auto
+# nga_ka-tutg -> nga_ka-tutg.below.auto
+# nga_ka_ka-tutg -> nga_ka_ka-tutg.below.auto
+# nga_ka_ta-tutg -> nga_ka_ta-tutg.below.auto
+# nga_kha-tutg -> nga_kha-tutg.alt1, nga_kha-tutg.below.auto
+# nga_lVocalicMatra-tutg -> nga_lVocalicMatra-tutg.below.auto
+# nga_ma-tutg -> nga_ma-tutg.below.auto
+# nga_na-tutg -> nga_na-tutg.below.auto
+# nga_nga-tutg -> nga_nga-tutg.below.auto
+# nga_rVocalicMatra-tutg -> nga_rVocalicMatra-tutg.below.auto
+# nga_rrVocalicMatra-tutg -> nga_rrVocalicMatra-tutg.below.auto
+# nga_ta-tutg -> nga_ta-tutg.below.auto
+# nga_uMatra-tutg -> nga_uMatra-tutg.alt1, nga_uMatra-tutg.below.auto
+# nga_uuMatra-tutg -> nga_uuMatra-tutg.below.auto
+# nna_dda-tutg -> nna_dda-tutg.alt1, nna_dda-tutg.below.auto
+# nna_ddha-tutg -> nna_ddha-tutg.below.auto
+# nna_ha-tutg -> nna_ha-tutg.below.auto
+# nna_lVocalicMatra-tutg -> nna_lVocalicMatra-tutg.below.auto
+# nna_ma-tutg -> nna_ma-tutg.below.auto
+# nna_nna-tutg -> nna_nna-tutg.below.auto
+# nna_nna_ya-tutg -> nna_nna_ya-tutg.below.auto
+# nna_rVocalicMatra-tutg -> nna_rVocalicMatra-tutg.below.auto
+# nna_rrVocalicMatra-tutg -> nna_rrVocalicMatra-tutg.below.auto
+# nna_tta-tutg -> nna_tta-tutg.alt1, nna_tta-tutg.below.auto
+# nna_ttha-tutg -> nna_ttha-tutg.below.auto
+# nna_uMatra-tutg -> nna_uMatra-tutg.alt1, nna_uMatra-tutg.below.auto
+# nna_uuMatra-tutg -> nna_uuMatra-tutg.alt1, nna_uuMatra-tutg.below.auto
+# nna_ya-tutg -> nna_ya-tutg.below.auto
+# nya_UuMatra-tutg -> nya_UuMatra-tutg.below.auto
+# nya_ca-tutg -> nya_ca-tutg.below.auto
+# nya_cha-tutg -> nya_cha-tutg.below.auto
+# nya_ja-tutg -> nya_ja-tutg.alt1, nya_ja-tutg.below.auto
+# nya_ja_uMatra-tutg -> nya_ja_uMatra-tutg.below.auto
+# nya_lVocalicMatra-tutg -> nya_lVocalicMatra-tutg.below.auto
+# nya_rVocalicMatra-tutg -> nya_rVocalicMatra-tutg.below.auto
+# nya_rrVocalicMatra-tutg -> nya_rrVocalicMatra-tutg.below.auto
+# nya_uMatra-tutg -> nya_uMatra-tutg.alt1, nya_uMatra-tutg.below.auto
+# pa_cha-tutg -> pa_cha-tutg.below.auto
+# pa_lVocalicMatra-tutg -> pa_lVocalicMatra-tutg.below.auto
+# pa_pa-tutg -> pa_pa-tutg.below.auto
+# pa_rVocalicMatra-tutg -> pa_rVocalicMatra-tutg.below.auto
+# pa_rrVocalicMatra-tutg -> pa_rrVocalicMatra-tutg.below.auto
+# pa_sa-tutg -> pa_sa-tutg.below.auto
+# pa_sa_ma-tutg -> pa_sa_ma-tutg.below.auto
+# pa_sa_ta-tutg -> pa_sa_ta-tutg.below.auto
+# pa_sa_tha-tutg -> pa_sa_tha-tutg.below.auto
+# pa_sa_va-tutg -> pa_sa_va-tutg.below.auto
+# pa_sa_ya-tutg -> pa_sa_ya-tutg.below.auto
+# pa_ta-tutg -> pa_ta-tutg.below.auto
+# pa_ta_va-tutg -> pa_ta_va-tutg.below.auto
+# pa_uMatra-tutg -> pa_uMatra-tutg.below.auto
+# pa_uuMatra-tutg -> pa_uuMatra-tutg.below.auto
 # pa_ya-tutg -> pa_ya-tutg.below
-# pha_lVocalicMatra-tutg -> pha_lVocalicMatra-tutg.alt
-# ra_lVocalicMatra-tutg -> ra_lVocalicMatra-tutg.alt
-# ra_ma-tutg -> ra_ma-tutg.alt1
-# ra_uMatra-tutg -> ra_uMatra-tutg.alt1, ra_uMatra-tutg.alt2
-# ra_uuMatra-tutg -> ra_uuMatra-tutg.alt1
-# ra_va-tutg -> ra_va-tutg.alt1
-# ra_ya-tutg -> raMatra_ya-tutg.below
-# rra_lVocalicMatra-tutg -> rra_lVocalicMatra-tutg.alt
-# rra_uMatra-tutg -> rra_uMatra-tutg.001
-# sa_lVocalicMatra-tutg -> sa_lVocalicMatra-tutg.alt
-# sa_tha-tutg -> sa_tha-tutg.alt1
-# sa_va-tutg -> sa_va-tutg.alt1
-# sha_lVocalicMatra-tutg -> sha_lVocalicMatra-tutg.alt
-# sha_ra_iiMatra-tutg -> sha_ra_iiMatra-tutg.alt1
-# sha_uMatra-tutg -> sha_uMatra-tutg.alt1
+# pha_lVocalicMatra-tutg -> pha_lVocalicMatra-tutg.below.auto
+# pha_rVocalicMatra-tutg -> pha_rVocalicMatra-tutg.below.auto
+# pha_rrVocalicMatra-tutg -> pha_rrVocalicMatra-tutg.below.auto
+# pha_uMatra-tutg -> pha_uMatra-tutg.below.auto
+# pha_uuMatra-tutg -> pha_uuMatra-tutg.below.auto
+# rVocalicMatra_uMatra-tutg -> rVocalicMatra_uMatra-tutg.below.auto
+# rVocalicMatra_uuMatra-tutg -> rVocalicMatra_uuMatra-tutg.below.auto
+# ra_lVocalicMatra-tutg -> ra_lVocalicMatra-tutg.below.auto
+# ra_ma-tutg -> ra_ma-tutg.alt1, ra_ma-tutg.below.auto
+# ra_ma_ma-tutg -> ra_ma_ma-tutg.below.auto
+# ra_rVocalicMatra-tutg -> ra_rVocalicMatra-tutg.below.auto
+# ra_ra-tutg -> ra_ra-tutg.below.auto
+# ra_rrVocalicMatra-tutg -> ra_rrVocalicMatra-tutg.below.auto
+# ra_sha-tutg -> ra_sha-tutg.below.auto
+# ra_uMatra-tutg -> ra_uMatra-tutg.alt1, ra_uMatra-tutg.alt2, ra_uMatra-tutg.below.auto
+# ra_uuMatra-tutg -> ra_uuMatra-tutg.alt1, ra_uuMatra-tutg.below.auto
+# ra_va-tutg -> ra_va-tutg.alt1, ra_va-tutg.below.auto
+# ra_ya-tutg -> ra_ya-tutg.below.auto, raMatra_ya-tutg.below
+# rra_lVocalicMatra-tutg -> rra_lVocalicMatra-tutg.below.auto
+# rra_rVocalicMatra-tutg -> rra_rVocalicMatra-tutg.below.auto
+# rra_rrVocalicMatra-tutg -> rra_rrVocalicMatra-tutg.below.auto
+# rra_uMatra-tutg -> rra_uMatra-tutg.001, rra_uMatra-tutg.below.auto
+# rra_uuMatra-tutg -> rra_uuMatra-tutg.below.auto
+# sa_ca-tutg -> sa_ca-tutg.below.auto
+# sa_ka-tutg -> sa_ka-tutg.below.auto
+# sa_ka_vocalicR-tutg -> sa_ka_vocalicR-tutg.below.auto
+# sa_lVocalicMatra-tutg -> sa_lVocalicMatra-tutg.below.auto
+# sa_ma-tutg -> sa_ma-tutg.below.auto
+# sa_ma_ya-tutg -> sa_ma_ya-tutg.below.auto
+# sa_pa-tutg -> sa_pa-tutg.below.auto
+# sa_pa_rvocalicMatra-tutg -> sa_pa_rvocalicMatra-tutg.below.auto
+# sa_rVocalicMatra-tutg -> sa_rVocalicMatra-tutg.below.auto
+# sa_rrVocalicMatra-tutg -> sa_rrVocalicMatra-tutg.below.auto
+# sa_sa-tutg -> sa_sa-tutg.below.auto
+# sa_sa_ka-tutg -> sa_sa_ka-tutg.below.auto
+# sa_sa_pa-tutg -> sa_sa_pa-tutg.below.auto
+# sa_sa_rVocalicMatra-tutg -> sa_sa_rVocalicMatra-tutg.below.auto
+# sa_sa_ta-tutg -> sa_sa_ta-tutg.below.auto
+# sa_sa_ta_uMatra-tutg -> sa_sa_ta_uMatra-tutg.below.auto
+# sa_sa_tha-tutg -> sa_sa_tha-tutg.below.auto
+# sa_sa_tha_uMatra-tutg -> sa_sa_tha_uMatra-tutg.below.auto
+# sa_sa_va-tutg -> sa_sa_va-tutg.below.auto
+# sa_ta_raMatra-tutg -> sa_ta_raMatra-tutg.below.auto
+# sa_ta_ta-tutg -> sa_ta_ta-tutg.below.auto
+# sa_ta_tha-tutg -> sa_ta_tha-tutg.below.auto
+# sa_ta_uMatra-tutg -> sa_ta_uMatra-tutg.below.auto
+# sa_ta_uuMatra-tutg -> sa_ta_uuMatra-tutg.below.auto
+# sa_ta_va-tutg -> sa_ta_va-tutg.below.auto
+# sa_ta_ya-tutg -> sa_ta_ya-tutg.below.auto
+# sa_tha-tutg -> sa_tha-tutg.alt1, sa_tha-tutg.below.auto
+# sa_tta-tutg -> sa_tta-tutg.below.auto
+# sa_uMatra-tutg -> sa_uMatra-tutg.below.auto
+# sa_uuMatra-tutg -> sa_uuMatra-tutg.below.auto
+# sa_va-tutg -> sa_va-tutg.alt1, sa_va-tutg.below.auto
+# sa_ya-tutg -> sa_ya-tutg.below.auto
+# sha_ca-tutg -> sha_ca-tutg.below.auto
+# sha_cha-tutg -> sha_cha-tutg.below.auto
+# sha_lVocalicMatra-tutg -> sha_lVocalicMatra-tutg.below.auto
+# sha_ma-tutg -> sha_ma-tutg.below.auto
+# sha_na-tutg -> sha_na-tutg.below.auto
+# sha_rVocalicMatra-tutg -> sha_rVocalicMatra-tutg.below.auto
+# sha_ra_iiMatra-tutg -> sha_ra_iiMatra-tutg.alt1, sha_ra_iiMatra-tutg.below.auto
+# sha_rrVocalicMatra-tutg -> sha_rrVocalicMatra-tutg.below.auto
+# sha_sha-tutg -> sha_sha-tutg.below.auto
+# sha_ttha-tutg -> sha_ttha-tutg.below.auto
+# sha_uMatra-tutg -> sha_uMatra-tutg.alt1, sha_uMatra-tutg.below.auto
+# sha_uuMatra-tutg -> sha_uuMatra-tutg.below.auto
+# sha_va-tutg -> sha_va-tutg.below.auto
+# sha_va_ya-tutg -> sha_va_ya-tutg.below.auto
 # sha_ya-tutg -> sha_ya-tutg.below
-# ssa_lVocalicMatra-tutg -> ssa_lVocalicMatra-tutg.alt
-# ssa_ssa-tutg -> ssa_ssa-tutg.alt2
-# ssa_ttha-tutg -> ssa_ttha-tutg.alt1, ssa_ttha-tutg.alt2
-# ssa_uuMatra-tutg -> ssa_uuMatra-tutg.alt1
+# ssa_ka-tutg -> ssa_ka-tutg.below.auto
+# ssa_ka_ra-tutg -> ssa_ka_ra-tutg.below.auto
+# ssa_ka_uuMatra-tutg -> ssa_ka_uuMatra-tutg.below.auto
+# ssa_ka_vocalicR-tutg -> ssa_ka_vocalicR-tutg.below.auto
+# ssa_lVocalicMatra-tutg -> ssa_lVocalicMatra-tutg.below.auto
+# ssa_la-tutg -> ssa_la-tutg.below.auto
+# ssa_ma-tutg -> ssa_ma-tutg.below.auto
+# ssa_nna-tutg -> ssa_nna-tutg.below.auto
+# ssa_nna_uMatra-tutg -> ssa_nna_uMatra-tutg.below.auto
+# ssa_pa-tutg -> ssa_pa-tutg.below.auto
+# ssa_pa_ra-tutg -> ssa_pa_ra-tutg.below.auto
+# ssa_rVocalicMatra-tutg -> ssa_rVocalicMatra-tutg.below.auto
+# ssa_rrVocalicMatra-tutg -> ssa_rrVocalicMatra-tutg.below.auto
+# ssa_ssa-tutg -> ssa_ssa-tutg.alt2, ssa_ssa-tutg.below.auto
+# ssa_tta-tutg -> ssa_tta-tutg.below.auto
+# ssa_tta_rVocalicMatra-tutg -> ssa_tta_rVocalicMatra-tutg.below.auto
+# ssa_tta_va-tutg -> ssa_tta_va-tutg.below.auto
+# ssa_tta_ya-tutg -> ssa_tta_ya-tutg.below.auto
+# ssa_ttha-tutg -> ssa_ttha-tutg.alt1, ssa_ttha-tutg.alt2, ssa_ttha-tutg.below.auto
+# ssa_ttha_ya-tutg -> ssa_ttha_ya-tutg.below.auto
+# ssa_uMatra-tutg -> ssa_uMatra-tutg.below.auto
+# ssa_uuMatra-tutg -> ssa_uuMatra-tutg.alt1, ssa_uuMatra-tutg.below.auto
 # ssa_va-tutg -> ssa_va-tutg.below
-# ta_lVocalicMatra-tutg -> ta_lVocalicMatra-tutg.alt
-# ta_ma-tutg -> ta_ma-tutg.alt1
+# ssa_ya-tutg -> ssa_ya-tutg.below.auto
+# ta_bha-tutg -> ta_bha-tutg.below.auto
+# ta_kChillu-tutg -> ta_kChillu-tutg.below.auto
+# ta_ka-tutg -> ta_ka-tutg.below.auto
+# ta_ka_ssa-tutg -> ta_ka_ssa-tutg.below.auto
+# ta_ka_ssa_ma-tutg -> ta_ka_ssa_ma-tutg.below.auto
+# ta_lVocalicMatra-tutg -> ta_lVocalicMatra-tutg.below.auto
+# ta_ma-tutg -> ta_ma-tutg.alt1, ta_ma-tutg.below.auto
+# ta_ma_ra-tutg -> ta_ma_ra-tutg.below.auto
+# ta_ma_ya-tutg -> ta_ma_ya-tutg.below.auto
+# ta_nChillu-tutg -> ta_nChillu-tutg.below.auto
+# ta_na-tutg -> ta_na-tutg.below.auto
+# ta_rVocalicMatra-tutg -> ta_rVocalicMatra-tutg.below.auto
+# ta_ra-tutg -> ta_ra-tutg.below.auto
+# ta_ra_va-tutg -> ta_ra_va-tutg.below.auto
+# ta_rrVocalicMatra-tutg -> ta_rrVocalicMatra-tutg.below.auto
+# ta_sa-tutg -> ta_sa-tutg.below.auto
+# ta_sa_ta-tutg -> ta_sa_ta-tutg.below.auto
+# ta_ta-tutg -> ta_ta-tutg.below.auto
+# ta_taChillu-tutg -> ta_taChillu-tutg.below.auto
+# ta_ta_rVocalicMatra-tutg -> ta_ta_rVocalicMatra-tutg.below.auto
+# ta_ta_ra-tutg -> ta_ta_ra-tutg.below.auto
+# ta_ta_va-tutg -> ta_ta_va-tutg.below.auto
+# ta_tha-tutg -> ta_tha-tutg.below.auto
+# ta_tha_ya-tutg -> ta_tha_ya-tutg.below.auto
 # ta_uMatra-tutg -> ta_uMatra-tutg.alt1, ta_uMatra-tutg.below
-# tha_lVocalicMatra-tutg -> tha_lVocalicMatra-tutg.alt
+# ta_uuMatra-tutg -> ta_uuMatra-tutg.below.auto
+# ta_va-tutg -> ta_va-tutg.below.auto
+# ta_ya-tutg -> ta_ya-tutg.below.auto
+# tha_lVocalicMatra-tutg -> tha_lVocalicMatra-tutg.below.auto
+# tha_rVocalicMatra-tutg -> tha_rVocalicMatra-tutg.below.auto
+# tha_rrVocalicMatra-tutg -> tha_rrVocalicMatra-tutg.below.auto
+# tha_uMatra-tutg -> tha_uMatra-tutg.below.auto
+# tha_uuMatra-tutg -> tha_uuMatra-tutg.below.auto
 # ttChillu-tutg -> ttChillu-tutg.alt1
-# tta_lVocalicMatra-tutg -> tta_lVocalicMatra-tutg.alt
-# tta_uMatra-tutg -> tta_uMatra-tutg.alt1
-# tta_uuMatra-tutg -> tta_uuMatra-tutg.alt1
-# ttha_lVocalicMatra-tutg -> ttha_lVocalicMatra-tutg.alt
-# va_lVocalicMatra-tutg -> va_lVocalicMatra-tutg.alt
-# ya_lVocalicMatra-tutg -> ya_lVocalicMatra-tutg.alt
-# ya_ya-tutg -> ya_ya-tutg.alt2
+# tta_lVocalicMatra-tutg -> tta_lVocalicMatra-tutg.below.auto
+# tta_rVocalicMatra-tutg -> tta_rVocalicMatra-tutg.below.auto
+# tta_rrVocalicMatra-tutg -> tta_rrVocalicMatra-tutg.below.auto
+# tta_ttChillu-tutg -> tta_ttChillu-tutg.below.auto
+# tta_tta-tutg -> tta_tta-tutg.below.auto
+# tta_tta_ya-tutg -> tta_tta_ya-tutg.below.auto
+# tta_uMatra-tutg -> tta_uMatra-tutg.alt1, tta_uMatra-tutg.below.auto
+# tta_uuMatra-tutg -> tta_uuMatra-tutg.alt1, tta_uuMatra-tutg.below.auto
+# ttha_lVocalicMatra-tutg -> ttha_lVocalicMatra-tutg.below.auto
+# ttha_rVocalicMatra-tutg -> ttha_rVocalicMatra-tutg.below.auto
+# ttha_rrVocalicMatra-tutg -> ttha_rrVocalicMatra-tutg.below.auto
+# ttha_uMatra-tutg -> ttha_uMatra-tutg.below.auto
+# ttha_uuMatra-tutg -> ttha_uuMatra-tutg.below.auto
+# va_lVocalicMatra-tutg -> va_lVocalicMatra-tutg.below.auto
+# va_rVocalicMatra-tutg -> va_rVocalicMatra-tutg.below.auto
+# va_rrVocalicMatra-tutg -> va_rrVocalicMatra-tutg.below.auto
+# va_uMatra-tutg -> va_uMatra-tutg.below.auto
+# va_uuMatra-tutg -> va_uuMatra-tutg.below.auto
+# va_va-tutg -> va_va-tutg.below.auto
+# va_ya-tutg -> va_ya-tutg.below.auto
+# ya_lVocalicMatra-tutg -> ya_lVocalicMatra-tutg.below.auto
+# ya_rVocalicMatra-tutg -> ya_rVocalicMatra-tutg.below.auto
+# ya_rrVocalicMatra-tutg -> ya_rrVocalicMatra-tutg.below.auto
+# ya_uMatra-tutg -> ya_uMatra-tutg.below.auto
+# ya_uuMatra-tutg -> ya_uuMatra-tutg.below.auto
+# ya_va-tutg -> ya_va-tutg.below.auto
+# ya_ya-tutg -> ya_ya-tutg.alt2, ya_ya-tutg.below.auto
 
 # --- Skipped: name doesn't cleanly decompose, needs manual rule (see GSUB_TODO.md) ---
 # ka_iMatra_dotreph-tutg
+# ka_iMatra_dotreph-tutg.below.auto
 # ha_ra-tutg.below
 # pa_ra-tutg.below
 

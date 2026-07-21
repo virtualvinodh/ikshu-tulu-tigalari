@@ -109,6 +109,47 @@ def split_name(glyph_name):
     return resolved, suffix_tags
 
 
+# names_override.json's "ligature_alt_overrides" (added 2026-07-21): a small,
+# explicitly per-glyph table for the rare ligature ".altN" glyph that is really
+# "one specific component's own registered alt substituted in" (confirmed per
+# entry - by visual inspection, or by the glyph's own component structure - not
+# assumed from the name). For those, this makes generate_akhn_feature.py build
+# a genuine, separate TutgAkhand rule keyed on that component's own alt form
+# (looked up in variant_registry.json, same source TutgVariantSelect's rules
+# come from) instead of leaving the ".altN" glyph to be picked up only via
+# variant_registry.json's "_ligature_variants" / TutgConjunctVariantSelect
+# (VS11+, a post-ligature-formation substitution). Once overridden this way,
+# generate_variant_registry.py excludes the glyph from "_ligature_variants" -
+# it's reachable directly by typing "<component><VSn>" BEFORE the conjunct/
+# vowel-sign forms, exactly like every other TutgVariantSelect-driven variant,
+# with no VS11 layer involved at all. Deliberately keyed by the glyph's real,
+# unrenamed font name (not a renamed "bha_alt1_ra-tutg" style name) - the font
+# glyph itself is untouched, only how the generator interprets it changes.
+LIGATURE_ALT_OVERRIDES = {
+    k: v for k, v in NAMES_OVERRIDE.get("ligature_alt_overrides", {}).items() if not k.startswith("_")
+}
+
+
+def apply_ligature_alt_override(resolved_parts, override):
+    target = override["resolved_target"]
+    alt_index = str(override["alt_index"])
+    occurrence = override.get("occurrence", 1)
+    resolved_parts = list(resolved_parts)
+    seen = 0
+    for i, (name, kind) in enumerate(resolved_parts):
+        if name != target:
+            continue
+        seen += 1
+        if seen != occurrence:
+            continue
+        variant_name = VARIANT_REGISTRY.get(target, {}).get(alt_index)
+        if variant_name is None:
+            return None
+        resolved_parts[i] = (variant_name, kind)
+        return resolved_parts
+    return None
+
+
 # Tulu-Tigalari has its own encoded REPHA character (U+113D1, cmap'd to the base
 # glyph repha-tutg) - unlike Devanagari-style scripts, the expected typed input for
 # repha is that character directly, NOT "RA + conjoiner". The hand-written first akhn
@@ -279,6 +320,17 @@ for category in ("conjunct_ligature", "vowel_sign_ligature", "looped_virama_liga
             skipped_unparsed.append(gname)
             continue
         resolved_parts, suffix_tags = result
+        override = LIGATURE_ALT_OVERRIDES.get(gname)
+        if override:
+            # Confirmed per-entry to be "one component's own registered alt
+            # substituted in" - a first-class ligature with its OWN input
+            # sequence, not "an alt of the bare ligature's base_key" (so it
+            # must NOT be appended to that base_key's "alts" list below).
+            overridden = apply_ligature_alt_override(resolved_parts, override)
+            if overridden is None:
+                skipped_unparsed.append(gname)
+                continue
+            resolved_parts, suffix_tags = overridden, []
         base_key = tuple(p[0] for p in resolved_parts)
         by_base.setdefault(base_key, {"default": None, "alts": [], "resolved": resolved_parts})
         if suffix_tags:

@@ -54,5 +54,203 @@
       "resolves_to": "ta",
       "reason": "NOT the same thing as the standalone taChillu-tutg (see gsub_ignore_list.json - that one is a confirmed name/artwork mismatch, built from ya-tutg.below). This key only fires within a COMPOUND name like ta_taChillu-tutg, confirmed 2026-07-16 to be real T.T + Looped Virama (components: _taleftarm/_tamiddle - TA's own parts, same ones tChillu-tutg uses - plus _loopedviramaCombining.alt1 and a second _tamiddle). The gsub_ignore_list.json check in generate_akhn_feature.py's main loop is what guarantees this entry can never accidentally resolve the standalone broken taChillu-tutg too."
     }
+  },
+
+  "ligature_alt_overrides": {
+    "_readme": "Per-glyph override for a ligature '.altN' glyph whose alt-ness is really just ONE component's own registered alt substituted in, confirmed per entry (not assumed from the name) - by visual inspection, or by the glyph's own component structure. 'resolved_target' names which resolved part (its own base glyph name, e.g. 'bha-tutg') gets swapped for its registered alt form, looked up in variant_registry.json using 'alt_index'; if that name appears more than once in the ligature's sequence, 'occurrence' (1-indexed, default 1) picks which one. Consumed by generate_akhn_feature.py's apply_ligature_alt_override(): the glyph keeps its real font name untouched (no UFO rename) but gets its own genuine TutgAkhand rule, keyed on the target's alt form, so it forms directly via TutgVariantSelect + TutgAkhand - no TutgConjunctVariantSelect/VS11 involved. generate_variant_registry.py excludes any glyph listed here from '_ligature_variants' accordingly, since it's handled by this mechanism instead.",
+    "bha_ra-tutg.alt1": {
+      "resolved_target": "bha-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 by project owner via visual inspection: this glyph is bha's own alt1 form joined with plain ra, not an independent whole-ligature redesign."
+    },
+    "ka_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: ka_lVocalicMatra-tutg.alt is built from components ka-tutg + lVocalicMatra-tutg.alt (xOffset 5 / 1088) - the alt belongs to lVocalicMatra, not ka (ka-tutg has no registered alt of its own)."
+    },
+    "bha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components bha-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "da_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: the vowel-sign part is a literal lVocalicMatra-tutg.alt component (da itself is drawn as a contour here rather than a da-tutg component, but that doesn't change which part the alt belongs to)."
+    },
+    "ga_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components ga-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "ha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components ha-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "na_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components na-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "nga_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components nga-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "nna_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components nna-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "ta_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components ta-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "tta_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Confirmed 2026-07-21 via the glif itself: built from components tta-tutg + lVocalicMatra-tutg.alt, same pattern as ka_lVocalicMatra-tutg.alt."
+    },
+    "ba_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "ca_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "cha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "dda_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt). Consonant part uses dda-tutg.alt1 as its own component, but the ligature's own name still resolves the plain 'dda' token, so this override only ever swaps the lVocalicMatra part."
+    },
+    "ddha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt). Consonant part uses ddha-tutg.alt1 as its own component, but the ligature's own name still resolves the plain 'ddha' token, so this override only ever swaps the lVocalicMatra part."
+    },
+    "dha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "gha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "ja_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "kha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "la_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "llla_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt). Consonant part uses llla-tutg.alt1 as its own component, but the ligature's own name still resolves the plain 'llla' token, so this override only ever swaps the lVocalicMatra part."
+    },
+    "ma_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "nya_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt). Consonant part uses nya-tutg.alt1 as its own component, but the ligature's own name still resolves the plain 'nya' token, so this override only ever swaps the lVocalicMatra part."
+    },
+    "pa_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "pha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "ra_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "rra_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "sha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "ssa_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "tha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "ttha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "va_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "Same '<cons>_lVocalicMatra-tutg.alt' naming convention as the confirmed group above, per project owner 2026-07-21 - treated the same despite the vowel-sign part being drawn via a lVocalicMatra_tall-tutg.alt2 component instead of the plain lVocalicMatra-tutg.alt (a width-adjusted redraw of the same alt, not a different alt)."
+    },
+    "jha_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "MANUAL OVERRIDE, project owner directive 2026-07-21: treat the same as the rest of the '<cons>_lVocalicMatra-tutg.alt' family despite no component evidence either way (the vowel-sign part is drawn as raw contours, not a component reference to lVocalicMatra-tutg.alt or lVocalicMatra_tall-tutg.alt2 - the jha part is a plain jha-tutg component, not one of jha's own registered alts, so by elimination the alt-ness isn't jha's)."
+    },
+    "lla_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "MANUAL OVERRIDE, project owner directive 2026-07-21: treat the same as the rest of the '<cons>_lVocalicMatra-tutg.alt' family despite no component evidence either way (the vowel-sign part is drawn as raw contours, not a component reference to lVocalicMatra-tutg.alt or lVocalicMatra_tall-tutg.alt2). The lla part is drawn via lla-tutg.alt1 as its own component, but the ligature's own name still resolves the plain 'lla' token, so this override only ever swaps the lVocalicMatra part."
+    },
+    "sa_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "MANUAL OVERRIDE, project owner directive 2026-07-21: treat the same as the rest of the '<cons>_lVocalicMatra-tutg.alt' family despite no component evidence either way (the vowel-sign part is drawn as raw contours, not a component reference to lVocalicMatra-tutg.alt or lVocalicMatra_tall-tutg.alt2). sa-tutg has no registered alt of its own at all, so there's no competing claim on the alt-ness either."
+    },
+    "ya_lVocalicMatra-tutg.alt": {
+      "resolved_target": "lVocalicMatra-tutg",
+      "alt_index": "1",
+      "reason": "MANUAL OVERRIDE, project owner directive 2026-07-21: treat the same as the rest of the '<cons>_lVocalicMatra-tutg.alt' family despite no component evidence either way (the vowel-sign part is drawn as raw contours, not a component reference to lVocalicMatra-tutg.alt or lVocalicMatra_tall-tutg.alt2). ya-tutg has no registered alt of its own at all, so there's no competing claim on the alt-ness either."
+    }
+  },
+
+  "single_glyph_alt_overrides": {
+    "_readme": "Per-glyph override for a single-glyph '.altN' sibling whose name doesn't match generate_variant_registry.py's ALT_RE ('<base>-tutg.altN') at all - so it's silently skipped by the regex, not even reported as unclassified/no-base. 'base' is the real base glyph this is an alt OF; 'index' is the selector index (VS1 = \"1\", etc.) it should register under, same as every other single-glyph variant_registry.json entry. Consumed directly by generate_variant_registry.py alongside its regex scan.",
+    "rVocalicMatra-tutg-alt1": {
+      "base": "rVocalicMatra-tutg",
+      "index": "1",
+      "reason": "Uses a hyphen before \"alt1\" instead of the standard dot suffix (would be rVocalicMatra-tutg.alt1) - a naming inconsistency, confirmed 2026-07-21. This is rVocalicMatra-tutg's (Vocalic R vowel sign) own alt1 form, same role as e.g. uMatra-tutg's registered alts."
+    }
   }
 }
