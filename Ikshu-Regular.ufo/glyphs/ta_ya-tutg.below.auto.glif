@@ -2,7 +2,7 @@
 <glyph name="ta_ya-tutg.below.auto" format="2">
   <anchor x="586.0" y="-934.1" name="bottom"/>
   <anchor x="586.0" y="-179.5" name="_bottom"/>
-  <anchor x="935.2" y="-834.5" name="bottomright"/>
+  <anchor x="790.5" y="-884.1" name="bottomright"/>
   <outline>
     <component base="ta_ya-tutg" xScale="0.863" yScale="0.863" xOffset="80.3" yOffset="-677"/>
   </outline>

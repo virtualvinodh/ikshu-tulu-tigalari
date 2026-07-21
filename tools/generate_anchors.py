@@ -79,10 +79,21 @@ spacing_vs = [n for n in d["vowel_sign"] + d["special_mark"] if n in SPACING_VS_
 TOPRIGHT_POP = [n for n in d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + spacing_vs
                 if not _is_below_form(n)]
 
+# Bare (non-below-form) conjunct ligatures ending in "_ya" share YA's own
+# descending-tail shape (confirmed 2026-07-21 by project owner, same reasoning
+# as the below-form family above) but never had a bottomright anchor at all -
+# only consonants/below-forms did. Computed dynamically (any bare glyph ending
+# in "_ya-tutg", no further suffix) so a newly added "_ya" conjunct is covered
+# automatically.
+BARE_YA_LIGATURES = {n for n in font.keys() if n.endswith("_ya-tutg")}
+
 # A below-base form can itself be the base a following U/UU vowel sign attaches
 # to (same "ink-touching fallback" reasoning as a plain consonant), so it needs
 # its own bottomright too - not just bottom/_bottom.
-BOTTOMRIGHT_POP = d["consonant"] + d["consonant_below_base"] + LIGATURE_BELOW_FORMS + BELOW_AUTO_POP
+BOTTOMRIGHT_POP = (
+    d["consonant"] + d["consonant_below_base"] + LIGATURE_BELOW_FORMS + BELOW_AUTO_POP
+    + list(BARE_YA_LIGATURES)
+)
 
 MARKS_TOP = ["repha-tutg", "repha-tutg.alt1", "svarita-tutg"]
 MARKS_BOTTOM = ["anudatta-tutg", "germinationmark-tutg", "lVocalicMatra-tutg", "llVocalicMatra-tutg"]
@@ -212,6 +223,29 @@ def find_ink_bottom_right(glyph, font):
     return best
 
 
+def find_lowest_point(glyph, font):
+    pts = outline_points(glyph, font)
+    if not pts:
+        return None
+    return min(pts, key=lambda p: p[1])
+
+
+# ya-tutg.below (and every "<...>_ya-tutg.below[.auto]" ligature ending in YA,
+# which all carry the same descending tail via their own ya component) extends
+# much further down than it does right, so find_ink_bottom_right()'s "far right
+# + far down" blended score picks a point on the tail's side, well above the
+# actual bottom - confirmed 2026-07-21 by project owner (checked all 47 "_ya"
+# ligature below-forms, every one differs from its true lowest point by 8-251
+# units): bottomright here should be the glyph's true lowest ink point instead
+# of the blended-corner heuristic. Computed from the font's own glyph list
+# (not a static name list) so any "_ya" ligature added later is covered too.
+# Extended 2026-07-21 to the bare (non-below-form) "_ya" conjuncts too (see
+# BARE_YA_LIGATURES above) - same tail shape, same fix.
+BOTTOMRIGHT_LOWEST_POINT_OVERRIDE = {
+    n for n in font.keys()
+    if n == "ya-tutg.below" or n.endswith("_ya-tutg.below") or n.endswith("_ya-tutg.below.auto")
+} | BARE_YA_LIGATURES
+
 # --- run all passes ---
 base_pass(TOP_POP, "top", TOP_GAP, x_from="center", y_edge="max")
 base_pass(BOTTOM_POP, "bottom", BOTTOM_GAP, x_from="center", y_edge="min")
@@ -219,6 +253,13 @@ base_pass(TOPRIGHT_POP, "topright", TOPRIGHT_GAP, x_from="edge", y_edge="max")
 
 for gname in BOTTOMRIGHT_POP:
     g = font[gname]
+    if gname in BOTTOMRIGHT_LOWEST_POINT_OVERRIDE:
+        pt = find_lowest_point(g, font)
+        if pt is None:
+            report["no_bounds"].append((gname, "bottomright"))
+            continue
+        report[upsert_anchor(gname, "bottomright", pt[0], pt[1])] += 1
+        continue
     pt = find_ink_bottom_right(g, font)
     if pt is None:
         report["no_bounds"].append((gname, "bottomright"))

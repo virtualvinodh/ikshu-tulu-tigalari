@@ -4,6 +4,7 @@
   <anchor x="1516.0" y="621" name="top"/>
   <anchor x="1516.0" y="-391" name="bottom"/>
   <anchor x="3017" y="621" name="topright"/>
+  <anchor x="2729.0" y="-341.0" name="bottomright"/>
   <outline>
     <component base="ja_ja-tutg" xOffset="5"/>
     <component base="_yavattuwithloop" xOffset="-5"/>

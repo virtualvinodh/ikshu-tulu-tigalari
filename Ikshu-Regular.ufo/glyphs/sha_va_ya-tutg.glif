@@ -4,6 +4,7 @@
   <anchor x="872.5" y="620" name="top"/>
   <anchor x="872.5" y="-277" name="bottom"/>
   <anchor x="1730" y="620" name="topright"/>
+  <anchor x="1426.0" y="-227.0" name="bottomright"/>
   <outline>
     <component base="sha_va-tutg" xOffset="5"/>
     <component base="_yavattu-1" xOffset="594"/>

@@ -2,7 +2,7 @@
 <glyph name="ha_na_ya-tutg.below.auto" format="2">
   <anchor x="835.5" y="-922.0" name="bottom"/>
   <anchor x="835.5" y="-178.6" name="_bottom"/>
-  <anchor x="1367.3" y="-844.5" name="bottomright"/>
+  <anchor x="1256.2" y="-872.0" name="bottomright"/>
   <outline>
     <component base="ha_na_ya-tutg" xScale="0.863" yScale="0.863" xOffset="114.5" yOffset="-677"/>
   </outline>

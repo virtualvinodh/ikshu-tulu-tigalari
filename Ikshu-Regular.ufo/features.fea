@@ -1129,9 +1129,9 @@ feature blwf {
         sub subjoiner-tutg ma-tutg by ma-tutg.below;
         sub subjoiner-tutg ma-tutg.alt1 by ma-tutg.below.alt1;
         sub subjoiner-tutg ma-tutg.alt2 by ma-tutg.below.alt2;
-        sub subjoiner-tutg ya-tutg by ya-tutg.below;
-        sub subjoiner-tutg ra-tutg by raMatra-tutg;
-        sub subjoiner-tutg ra-tutg.alt1 by raMatra-tutg;
+        sub subjoiner-tutg ya-tutg by ya-tutg.below.mini;
+        sub subjoiner-tutg ra-tutg by ra-tutg.below;
+        sub subjoiner-tutg ra-tutg.alt1 by ra-tutg.below.alt1;
         sub subjoiner-tutg la-tutg by la-tutg.below;
         sub subjoiner-tutg va-tutg by va-tutg.below;
         sub subjoiner-tutg va-tutg.alt1 by va-tutg.below.alt1;

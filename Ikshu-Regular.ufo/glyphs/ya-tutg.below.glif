@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ya-tutg.below" format="2">
   <anchor x="-199.0" y="-486" name="bottom"/>
-  <anchor x="25.5" y="-295.4" name="bottomright"/>
+  <anchor x="-250" y="-436" name="bottomright"/>
   <outline>
     <contour>
       <point x="-250" y="-436" type="curve" smooth="yes"/>

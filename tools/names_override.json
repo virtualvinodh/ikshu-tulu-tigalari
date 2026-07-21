@@ -252,5 +252,30 @@
       "index": "1",
       "reason": "Uses a hyphen before \"alt1\" instead of the standard dot suffix (would be rVocalicMatra-tutg.alt1) - a naming inconsistency, confirmed 2026-07-21. This is rVocalicMatra-tutg's (Vocalic R vowel sign) own alt1 form, same role as e.g. uMatra-tutg's registered alts."
     }
+  },
+
+  "below_form_overrides": {
+    "_readme": "Per-consonant override for generate_blwf_feature.py's GENERIC below-base-form resolution (plain 'conjoiner + consonant', no forced-stacking VS1) - this is the data-driven replacement for what used to be a hardcoded BELOW_FORM_OVERRIDES dict in that script. Values are the real glyph name blwf should substitute. Only list a consonant here if it needs something OTHER than the plain '{consonant}.below' pattern. See 'subjoiner_below_form_overrides' below for the SEPARATE, VS1-forced-stacking resolution - project owner confirmed 2026-07-21 these should stay distinct: the generic path keeps using each consonant's traditional combining form (Rakar/ya's own below), only the explicit conjoiner+VS1 subjoiner path uses the new true miniatures.",
+    "ra-tutg": {
+      "resolves_to": "raMatra-tutg",
+      "reason": "RA's traditional 'Rakar' combining form, used as the generic below-base substitute for plain 'conjoiner + RA' (also used as a component in ligatures like ba_ra-tutg, and by generate_akhn_feature.py's TOKEN_ALIASES). Not a miniature of RA's own letterform (see BELOW_BASE_MINIATURE_GLYPHS.md), but that's fine here - project owner confirmed 2026-07-21 the generic path should keep using it, reserving the new true miniature (ra-tutg.below, generate_ya_ra_below_miniatures.py) for the explicit conjoiner+VS1 subjoiner path only (see subjoiner_below_form_overrides)."
+    }
+  },
+
+  "subjoiner_below_form_overrides": {
+    "_readme": "Per-consonant override for generate_blwf_feature.py's TutgBlwfSubjoiner resolution ONLY - the explicit 'conjoiner + VS1 -> subjoiner-tutg -> forced below-base stacking' path (see generate_akhn_feature.py's TutgSubjoinerForm), kept deliberately separate from 'below_form_overrides' above (the generic, unforced 'conjoiner + consonant' path). Project owner confirmed 2026-07-21: YA and RA's traditional combining forms (ya-tutg.below, raMatra-tutg/'Rakar') stay as the GENERIC default, while these real scaled-down miniatures (generate_ya_ra_below_miniatures.py) are reserved for when the user explicitly forces below-base stacking via VS1.",
+    "ya-tutg": {
+      "resolves_to": "ya-tutg.below.mini",
+      "reason": "ya-tutg.below (the plain/generic name) is a genuinely different allograph - taller/narrower than YA's own letterform, not a miniature of it (see BELOW_BASE_MINIATURE_GLYPHS.md and its own long descending tail, which needed a dedicated lowest-point bottomright anchor - see generate_anchors.py). ya-tutg.below.mini is a real scaled-down copy of ya-tutg, matching the ~86% scale convention every other consonant's below-form uses - used only via the explicit conjoiner+VS1 subjoiner path."
+    },
+    "ra-tutg": {
+      "resolves_to": "ra-tutg.below",
+      "reason": "raMatra-tutg (RA's generic below-form, see below_form_overrides above) is 'wider/shorter than RA's independent letterform - again a different allograph, not a miniature' (BELOW_BASE_MINIATURE_GLYPHS.md). ra-tutg.below is a real scaled-down copy of ra-tutg itself - used only via the explicit conjoiner+VS1 subjoiner path."
+    }
+  },
+
+  "subjoiner_alt_below_no_dedicated_in_generic": {
+    "_readme": "ra-tutg.below.alt1 (generate_ya_ra_below_miniatures.py, 2026-07-21) is new - before it existed, RA's alt1 form had no dedicated below-form at all and fell back to raMatra-tutg via the generic path's resolve_alt_below(). Listing 'ra-tutg' here tells generate_blwf_feature.py to keep that same generic-path fallback behavior (raMatra-tutg) even though ra-tutg.below.alt1 now exists - the new dedicated glyph is only used via the subjoiner (conjoiner+VS1) path, same split as the plain consonant above.",
+    "ra-tutg": true
   }
 }

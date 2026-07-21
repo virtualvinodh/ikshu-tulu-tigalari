@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ya-tutg.below.mini" format="2">
+  <anchor x="0.1" y="-739.9" name="bottom"/>
+  <anchor x="38.5" y="-662.7" name="bottomright"/>
+  <anchor x="0.1" y="-183.8" name="_bottom"/>
+  <outline>
+    <component base="ya-tutg" xScale="0.863" yScale="0.863" xOffset="-327" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

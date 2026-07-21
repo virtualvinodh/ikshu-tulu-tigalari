@@ -2588,6 +2588,9 @@
       <string>vs6-tutg</string>
       <string>vs11-tutg</string>
       <string>vs12-tutg</string>
+      <string>ya-tutg.below.mini</string>
+      <string>ra-tutg.below</string>
+      <string>ra-tutg.below.alt1</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>

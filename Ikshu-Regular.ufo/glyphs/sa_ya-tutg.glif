@@ -4,6 +4,7 @@
   <anchor x="602.0" y="612.5" name="top"/>
   <anchor x="602.0" y="-277" name="bottom"/>
   <anchor x="1189" y="612.5" name="topright"/>
+  <anchor x="885.0" y="-227.0" name="bottomright"/>
   <outline>
     <component base="sa-tutg" xOffset="5"/>
     <component base="_ya_2" xOffset="4"/>

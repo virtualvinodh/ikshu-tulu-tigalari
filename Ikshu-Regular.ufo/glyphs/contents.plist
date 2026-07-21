@@ -2058,6 +2058,10 @@
     <string>ra-tutg.glif</string>
     <key>ra-tutg.alt1</key>
     <string>ra-tutg.alt1.glif</string>
+    <key>ra-tutg.below</key>
+    <string>ra-tutg.below.glif</string>
+    <key>ra-tutg.below.alt1</key>
+    <string>ra-tutg.below.alt1.glif</string>
     <key>raMatra-tutg</key>
     <string>raM_atra-tutg.glif</string>
     <key>raMatra_uMatra.below</key>
@@ -2884,6 +2888,8 @@
     <string>ya-tutg.glif</string>
     <key>ya-tutg.below</key>
     <string>ya-tutg.below.glif</string>
+    <key>ya-tutg.below.mini</key>
+    <string>ya-tutg.below.mini.glif</string>
     <key>ya_lVocalicMatra-tutg</key>
     <string>ya_lV_ocalicM_atra-tutg.glif</string>
     <key>ya_lVocalicMatra-tutg.alt</key>

@@ -2,7 +2,7 @@
 <glyph name="ssa_ttha_ya-tutg.below.auto" format="2">
   <anchor x="636.0" y="-1299.2" name="bottom"/>
   <anchor x="636.0" y="-185.1" name="_bottom"/>
-  <anchor x="1074.3" y="-1174.5" name="bottomright"/>
+  <anchor x="881.1" y="-1249.2" name="bottomright"/>
   <outline>
     <component base="ssa_ttha_ya-tutg" xScale="0.863" yScale="0.863" xOffset="87.1" yOffset="-677"/>
   </outline>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ra-tutg.below.alt1" format="2">
+  <anchor x="0.3" y="-886.7" name="bottom"/>
+  <anchor x="125.2" y="-764.4" name="bottomright"/>
+  <anchor x="0.3" y="-184.2" name="_bottom"/>
+  <outline>
+    <component base="ra-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-165" yOffset="-677"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.openTypeCategory</key>
+      <string>mark</string>
+    </dict>
+  </lib>
+</glyph>

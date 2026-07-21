@@ -4,6 +4,7 @@
   <anchor x="986.0" y="625.6" name="top"/>
   <anchor x="986.0" y="-403" name="bottom"/>
   <anchor x="1962" y="625.6" name="topright"/>
+  <anchor x="1337.0" y="-353.0" name="bottomright"/>
   <outline>
     <contour>
       <point x="1398" y="434" type="curve"/>

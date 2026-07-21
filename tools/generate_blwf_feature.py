@@ -108,11 +108,32 @@ fallback - so every possible conjunct renders as *something* correctly shaped
 (a below-base stack), not a default/unjoined pair, even without a bespoke ligature.
 
 Below-base glyph naming is almost universally "{consonant}.below" (e.g.
-ka-tutg -> ka-tutg.below), EXCEPT for RA: its below-base combining form is a
-completely different glyph, "raMatra-tutg" (used as a component in ligatures like
-ba_ra-tutg) - the same fact generate_akhn_feature.py's TOKEN_ALIASES already
-relies on. BELOW_FORM_OVERRIDES documents that one exception explicitly rather
-than assuming the ".below" suffix pattern always holds.
+ka-tutg -> ka-tutg.below). Two documented exceptions, RA and YA (see
+BELOW_BASE_MINIATURE_GLYPHS.md), each have a real, scaled-down miniature too
+(ra-tutg.below, ya-tutg.below.mini, ra-tutg.below.alt1 - all from
+generate_ya_ra_below_miniatures.py, 2026-07-21) - but project owner confirmed
+2026-07-21 these two paths must stay DELIBERATELY SEPARATE, not merged:
+
+  - The GENERIC path (plain "conjoiner + consonant", names_override.json's
+    "below_form_overrides") keeps using each consonant's traditional combining
+    form: RA -> raMatra-tutg ("Rakar", also used as a component in ligatures
+    like ba_ra-tutg - the same fact generate_akhn_feature.py's TOKEN_ALIASES
+    relies on), YA -> the plain "ya-tutg.below" (naive default, no override
+    needed). Neither is a true miniature of its own letterform, but that's
+    intentional here.
+  - The SUBJOINER path (explicit "conjoiner + VS1" forced-stacking, see
+    TutgSubjoinerForm in generate_akhn_feature.py and TutgBlwfSubjoiner below -
+    names_override.json's "subjoiner_below_form_overrides") uses the new real
+    miniatures instead: RA -> ra-tutg.below, YA -> ya-tutg.below.mini. RA's
+    alt1 form is a related special case: "subjoiner_alt_below_no_dedicated_in_
+    generic" keeps the GENERIC path's resolve_alt_below() falling back to
+    raMatra-tutg for ra-tutg.alt1 (as it always did, since raMatra-tutg has no
+    alt1 of its own) even though ra-tutg.below.alt1 now exists - that dedicated
+    glyph is subjoiner-path-only, matching the plain-RA split above.
+
+BELOW_FORM_OVERRIDES (read from names_override.json) documents any future
+generic-path exception like this explicitly rather than assuming the ".below"
+suffix pattern always holds.
 
 Any consonant that turns out to have NO below-base glyph at all (neither the
 ".below" suffix nor a listed override) is reported in BLWF_TODO.md instead of
@@ -171,9 +192,25 @@ def resolve_below_form(base_name):
 consonants = [n for n in classification.get("consonant", []) if is_default_form(n) and cp_of(n) is not None]
 consonants.sort(key=cp_of)
 
-# RA's below-base combining form is a different glyph entirely, not "ra-tutg.below"
-# (which doesn't exist) - see module docstring.
-BELOW_FORM_OVERRIDES = {"ra-tutg": "raMatra-tutg"}
+# See module docstring - data-driven replacement for what used to be a
+# hardcoded dict here.
+BELOW_FORM_OVERRIDES = {
+    k: v["resolves_to"] for k, v in names_override.get("below_form_overrides", {}).items()
+    if not k.startswith("_")
+}
+
+# See module docstring - the SEPARATE, VS1-forced-stacking (TutgBlwfSubjoiner)
+# resolution, deliberately distinct from BELOW_FORM_OVERRIDES above.
+SUBJOINER_BELOW_OVERRIDES = {
+    k: v["resolves_to"] for k, v in names_override.get("subjoiner_below_form_overrides", {}).items()
+    if not k.startswith("_")
+}
+# Consonants whose GENERIC-path resolve_alt_below() should NOT prefer a newly
+# added dedicated "{base}.below.altN" glyph - see module docstring (RA's alt1).
+SUBJOINER_ONLY_DEDICATED_ALT = {
+    k for k, v in names_override.get("subjoiner_alt_below_no_dedicated_in_generic", {}).items()
+    if not k.startswith("_") and v
+}
 
 rules = []    # (input_seq, output_name) - input_seq always ["conjoiner-tutg", X]
 missing = []  # consonant_name
@@ -208,10 +245,15 @@ for name in consonants:
 # below-form (still via consonant_below, which already applies
 # BELOW_FORM_OVERRIDES - e.g. RA's raMatra-tutg) for the one case with no
 # dedicated alt-below drawn at all: ra-tutg.alt1 (no raMatra-tutg.alt1 exists).
-def resolve_alt_below(name, index_str):
-    alt_below = f"{name}.below.alt{index_str}"
-    if alt_below in glyphs:
-        return alt_below, True
+def resolve_alt_below(name, index_str, allow_dedicated=True):
+    # allow_dedicated=False skips a dedicated "{base}.below.altN" for names in
+    # SUBJOINER_ONLY_DEDICATED_ALT (RA's alt1) - used by the GENERIC-path call
+    # site below, so that dedicated glyph stays subjoiner-path-only (see module
+    # docstring).
+    if allow_dedicated or name not in SUBJOINER_ONLY_DEDICATED_ALT:
+        alt_below = f"{name}.below.alt{index_str}"
+        if alt_below in glyphs:
+            return alt_below, True
     return consonant_below.get(name), False
 
 
@@ -223,7 +265,7 @@ for name in consonants:
         if variant_name not in glyphs:
             alt_consonant_missing.append((name, variant_name))
             continue
-        below, is_dedicated = resolve_alt_below(name, index_str)
+        below, is_dedicated = resolve_alt_below(name, index_str, allow_dedicated=False)
         if below is None:
             alt_consonant_missing.append((name, variant_name))
             continue
@@ -260,7 +302,7 @@ for name in consonants:
 subjoiner_rules = []          # (variant_or_plain_consonant_name, below_name)
 subjoiner_missing_variant = []  # (base_name, variant_name) registered but not a real glyph
 for name in consonants:
-    below = consonant_below.get(name)
+    below = SUBJOINER_BELOW_OVERRIDES.get(name, consonant_below.get(name))
     if below is None:
         continue
     subjoiner_rules.append((name, below))
@@ -268,7 +310,7 @@ for name in consonants:
         if variant_name not in glyphs:
             subjoiner_missing_variant.append((name, variant_name))
             continue
-        variant_below, _is_dedicated = resolve_alt_below(name, index_str)
+        variant_below, _is_dedicated = resolve_alt_below(name, index_str, allow_dedicated=True)
         subjoiner_rules.append((variant_name, variant_below))
 
 # Per-ligature rules: the ligature's own output glyph name, not its raw akhn

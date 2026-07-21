@@ -214,6 +214,8 @@
     "nya-tutg.below.alt2",
     "pa-tutg.below",
     "pha-tutg.below",
+    "ra-tutg.below",
+    "ra-tutg.below.alt1",
     "rra-tutg.below",
     "rra-tutg.below.alt1",
     "sa-tutg.below",
@@ -225,7 +227,8 @@
     "ttha-tutg.below",
     "va-tutg.below",
     "va-tutg.below.alt1",
-    "ya-tutg.below"
+    "ya-tutg.below",
+    "ya-tutg.below.mini"
   ],
   "conjunct_ligature": [
     "ba_ba-tutg",
