@@ -79,26 +79,36 @@ spacing_vs = [n for n in d["vowel_sign"] + d["special_mark"] if n in SPACING_VS_
 TOPRIGHT_POP = [n for n in d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + spacing_vs
                 if not _is_below_form(n)]
 
-# Bare (non-below-form) conjunct ligatures ending in "_ya" share YA's own
-# descending-tail shape (confirmed 2026-07-21 by project owner, same reasoning
-# as the below-form family above) but never had a bottomright anchor at all -
-# only consonants/below-forms did. Computed dynamically (any bare glyph ending
-# in "_ya-tutg", no further suffix) so a newly added "_ya" conjunct is covered
-# automatically.
+# Bare (non-below-form) conjunct ligatures ending in "_ya"/"_ra" share YA's/
+# RA's own descending-tail shape (confirmed 2026-07-21 by project owner, same
+# reasoning as the below-form family above) but never had a bottomright anchor
+# at all - only consonants/below-forms did. Computed dynamically (any bare
+# glyph ending in "_ya-tutg"/"_ra-tutg", no further suffix) so a newly added
+# ligature is covered automatically.
 BARE_YA_LIGATURES = {n for n in font.keys() if n.endswith("_ya-tutg")}
+BARE_RA_LIGATURES = {n for n in font.keys() if n.endswith("_ra-tutg")}
 
 # A below-base form can itself be the base a following U/UU vowel sign attaches
 # to (same "ink-touching fallback" reasoning as a plain consonant), so it needs
 # its own bottomright too - not just bottom/_bottom.
 BOTTOMRIGHT_POP = (
     d["consonant"] + d["consonant_below_base"] + LIGATURE_BELOW_FORMS + BELOW_AUTO_POP
-    + list(BARE_YA_LIGATURES)
+    + list(BARE_YA_LIGATURES) + list(BARE_RA_LIGATURES)
 )
 
 MARKS_TOP = ["repha-tutg", "repha-tutg.alt1", "svarita-tutg"]
 MARKS_BOTTOM = ["anudatta-tutg", "germinationmark-tutg", "lVocalicMatra-tutg", "llVocalicMatra-tutg"]
 MARKS_TOPRIGHT = ["virama-tutg"]
-MARKS_BOTTOMRIGHT = ["uMatra-tutg", "uuMatra-tutg"]
+# rVocalicMatra/rrVocalicMatra added 2026-07-21: needed as a GPOS fallback for
+# the "_ya"/"_ra"-ending conjuncts excluded from generate_blwf_feature.py's
+# decompose fix (see BARE_YA_LIGATURES/BARE_RA_LIGATURES above) - those rely on
+# bottomright/_bottomright to attach ALL 4 of U/UU/Vocalic-R/Vocalic-RR
+# directly to the intact ligature, not just U/UU. Safe for the other 34
+# consonants too: they always have their own dedicated compound for all 4
+# roots (confirmed in VOWEL_SIGN_LIGATURE_GAP.md), so GSUB always merges the
+# vowel sign into a single glyph before GPOS ever sees a bare mark glyph to
+# attach - this anchor pair only ever activates when GSUB left it unmerged.
+MARKS_BOTTOMRIGHT = ["uMatra-tutg", "uuMatra-tutg", "rVocalicMatra-tutg", "rrVocalicMatra-tutg"]
 
 
 def find_anchor(glyph, name):
@@ -240,11 +250,17 @@ def find_lowest_point(glyph, font):
 # of the blended-corner heuristic. Computed from the font's own glyph list
 # (not a static name list) so any "_ya" ligature added later is covered too.
 # Extended 2026-07-21 to the bare (non-below-form) "_ya" conjuncts too (see
-# BARE_YA_LIGATURES above) - same tail shape, same fix.
+# BARE_YA_LIGATURES above) - same tail shape, same fix. Extended again
+# 2026-07-21 to "_ra"-ending ligatures (bare - BARE_RA_LIGATURES - and
+# below-form) for the same reason: they're built with raMatra-tutg (RA's own
+# traditional combining form) as a component, which carries the same kind of
+# descending-tail divergence from the blended heuristic.
 BOTTOMRIGHT_LOWEST_POINT_OVERRIDE = {
     n for n in font.keys()
-    if n == "ya-tutg.below" or n.endswith("_ya-tutg.below") or n.endswith("_ya-tutg.below.auto")
-} | BARE_YA_LIGATURES
+    if n == "ya-tutg.below"
+    or n.endswith("_ya-tutg.below") or n.endswith("_ya-tutg.below.auto")
+    or n.endswith("_ra-tutg.below") or n.endswith("_ra-tutg.below.auto")
+} | BARE_YA_LIGATURES | BARE_RA_LIGATURES
 
 # --- run all passes ---
 base_pass(TOP_POP, "top", TOP_GAP, x_from="center", y_edge="max")

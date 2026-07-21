@@ -2,7 +2,7 @@
 <glyph name="na_ta_ra-tutg.below.auto" format="2">
   <anchor x="639.0" y="-921.2" name="bottom"/>
   <anchor x="639.0" y="-182.1" name="_bottom"/>
-  <anchor x="1038.9" y="-814.6" name="bottomright"/>
+  <anchor x="822.8" y="-871.2" name="bottomright"/>
   <outline>
     <component base="na_ta_ra-tutg" xScale="0.863" yScale="0.863" xOffset="87.5" yOffset="-677"/>
   </outline>

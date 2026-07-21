@@ -2,7 +2,7 @@
 <glyph name="ha_ra-tutg.below" format="2">
   <advance width="28"/>
   <anchor x="0.2" y="-937.2" name="bottom"/>
-  <anchor x="327.9" y="-810.9" name="bottomright"/>
+  <anchor x="8.6" y="-887.2" name="bottomright"/>
   <outline>
     <component base="bha_ra-tutg" xScale="0.8847" yScale="0.8847" xOffset="-493" yOffset="-689" identifier="0365E0BB"/>
   </outline>

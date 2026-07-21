@@ -191,6 +191,44 @@ def build_input_sequence(resolved_parts):
     return seq
 
 
+def ends_in_vowelsign(resolved_parts):
+    """True if this glyph's name genuinely resolves to '...+ a trailing vowel
+    sign' (the real, split_name()-resolved kind - not classify_glyphs.py's
+    category, which doesn't know about TOKEN_ALIASES and can misfile a name
+    like sa_ta_raMatra-tutg as "vowel_sign_ligature" even though raMatra
+    resolves to consonant RA, not a real vowel sign at all)."""
+    return bool(resolved_parts) and resolved_parts[-1][1] == "vowelsign"
+
+
+def build_blws_input_sequence(resolved_parts, by_base):
+    """Sequence for a genuine vowel-sign ligature's blws rule (added 2026-07-21,
+    fixing a real bug caught by the project owner): akhn runs BEFORE blws, so
+    any 2+-consonant run before the trailing vowel sign will ALREADY be a
+    single akhn-formed glyph by the time blws's lookup sees the buffer - e.g.
+    for sa_sa_ta_uMatra-tutg, akhn has already collapsed "sa-tutg conjoiner-tutg
+    sa-tutg conjoiner-tutg ta-tutg" into sa_sa_ta-tutg before blws runs, so the
+    rule must be "sub sa_sa_ta-tutg uMatra-tutg by sa_sa_ta_uMatra-tutg;", NOT
+    build_input_sequence()'s raw 6-glyph reconstruction (which would never
+    match anything real - that raw sequence never actually reaches blws).
+    A single consonant (or none, e.g. a matra+matra compound) before the vowel
+    sign needs no rewriting - nothing clusters via akhn there, so
+    build_input_sequence()'s plain result is already correct.
+    Returns None if the required consonant-cluster prefix glyph doesn't exist
+    (reported as a gap, not guessed at)."""
+    vs_start = len(resolved_parts)
+    while vs_start > 0 and resolved_parts[vs_start - 1][1] == "vowelsign":
+        vs_start -= 1
+    cons_prefix = resolved_parts[:vs_start]
+    vs_suffix = resolved_parts[vs_start:]
+    if len(cons_prefix) <= 1:
+        return build_input_sequence(resolved_parts)
+    prefix_key = tuple(p[0] for p in cons_prefix)
+    prefix_info = by_base.get(prefix_key)
+    if prefix_info is None or prefix_info["default"] is None:
+        return None
+    return [prefix_info["default"]] + [p[0] for p in vs_suffix]
+
+
 # Hand-written, not derived from any classified glyph name - both repha-tutg and
 # repha-tutg.alt1 are existing font glyphs, not "-tutg" compound ligatures. Must run
 # before every other akhn rule (every ra_X-tutg rule below assumes repha-tutg.alt1 is
@@ -343,6 +381,10 @@ for category in ("conjunct_ligature", "vowel_sign_ligature", "looped_virama_liga
             else:
                 by_base[base_key]["default"] = gname
 
+blws_output_names = set()  # populated below - reused by the CONJUNCT_VARIANT_RULES split
+blws_no_prefix_ligature = []  # (name) - genuine vowel-sign case, but the needed
+                               # consonant-cluster prefix glyph doesn't exist
+
 for base_key, info in by_base.items():
     if info["default"] is None:
         # No bare glyph exists for this input sequence. A lone ".below"-suffixed
@@ -358,6 +400,8 @@ for base_key, info in by_base.items():
     rules.append((seq, info["default"]))
     if info["alts"]:
         alt_candidates[info["default"]] = info["alts"]
+    if ends_in_vowelsign(info["resolved"]):
+        blws_output_names.add(info["default"])
 
 # longest input sequence first (see module docstring); alphabetical by output name
 # as a stable tiebreaker so re-runs produce byte-identical output.
@@ -365,10 +409,78 @@ rules.sort(key=lambda r: (-len(r[0]), r[1]))
 
 # machine-readable dump for other tools (e.g. the test-page generator) so they don't
 # have to re-parse the .fea text. REPHA_FIRST_RULE goes first, matching its position
-# in the .fea lookup block.
+# in the .fea lookup block. Deliberately includes EVERY rule's RAW/logical input
+# sequence (build_input_sequence()'s result), regardless of which feature (akhn/
+# blws, see below) actually hosts it and regardless of what that feature's OWN
+# rule input looks like (see build_blws_input_sequence()) - downstream tools
+# (blwf's decompose logic, build_test_page_data.py, etc.) need "what would a user
+# actually type for this", which is always the raw/logical sequence, not the
+# akhn-already-ran-first blws-internal shortcut.
 with open(os.path.join(HERE, "tutg_akhn_rules.json"), "w", encoding="utf-8") as f:
     all_rules = [REPHA_FIRST_RULE] + rules
     json.dump([{"input": seq, "output": out} for seq, out in all_rules], f, indent=2)
+
+# --- Split ligature-formation output: akhn vs blws (added 2026-07-21, fixed
+# 2026-07-21 - see build_blws_input_sequence()'s docstring) ---
+#
+# Project owner directive, after empirically confirming (via uharfbuzz on a
+# throwaway test font) that blws/pstf both run BEFORE blwf for this script/
+# HarfBuzz combination - contradicting the documented USE algorithm order
+# (akhn -> blwf -> pstf -> blws) but that's what actually happens, so that's
+# what this is built around: a glyph whose name genuinely resolves to
+# "...+ a trailing vowel sign" (ends_in_vowelsign() - the real, split_name()-
+# resolved kind, NOT classify_glyphs.py's "vowel_sign_ligature" category,
+# which doesn't know about TOKEN_ALIASES and can misfile a name like
+# sa_ta_raMatra-tutg as vowel-sign-ligature even though raMatra resolves to
+# consonant RA, not a real vowel sign - confirmed by the project owner) moves
+# OUT of akhn's TutgAkhand into a new TutgBlws lookup, under a real
+# `feature blws`. Genuine conjunct-only ligatures (and Chillu) stay in akhn -
+# true consonant-cluster Akhand ligatures, not vowel-sign substitution.
+#
+# CRITICAL: the blws rule's INPUT is NOT necessarily the same as its entry in
+# `rules` above. Since akhn runs before blws, any 2+-consonant run before the
+# trailing vowel sign has ALREADY collapsed into its own akhn-formed glyph by
+# the time blws's lookup sees the buffer - build_blws_input_sequence() builds
+# the CORRECT, blws-appropriate sequence (referencing that prefix ligature by
+# name), which is why this loops over `by_base` again rather than just
+# filtering `rules` by output name.
+akhn_ligature_rules = []
+blws_ligature_rules = []
+for base_key, info in by_base.items():
+    if info["default"] is None:
+        continue
+    if info["default"] not in blws_output_names:
+        akhn_ligature_rules.append((build_input_sequence(info["resolved"]), info["default"]))
+        continue
+    blws_seq = build_blws_input_sequence(info["resolved"], by_base)
+    if blws_seq is None:
+        # The needed consonant-cluster prefix glyph (e.g. sa_ta-tutg for
+        # sa_ta_uMatra-tutg) genuinely doesn't exist - confirmed 2026-07-21,
+        # e.g. sa_ta-tutg/sha_ra-tutg were never drawn as their own bare
+        # glyphs, only the vowel-sign-attached forms exist. blws literally
+        # cannot express this correctly (no valid glyph to reference), so
+        # fall back to akhn's own full raw sequence instead - exactly how
+        # this glyph worked before today's akhn/blws split existed at all.
+        blws_no_prefix_ligature.append(info["default"])
+        akhn_ligature_rules.append((build_input_sequence(info["resolved"]), info["default"]))
+        continue
+    blws_ligature_rules.append((blws_seq, info["default"]))
+akhn_ligature_rules.sort(key=lambda r: (-len(r[0]), r[1]))
+blws_ligature_rules.sort(key=lambda r: (-len(r[0]), r[1]))
+# Fallen-back-to-akhn glyphs (missing prefix) must not still count as
+# blws-formed for the CONJUNCT_VARIANT_RULES split right below.
+blws_output_names -= set(blws_no_prefix_ligature)
+
+# Same split for TutgConjunctVariantSelect (VS11+ post-formation ligature-alt
+# selection, variant_registry.json's "_ligature_variants") - a vowel-sign-
+# ligature base's own post-formation alt-select rule must run in blws too,
+# right after TutgBlws forms it, not in akhn where the base no longer forms.
+akhn_conjunct_variant_rules = [
+    (lig, vs, var) for lig, vs, var in CONJUNCT_VARIANT_RULES if lig not in blws_output_names
+]
+blws_conjunct_variant_rules = [
+    (lig, vs, var) for lig, vs, var in CONJUNCT_VARIANT_RULES if lig in blws_output_names
+]
 
 out_path = os.path.join(HERE, "tutg_akhn.fea")
 with open(out_path, "w", encoding="utf-8") as f:
@@ -412,15 +524,15 @@ with open(out_path, "w", encoding="utf-8") as f:
     f.write(f"        sub {' '.join(first_seq)} by {first_out};\n")
     f.write("    } TutgRephaUpgrade;\n")
     f.write("    lookup TutgAkhand {\n")
-    for seq, out in rules:
+    for seq, out in akhn_ligature_rules:
         f.write(f"        sub {' '.join(seq)} by {out};\n")
     f.write("    } TutgAkhand;\n")
     f.write("    lookup TutgConjunctVariantSelect {\n")
     f.write("        # Conjunct ligature + variation selector -> registered alternate ligature.\n")
-    for ligature_name, vs_glyph, variant_name in CONJUNCT_VARIANT_RULES:
+    for ligature_name, vs_glyph, variant_name in akhn_conjunct_variant_rules:
         f.write(f"        sub {ligature_name} {vs_glyph} by {variant_name};\n")
     f.write("    } TutgConjunctVariantSelect;\n")
-    f.write("} akhn;\n\n")
+    f.write("} akhn;\n")
 
     f.write("# --- Stylistic alternates (candidates for a later salt/ss0N feature, NOT included above) ---\n")
     for base, alts in sorted(alt_candidates.items()):
@@ -445,11 +557,48 @@ with open(out_path, "w", encoding="utf-8") as f:
         for ligature_name, variant_name in conjunct_variant_missing:
             f.write(f"# {ligature_name} -> {variant_name}\n")
 
-print(f"Total akhn rules: {len(rules)} + 1 hand-written (REPHA_FIRST_RULE)")
+# --- feature blws (added 2026-07-21) - own file, own merge step, matching this
+# project's one-script-per-feature convention (generate_X_feature.py ->
+# tutg_X.fea -> merge_X_feature.py), even though the rules themselves are
+# derived from the same computation as akhn's, just split by classification
+# (see the split comment above `blws_ligature_rules`).
+blws_path = os.path.join(HERE, "tutg_blws.fea")
+with open(blws_path, "w", encoding="utf-8") as f:
+    f.write("# Auto-generated by generate_akhn_feature.py - vowel-sign ligature formation\n")
+    f.write("# (consonant + its OWN vowel sign, e.g. ka-tutg uMatra-tutg -> ka_uMatra-tutg)\n")
+    f.write("# for the Tulu-Tigalari (tutg) script. Split out of feature akhn 2026-07-21:\n")
+    f.write("# empirically confirmed (via uharfbuzz on a throwaway test font) that blws\n")
+    f.write("# runs BEFORE blwf for this script/HarfBuzz combination, so a consonant's own\n")
+    f.write("# vowel-sign compound no longer forms too early for blwf's below-base-form\n")
+    f.write("# rules (e.g. YA/RA's post-base forms, see tutg_pstf.fea) to see the plain\n")
+    f.write("# consonant first. Review before merging into the real features.fea.\n\n")
+
+    f.write("languagesystem DFLT dflt;\n")
+    f.write("languagesystem tutg dflt;\n\n")
+
+    f.write("feature blws {\n")
+    f.write("    script tutg;\n")
+    f.write("    lookup TutgBlws {\n")
+    f.write("        # Consonant + its OWN vowel sign -> compound ligature.\n")
+    for seq, out in blws_ligature_rules:
+        f.write(f"        sub {' '.join(seq)} by {out};\n")
+    f.write("    } TutgBlws;\n")
+    f.write("    lookup TutgBlwsVariantSelect {\n")
+    f.write("        # Vowel-sign ligature + variation selector -> registered alternate ligature.\n")
+    for ligature_name, vs_glyph, variant_name in blws_conjunct_variant_rules:
+        f.write(f"        sub {ligature_name} {vs_glyph} by {variant_name};\n")
+    f.write("    } TutgBlwsVariantSelect;\n")
+    f.write("} blws;\n")
+
+print(f"Total ligature rules: {len(rules)} + 1 hand-written (REPHA_FIRST_RULE)")
+print(f"  - akhn (TutgAkhand): {len(akhn_ligature_rules)}")
+print(f"  - blws (TutgBlws): {len(blws_ligature_rules)}")
 print(f"Variant-select rules (TutgVariantSelect): {len(VARIANT_SELECT_RULES)}")
 print(f"Variant-select entries skipped (unknown glyph): {len(variant_select_missing)} {variant_select_missing}")
-print(f"Conjunct-variant rules (TutgConjunctVariantSelect): {len(CONJUNCT_VARIANT_RULES)}")
+print(f"Conjunct-variant rules (TutgConjunctVariantSelect/TutgBlwsVariantSelect): {len(CONJUNCT_VARIANT_RULES)}")
+print(f"  - akhn: {len(akhn_conjunct_variant_rules)}, blws: {len(blws_conjunct_variant_rules)}")
 print(f"Conjunct-variant entries skipped (unknown glyph): {len(conjunct_variant_missing)} {conjunct_variant_missing}")
+print(f"Blws entries skipped (needed consonant-cluster prefix glyph doesn't exist): {len(blws_no_prefix_ligature)} {blws_no_prefix_ligature}")
 print(f"Longest sequence: {len(rules[0][0])} glyphs ({rules[0][1]})")
 print(f"Shortest sequence: {len(rules[-1][0])} glyphs ({rules[-1][1]})")
 print(f"Stylistic-alternate groups (not included, listed separately): {len(alt_candidates)}")
@@ -457,3 +606,4 @@ print(f"Skipped / unparsed: {len(skipped_unparsed)}")
 print(f"Skipped / explicitly ignored: {len(rules_skipped_by_ignore)} {rules_skipped_by_ignore}")
 print()
 print("Written to:", out_path)
+print("Written to:", blws_path)

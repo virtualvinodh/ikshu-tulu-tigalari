@@ -4,6 +4,7 @@
   <anchor x="477.0" y="619" name="top"/>
   <anchor x="477.0" y="-275" name="bottom"/>
   <anchor x="944" y="619" name="topright"/>
+  <anchor x="533.0" y="-225.0" name="bottomright"/>
   <outline>
     <component base="_tamiddle"/>
     <component base="_taleftarm"/>

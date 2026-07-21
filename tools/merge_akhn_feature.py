@@ -12,7 +12,10 @@ explicit `mark`/`mkmk` feature is already defined here.
 
 Renamed from merge_features.py (2026-07-17) once merge_blwf_feature.py made clear
 this is one of a pair of per-feature merge scripts, not "the" merge step - keeping
-both explicitly named by feature, not one generic and one specific.
+both explicitly named by feature, not one generic and one specific. As of
+2026-07-21 there are four such pairs (akhn, blwf, blws, pstf) - see
+merge_blws_feature.py/merge_pstf_feature.py for the other two, split out of
+generate_akhn_feature.py/generate_blwf_feature.py's own docstrings.
 
 Idempotency model (rewritten 2026-07-17): steps 1-3 are naturally idempotent
 find-and-replace on text that's only ever present in the original dead-scaffold

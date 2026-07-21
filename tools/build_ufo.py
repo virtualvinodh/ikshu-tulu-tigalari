@@ -36,18 +36,35 @@ project's history) before touching anything, then runs, in order:
                                  TutgConjunctVariantSelect and the
                                  names_override.json-driven ligature_alt_overrides/
                                  single_glyph_alt_overrides)
-  8. generate_akhn_feature.py - tutg_akhn.fea + tutg_akhn_rules.json (regenerated
-                                 fresh every run; not a UFO write)
+  8. generate_akhn_feature.py - tutg_akhn.fea + tutg_blws.fea + tutg_akhn_rules.json
+                                 (regenerated fresh every run; not a UFO write).
+                                 Vowel-sign ligature formation (consonant + its own
+                                 vowel sign) lives in tutg_blws.fea/`feature blws`,
+                                 split out 2026-07-21 - empirically confirmed (via
+                                 uharfbuzz on a throwaway test font) that blws runs
+                                 BEFORE blwf for this script/HarfBuzz combination.
   9. merge_akhn_feature.py    - merges tutg_akhn.fea into features.fea (has its own
                                  idempotency guard - skips if already merged, so
                                  this pipeline is safe to run on its own output too)
-  10. generate_blwf_feature.py - tutg_blwf.fea + BLWF_TODO.md (regenerated fresh
-                                 every run; not a UFO write)
-  11. merge_blwf_feature.py    - merges tutg_blwf.fea into features.fea, right after
+  10. merge_blws_feature.py   - merges tutg_blws.fea into features.fea, right after
+                                 the akhn block (own idempotency guard; must run
+                                 after merge_akhn_feature.py)
+  11. generate_blwf_feature.py - tutg_blwf.fea + tutg_pstf.fea + BLWF_TODO.md
+                                 (regenerated fresh every run; not a UFO write). YA/RA's
+                                 own post-base combining forms (ya-tutg.below,
+                                 raMatra-tutg/"the Rakar form") live in tutg_pstf.fea/
+                                 `feature pstf` instead of blwf's generic below-base
+                                 fallback, split out 2026-07-21 - they're genuinely
+                                 different allographs, not below-base miniatures
+                                 (BELOW_BASE_MINIATURE_GLYPHS.md).
+  12. merge_blwf_feature.py    - merges tutg_blwf.fea into features.fea, right after
                                  the akhn block (own idempotency guard, same pattern
                                  as merge_akhn_feature.py - must run after it, see
                                  that script's docstring)
-  12. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
+  13. merge_pstf_feature.py    - merges tutg_pstf.fea into features.fea, right after
+                                 the blwf block (own idempotency guard; must run
+                                 after merge_blwf_feature.py)
+  14. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
 
 Everything else in tools/ (extract_stacking_offsets.py, extract_vowel_sign_offsets.py,
 document_vowel_variant_choice.py, generate_gsub_rules.py, _selfcheck_render.py) is
@@ -74,8 +91,11 @@ STEPS = [
     "generate_variant_registry.py",
     "generate_akhn_feature.py",
     "merge_akhn_feature.py",
+    "merge_blws_feature.py",
     "generate_blwf_feature.py",
     "merge_blwf_feature.py",
+    "merge_pstf_feature.py",
+    "merge_rkrf_feature.py",
     "remove_stub_numeral_features.py",
 ]
 

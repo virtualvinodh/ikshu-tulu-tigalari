@@ -4,6 +4,7 @@
   <unicode hex="113BE"/>
   <guideline x="76" y="-28" angle="0"/>
   <anchor x="350" y="-103" name="connect"/>
+  <anchor x="10" y="181" name="_bottomright"/>
   <outline>
     <contour>
       <point x="133" y="-397" type="curve" smooth="yes"/>

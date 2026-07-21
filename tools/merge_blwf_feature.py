@@ -27,6 +27,10 @@ module docstring) - it must live outside the feature block or FEA semantics
 apply it unconditionally, so it's a separate top-level declaration that needs
 to be merged/replaced alongside the feature block, not just the feature block
 alone.
+
+See merge_pstf_feature.py for YA/RA's post-base forms (added 2026-07-21,
+split out into their own generated file/merge step, same one-script-per-feature
+convention as this script and merge_blws_feature.py).
 """
 import os
 import re

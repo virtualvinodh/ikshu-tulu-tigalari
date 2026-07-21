@@ -4,6 +4,7 @@
   <anchor x="530.5" y="621" name="top"/>
   <anchor x="530.5" y="-275" name="bottom"/>
   <anchor x="1051" y="621" name="topright"/>
+  <anchor x="640.0" y="-225.0" name="bottomright"/>
   <outline>
     <component base="_kabowl" xOffset="1"/>
     <component base="_karightarm"/>

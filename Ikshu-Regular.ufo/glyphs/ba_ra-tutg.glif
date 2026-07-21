@@ -4,6 +4,7 @@
   <anchor x="665.0" y="620" name="top"/>
   <anchor x="665.0" y="-300" name="bottom"/>
   <anchor x="1315" y="620" name="topright"/>
+  <anchor x="909" y="-250" name="bottomright"/>
   <outline>
     <component base="ba-tutg" xOffset="5"/>
     <component base="raMatra-tutg" xOffset="1387" yOffset="21" identifier="F615A028"/>

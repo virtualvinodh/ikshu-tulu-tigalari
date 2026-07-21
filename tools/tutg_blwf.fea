@@ -14,12 +14,9 @@ languagesystem tutg dflt;
 lookup TutgBlwfDecompose {
     sub ba_ba-tutg by ba-tutg conjoiner-tutg ba-tutg;
     sub ba_da-tutg by ba-tutg conjoiner-tutg da-tutg;
-    sub ba_ra-tutg by ba-tutg conjoiner-tutg ra-tutg;
     sub bha_ma-tutg by bha-tutg conjoiner-tutg ma-tutg;
     sub bha_na-tutg by bha-tutg conjoiner-tutg na-tutg;
-    sub bha_ra-tutg by bha-tutg conjoiner-tutg ra-tutg;
     sub bha_va-tutg by bha-tutg conjoiner-tutg va-tutg;
-    sub bha_ya-tutg by bha-tutg conjoiner-tutg ya-tutg;
     sub ca_ca-tutg by ca-tutg conjoiner-tutg ca-tutg;
     sub ca_cha-tutg by ca-tutg conjoiner-tutg cha-tutg;
     sub ca_ma-tutg by ca-tutg conjoiner-tutg ma-tutg;
@@ -27,27 +24,19 @@ lookup TutgBlwfDecompose {
     sub da_ba-tutg by da-tutg conjoiner-tutg ba-tutg;
     sub da_bha-tutg by da-tutg conjoiner-tutg bha-tutg;
     sub da_da-tutg by da-tutg conjoiner-tutg da-tutg;
-    sub da_da_ra-tutg by da-tutg conjoiner-tutg da-tutg conjoiner-tutg ra-tutg;
-    sub da_da_ya-tutg by da-tutg conjoiner-tutg da-tutg conjoiner-tutg ya-tutg;
     sub da_dha-tutg by da-tutg conjoiner-tutg dha-tutg;
     sub da_dha_ma-tutg by da-tutg conjoiner-tutg dha-tutg conjoiner-tutg ma-tutg;
-    sub da_dha_ra-tutg by da-tutg conjoiner-tutg dha-tutg conjoiner-tutg ra-tutg;
     sub da_dha_va-tutg by da-tutg conjoiner-tutg dha-tutg conjoiner-tutg va-tutg;
-    sub da_dha_ya-tutg by da-tutg conjoiner-tutg dha-tutg conjoiner-tutg ya-tutg;
     sub da_ga-tutg by da-tutg conjoiner-tutg ga-tutg;
     sub da_gha-tutg by da-tutg conjoiner-tutg gha-tutg;
     sub da_la-tutg by da-tutg conjoiner-tutg la-tutg;
     sub da_ma-tutg by da-tutg conjoiner-tutg ma-tutg;
-    sub da_ra-tutg by da-tutg conjoiner-tutg ra-tutg;
     sub da_va-tutg by da-tutg conjoiner-tutg va-tutg;
-    sub da_ya-tutg by da-tutg conjoiner-tutg ya-tutg;
     sub dda_ga-tutg by dda-tutg conjoiner-tutg ga-tutg;
     sub ga_ba-tutg by ga-tutg conjoiner-tutg ba-tutg;
     sub ga_bha-tutg by ga-tutg conjoiner-tutg bha-tutg;
-    sub ga_bha_ya-tutg by ga-tutg conjoiner-tutg bha-tutg conjoiner-tutg ya-tutg;
     sub ga_da-tutg by ga-tutg conjoiner-tutg da-tutg;
     sub ga_da_dha-tutg by ga-tutg conjoiner-tutg da-tutg conjoiner-tutg dha-tutg;
-    sub ga_da_dha_ra-tutg by ga-tutg conjoiner-tutg da-tutg conjoiner-tutg dha-tutg conjoiner-tutg ra-tutg;
     sub ga_da_dha_va-tutg by ga-tutg conjoiner-tutg da-tutg conjoiner-tutg dha-tutg conjoiner-tutg va-tutg;
     sub ga_dha-tutg by ga-tutg conjoiner-tutg dha-tutg;
     sub ga_dha_va-tutg by ga-tutg conjoiner-tutg dha-tutg conjoiner-tutg va-tutg;
@@ -57,68 +46,42 @@ lookup TutgBlwfDecompose {
     sub ga_ma-tutg by ga-tutg conjoiner-tutg ma-tutg;
     sub ga_na-tutg by ga-tutg conjoiner-tutg na-tutg;
     sub ga_na_va-tutg by ga-tutg conjoiner-tutg na-tutg conjoiner-tutg va-tutg;
-    sub ga_na_ya-tutg by ga-tutg conjoiner-tutg na-tutg conjoiner-tutg ya-tutg;
-    sub ga_ya-tutg by ga-tutg conjoiner-tutg ya-tutg;
     sub ha_ma-tutg by ha-tutg conjoiner-tutg ma-tutg;
     sub ha_na-tutg by ha-tutg conjoiner-tutg na-tutg;
-    sub ha_na_ya-tutg by ha-tutg conjoiner-tutg na-tutg conjoiner-tutg ya-tutg;
-    sub ha_ya-tutg by ha-tutg conjoiner-tutg ya-tutg;
     sub ja_cha-tutg by ja-tutg conjoiner-tutg cha-tutg;
     sub ja_ja-tutg by ja-tutg conjoiner-tutg ja-tutg;
     sub ja_ja_nya-tutg by ja-tutg conjoiner-tutg ja-tutg conjoiner-tutg nya-tutg;
-    sub ja_ja_ya-tutg by ja-tutg conjoiner-tutg ja-tutg conjoiner-tutg ya-tutg;
     sub ja_ma-tutg by ja-tutg conjoiner-tutg ma-tutg;
     sub ja_nya-tutg by ja-tutg conjoiner-tutg nya-tutg;
-    sub ja_ra-tutg by ja-tutg conjoiner-tutg ra-tutg;
     sub ja_va-tutg by ja-tutg conjoiner-tutg va-tutg;
-    sub ja_ya-tutg by ja-tutg conjoiner-tutg ya-tutg;
     sub jha_jha-tutg by jha-tutg conjoiner-tutg jha-tutg;
     sub ka_ka-tutg by ka-tutg conjoiner-tutg ka-tutg;
-    sub ka_ka_ra-tutg by ka-tutg conjoiner-tutg ka-tutg conjoiner-tutg ra-tutg;
     sub ka_ma-tutg by ka-tutg conjoiner-tutg ma-tutg;
     sub ka_na-tutg by ka-tutg conjoiner-tutg na-tutg;
-    sub ka_na_ya-tutg by ka-tutg conjoiner-tutg na-tutg conjoiner-tutg ya-tutg;
-    sub ka_ra-tutg by ka-tutg conjoiner-tutg ra-tutg;
     sub ka_sa-tutg by ka-tutg conjoiner-tutg sa-tutg;
     sub ka_sa_sa-tutg by ka-tutg conjoiner-tutg sa-tutg conjoiner-tutg sa-tutg;
     sub ka_ssa_ma-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg ma-tutg;
-    sub ka_ssa_ma_ya-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg ma-tutg conjoiner-tutg ya-tutg;
     sub ka_ssa_nna-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg nna-tutg;
-    sub ka_ssa_nna_ya-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg nna-tutg conjoiner-tutg ya-tutg;
-    sub ka_ssa_ra-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg ra-tutg;
     sub ka_ssa_va-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg va-tutg;
-    sub ka_ssa_ya-tutg by ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg ya-tutg;
     sub ka_ta-tutg by ka-tutg conjoiner-tutg ta-tutg;
-    sub ka_ta_ra-tutg by ka-tutg conjoiner-tutg ta-tutg conjoiner-tutg ra-tutg;
-    sub ka_ta_ra_ya-tutg by ka-tutg conjoiner-tutg ta-tutg conjoiner-tutg ra-tutg conjoiner-tutg ya-tutg;
     sub ka_ta_tha-tutg by ka-tutg conjoiner-tutg ta-tutg conjoiner-tutg tha-tutg;
     sub ka_ta_va-tutg by ka-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg;
-    sub ka_ta_ya-tutg by ka-tutg conjoiner-tutg ta-tutg conjoiner-tutg ya-tutg;
     sub ka_tha-tutg by ka-tutg conjoiner-tutg tha-tutg;
-    sub ka_tha_ya-tutg by ka-tutg conjoiner-tutg tha-tutg conjoiner-tutg ya-tutg;
     sub ka_tta-tutg by ka-tutg conjoiner-tutg tta-tutg;
     sub ka_va-tutg by ka-tutg conjoiner-tutg va-tutg;
-    sub ka_ya-tutg by ka-tutg conjoiner-tutg ya-tutg;
     sub kha_ka-tutg by kha-tutg conjoiner-tutg ka-tutg;
     sub kha_kha-tutg by kha-tutg conjoiner-tutg kha-tutg;
-    sub kha_ya-tutg by kha-tutg conjoiner-tutg ya-tutg;
     sub la_ka-tutg by la-tutg conjoiner-tutg ka-tutg;
     sub la_la-tutg by la-tutg conjoiner-tutg la-tutg;
-    sub la_la_ya-tutg by la-tutg conjoiner-tutg la-tutg conjoiner-tutg ya-tutg;
-    sub la_ra-tutg by la-tutg conjoiner-tutg ra-tutg;
     sub la_va-tutg by la-tutg conjoiner-tutg va-tutg;
-    sub la_ya-tutg by la-tutg conjoiner-tutg ya-tutg;
     sub lla_lla-tutg by lla-tutg conjoiner-tutg lla-tutg;
     sub lla_pa-tutg by lla-tutg conjoiner-tutg pa-tutg;
-    sub lla_ya-tutg by lla-tutg conjoiner-tutg ya-tutg;
     sub ma_ma-tutg by ma-tutg conjoiner-tutg ma-tutg;
     sub ma_pa-tutg by ma-tutg conjoiner-tutg pa-tutg;
     sub ma_va-tutg by ma-tutg conjoiner-tutg va-tutg;
-    sub ma_ya-tutg by ma-tutg conjoiner-tutg ya-tutg;
     sub na_ba-tutg by na-tutg conjoiner-tutg ba-tutg;
     sub na_bha-tutg by na-tutg conjoiner-tutg bha-tutg;
     sub na_da-tutg by na-tutg conjoiner-tutg da-tutg;
-    sub na_da_ra-tutg by na-tutg conjoiner-tutg da-tutg conjoiner-tutg ra-tutg;
     sub na_da_va-tutg by na-tutg conjoiner-tutg da-tutg conjoiner-tutg va-tutg;
     sub na_dha-tutg by na-tutg conjoiner-tutg dha-tutg;
     sub na_dha_va-tutg by na-tutg conjoiner-tutg dha-tutg conjoiner-tutg va-tutg;
@@ -129,16 +92,12 @@ lookup TutgBlwfDecompose {
     sub na_ka_ta-tutg by na-tutg conjoiner-tutg ka-tutg conjoiner-tutg ta-tutg;
     sub na_ma-tutg by na-tutg conjoiner-tutg ma-tutg;
     sub na_na-tutg by na-tutg conjoiner-tutg na-tutg;
-    sub na_na_ya-tutg by na-tutg conjoiner-tutg na-tutg conjoiner-tutg ya-tutg;
     sub na_ta-tutg by na-tutg conjoiner-tutg ta-tutg;
-    sub na_ta_ra-tutg by na-tutg conjoiner-tutg ta-tutg conjoiner-tutg ra-tutg;
     sub na_ta_sa-tutg by na-tutg conjoiner-tutg ta-tutg conjoiner-tutg sa-tutg;
     sub na_ta_va-tutg by na-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg;
-    sub na_ta_ya-tutg by na-tutg conjoiner-tutg ta-tutg conjoiner-tutg ya-tutg;
     sub na_tha-tutg by na-tutg conjoiner-tutg tha-tutg;
     sub na_tta-tutg by na-tutg conjoiner-tutg tta-tutg;
     sub na_va-tutg by na-tutg conjoiner-tutg va-tutg;
-    sub na_ya-tutg by na-tutg conjoiner-tutg ya-tutg;
     sub nga_ba-tutg by nga-tutg conjoiner-tutg ba-tutg;
     sub nga_ka-tutg by nga-tutg conjoiner-tutg ka-tutg;
     sub nga_ka_ka-tutg by nga-tutg conjoiner-tutg ka-tutg conjoiner-tutg ka-tutg;
@@ -153,10 +112,8 @@ lookup TutgBlwfDecompose {
     sub nna_ha-tutg by nna-tutg conjoiner-tutg ha-tutg;
     sub nna_ma-tutg by nna-tutg conjoiner-tutg ma-tutg;
     sub nna_nna-tutg by nna-tutg conjoiner-tutg nna-tutg;
-    sub nna_nna_ya-tutg by nna-tutg conjoiner-tutg nna-tutg conjoiner-tutg ya-tutg;
     sub nna_tta-tutg by nna-tutg conjoiner-tutg tta-tutg;
     sub nna_ttha-tutg by nna-tutg conjoiner-tutg ttha-tutg;
-    sub nna_ya-tutg by nna-tutg conjoiner-tutg ya-tutg;
     sub nya_ca-tutg by nya-tutg conjoiner-tutg ca-tutg;
     sub nya_cha-tutg by nya-tutg conjoiner-tutg cha-tutg;
     sub nya_ja-tutg by nya-tutg conjoiner-tutg ja-tutg;
@@ -167,20 +124,15 @@ lookup TutgBlwfDecompose {
     sub pa_sa_ta-tutg by pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg ta-tutg;
     sub pa_sa_tha-tutg by pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg tha-tutg;
     sub pa_sa_va-tutg by pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg va-tutg;
-    sub pa_sa_ya-tutg by pa-tutg conjoiner-tutg sa-tutg conjoiner-tutg ya-tutg;
     sub pa_ta-tutg by pa-tutg conjoiner-tutg ta-tutg;
     sub pa_ta_va-tutg by pa-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg;
-    sub pa_ya-tutg by pa-tutg conjoiner-tutg ya-tutg;
     sub ra_ma-tutg by repha-tutg.alt1 ma-tutg;
     sub ra_ma_ma-tutg by repha-tutg.alt1 ma-tutg conjoiner-tutg ma-tutg;
-    sub ra_ra-tutg by repha-tutg.alt1 ra-tutg;
     sub ra_sha-tutg by repha-tutg.alt1 sha-tutg;
     sub ra_va-tutg by repha-tutg.alt1 va-tutg;
-    sub ra_ya-tutg by repha-tutg.alt1 ya-tutg;
     sub sa_ca-tutg by sa-tutg conjoiner-tutg ca-tutg;
     sub sa_ka-tutg by sa-tutg conjoiner-tutg ka-tutg;
     sub sa_ma-tutg by sa-tutg conjoiner-tutg ma-tutg;
-    sub sa_ma_ya-tutg by sa-tutg conjoiner-tutg ma-tutg conjoiner-tutg ya-tutg;
     sub sa_pa-tutg by sa-tutg conjoiner-tutg pa-tutg;
     sub sa_sa-tutg by sa-tutg conjoiner-tutg sa-tutg;
     sub sa_sa_ka-tutg by sa-tutg conjoiner-tutg sa-tutg conjoiner-tutg ka-tutg;
@@ -191,11 +143,9 @@ lookup TutgBlwfDecompose {
     sub sa_ta_ta-tutg by sa-tutg conjoiner-tutg ta-tutg conjoiner-tutg ta-tutg;
     sub sa_ta_tha-tutg by sa-tutg conjoiner-tutg ta-tutg conjoiner-tutg tha-tutg;
     sub sa_ta_va-tutg by sa-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg;
-    sub sa_ta_ya-tutg by sa-tutg conjoiner-tutg ta-tutg conjoiner-tutg ya-tutg;
     sub sa_tha-tutg by sa-tutg conjoiner-tutg tha-tutg;
     sub sa_tta-tutg by sa-tutg conjoiner-tutg tta-tutg;
     sub sa_va-tutg by sa-tutg conjoiner-tutg va-tutg;
-    sub sa_ya-tutg by sa-tutg conjoiner-tutg ya-tutg;
     sub sha_ca-tutg by sha-tutg conjoiner-tutg ca-tutg;
     sub sha_cha-tutg by sha-tutg conjoiner-tutg cha-tutg;
     sub sha_ma-tutg by sha-tutg conjoiner-tutg ma-tutg;
@@ -203,48 +153,32 @@ lookup TutgBlwfDecompose {
     sub sha_sha-tutg by sha-tutg conjoiner-tutg sha-tutg;
     sub sha_ttha-tutg by sha-tutg conjoiner-tutg ttha-tutg;
     sub sha_va-tutg by sha-tutg conjoiner-tutg va-tutg;
-    sub sha_va_ya-tutg by sha-tutg conjoiner-tutg va-tutg conjoiner-tutg ya-tutg;
-    sub sha_ya-tutg by sha-tutg conjoiner-tutg ya-tutg;
     sub ssa_ka-tutg by ssa-tutg conjoiner-tutg ka-tutg;
-    sub ssa_ka_ra-tutg by ssa-tutg conjoiner-tutg ka-tutg conjoiner-tutg ra-tutg;
     sub ssa_la-tutg by ssa-tutg conjoiner-tutg la-tutg;
     sub ssa_ma-tutg by ssa-tutg conjoiner-tutg ma-tutg;
     sub ssa_nna-tutg by ssa-tutg conjoiner-tutg nna-tutg;
     sub ssa_pa-tutg by ssa-tutg conjoiner-tutg pa-tutg;
-    sub ssa_pa_ra-tutg by ssa-tutg conjoiner-tutg pa-tutg conjoiner-tutg ra-tutg;
     sub ssa_ssa-tutg by ssa-tutg conjoiner-tutg ssa-tutg;
     sub ssa_tta-tutg by ssa-tutg conjoiner-tutg tta-tutg;
     sub ssa_tta_va-tutg by ssa-tutg conjoiner-tutg tta-tutg conjoiner-tutg va-tutg;
-    sub ssa_tta_ya-tutg by ssa-tutg conjoiner-tutg tta-tutg conjoiner-tutg ya-tutg;
     sub ssa_ttha-tutg by ssa-tutg conjoiner-tutg ttha-tutg;
-    sub ssa_ttha_ya-tutg by ssa-tutg conjoiner-tutg ttha-tutg conjoiner-tutg ya-tutg;
     sub ssa_va-tutg by ssa-tutg conjoiner-tutg va-tutg;
-    sub ssa_ya-tutg by ssa-tutg conjoiner-tutg ya-tutg;
     sub ta_bha-tutg by ta-tutg conjoiner-tutg bha-tutg;
     sub ta_ka-tutg by ta-tutg conjoiner-tutg ka-tutg;
     sub ta_ka_ssa-tutg by ta-tutg conjoiner-tutg ka-tutg conjoiner-tutg ssa-tutg;
     sub ta_ka_ssa_ma-tutg by ta-tutg conjoiner-tutg ka-tutg conjoiner-tutg ssa-tutg conjoiner-tutg ma-tutg;
     sub ta_ma-tutg by ta-tutg conjoiner-tutg ma-tutg;
-    sub ta_ma_ra-tutg by ta-tutg conjoiner-tutg ma-tutg conjoiner-tutg ra-tutg;
-    sub ta_ma_ya-tutg by ta-tutg conjoiner-tutg ma-tutg conjoiner-tutg ya-tutg;
     sub ta_na-tutg by ta-tutg conjoiner-tutg na-tutg;
-    sub ta_ra-tutg by ta-tutg conjoiner-tutg ra-tutg;
     sub ta_ra_va-tutg by ta-tutg conjoiner-tutg ra-tutg conjoiner-tutg va-tutg;
     sub ta_sa-tutg by ta-tutg conjoiner-tutg sa-tutg;
     sub ta_sa_ta-tutg by ta-tutg conjoiner-tutg sa-tutg conjoiner-tutg ta-tutg;
     sub ta_ta-tutg by ta-tutg conjoiner-tutg ta-tutg;
-    sub ta_ta_ra-tutg by ta-tutg conjoiner-tutg ta-tutg conjoiner-tutg ra-tutg;
     sub ta_ta_va-tutg by ta-tutg conjoiner-tutg ta-tutg conjoiner-tutg va-tutg;
     sub ta_tha-tutg by ta-tutg conjoiner-tutg tha-tutg;
-    sub ta_tha_ya-tutg by ta-tutg conjoiner-tutg tha-tutg conjoiner-tutg ya-tutg;
     sub ta_va-tutg by ta-tutg conjoiner-tutg va-tutg;
-    sub ta_ya-tutg by ta-tutg conjoiner-tutg ya-tutg;
     sub tta_tta-tutg by tta-tutg conjoiner-tutg tta-tutg;
-    sub tta_tta_ya-tutg by tta-tutg conjoiner-tutg tta-tutg conjoiner-tutg ya-tutg;
     sub va_va-tutg by va-tutg conjoiner-tutg va-tutg;
-    sub va_ya-tutg by va-tutg conjoiner-tutg ya-tutg;
     sub ya_va-tutg by ya-tutg conjoiner-tutg va-tutg;
-    sub ya_ya-tutg by ya-tutg conjoiner-tutg ya-tutg;
 } TutgBlwfDecompose;
 
 feature blwf {
@@ -311,10 +245,461 @@ feature blwf {
         sub subjoiner-tutg rra-tutg.alt1 by rra-tutg.below.alt1;
         sub subjoiner-tutg llla-tutg by llla-tutg.below;
         sub subjoiner-tutg llla-tutg.alt1 by llla-tutg.below.alt1;
+        sub subjoiner-tutg ba_ba-tutg by ba_ba-tutg.below.auto;
+        sub subjoiner-tutg ba_da-tutg by ba_da-tutg.below.auto;
+        sub subjoiner-tutg ba_lVocalicMatra-tutg by ba_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ba_rVocalicMatra-tutg by ba_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ba_ra-tutg by ba_ra-tutg.below.auto;
+        sub subjoiner-tutg ba_rrVocalicMatra-tutg by ba_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ba_uMatra-tutg by ba_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ba_uuMatra-tutg by ba_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_lVocalicMatra-tutg by bha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_ma-tutg by bha_ma-tutg.below.auto;
+        sub subjoiner-tutg bha_na-tutg by bha_na-tutg.below.auto;
+        sub subjoiner-tutg bha_rVocalicMatra-tutg by bha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_ra-tutg by bha_ra-tutg.below.auto;
+        sub subjoiner-tutg bha_rrVocalicMatra-tutg by bha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_uMatra-tutg by bha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_uuMatra-tutg by bha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg bha_va-tutg by bha_va-tutg.below.auto;
+        sub subjoiner-tutg bha_ya-tutg by bha_ya-tutg.below.auto;
+        sub subjoiner-tutg ca_ca-tutg by ca_ca-tutg.below.auto;
+        sub subjoiner-tutg ca_cha-tutg by ca_cha-tutg.below.auto;
+        sub subjoiner-tutg ca_lVocalicMatra-tutg by ca_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ca_ma-tutg by ca_ma-tutg.below.auto;
+        sub subjoiner-tutg ca_rVocalicMatra-tutg by ca_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ca_rrVocalicMatra-tutg by ca_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ca_uMatra-tutg by ca_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ca_uuMatra-tutg by ca_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg cha_lVocalicMatra-tutg by cha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg cha_nya-tutg by cha_nya-tutg.below.auto;
+        sub subjoiner-tutg cha_rVocalicMatra-tutg by cha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg cha_rrVocalicMatra-tutg by cha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg cha_uMatra-tutg by cha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg cha_uuMatra-tutg by cha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg da_ba-tutg by da_ba-tutg.below.auto;
+        sub subjoiner-tutg da_bha-tutg by da_bha-tutg.below.auto;
+        sub subjoiner-tutg da_da-tutg by da_da-tutg.below.auto;
+        sub subjoiner-tutg da_da_ra-tutg by da_da_ra-tutg.below.auto;
+        sub subjoiner-tutg da_da_ya-tutg by da_da_ya-tutg.below.auto;
+        sub subjoiner-tutg da_dha-tutg by da_dha-tutg.below.auto;
+        sub subjoiner-tutg da_dha_ma-tutg by da_dha_ma-tutg.below.auto;
+        sub subjoiner-tutg da_dha_ra-tutg by da_dha_ra-tutg.below.auto;
+        sub subjoiner-tutg da_dha_va-tutg by da_dha_va-tutg.below.auto;
+        sub subjoiner-tutg da_dha_ya-tutg by da_dha_ya-tutg.below.auto;
+        sub subjoiner-tutg da_ga-tutg by da_ga-tutg.below.auto;
+        sub subjoiner-tutg da_gha-tutg by da_gha-tutg.below.auto;
+        sub subjoiner-tutg da_lVocalicMatra-tutg by da_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg da_la-tutg by da_la-tutg.below.auto;
+        sub subjoiner-tutg da_ma-tutg by da_ma-tutg.below.auto;
+        sub subjoiner-tutg da_rVocalicMatra-tutg by da_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg da_ra-tutg by da_ra-tutg.below.auto;
+        sub subjoiner-tutg da_rrVocalicMatra-tutg by da_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg da_uMatra-tutg by da_uMatra-tutg.below.auto;
+        sub subjoiner-tutg da_uuMatra-tutg by da_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg da_va-tutg by da_va-tutg.below.auto;
+        sub subjoiner-tutg da_ya-tutg by da_ya-tutg.below.auto;
+        sub subjoiner-tutg dda_ga-tutg by dda_ga-tutg.below.auto;
+        sub subjoiner-tutg dda_lVocalicMatra-tutg by dda_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dda_rVocalicMatra-tutg by dda_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dda_rrVocalicMatra-tutg by dda_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dda_uMatra-tutg by dda_uMatra-tutg.below.auto;
+        sub subjoiner-tutg dda_uuMatra-tutg by dda_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ddha_lVocalicMatra-tutg by ddha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ddha_rVocalicMatra-tutg by ddha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ddha_rrVocalicMatra-tutg by ddha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ddha_uMatra-tutg by ddha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ddha_uuMatra-tutg by ddha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg dha_lVocalicMatra-tutg by dha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dha_rVocalicMatra-tutg by dha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dha_rrVocalicMatra-tutg by dha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg dha_uMatra-tutg by dha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg dha_uuMatra-tutg by dha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_ba-tutg by ga_ba-tutg.below.auto;
+        sub subjoiner-tutg ga_bha-tutg by ga_bha-tutg.below.auto;
+        sub subjoiner-tutg ga_bha_ya-tutg by ga_bha_ya-tutg.below.auto;
+        sub subjoiner-tutg ga_da-tutg by ga_da-tutg.below.auto;
+        sub subjoiner-tutg ga_da_dha-tutg by ga_da_dha-tutg.below.auto;
+        sub subjoiner-tutg ga_da_dha_ra-tutg by ga_da_dha_ra-tutg.below.auto;
+        sub subjoiner-tutg ga_da_dha_va-tutg by ga_da_dha_va-tutg.below.auto;
+        sub subjoiner-tutg ga_dha-tutg by ga_dha-tutg.below.auto;
+        sub subjoiner-tutg ga_dha_va-tutg by ga_dha_va-tutg.below.auto;
+        sub subjoiner-tutg ga_ga-tutg by ga_ga-tutg.below.auto;
+        sub subjoiner-tutg ga_ga_rVocalicMatra-tutg by ga_ga_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_gha-tutg by ga_gha-tutg.below.auto;
+        sub subjoiner-tutg ga_ja-tutg by ga_ja-tutg.below.auto;
+        sub subjoiner-tutg ga_lVocalicMatra-tutg by ga_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_ma-tutg by ga_ma-tutg.below.auto;
+        sub subjoiner-tutg ga_na-tutg by ga_na-tutg.below.auto;
+        sub subjoiner-tutg ga_na_va-tutg by ga_na_va-tutg.below.auto;
+        sub subjoiner-tutg ga_na_ya-tutg by ga_na_ya-tutg.below.auto;
+        sub subjoiner-tutg ga_rVocalicMatra-tutg by ga_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_rrVocalicMatra-tutg by ga_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_uMatra-tutg by ga_uMatra-tutg.below;
+        sub subjoiner-tutg ga_uuMatra-tutg by ga_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ga_ya-tutg by ga_ya-tutg.below.auto;
+        sub subjoiner-tutg gha_lVocalicMatra-tutg by gha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg gha_rVocalicMatra-tutg by gha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg gha_rrVocalicMatra-tutg by gha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg gha_uMatra-tutg by gha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg gha_uuMatra-tutg by gha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_lVocalicMatra-tutg by ha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_ma-tutg by ha_ma-tutg.below.auto;
+        sub subjoiner-tutg ha_na-tutg by ha_na-tutg.below.auto;
+        sub subjoiner-tutg ha_na_ya-tutg by ha_na_ya-tutg.below.auto;
+        sub subjoiner-tutg ha_rVocalicMatra-tutg by ha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_rrVocalicMatra-tutg by ha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_uMatra-tutg by ha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_uuMatra-tutg by ha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ha_ya-tutg by ha_ya-tutg.below;
+        sub subjoiner-tutg ja_cha-tutg by ja_cha-tutg.below.auto;
+        sub subjoiner-tutg ja_ja-tutg by ja_ja-tutg.below.auto;
+        sub subjoiner-tutg ja_ja_nya-tutg by ja_ja_nya-tutg.below.auto;
+        sub subjoiner-tutg ja_ja_ya-tutg by ja_ja_ya-tutg.below.auto;
+        sub subjoiner-tutg ja_lVocalicMatra-tutg by ja_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ja_ma-tutg by ja_ma-tutg.below.auto;
+        sub subjoiner-tutg ja_nya-tutg by ja_nya-tutg.below.auto;
+        sub subjoiner-tutg ja_rVocalicMatra-tutg by ja_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ja_ra-tutg by ja_ra-tutg.below.auto;
+        sub subjoiner-tutg ja_rrVocalicMatra-tutg by ja_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ja_uMatra-tutg by ja_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ja_uuMatra-tutg by ja_uuMatra-tutg.below;
+        sub subjoiner-tutg ja_va-tutg by ja_va-tutg.below.auto;
+        sub subjoiner-tutg ja_ya-tutg by ja_ya-tutg.below.auto;
+        sub subjoiner-tutg jha_jha-tutg by jha_jha-tutg.below.auto;
+        sub subjoiner-tutg jha_lVocalicMatra-tutg by jha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg jha_rVocalicMatra-tutg by jha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg jha_rrVocalicMatra-tutg by jha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg jha_uMatra-tutg by jha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg jha_uuMatra-tutg by jha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_iMatra_dotreph-tutg by ka_iMatra_dotreph-tutg.below.auto;
+        sub subjoiner-tutg ka_kChillu-tutg by ka_kChillu-tutg.below.auto;
+        sub subjoiner-tutg ka_ka-tutg by ka_ka-tutg.below.auto;
+        sub subjoiner-tutg ka_ka_rVocalicMatra-tutg by ka_ka_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_ka_ra-tutg by ka_ka_ra-tutg.below.auto;
+        sub subjoiner-tutg ka_lVocalicMatra-tutg by ka_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_ma-tutg by ka_ma-tutg.below.auto;
+        sub subjoiner-tutg ka_nChillu-tutg by ka_nChillu-tutg.below.auto;
+        sub subjoiner-tutg ka_na-tutg by ka_na-tutg.below.auto;
+        sub subjoiner-tutg ka_na_ya-tutg by ka_na_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_rVocalicMatra-tutg by ka_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_ra-tutg by ka_ra-tutg.below.auto;
+        sub subjoiner-tutg ka_rrVocalicMatra-tutg by ka_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_sa-tutg by ka_sa-tutg.below.auto;
+        sub subjoiner-tutg ka_sa_sa-tutg by ka_sa_sa-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa-tutg by ka_ssa-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_ma-tutg by ka_ssa_ma-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_ma_ya-tutg by ka_ssa_ma_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_nna-tutg by ka_ssa_nna-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_nna_ya-tutg by ka_ssa_nna_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_ra-tutg by ka_ssa_ra-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_va-tutg by ka_ssa_va-tutg.below.auto;
+        sub subjoiner-tutg ka_ssa_ya-tutg by ka_ssa_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_tChillu-tutg by ka_tChillu-tutg.below.auto;
+        sub subjoiner-tutg ka_ta-tutg by ka_ta-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_ra-tutg by ka_ta_ra-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_ra_ya-tutg by ka_ta_ra_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_tha-tutg by ka_ta_tha-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_uMatra-tutg by ka_ta_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_uuMatra-tutg by ka_ta_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_va-tutg by ka_ta_va-tutg.below.auto;
+        sub subjoiner-tutg ka_ta_ya-tutg by ka_ta_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_tha-tutg by ka_tha-tutg.below.auto;
+        sub subjoiner-tutg ka_tha_ya-tutg by ka_tha_ya-tutg.below.auto;
+        sub subjoiner-tutg ka_ttChillu-tutg by ka_ttChillu-tutg.below.auto;
+        sub subjoiner-tutg ka_tta-tutg by ka_tta-tutg.below.auto;
+        sub subjoiner-tutg ka_uMatra-tutg by ka_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_uuMatra-tutg by ka_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ka_va-tutg by ka_va-tutg.below.auto;
+        sub subjoiner-tutg ka_ya-tutg by ka_ya-tutg.below.auto;
+        sub subjoiner-tutg kha_ka-tutg by kha_ka-tutg.below.auto;
+        sub subjoiner-tutg kha_kha-tutg by kha_kha-tutg.below.auto;
+        sub subjoiner-tutg kha_lVocalicMatra-tutg by kha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg kha_rVocalicMatra-tutg by kha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg kha_rrVocalicMatra-tutg by kha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg kha_uMatra-tutg by kha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg kha_uuMatra-tutg by kha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg kha_ya-tutg by kha_ya-tutg.below.auto;
+        sub subjoiner-tutg la_ka-tutg by la_ka-tutg.below.auto;
+        sub subjoiner-tutg la_ka_uMatra-tutg by la_ka_uMatra-tutg.below.auto;
+        sub subjoiner-tutg la_lVocalicMatra-tutg by la_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg la_la-tutg by la_la-tutg.below.auto;
+        sub subjoiner-tutg la_la_ya-tutg by la_la_ya-tutg.below.auto;
+        sub subjoiner-tutg la_rVocalicMatra-tutg by la_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg la_ra-tutg by la_ra-tutg.below.auto;
+        sub subjoiner-tutg la_rrVocalicMatra-tutg by la_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg la_uMatra-tutg by la_uMatra-tutg.below.auto;
+        sub subjoiner-tutg la_uuMatra-tutg by la_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg la_va-tutg by la_va-tutg.below.auto;
+        sub subjoiner-tutg la_ya-tutg by la_ya-tutg.below.auto;
+        sub subjoiner-tutg lla_lVocalicMatra-tutg by lla_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg lla_lla-tutg by lla_lla-tutg.below.auto;
+        sub subjoiner-tutg lla_pa-tutg by lla_pa-tutg.below.auto;
+        sub subjoiner-tutg lla_rVocalicMatra-tutg by lla_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg lla_rrVocalicMatra-tutg by lla_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg lla_uMatra-tutg by lla_uMatra-tutg.below.auto;
+        sub subjoiner-tutg lla_uuMatra-tutg by lla_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg lla_ya-tutg by lla_ya-tutg.below.auto;
+        sub subjoiner-tutg llla_lVocalicMatra-tutg by llla_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg llla_rVocalicMatra-tutg by llla_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg llla_rrVocalicMatra-tutg by llla_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg llla_uMatra-tutg by llla_uMatra-tutg.below.auto;
+        sub subjoiner-tutg llla_uuMatra-tutg by llla_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_lVocalicMatra-tutg by ma_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_ma-tutg by ma_ma-tutg.below.auto;
+        sub subjoiner-tutg ma_pa-tutg by ma_pa-tutg.below.auto;
+        sub subjoiner-tutg ma_rVocalicMatra-tutg by ma_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_rrVocalicMatra-tutg by ma_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_uMatra-tutg by ma_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_uuMatra-tutg by ma_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ma_va-tutg by ma_va-tutg.below.auto;
+        sub subjoiner-tutg ma_ya-tutg by ma_ya-tutg.below.auto;
+        sub subjoiner-tutg na_ba-tutg by na_ba-tutg.below.auto;
+        sub subjoiner-tutg na_bha-tutg by na_bha-tutg.below.auto;
+        sub subjoiner-tutg na_da-tutg by na_da-tutg.below.auto;
+        sub subjoiner-tutg na_da_ra-tutg by na_da_ra-tutg.below.auto;
+        sub subjoiner-tutg na_da_va-tutg by na_da_va-tutg.below.auto;
+        sub subjoiner-tutg na_dha-tutg by na_dha-tutg.below.auto;
+        sub subjoiner-tutg na_dha_va-tutg by na_dha_va-tutg.below.auto;
+        sub subjoiner-tutg na_ga-tutg by na_ga-tutg.below.auto;
+        sub subjoiner-tutg na_gha-tutg by na_gha-tutg.below.auto;
+        sub subjoiner-tutg na_ka-tutg by na_ka-tutg.below.auto;
+        sub subjoiner-tutg na_ka_rVocalicMatra-tutg by na_ka_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg na_ka_ssa-tutg by na_ka_ssa-tutg.below.auto;
+        sub subjoiner-tutg na_ka_ta-tutg by na_ka_ta-tutg.below.auto;
+        sub subjoiner-tutg na_ka_uMatra-tutg by na_ka_uMatra-tutg.below.auto;
+        sub subjoiner-tutg na_lVocalicMatra-tutg by na_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg na_ma-tutg by na_ma-tutg.below.auto;
+        sub subjoiner-tutg na_nChillu-tutg by na_nChillu-tutg.below.auto;
+        sub subjoiner-tutg na_na-tutg by na_na-tutg.below.auto;
+        sub subjoiner-tutg na_na_ya-tutg by na_na_ya-tutg.below.auto;
+        sub subjoiner-tutg na_rVocalicMatra-tutg by na_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg na_rrVocalicMatra-tutg by na_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg na_tChillu-tutg by na_tChillu-tutg.below.auto;
+        sub subjoiner-tutg na_ta-tutg by na_ta-tutg.below.auto;
+        sub subjoiner-tutg na_ta_ra-tutg by na_ta_ra-tutg.below.auto;
+        sub subjoiner-tutg na_ta_ra_ya_-tutg by na_ta_ra_ya_-tutg.below.auto;
+        sub subjoiner-tutg na_ta_sa-tutg by na_ta_sa-tutg.below.auto;
+        sub subjoiner-tutg na_ta_va-tutg by na_ta_va-tutg.below.auto;
+        sub subjoiner-tutg na_ta_ya-tutg by na_ta_ya-tutg.below.auto;
+        sub subjoiner-tutg na_tha-tutg by na_tha-tutg.below.auto;
+        sub subjoiner-tutg na_ttChillu-tutg by na_ttChillu-tutg.below.auto;
+        sub subjoiner-tutg na_tta-tutg by na_tta-tutg.below.auto;
+        sub subjoiner-tutg na_uMatra-tutg by na_uMatra-tutg.below;
+        sub subjoiner-tutg na_uuMatra-tutg by na_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg na_va-tutg by na_va-tutg.below.auto;
+        sub subjoiner-tutg na_ya-tutg by na_ya-tutg.below;
+        sub subjoiner-tutg nga_ba-tutg by nga_ba-tutg.below.auto;
+        sub subjoiner-tutg nga_ka-tutg by nga_ka-tutg.below.auto;
+        sub subjoiner-tutg nga_ka_ka-tutg by nga_ka_ka-tutg.below.auto;
+        sub subjoiner-tutg nga_ka_ta-tutg by nga_ka_ta-tutg.below.auto;
+        sub subjoiner-tutg nga_kha-tutg by nga_kha-tutg.below.auto;
+        sub subjoiner-tutg nga_lVocalicMatra-tutg by nga_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nga_ma-tutg by nga_ma-tutg.below.auto;
+        sub subjoiner-tutg nga_na-tutg by nga_na-tutg.below.auto;
+        sub subjoiner-tutg nga_nga-tutg by nga_nga-tutg.below.auto;
+        sub subjoiner-tutg nga_rVocalicMatra-tutg by nga_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nga_rrVocalicMatra-tutg by nga_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nga_ta-tutg by nga_ta-tutg.below.auto;
+        sub subjoiner-tutg nga_uMatra-tutg by nga_uMatra-tutg.below.auto;
+        sub subjoiner-tutg nga_uuMatra-tutg by nga_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_dda-tutg by nna_dda-tutg.below.auto;
+        sub subjoiner-tutg nna_ddha-tutg by nna_ddha-tutg.below.auto;
+        sub subjoiner-tutg nna_ha-tutg by nna_ha-tutg.below.auto;
+        sub subjoiner-tutg nna_lVocalicMatra-tutg by nna_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_ma-tutg by nna_ma-tutg.below.auto;
+        sub subjoiner-tutg nna_nna-tutg by nna_nna-tutg.below.auto;
+        sub subjoiner-tutg nna_nna_ya-tutg by nna_nna_ya-tutg.below.auto;
+        sub subjoiner-tutg nna_rVocalicMatra-tutg by nna_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_rrVocalicMatra-tutg by nna_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_tta-tutg by nna_tta-tutg.below.auto;
+        sub subjoiner-tutg nna_ttha-tutg by nna_ttha-tutg.below.auto;
+        sub subjoiner-tutg nna_uMatra-tutg by nna_uMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_uuMatra-tutg by nna_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg nna_ya-tutg by nna_ya-tutg.below.auto;
+        sub subjoiner-tutg nya_UuMatra-tutg by nya_UuMatra-tutg.below.auto;
+        sub subjoiner-tutg nya_ca-tutg by nya_ca-tutg.below.auto;
+        sub subjoiner-tutg nya_cha-tutg by nya_cha-tutg.below.auto;
+        sub subjoiner-tutg nya_ja-tutg by nya_ja-tutg.below.auto;
+        sub subjoiner-tutg nya_ja_uMatra-tutg by nya_ja_uMatra-tutg.below.auto;
+        sub subjoiner-tutg nya_lVocalicMatra-tutg by nya_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nya_rVocalicMatra-tutg by nya_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nya_rrVocalicMatra-tutg by nya_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg nya_uMatra-tutg by nya_uMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_cha-tutg by pa_cha-tutg.below.auto;
+        sub subjoiner-tutg pa_lVocalicMatra-tutg by pa_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_pa-tutg by pa_pa-tutg.below.auto;
+        sub subjoiner-tutg pa_rVocalicMatra-tutg by pa_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_rrVocalicMatra-tutg by pa_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_sa-tutg by pa_sa-tutg.below.auto;
+        sub subjoiner-tutg pa_sa_ma-tutg by pa_sa_ma-tutg.below.auto;
+        sub subjoiner-tutg pa_sa_ta-tutg by pa_sa_ta-tutg.below.auto;
+        sub subjoiner-tutg pa_sa_tha-tutg by pa_sa_tha-tutg.below.auto;
+        sub subjoiner-tutg pa_sa_va-tutg by pa_sa_va-tutg.below.auto;
+        sub subjoiner-tutg pa_sa_ya-tutg by pa_sa_ya-tutg.below.auto;
+        sub subjoiner-tutg pa_ta-tutg by pa_ta-tutg.below.auto;
+        sub subjoiner-tutg pa_ta_va-tutg by pa_ta_va-tutg.below.auto;
+        sub subjoiner-tutg pa_uMatra-tutg by pa_uMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_uuMatra-tutg by pa_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg pa_ya-tutg by pa_ya-tutg.below;
+        sub subjoiner-tutg pha_lVocalicMatra-tutg by pha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pha_rVocalicMatra-tutg by pha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pha_rrVocalicMatra-tutg by pha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg pha_uMatra-tutg by pha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg pha_uuMatra-tutg by pha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg rVocalicMatra_uMatra-tutg by rVocalicMatra_uMatra-tutg.below.auto;
+        sub subjoiner-tutg rVocalicMatra_uuMatra-tutg by rVocalicMatra_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_lVocalicMatra-tutg by ra_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_ma-tutg by ra_ma-tutg.below.auto;
+        sub subjoiner-tutg ra_ma_ma-tutg by ra_ma_ma-tutg.below.auto;
+        sub subjoiner-tutg ra_rVocalicMatra-tutg by ra_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_ra-tutg by ra_ra-tutg.below.auto;
+        sub subjoiner-tutg ra_rrVocalicMatra-tutg by ra_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_sha-tutg by ra_sha-tutg.below.auto;
+        sub subjoiner-tutg ra_uMatra-tutg by ra_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_uuMatra-tutg by ra_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ra_va-tutg by ra_va-tutg.below.auto;
+        sub subjoiner-tutg ra_ya-tutg by ra_ya-tutg.below.auto;
+        sub subjoiner-tutg rra_lVocalicMatra-tutg by rra_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg rra_rVocalicMatra-tutg by rra_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg rra_rrVocalicMatra-tutg by rra_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg rra_uMatra-tutg by rra_uMatra-tutg.below.auto;
+        sub subjoiner-tutg rra_uuMatra-tutg by rra_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_ca-tutg by sa_ca-tutg.below.auto;
+        sub subjoiner-tutg sa_ka-tutg by sa_ka-tutg.below.auto;
+        sub subjoiner-tutg sa_ka_vocalicR-tutg by sa_ka_vocalicR-tutg.below.auto;
+        sub subjoiner-tutg sa_lVocalicMatra-tutg by sa_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_ma-tutg by sa_ma-tutg.below.auto;
+        sub subjoiner-tutg sa_ma_ya-tutg by sa_ma_ya-tutg.below.auto;
+        sub subjoiner-tutg sa_pa-tutg by sa_pa-tutg.below.auto;
+        sub subjoiner-tutg sa_pa_rvocalicMatra-tutg by sa_pa_rvocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_rVocalicMatra-tutg by sa_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_rrVocalicMatra-tutg by sa_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_sa-tutg by sa_sa-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_ka-tutg by sa_sa_ka-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_pa-tutg by sa_sa_pa-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_rVocalicMatra-tutg by sa_sa_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_ta-tutg by sa_sa_ta-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_ta_uMatra-tutg by sa_sa_ta_uMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_tha-tutg by sa_sa_tha-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_tha_uMatra-tutg by sa_sa_tha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_sa_va-tutg by sa_sa_va-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_raMatra-tutg by sa_ta_raMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_ta-tutg by sa_ta_ta-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_tha-tutg by sa_ta_tha-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_uMatra-tutg by sa_ta_uMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_uuMatra-tutg by sa_ta_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_va-tutg by sa_ta_va-tutg.below.auto;
+        sub subjoiner-tutg sa_ta_ya-tutg by sa_ta_ya-tutg.below.auto;
+        sub subjoiner-tutg sa_tha-tutg by sa_tha-tutg.below.auto;
+        sub subjoiner-tutg sa_tta-tutg by sa_tta-tutg.below.auto;
+        sub subjoiner-tutg sa_uMatra-tutg by sa_uMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_uuMatra-tutg by sa_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg sa_va-tutg by sa_va-tutg.below.auto;
+        sub subjoiner-tutg sa_ya-tutg by sa_ya-tutg.below.auto;
+        sub subjoiner-tutg sha_ca-tutg by sha_ca-tutg.below.auto;
+        sub subjoiner-tutg sha_cha-tutg by sha_cha-tutg.below.auto;
+        sub subjoiner-tutg sha_lVocalicMatra-tutg by sha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_ma-tutg by sha_ma-tutg.below.auto;
+        sub subjoiner-tutg sha_na-tutg by sha_na-tutg.below.auto;
+        sub subjoiner-tutg sha_rVocalicMatra-tutg by sha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_ra_iiMatra-tutg by sha_ra_iiMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_rrVocalicMatra-tutg by sha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_sha-tutg by sha_sha-tutg.below.auto;
+        sub subjoiner-tutg sha_ttha-tutg by sha_ttha-tutg.below.auto;
+        sub subjoiner-tutg sha_uMatra-tutg by sha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_uuMatra-tutg by sha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg sha_va-tutg by sha_va-tutg.below.auto;
+        sub subjoiner-tutg sha_va_ya-tutg by sha_va_ya-tutg.below.auto;
+        sub subjoiner-tutg sha_ya-tutg by sha_ya-tutg.below;
+        sub subjoiner-tutg ssa_ka-tutg by ssa_ka-tutg.below.auto;
+        sub subjoiner-tutg ssa_ka_ra-tutg by ssa_ka_ra-tutg.below.auto;
+        sub subjoiner-tutg ssa_ka_uuMatra-tutg by ssa_ka_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_ka_vocalicR-tutg by ssa_ka_vocalicR-tutg.below.auto;
+        sub subjoiner-tutg ssa_lVocalicMatra-tutg by ssa_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_la-tutg by ssa_la-tutg.below.auto;
+        sub subjoiner-tutg ssa_ma-tutg by ssa_ma-tutg.below.auto;
+        sub subjoiner-tutg ssa_nna-tutg by ssa_nna-tutg.below.auto;
+        sub subjoiner-tutg ssa_nna_uMatra-tutg by ssa_nna_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_pa-tutg by ssa_pa-tutg.below.auto;
+        sub subjoiner-tutg ssa_pa_ra-tutg by ssa_pa_ra-tutg.below.auto;
+        sub subjoiner-tutg ssa_rVocalicMatra-tutg by ssa_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_rrVocalicMatra-tutg by ssa_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_ssa-tutg by ssa_ssa-tutg.below.auto;
+        sub subjoiner-tutg ssa_tta-tutg by ssa_tta-tutg.below.auto;
+        sub subjoiner-tutg ssa_tta_rVocalicMatra-tutg by ssa_tta_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_tta_va-tutg by ssa_tta_va-tutg.below.auto;
+        sub subjoiner-tutg ssa_tta_ya-tutg by ssa_tta_ya-tutg.below.auto;
+        sub subjoiner-tutg ssa_ttha-tutg by ssa_ttha-tutg.below.auto;
+        sub subjoiner-tutg ssa_ttha_ya-tutg by ssa_ttha_ya-tutg.below.auto;
+        sub subjoiner-tutg ssa_uMatra-tutg by ssa_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_uuMatra-tutg by ssa_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ssa_va-tutg by ssa_va-tutg.below;
+        sub subjoiner-tutg ssa_ya-tutg by ssa_ya-tutg.below.auto;
+        sub subjoiner-tutg ta_bha-tutg by ta_bha-tutg.below.auto;
+        sub subjoiner-tutg ta_kChillu-tutg by ta_kChillu-tutg.below.auto;
+        sub subjoiner-tutg ta_ka-tutg by ta_ka-tutg.below.auto;
+        sub subjoiner-tutg ta_ka_ssa-tutg by ta_ka_ssa-tutg.below.auto;
+        sub subjoiner-tutg ta_ka_ssa_ma-tutg by ta_ka_ssa_ma-tutg.below.auto;
+        sub subjoiner-tutg ta_lVocalicMatra-tutg by ta_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ta_ma-tutg by ta_ma-tutg.below.auto;
+        sub subjoiner-tutg ta_ma_ra-tutg by ta_ma_ra-tutg.below.auto;
+        sub subjoiner-tutg ta_ma_ya-tutg by ta_ma_ya-tutg.below.auto;
+        sub subjoiner-tutg ta_nChillu-tutg by ta_nChillu-tutg.below.auto;
+        sub subjoiner-tutg ta_na-tutg by ta_na-tutg.below.auto;
+        sub subjoiner-tutg ta_rVocalicMatra-tutg by ta_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ta_ra-tutg by ta_ra-tutg.below.auto;
+        sub subjoiner-tutg ta_ra_va-tutg by ta_ra_va-tutg.below.auto;
+        sub subjoiner-tutg ta_rrVocalicMatra-tutg by ta_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ta_sa-tutg by ta_sa-tutg.below.auto;
+        sub subjoiner-tutg ta_sa_ta-tutg by ta_sa_ta-tutg.below.auto;
+        sub subjoiner-tutg ta_ta-tutg by ta_ta-tutg.below.auto;
+        sub subjoiner-tutg ta_taChillu-tutg by ta_taChillu-tutg.below.auto;
+        sub subjoiner-tutg ta_ta_rVocalicMatra-tutg by ta_ta_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ta_ta_ra-tutg by ta_ta_ra-tutg.below.auto;
+        sub subjoiner-tutg ta_ta_va-tutg by ta_ta_va-tutg.below.auto;
+        sub subjoiner-tutg ta_tha-tutg by ta_tha-tutg.below.auto;
+        sub subjoiner-tutg ta_tha_ya-tutg by ta_tha_ya-tutg.below.auto;
+        sub subjoiner-tutg ta_uMatra-tutg by ta_uMatra-tutg.below;
+        sub subjoiner-tutg ta_uuMatra-tutg by ta_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ta_va-tutg by ta_va-tutg.below.auto;
+        sub subjoiner-tutg ta_ya-tutg by ta_ya-tutg.below.auto;
+        sub subjoiner-tutg tha_lVocalicMatra-tutg by tha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tha_rVocalicMatra-tutg by tha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tha_rrVocalicMatra-tutg by tha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tha_uMatra-tutg by tha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg tha_uuMatra-tutg by tha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg tta_lVocalicMatra-tutg by tta_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tta_rVocalicMatra-tutg by tta_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tta_rrVocalicMatra-tutg by tta_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg tta_ttChillu-tutg by tta_ttChillu-tutg.below.auto;
+        sub subjoiner-tutg tta_tta-tutg by tta_tta-tutg.below.auto;
+        sub subjoiner-tutg tta_tta_ya-tutg by tta_tta_ya-tutg.below.auto;
+        sub subjoiner-tutg tta_uMatra-tutg by tta_uMatra-tutg.below.auto;
+        sub subjoiner-tutg tta_uuMatra-tutg by tta_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ttha_lVocalicMatra-tutg by ttha_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ttha_rVocalicMatra-tutg by ttha_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ttha_rrVocalicMatra-tutg by ttha_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ttha_uMatra-tutg by ttha_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ttha_uuMatra-tutg by ttha_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg va_lVocalicMatra-tutg by va_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg va_rVocalicMatra-tutg by va_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg va_rrVocalicMatra-tutg by va_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg va_uMatra-tutg by va_uMatra-tutg.below.auto;
+        sub subjoiner-tutg va_uuMatra-tutg by va_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg va_va-tutg by va_va-tutg.below.auto;
+        sub subjoiner-tutg va_ya-tutg by va_ya-tutg.below.auto;
+        sub subjoiner-tutg ya_lVocalicMatra-tutg by ya_lVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ya_rVocalicMatra-tutg by ya_rVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ya_rrVocalicMatra-tutg by ya_rrVocalicMatra-tutg.below.auto;
+        sub subjoiner-tutg ya_uMatra-tutg by ya_uMatra-tutg.below.auto;
+        sub subjoiner-tutg ya_uuMatra-tutg by ya_uuMatra-tutg.below.auto;
+        sub subjoiner-tutg ya_va-tutg by ya_va-tutg.below.auto;
+        sub subjoiner-tutg ya_ya-tutg by ya_ya-tutg.below.auto;
     } TutgBlwfSubjoiner;
 
     sub [ka_ta-tutg]' lookup TutgBlwfDecompose [rVocalicMatra-tutg rrVocalicMatra-tutg];
-    sub [ba_ba-tutg ba_da-tutg ba_ra-tutg bha_ma-tutg bha_na-tutg bha_ra-tutg bha_va-tutg bha_ya-tutg ca_ca-tutg ca_cha-tutg ca_ma-tutg cha_nya-tutg da_ba-tutg da_bha-tutg da_da-tutg da_da_ra-tutg da_da_ya-tutg da_dha-tutg da_dha_ma-tutg da_dha_ra-tutg da_dha_va-tutg da_dha_ya-tutg da_ga-tutg da_gha-tutg da_la-tutg da_ma-tutg da_ra-tutg da_va-tutg da_ya-tutg dda_ga-tutg ga_ba-tutg ga_bha-tutg ga_bha_ya-tutg ga_da-tutg ga_da_dha-tutg ga_da_dha_ra-tutg ga_da_dha_va-tutg ga_dha-tutg ga_dha_va-tutg ga_gha-tutg ga_ja-tutg ga_ma-tutg ga_na-tutg ga_na_va-tutg ga_na_ya-tutg ga_ya-tutg ha_ma-tutg ha_na-tutg ha_na_ya-tutg ha_ya-tutg ja_cha-tutg ja_ja-tutg ja_ja_nya-tutg ja_ja_ya-tutg ja_ma-tutg ja_nya-tutg ja_ra-tutg ja_va-tutg ja_ya-tutg jha_jha-tutg ka_ka_ra-tutg ka_ma-tutg ka_na-tutg ka_na_ya-tutg ka_ra-tutg ka_sa-tutg ka_sa_sa-tutg ka_ssa_ma-tutg ka_ssa_ma_ya-tutg ka_ssa_nna-tutg ka_ssa_nna_ya-tutg ka_ssa_ra-tutg ka_ssa_va-tutg ka_ssa_ya-tutg ka_ta_ra-tutg ka_ta_ra_ya-tutg ka_ta_tha-tutg ka_ta_va-tutg ka_ta_ya-tutg ka_tha-tutg ka_tha_ya-tutg ka_tta-tutg ka_va-tutg ka_ya-tutg kha_ka-tutg kha_kha-tutg kha_ya-tutg la_la-tutg la_la_ya-tutg la_ra-tutg la_va-tutg la_ya-tutg lla_lla-tutg lla_pa-tutg lla_ya-tutg ma_ma-tutg ma_pa-tutg ma_va-tutg ma_ya-tutg na_ba-tutg na_bha-tutg na_da-tutg na_da_ra-tutg na_da_va-tutg na_dha-tutg na_dha_va-tutg na_ga-tutg na_gha-tutg na_ka_ssa-tutg na_ka_ta-tutg na_ma-tutg na_na-tutg na_na_ya-tutg na_ta-tutg na_ta_ra-tutg na_ta_sa-tutg na_ta_va-tutg na_ta_ya-tutg na_tha-tutg na_tta-tutg na_va-tutg na_ya-tutg nga_ba-tutg nga_ka-tutg nga_ka_ka-tutg nga_ka_ta-tutg nga_kha-tutg nga_ma-tutg nga_na-tutg nga_nga-tutg nga_ta-tutg nna_dda-tutg nna_ddha-tutg nna_ha-tutg nna_ma-tutg nna_nna-tutg nna_nna_ya-tutg nna_tta-tutg nna_ttha-tutg nna_ya-tutg nya_ca-tutg nya_cha-tutg pa_cha-tutg pa_pa-tutg pa_sa-tutg pa_sa_ma-tutg pa_sa_ta-tutg pa_sa_tha-tutg pa_sa_va-tutg pa_sa_ya-tutg pa_ta-tutg pa_ta_va-tutg pa_ya-tutg ra_ma-tutg ra_ma_ma-tutg ra_ra-tutg ra_sha-tutg ra_va-tutg ra_ya-tutg sa_ca-tutg sa_ma-tutg sa_ma_ya-tutg sa_sa_ka-tutg sa_sa_pa-tutg sa_sa_va-tutg sa_ta_ta-tutg sa_ta_tha-tutg sa_ta_va-tutg sa_ta_ya-tutg sa_tha-tutg sa_tta-tutg sa_va-tutg sa_ya-tutg sha_ca-tutg sha_cha-tutg sha_ma-tutg sha_na-tutg sha_sha-tutg sha_ttha-tutg sha_va-tutg sha_va_ya-tutg sha_ya-tutg ssa_ka_ra-tutg ssa_la-tutg ssa_ma-tutg ssa_pa-tutg ssa_pa_ra-tutg ssa_ssa-tutg ssa_tta_va-tutg ssa_tta_ya-tutg ssa_ttha-tutg ssa_ttha_ya-tutg ssa_va-tutg ssa_ya-tutg ta_bha-tutg ta_ka-tutg ta_ka_ssa-tutg ta_ka_ssa_ma-tutg ta_ma-tutg ta_ma_ra-tutg ta_ma_ya-tutg ta_na-tutg ta_ra-tutg ta_ra_va-tutg ta_sa-tutg ta_sa_ta-tutg ta_ta_ra-tutg ta_ta_va-tutg ta_tha-tutg ta_tha_ya-tutg ta_va-tutg ta_ya-tutg tta_tta-tutg tta_tta_ya-tutg va_va-tutg va_ya-tutg ya_va-tutg ya_ya-tutg]' lookup TutgBlwfDecompose [rVocalicMatra-tutg rrVocalicMatra-tutg uMatra-tutg uuMatra-tutg];
+    sub [ba_ba-tutg ba_da-tutg bha_ma-tutg bha_na-tutg bha_va-tutg ca_ca-tutg ca_cha-tutg ca_ma-tutg cha_nya-tutg da_ba-tutg da_bha-tutg da_da-tutg da_dha-tutg da_dha_ma-tutg da_dha_va-tutg da_ga-tutg da_gha-tutg da_la-tutg da_ma-tutg da_va-tutg dda_ga-tutg ga_ba-tutg ga_bha-tutg ga_da-tutg ga_da_dha-tutg ga_da_dha_va-tutg ga_dha-tutg ga_dha_va-tutg ga_gha-tutg ga_ja-tutg ga_ma-tutg ga_na-tutg ga_na_va-tutg ha_ma-tutg ha_na-tutg ja_cha-tutg ja_ja-tutg ja_ja_nya-tutg ja_ma-tutg ja_nya-tutg ja_va-tutg jha_jha-tutg ka_ma-tutg ka_na-tutg ka_sa-tutg ka_sa_sa-tutg ka_ssa_ma-tutg ka_ssa_nna-tutg ka_ssa_va-tutg ka_ta_tha-tutg ka_ta_va-tutg ka_tha-tutg ka_tta-tutg ka_va-tutg kha_ka-tutg kha_kha-tutg la_la-tutg la_va-tutg lla_lla-tutg lla_pa-tutg ma_ma-tutg ma_pa-tutg ma_va-tutg na_ba-tutg na_bha-tutg na_da-tutg na_da_va-tutg na_dha-tutg na_dha_va-tutg na_ga-tutg na_gha-tutg na_ka_ssa-tutg na_ka_ta-tutg na_ma-tutg na_na-tutg na_ta-tutg na_ta_sa-tutg na_ta_va-tutg na_tha-tutg na_tta-tutg na_va-tutg nga_ba-tutg nga_ka-tutg nga_ka_ka-tutg nga_ka_ta-tutg nga_kha-tutg nga_ma-tutg nga_na-tutg nga_nga-tutg nga_ta-tutg nna_dda-tutg nna_ddha-tutg nna_ha-tutg nna_ma-tutg nna_nna-tutg nna_tta-tutg nna_ttha-tutg nya_ca-tutg nya_cha-tutg pa_cha-tutg pa_pa-tutg pa_sa-tutg pa_sa_ma-tutg pa_sa_ta-tutg pa_sa_tha-tutg pa_sa_va-tutg pa_ta-tutg pa_ta_va-tutg ra_ma-tutg ra_ma_ma-tutg ra_sha-tutg ra_va-tutg sa_ca-tutg sa_ma-tutg sa_sa_ka-tutg sa_sa_pa-tutg sa_sa_va-tutg sa_ta_ta-tutg sa_ta_tha-tutg sa_ta_va-tutg sa_tha-tutg sa_tta-tutg sa_va-tutg sha_ca-tutg sha_cha-tutg sha_ma-tutg sha_na-tutg sha_sha-tutg sha_ttha-tutg sha_va-tutg ssa_la-tutg ssa_ma-tutg ssa_pa-tutg ssa_ssa-tutg ssa_tta_va-tutg ssa_ttha-tutg ssa_va-tutg ta_bha-tutg ta_ka-tutg ta_ka_ssa-tutg ta_ka_ssa_ma-tutg ta_ma-tutg ta_na-tutg ta_ra_va-tutg ta_sa-tutg ta_sa_ta-tutg ta_ta_va-tutg ta_tha-tutg ta_va-tutg tta_tta-tutg va_va-tutg ya_va-tutg]' lookup TutgBlwfDecompose [rVocalicMatra-tutg rrVocalicMatra-tutg uMatra-tutg uuMatra-tutg];
     sub [la_ka-tutg nya_ja-tutg sa_sa_ta-tutg sa_sa_tha-tutg ssa_nna-tutg]' lookup TutgBlwfDecompose [rVocalicMatra-tutg rrVocalicMatra-tutg uuMatra-tutg];
     sub [ssa_ka-tutg]' lookup TutgBlwfDecompose [rrVocalicMatra-tutg uMatra-tutg];
     sub [ga_ga-tutg ka_ka-tutg sa_ka-tutg sa_pa-tutg sa_sa-tutg ssa_tta-tutg ta_ta-tutg]' lookup TutgBlwfDecompose [rrVocalicMatra-tutg uMatra-tutg uuMatra-tutg];
@@ -413,10 +798,6 @@ feature blwf {
         sub conjoiner-tutg pa-tutg rrVocalicMatra-tutg by pa_rrVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg pa-tutg uMatra-tutg by pa_uMatra-tutg.below.auto;
         sub conjoiner-tutg pa-tutg uuMatra-tutg by pa_uuMatra-tutg.below.auto;
-        sub conjoiner-tutg ra-tutg rVocalicMatra-tutg by ra_rVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ra-tutg rrVocalicMatra-tutg by ra_rrVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ra-tutg uMatra-tutg by ra_uMatra-tutg.below.auto;
-        sub conjoiner-tutg ra-tutg uuMatra-tutg by ra_uuMatra-tutg.below.auto;
         sub conjoiner-tutg sa-tutg rVocalicMatra-tutg by sa_rVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg sa-tutg rrVocalicMatra-tutg by sa_rrVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg sa-tutg uMatra-tutg by sa_uMatra-tutg.below.auto;
@@ -449,10 +830,6 @@ feature blwf {
         sub conjoiner-tutg va-tutg rrVocalicMatra-tutg by va_rrVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg va-tutg uMatra-tutg by va_uMatra-tutg.below.auto;
         sub conjoiner-tutg va-tutg uuMatra-tutg by va_uuMatra-tutg.below.auto;
-        sub conjoiner-tutg ya-tutg rVocalicMatra-tutg by ya_rVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ya-tutg rrVocalicMatra-tutg by ya_rrVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ya-tutg uMatra-tutg by ya_uMatra-tutg.below.auto;
-        sub conjoiner-tutg ya-tutg uuMatra-tutg by ya_uuMatra-tutg.below.auto;
         sub conjoiner-tutg ba-tutg by ba-tutg.below;
         sub conjoiner-tutg ba_ba-tutg by ba_ba-tutg.below.auto;
         sub conjoiner-tutg ba_da-tutg by ba_da-tutg.below.auto;
@@ -803,17 +1180,11 @@ feature blwf {
         sub conjoiner-tutg pha_uuMatra-tutg by pha_uuMatra-tutg.below.auto;
         sub conjoiner-tutg rVocalicMatra_uMatra-tutg by rVocalicMatra_uMatra-tutg.below.auto;
         sub conjoiner-tutg rVocalicMatra_uuMatra-tutg by rVocalicMatra_uuMatra-tutg.below.auto;
-        sub conjoiner-tutg ra-tutg by raMatra-tutg;
-        sub conjoiner-tutg ra-tutg.alt1 by raMatra-tutg;
         sub conjoiner-tutg ra_lVocalicMatra-tutg by ra_lVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg ra_ma-tutg by ra_ma-tutg.below.auto;
         sub conjoiner-tutg ra_ma_ma-tutg by ra_ma_ma-tutg.below.auto;
-        sub conjoiner-tutg ra_rVocalicMatra-tutg by ra_rVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg ra_ra-tutg by ra_ra-tutg.below.auto;
-        sub conjoiner-tutg ra_rrVocalicMatra-tutg by ra_rrVocalicMatra-tutg.below.auto;
         sub conjoiner-tutg ra_sha-tutg by ra_sha-tutg.below.auto;
-        sub conjoiner-tutg ra_uMatra-tutg by ra_uMatra-tutg.below.auto;
-        sub conjoiner-tutg ra_uuMatra-tutg by ra_uuMatra-tutg.below.auto;
         sub conjoiner-tutg ra_va-tutg by ra_va-tutg.below.auto;
         sub conjoiner-tutg ra_ya-tutg by ra_ya-tutg.below.auto;
         sub conjoiner-tutg rra-tutg by rra-tutg.below;
@@ -956,12 +1327,7 @@ feature blwf {
         sub conjoiner-tutg va_uuMatra-tutg by va_uuMatra-tutg.below.auto;
         sub conjoiner-tutg va_va-tutg by va_va-tutg.below.auto;
         sub conjoiner-tutg va_ya-tutg by va_ya-tutg.below.auto;
-        sub conjoiner-tutg ya-tutg by ya-tutg.below;
         sub conjoiner-tutg ya_lVocalicMatra-tutg by ya_lVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ya_rVocalicMatra-tutg by ya_rVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ya_rrVocalicMatra-tutg by ya_rrVocalicMatra-tutg.below.auto;
-        sub conjoiner-tutg ya_uMatra-tutg by ya_uMatra-tutg.below.auto;
-        sub conjoiner-tutg ya_uuMatra-tutg by ya_uuMatra-tutg.below.auto;
         sub conjoiner-tutg ya_va-tutg by ya_va-tutg.below.auto;
         sub conjoiner-tutg ya_ya-tutg by ya_ya-tutg.below.auto;
     } TutgBlwf;
@@ -990,6 +1356,74 @@ feature blwf {
 # ta_nChillu-tutg
 # ta_taChillu-tutg
 # tta_ttChillu-tutg
+
+# --- Ligatures excluded from the decompose fix: last component is YA/RA (see BLWF_TODO.md) ---
+# ba_ra-tutg
+# bha_ra-tutg
+# bha_ya-tutg
+# da_da_ra-tutg
+# da_da_ya-tutg
+# da_dha_ra-tutg
+# da_dha_ya-tutg
+# da_ra-tutg
+# da_ya-tutg
+# ga_bha_ya-tutg
+# ga_da_dha_ra-tutg
+# ga_na_ya-tutg
+# ga_ya-tutg
+# ha_na_ya-tutg
+# ha_ya-tutg
+# ja_ja_ya-tutg
+# ja_ra-tutg
+# ja_ya-tutg
+# ka_ka_ra-tutg
+# ka_na_ya-tutg
+# ka_ra-tutg
+# ka_ssa_ma_ya-tutg
+# ka_ssa_nna_ya-tutg
+# ka_ssa_ra-tutg
+# ka_ssa_ya-tutg
+# ka_ta_ra-tutg
+# ka_ta_ra_ya-tutg
+# ka_ta_ya-tutg
+# ka_tha_ya-tutg
+# ka_ya-tutg
+# kha_ya-tutg
+# la_la_ya-tutg
+# la_ra-tutg
+# la_ya-tutg
+# lla_ya-tutg
+# ma_ya-tutg
+# na_da_ra-tutg
+# na_na_ya-tutg
+# na_ta_ra-tutg
+# na_ta_ya-tutg
+# na_ya-tutg
+# nna_nna_ya-tutg
+# nna_ya-tutg
+# pa_sa_ya-tutg
+# pa_ya-tutg
+# ra_ra-tutg
+# ra_ya-tutg
+# sa_ma_ya-tutg
+# sa_ta_ya-tutg
+# sa_ya-tutg
+# sha_va_ya-tutg
+# sha_ya-tutg
+# ssa_ka_ra-tutg
+# ssa_pa_ra-tutg
+# ssa_tta_ya-tutg
+# ssa_ttha_ya-tutg
+# ssa_ya-tutg
+# ta_ma_ra-tutg
+# ta_ma_ya-tutg
+# ta_ra-tutg
+# ta_ta_ra-tutg
+# ta_tha_ya-tutg
+# ta_ya-tutg
+# tta_tta_ya-tutg
+# va_ya-tutg
+# ya_ya-tutg
 
 # --- Alt-consonant fallback: no dedicated {base}.below.altN glyph, reused the plain consonant's below-form ---
 # ra-tutg -> ra-tutg.alt1

@@ -213,13 +213,38 @@ SUBJOINER_ONLY_DEDICATED_ALT = {
 }
 
 rules = []    # (input_seq, output_name) - input_seq always ["conjoiner-tutg", X]
+pstf_rules = []   # (input_seq, output_name) - YA's own post-base form (see below)
+rakar_rules = []  # (input_seq, output_name) - RA's own post-base form ("the Rakar form")
 missing = []  # consonant_name
 consonant_below = {}  # consonant name -> resolved below-form name, reused below
 
+# YA's combining form (ya-tutg.below) and RA's (raMatra-tutg, "the Rakar form")
+# are genuinely post-base forms per BELOW_BASE_MINIATURE_GLYPHS.md (different
+# allographs, not below-base miniatures), not a below-base stack at all -
+# confirmed 2026-07-21 by project owner. Moved from blwf's generic "conjoiner +
+# consonant" fallback into their own real features instead of just being
+# excluded (an earlier version of this fix tried plain exclusion - left the
+# conjoiner completely unconsumed, a visible dotted-circle-style fallback
+# glyph, confirmed via uharfbuzz): YA -> `pstf` (Post-base Forms), RA -> `rkrf`
+# (Rakar Forms - a real, registered OpenType feature specifically for this
+# exact RA-combining-form case, confirmed 2026-07-21 to apply by default and
+# run before blwf, same as pstf/blws, via the same throwaway-test-font
+# methodology). consonant_below is still populated for both (resolve_alt_
+# below's fallback, etc. still relies on it) - only the GENERIC
+# "conjoiner-tutg + X" rule itself moves feature, from `rules` to
+# `pstf_rules`/`rakar_rules`.
+GENERIC_FALLBACK_EXCLUDE = {"ya-tutg", "ra-tutg"}
+RAKAR_EXCLUDE = {"ra-tutg"}
 for name in consonants:
     below = BELOW_FORM_OVERRIDES.get(name, name + ".below")
     if below in glyphs:
-        rules.append((["conjoiner-tutg", name], below))
+        if name in RAKAR_EXCLUDE:
+            target_list = rakar_rules
+        elif name in GENERIC_FALLBACK_EXCLUDE:
+            target_list = pstf_rules
+        else:
+            target_list = rules
+        target_list.append((["conjoiner-tutg", name], below))
         consonant_below[name] = below
     else:
         missing.append(name)
@@ -271,7 +296,13 @@ for name in consonants:
             continue
         if not is_dedicated:
             alt_consonant_no_dedicated_below.append((name, variant_name))
-        rules.append((["conjoiner-tutg", variant_name], below))
+        if name in RAKAR_EXCLUDE:
+            target_list = rakar_rules
+        elif name in GENERIC_FALLBACK_EXCLUDE:
+            target_list = pstf_rules
+        else:
+            target_list = rules
+        target_list.append((["conjoiner-tutg", variant_name], below))
         alt_consonant_rule_count += 1
 
 # --- TutgBlwfSubjoiner (added 2026-07-20) ---
@@ -332,6 +363,18 @@ ligature_candidates = sorted(set(
     n for n in classification.get("conjunct_ligature", []) + classification.get("vowel_sign_ligature", [])
     if is_default_form(n)
 ))
+# YA/RA + their OWN vowel sign (e.g. ya_uMatra-tutg = "YA taking the U matra")
+# - same GENERIC_FALLBACK_EXCLUDE principle as plain ya-tutg/ra-tutg above:
+# this is still fundamentally "YA/RA's own shape", so it must not auto-shrink
+# via the plain conjoiner path either. Only the 4 roots each (U/UU/Vocalic-R/
+# Vocalic-RR), not e.g. ka_ya-tutg (a DIFFERENT consonant conjoined with YA -
+# already excluded from decompose above, but its own per-ligature rule here is
+# a separate "the whole ka_ya conjunct itself gets subjoined" concern, not
+# "YA's own shape", so left untouched).
+GENERIC_LIGATURE_FALLBACK_EXCLUDE = {
+    f"{cons}_{root}-tutg" for cons in ("ya", "ra")
+    for root in ("uMatra", "uuMatra", "rVocalicMatra", "rrVocalicMatra")
+}
 unreachable = []       # base ligature name isn't actually producible by any akhn rule
 no_below_form = []     # neither a real .below nor a .below.auto exists (shouldn't happen)
 below_auto_names = []  # kept for the report line below
@@ -344,9 +387,29 @@ for base_name in ligature_candidates:
     ligature_below[base_name] = below_name
     if is_auto:
         below_auto_names.append(below_name)
-    rules.append((["conjoiner-tutg", base_name], below_name))
+    if base_name not in GENERIC_LIGATURE_FALLBACK_EXCLUDE:
+        rules.append((["conjoiner-tutg", base_name], below_name))
     if base_name not in akhn_outputs:
         unreachable.append(base_name)
+
+# Subjoiner counterpart of the per-ligature rules above (added 2026-07-21,
+# confirmed missing by the project owner): TutgBlwfSubjoiner previously only
+# ever matched a plain consonant or one of its registered .altN variants -
+# never a ligature name like ya_uMatra-tutg. Since akhn always collapses
+# "ya-tutg uMatra-tutg" into ya_uMatra-tutg BEFORE blwf runs, "subjoiner-tutg +
+# ya-tutg" (2 glyphs) never actually occurs in the buffer when U follows YA -
+# it's really "subjoiner-tutg + ya_uMatra-tutg" (2 glyphs, the ligature as a
+# single unit) by the time TutgBlwfSubjoiner's lookup sees it. Without this,
+# that 2-glyph sequence matched NOTHING: subjoiner-tutg rendered unconsumed
+# (its own visible fallback glyph) and ya_uMatra-tutg stayed full-size,
+# unshrunk - confirmed via uharfbuzz on "conjoiner+VS1+YA+U". Reuses the same
+# ligature_below resolution as the generic per-ligature rules above, so this
+# fixes every consonant's _uMatra/_uuMatra/_rVocalicMatra/_rrVocalicMatra
+# compound and every conjunct_ligature, not just YA/RA specifically.
+subjoiner_ligature_rule_count = 0
+for base_name, below_name in ligature_below.items():
+    subjoiner_rules.append((base_name, below_name))
+    subjoiner_ligature_rule_count += 1
 
 # ---------------------------------------------------------------------------
 # Decompose fix (added 2026-07-18) - see module docstring and
@@ -386,6 +449,18 @@ decompose_rules = []         # (ligature_name, raw_input_seq, [missing_roots])
 decompose_no_input_seq = []  # has missing roots but no known akhn input sequence - can't decompose
 decompose_not_plain_last = []  # last "_"-token isn't a plain consonant name - see below
 decompose_ignored = []       # hand-excluded via blwf_decompose_ignore_list.json
+decompose_excluded_ya_ra = []  # last consonant is YA/RA - see DECOMPOSE_EXCLUDE_LAST below
+# YA and RA never get decomposed this way, regardless of missing compound -
+# confirmed 2026-07-21 by project owner: decomposing e.g. ka_ya-tutg (a real,
+# dedicated hand-drawn ligature) back into raw ka+ya just to re-ligate ya+U
+# and SHRINK it below ka throws away that dedicated artwork for no reason -
+# ka_ya-tutg should stay intact, with U/UU/rVocalicMatra/rrVocalicMatra
+# attaching to it directly via its own "bottomright" GPOS mark-anchor instead
+# (see generate_anchors.py's BARE_YA_LIGATURES/BARE_RA_LIGATURES - added
+# specifically to support this). The explicit conjoiner+VS1 forced-subjoiner
+# path is unaffected - TutgBlwfSubjoiner's own per-ligature rules still apply
+# there regardless of this exclusion.
+DECOMPOSE_EXCLUDE_LAST = {"ya", "ra"}
 for lig in conjunct_ligs_default:
     if lig in DECOMPOSE_IGNORE:
         decompose_ignored.append(lig)
@@ -406,6 +481,9 @@ for lig in conjunct_ligs_default:
     last_token = base.split("_")[-1]
     if last_token not in consonant_bases:
         decompose_not_plain_last.append(lig)
+        continue
+    if last_token in DECOMPOSE_EXCLUDE_LAST:
+        decompose_excluded_ya_ra.append(lig)
         continue
     missing_roots = [root for root in VS_ROOTS if compound_glyph_name(base, root) is None]
     if not missing_roots:
@@ -539,6 +617,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         for name in decompose_not_plain_last:
             f.write(f"# {name}\n")
 
+    if decompose_excluded_ya_ra:
+        f.write("\n# --- Ligatures excluded from the decompose fix: last component is YA/RA (see BLWF_TODO.md) ---\n")
+        for name in decompose_excluded_ya_ra:
+            f.write(f"# {name}\n")
+
     if decompose_no_input_seq:
         f.write("\n# --- Ligatures needing decompose but with no known akhn input sequence (see BLWF_TODO.md) ---\n")
         for name in decompose_no_input_seq:
@@ -568,6 +651,59 @@ with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n# --- Alt-consonant fallback: no dedicated {base}.below.altN glyph, reused the plain consonant's below-form ---\n")
         for name, variant_name in alt_consonant_no_dedicated_below:
             f.write(f"# {name} -> {variant_name}\n")
+
+# --- feature pstf (added 2026-07-21) - own file, own merge step, matching this
+# project's one-script-per-feature convention, even though pstf_rules is
+# computed as part of this same script's consonant-below-form resolution. YA's
+# own post-base combining form (ya-tutg.below) - moved out of blwf's generic
+# fallback per project owner direction 2026-07-21 (see GENERIC_FALLBACK_EXCLUDE
+# above): a genuinely different allograph, not a below-base miniature
+# (BELOW_BASE_MINIATURE_GLYPHS.md), so it belongs in Post-base Forms, not
+# Below-base Forms. See tutg_rkrf.fea for RA's own equivalent (a real,
+# registered OpenType feature specifically for this - Rakar Forms - rather
+# than reusing pstf for both).
+pstf_path = os.path.join(HERE, "tutg_pstf.fea")
+with open(pstf_path, "w", encoding="utf-8") as f:
+    f.write("# Auto-generated by generate_blwf_feature.py - YA's own post-base combining\n")
+    f.write("# form for the Tulu-Tigalari (tutg) script, split out of blwf's generic\n")
+    f.write("# below-base fallback 2026-07-21 (see BELOW_BASE_MINIATURE_GLYPHS.md -\n")
+    f.write("# ya-tutg.below is a genuinely different allograph, not a below-base\n")
+    f.write("# miniature). Review before merging into the real features.fea.\n\n")
+
+    f.write("languagesystem DFLT dflt;\n")
+    f.write("languagesystem tutg dflt;\n\n")
+
+    f.write("feature pstf {\n")
+    f.write("    script tutg;\n")
+    f.write("    lookup TutgPstf {\n")
+    for seq, out in pstf_rules:
+        f.write(f"        sub {' '.join(seq)} by {out};\n")
+    f.write("    } TutgPstf;\n")
+    f.write("} pstf;\n")
+
+# --- feature rkrf (added 2026-07-21) - RA's own post-base "Rakar" combining
+# form (raMatra-tutg). Rakar Forms is a real, registered OpenType feature tag
+# for exactly this - RA's special combining form - confirmed 2026-07-21 (via
+# a throwaway test font, same methodology as blws/pstf) to apply by default
+# and run before blwf, same early stage as pstf/blws.
+rkrf_path = os.path.join(HERE, "tutg_rkrf.fea")
+with open(rkrf_path, "w", encoding="utf-8") as f:
+    f.write("# Auto-generated by generate_blwf_feature.py - RA's own post-base \"Rakar\"\n")
+    f.write("# combining form for the Tulu-Tigalari (tutg) script, split out of blwf's\n")
+    f.write("# generic below-base fallback 2026-07-21 (see BELOW_BASE_MINIATURE_GLYPHS.md -\n")
+    f.write("# raMatra-tutg is a genuinely different allograph, not a below-base\n")
+    f.write("# miniature). Review before merging into the real features.fea.\n\n")
+
+    f.write("languagesystem DFLT dflt;\n")
+    f.write("languagesystem tutg dflt;\n\n")
+
+    f.write("feature rkrf {\n")
+    f.write("    script tutg;\n")
+    f.write("    lookup TutgRakar {\n")
+    for seq, out in rakar_rules:
+        f.write(f"        sub {' '.join(seq)} by {out};\n")
+    f.write("    } TutgRakar;\n")
+    f.write("} rkrf;\n")
 
 # markdown report - written even when nothing is missing, so a re-run's "all clear"
 # is an explicit, checkable fact rather than the mere absence of a file.
@@ -648,6 +784,19 @@ with open(report_path, "w", encoding="utf-8") as f:
             f.write(f"- `{name}`\n")
         f.write("\n")
 
+    if decompose_excluded_ya_ra:
+        f.write(f"## {len(decompose_excluded_ya_ra)} ligature(s) excluded from the decompose fix: last component is YA/RA\n\n")
+        f.write("Confirmed 2026-07-21 by project owner: decomposing e.g. `ka_ya-tutg` (a real, "
+                "dedicated hand-drawn ligature) back into raw ka+ya just to re-ligate ya+U and "
+                "shrink it below ka throws away that dedicated artwork for no reason. These stay "
+                "intact instead, with U/UU/rVocalicMatra/rrVocalicMatra attaching directly via "
+                "their own `bottomright` GPOS mark-anchor (see generate_anchors.py's "
+                "BARE_YA_LIGATURES/BARE_RA_LIGATURES). The explicit conjoiner+VS1 forced-subjoiner "
+                "path is unaffected - TutgBlwfSubjoiner's own per-ligature rules still apply there.\n\n")
+        for name in decompose_excluded_ya_ra:
+            f.write(f"- `{name}`\n")
+        f.write("\n")
+
     if decompose_no_input_seq:
         f.write(f"## {len(decompose_no_input_seq)} ligature(s) needing decompose but with no known akhn input sequence\n\n")
         for name in decompose_no_input_seq:
@@ -684,13 +833,18 @@ print(f"No below-base glyph at all (ligatures): {len(no_below_form)} {no_below_f
 print(f"Unreachable (base ligature not a real akhn output): {len(unreachable)} {unreachable}")
 print(f"Decompose hand-excluded (blwf_decompose_ignore_list.json): {len(decompose_ignored)} {decompose_ignored}")
 print(f"Decompose skipped (last component not a plain consonant): {len(decompose_not_plain_last)} {decompose_not_plain_last}")
+print(f"Decompose excluded (last component is YA/RA): {len(decompose_excluded_ya_ra)} {decompose_excluded_ya_ra}")
 print(f"Decompose ligatures with no known akhn input sequence: {len(decompose_no_input_seq)} {decompose_no_input_seq}")
 print(f"Needed compound pairs with no glyph at all: {len(compound_no_glyph)} {compound_no_glyph}")
 print(f"Needed compound pairs with no below-form: {len(compound_no_below)} {compound_no_below}")
-print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)}")
+print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)} (including {subjoiner_ligature_rule_count} per-ligature)")
 print(f"TutgBlwfSubjoiner variant entries skipped (not a real glyph): {len(subjoiner_missing_variant)} {subjoiner_missing_variant}")
 print(f"Alt-consonant fallback rules added to TutgBlwf: {alt_consonant_rule_count}")
 print(f"Alt-consonant fallback entries skipped (not a real glyph): {len(alt_consonant_missing)} {alt_consonant_missing}")
 print(f"Alt-consonant fallback entries with no dedicated below.altN (reused plain below): {len(alt_consonant_no_dedicated_below)} {alt_consonant_no_dedicated_below}")
+print(f"Pstf rules (TutgPstf): {len(pstf_rules)}")
+print(f"Rkrf rules (TutgRakar): {len(rakar_rules)}")
 print("Written to:", out_path)
+print("Written to:", pstf_path)
+print("Written to:", rkrf_path)
 print("Written to:", report_path)

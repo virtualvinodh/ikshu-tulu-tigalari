@@ -4,6 +4,7 @@
   <anchor x="557.5" y="620" name="top"/>
   <anchor x="557.5" y="-274" name="bottom"/>
   <anchor x="1105" y="620" name="topright"/>
+  <anchor x="567.0" y="-224.0" name="bottomright"/>
   <outline>
     <contour>
       <point x="388" y="0" type="line"/>

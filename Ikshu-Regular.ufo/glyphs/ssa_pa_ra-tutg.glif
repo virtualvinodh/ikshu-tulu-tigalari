@@ -4,6 +4,7 @@
   <anchor x="518.0" y="620" name="top"/>
   <anchor x="518.0" y="-747" name="bottom"/>
   <anchor x="1021" y="620" name="topright"/>
+  <anchor x="613" y="-697" name="bottomright"/>
   <outline>
     <component base="ssa_pa-tutg"/>
     <component base="raMatra-tutg" xOffset="1091" yOffset="-426" identifier="0CAE2D56"/>
