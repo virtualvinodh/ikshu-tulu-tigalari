@@ -386,7 +386,16 @@ def raw_cp_of(name):
     return cp_of(name)
 
 
-conjunct_variants = []
+# Split into two card sections rather than one flat list: vowel_sign_ligature
+# (a consonant + its own vowel sign, e.g. ka_uMatra-tutg, plus mixed compounds
+# like sha_ra_iiMatra-tutg that still end in a vowel-sign token) vs.
+# conjunct_ligature/looped_virama_ligature (two-or-more consonants with no
+# vowel sign involved at all, e.g. ca_ca-tutg, ka_sa_sa-tutg, and Chillu forms
+# like ttChillu-tutg - lumped in with conjuncts since neither is "this
+# consonant's own vowel sign").
+vowel_sign_ligature_names = set(classification.get("vowel_sign_ligature", []))
+conjunct_variants = []       # conjunct_ligature + looped_virama_ligature
+vowel_sign_ligature_variants = []  # vowel_sign_ligature
 for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
     raw_input_names = akhn_input_by_output.get(ligature_name)
     default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
@@ -400,11 +409,15 @@ for ligature_name, variants in sorted(variant_registry.get("_ligature_variants",
             variant_missing.append((variant_name, None))
             continue
         alts.append({"variant": variant_name, "vs": vs_label_of(vs_cp), "cps": default_cps + [vs_cp]})
-    conjunct_variants.append({
+    entry = {
         "label": ligature_name[: -len("-tutg")],
         "default": default_cps,
         "alts": alts,
-    })
+    }
+    if ligature_name in vowel_sign_ligature_names:
+        vowel_sign_ligature_variants.append(entry)
+    else:
+        conjunct_variants.append(entry)
 
 # Ligature variant x vowel-sign matrix (for the Variant Matrix tab): each
 # registered (ligature, VSn) entry crossed against all 18 vowel-sign columns,
@@ -476,6 +489,7 @@ variant_registry_data = {
     "consonantVariantMatrix": consonant_variant_matrix,
     "dependentVowelMatrix": dependent_vowel_matrix,
     "conjunctVariants": conjunct_variants,
+    "vowelSignLigatureVariants": vowel_sign_ligature_variants,
     "conjunctVariantSigns": conjunct_variant_signs,
     "subjoinerDemo": subjoiner_demo,
 }
@@ -521,6 +535,7 @@ print("Variant registry - independent vowel cards:", len(independent_vowel_cards
       "(row-layout:", sum(1 for c in independent_vowel_cards if c["layout"] == "row"), ")")
 print("Variant registry - dependent vowel variants (columns):", len(dependent_vowel_entries))
 print("Variant registry - conjunct variants:", len(conjunct_variants))
+print("Variant registry - vowel-sign ligature variants:", len(vowel_sign_ligature_variants))
 print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
 print("Unicode chars:", len(unicode_chars))
 print("Written to:", out_path)

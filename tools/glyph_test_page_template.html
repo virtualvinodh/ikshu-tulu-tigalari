@@ -561,6 +561,9 @@
     <div class="count-note" id="variants-depvowel-count" style="margin-top:26px;"></div>
     <table class="test-table" id="variants-depvowel-table"></table>
 
+    <div class="count-note" id="variants-vowelsignlig-count" style="margin-top:26px;"></div>
+    <div class="cons-grid" id="variants-vowelsignlig-grid"></div>
+
     <div class="count-note" id="variants-conjunct-count" style="margin-top:26px;"></div>
     <div class="cons-grid" id="variants-conjunct-grid"></div>
 
@@ -1043,22 +1046,31 @@
     `).join('');
     document.getElementById('variants-subjoiner-groups').innerHTML = subjoinerGroupsHtml;
 
-    // One card per registered pair: default ligature on top, then each
-    // alternate stacked below it behind a dashed divider - same .cons-cell
-    // card language as every other gallery section on this tab.
-    const conjCardsHtml = VR.conjunctVariants.map(row => {
-      const altRows = row.alts.map(a => `
-        <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
-        <div class="label" title="${a.variant}">${a.vs}</div>
-      `).join('');
-      return `<div class="cons-cell">
-        <div class="glyph tigalari is-default">${row.default.map(cp => S(cp)).join('')}</div>
-        <div class="label is-default">${row.label}</div>
-        ${altRows}
-      </div>`;
-    }).join('');
-    document.getElementById('variants-conjunct-grid').innerHTML = conjCardsHtml;
-    document.getElementById('variants-conjunct-count').textContent = `Conjunct-ligature alternates (${VR.conjunctVariants.length} pairs)`;
+    // One card per registered ligature: default on top, then each alternate
+    // stacked below it behind a dashed divider - same .cons-cell card
+    // language as every other gallery section on this tab. Shared by both
+    // the vowel-sign-ligature and conjunct-ligature sections below, since
+    // they're the exact same card shape, just two different subsets of
+    // VR.conjunctVariants/VR.vowelSignLigatureVariants (split by whether the
+    // ligature is "consonant + its own vowel sign" or "two-or-more
+    // consonants/Chillu, no vowel sign involved").
+    function renderLigatureCards(gridId, countId, countLabel, rows) {
+      const html = rows.map(row => {
+        const altRows = row.alts.map(a => `
+          <div class="glyph tigalari" style="margin-top:8px; padding-top:8px; border-top:1px dashed var(--paper-line);">${a.cps.map(cp => S(cp)).join('')}</div>
+          <div class="label" title="${a.variant}">${a.vs}</div>
+        `).join('');
+        return `<div class="cons-cell">
+          <div class="glyph tigalari is-default">${row.default.map(cp => S(cp)).join('')}</div>
+          <div class="label is-default">${row.label}</div>
+          ${altRows}
+        </div>`;
+      }).join('');
+      document.getElementById(gridId).innerHTML = html;
+      document.getElementById(countId).textContent = `${countLabel} (${rows.length})`;
+    }
+    renderLigatureCards('variants-vowelsignlig-grid', 'variants-vowelsignlig-count', 'Vowel-sign ligature alternates', VR.vowelSignLigatureVariants);
+    renderLigatureCards('variants-conjunct-grid', 'variants-conjunct-count', 'Conjunct-ligature alternates', VR.conjunctVariants);
 
     setSize(document.getElementById('size-slider').value);
   }
