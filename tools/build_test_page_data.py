@@ -420,15 +420,20 @@ for ligature_name, variants in sorted(variant_registry.get("_ligature_variants",
         conjunct_variants.append(entry)
 
 # Ligature variant x vowel-sign matrix (for the Variant Matrix tab): each
-# registered (ligature, VSn) entry crossed against all 18 vowel-sign columns,
-# same double-row default/variant treatment as character_variants for
-# U/UU/Vocalic R/Vocalic RR (the 4 that actually change shape). Typed
-# sequence per cell: [...raw ligature input, VSn, sign] - TutgAkhand forms
-# the ligature, TutgConjunctVariantSelect picks the alt, then whatever's left
-# decides how the vowel sign attaches - largely untested territory, which is
-# the point of this matrix.
+# registered CONJUNCT-ligature (ligature, VSn) entry crossed against all 18
+# vowel-sign columns, same double-row default/variant treatment as
+# character_variants for U/UU/Vocalic R/Vocalic RR (the 4 that actually
+# change shape). Typed sequence per cell: [...raw ligature input, VSn, sign] -
+# TutgAkhand forms the ligature, TutgConjunctVariantSelect picks the alt, then
+# whatever's left decides how the vowel sign attaches - largely untested
+# territory, which is the point of this matrix. Vowel-sign ligatures (e.g.
+# ka_uMatra-tutg) are excluded here - they already have their own vowel sign
+# baked in, so crossing them against a SECOND vowel-sign column isn't a
+# meaningful combination the way it is for a plain consonant conjunct.
 conjunct_variant_signs = []  # {label, variant, cells: [{label, variantCps, defaultCps?}, ...]}
 for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
+    if ligature_name in vowel_sign_ligature_names:
+        continue
     raw_input_names = akhn_input_by_output.get(ligature_name)
     default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
     if not raw_input_names or any(cp is None for cp in default_cps):
