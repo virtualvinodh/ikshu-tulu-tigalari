@@ -396,12 +396,24 @@ def raw_cp_of(name):
 vowel_sign_ligature_names = set(classification.get("vowel_sign_ligature", []))
 conjunct_variants = []       # conjunct_ligature + looped_virama_ligature
 vowel_sign_ligature_variants = []  # vowel_sign_ligature
-for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
+
+# Sorted by the ligature's own typed codepoint sequence (real script/reading
+# order), not the romanized glyph name string - same reasoning as
+# registry_items_by_cp above. Built as a separate list up front since the
+# sort key (default_cps) has to be resolved from tutg_akhn_rules.json first,
+# before this can be sorted - not available directly from the registry keys
+# the way it was for consonant/vowel bases.
+ligature_entries_by_cp = []  # (default_cps, ligature_name, variants)
+for ligature_name, variants in variant_registry.get("_ligature_variants", {}).items():
     raw_input_names = akhn_input_by_output.get(ligature_name)
     default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
     if not raw_input_names or any(cp is None for cp in default_cps):
         variant_missing.append((ligature_name, None))
         continue
+    ligature_entries_by_cp.append((default_cps, ligature_name, variants))
+ligature_entries_by_cp.sort(key=lambda e: e[0])
+
+for default_cps, ligature_name, variants in ligature_entries_by_cp:
     alts = []
     for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
         vs_cp = VS_CP.get(CONJUNCT_VS_OFFSET + int(index_str))
@@ -431,12 +443,8 @@ for ligature_name, variants in sorted(variant_registry.get("_ligature_variants",
 # baked in, so crossing them against a SECOND vowel-sign column isn't a
 # meaningful combination the way it is for a plain consonant conjunct.
 conjunct_variant_signs = []  # {label, variant, cells: [{label, variantCps, defaultCps?}, ...]}
-for ligature_name, variants in sorted(variant_registry.get("_ligature_variants", {}).items()):
+for default_cps, ligature_name, variants in ligature_entries_by_cp:
     if ligature_name in vowel_sign_ligature_names:
-        continue
-    raw_input_names = akhn_input_by_output.get(ligature_name)
-    default_cps = [raw_cp_of(n) for n in raw_input_names] if raw_input_names else None
-    if not raw_input_names or any(cp is None for cp in default_cps):
         continue
     pair_label = ligature_name[: -len("-tutg")]
     for index_str, variant_name in sorted(variants.items(), key=lambda kv: int(kv[0])):
