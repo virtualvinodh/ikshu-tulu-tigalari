@@ -3,6 +3,7 @@
   <advance width="50"/>
   <anchor x="5.5" y="-735.2" name="bottom"/>
   <anchor x="5.5" y="-185.1" name="_bottom"/>
+  <anchor x="341.2" y="-663.0" name="bottomright"/>
   <outline>
     <component base="va-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-366" yOffset="-677" identifier="D10CDD54"/>
   </outline>

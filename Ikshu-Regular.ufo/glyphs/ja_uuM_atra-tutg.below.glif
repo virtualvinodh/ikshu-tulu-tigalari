@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ja_uuMatra-tutg.below" format="2">
   <advance width="50"/>
-  <anchor x="114.4" y="-135" name="top"/>
   <anchor x="114.4" y="-1025" name="bottom"/>
-  <anchor x="872.8" y="-135" name="topright"/>
   <anchor x="114.4" y="-185" name="_bottom"/>
+  <anchor x="866" y="-975" name="bottomright"/>
   <outline>
     <contour>
       <point x="-473" y="-690" type="curve" smooth="yes"/>

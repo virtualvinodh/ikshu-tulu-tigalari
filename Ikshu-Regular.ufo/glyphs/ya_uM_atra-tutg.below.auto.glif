@@ -2,6 +2,7 @@
 <glyph name="ya_uMatra-tutg.below.auto" format="2">
   <anchor x="479.0" y="-739.9" name="bottom"/>
   <anchor x="479.0" y="-121.7" name="_bottom"/>
+  <anchor x="836.5" y="-640.3" name="bottomright"/>
   <outline>
     <component base="ya_uMatra-tutg" xScale="0.863" yScale="0.863" xOffset="65.6" yOffset="-677"/>
   </outline>

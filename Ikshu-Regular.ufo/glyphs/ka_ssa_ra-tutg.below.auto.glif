@@ -2,6 +2,7 @@
 <glyph name="ka_ssa_ra-tutg.below.auto" format="2">
   <anchor x="826.5" y="-931.5" name="bottom"/>
   <anchor x="826.5" y="-184.2" name="_bottom"/>
+  <anchor x="1491.5" y="-676.6" name="bottomright"/>
   <outline>
     <component base="ka_ssa_ra-tutg" xScale="0.863" yScale="0.863" xOffset="113.2" yOffset="-677"/>
   </outline>

@@ -9,8 +9,8 @@ Backs up Ikshu-Regular.ufo (timestamped copy, same convention used throughout th
 project's history) before touching anything, then runs, in order:
 
   1. classify_glyphs.py       - glyph_classification.json (read-only on the UFO;
-                                 generate_anchors.py and generate_akhn_feature.py
-                                 both depend on this file)
+                                 generate_anchors.py, generate_variant_registry.py,
+                                 and generate_akhn_feature.py all depend on this file)
   2. fix_guillemet_duplicate_cmap.py  - cmap fix (idempotent)
   3. fix_unicode_mappings.py          - cmap fix (idempotent)
   4. generate_anchors.py      - GPOS anchors (idempotent/upsert-based)
@@ -20,18 +20,34 @@ project's history) before touching anything, then runs, in order:
                                  preceding consonant instead of sitting at normal
                                  advance-width position (idempotent/upsert-based,
                                  same pattern as generate_anchors.py)
-  6. generate_akhn_feature.py - tutg_akhn.fea + tutg_akhn_rules.json (regenerated
+  6. export_svg_data.py       - glyph_svg_data.json (read-only on the UFO; every
+                                 ".altN" glyph the font currently has is what
+                                 generate_variant_registry.py scans next - added
+                                 2026-07-21, previously only ever run manually as
+                                 part of build_test_page.py, which meant a fresh
+                                 build_ufo.py run silently used whatever stale
+                                 variant_registry.json/glyph_svg_data.json happened
+                                 to already be on disk instead of the font's real
+                                 current glyph inventory)
+  7. generate_variant_registry.py  - variant_registry.json, from every ".altN"
+                                 glyph currently in the font (added 2026-07-21;
+                                 must run before generate_akhn_feature.py, which
+                                 reads this file for TutgVariantSelect/
+                                 TutgConjunctVariantSelect and the
+                                 names_override.json-driven ligature_alt_overrides/
+                                 single_glyph_alt_overrides)
+  8. generate_akhn_feature.py - tutg_akhn.fea + tutg_akhn_rules.json (regenerated
                                  fresh every run; not a UFO write)
-  7. merge_akhn_feature.py    - merges tutg_akhn.fea into features.fea (has its own
+  9. merge_akhn_feature.py    - merges tutg_akhn.fea into features.fea (has its own
                                  idempotency guard - skips if already merged, so
                                  this pipeline is safe to run on its own output too)
-  8. generate_blwf_feature.py - tutg_blwf.fea + BLWF_TODO.md (regenerated fresh
+  10. generate_blwf_feature.py - tutg_blwf.fea + BLWF_TODO.md (regenerated fresh
                                  every run; not a UFO write)
-  9. merge_blwf_feature.py    - merges tutg_blwf.fea into features.fea, right after
+  11. merge_blwf_feature.py    - merges tutg_blwf.fea into features.fea, right after
                                  the akhn block (own idempotency guard, same pattern
                                  as merge_akhn_feature.py - must run after it, see
                                  that script's docstring)
-  10. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
+  12. remove_stub_numeral_features.py  - strips incomplete numr/dnom/frac (idempotent)
 
 Everything else in tools/ (extract_stacking_offsets.py, extract_vowel_sign_offsets.py,
 document_vowel_variant_choice.py, generate_gsub_rules.py, _selfcheck_render.py) is
@@ -54,6 +70,8 @@ STEPS = [
     "fix_unicode_mappings.py",
     "generate_anchors.py",
     "classify_blwf_marks.py",
+    "export_svg_data.py",
+    "generate_variant_registry.py",
     "generate_akhn_feature.py",
     "merge_akhn_feature.py",
     "generate_blwf_feature.py",

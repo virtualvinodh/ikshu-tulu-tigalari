@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ta_uMatra-tutg.below" format="2">
   <advance width="50"/>
-  <anchor x="253.9" y="-132" name="top"/>
   <anchor x="253.9" y="-893" name="bottom"/>
-  <anchor x="889.9" y="-132" name="topright"/>
   <anchor x="253.9" y="-182" name="_bottom"/>
+  <anchor x="882" y="-843" name="bottomright"/>
   <outline>
     <contour>
       <point x="625" y="-843" type="curve" smooth="yes"/>

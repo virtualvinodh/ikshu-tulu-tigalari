@@ -2,6 +2,7 @@
 <glyph name="ya_va-tutg.below.auto" format="2">
   <anchor x="510.0" y="-739.9" name="bottom"/>
   <anchor x="510.0" y="-183.8" name="_bottom"/>
+  <anchor x="906.1" y="-666.5" name="bottomright"/>
   <outline>
     <component base="ya_va-tutg" xScale="0.863" yScale="0.863" xOffset="69.9" yOffset="-677"/>
   </outline>

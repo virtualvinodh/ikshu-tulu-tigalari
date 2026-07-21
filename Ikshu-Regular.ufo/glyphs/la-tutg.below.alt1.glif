@@ -4,6 +4,7 @@
   <guideline x="428" y="-251" angle="0"/>
   <anchor x="10.5" y="-282" name="bottom"/>
   <anchor x="10.5" y="58" name="_bottom"/>
+  <anchor x="241.2" y="-221.1" name="bottomright"/>
   <outline>
     <contour>
       <point x="-170" y="-232" type="curve" smooth="yes"/>

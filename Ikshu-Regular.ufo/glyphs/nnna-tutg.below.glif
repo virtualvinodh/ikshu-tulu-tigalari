@@ -2,6 +2,7 @@
 <glyph name="nnna-tutg.below" format="2">
   <anchor x="4.9" y="-736.9" name="bottom"/>
   <anchor x="4.9" y="-181.7" name="_bottom"/>
+  <anchor x="517.4" y="-675.0" name="bottomright"/>
   <outline>
     <component base="nna-tutg" xScale="0.8621" yScale="0.8621" xOffset="-518" yOffset="-674"/>
   </outline>

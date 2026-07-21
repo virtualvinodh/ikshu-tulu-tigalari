@@ -2,6 +2,7 @@
 <glyph name="nna_ddha-tutg.below.auto" format="2">
   <anchor x="923.5" y="-739.9" name="bottom"/>
   <anchor x="923.5" y="-184.2" name="_bottom"/>
+  <anchor x="1550.9" y="-680.2" name="bottomright"/>
   <outline>
     <component base="nna_ddha-tutg" xScale="0.863" yScale="0.863" xOffset="126.5" yOffset="-677"/>
   </outline>

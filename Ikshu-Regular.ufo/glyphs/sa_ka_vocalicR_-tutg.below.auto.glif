@@ -2,6 +2,7 @@
 <glyph name="sa_ka_vocalicR-tutg.below.auto" format="2">
   <anchor x="587.5" y="-1464.0" name="bottom"/>
   <anchor x="587.5" y="-191.6" name="_bottom"/>
+  <anchor x="1008.1" y="-1348.3" name="bottomright"/>
   <outline>
     <component base="sa_ka_vocalicR-tutg" xScale="0.863" yScale="0.863" xOffset="80.5" yOffset="-677"/>
   </outline>

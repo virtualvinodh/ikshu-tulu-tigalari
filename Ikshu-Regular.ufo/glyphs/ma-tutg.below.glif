@@ -2,6 +2,7 @@
 <glyph name="ma-tutg.below" format="2">
   <anchor x="22.8" y="-752.9" name="bottom"/>
   <anchor x="22.8" y="-184.2" name="_bottom"/>
+  <anchor x="254.3" y="-645.1" name="bottomright"/>
   <outline>
     <component base="ma-tutg" xScale="0.863" yScale="0.863" xOffset="-249" yOffset="-677" identifier="B6DB34CD"/>
   </outline>

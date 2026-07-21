@@ -3,6 +3,7 @@
   <advance width="50"/>
   <anchor x="-32.6" y="-752.9" name="bottom"/>
   <anchor x="-32.6" y="-184.2" name="_bottom"/>
+  <anchor x="427.9" y="-668.0" name="bottomright"/>
   <outline>
     <component base="kha-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-537" yOffset="-677" identifier="6B015C1F"/>
   </outline>

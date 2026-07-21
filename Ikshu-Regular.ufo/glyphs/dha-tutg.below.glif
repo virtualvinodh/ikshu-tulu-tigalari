@@ -2,6 +2,7 @@
 <glyph name="dha-tutg.below" format="2">
   <anchor x="7.6" y="-739.9" name="bottom"/>
   <anchor x="7.6" y="-191.6" name="_bottom"/>
+  <anchor x="264.2" y="-656.6" name="bottomright"/>
   <outline>
     <component base="dha-tutg" xScale="0.863" yScale="0.863" xOffset="-335" yOffset="-677" identifier="109FB1A6"/>
   </outline>

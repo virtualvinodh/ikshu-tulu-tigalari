@@ -49,15 +49,40 @@ with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as 
 # below (a below-base form can itself be the base for further stacking).
 BELOW_AUTO_POP = [n for n in font.keys() if n.endswith(".below.auto")]
 
-TOP_POP = d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"]
+# classify_glyphs.py classifies purely off the CORE name (before "-tutg"), so a
+# ligature's ".below"/".below.auto" form (a below-base positioning variant, not a
+# real standalone shaped output) lands in the exact same category
+# (conjunct_ligature/vowel_sign_ligature) as its bare counterpart. That's fine for
+# BOTTOM_POP (a below-form legitimately needs bottom/_bottom, e.g. to serve as the
+# base for further stacking), but top/topright are for a glyph's own upper edge as
+# a MAIN-LINE shaped output - a below-base form never sits there, so it must never
+# get one. Filtered out here rather than in classify_glyphs.py, since the category
+# itself (conjunct_ligature etc.) is still correct - only this script's top/topright
+# pools need to exclude below-forms.
+def _suffix_tags(name):
+    _, _, suffix = name.partition("-tutg")
+    return set(t for t in suffix.split(".") if t)
+
+
+def _is_below_form(name):
+    return "below" in _suffix_tags(name)
+
+
+LIGATURE_BELOW_FORMS = [n for n in d["conjunct_ligature"] + d["vowel_sign_ligature"] if _is_below_form(n)]
+
+TOP_POP = [n for n in d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] if not _is_below_form(n)]
 BOTTOM_POP = d["consonant"] + d["consonant_below_base"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + BELOW_AUTO_POP
 
 SPACING_VS_ROOTS = ("aaMatra-tutg", "iMatra-tutg", "iiMatra-tutg", "eeMatra-tutg",
                     "aiMatra-tutg", "ooMatra-tutg", "auMatra-tutg", "aulengthmark-tutg")
 spacing_vs = [n for n in d["vowel_sign"] + d["special_mark"] if n in SPACING_VS_ROOTS]
-TOPRIGHT_POP = d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + spacing_vs
+TOPRIGHT_POP = [n for n in d["consonant"] + d["conjunct_ligature"] + d["vowel_sign_ligature"] + spacing_vs
+                if not _is_below_form(n)]
 
-BOTTOMRIGHT_POP = d["consonant"]  # ink-touching fallback scope, per plan
+# A below-base form can itself be the base a following U/UU vowel sign attaches
+# to (same "ink-touching fallback" reasoning as a plain consonant), so it needs
+# its own bottomright too - not just bottom/_bottom.
+BOTTOMRIGHT_POP = d["consonant"] + d["consonant_below_base"] + LIGATURE_BELOW_FORMS + BELOW_AUTO_POP
 
 MARKS_TOP = ["repha-tutg", "repha-tutg.alt1", "svarita-tutg"]
 MARKS_BOTTOM = ["anudatta-tutg", "germinationmark-tutg", "lVocalicMatra-tutg", "llVocalicMatra-tutg"]
@@ -205,10 +230,26 @@ mark_pass(MARKS_BOTTOM, "_bottom", x_from="center", y_edge="max")
 mark_pass(MARKS_TOPRIGHT, "_topright", x_from="left", y_edge="min")
 mark_pass(MARKS_BOTTOMRIGHT, "_bottomright", x_from="left", y_edge="max")
 
+# Cleanup: strip any "top"/"topright" anchor a below-form glyph picked up from a
+# run before TOP_POP/TOPRIGHT_POP excluded below-forms (see above) - upsert_anchor
+# only ever adds/updates, so a stale anchor here would otherwise never get removed
+# just by fixing the pool it's built from.
+removed_stray = 0
+for gname in font.keys():
+    if not _is_below_form(gname):
+        continue
+    g = font[gname]
+    for anchor_name in ("top", "topright"):
+        existing = find_anchor(g, anchor_name)
+        if existing is not None:
+            g.anchors.remove(existing)
+            removed_stray += 1
+
 font.save(UFO_PATH, overwrite=True)
 
 print("Added:", report["added"])
 print("Updated (already existed):", report["updated"])
+print("Removed stray top/topright from below-forms:", removed_stray)
 print("No bounds / empty glyphs (flag for review):", len(report["no_bounds"]))
 for item in report["no_bounds"]:
     print("  ", item)

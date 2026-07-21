@@ -2,6 +2,7 @@
 <glyph name="ta_lVocalicMatra-tutg.below.auto" format="2">
   <anchor x="457.5" y="-1143.8" name="bottom"/>
   <anchor x="457.5" y="-186.0" name="_bottom"/>
+  <anchor x="734.3" y="-1049.7" name="bottomright"/>
   <outline>
     <component base="ta_lVocalicMatra-tutg" xScale="0.863" yScale="0.863" xOffset="62.7" yOffset="-677"/>
   </outline>

@@ -3,6 +3,7 @@
   <advance width="28"/>
   <anchor x="0.2" y="-904.9" name="bottom"/>
   <anchor x="0.2" y="-184.4" name="_bottom"/>
+  <anchor x="178.7" y="-775.5" name="bottomright"/>
   <outline>
     <component base="bha-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-204" yOffset="-678" identifier="736C0C29"/>
   </outline>

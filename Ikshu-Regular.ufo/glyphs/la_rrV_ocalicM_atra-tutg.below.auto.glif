@@ -2,6 +2,7 @@
 <glyph name="la_rrVocalicMatra-tutg.below.auto" format="2">
   <anchor x="413.0" y="-1231.9" name="bottom"/>
   <anchor x="413.0" y="-184.2" name="_bottom"/>
+  <anchor x="707.7" y="-1099.5" name="bottomright"/>
   <outline>
     <component base="la_rrVocalicMatra-tutg" xScale="0.863" yScale="0.863" xOffset="56.6" yOffset="-677"/>
   </outline>

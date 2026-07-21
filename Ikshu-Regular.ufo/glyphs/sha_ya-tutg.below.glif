@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="sha_ya-tutg.below" format="2">
   <advance width="50"/>
-  <anchor x="231.7" y="-128.0" name="top"/>
   <anchor x="231.7" y="-934.7" name="bottom"/>
-  <anchor x="867.4" y="-128.0" name="topright"/>
   <anchor x="231.7" y="-178.0" name="_bottom"/>
+  <anchor x="686.8" y="-854.8" name="bottomright"/>
   <outline>
     <component base="sha_ya-tutg" xScale="0.8655" yScale="0.8655" xOffset="-417" yOffset="-677" identifier="C18A10E8"/>
   </outline>

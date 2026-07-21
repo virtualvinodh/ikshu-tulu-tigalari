@@ -2,6 +2,7 @@
 <glyph name="ka_tha-tutg.below.auto" format="2">
   <anchor x="875.5" y="-739.9" name="bottom"/>
   <anchor x="875.5" y="-180.3" name="_bottom"/>
+  <anchor x="1577.1" y="-671.9" name="bottomright"/>
   <outline>
     <component base="ka_tha-tutg" xScale="0.863" yScale="0.863" xOffset="119.9" yOffset="-677"/>
   </outline>

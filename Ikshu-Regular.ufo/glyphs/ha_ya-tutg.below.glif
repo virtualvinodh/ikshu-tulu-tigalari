@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ha_ya-tutg.below" format="2">
   <advance width="28"/>
-  <anchor x="90.4" y="28.0" name="top"/>
   <anchor x="90.4" y="-1114" name="bottom"/>
-  <anchor x="661" y="28.0" name="topright"/>
   <anchor x="90.4" y="-22.0" name="_bottom"/>
+  <anchor x="552.6" y="-974.2" name="bottomright"/>
   <outline>
     <contour>
       <point x="451" y="-635" type="curve"/>

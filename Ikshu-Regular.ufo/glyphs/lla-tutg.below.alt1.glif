@@ -3,6 +3,7 @@
   <advance width="28"/>
   <anchor x="-7.9" y="-891.8" name="bottom"/>
   <anchor x="-7.9" y="-185.1" name="_bottom"/>
+  <anchor x="375.2" y="-840.1" name="bottomright"/>
   <outline>
     <component base="lla-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-406" yOffset="-677" identifier="4BD8A3C7"/>
   </outline>

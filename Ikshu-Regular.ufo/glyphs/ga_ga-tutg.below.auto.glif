@@ -2,6 +2,7 @@
 <glyph name="ga_ga-tutg.below.auto" format="2">
   <anchor x="682.0" y="-739.9" name="bottom"/>
   <anchor x="682.0" y="-183.4" name="_bottom"/>
+  <anchor x="1258.2" y="-679.0" name="bottomright"/>
   <outline>
     <component base="ga_ga-tutg" xScale="0.863" yScale="0.863" xOffset="93.4" yOffset="-677"/>
   </outline>

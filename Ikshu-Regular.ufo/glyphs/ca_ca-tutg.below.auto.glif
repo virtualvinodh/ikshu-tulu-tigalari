@@ -2,6 +2,7 @@
 <glyph name="ca_ca-tutg.below.auto" format="2">
   <anchor x="474.0" y="-1324.2" name="bottom"/>
   <anchor x="474.0" y="-180.3" name="_bottom"/>
+  <anchor x="856.1" y="-1221.1" name="bottomright"/>
   <outline>
     <component base="ca_ca-tutg" xScale="0.863" yScale="0.863" xOffset="64.9" yOffset="-677"/>
   </outline>

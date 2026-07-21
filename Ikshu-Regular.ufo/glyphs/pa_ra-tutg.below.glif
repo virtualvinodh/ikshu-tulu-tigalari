@@ -2,9 +2,8 @@
 <glyph name="pa_ra-tutg.below" format="2">
   <advance width="537"/>
   <guideline x="823" y="-888" angle="0"/>
-  <anchor x="-17.0" y="-69.5" name="top"/>
   <anchor x="-17.0" y="-937.9" name="bottom"/>
-  <anchor x="432" y="-69.5" name="topright"/>
+  <anchor x="335.5" y="-803.3" name="bottomright"/>
   <outline>
     <component base="pa-tutg.below" xOffset="5"/>
     <component base="raMatra-tutg" xScale="0.9591" yScale="0.9591" xOffset="496" yOffset="-628" identifier="9661C981"/>

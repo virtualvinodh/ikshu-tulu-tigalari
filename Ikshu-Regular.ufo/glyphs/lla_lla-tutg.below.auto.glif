@@ -2,6 +2,7 @@
 <glyph name="lla_lla-tutg.below.auto" format="2">
   <anchor x="862.2" y="-885.8" name="bottom"/>
   <anchor x="862.2" y="-184.2" name="_bottom"/>
+  <anchor x="1588.7" y="-835.8" name="bottomright"/>
   <outline>
     <component base="lla_lla-tutg" xScale="0.863" yScale="0.863" xOffset="118.1" yOffset="-677"/>
   </outline>

@@ -3,6 +3,7 @@
   <advance width="28"/>
   <anchor x="8.5" y="-739.9" name="bottom"/>
   <anchor x="8.5" y="-187.7" name="_bottom"/>
+  <anchor x="380.0" y="-665.4" name="bottomright"/>
   <outline>
     <component base="jha-tutg.alt2" xScale="0.8585" yScale="0.8585" xOffset="-498" yOffset="-677" identifier="ADAAFBBB"/>
   </outline>

@@ -2,6 +2,7 @@
 <glyph name="ta_nChillu-tutg.below.auto" format="2">
   <anchor x="687.0" y="-740.8" name="bottom"/>
   <anchor x="687.0" y="-48.7" name="_bottom"/>
+  <anchor x="1184.6" y="-672.6" name="bottomright"/>
   <outline>
     <component base="ta_nChillu-tutg" xScale="0.863" yScale="0.863" xOffset="94.1" yOffset="-677"/>
   </outline>

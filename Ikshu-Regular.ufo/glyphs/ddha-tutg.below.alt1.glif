@@ -3,6 +3,7 @@
   <advance width="50"/>
   <anchor x="5.6" y="-739.9" name="bottom"/>
   <anchor x="5.6" y="-189.8" name="_bottom"/>
+  <anchor x="305.1" y="-662.5" name="bottomright"/>
   <outline>
     <component base="dda-tutg.alt1" xScale="0.863" yScale="0.863" xOffset="-390" yOffset="-677" identifier="70CDA67D"/>
   </outline>

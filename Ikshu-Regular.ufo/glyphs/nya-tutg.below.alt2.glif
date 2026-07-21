@@ -3,6 +3,7 @@
   <advance width="50"/>
   <anchor x="7.2" y="-958.3" name="bottom"/>
   <anchor x="7.2" y="-185.1" name="_bottom"/>
+  <anchor x="337.5" y="-820.6" name="bottomright"/>
   <outline>
     <component base="nya-tutg.alt2" xScale="0.863" yScale="0.863" xOffset="-401" yOffset="-677" identifier="5CAB5171"/>
   </outline>

@@ -2,6 +2,7 @@
 <glyph name="la-tutg.below" format="2">
   <anchor x="-0.3" y="-740.8" name="bottom"/>
   <anchor x="-0.3" y="-184.2" name="_bottom"/>
+  <anchor x="192.7" y="-619.9" name="bottomright"/>
   <outline>
     <component base="la-tutg" xScale="0.863" yScale="0.863" xOffset="-286" yOffset="-677" identifier="9157DFA6"/>
   </outline>

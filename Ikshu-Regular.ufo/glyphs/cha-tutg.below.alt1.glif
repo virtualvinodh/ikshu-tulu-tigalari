@@ -3,6 +3,7 @@
   <advance width="50"/>
   <anchor x="10.2" y="-752.8" name="bottom"/>
   <anchor x="10.2" y="-187.7" name="_bottom"/>
+  <anchor x="354.9" y="-663.1" name="bottomright"/>
   <outline>
     <component base="cha-tutg.alt1" xScale="0.8585" yScale="0.8585" xOffset="-371" yOffset="-677" identifier="A3EAF171"/>
   </outline>

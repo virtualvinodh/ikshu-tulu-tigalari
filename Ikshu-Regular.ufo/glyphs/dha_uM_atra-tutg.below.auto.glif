@@ -2,6 +2,7 @@
 <glyph name="dha_uMatra-tutg.below.auto" format="2">
   <anchor x="402.0" y="-928.9" name="bottom"/>
   <anchor x="402.0" y="-191.6" name="_bottom"/>
+  <anchor x="697.2" y="-843.2" name="bottomright"/>
   <outline>
     <component base="dha_uMatra-tutg" xScale="0.863" yScale="0.863" xOffset="55.1" yOffset="-677"/>
   </outline>

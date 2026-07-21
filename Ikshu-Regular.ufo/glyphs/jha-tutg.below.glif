@@ -2,6 +2,7 @@
 <glyph name="jha-tutg.below" format="2">
   <anchor x="9.5" y="-739.9" name="bottom"/>
   <anchor x="9.5" y="-124.6" name="_bottom"/>
+  <anchor x="353.3" y="-457.0" name="bottomright"/>
   <outline>
     <component base="jha-tutg" xScale="0.8585" yScale="0.8585" xOffset="-370" yOffset="-677" identifier="4BE4EC25"/>
   </outline>

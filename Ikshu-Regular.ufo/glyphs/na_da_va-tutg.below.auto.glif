@@ -2,6 +2,7 @@
 <glyph name="na_da_va-tutg.below.auto" format="2">
   <anchor x="593.5" y="-735.2" name="bottom"/>
   <anchor x="593.5" y="-184.2" name="_bottom"/>
+  <anchor x="1061.8" y="-668.0" name="bottomright"/>
   <outline>
     <component base="na_da_va-tutg" xScale="0.863" yScale="0.863" xOffset="81.3" yOffset="-677"/>
   </outline>

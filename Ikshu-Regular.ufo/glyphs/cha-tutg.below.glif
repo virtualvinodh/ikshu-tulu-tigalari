@@ -2,6 +2,7 @@
 <glyph name="cha-tutg.below" format="2">
   <anchor x="14.3" y="-739.9" name="bottom"/>
   <anchor x="14.3" y="-186.8" name="_bottom"/>
+  <anchor x="435.4" y="-677.6" name="bottomright"/>
   <outline>
     <component base="cha-tutg" xScale="0.8585" yScale="0.8585" xOffset="-518" yOffset="-677" identifier="75E98E2D"/>
   </outline>
