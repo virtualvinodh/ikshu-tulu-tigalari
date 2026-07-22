@@ -533,6 +533,15 @@ for card in consonant_variant_cards:
     variant_lookup[card["name"]] = {"defaultCps": card["defaultCps"], "alts": card["alts"]}
 for entry in conjunct_variants + vowel_sign_ligature_variants:
     variant_lookup[entry["name"]] = {"defaultCps": entry["default"], "alts": entry["alts"]}
+# Independent vowels (a-tutg, aa-tutg, ...) were missing entirely (added
+# 2026-07-23, confirmed by the project owner: aa-tutg's 5 registered alts were
+# never surfaced by the Sample Text click-a-syllable popup at all). Read from
+# independent_vowel_cards_by_base (the UNCHUNKED dict, built before
+# ROW_LAYOUT_BASES splits a-tutg/aa-tutg across multiple display cards) so
+# every alt is included here even though the display cards only show 3 at a
+# time - variant_lookup needs the complete set, not whatever one card shows.
+for base_name, raw in independent_vowel_cards_by_base.items():
+    variant_lookup[base_name] = {"defaultCps": raw["defaultCps"], "alts": raw["alts"]}
 
 variant_registry_data = {
     "independentVowelCards": independent_vowel_cards,

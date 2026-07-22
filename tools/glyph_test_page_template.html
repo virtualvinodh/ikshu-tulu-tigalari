@@ -2528,34 +2528,52 @@
   // VS11-VS12) - used to strip an ALREADY-applied selector out of a syllable
   // before building its alternatives (see resolveSyllableAlternatives).
   const ALL_VS_CPS = new Set(DATA.vsCodepoints);
+  // Independent vowels (a-tutg, aa-tutg, ...) stand alone - no conjoiner
+  // chain, but they DO have their own registered alts (aa-tutg has 5) that
+  // were completely unreachable before this table existed (added 2026-07-23,
+  // confirmed by the project owner: typing aa-tutg alone never showed
+  // has-alts at all). Built the same way as CONSONANT_NAME_BY_CP.
+  const INDEPENDENT_VOWEL_NAME_BY_CP = {};
+  DATA.vowels.forEach(v => { INDEPENDENT_VOWEL_NAME_BY_CP[v.cp] = stripTutg(v.name); });
 
-  // Splits a word's cps into akshara segments. Each segment is either a single
-  // non-consonant codepoint (nothing to offer - independent vowel, stray
-  // mark...) or {cps, consonantNames (stripped, no "-tutg"), conjoinerPositions
-  // (indices within cps, right at the conjoiner itself), consSpanLen (how many
-  // leading cps are the consonant/conjoiner chain, before any trailing vowel
-  // sign/mark codepoints)}.
+  // Splits a word's cps into akshara segments. A segment starts at either a
+  // consonant (optionally chaining conjoiner+consonant further) or a lone
+  // independent vowel (no chaining - it never combines with a following
+  // consonant/vowel the way a conjunct does), and absorbs trailing non-base
+  // codepoints (vowel signs, VS selectors, marks) either way. Anything else
+  // (space, punctuation, a stray mark with no base before it) gets its own
+  // single-codepoint, non-clickable segment. Fields: {cps, consonantNames
+  // (stripped, no "-tutg" - empty for an independent-vowel or stray segment),
+  // baseName (stripped independent-vowel name, or null), conjoinerPositions
+  // (indices within cps, right at the conjoiner itself - always empty for an
+  // independent-vowel segment), consSpanLen (how many leading cps are the
+  // base/conjoiner chain, before any trailing vowel-sign/mark codepoints)}.
   function segmentSyllables(cps) {
     const segments = [];
     let i = 0;
     while (i < cps.length) {
-      if (!(cps[i] in CONSONANT_NAME_BY_CP)) {
-        segments.push({ cps: [cps[i]], consonantNames: [], conjoinerPositions: [], consSpanLen: 0 });
+      const isConsonant = cps[i] in CONSONANT_NAME_BY_CP;
+      const isIndepVowel = cps[i] in INDEPENDENT_VOWEL_NAME_BY_CP;
+      if (!isConsonant && !isIndepVowel) {
+        segments.push({ cps: [cps[i]], consonantNames: [], baseName: null, conjoinerPositions: [], consSpanLen: 0 });
         i++;
         continue;
       }
       const segStart = i;
-      const consonantNames = [CONSONANT_NAME_BY_CP[cps[i]]];
+      const consonantNames = isConsonant ? [CONSONANT_NAME_BY_CP[cps[i]]] : [];
+      const baseName = isIndepVowel ? INDEPENDENT_VOWEL_NAME_BY_CP[cps[i]] : null;
       const conjoinerPositions = [];
       i++;
-      while (cps[i] === SAMPLE_CONJOINER_CP && (cps[i + 1] in CONSONANT_NAME_BY_CP)) {
-        conjoinerPositions.push(i - segStart);
-        consonantNames.push(CONSONANT_NAME_BY_CP[cps[i + 1]]);
-        i += 2;
+      if (isConsonant) {
+        while (cps[i] === SAMPLE_CONJOINER_CP && (cps[i + 1] in CONSONANT_NAME_BY_CP)) {
+          conjoinerPositions.push(i - segStart);
+          consonantNames.push(CONSONANT_NAME_BY_CP[cps[i + 1]]);
+          i += 2;
+        }
       }
       const consSpanLen = i - segStart;
-      while (i < cps.length && !(cps[i] in CONSONANT_NAME_BY_CP)) i++;
-      segments.push({ cps: cps.slice(segStart, i), consonantNames, conjoinerPositions, consSpanLen });
+      while (i < cps.length && !(cps[i] in CONSONANT_NAME_BY_CP) && !(cps[i] in INDEPENDENT_VOWEL_NAME_BY_CP)) i++;
+      segments.push({ cps: cps.slice(segStart, i), consonantNames, baseName, conjoinerPositions, consSpanLen });
     }
     return segments;
   }
@@ -2567,7 +2585,9 @@
   // single consonant with no registered alt - caller skips opening the popup
   // in that case, since there'd be nothing to choose between.
   function resolveSyllableAlternatives(segment) {
-    if (segment.consonantNames.length === 0) {
+    const isConsonantBased = segment.consonantNames.length > 0;
+    const isIndepVowelBased = !!segment.baseName;
+    if (!isConsonantBased && !isIndepVowelBased) {
       return [{ label: 'Default', cps: segment.cps.slice(), isDefault: true }];
     }
     // Strip an ALREADY-applied variation selector before computing anything
@@ -2576,7 +2596,7 @@
     // echoed the alt-selected form back unchanged (not actually the default),
     // and every alt option below got a SECOND, duplicate VS appended on top
     // of the one already in the input. A VS always sits in the trailing
-    // (non-consonant) part of a segment, so consSpanLen itself never shifts -
+    // (non-base) part of a segment, so consSpanLen itself never shifts -
     // only trailingCps needs to be recomputed from the cleaned array.
     let cps = segment.cps;
     for (const vsCp of ALL_VS_CPS) {
@@ -2585,35 +2605,49 @@
     }
     const defaultOption = { label: 'Default', cps: cps.slice(), isDefault: true };
     const options = [defaultOption];
-    const baseName = segment.consonantNames.join('_') + '-tutg';
     const trailingCps = cps.slice(segment.consSpanLen);
-    const registered = SYLLABLE_VARIANT_LOOKUP[baseName];
-    if (registered) {
-      registered.alts.forEach(alt => {
-        options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
+
+    if (isConsonantBased) {
+      const resolvedName = segment.consonantNames.join('_') + '-tutg';
+      const registered = SYLLABLE_VARIANT_LOOKUP[resolvedName];
+      if (registered) {
+        registered.alts.forEach(alt => {
+          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
+        });
+      }
+      // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
+      // registered under a name that folds the FIRST trailing vowel-sign
+      // codepoint in, not the bare consonant/cluster name - check that too,
+      // when the trailing marks actually start with a real vowel sign.
+      if (trailingCps.length > 0 && trailingCps[0] in VOWEL_SIGN_NAME_BY_CP) {
+        const vsFoldedName = segment.consonantNames.concat([VOWEL_SIGN_NAME_BY_CP[trailingCps[0]]]).join('_') + '-tutg';
+        const restCps = trailingCps.slice(1);
+        const vsRegistered = SYLLABLE_VARIANT_LOOKUP[vsFoldedName];
+        if (vsRegistered) {
+          vsRegistered.alts.forEach(alt => {
+            options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(restCps) });
+          });
+        }
+      }
+      segment.conjoinerPositions.forEach(pos => {
+        const subjoinCps = cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], cps.slice(pos + 1));
+        const label = segment.consonantNames.length === 2
+          ? `Force ${segment.consonantNames[1]} below ${segment.consonantNames[0]} (VS1)`
+          : `Force below-base at conjoiner ${segment.conjoinerPositions.indexOf(pos) + 1} (VS1)`;
+        options.push({ label, cps: subjoinCps });
       });
-    }
-    // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
-    // registered under a name that folds the FIRST trailing vowel-sign
-    // codepoint in, not the bare consonant/cluster name - check that too,
-    // when the trailing marks actually start with a real vowel sign.
-    if (trailingCps.length > 0 && trailingCps[0] in VOWEL_SIGN_NAME_BY_CP) {
-      const vsFoldedName = segment.consonantNames.concat([VOWEL_SIGN_NAME_BY_CP[trailingCps[0]]]).join('_') + '-tutg';
-      const restCps = trailingCps.slice(1);
-      const vsRegistered = SYLLABLE_VARIANT_LOOKUP[vsFoldedName];
-      if (vsRegistered) {
-        vsRegistered.alts.forEach(alt => {
-          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(restCps) });
+    } else {
+      // Independent vowel (a-tutg, aa-tutg, ...) - same registry check as a
+      // consonant, but no conjoiner-chain/vowel-sign-fold concerns, since
+      // these stand alone rather than combining with what follows.
+      const resolvedName = segment.baseName + '-tutg';
+      const registered = SYLLABLE_VARIANT_LOOKUP[resolvedName];
+      if (registered) {
+        registered.alts.forEach(alt => {
+          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
         });
       }
     }
-    segment.conjoinerPositions.forEach(pos => {
-      const subjoinCps = cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], cps.slice(pos + 1));
-      const label = segment.consonantNames.length === 2
-        ? `Force ${segment.consonantNames[1]} below ${segment.consonantNames[0]} (VS1)`
-        : `Force below-base at conjoiner ${segment.conjoinerPositions.indexOf(pos) + 1} (VS1)`;
-      options.push({ label, cps: subjoinCps });
-    });
     return options;
   }
 
