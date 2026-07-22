@@ -2511,6 +2511,15 @@
   const SYLLABLE_VARIANT_LOOKUP = DATA.variantRegistry.variantLookup;
   const SAMPLE_CONJOINER_CP = DATA.conjoinerCp;
   const SAMPLE_VS1_CP = DATA.vs1Cp;
+  // Folds a trailing vowel-sign codepoint into the resolved base name (e.g.
+  // "ka-tutg" + U -> "ka_uMatra-tutg") so vowel-sign-ligature variants (VS11+,
+  // e.g. ka_uMatra-tutg.alt1 - registered separately from the plain
+  // consonant's own VS1-VS6 alternates) are actually found instead of silently
+  // ignored - added 2026-07-23 after the project owner asked "what about U/UU
+  // variants from VS11/VS12?" and this gap was confirmed: a "KA+U" syllable
+  // previously only ever checked "ka-tutg" in the lookup, never "ka_uMatra-tutg".
+  const VOWEL_SIGN_NAME_BY_CP = {};
+  DATA.vowelSigns.forEach(v => { VOWEL_SIGN_NAME_BY_CP[v.cp] = stripTutg(v.name); });
 
   // Splits a word's cps into akshara segments. Each segment is either a single
   // non-consonant codepoint (nothing to offer - independent vowel, stray
@@ -2560,6 +2569,20 @@
       registered.alts.forEach(alt => {
         options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
       });
+    }
+    // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
+    // registered under a name that folds the FIRST trailing vowel-sign
+    // codepoint in, not the bare consonant/cluster name - check that too,
+    // when the trailing marks actually start with a real vowel sign.
+    if (trailingCps.length > 0 && trailingCps[0] in VOWEL_SIGN_NAME_BY_CP) {
+      const vsFoldedName = segment.consonantNames.concat([VOWEL_SIGN_NAME_BY_CP[trailingCps[0]]]).join('_') + '-tutg';
+      const restCps = trailingCps.slice(1);
+      const vsRegistered = SYLLABLE_VARIANT_LOOKUP[vsFoldedName];
+      if (vsRegistered) {
+        vsRegistered.alts.forEach(alt => {
+          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(restCps) });
+        });
+      }
     }
     segment.conjoinerPositions.forEach(pos => {
       const subjoinCps = segment.cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], segment.cps.slice(pos + 1));
@@ -2617,6 +2640,26 @@
     panel.style.top = (rect.bottom + 4) + 'px';
   }
 
+  // Shared between Sample Text (per word) and Live Input's preview (whole
+  // typed text at once) - fills `container` with one clickable <span> per
+  // akshara. Both call sites just hand it a container element + a raw cps
+  // array; everything else (segmenting, popup wiring) is identical, so
+  // there's exactly one place that knows how a syllable span gets built.
+  function renderSyllableSpans(container, cps) {
+    container.innerHTML = '';
+    segmentSyllables(cps).forEach(segment => {
+      const syl = document.createElement('span');
+      const hasOptions = resolveSyllableAlternatives(segment).length > 1;
+      syl.className = 'syllable' + (hasOptions ? ' has-alts' : '');
+      syl.textContent = segment.cps.map(cp => S(cp)).join('');
+      if (hasOptions) {
+        syl.title = 'Click for alternate forms';
+        syl.onclick = (e) => { e.stopPropagation(); openSyllablePopup(syl, segment); };
+      }
+      container.appendChild(syl);
+    });
+  }
+
   function renderSampleText() {
     renderSampleTextTabs();
     renderSampleTextRephaToggle();
@@ -2659,19 +2702,9 @@
       // for the whole word - siblings with the same font still shape/kern
       // continuously across span boundaries in every modern browser, so this
       // doesn't change how the word renders, it just gives each syllable its
-      // own click target for the variant-alternatives popup.
-      segmentSyllables(wordCps).forEach(segment => {
-        const syl = document.createElement('span');
-        const hasOptions = segment.consonantNames.length > 0
-          && (SYLLABLE_VARIANT_LOOKUP[segment.consonantNames.join('_') + '-tutg'] || segment.conjoinerPositions.length > 0);
-        syl.className = 'syllable' + (hasOptions ? ' has-alts' : '');
-        syl.textContent = segment.cps.map(cp => S(cp)).join('');
-        if (hasOptions) {
-          syl.title = 'Click for alternate forms';
-          syl.onclick = (e) => { e.stopPropagation(); openSyllablePopup(syl, segment); };
-        }
-        word.appendChild(syl);
-      });
+      // own click target for the variant-alternatives popup (shared with Live
+      // Input's preview - see renderSyllableSpans).
+      renderSyllableSpans(word, wordCps);
       block.appendChild(word);
       para.appendChild(block);
     });
@@ -2880,7 +2913,11 @@
     let cps = Array.from(baseText).map(c => c.codePointAt(0));
     if (liveRephaOn) cps = applyRephaToCps(cps);
     if (liveChilluOn) cps = applyChilluToCps(cps);
-    livePreview.textContent = cps.map(cp => S(cp)).join('');
+    // Same click-for-alternates popup as Sample Text (renderSyllableSpans is
+    // shared) - note this re-renders on every keystroke, so a manually-picked
+    // alternate here resets on the next keystroke, unlike Sample Text where
+    // it persists until the Repha/Chillu toggles or passage tab change.
+    renderSyllableSpans(livePreview, cps);
   }
   function renderLiveScriptTabs() {
     const wrap = document.getElementById('live-script-select');

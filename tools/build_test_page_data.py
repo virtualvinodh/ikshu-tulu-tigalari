@@ -54,6 +54,23 @@ for name in classification.get("vowel_independent", []):
     vowels.append({"name": name, "cp": cp})
 vowels.sort(key=lambda v: v["cp"])
 
+# --- dependent vowel signs (added 2026-07-23 for the Sample Text click-a-
+# syllable feature): lets the client fold a trailing vowel-sign codepoint into
+# a consonant's base name (e.g. "ka-tutg" + U -> "ka_uMatra-tutg") so it can
+# find that compound's OWN registered variant (variant_lookup["ka_uMatra-tutg"])
+# instead of only ever resolving the bare consonant's alternates and missing
+# every registered vowel-sign-ligature variant (21 of them - see
+# variant_registry.json's "_ligature_variants").
+vowel_signs = []
+for name in classification.get("vowel_sign", []):
+    if not is_default_form(name):
+        continue
+    cp = cp_of(name)
+    if cp is None:
+        continue
+    vowel_signs.append({"name": name, "cp": cp})
+vowel_signs.sort(key=lambda v: v["cp"])
+
 # --- akhn conjunct/vowel-sign test rows: real code point sequence + expected output glyph ---
 consonant_glyph_names = set(classification.get("consonant", []))
 KA_CP = cp_of("ka-tutg")
@@ -547,6 +564,7 @@ unicode_chars.sort(key=lambda e: e["cp"])
 out = {
     "consonants": consonants,
     "vowels": vowels,
+    "vowelSigns": vowel_signs,
     "conjoinerCp": conjoiner_cp,
     "vs1Cp": VS_CP[1],
     "akhnTests": akhn_tests,
