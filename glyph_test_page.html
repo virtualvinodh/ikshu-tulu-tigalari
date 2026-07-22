@@ -292,11 +292,16 @@
   .syllable.has-alts:hover { background: var(--hover-bg); }
   .syllable.is-overridden { border-bottom: 2px solid #c0392b; }
   .syllable-popup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
     background: var(--card-bg);
     border: 1px solid var(--paper-line);
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-    padding: 4px;
+    padding: 6px;
+    max-width: 90vw;
     max-height: 60vh;
     overflow-y: auto;
     z-index: 30;
@@ -304,15 +309,14 @@
   .syllable-popup-option {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 4px 10px;
+    justify-content: center;
+    padding: 6px 14px;
     border-radius: 5px;
     cursor: pointer;
     white-space: nowrap;
   }
   .syllable-popup-option:hover { background: var(--hover-bg); }
   .syllable-popup-option .tigalari { font-size: 1.4rem; }
-  .syllable-popup-option .label { font-size: 0.72rem; color: var(--text-dimmer); font-family: "SF Mono", Consolas, monospace; }
 
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
   .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
@@ -2619,14 +2623,11 @@
     options.forEach(opt => {
       const row = document.createElement('div');
       row.className = 'syllable-popup-option';
+      row.title = opt.label;  // no visible label (project owner request) - kept as a hover tooltip
       const glyph = document.createElement('span');
       glyph.className = 'tigalari';
       glyph.textContent = opt.cps.map(cp => S(cp)).join('');
-      const label = document.createElement('span');
-      label.className = 'label';
-      label.textContent = opt.label;
       row.appendChild(glyph);
-      row.appendChild(label);
       row.onclick = () => {
         span.textContent = opt.cps.map(cp => S(cp)).join('');
         span.classList.toggle('is-overridden', !opt.isDefault);
@@ -2635,7 +2636,11 @@
       panel.appendChild(row);
     });
     const rect = span.getBoundingClientRect();
-    panel.style.display = 'block';
+    // 'flex', not 'block' - an inline style always beats the .syllable-popup
+    // CSS rule's "display: flex" (that's the whole bug: 'block' here was
+    // silently forcing every option back to one-per-line no matter what the
+    // stylesheet said).
+    panel.style.display = 'flex';
     panel.style.left = Math.max(4, rect.left) + 'px';
     panel.style.top = (rect.bottom + 4) + 'px';
   }
