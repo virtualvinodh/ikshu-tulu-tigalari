@@ -2524,6 +2524,10 @@
   // previously only ever checked "ka-tutg" in the lookup, never "ka_uMatra-tutg".
   const VOWEL_SIGN_NAME_BY_CP = {};
   DATA.vowelSigns.forEach(v => { VOWEL_SIGN_NAME_BY_CP[v.cp] = stripTutg(v.name); });
+  // Every variation selector this font's GSUB actually recognizes (VS1-VS6,
+  // VS11-VS12) - used to strip an ALREADY-applied selector out of a syllable
+  // before building its alternatives (see resolveSyllableAlternatives).
+  const ALL_VS_CPS = new Set(DATA.vsCodepoints);
 
   // Splits a word's cps into akshara segments. Each segment is either a single
   // non-consonant codepoint (nothing to offer - independent vowel, stray
@@ -2563,11 +2567,26 @@
   // single consonant with no registered alt - caller skips opening the popup
   // in that case, since there'd be nothing to choose between.
   function resolveSyllableAlternatives(segment) {
-    const defaultOption = { label: 'Default', cps: segment.cps.slice(), isDefault: true };
-    if (segment.consonantNames.length === 0) return [defaultOption];
+    if (segment.consonantNames.length === 0) {
+      return [{ label: 'Default', cps: segment.cps.slice(), isDefault: true }];
+    }
+    // Strip an ALREADY-applied variation selector before computing anything
+    // else - confirmed broken (project owner tested "RA+UU+VS11", i.e.
+    // ra_uuMatra-tutg.alt1 typed directly): without this, "Default" just
+    // echoed the alt-selected form back unchanged (not actually the default),
+    // and every alt option below got a SECOND, duplicate VS appended on top
+    // of the one already in the input. A VS always sits in the trailing
+    // (non-consonant) part of a segment, so consSpanLen itself never shifts -
+    // only trailingCps needs to be recomputed from the cleaned array.
+    let cps = segment.cps;
+    for (const vsCp of ALL_VS_CPS) {
+      const idx = cps.indexOf(vsCp);
+      if (idx !== -1) { cps = cps.slice(0, idx).concat(cps.slice(idx + 1)); break; }
+    }
+    const defaultOption = { label: 'Default', cps: cps.slice(), isDefault: true };
     const options = [defaultOption];
     const baseName = segment.consonantNames.join('_') + '-tutg';
-    const trailingCps = segment.cps.slice(segment.consSpanLen);
+    const trailingCps = cps.slice(segment.consSpanLen);
     const registered = SYLLABLE_VARIANT_LOOKUP[baseName];
     if (registered) {
       registered.alts.forEach(alt => {
@@ -2589,7 +2608,7 @@
       }
     }
     segment.conjoinerPositions.forEach(pos => {
-      const subjoinCps = segment.cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], segment.cps.slice(pos + 1));
+      const subjoinCps = cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], cps.slice(pos + 1));
       const label = segment.consonantNames.length === 2
         ? `Force ${segment.consonantNames[1]} below ${segment.consonantNames[0]} (VS1)`
         : `Force below-base at conjoiner ${segment.conjoinerPositions.indexOf(pos) + 1} (VS1)`;

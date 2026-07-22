@@ -567,6 +567,7 @@ out = {
     "vowelSigns": vowel_signs,
     "conjoinerCp": conjoiner_cp,
     "vs1Cp": VS_CP[1],
+    "vsCodepoints": sorted(VS_CP.values()),
     "akhnTests": akhn_tests,
     "markVowelGrid": mark_vowel_grid,
     "markConsonantGrid": mark_consonant_grid,
