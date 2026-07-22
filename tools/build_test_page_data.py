@@ -473,16 +473,23 @@ for default_cps, ligature_name, variants in ligature_entries_by_cp:
         })
 
 # Forced-below-base subjoining demo (TutgSubjoinerForm + TutgBlwfSubjoiner) -
-# 3 representative pairs (unlike the conjunct-ligature alternates above, this
+# 4 representative pairs (unlike the conjunct-ligature alternates above, this
 # mechanism works for ANY consonant pair, not just a registered list, so a
 # handful of examples stand in for all of them rather than enumerating 36x36
-# pairs): KA+KA (geminate), NGA+KA and KA+YA (two different-consonant pairs),
-# each shown 3 ways - plain/default conjunct/forced below-base.
-SUBJOINER_DEMO_PAIRS = [("ka-tutg", "ka-tutg"), ("nga-tutg", "ka-tutg"), ("ka-tutg", "ya-tutg")]
+# pairs): KA+KA (geminate), NGA+KA, KA+YA and KA+VA (three different-consonant
+# pairs), each shown 4 ways - plain/default conjunct/forced below-base/forced
+# below-base + a following vowel sign (added 2026-07-23, project owner request
+# - exercises the subjoiner_compound_rules fix in generate_blwf_feature.py:
+# without it, the vowel sign floats unattached instead of merging into the
+# shrunk ligature's own compound below-form, e.g. ka_katutg.below.auto).
+SUBJOINER_DEMO_PAIRS = [
+    ("ka-tutg", "ka-tutg"), ("nga-tutg", "ka-tutg"), ("ka-tutg", "ya-tutg"), ("ka-tutg", "va-tutg"),
+]
 subjoiner_demo_groups = []
 for first_name, second_name in SUBJOINER_DEMO_PAIRS:
     first_cp = cp_of(first_name)
     second_cp = cp_of(second_name)
+    u_cp = cp_of("uMatra-tutg")
     first_label = first_name[: -len("-tutg")].upper()
     second_label = second_name[: -len("-tutg")].upper()
     subjoiner_demo_groups.append({
@@ -491,6 +498,7 @@ for first_name, second_name in SUBJOINER_DEMO_PAIRS:
             {"label": f"{first_label} + {second_label} (plain, no conjoiner)", "cps": [first_cp, second_cp]},
             {"label": f"{first_label} + conjoiner + {second_label} (default conjunct)", "cps": [first_cp, conjoiner_cp, second_cp]},
             {"label": f"{first_label} + conjoiner + VS1 + {second_label} (forced below-base)", "cps": [first_cp, conjoiner_cp, VS_CP[1], second_cp]},
+            {"label": f"{first_label} + conjoiner + VS1 + {second_label} + U (forced below-base + vowel sign)", "cps": [first_cp, conjoiner_cp, VS_CP[1], second_cp, u_cp]},
         ],
     })
 subjoiner_demo = {"groups": subjoiner_demo_groups}
