@@ -308,7 +308,7 @@ for base_name, variants in registry_items_by_cp:
             consonant_variant_entries.append({"label": label, "variant": variant_name, "vs": vs, "baseCp": base_cp, "vsCp": vs_cp})
             card = consonant_variant_cards_by_base.get(base_name)
             if card is None:
-                card = {"label": base, "defaultCps": [base_cp], "alts": []}
+                card = {"label": base, "name": base_name, "defaultCps": [base_cp], "alts": []}
                 consonant_variant_cards_by_base[base_name] = card
                 consonant_variant_cards.append(card)
             card["alts"].append({"variant": variant_name, "vs": vs, "cps": [base_cp, vs_cp]})
@@ -423,6 +423,7 @@ for default_cps, ligature_name, variants in ligature_entries_by_cp:
         alts.append({"variant": variant_name, "vs": vs_label_of(vs_cp), "cps": default_cps + [vs_cp]})
     entry = {
         "label": ligature_name[: -len("-tutg")],
+        "name": ligature_name,
         "default": default_cps,
         "alts": alts,
     }
@@ -503,6 +504,19 @@ for first_name, second_name in SUBJOINER_DEMO_PAIRS:
     })
 subjoiner_demo = {"groups": subjoiner_demo_groups}
 
+# Merged, name-keyed lookup for the Sample Text tab's click-a-syllable-for-
+# alternates feature (added 2026-07-23): consonant_variant_cards/
+# conjunct_variants/vowel_sign_ligature_variants above are each shaped for
+# their OWN tab's layout, but the sample-text click handler just needs "given
+# a resolved base name (e.g. cha-tutg, nga_ka-tutg), what are its registered
+# alternates" - one flat dict instead of three differently-shaped lists it
+# would otherwise have to search separately client-side.
+variant_lookup = {}
+for card in consonant_variant_cards:
+    variant_lookup[card["name"]] = {"defaultCps": card["defaultCps"], "alts": card["alts"]}
+for entry in conjunct_variants + vowel_sign_ligature_variants:
+    variant_lookup[entry["name"]] = {"defaultCps": entry["default"], "alts": entry["alts"]}
+
 variant_registry_data = {
     "independentVowelCards": independent_vowel_cards,
     "consonantVariantCards": consonant_variant_cards,
@@ -513,6 +527,7 @@ variant_registry_data = {
     "vowelSignLigatureVariants": vowel_sign_ligature_variants,
     "conjunctVariantSigns": conjunct_variant_signs,
     "subjoinerDemo": subjoiner_demo,
+    "variantLookup": variant_lookup,
 }
 
 # --- Unicode tab: every actually-encoded character in the Tulu-Tigalari block
@@ -532,6 +547,8 @@ unicode_chars.sort(key=lambda e: e["cp"])
 out = {
     "consonants": consonants,
     "vowels": vowels,
+    "conjoinerCp": conjoiner_cp,
+    "vs1Cp": VS_CP[1],
     "akhnTests": akhn_tests,
     "markVowelGrid": mark_vowel_grid,
     "markConsonantGrid": mark_consonant_grid,

@@ -284,6 +284,36 @@
     border-width: 2px;
   }
 
+  /* Per-syllable click targets inside .word (see segmentSyllables/
+     openSyllablePopup) - only ones with real alternatives (.has-alts) get the
+     pointer cursor/underline affordance; a plain single consonant with no
+     registered alt and no conjoiner just renders as normal inert text. */
+  .syllable.has-alts { cursor: pointer; border-bottom: 1px dotted var(--text-dimmer); }
+  .syllable.has-alts:hover { background: var(--hover-bg); }
+  .syllable.is-overridden { border-bottom: 2px solid #c0392b; }
+  .syllable-popup {
+    background: var(--card-bg);
+    border: 1px solid var(--paper-line);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    padding: 4px;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 30;
+  }
+  .syllable-popup-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .syllable-popup-option:hover { background: var(--hover-bg); }
+  .syllable-popup-option .tigalari { font-size: 1.4rem; }
+  .syllable-popup-option .label { font-size: 0.72rem; color: var(--text-dimmer); font-family: "SF Mono", Consolas, monospace; }
+
   .text-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--paper-line); margin-bottom: 16px; }
   .text-tab { padding: 8px 14px; cursor: pointer; font-size: 0.85rem; color: var(--text-dimmer); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
   .text-tab:hover { color: var(--ink); }
@@ -2466,6 +2496,127 @@
       wrap.appendChild(lbl);
     });
   }
+  // Click-a-syllable-for-alternates (added 2026-07-23, project owner request):
+  // segments a rendered word's codepoints into aksharas (consonant + optional
+  // conjoiner-joined consonants + trailing vowel-sign/mark codepoints), and
+  // for each one offers a small popup listing (a) any variant_registry.json-
+  // registered .altN forms for that resolved base name (e.g. cha-tutg's own
+  // alt1, or a registered conjunct like ka_ya-tutg's alt if one existed), and
+  // (b) the forced-below-base "subjoin" alternative at every conjoiner
+  // boundary in the cluster (VS1 inserted right after that conjoiner) - this
+  // one needs no registry entry at all, since TutgBlwfSubjoiner accepts ANY
+  // consonant/cluster, not just a registered list (see the Variant Registry
+  // tab's "Forced-below-base subjoining demo" for the same mechanism applied
+  // to a fixed handful of example pairs instead of every syllable dynamically).
+  const SYLLABLE_VARIANT_LOOKUP = DATA.variantRegistry.variantLookup;
+  const SAMPLE_CONJOINER_CP = DATA.conjoinerCp;
+  const SAMPLE_VS1_CP = DATA.vs1Cp;
+
+  // Splits a word's cps into akshara segments. Each segment is either a single
+  // non-consonant codepoint (nothing to offer - independent vowel, stray
+  // mark...) or {cps, consonantNames (stripped, no "-tutg"), conjoinerPositions
+  // (indices within cps, right at the conjoiner itself), consSpanLen (how many
+  // leading cps are the consonant/conjoiner chain, before any trailing vowel
+  // sign/mark codepoints)}.
+  function segmentSyllables(cps) {
+    const segments = [];
+    let i = 0;
+    while (i < cps.length) {
+      if (!(cps[i] in CONSONANT_NAME_BY_CP)) {
+        segments.push({ cps: [cps[i]], consonantNames: [], conjoinerPositions: [], consSpanLen: 0 });
+        i++;
+        continue;
+      }
+      const segStart = i;
+      const consonantNames = [CONSONANT_NAME_BY_CP[cps[i]]];
+      const conjoinerPositions = [];
+      i++;
+      while (cps[i] === SAMPLE_CONJOINER_CP && (cps[i + 1] in CONSONANT_NAME_BY_CP)) {
+        conjoinerPositions.push(i - segStart);
+        consonantNames.push(CONSONANT_NAME_BY_CP[cps[i + 1]]);
+        i += 2;
+      }
+      const consSpanLen = i - segStart;
+      while (i < cps.length && !(cps[i] in CONSONANT_NAME_BY_CP)) i++;
+      segments.push({ cps: cps.slice(segStart, i), consonantNames, conjoinerPositions, consSpanLen });
+    }
+    return segments;
+  }
+
+  // Builds the popup's option list for one segment: [{label, cps, isDefault}, ...].
+  // Always includes "Default" first; registry alternates and forced-subjoin
+  // alternates follow, in that order. Returns just the Default-only array
+  // (length 1) when the syllable is a lone non-consonant codepoint or a plain
+  // single consonant with no registered alt - caller skips opening the popup
+  // in that case, since there'd be nothing to choose between.
+  function resolveSyllableAlternatives(segment) {
+    const defaultOption = { label: 'Default', cps: segment.cps.slice(), isDefault: true };
+    if (segment.consonantNames.length === 0) return [defaultOption];
+    const options = [defaultOption];
+    const baseName = segment.consonantNames.join('_') + '-tutg';
+    const trailingCps = segment.cps.slice(segment.consSpanLen);
+    const registered = SYLLABLE_VARIANT_LOOKUP[baseName];
+    if (registered) {
+      registered.alts.forEach(alt => {
+        options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
+      });
+    }
+    segment.conjoinerPositions.forEach(pos => {
+      const subjoinCps = segment.cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], segment.cps.slice(pos + 1));
+      const label = segment.consonantNames.length === 2
+        ? `Force ${segment.consonantNames[1]} below ${segment.consonantNames[0]} (VS1)`
+        : `Force below-base at conjoiner ${segment.conjoinerPositions.indexOf(pos) + 1} (VS1)`;
+      options.push({ label, cps: subjoinCps });
+    });
+    return options;
+  }
+
+  // One shared floating panel (not one per syllable - some passages run to
+  // 1000+ words) repositioned via getBoundingClientRect() of whichever
+  // syllable span was clicked. Same open/close-on-outside-click pattern as
+  // createFilterDropdown's panel further up.
+  let syllablePopupEl = null;
+  function ensureSyllablePopup() {
+    if (syllablePopupEl) return syllablePopupEl;
+    const panel = document.createElement('div');
+    panel.className = 'filter-dropdown-panel syllable-popup';
+    panel.style.display = 'none';
+    panel.style.position = 'fixed';
+    document.body.appendChild(panel);
+    panel.addEventListener('click', e => e.stopPropagation());
+    document.addEventListener('click', () => { panel.style.display = 'none'; });
+    syllablePopupEl = panel;
+    return panel;
+  }
+  function openSyllablePopup(span, segment) {
+    const options = resolveSyllableAlternatives(segment);
+    if (options.length <= 1) return;  // nothing but Default - no point popping up
+    const panel = ensureSyllablePopup();
+    panel.innerHTML = '';
+    options.forEach(opt => {
+      const row = document.createElement('div');
+      row.className = 'syllable-popup-option';
+      const glyph = document.createElement('span');
+      glyph.className = 'tigalari';
+      glyph.textContent = opt.cps.map(cp => S(cp)).join('');
+      const label = document.createElement('span');
+      label.className = 'label';
+      label.textContent = opt.label;
+      row.appendChild(glyph);
+      row.appendChild(label);
+      row.onclick = () => {
+        span.textContent = opt.cps.map(cp => S(cp)).join('');
+        span.classList.toggle('is-overridden', !opt.isDefault);
+        panel.style.display = 'none';
+      };
+      panel.appendChild(row);
+    });
+    const rect = span.getBoundingClientRect();
+    panel.style.display = 'block';
+    panel.style.left = Math.max(4, rect.left) + 'px';
+    panel.style.top = (rect.bottom + 4) + 'px';
+  }
+
   function renderSampleText() {
     renderSampleTextTabs();
     renderSampleTextRephaToggle();
@@ -2504,7 +2655,23 @@
       word.className = 'word';
       let wordCps = sampleRephaOn ? applyRephaToCps(w.tigalariCps) : w.tigalariCps;
       if (sampleChilluOn) wordCps = applyChilluToCps(wordCps);
-      word.textContent = wordCps.map(cp => S(cp)).join('');
+      // One <span class="syllable"> per akshara rather than one flat text node
+      // for the whole word - siblings with the same font still shape/kern
+      // continuously across span boundaries in every modern browser, so this
+      // doesn't change how the word renders, it just gives each syllable its
+      // own click target for the variant-alternatives popup.
+      segmentSyllables(wordCps).forEach(segment => {
+        const syl = document.createElement('span');
+        const hasOptions = segment.consonantNames.length > 0
+          && (SYLLABLE_VARIANT_LOOKUP[segment.consonantNames.join('_') + '-tutg'] || segment.conjoinerPositions.length > 0);
+        syl.className = 'syllable' + (hasOptions ? ' has-alts' : '');
+        syl.textContent = segment.cps.map(cp => S(cp)).join('');
+        if (hasOptions) {
+          syl.title = 'Click for alternate forms';
+          syl.onclick = (e) => { e.stopPropagation(); openSyllablePopup(syl, segment); };
+        }
+        word.appendChild(syl);
+      });
       block.appendChild(word);
       para.appendChild(block);
     });
