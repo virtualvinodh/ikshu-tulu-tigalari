@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rVocalicMatra-tutg-alt1" format="2">
   <advance width="50"/>
+  <anchor x="-70" y="237" name="_bottomright"/>
   <outline>
     <contour>
       <point x="-393" y="-475" type="curve" smooth="yes"/>

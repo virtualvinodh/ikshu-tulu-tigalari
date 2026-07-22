@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="raMatra-tutg" format="2">
   <advance width="50"/>
+  <anchor x="-478" y="-271" name="bottom"/>
+  <anchor x="-223.4" y="-219.0" name="bottomright"/>
   <outline>
     <contour>
       <point x="-478" y="-271" type="curve" smooth="yes"/>

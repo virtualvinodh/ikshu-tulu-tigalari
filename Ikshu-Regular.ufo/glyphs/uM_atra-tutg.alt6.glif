@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uMatra-tutg.alt6" format="2">
   <advance width="72"/>
+  <anchor x="-219.0" y="10.0" name="_bottomright"/>
   <outline>
     <contour>
       <point x="-364" y="-198" type="curve"/>

@@ -41,6 +41,8 @@ TOPRIGHT_GAP = 50     # Virama-as-Bindu floats this far above the base's own top
 font = ufoLib2.Font.open(UFO_PATH)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     d = json.load(f)
+with open(os.path.join(HERE, "variant_registry.json"), encoding="utf-8") as f:
+    variant_registry = json.load(f)
 
 # Auto-generated ligature below-base forms (generate_below_auto_glyphs.py) aren't
 # in glyph_classification.json - it predates them and classify_glyphs.py has no
@@ -91,9 +93,17 @@ BARE_RA_LIGATURES = {n for n in font.keys() if n.endswith("_ra-tutg")}
 # A below-base form can itself be the base a following U/UU vowel sign attaches
 # to (same "ink-touching fallback" reasoning as a plain consonant), so it needs
 # its own bottomright too - not just bottom/_bottom.
+#
+# raMatra-tutg (RA's own post-base "Rakar" form) added 2026-07-22 (project
+# owner request, same "bottom" gap fixed just above): a further vowel sign can
+# follow it directly (the generic "consonant+RA+vowel-sign" fallback path, no
+# dedicated ligature), so it needs bottomright too, computed the same way as
+# every other plain consonant (find_ink_bottom_right below) - not folded into
+# BOTTOMRIGHT_LOWEST_POINT_OVERRIDE, which is for ligatures built FROM
+# raMatra-tutg as a component, a different concern from raMatra-tutg's own anchor.
 BOTTOMRIGHT_POP = (
     d["consonant"] + d["consonant_below_base"] + LIGATURE_BELOW_FORMS + BELOW_AUTO_POP
-    + list(BARE_YA_LIGATURES) + list(BARE_RA_LIGATURES)
+    + list(BARE_YA_LIGATURES) + list(BARE_RA_LIGATURES) + ["raMatra-tutg"]
 )
 
 MARKS_TOP = ["repha-tutg", "repha-tutg.alt1", "svarita-tutg"]
@@ -109,6 +119,49 @@ MARKS_TOPRIGHT = ["virama-tutg"]
 # vowel sign into a single glyph before GPOS ever sees a bare mark glyph to
 # attach - this anchor pair only ever activates when GSUB left it unmerged.
 MARKS_BOTTOMRIGHT = ["uMatra-tutg", "uuMatra-tutg", "rVocalicMatra-tutg", "rrVocalicMatra-tutg"]
+
+# Every registered .altN variant of the 4 names above ALSO needs its own
+# _bottomright (added 2026-07-22, project owner request): mark_pass only ever
+# wrote this anchor for the 4 plain glyphs, so an alt form substituted in via
+# TutgVariantSelect (uMatra-tutg.alt1 etc.) had NO _bottomright at all - if the
+# bottomright/_bottomright GPOS fallback path ever activates while an alt form
+# is on screen, it would have nothing to attach to and just sit at default
+# advance-width position. Read the real glyph name straight out of
+# variant_registry.json (not reconstructed as f"{base}.alt{n}") since at least
+# one entry uses a different separator on disk (rVocalicMatra-tutg-alt1, a
+# hyphen, not a dot) - same "trust the registry, not a naming assumption"
+# principle generate_blwf_feature.py's VARIANT_REGISTRY lookups already follow.
+MARKS_BOTTOMRIGHT_MISSING_VARIANT = []  # (base_name, variant_name) registered but not a real glyph
+for _base_name in list(MARKS_BOTTOMRIGHT):
+    for _variant_name in variant_registry.get(_base_name, {}).values():
+        if _variant_name not in font:
+            MARKS_BOTTOMRIGHT_MISSING_VARIANT.append((_base_name, _variant_name))
+            continue
+        MARKS_BOTTOMRIGHT.append(_variant_name)
+
+# uMatra-tutg.below/uuMatra-tutg.below added 2026-07-22 (project owner request):
+# not a registered TutgVariantSelect alt, just the below-base form these two
+# vowel signs get when THEY serve as the base for further stacking - same
+# "needs its own _bottomright too" reasoning as the .altN variants above, but
+# not discoverable via variant_registry.json since it isn't a selectable variant.
+for _below_name in ("uMatra-tutg.below", "uuMatra-tutg.below"):
+    if _below_name in font:
+        MARKS_BOTTOMRIGHT.append(_below_name)
+
+# Most of the above are round/circular enough that the blended "furthest right
+# + furthest up" ink search (find_ink_top_right) lands in a sensible spot, but
+# uMatra-tutg/uMatra-tutg.alt2/.below and uuMatra-tutg/.alt4/.below specifically
+# were checked and confirmed wrong by the project owner (2026-07-22) - these
+# read as a simple round dot shape, so the intended attachment point is just
+# the shape's own topmost point (its "12 o'clock", where quadrant 1 starts
+# going clockwise), not a right-biased corner. The rest (other alt shapes,
+# rVocalicMatra/rrVocalicMatra) were confirmed fine as-is and left on
+# find_ink_top_right.
+MARKS_BOTTOMRIGHT_TOPMOST_OVERRIDE = {
+    "uMatra-tutg", "uMatra-tutg.alt2", "uMatra-tutg.alt3", "uMatra-tutg.alt4",
+    "uMatra-tutg.alt5", "uMatra-tutg.alt6", "uMatra-tutg.below",
+    "uuMatra-tutg", "uuMatra-tutg.alt4", "uuMatra-tutg.below",
+}
 
 
 def find_anchor(glyph, name):
@@ -240,6 +293,45 @@ def find_lowest_point(glyph, font):
     return min(pts, key=lambda p: p[1])
 
 
+def find_topmost_point(glyph, font):
+    """The glyph's own topmost outline point, at its true x (not forced to
+    bbox center) - for a round/circular shape this naturally lands near the
+    horizontal center anyway, since that's where the top of a circle sits.
+    Mirrors find_lowest_point (min y) but for the opposite extreme."""
+    pts = outline_points(glyph, font)
+    if not pts:
+        return None
+    return max(pts, key=lambda p: p[1])
+
+
+def find_ink_top_right(glyph, font):
+    """Same blended-score ink search as find_ink_bottom_right, but for the
+    corner diagonally opposite: furthest right AND furthest up. Leftmost-point
+    was tried first and rejected (2026-07-22, project owner) - U/UU are round/
+    circular shapes, so their true leftmost point sits at the vertical middle,
+    nowhere near where the sign visually starts. Top-right is where these
+    marks actually begin, matching the base glyph's own bottomright anchor
+    (furthest right + furthest down), which is where they're meant to attach."""
+    b = glyph.getBounds(font)
+    if b is None:
+        return None
+    pts = outline_points(glyph, font)
+    if not pts:
+        return None
+    w = b.xMax - b.xMin or 1
+    h = b.yMax - b.yMin or 1
+    best = None
+    best_score = -1
+    for (x, y) in pts:
+        xn = (x - b.xMin) / w
+        yn = (y - b.yMin) / h
+        score = xn + yn  # far right + far up, normalized
+        if score > best_score:
+            best_score = score
+            best = (x, y)
+    return best
+
+
 # ya-tutg.below (and every "<...>_ya-tutg.below[.auto]" ligature ending in YA,
 # which all carry the same descending tail via their own ya component) extends
 # much further down than it does right, so find_ink_bottom_right()'s "far right
@@ -282,10 +374,39 @@ for gname in BOTTOMRIGHT_POP:
         continue
     report[upsert_anchor(gname, "bottomright", pt[0], pt[1])] += 1
 
+# raMatra-tutg (RA's own post-base "Rakar" form) had NO anchors at all -
+# classified under vowel_sign_component in glyph_classification.json, not
+# consonant/consonant_below_base, so it fell through every POP list above
+# (found 2026-07-22 while investigating why "consonant+RA+vowel-sign" never
+# mark-attaches via GPOS). Added directly here (not folded into BOTTOM_POP)
+# per project owner's explicit request for the bottommost ink point specifically,
+# not base_pass()'s generic bbox-center-minus-gap formula every other
+# consonant's "bottom" anchor uses.
+_ramatra_bottom = find_lowest_point(font["raMatra-tutg"], font)
+if _ramatra_bottom is None:
+    report["no_bounds"].append(("raMatra-tutg", "bottom"))
+else:
+    report[upsert_anchor("raMatra-tutg", "bottom", _ramatra_bottom[0], _ramatra_bottom[1])] += 1
+
 mark_pass(MARKS_TOP, "_top", x_from="center", y_edge="min")
 mark_pass(MARKS_BOTTOM, "_bottom", x_from="center", y_edge="max")
 mark_pass(MARKS_TOPRIGHT, "_topright", x_from="left", y_edge="min")
-mark_pass(MARKS_BOTTOMRIGHT, "_bottomright", x_from="left", y_edge="max")
+
+# Ink-based, not bbox-based (see find_ink_top_right/find_topmost_point
+# docstrings) - same "touch the real outline" principle the base bottomright
+# anchor already uses. MARKS_BOTTOMRIGHT_TOPMOST_OVERRIDE picks the simpler
+# topmost-point search for the round-dot shapes it was confirmed wrong for;
+# everything else keeps the blended top-right search.
+for gname in MARKS_BOTTOMRIGHT:
+    g = font[gname]
+    if gname in MARKS_BOTTOMRIGHT_TOPMOST_OVERRIDE:
+        pt = find_topmost_point(g, font)
+    else:
+        pt = find_ink_top_right(g, font)
+    if pt is None:
+        report["no_bounds"].append((gname, "_bottomright"))
+        continue
+    report[upsert_anchor(gname, "_bottomright", pt[0], pt[1])] += 1
 
 # Cleanup: strip any "top"/"topright" anchor a below-form glyph picked up from a
 # run before TOP_POP/TOPRIGHT_POP excluded below-forms (see above) - upsert_anchor
@@ -309,4 +430,7 @@ print("Updated (already existed):", report["updated"])
 print("Removed stray top/topright from below-forms:", removed_stray)
 print("No bounds / empty glyphs (flag for review):", len(report["no_bounds"]))
 for item in report["no_bounds"]:
+    print("  ", item)
+print("MARKS_BOTTOMRIGHT variants skipped (registered but not a real glyph):", len(MARKS_BOTTOMRIGHT_MISSING_VARIANT))
+for item in MARKS_BOTTOMRIGHT_MISSING_VARIANT:
     print("  ", item)

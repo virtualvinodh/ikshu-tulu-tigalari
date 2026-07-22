@@ -526,10 +526,42 @@ for consonant, root in sorted(needed_pairs):
             continue
     compound_rules.append((["conjoiner-tutg", consonant, VS_INPUT_GLYPH[root]], below_name))
 
+# Subjoiner counterpart of compound_rules above (added 2026-07-22, second
+# regression found by the project owner): the per-ligature TutgBlwfSubjoiner
+# rules further up ("subjoiner-tutg + ya_uMatra-tutg -> ...") assumed the
+# consonant+vowel-sign compound (ya_uMatra-tutg etc.) would already exist in
+# the buffer by the time this lookup runs - true back when that merge lived
+# in akhn, but now that it's been moved to blws (see generate_akhn_feature.py/
+# tutg_blws.fea), confirmed via uharfbuzz that blws does NOT reliably run
+# before TutgBlwfSubjoiner for this sequence: "subjoiner-tutg + ka-tutg"
+# (the plain 2-glyph rule) matches first, shrinking the bare consonant alone
+# and leaving the vowel sign stranded as its own unattached glyph - reproduced
+# with "GHA+conjoiner+VS1+KA+uMatra", not just YA/RA, so this covers every
+# consonant, not only the "needed_pairs" subset compound_rules above targets.
+# Unlike compound_rules (only built for the specific pairs decompose_rules
+# actually needs), this is unconditional over all 36 consonants x 4 roots -
+# every consonant that HAS a compound glyph for a given root gets a rule here.
+subjoiner_compound_rules = []    # (input_seq, output_name) - input_seq is 3 glyphs
+subjoiner_compound_no_below = []  # (consonant, root) - compound glyph exists but no below-form
+for consonant in consonants:
+    base = consonant[: -len("-tutg")]
+    for root in VS_ROOTS:
+        compound_name = compound_glyph_name(base, root)
+        if compound_name is None:
+            continue  # no such compound glyph at all - nothing to fix here
+        below_name = ligature_below.get(compound_name)
+        if below_name is None:
+            below_name, _ = resolve_below_form(compound_name)
+            if below_name is None:
+                subjoiner_compound_no_below.append((consonant, root))
+                continue
+        subjoiner_compound_rules.append((["subjoiner-tutg", consonant, VS_INPUT_GLYPH[root]], below_name))
+
 # 3-glyph compound rules first (see module docstring for why), then the
 # existing 2-glyph rules - alphabetical by output name within each group as a
 # stable tiebreaker so re-runs produce byte-identical output.
 compound_rules.sort(key=lambda r: r[1])
+subjoiner_compound_rules.sort(key=lambda r: r[1])
 rules.sort(key=lambda r: r[1])
 
 out_path = os.path.join(HERE, "tutg_blwf.fea")
@@ -571,7 +603,12 @@ with open(out_path, "w", encoding="utf-8") as f:
     f.write("    script tutg;\n")
 
     f.write("    lookup TutgBlwfSubjoiner {\n")
-    f.write("        # subjoiner-tutg (conjoiner + VS1, formed in akhn) + consonant -> consonant's below-form.\n")
+    f.write("        # subjoiner-tutg (conjoiner + VS1, formed in akhn) + consonant + vowel-sign\n")
+    f.write("        # root -> that compound's below-form (3-glyph, must come first - see\n")
+    f.write("        # subjoiner_compound_rules comment above for why this exists at all).\n")
+    for seq, out in subjoiner_compound_rules:
+        f.write(f"        sub {' '.join(seq)} by {out};\n")
+    f.write("        # subjoiner-tutg + consonant -> consonant's below-form.\n")
     for name, below in subjoiner_rules:
         f.write(f"        sub subjoiner-tutg {name} by {below};\n")
     f.write("    } TutgBlwfSubjoiner;\n\n")
@@ -635,6 +672,11 @@ with open(out_path, "w", encoding="utf-8") as f:
     if compound_no_below:
         f.write("\n# --- (consonant, vowel-sign root) compound glyphs with no below-form at all (see BLWF_TODO.md) ---\n")
         for consonant, root in compound_no_below:
+            f.write(f"# {consonant} + {root}\n")
+
+    if subjoiner_compound_no_below:
+        f.write("\n# --- TutgBlwfSubjoiner: (consonant, vowel-sign root) compound glyphs with no below-form at all (see BLWF_TODO.md) ---\n")
+        for consonant, root in subjoiner_compound_no_below:
             f.write(f"# {consonant} + {root}\n")
 
     if subjoiner_missing_variant:

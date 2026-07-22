@@ -2,7 +2,7 @@
 <glyph name="uMatra-tutg" format="2">
   <advance width="50"/>
   <unicode hex="113BB"/>
-  <anchor x="-351" y="35" name="_bottomright"/>
+  <anchor x="-211.0" y="35.0" name="_bottomright"/>
   <outline>
     <contour>
       <point x="-209" y="-252" type="curve" smooth="yes"/>

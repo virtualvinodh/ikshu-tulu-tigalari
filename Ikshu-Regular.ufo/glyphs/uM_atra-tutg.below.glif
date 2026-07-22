@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="uMatra-tutg.below" format="2">
   <advance width="25"/>
+  <anchor x="-211.0" y="35.0" name="_bottomright"/>
   <outline>
     <component base="uMatra-tutg"/>
   </outline>
