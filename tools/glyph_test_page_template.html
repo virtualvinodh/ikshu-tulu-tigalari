@@ -292,9 +292,14 @@
   .syllable.has-alts:hover { background: var(--hover-bg); }
   .syllable.is-overridden { border-bottom: 2px solid #c0392b; }
   .syllable-popup {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* Fixed 5-per-row grid (not flex-wrap's "however many fit") - added
+       2026-07-23 to gauge, visually, how unwieldy the full combinatorial
+       cross-product of per-consonant variants x per-conjoiner subjoin
+       states gets for a multi-consonant cluster (folding every 5 into its
+       own row, per project owner's request, rather than one long wrapped
+       run) before deciding whether this needs a different UI entirely. */
+    display: grid;
+    grid-template-columns: repeat(5, auto);
     gap: 4px;
     background: var(--card-bg);
     border: 1px solid var(--paper-line);
@@ -720,6 +725,16 @@
 <script type="application/json" id="sample-texts-data">__SAMPLE_TEXTS_JSON__</script>
 <script type="application/json" id="brahmic-tables-data">__BRAHMIC_TABLES_JSON__</script>
 <script type="application/json" id="conjunct-lists-data">__CONJUNCT_LISTS_JSON__</script>
+<!-- Vendored harfbuzzjs (github.com/harfbuzz/harfbuzzjs, MIT) - unmodified source,
+     type="text/plain" so the browser never tries to execute it directly (both
+     files are ES modules with relative imports that only resolve correctly once
+     turned into Blob URLs at runtime - see initHarfBuzz() below). -->
+<script type="text/plain" id="hb-wasm-base64">__HB_WASM_BASE64__</script>
+<script type="text/plain" id="hb-harfbuzz-js-src">__HB_HARFBUZZ_JS__</script>
+<script type="text/plain" id="hb-index-mjs-src">__HB_INDEX_MJS__</script>
+<!-- Same bytes @font-face already embeds above, duplicated here so JS (not
+     just CSS) can get at the raw font data for HarfBuzz-wasm shaping. -->
+<script type="text/plain" id="hb-font-base64">__FONT_BASE64__</script>
 <script>
 (function() {
   const DATA = JSON.parse(document.getElementById('test-data').textContent);
@@ -2545,6 +2560,75 @@
   // owner: "repha+cons must be [one] segment, not cons+repha").
   const REPHA_CP = CONJUNCT_LISTS.markOptions.Repha.cp;
 
+  // Client-side HarfBuzz (harfbuzzjs, vendored - see harfbuzzjs_vendor/ and
+  // compile_test_page.py), for the syllable popup's option-deduplication
+  // feature (added 2026-07-23, project owner request): shapes each candidate
+  // combination through the ACTUAL compiled font and collapses any whose
+  // shaped result is identical (some combinations are no-ops - e.g. forcing
+  // a subjoin the font would've done anyway by default - discovered while
+  // testing the ta_sa_kha cross-product this session).
+  //
+  // harfbuzzjs's own dist/index.mjs is a normal ES module that does
+  // `import createHarfBuzz from "./harfbuzz.js"` and, at its own top level,
+  // `init(await createHarfBuzz())` with no options - neither resolves
+  // correctly when the source is loaded from a Blob URL instead of a real
+  // file (the relative import has nothing to resolve against, and
+  // createHarfBuzz() with no options would try to fetch "harfbuzz.wasm"
+  // relative to ITS OWN blob URL and fail). Both are patched at load time,
+  // not by editing the vendored source: the import is repointed at
+  // harfbuzz.js's own Blob URL, and createHarfBuzz() is called with
+  // emscripten's official `instantiateWasm` hook, which bypasses every
+  // internal fetch/locateFile code path entirely and just instantiates the
+  // wasm bytes already embedded in this page.
+  let hbReadyPromise = null;
+  function initHarfBuzz() {
+    if (hbReadyPromise) return hbReadyPromise;
+    hbReadyPromise = (async () => {
+      const wasmBytes = Uint8Array.from(atob(document.getElementById('hb-wasm-base64').textContent), c => c.charCodeAt(0));
+      const harfbuzzJsSrc = document.getElementById('hb-harfbuzz-js-src').textContent;
+      const indexMjsSrc = document.getElementById('hb-index-mjs-src').textContent;
+
+      const harfbuzzJsBlobUrl = URL.createObjectURL(new Blob([harfbuzzJsSrc], { type: 'text/javascript' }));
+      let patchedIndexSrc = indexMjsSrc.replace('from "./harfbuzz.js"', `from "${harfbuzzJsBlobUrl}"`);
+      patchedIndexSrc = patchedIndexSrc.replace(
+        'init(await createHarfBuzz());',
+        `init(await createHarfBuzz({
+          instantiateWasm(imports, successCallback) {
+            WebAssembly.instantiate(window.__HB_WASM_BYTES__, imports).then(({ instance, module }) => {
+              successCallback(instance, module);
+            });
+            return {};
+          },
+        }));`
+      );
+      window.__HB_WASM_BYTES__ = wasmBytes;
+      const indexBlobUrl = URL.createObjectURL(new Blob([patchedIndexSrc], { type: 'text/javascript' }));
+      const hb = await import(indexBlobUrl);
+
+      const fontBytes = Uint8Array.from(atob(document.getElementById('hb-font-base64').textContent), c => c.charCodeAt(0));
+      const blob = new hb.Blob(fontBytes);
+      const face = new hb.Face(blob, 0);
+      const font = new hb.Font(face);
+      return { hb, font };
+    })();
+    return hbReadyPromise;
+  }
+
+  // Shapes cps through the real compiled font and returns a compact string
+  // "signature" of the result (glyph id + advances/offsets per output glyph)
+  // - two cps sequences that produce the same signature render identically,
+  // regardless of how different their INPUT codepoints were.
+  async function shapeSignature(cps) {
+    const { hb, font } = await initHarfBuzz();
+    const buffer = new hb.Buffer();
+    buffer.addCodePoints(cps);
+    buffer.guessSegmentProperties();
+    hb.shape(font, buffer);
+    return buffer.getGlyphInfosAndPositions()
+      .map(g => `${g.codepoint}:${g.xAdvance}:${g.yAdvance}:${g.xOffset}:${g.yOffset}`)
+      .join('|');
+  }
+
   // Splits a word's cps into akshara segments. A segment starts at either a
   // consonant (optionally chaining conjoiner+consonant further, and optionally
   // preceded by a Repha prefix) or a lone independent vowel (no chaining - it
@@ -2667,13 +2751,63 @@
           });
         }
       }
-      segment.conjoinerPositions.forEach(pos => {
-        const subjoinCps = cps.slice(0, pos + 1).concat([SAMPLE_VS1_CP], cps.slice(pos + 1));
-        const label = segment.consonantNames.length === 2
-          ? `Force ${segment.consonantNames[1]} below ${segment.consonantNames[0]} (VS1)`
-          : `Force below-base at conjoiner ${segment.conjoinerPositions.indexOf(pos) + 1} (VS1)`;
-        options.push({ label, cps: subjoinCps });
-      });
+      // FULL cross-product of every independent per-consonant variant choice
+      // AND every independent per-conjoiner subjoin choice, for clusters of
+      // 2+ consonants - added 2026-07-23 (project owner: confirmed neither
+      // "subjoin every conjoiner at once" nor "combine multiple consonants'
+      // variants simultaneously" was reachable before; this is an experiment
+      // to see how large the option list actually gets in practice - e.g.
+      // ta_sa_kha with all 3 consonants having 2 variants each would be
+      // 2^2 conjoiner-states x 3^3 consonant-choices = 108 rows). Replaces
+      // the earlier additive-only version (one change from Default at a
+      // time) entirely, since additive is just the length-1-combo subset of
+      // this cross product.
+      if (segment.consonantNames.length > 1) {
+        const consonantPositions = [segment.hasRepha ? 1 : 0];
+        segment.conjoinerPositions.forEach(pos => consonantPositions.push(pos + 1));
+        // One "dimension" per consonant: [{default}, {this alt}, {that alt}, ...]
+        const dimensions = segment.consonantNames.map((name, k) => {
+          const choices = [{ label: null, insert: null }];
+          const ownRegistered = SYLLABLE_VARIANT_LOOKUP[name + '-tutg'];
+          if (ownRegistered) {
+            ownRegistered.alts.forEach(alt => {
+              choices.push({ label: `${name}=${stripTutg(alt.variant)}`, insert: { pos: consonantPositions[k], vsCp: alt.cps[1] } });
+            });
+          }
+          return choices;
+        });
+        // Plus one dimension per conjoiner: [{plain}, {forced subjoin}]
+        segment.conjoinerPositions.forEach((pos, idx) => {
+          dimensions.push([
+            { label: null, insert: null },
+            { label: `conj${idx + 1}=sub`, insert: { pos, vsCp: SAMPLE_VS1_CP } },
+          ]);
+        });
+        // Cartesian product across all dimensions.
+        let combos = [[]];
+        dimensions.forEach(dim => {
+          const next = [];
+          combos.forEach(combo => dim.forEach(choice => next.push(combo.concat([choice]))));
+          combos = next;
+        });
+        combos.forEach(combo => {
+          const inserts = combo.filter(c => c.insert).map(c => c.insert);
+          if (inserts.length === 0) return;  // the all-default combo - already have Default above
+          // Apply every insertion left-to-right, tracking how much each
+          // earlier insertion has shifted the array so later positions
+          // (recorded against the ORIGINAL cps) still land correctly.
+          inserts.sort((a, b) => a.pos - b.pos);
+          let combinedCps = cps;
+          let shift = 0;
+          inserts.forEach(({ pos, vsCp }) => {
+            const at = pos + shift + 1;
+            combinedCps = combinedCps.slice(0, at).concat([vsCp], combinedCps.slice(at));
+            shift += 1;
+          });
+          const label = combo.filter(c => c.label).map(c => c.label).join(', ');
+          options.push({ label, cps: combinedCps });
+        });
+      }
     } else {
       // Independent vowel (a-tutg, aa-tutg, ...) - same registry check as a
       // consonant, but no conjoiner-chain/vowel-sign-fold concerns, since
@@ -2706,12 +2840,46 @@
     syllablePopupEl = panel;
     return panel;
   }
-  function openSyllablePopup(span, segment) {
+  // Bumped on every open so a shaping run that's still in flight when the
+  // user clicks a DIFFERENT syllable (or the same one again) knows it's been
+  // superseded and shouldn't overwrite whatever the panel is showing by then.
+  let syllablePopupToken = 0;
+  async function openSyllablePopup(span, segment) {
     const options = resolveSyllableAlternatives(segment);
     if (options.length <= 1) return;  // nothing but Default - no point popping up
+    const myToken = ++syllablePopupToken;
     const panel = ensureSyllablePopup();
+    const rect = span.getBoundingClientRect();
+    // Must match .syllable-popup's CSS "display" value (currently "grid") -
+    // an inline style always beats a stylesheet rule, so this has to be kept
+    // in sync by hand whenever that CSS rule's display value changes.
     panel.innerHTML = '';
-    options.forEach(opt => {
+    panel.textContent = 'Shaping…';
+    panel.style.display = 'grid';
+    panel.style.left = Math.max(4, rect.left) + 'px';
+    panel.style.top = (rect.bottom + 4) + 'px';
+
+    // Shape every candidate through the REAL compiled font and collapse any
+    // whose result renders identically (project owner request, 2026-07-23:
+    // e.g. for ta_sa_kha, forcing a subjoin the font already applies by
+    // default produces the exact same glyphs as not forcing it at all -
+    // showing both as separate options is just noise). Keeps whichever
+    // occurrence comes first in resolveSyllableAlternatives's existing
+    // priority order (Default, registry alts, per-consonant swaps, subjoin
+    // forces) and drops later duplicates.
+    const signatures = await Promise.all(options.map(opt => shapeSignature(opt.cps)));
+    if (myToken !== syllablePopupToken) return;  // superseded while shaping was in flight
+
+    const seen = new Set();
+    const deduped = [];
+    options.forEach((opt, i) => {
+      if (seen.has(signatures[i])) return;
+      seen.add(signatures[i]);
+      deduped.push(opt);
+    });
+
+    panel.innerHTML = '';
+    deduped.forEach(opt => {
       const row = document.createElement('div');
       row.className = 'syllable-popup-option';
       row.title = opt.label;  // no visible label (project owner request) - kept as a hover tooltip
@@ -2726,14 +2894,6 @@
       };
       panel.appendChild(row);
     });
-    const rect = span.getBoundingClientRect();
-    // 'flex', not 'block' - an inline style always beats the .syllable-popup
-    // CSS rule's "display: flex" (that's the whole bug: 'block' here was
-    // silently forcing every option back to one-per-line no matter what the
-    // stylesheet said).
-    panel.style.display = 'flex';
-    panel.style.left = Math.max(4, rect.left) + 'px';
-    panel.style.top = (rect.bottom + 4) + 'px';
   }
 
   // Shared between Sample Text (per word) and Live Input's preview (whole
