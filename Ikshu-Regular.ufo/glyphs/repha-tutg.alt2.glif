@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="repha-tutg.alt2" format="2">
+  <advance width="50"/>
+  <anchor x="-328.5" y="617.5" name="_top"/>
+  <outline>
+    <contour>
+      <point x="-360" y="852" type="curve"/>
+      <point x="-360" y="625" type="line"/>
+      <point x="-347" y="615"/>
+      <point x="-310" y="615"/>
+      <point x="-297" y="625" type="curve"/>
+      <point x="-297" y="852" type="line"/>
+      <point x="-310" y="862"/>
+      <point x="-347" y="862"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-02-26 10:07:58 +0000</string>
+      <key>public.markColor</key>
+      <string>0.04,0.57,0.04,1</string>
+    </dict>
+  </lib>
+</glyph>

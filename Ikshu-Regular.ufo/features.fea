@@ -271,6 +271,7 @@ feature akhn {
         sub rVocalicMatra-tutg vs1-tutg by rVocalicMatra-tutg-alt1;
         sub ra-tutg vs1-tutg by ra-tutg.alt1;
         sub repha-tutg vs1-tutg by repha-tutg.alt1;
+        sub repha-tutg vs2-tutg by repha-tutg.alt2;
         sub rrVocalic-tutg vs1-tutg by rrVocalic-tutg.alt1;
         sub rrVocalic-tutg vs2-tutg by rrVocalic-tutg.alt2;
         sub rra-tutg vs1-tutg by rra-tutg.alt1;

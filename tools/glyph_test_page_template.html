@@ -2618,6 +2618,42 @@
   // "signature" of the result (glyph id + advances/offsets per output glyph)
   // - two cps sequences that produce the same signature render identically,
   // regardless of how different their INPUT codepoints were.
+  //
+  // Zero-footprint glyphs (x/y advance AND x/y offset all 0) are dropped
+  // before building the signature - added 2026-07-24 (project owner: "can
+  // you trim these invisible spaces when you merge them?"). An unconsumed
+  // Unicode variation selector (Default_Ignorable_Code_Point) shapes to
+  // exactly this - HarfBuzz substitutes the font's own space glyph as its
+  // "render nothing" placeholder rather than omitting a glyph entry
+  // entirely, confirmed by comparing "DA+conj+RA+UU" against "DA+conj+RA+UU
+  // +VS11" (a VS11 with nothing left to select, since RA already ligated
+  // into da_ra-tutg before the vowel-sign compound it would have modified
+  // could ever form): identical real glyphs, plus one extra trailing
+  // (space, 0, 0, 0, 0) in the second - a visually invisible difference that
+  // previously kept them from collapsing. A real mark glyph essentially
+  // never lands at (0,0,0,0) simultaneously - GPOS positions it somewhere
+  // specific relative to its base - so this is a safe, narrow filter, not
+  // a risk of hiding a genuinely-different-but-coincidentally-zero glyph.
+  // Two DIFFERENT glyph IDs with byte-identical drawn outlines (e.g.
+  // repha-tutg.alt1/.alt2, currently an exact duplicate - see
+  // duplicate_glyph.py) count as the same glyph for signature purposes -
+  // added 2026-07-24 (project owner: "can you consider repha.alt1 and
+  // repha.alt2 the same, for the sake of collapsing?"). Uses the glyph's own
+  // outline path (font.glyphToPath) rather than its numeric id, cached per
+  // id since the same glyph recurs across many candidate options. General
+  // on purpose, not a hardcoded repha-specific pair: catches ANY future
+  // glyph that's a genuine visual duplicate of another, the same way this
+  // one currently is, with nothing to update once alt2 gets its own real
+  // artwork (its path will then just legitimately differ, so it stops
+  // collapsing on its own).
+  const glyphOutlineCache = new Map();
+  function glyphOutlineKey(font, glyphId) {
+    if (!glyphOutlineCache.has(glyphId)) {
+      glyphOutlineCache.set(glyphId, font.glyphToPath(glyphId));
+    }
+    return glyphOutlineCache.get(glyphId);
+  }
+
   async function shapeSignature(cps) {
     const { hb, font } = await initHarfBuzz();
     const buffer = new hb.Buffer();
@@ -2625,7 +2661,8 @@
     buffer.guessSegmentProperties();
     hb.shape(font, buffer);
     return buffer.getGlyphInfosAndPositions()
-      .map(g => `${g.codepoint}:${g.xAdvance}:${g.yAdvance}:${g.xOffset}:${g.yOffset}`)
+      .filter(g => g.xAdvance || g.yAdvance || g.xOffset || g.yOffset)
+      .map(g => `${glyphOutlineKey(font, g.codepoint)}:${g.xAdvance}:${g.yAdvance}:${g.xOffset}:${g.yOffset}`)
       .join('|');
   }
 
@@ -2736,12 +2773,34 @@
       const consonantPositions = [segment.hasRepha ? 1 : 0];
       segment.conjoinerPositions.forEach(pos => consonantPositions.push(pos + 1));
 
-      const resolvedName = segment.consonantNames.join('_') + '-tutg';
+      // Repha+consonant(s) is really RA+conjoiner+consonant(s) under the hood
+      // - that's what akhn actually forms (sub repha-tutg.alt1 ma-tutg by
+      // ra_ma-tutg;) - so the whole-cluster registry lookup needs a "ra_"
+      // prefix when hasRepha, to find registered ligature alts like
+      // ra_ma-tutg.alt1 (confirmed real and previously never found: added
+      // 2026-07-24, project owner point (i) - ra_ma-tutg, ra_va-tutg,
+      // ra_uMatra-tutg, ra_uuMatra-tutg all have registered alts today).
+      const resolvedName = (segment.hasRepha ? 'ra_' : '') + segment.consonantNames.join('_') + '-tutg';
       const registered = SYLLABLE_VARIANT_LOOKUP[resolvedName];
       if (registered) {
         registered.alts.forEach(alt => {
-          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: rephaPrefix.concat(alt.cps, trailingCps) });
+          // A "ra_"-prefixed name's own default_cps already starts with the
+          // repha codepoint itself (the registry records "what you'd
+          // actually type" - repha-tutg, not RA+conjoiner - see raw_cp_of()
+          // server-side) - do NOT also prepend rephaPrefix here, or repha
+          // would be duplicated. rephaPrefix is only for alts whose cps
+          // start fresh from a NON-repha-prefixed name.
+          const prefix = segment.hasRepha ? [] : rephaPrefix;
+          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: prefix.concat(alt.cps, trailingCps) });
         });
+      }
+      // Revert THIS syllable to its raw, non-Repha-substituted form (RA +
+      // conjoiner instead of the repha-tutg glyph) - project owner point
+      // (iii), 2026-07-24: an instance-level override, independent of the
+      // passage-wide Repha On/Off toggle (which applies uniformly to every
+      // occurrence, not just one).
+      if (segment.hasRepha) {
+        options.push({ label: 'Repha=RA+conjoiner', cps: [RA_CP, SAMPLE_CONJOINER_CP].concat(cps.slice(1)) });
       }
       // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
       // registered under a name that folds the FIRST trailing vowel-sign
@@ -2786,7 +2845,7 @@
       // the earlier additive-only version (one change from Default at a
       // time) entirely, since additive is just the length-1-combo subset of
       // this cross product.
-      if (segment.consonantNames.length > 1) {
+      if (segment.consonantNames.length > 1 || segment.hasRepha) {
         // One "dimension" per consonant: [{default}, {this alt}, {that alt}, ...]
         const dimensions = segment.consonantNames.map((name, k) => {
           const choices = [{ label: null, insert: null }];
@@ -2805,6 +2864,22 @@
             { label: `conj${idx + 1}=sub`, insert: { pos, vsCp: SAMPLE_VS1_CP } },
           ]);
         });
+        // Plus Repha's own variant, narrowed to ONLY its VS2 alt (project
+        // owner, point (ii), 2026-07-24: not a full {default, alt1, alt2}
+        // dimension - Default and explicit VS1 already both resolve to
+        // alt1 via akhn's unconditional REPHA_FIRST_RULE, so a VS1 dimension
+        // value would just be redundant with Default; VS2/alt2 is the only
+        // state actually worth offering).
+        if (segment.hasRepha) {
+          const rephaRegistered = SYLLABLE_VARIANT_LOOKUP['repha-tutg'];
+          const rephaAlt2 = rephaRegistered && rephaRegistered.alts.find(a => a.vs === 'VS2');
+          if (rephaAlt2) {
+            dimensions.push([
+              { label: null, insert: null },
+              { label: `Repha=${stripTutg(rephaAlt2.variant)}`, insert: { pos: 0, vsCp: rephaAlt2.cps[1] } },
+            ]);
+          }
+        }
         // Cartesian product across all dimensions.
         let combos = [[]];
         dimensions.forEach(dim => {
