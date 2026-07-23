@@ -2535,31 +2535,45 @@
   // has-alts at all). Built the same way as CONSONANT_NAME_BY_CP.
   const INDEPENDENT_VOWEL_NAME_BY_CP = {};
   DATA.vowels.forEach(v => { INDEPENDENT_VOWEL_NAME_BY_CP[v.cp] = stripTutg(v.name); });
+  // Repha is typed/rendered BEFORE the consonant it attaches to (the opposite
+  // direction of every other mark here - confirmed this project: typed order
+  // is always Repha-then-consonant, e.g. REPHA+MA -> ra_matutg), so
+  // "repha + consonant..." must be ONE segment together, not Repha alone
+  // followed by a separate consonant segment (fixed 2026-07-23, project
+  // owner: "repha+cons must be [one] segment, not cons+repha").
+  const REPHA_CP = CONJUNCT_LISTS.markOptions.Repha.cp;
 
   // Splits a word's cps into akshara segments. A segment starts at either a
-  // consonant (optionally chaining conjoiner+consonant further) or a lone
-  // independent vowel (no chaining - it never combines with a following
-  // consonant/vowel the way a conjunct does), and absorbs trailing non-base
-  // codepoints (vowel signs, VS selectors, marks) either way. Anything else
-  // (space, punctuation, a stray mark with no base before it) gets its own
-  // single-codepoint, non-clickable segment. Fields: {cps, consonantNames
-  // (stripped, no "-tutg" - empty for an independent-vowel or stray segment),
-  // baseName (stripped independent-vowel name, or null), conjoinerPositions
-  // (indices within cps, right at the conjoiner itself - always empty for an
-  // independent-vowel segment), consSpanLen (how many leading cps are the
-  // base/conjoiner chain, before any trailing vowel-sign/mark codepoints)}.
+  // consonant (optionally chaining conjoiner+consonant further, and optionally
+  // preceded by a Repha prefix) or a lone independent vowel (no chaining - it
+  // never combines with a following consonant/vowel the way a conjunct does),
+  // and absorbs trailing non-base codepoints (vowel signs, VS selectors,
+  // marks) either way. Anything else (space, punctuation, a stray mark with
+  // no base before or after it) gets its own single-codepoint, non-clickable
+  // segment. Fields: {cps, consonantNames (stripped, no "-tutg" - empty for
+  // an independent-vowel or stray segment), baseName (stripped independent-
+  // vowel name, or null), hasRepha (true if cps[0] is the Repha prefix),
+  // conjoinerPositions (indices within cps, right at the conjoiner itself -
+  // always empty for an independent-vowel segment), consSpanLen (how many
+  // leading cps are the Repha/base/conjoiner chain, before any trailing
+  // vowel-sign/mark codepoints)}.
   function segmentSyllables(cps) {
     const segments = [];
     let i = 0;
     while (i < cps.length) {
+      const segStart = i;
+      const hasRepha = cps[i] === REPHA_CP && (cps[i + 1] in CONSONANT_NAME_BY_CP);
+      if (hasRepha) i++;
       const isConsonant = cps[i] in CONSONANT_NAME_BY_CP;
       const isIndepVowel = cps[i] in INDEPENDENT_VOWEL_NAME_BY_CP;
       if (!isConsonant && !isIndepVowel) {
-        segments.push({ cps: [cps[i]], consonantNames: [], baseName: null, conjoinerPositions: [], consSpanLen: 0 });
+        // hasRepha can't be true here (its own check above requires cps[i+1]
+        // - now cps[i] - to be a consonant), so this is always a genuine
+        // single stray/non-base codepoint.
+        segments.push({ cps: [cps[i]], consonantNames: [], baseName: null, hasRepha: false, conjoinerPositions: [], consSpanLen: 0 });
         i++;
         continue;
       }
-      const segStart = i;
       const consonantNames = isConsonant ? [CONSONANT_NAME_BY_CP[cps[i]]] : [];
       const baseName = isIndepVowel ? INDEPENDENT_VOWEL_NAME_BY_CP[cps[i]] : null;
       const conjoinerPositions = [];
@@ -2572,8 +2586,22 @@
         }
       }
       const consSpanLen = i - segStart;
-      while (i < cps.length && !(cps[i] in CONSONANT_NAME_BY_CP) && !(cps[i] in INDEPENDENT_VOWEL_NAME_BY_CP)) i++;
-      segments.push({ cps: cps.slice(segStart, i), consonantNames, baseName, conjoinerPositions, consSpanLen });
+      // Must NOT swallow a Repha that belongs to the NEXT segment - Repha
+      // always has a consonant following it (it never appears without one),
+      // so if we're about to absorb one as a trailing mark on THIS segment,
+      // check whether a consonant follows it first; if so, stop here and let
+      // the next while-loop iteration's hasRepha check claim it instead. Bug
+      // confirmed 2026-07-23 (project owner: "AA + Repha + MA" was wrongly
+      // splitting into [AA, Repha] + [MA] - Repha got absorbed into AA's
+      // trailing marks since this loop only ever checked "not a consonant/
+      // vowel", with no exception for a Repha that precedes one).
+      while (
+        i < cps.length
+        && !(cps[i] in CONSONANT_NAME_BY_CP)
+        && !(cps[i] in INDEPENDENT_VOWEL_NAME_BY_CP)
+        && !(cps[i] === REPHA_CP && (cps[i + 1] in CONSONANT_NAME_BY_CP))
+      ) i++;
+      segments.push({ cps: cps.slice(segStart, i), consonantNames, baseName, hasRepha, conjoinerPositions, consSpanLen });
     }
     return segments;
   }
@@ -2606,13 +2634,21 @@
     const defaultOption = { label: 'Default', cps: cps.slice(), isDefault: true };
     const options = [defaultOption];
     const trailingCps = cps.slice(segment.consSpanLen);
+    // Registered alt.cps (from variant_registry.json via the server) never
+    // includes a Repha prefix - it's a rendering-time substitution applied
+    // before segmentSyllables ever runs, not something the registry knows
+    // about - so it has to be re-prepended onto every registry-based alt
+    // option here. The subjoin options below don't need this: they're built
+    // by slicing/re-splicing the already-Repha-inclusive `cps` array, not
+    // starting fresh from registry data.
+    const rephaPrefix = segment.hasRepha ? [cps[0]] : [];
 
     if (isConsonantBased) {
       const resolvedName = segment.consonantNames.join('_') + '-tutg';
       const registered = SYLLABLE_VARIANT_LOOKUP[resolvedName];
       if (registered) {
         registered.alts.forEach(alt => {
-          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(trailingCps) });
+          options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: rephaPrefix.concat(alt.cps, trailingCps) });
         });
       }
       // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
@@ -2625,7 +2661,7 @@
         const vsRegistered = SYLLABLE_VARIANT_LOOKUP[vsFoldedName];
         if (vsRegistered) {
           vsRegistered.alts.forEach(alt => {
-            options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: alt.cps.concat(restCps) });
+            options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: rephaPrefix.concat(alt.cps, restCps) });
           });
         }
       }
