@@ -711,6 +711,8 @@
       </div>
     </div>
     <div class="cons-grid" id="unicode-grid"></div>
+    <p class="count-note" id="unicode-vs-note" style="margin-top:18px;">Variation selectors (not part of the Tulu-Tigalari block - U+FE00-U+FE0F - but real, GSUB-recognized modifiers: VS1-VS6 select a registered character/conjunct alternate, VS11-VS12 select a registered ligature alternate).</p>
+    <div class="cons-grid" id="unicode-vs-grid"></div>
   </div>
 </div>
 
@@ -3048,14 +3050,20 @@
   function updateUnicodeOutput() {
     unicodeOutput.textContent = unicodeTypedCps.map(cp => S(cp)).join('');
   }
-  const unicodeGrid = document.getElementById('unicode-grid');
-  DATA.unicodeChars.forEach(ch => {
+  function addUnicodeCell(grid, ch) {
     const cell = document.createElement('div');
     cell.className = 'cons-cell clickable';
     cell.innerHTML = `<div class="glyph tigalari">${S(ch.cp)}</div><div class="label">${stripTutg(ch.name)}<br>U+${ch.cp.toString(16).toUpperCase()}</div>`;
     cell.onclick = () => { unicodeTypedCps.push(ch.cp); updateUnicodeOutput(); };
-    unicodeGrid.appendChild(cell);
-  });
+    grid.appendChild(cell);
+  }
+  const unicodeGrid = document.getElementById('unicode-grid');
+  DATA.unicodeChars.forEach(ch => addUnicodeCell(unicodeGrid, ch));
+  // Variation selectors (VS1-VS6/VS11-VS12) - real GSUB-recognized modifiers
+  // with their own cmap entry, but outside the Tulu-Tigalari block proper, so
+  // they need their own grid rather than folding into the count/note above.
+  const unicodeVsGrid = document.getElementById('unicode-vs-grid');
+  DATA.vsChars.forEach(ch => addUnicodeCell(unicodeVsGrid, ch));
   document.getElementById('unicode-backspace').addEventListener('click', () => {
     unicodeTypedCps.pop();
     updateUnicodeOutput();

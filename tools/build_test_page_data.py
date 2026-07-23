@@ -570,6 +570,16 @@ for name, info in glyphs.items():
             unicode_chars.append({"name": name, "cp": u})
 unicode_chars.sort(key=lambda e: e["cp"])
 
+# Variation selectors (added 2026-07-23, project owner request): real,
+# GSUB-recognized modifiers (VS1-VS6 for TutgVariantSelect/TutgSubjoinerForm,
+# VS11-VS12 for TutgConjunctVariantSelect), each with its own real cmap entry
+# (vs1-tutg, ..., vs11-tutg, vs12-tutg - confirmed against glyph_svg_data.json)
+# - but outside TUTG_BLOCK (they're in the standard Unicode Variation
+# Selectors block, U+FE00-U+FE0F), so the click-to-type palette above never
+# picked them up at all. VS_CP's own insertion order already gives the
+# natural VS1..VS6, VS11, VS12 reading order.
+vs_chars = [{"name": f"VS{n}", "cp": cp} for n, cp in VS_CP.items()]
+
 out = {
     "consonants": consonants,
     "vowels": vowels,
@@ -584,6 +594,7 @@ out = {
     "conjunctMatrix": conjunct_matrix,
     "variantRegistry": variant_registry_data,
     "unicodeChars": unicode_chars,
+    "vsChars": vs_chars,
 }
 out_path = os.path.join(HERE, "test_page_data.json")
 with open(out_path, "w", encoding="utf-8") as f:
@@ -604,4 +615,5 @@ print("Variant registry - conjunct variants:", len(conjunct_variants))
 print("Variant registry - vowel-sign ligature variants:", len(vowel_sign_ligature_variants))
 print("Variant registry - skipped (missing cmap):", len(variant_missing), variant_missing)
 print("Unicode chars:", len(unicode_chars))
+print("VS chars:", len(vs_chars))
 print("Written to:", out_path)
