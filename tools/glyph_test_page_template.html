@@ -2877,6 +2877,13 @@
       seen.add(signatures[i]);
       deduped.push(opt);
     });
+    if (deduped.length <= 1) {
+      // Every candidate collapsed to the same shaped result as Default -
+      // nothing actually distinct to choose between, so there's no point
+      // showing a one-cell popup (project owner request, 2026-07-23).
+      panel.style.display = 'none';
+      return;
+    }
 
     panel.innerHTML = '';
     deduped.forEach(opt => {
