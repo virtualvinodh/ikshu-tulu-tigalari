@@ -4361,6 +4361,12 @@ export { Blob, Buffer, BufferContentType, BufferFlag, BufferSerializeFlag, Buffe
     const rephaPrefix = segment.hasRepha ? [cps[0]] : [];
 
     if (isConsonantBased) {
+      // Position (within `cps`) of each consonant in the cluster - hoisted
+      // here (rather than only inside the cross-product block below) so the
+      // last-consonant vowel-sign fold right below can use it too.
+      const consonantPositions = [segment.hasRepha ? 1 : 0];
+      segment.conjoinerPositions.forEach(pos => consonantPositions.push(pos + 1));
+
       const resolvedName = segment.consonantNames.join('_') + '-tutg';
       const registered = SYLLABLE_VARIANT_LOOKUP[resolvedName];
       if (registered) {
@@ -4370,16 +4376,34 @@ export { Blob, Buffer, BufferContentType, BufferFlag, BufferSerializeFlag, Buffe
       }
       // Vowel-sign-ligature variants (VS11+, e.g. ka_uMatra-tutg.alt1) are
       // registered under a name that folds the FIRST trailing vowel-sign
-      // codepoint in, not the bare consonant/cluster name - check that too,
-      // when the trailing marks actually start with a real vowel sign.
+      // codepoint in - but WHICH name varies: some are keyed on the WHOLE
+      // cluster (e.g. sa_ta_uMatra-tutg, a dedicated shape for that specific
+      // 2-consonant cluster taking U), others just on the LAST consonant
+      // alone (e.g. sha_uMatra-tutg - SHA's own U-compound, independent of
+      // whatever precedes it) - both patterns are real in this project's
+      // data, so both have to be checked, not just one (confirmed missing
+      // 2026-07-23: project owner asked why "KA+SHA+U" showed no options at
+      // all - sha_uMatra-tutg.alt1 exists in the registry but was never
+      // found, since only the whole-cluster-folded name was ever tried).
       if (trailingCps.length > 0 && trailingCps[0] in VOWEL_SIGN_NAME_BY_CP) {
-        const vsFoldedName = segment.consonantNames.concat([VOWEL_SIGN_NAME_BY_CP[trailingCps[0]]]).join('_') + '-tutg';
+        const vsToken = VOWEL_SIGN_NAME_BY_CP[trailingCps[0]];
         const restCps = trailingCps.slice(1);
+        const vsFoldedName = segment.consonantNames.concat([vsToken]).join('_') + '-tutg';
         const vsRegistered = SYLLABLE_VARIANT_LOOKUP[vsFoldedName];
         if (vsRegistered) {
           vsRegistered.alts.forEach(alt => {
             options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: rephaPrefix.concat(alt.cps, restCps) });
           });
+        }
+        if (segment.consonantNames.length > 1) {
+          const lastFoldedName = `${segment.consonantNames[segment.consonantNames.length - 1]}_${vsToken}-tutg`;
+          const lastRegistered = SYLLABLE_VARIANT_LOOKUP[lastFoldedName];
+          if (lastRegistered && lastFoldedName !== vsFoldedName) {
+            const prefixCps = cps.slice(0, consonantPositions[consonantPositions.length - 1]);
+            lastRegistered.alts.forEach(alt => {
+              options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: prefixCps.concat(alt.cps, restCps) });
+            });
+          }
         }
       }
       // FULL cross-product of every independent per-consonant variant choice
@@ -4394,8 +4418,6 @@ export { Blob, Buffer, BufferContentType, BufferFlag, BufferSerializeFlag, Buffe
       // time) entirely, since additive is just the length-1-combo subset of
       // this cross product.
       if (segment.consonantNames.length > 1) {
-        const consonantPositions = [segment.hasRepha ? 1 : 0];
-        segment.conjoinerPositions.forEach(pos => consonantPositions.push(pos + 1));
         // One "dimension" per consonant: [{default}, {this alt}, {that alt}, ...]
         const dimensions = segment.consonantNames.map((name, k) => {
           const choices = [{ label: null, insert: null }];
