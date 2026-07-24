@@ -557,11 +557,52 @@ for consonant in consonants:
                 continue
         subjoiner_compound_rules.append((["subjoiner-tutg", consonant, VS_INPUT_GLYPH[root]], below_name))
 
-# 3-glyph compound rules first (see module docstring for why), then the
-# existing 2-glyph rules - alphabetical by output name within each group as a
-# stable tiebreaker so re-runs produce byte-identical output.
+# Alt-aware counterpart of subjoiner_compound_rules above (added 2026-07-24 -
+# project owner: confirmed forcing the below-base subjoin path on an
+# alt-selected compound, e.g. typing "conjoiner+VS1+KA+U+VS11" to select
+# ka_uMatra-tutg.alt1 while ALSO forcing it below-base, silently fell back to
+# shrinking the DEFAULT compound's miniature instead - VS11 had nothing left
+# to attach its substitution to by the time this lookup ran, since the
+# 3-glyph rule above already matched and consumed "subjoiner-tutg + KA + U"
+# on its own). Fixed with a longer, MORE SPECIFIC 4-glyph rule per registered
+# alt: "subjoiner-tutg + consonant + root + vsN-tutg -> that alt's OWN
+# below-form" - same "longest match must be listed first" principle as
+# compound_rules/subjoiner_compound_rules themselves. vsN uses
+# CONJUNCT_VS_OFFSET (10) + the registry index, matching
+# generate_akhn_feature.py's TutgConjunctVariantSelect convention exactly
+# (index "1" -> VS11, "2" -> VS12) - duplicated here rather than imported,
+# same reasoning as VS_ROOTS/VS_INPUT_GLYPH above (this project's scripts
+# don't import from each other).
+CONJUNCT_VS_OFFSET = 10
+subjoiner_compound_alt_rules = []  # (input_seq, output_name) - input_seq is 4 glyphs
+subjoiner_compound_alt_no_below = []  # (consonant, root, alt_name) - alt exists but no below-form
+for consonant in consonants:
+    base = consonant[: -len("-tutg")]
+    for root in VS_ROOTS:
+        compound_name = compound_glyph_name(base, root)
+        if compound_name is None:
+            continue
+        alt_variants = VARIANT_REGISTRY.get("_ligature_variants", {}).get(compound_name, {})
+        for index_str, alt_name in sorted(alt_variants.items(), key=lambda kv: int(kv[0])):
+            if alt_name not in glyphs:
+                continue
+            alt_below_name, _ = resolve_below_form(alt_name)
+            if alt_below_name is None:
+                subjoiner_compound_alt_no_below.append((consonant, root, alt_name))
+                continue
+            vs_glyph = f"vs{CONJUNCT_VS_OFFSET + int(index_str)}-tutg"
+            subjoiner_compound_alt_rules.append(
+                (["subjoiner-tutg", consonant, VS_INPUT_GLYPH[root], vs_glyph], alt_below_name)
+            )
+
+# Longest sequence first within TutgBlwfSubjoiner's own rule set (4-glyph alt
+# rules, then 3-glyph compound rules, then whatever's left) - alphabetical by
+# output name as a stable tiebreaker within each length, so re-runs produce
+# byte-identical output. compound_rules (blwf's own conjoiner-triggered
+# rules, a different lookup) keeps its own separate sort.
 compound_rules.sort(key=lambda r: r[1])
-subjoiner_compound_rules.sort(key=lambda r: r[1])
+subjoiner_compound_alt_rules.sort(key=lambda r: (-len(r[0]), r[1]))
+subjoiner_compound_rules.sort(key=lambda r: (-len(r[0]), r[1]))
 rules.sort(key=lambda r: r[1])
 
 out_path = os.path.join(HERE, "tutg_blwf.fea")
@@ -603,8 +644,13 @@ with open(out_path, "w", encoding="utf-8") as f:
     f.write("    script tutg;\n")
 
     f.write("    lookup TutgBlwfSubjoiner {\n")
+    f.write("        # subjoiner-tutg + consonant + vowel-sign root + vsN-tutg -> that\n")
+    f.write("        # registered ALT's own below-form (4-glyph, must come first - see\n")
+    f.write("        # subjoiner_compound_alt_rules comment above for why this exists at all).\n")
+    for seq, out in subjoiner_compound_alt_rules:
+        f.write(f"        sub {' '.join(seq)} by {out};\n")
     f.write("        # subjoiner-tutg (conjoiner + VS1, formed in akhn) + consonant + vowel-sign\n")
-    f.write("        # root -> that compound's below-form (3-glyph, must come first - see\n")
+    f.write("        # root -> that compound's own below-form (3-glyph - see\n")
     f.write("        # subjoiner_compound_rules comment above for why this exists at all).\n")
     for seq, out in subjoiner_compound_rules:
         f.write(f"        sub {' '.join(seq)} by {out};\n")
@@ -678,6 +724,11 @@ with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n# --- TutgBlwfSubjoiner: (consonant, vowel-sign root) compound glyphs with no below-form at all (see BLWF_TODO.md) ---\n")
         for consonant, root in subjoiner_compound_no_below:
             f.write(f"# {consonant} + {root}\n")
+
+    if subjoiner_compound_alt_no_below:
+        f.write("\n# --- TutgBlwfSubjoiner: registered alt compound with no below-form at all (see BLWF_TODO.md) ---\n")
+        for consonant, root, alt_name in subjoiner_compound_alt_no_below:
+            f.write(f"# {consonant} + {root} -> {alt_name}\n")
 
     if subjoiner_missing_variant:
         f.write("\n# --- TutgBlwfSubjoiner: variant_registry.json entry skipped, not a real glyph ---\n")
@@ -880,6 +931,8 @@ print(f"Decompose ligatures with no known akhn input sequence: {len(decompose_no
 print(f"Needed compound pairs with no glyph at all: {len(compound_no_glyph)} {compound_no_glyph}")
 print(f"Needed compound pairs with no below-form: {len(compound_no_below)} {compound_no_below}")
 print(f"TutgBlwfSubjoiner rules: {len(subjoiner_rules)} (including {subjoiner_ligature_rule_count} per-ligature)")
+print(f"TutgBlwfSubjoiner compound rules: {len(subjoiner_compound_rules)}, no-below: {len(subjoiner_compound_no_below)} {subjoiner_compound_no_below}")
+print(f"TutgBlwfSubjoiner compound ALT rules: {len(subjoiner_compound_alt_rules)}, no-below: {len(subjoiner_compound_alt_no_below)} {subjoiner_compound_alt_no_below}")
 print(f"TutgBlwfSubjoiner variant entries skipped (not a real glyph): {len(subjoiner_missing_variant)} {subjoiner_missing_variant}")
 print(f"Alt-consonant fallback rules added to TutgBlwf: {alt_consonant_rule_count}")
 print(f"Alt-consonant fallback entries skipped (not a real glyph): {len(alt_consonant_missing)} {alt_consonant_missing}")

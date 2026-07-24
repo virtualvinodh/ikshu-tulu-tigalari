@@ -2592,6 +2592,28 @@
       <string>ra-tutg.below</string>
       <string>ra-tutg.below.alt1</string>
       <string>repha-tutg.alt2</string>
+      <string>bha_uMatra-tutg.alt1.below.auto</string>
+      <string>bha_uuMatra-tutg.alt1.below.auto</string>
+      <string>cha_uMatra-tutg.alt1.below.auto</string>
+      <string>ga_uMatra-tutg.alt1.below.auto</string>
+      <string>ha_uMatra-tutg.alt1.below.auto</string>
+      <string>ja_uMatra-tutg.alt1.below.auto</string>
+      <string>ka_uMatra-tutg.alt1.below.auto</string>
+      <string>na_uMatra-tutg.alt1.below.auto</string>
+      <string>na_uuMatra-tutg.alt1.below.auto</string>
+      <string>nga_uMatra-tutg.alt1.below.auto</string>
+      <string>nna_uMatra-tutg.alt1.below.auto</string>
+      <string>nna_uuMatra-tutg.alt1.below.auto</string>
+      <string>nya_uMatra-tutg.alt1.below.auto</string>
+      <string>ra_uMatra-tutg.alt1.below.auto</string>
+      <string>ra_uMatra-tutg.alt2.below.auto</string>
+      <string>ra_uuMatra-tutg.alt1.below.auto</string>
+      <string>sha_ra_iiMatra-tutg.alt1.below.auto</string>
+      <string>sha_uMatra-tutg.alt1.below.auto</string>
+      <string>ssa_uuMatra-tutg.alt1.below.auto</string>
+      <string>ta_uMatra-tutg.alt1.below.auto</string>
+      <string>tta_uMatra-tutg.alt1.below.auto</string>
+      <string>tta_uuMatra-tutg.alt1.below.auto</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>

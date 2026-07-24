@@ -356,12 +356,16 @@
     <string>bha_uM_atra-tutg.glif</string>
     <key>bha_uMatra-tutg.alt1</key>
     <string>bha_uM_atra-tutg.alt1.glif</string>
+    <key>bha_uMatra-tutg.alt1.below.auto</key>
+    <string>bha_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>bha_uMatra-tutg.below.auto</key>
     <string>bha_uM_atra-tutg.below.auto.glif</string>
     <key>bha_uuMatra-tutg</key>
     <string>bha_uuM_atra-tutg.glif</string>
     <key>bha_uuMatra-tutg.alt1</key>
     <string>bha_uuM_atra-tutg.alt1.glif</string>
+    <key>bha_uuMatra-tutg.alt1.below.auto</key>
+    <string>bha_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>bha_uuMatra-tutg.below.auto</key>
     <string>bha_uuM_atra-tutg.below.auto.glif</string>
     <key>bha_va-tutg</key>
@@ -470,6 +474,8 @@
     <string>cha_uM_atra-tutg.glif</string>
     <key>cha_uMatra-tutg.alt1</key>
     <string>cha_uM_atra-tutg.alt1.glif</string>
+    <key>cha_uMatra-tutg.alt1.below.auto</key>
+    <string>cha_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>cha_uMatra-tutg.below.auto</key>
     <string>cha_uM_atra-tutg.below.auto.glif</string>
     <key>cha_uuMatra-tutg</key>
@@ -836,6 +842,8 @@
     <string>ga_uM_atra-tutg.glif</string>
     <key>ga_uMatra-tutg.alt1</key>
     <string>ga_uM_atra-tutg.alt1.glif</string>
+    <key>ga_uMatra-tutg.alt1.below.auto</key>
+    <string>ga_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ga_uMatra-tutg.below</key>
     <string>ga_uM_atra-tutg.below.glif</string>
     <key>ga_uuMatra-tutg</key>
@@ -934,6 +942,8 @@
     <string>ha_uM_atra-tutg.glif</string>
     <key>ha_uMatra-tutg.alt1</key>
     <string>ha_uM_atra-tutg.alt1.glif</string>
+    <key>ha_uMatra-tutg.alt1.below.auto</key>
+    <string>ha_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ha_uMatra-tutg.below.auto</key>
     <string>ha_uM_atra-tutg.below.auto.glif</string>
     <key>ha_uuMatra-tutg</key>
@@ -1018,6 +1028,8 @@
     <string>ja_uM_atra-tutg.glif</string>
     <key>ja_uMatra-tutg.alt1</key>
     <string>ja_uM_atra-tutg.alt1.glif</string>
+    <key>ja_uMatra-tutg.alt1.below.auto</key>
+    <string>ja_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ja_uMatra-tutg.below.auto</key>
     <string>ja_uM_atra-tutg.below.auto.glif</string>
     <key>ja_uuMatra-tutg</key>
@@ -1234,6 +1246,8 @@
     <string>ka_uM_atra-tutg.glif</string>
     <key>ka_uMatra-tutg.alt1</key>
     <string>ka_uM_atra-tutg.alt1.glif</string>
+    <key>ka_uMatra-tutg.alt1.below.auto</key>
+    <string>ka_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ka_uMatra-tutg.below.auto</key>
     <string>ka_uM_atra-tutg.below.auto.glif</string>
     <key>ka_uuMatra-tutg</key>
@@ -1644,12 +1658,16 @@
     <string>na_uM_atra-tutg.glif</string>
     <key>na_uMatra-tutg.alt1</key>
     <string>na_uM_atra-tutg.alt1.glif</string>
+    <key>na_uMatra-tutg.alt1.below.auto</key>
+    <string>na_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>na_uMatra-tutg.below</key>
     <string>na_uM_atra-tutg.below.glif</string>
     <key>na_uuMatra-tutg</key>
     <string>na_uuM_atra-tutg.glif</string>
     <key>na_uuMatra-tutg.alt1</key>
     <string>na_uuM_atra-tutg.alt1.glif</string>
+    <key>na_uuMatra-tutg.alt1.below.auto</key>
+    <string>na_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>na_uuMatra-tutg.below.auto</key>
     <string>na_uuM_atra-tutg.below.auto.glif</string>
     <key>na_va-tutg</key>
@@ -1724,6 +1742,8 @@
     <string>nga_uM_atra-tutg.glif</string>
     <key>nga_uMatra-tutg.alt1</key>
     <string>nga_uM_atra-tutg.alt1.glif</string>
+    <key>nga_uMatra-tutg.alt1.below.auto</key>
+    <string>nga_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>nga_uMatra-tutg.below.auto</key>
     <string>nga_uM_atra-tutg.below.auto.glif</string>
     <key>nga_uuMatra-tutg</key>
@@ -1798,12 +1818,16 @@
     <string>nna_uM_atra-tutg.glif</string>
     <key>nna_uMatra-tutg.alt1</key>
     <string>nna_uM_atra-tutg.alt1.glif</string>
+    <key>nna_uMatra-tutg.alt1.below.auto</key>
+    <string>nna_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>nna_uMatra-tutg.below.auto</key>
     <string>nna_uM_atra-tutg.below.auto.glif</string>
     <key>nna_uuMatra-tutg</key>
     <string>nna_uuM_atra-tutg.glif</string>
     <key>nna_uuMatra-tutg.alt1</key>
     <string>nna_uuM_atra-tutg.alt1.glif</string>
+    <key>nna_uuMatra-tutg.alt1.below.auto</key>
+    <string>nna_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>nna_uuMatra-tutg.below.auto</key>
     <string>nna_uuM_atra-tutg.below.auto.glif</string>
     <key>nna_ya-tutg</key>
@@ -1870,6 +1894,8 @@
     <string>nya_uM_atra-tutg.glif</string>
     <key>nya_uMatra-tutg.alt1</key>
     <string>nya_uM_atra-tutg.alt1.glif</string>
+    <key>nya_uMatra-tutg.alt1.below.auto</key>
+    <string>nya_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>nya_uMatra-tutg.below.auto</key>
     <string>nya_uM_atra-tutg.below.auto.glif</string>
     <key>o</key>
@@ -2104,14 +2130,20 @@
     <string>ra_uM_atra-tutg.glif</string>
     <key>ra_uMatra-tutg.alt1</key>
     <string>ra_uM_atra-tutg.alt1.glif</string>
+    <key>ra_uMatra-tutg.alt1.below.auto</key>
+    <string>ra_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ra_uMatra-tutg.alt2</key>
     <string>ra_uM_atra-tutg.alt2.glif</string>
+    <key>ra_uMatra-tutg.alt2.below.auto</key>
+    <string>ra_uM_atra-tutg.alt2.below.auto.glif</string>
     <key>ra_uMatra-tutg.below.auto</key>
     <string>ra_uM_atra-tutg.below.auto.glif</string>
     <key>ra_uuMatra-tutg</key>
     <string>ra_uuM_atra-tutg.glif</string>
     <key>ra_uuMatra-tutg.alt1</key>
     <string>ra_uuM_atra-tutg.alt1.glif</string>
+    <key>ra_uuMatra-tutg.alt1.below.auto</key>
+    <string>ra_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>ra_uuMatra-tutg.below.auto</key>
     <string>ra_uuM_atra-tutg.below.auto.glif</string>
     <key>ra_va-tutg</key>
@@ -2364,6 +2396,8 @@
     <string>sha_ra_iiM_atra-tutg.glif</string>
     <key>sha_ra_iiMatra-tutg.alt1</key>
     <string>sha_ra_iiM_atra-tutg.alt1.glif</string>
+    <key>sha_ra_iiMatra-tutg.alt1.below.auto</key>
+    <string>sha_ra_iiM_atra-tutg.alt1.below.auto.glif</string>
     <key>sha_ra_iiMatra-tutg.below.auto</key>
     <string>sha_ra_iiM_atra-tutg.below.auto.glif</string>
     <key>sha_rrVocalicMatra-tutg</key>
@@ -2382,6 +2416,8 @@
     <string>sha_uM_atra-tutg.glif</string>
     <key>sha_uMatra-tutg.alt1</key>
     <string>sha_uM_atra-tutg.alt1.glif</string>
+    <key>sha_uMatra-tutg.alt1.below.auto</key>
+    <string>sha_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>sha_uMatra-tutg.below.auto</key>
     <string>sha_uM_atra-tutg.below.auto.glif</string>
     <key>sha_uuMatra-tutg</key>
@@ -2512,6 +2548,8 @@
     <string>ssa_uuM_atra-tutg.glif</string>
     <key>ssa_uuMatra-tutg.alt1</key>
     <string>ssa_uuM_atra-tutg.alt1.glif</string>
+    <key>ssa_uuMatra-tutg.alt1.below.auto</key>
+    <string>ssa_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>ssa_uuMatra-tutg.below.auto</key>
     <string>ssa_uuM_atra-tutg.below.auto.glif</string>
     <key>ssa_va-tutg</key>
@@ -2640,6 +2678,8 @@
     <string>ta_uM_atra-tutg.glif</string>
     <key>ta_uMatra-tutg.alt1</key>
     <string>ta_uM_atra-tutg.alt1.glif</string>
+    <key>ta_uMatra-tutg.alt1.below.auto</key>
+    <string>ta_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>ta_uMatra-tutg.below</key>
     <string>ta_uM_atra-tutg.below.glif</string>
     <key>ta_uuMatra-tutg</key>
@@ -2728,12 +2768,16 @@
     <string>tta_uM_atra-tutg.glif</string>
     <key>tta_uMatra-tutg.alt1</key>
     <string>tta_uM_atra-tutg.alt1.glif</string>
+    <key>tta_uMatra-tutg.alt1.below.auto</key>
+    <string>tta_uM_atra-tutg.alt1.below.auto.glif</string>
     <key>tta_uMatra-tutg.below.auto</key>
     <string>tta_uM_atra-tutg.below.auto.glif</string>
     <key>tta_uuMatra-tutg</key>
     <string>tta_uuM_atra-tutg.glif</string>
     <key>tta_uuMatra-tutg.alt1</key>
     <string>tta_uuM_atra-tutg.alt1.glif</string>
+    <key>tta_uuMatra-tutg.alt1.below.auto</key>
+    <string>tta_uuM_atra-tutg.alt1.below.auto.glif</string>
     <key>tta_uuMatra-tutg.below.auto</key>
     <string>tta_uuM_atra-tutg.below.auto.glif</string>
     <key>ttha-tutg</key>

@@ -77,11 +77,35 @@ backup_ufo()
 font = ufoLib2.Font.open(UFO_PATH)
 with open(os.path.join(HERE, "glyph_classification.json"), encoding="utf-8") as f:
     classification = json.load(f)
+with open(os.path.join(HERE, "variant_registry.json"), encoding="utf-8") as f:
+    variant_registry = json.load(f)
 
 candidates = sorted(set(
     n for n in classification.get("conjunct_ligature", []) + classification.get("vowel_sign_ligature", [])
     if is_default_form(n)
 ))
+
+# Registered .altN forms of a vowel-sign-ligature compound (e.g.
+# ka_uMatra-tutg.alt1) need their own miniature too - added 2026-07-24
+# (project owner: confirmed these were silently skipped by the
+# is_default_form() filter above, and forcing the below-base subjoin path
+# on one fell back to the DEFAULT compound's miniature instead, silently
+# discarding the alt selection entirely - see generate_blwf_feature.py's
+# matching subjoiner_compound_alt_rules fix). Read directly from
+# variant_registry.json's _ligature_variants (not reconstructed by
+# assuming a ".altN" naming pattern) and filtered to bases actually
+# classified as vowel_sign_ligature - a plain conjunct_ligature's own
+# .altN (no vowel sign involved) doesn't have this gap, since the
+# subjoiner mechanism for those never depended on a per-root compound name
+# the way vowel-sign ligatures do.
+vowel_sign_ligature_names = set(classification.get("vowel_sign_ligature", []))
+alt_candidates = sorted(set(
+    alt_name
+    for base_name, variants in variant_registry.get("_ligature_variants", {}).items()
+    if base_name in vowel_sign_ligature_names
+    for alt_name in variants.values()
+))
+candidates = sorted(set(candidates) | set(alt_candidates))
 
 created = []
 skipped_has_below = []
@@ -122,7 +146,8 @@ for name in candidates:
 font.glyphOrder = list(font.glyphOrder) + created
 font.save(UFO_PATH, overwrite=True)
 
-print(f"Candidates (conjunct_ligature + vowel_sign_ligature, default forms): {len(candidates)}")
+print(f"Candidates (conjunct_ligature + vowel_sign_ligature, default forms + registered .altN of vowel_sign_ligature bases): {len(candidates)}")
+print(f"  - of which registered .altN alt forms: {len(alt_candidates)}")
 print(f"Created: {len(created)}")
 print(f"Skipped - real .below already exists: {len(skipped_has_below)}")
 print(f"Skipped - .below.auto already exists (already ran): {len(skipped_already_auto)}")

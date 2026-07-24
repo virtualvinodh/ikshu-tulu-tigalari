@@ -1029,8 +1029,32 @@ lookup TutgBlwfDecompose {
 feature blwf {
     script tutg;
     lookup TutgBlwfSubjoiner {
+        # subjoiner-tutg + consonant + vowel-sign root + vsN-tutg -> that
+        # registered ALT's own below-form (4-glyph, must come first - see
+        # subjoiner_compound_alt_rules comment above for why this exists at all).
+        sub subjoiner-tutg bha-tutg uMatra-tutg vs11-tutg by bha_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg bha-tutg uuMatra-tutg vs11-tutg by bha_uuMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg cha-tutg uMatra-tutg vs11-tutg by cha_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ga-tutg uMatra-tutg vs11-tutg by ga_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ha-tutg uMatra-tutg vs11-tutg by ha_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ja-tutg uMatra-tutg vs11-tutg by ja_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ka-tutg uMatra-tutg vs11-tutg by ka_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg na-tutg uMatra-tutg vs11-tutg by na_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg na-tutg uuMatra-tutg vs11-tutg by na_uuMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg nga-tutg uMatra-tutg vs11-tutg by nga_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg nna-tutg uMatra-tutg vs11-tutg by nna_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg nna-tutg uuMatra-tutg vs11-tutg by nna_uuMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg nya-tutg uMatra-tutg vs11-tutg by nya_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ra-tutg uMatra-tutg vs11-tutg by ra_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ra-tutg uMatra-tutg vs12-tutg by ra_uMatra-tutg.alt2.below.auto;
+        sub subjoiner-tutg ra-tutg uuMatra-tutg vs11-tutg by ra_uuMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg sha-tutg uMatra-tutg vs11-tutg by sha_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ssa-tutg uuMatra-tutg vs11-tutg by ssa_uuMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg ta-tutg uMatra-tutg vs11-tutg by ta_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg tta-tutg uMatra-tutg vs11-tutg by tta_uMatra-tutg.alt1.below.auto;
+        sub subjoiner-tutg tta-tutg uuMatra-tutg vs11-tutg by tta_uuMatra-tutg.alt1.below.auto;
         # subjoiner-tutg (conjoiner + VS1, formed in akhn) + consonant + vowel-sign
-        # root -> that compound's below-form (3-glyph, must come first - see
+        # root -> that compound's own below-form (3-glyph - see
         # subjoiner_compound_rules comment above for why this exists at all).
         sub subjoiner-tutg ba-tutg rVocalicMatra-tutg by ba_rVocalicMatra-tutg.below.auto;
         sub subjoiner-tutg ba-tutg rrVocalicMatra-tutg by ba_rrVocalicMatra-tutg.below.auto;
