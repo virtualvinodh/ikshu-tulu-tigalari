@@ -2823,16 +2823,18 @@
             options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: rephaPrefix.concat(alt.cps, restCps) });
           });
         }
-        if (segment.consonantNames.length > 1) {
-          const lastFoldedName = `${segment.consonantNames[segment.consonantNames.length - 1]}_${vsToken}-tutg`;
-          const lastRegistered = SYLLABLE_VARIANT_LOOKUP[lastFoldedName];
-          if (lastRegistered && lastFoldedName !== vsFoldedName) {
-            const prefixCps = cps.slice(0, consonantPositions[consonantPositions.length - 1]);
-            lastRegistered.alts.forEach(alt => {
-              options.push({ label: `${stripTutg(alt.variant)} (${alt.vs})`, cps: prefixCps.concat(alt.cps, restCps) });
-            });
-          }
-        }
+        // The LAST-consonant-only fold (e.g. sha_uMatra-tutg.alt1) is NOT
+        // pushed here as its own standalone option - it's folded into the
+        // cross product below instead (as another dimension), since it needs
+        // to be combinable with the subjoin-force dimension. Confirmed
+        // 2026-07-24 (project owner): for "NA+conj+TA+U", ta_uMatra-tutg.alt1
+        // (VS11) does NOTHING on its own (ta_uMatra-tutg never forms as its
+        // own glyph here at all - na_ta-tutg decomposes and TA+U re-ligates
+        // straight to its below-form, bypassing the default-name-then-VS11
+        // step TutgConjunctVariantSelect needs) - it only actually renders
+        // (via the alt-aware subjoiner rules from earlier this session) when
+        // COMBINED with a forced subjoin. Generating it standalone here would
+        // just be dead weight in exactly the cases that need it most.
       }
       // FULL cross-product of every independent per-consonant variant choice
       // AND every independent per-conjoiner subjoin choice, for clusters of
@@ -2852,7 +2854,14 @@
           const ownRegistered = SYLLABLE_VARIANT_LOOKUP[name + '-tutg'];
           if (ownRegistered) {
             ownRegistered.alts.forEach(alt => {
-              choices.push({ label: `${name}=${stripTutg(alt.variant)}`, insert: { pos: consonantPositions[k], vsCp: alt.cps[1] } });
+              // Last element of alt.cps is always the VS codepoint,
+              // regardless of how many base glyphs precede it (alt.cps is
+              // [...defaultCps, vsCp] - always 2 for a single-consonant
+              // name like this one, but NOT always 2 in general - see the
+              // last-consonant-fold dimension below, where the same
+              // "alt.cps[1]" mistake was a real bug for a multi-glyph
+              // compound name).
+              choices.push({ label: `${name}=${stripTutg(alt.variant)}`, insert: { pos: consonantPositions[k], vsCp: alt.cps[alt.cps.length - 1] } });
             });
           }
           return choices;
@@ -2864,6 +2873,26 @@
             { label: `conj${idx + 1}=sub`, insert: { pos, vsCp: SAMPLE_VS1_CP } },
           ]);
         });
+        // Plus the LAST consonant's own vowel-sign-ligature fold alt (e.g.
+        // ta_uMatra-tutg.alt1) as another dimension, so it can combine with
+        // the subjoin-force dimension above - added 2026-07-24 (see the
+        // comment where this used to be pushed standalone, further up).
+        if (trailingCps.length > 0 && trailingCps[0] in VOWEL_SIGN_NAME_BY_CP) {
+          const vsToken = VOWEL_SIGN_NAME_BY_CP[trailingCps[0]];
+          const lastFoldedName = `${segment.consonantNames[segment.consonantNames.length - 1]}_${vsToken}-tutg`;
+          const lastRegistered = SYLLABLE_VARIANT_LOOKUP[lastFoldedName];
+          if (lastRegistered) {
+            const choices = [{ label: null, insert: null }];
+            lastRegistered.alts.forEach(alt => {
+              // alt.cps here is [TA_cp, U_cp, VS11_cp] (a 2-raw-glyph
+              // compound + its VS) - the VS is the LAST element, not index 1
+              // (that was the actual bug: alt.cps[1] grabbed U_cp itself,
+              // duplicating U instead of inserting the VS selector).
+              choices.push({ label: `${lastFoldedName.slice(0, -5)}=${stripTutg(alt.variant)}`, insert: { pos: segment.consSpanLen, vsCp: alt.cps[alt.cps.length - 1] } });
+            });
+            dimensions.push(choices);
+          }
+        }
         // Plus Repha's own variant, narrowed to ONLY its VS2 alt (project
         // owner, point (ii), 2026-07-24: not a full {default, alt1, alt2}
         // dimension - Default and explicit VS1 already both resolve to
